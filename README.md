@@ -68,13 +68,13 @@ Each person on the team needs their own Cursor account. There's no separate Desi
 
 ## Workspaces
 
-| Workspace | What it does |
-|---|---|
-| **Home** | Project list -- see all your team's work |
-| **Project Hub** | Jump to canvas or prototypes for a project |
-| **Canvas** | Infinite canvas for arranging static screen ideation |
-| **Prototypes** | Interactive HTML/CSS/JS mini-apps built with AI |
-| **Design System** | Global component reference with tokens and styles |
+| Workspace         | What it does                                         |
+| ----------------- | ---------------------------------------------------- |
+| **Home**          | Project list -- see all your team's work             |
+| **Project Hub**   | Jump to canvas or prototypes for a project           |
+| **Canvas**        | Infinite canvas for arranging static screen ideation |
+| **Prototypes**    | Interactive HTML/CSS/JS mini-apps built with AI      |
+| **Design System** | Global component reference with tokens and styles    |
 
 ---
 
