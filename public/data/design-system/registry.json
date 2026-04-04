@@ -2,10 +2,13 @@
   "groups": [
     { "id": "foundations", "name": "Foundations" },
     { "id": "actions", "name": "Actions" },
+    { "id": "navigation", "name": "Navigation" },
+    { "id": "inputs", "name": "Inputs & Controls" },
     { "id": "plans", "name": "Plans" },
     { "id": "activities-events", "name": "Activities & events" },
     { "id": "social", "name": "Social & discovery" },
     { "id": "tags", "name": "Tags & filters" },
+    { "id": "feedback", "name": "Feedback & overlays" },
     { "id": "system", "name": "System" }
   ],
   "categories": [
@@ -43,6 +46,41 @@
       ]
     },
     {
+      "group": "navigation",
+      "name": "App navigation",
+      "components": [
+        { "id": "mr-navigation", "file": "mixedroutes/navigation.html", "label": "Top nav & bottom tab bar" }
+      ]
+    },
+    {
+      "group": "inputs",
+      "name": "Search",
+      "components": [
+        { "id": "mr-search", "file": "mixedroutes/search-bar.html", "label": "Search bars" }
+      ]
+    },
+    {
+      "group": "inputs",
+      "name": "Toggles",
+      "components": [
+        { "id": "mr-toggles", "file": "mixedroutes/toggles.html", "label": "Switches & settings rows" }
+      ]
+    },
+    {
+      "group": "inputs",
+      "name": "Forms",
+      "components": [
+        { "id": "mr-forms", "file": "mixedroutes/forms.html", "label": "Form fields" }
+      ]
+    },
+    {
+      "group": "inputs",
+      "name": "Stepper",
+      "components": [
+        { "id": "mr-stepper", "file": "mixedroutes/stepper.html", "label": "Multi-step flows" }
+      ]
+    },
+    {
       "group": "plans",
       "name": "Plan cards",
       "layout": "row",
@@ -75,7 +113,15 @@
       "layout": "row",
       "components": [
         { "id": "mr-recent", "file": "mixedroutes/recent-activity.html", "label": "Recent activity" },
-        { "id": "mr-social", "file": "mixedroutes/social-cards.html", "label": "Interests & groups" }
+        { "id": "mr-social", "file": "mixedroutes/social-cards.html", "label": "Interests & groups" },
+        { "id": "mr-profile", "file": "mixedroutes/profile-cards.html", "label": "Profile cards" }
+      ]
+    },
+    {
+      "group": "social",
+      "name": "Location",
+      "components": [
+        { "id": "mr-location", "file": "mixedroutes/location-cards.html", "label": "Map & location cards" }
       ]
     },
     {
@@ -86,12 +132,39 @@
       ]
     },
     {
-      "group": "system",
-      "name": "Icons & forms",
+      "group": "feedback",
+      "name": "Toasts",
+      "components": [
+        { "id": "mr-toasts", "file": "mixedroutes/toasts.html", "label": "Success, error & info" }
+      ]
+    },
+    {
+      "group": "feedback",
+      "name": "Modals & sheets",
       "layout": "row",
       "components": [
-        { "id": "mr-icons", "file": "mixedroutes/icons.html", "label": "Marketing icons" },
-        { "id": "mr-forms", "file": "mixedroutes/forms.html", "label": "Form fields" }
+        { "id": "mr-modals", "file": "mixedroutes/modals.html", "label": "Bottom sheet & dialogs" }
+      ]
+    },
+    {
+      "group": "feedback",
+      "name": "Empty states",
+      "components": [
+        { "id": "mr-empty", "file": "mixedroutes/empty-states.html", "label": "No content placeholders" }
+      ]
+    },
+    {
+      "group": "system",
+      "name": "Skeletons",
+      "components": [
+        { "id": "mr-skeletons", "file": "mixedroutes/skeletons.html", "label": "Loading placeholders" }
+      ]
+    },
+    {
+      "group": "system",
+      "name": "Icons",
+      "components": [
+        { "id": "mr-icons", "file": "mixedroutes/icons.html", "label": "Marketing icons" }
       ]
     }
   ]

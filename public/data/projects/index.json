@@ -2,9 +2,10 @@
   "projects": [
     {
       "id": "home-page",
-      "name": "Home Page",
+      "name": "Home Page Redesign",
       "description": "",
-      "createdAt": "2026-04-03T21:48:42.021Z"
+      "createdAt": "2026-04-03T21:48:42.021Z",
+      "createdBy": "Brandon"
     }
   ]
 }
