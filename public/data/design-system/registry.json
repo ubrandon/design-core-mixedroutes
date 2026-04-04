@@ -47,8 +47,8 @@
       "name": "Plan cards",
       "layout": "row",
       "components": [
-        { "id": "mr-plan-hero", "file": "mixedroutes/plan-hero-cards.html", "label": "Hero cards" },
-        { "id": "mr-plan-lists", "file": "mixedroutes/plan-carousel-rows.html", "label": "Carousel & rows" }
+        { "id": "mr-plan-hero", "file": "mixedroutes/plan-hero-cards.html", "label": "Hero & mini carousel" },
+        { "id": "mr-plan-long", "file": "mixedroutes/plan-long-rows.html", "label": "Long rows & sponsored" }
       ]
     },
     {
