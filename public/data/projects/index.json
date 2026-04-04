@@ -1,3 +1,10 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "id": "home-page",
+      "name": "Home Page",
+      "description": "",
+      "createdAt": "2026-04-03T21:48:42.021Z"
+    }
+  ]
 }

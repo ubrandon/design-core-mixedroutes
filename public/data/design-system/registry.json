@@ -1,4 +1,98 @@
 {
-  "groups": [],
-  "categories": []
+  "groups": [
+    { "id": "foundations", "name": "Foundations" },
+    { "id": "actions", "name": "Actions" },
+    { "id": "plans", "name": "Plans" },
+    { "id": "activities-events", "name": "Activities & events" },
+    { "id": "social", "name": "Social & discovery" },
+    { "id": "tags", "name": "Tags & filters" },
+    { "id": "system", "name": "System" }
+  ],
+  "categories": [
+    {
+      "group": "foundations",
+      "name": "Brand colors",
+      "layout": "row",
+      "components": [
+        { "id": "mr-colors-bg", "file": "mixedroutes/colors-backgrounds.html", "label": "Backgrounds" },
+        { "id": "mr-colors-accent", "file": "mixedroutes/colors-accents.html", "label": "Accents" },
+        { "id": "mr-colors-text", "file": "mixedroutes/colors-text.html", "label": "Text & borders" }
+      ]
+    },
+    {
+      "group": "foundations",
+      "name": "Typography",
+      "components": [
+        { "id": "mr-type", "file": "mixedroutes/typography.html", "label": "DM Sans & styles" }
+      ]
+    },
+    {
+      "group": "foundations",
+      "name": "Shape",
+      "layout": "row",
+      "components": [
+        { "id": "mr-radius", "file": "mixedroutes/shape-radius.html", "label": "Radius" },
+        { "id": "mr-shadow", "file": "mixedroutes/shape-shadows.html", "label": "Shadows" }
+      ]
+    },
+    {
+      "group": "actions",
+      "name": "Buttons",
+      "components": [
+        { "id": "mr-buttons", "file": "mixedroutes/buttons.html", "label": "Variants & sizes" }
+      ]
+    },
+    {
+      "group": "plans",
+      "name": "Plan cards",
+      "layout": "row",
+      "components": [
+        { "id": "mr-plan-hero", "file": "mixedroutes/plan-hero-cards.html", "label": "Hero cards" },
+        { "id": "mr-plan-lists", "file": "mixedroutes/plan-carousel-rows.html", "label": "Carousel & rows" }
+      ]
+    },
+    {
+      "group": "activities-events",
+      "name": "Feeds",
+      "layout": "row",
+      "components": [
+        { "id": "mr-activity-rows", "file": "mixedroutes/activity-rows.html", "label": "Activity rows" },
+        { "id": "mr-event-rows", "file": "mixedroutes/event-rows.html", "label": "Event rows" }
+      ]
+    },
+    {
+      "group": "activities-events",
+      "name": "Event cards",
+      "layout": "row",
+      "components": [
+        { "id": "mr-event-cards", "file": "mixedroutes/event-cards.html", "label": "Stacked cards" },
+        { "id": "mr-event-mini", "file": "mixedroutes/event-mini-cards.html", "label": "Mini cards" }
+      ]
+    },
+    {
+      "group": "social",
+      "name": "People",
+      "layout": "row",
+      "components": [
+        { "id": "mr-recent", "file": "mixedroutes/recent-activity.html", "label": "Recent activity" },
+        { "id": "mr-social", "file": "mixedroutes/social-cards.html", "label": "Interests & groups" }
+      ]
+    },
+    {
+      "group": "tags",
+      "name": "Labels",
+      "components": [
+        { "id": "mr-tags", "file": "mixedroutes/tags-filters.html", "label": "Chips, pills, tags" }
+      ]
+    },
+    {
+      "group": "system",
+      "name": "Icons & forms",
+      "layout": "row",
+      "components": [
+        { "id": "mr-icons", "file": "mixedroutes/icons.html", "label": "Marketing icons" },
+        { "id": "mr-forms", "file": "mixedroutes/forms.html", "label": "Form fields" }
+      ]
+    }
+  ]
 }
