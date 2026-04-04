@@ -4,54 +4,31 @@
 
 <div style="background: #12181f; font-family: var(--font-body); overflow-x: clip">
   <div class="mr-scope" style="max-width: 390px; margin: 0 auto; padding-bottom: 8px;">
-    <!-- App header -->
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 16px 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      "
-    >
-      <div style="display: flex; align-items: center; gap: 10px">
-        <div
-          style="
-            width: 36px;
-            height: 36px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-teal));
-            display: grid;
-            place-items: center;
-            font-weight: 900;
-            color: #fff;
-            font-size: 1.05rem;
-          "
-        >
-          M
-        </div>
-        <span style="font-weight: 800; font-size: 1.12rem; letter-spacing: -0.02em; color: rgba(255, 255, 255, 0.95)"
-          >MixedRoutes</span
-        >
-      </div>
-      <div style="display: flex; align-items: center; gap: 4px">
-        <button type="button" class="mr-nav-bar-action" aria-label="Notifications">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
-            <path
-              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
-            />
-          </svg>
+    <!-- App header — home: blob logo only; other screens use title left (see design system Navigation) -->
+    <header class="mr-top-nav-home">
+      <a class="mr-top-nav-home-logo" href="#" aria-label="MixedRoutes home">
+        <img
+          src="../../../design-system/mixedroutes-assets/icon-foreground.svg"
+          width="36"
+          height="36"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <div class="mr-top-nav-home-actions">
+        <button type="button" class="mr-nav-icon-btn" aria-label="Notifications">
+          <i class="ph-fill ph-bell" aria-hidden="true"></i>
         </button>
         <img
+          class="mr-top-nav-avatar"
           src="https://i.pravatar.cc/72?img=11"
           alt=""
           width="36"
           height="36"
-          style="border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.2)"
           loading="lazy"
         />
       </div>
-    </div>
+    </header>
 
     <!-- Filter chips -->
     <div style="padding: 12px 0 8px">
@@ -164,19 +141,11 @@
           <div class="plan-card-glass">
             <div class="plan-card-title">Cafe meetup</div>
             <div class="plan-card-location">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                />
-              </svg>
+              <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
               <span>Asheville NC</span>
             </div>
             <div class="plan-card-attendees" style="margin-top: 8px; font-size: 0.82rem; font-weight: 600; color: rgba(255, 255, 255, 0.85)">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true" style="opacity: 0.9">
-                <path
-                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
-                />
-              </svg>
+              <i class="ph-fill ph-users" aria-hidden="true" style="opacity: 0.9; font-size: 18px"></i>
               <span>5 friends</span>
             </div>
           </div>
@@ -187,11 +156,7 @@
           <div class="plan-card-glass">
             <div class="plan-card-title">Food truck crawl</div>
             <div class="plan-card-location">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                />
-              </svg>
+              <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
               <span>Riverfront, Asheville</span>
             </div>
             <div class="plan-card-attendees">
@@ -207,27 +172,21 @@
 
       <!-- Sponsored row -->
       <div class="mr-plan-rows" style="max-width: 100%; padding: 14px 16px 0; margin: 0">
-        <div class="mr-plan-row mr-plan-row-sponsored" style="grid-template-columns: 100px 1fr">
+        <div class="mr-plan-row mr-plan-row-sponsored">
           <div
             class="mr-plan-row-media"
-            style="width: 100px; height: 100px; background-image: url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&amp;fit=crop&amp;w=280&amp;h=280&amp;q=80)"
+            style="background-image: url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&amp;fit=crop&amp;w=280&amp;h=280&amp;q=80)"
             aria-hidden="true"
           >
-            <span class="mr-sponsored-badge">Sponsored</span>
+            <span class="mr-plan-row-badge mr-plan-row-badge--sm">Sponsored</span>
           </div>
           <div class="mr-plan-row-content">
-            <div class="mr-plan-row-top">
-              <span class="mr-plan-row-time mr-plan-row-time--accent">Today, 2 PM</span>
-            </div>
+            <div class="plan-card-mini-time">Today, 2 PM</div>
             <div class="mr-plan-row-title">Bar live music</div>
             <div class="mr-plan-row-desc" style="-webkit-line-clamp: 2">Weekend lineup at the riverfront stage.</div>
             <div class="mr-plan-row-meta">
-              <div class="mr-meta-row">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                  <path
-                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                  />
-                </svg>
+              <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
+                <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span>Asheville NC</span>
               </div>
             </div>
@@ -363,11 +322,7 @@
                 >Teams of 4, prizes nightly.</span
               >
               <div class="mr-event-mini-location">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true">
-                  <path
-                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                  />
-                </svg>
+                <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span>The Local, Asheville</span>
               </div>
             </div>
@@ -388,11 +343,7 @@
             <div class="mr-event-mini-meta">
               <span style="font-size: 0.78rem; color: rgba(255, 255, 255, 0.75); line-height: 1.35">Outdoor stage, free entry.</span>
               <div class="mr-event-mini-location">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true">
-                  <path
-                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                  />
-                </svg>
+                <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span>Pack Square</span>
               </div>
             </div>
@@ -448,11 +399,7 @@
           <div class="plan-card-glass">
             <div class="plan-card-title">Trail coffee</div>
             <div class="plan-card-location">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                />
-              </svg>
+              <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
               <span>Blue Ridge access</span>
             </div>
             <div class="plan-card-attendees">
@@ -469,11 +416,7 @@
           <div class="plan-card-glass">
             <div class="plan-card-title">Sunrise hike</div>
             <div class="plan-card-location">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                />
-              </svg>
+              <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
               <span>Craggy Pinnacle</span>
             </div>
             <div class="plan-card-attendees" style="margin-top: 8px; font-size: 0.82rem; font-weight: 600; color: rgba(255, 255, 255, 0.85)">
@@ -484,44 +427,23 @@
       </div>
     </div>
 
-    <!-- Bottom tab bar (sticky in scroll) -->
+    <!-- Bottom tab bar (sticky in scroll) — Phosphor, icon-only -->
     <div style="position: sticky; bottom: 0; z-index: 5; margin-top: 16px; padding-top: 8px; background: linear-gradient(180deg, transparent, #12181f 28%)">
-      <div class="mr-tab-bar" style="border-radius: var(--radius-lg) var(--radius-lg) 0 0; margin: 0 8px 0">
-        <button type="button" class="mr-tab-item mr-tab-active">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-          </svg>
-          <span>Schedule</span>
+      <div class="mr-tab-bar" style="margin: 0 8px 0">
+        <button type="button" class="mr-tab-item mr-tab-active" aria-label="Home">
+          <i class="ph-fill ph-house" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" />
-            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" stroke="none" />
-          </svg>
-          <span>Explore</span>
+        <button type="button" class="mr-tab-item" aria-label="Explore">
+          <i class="ph-fill ph-compass" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item mr-tab-create">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" />
-            <line x1="12" y1="8" x2="12" y2="16" />
-            <line x1="8" y1="12" x2="16" y2="12" />
-          </svg>
+        <button type="button" class="mr-tab-item mr-tab-create" aria-label="Create">
+          <i class="ph-fill ph-plus-circle" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-          <span>Profile</span>
+        <button type="button" class="mr-tab-item" aria-label="Profile">
+          <i class="ph-fill ph-user" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
-          <span>Chat</span>
+        <button type="button" class="mr-tab-item" aria-label="Messages">
+          <i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i>
         </button>
       </div>
     </div>

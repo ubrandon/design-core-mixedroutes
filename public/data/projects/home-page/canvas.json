@@ -1,3 +1,10 @@
 {
-  "screens": [{ "file": "home-feed.html", "x": 0, "y": 0, "width": 390 }]
+  "screens": [
+    {
+      "file": "home-feed.html",
+      "x": 1,
+      "y": -42,
+      "width": 390
+    }
+  ]
 }

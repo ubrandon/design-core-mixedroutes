@@ -1,6 +1,8 @@
 /* MixedRoutes — brand + component previews (scoped with .mr-scope in fragment HTML) */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..1000;1,9..40,400..1000&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css");
+@import url("https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css");
 
 :root {
   --bg-0: #010b14;
@@ -14,17 +16,28 @@
   --neon-blue-rgb: 91, 165, 255;
   --neon-teal: #20e0cf;
   --neon-teal-rgb: 32, 224, 207;
+  /* Interactive text: teal (distinct from gradient / static blue emphasis) */
+  --link: var(--neon-teal);
+  --link-hover: #5ff0e4;
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
   --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.35);
   --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Text fields + search — shared surface (matches .mr-search-bar) */
+  --mr-input-surface: rgba(255, 255, 255, 0.14);
+  --mr-input-surface-focus: rgba(255, 255, 255, 0.2);
+  --mr-input-radius: var(--radius-xl);
 }
 
 /* Design Core canvas: dark section cards so MixedRoutes previews read correctly */
 .ds-canvas-stage .ds-section {
   padding: 20px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(12, 22, 38, 0.98), rgba(6, 12, 22, 0.99));
+  background: linear-gradient(
+    180deg,
+    rgba(12, 22, 38, 0.98),
+    rgba(6, 12, 22, 0.99)
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   min-width: 280px;
@@ -57,6 +70,39 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
+/* Colors group: wide horizontal band — three previews in a row, grids flow sideways */
+.ds-canvas-stage .ds-group--colors .ds-group-row {
+  flex-wrap: nowrap;
+}
+
+.ds-canvas-stage .ds-group--colors .ds-section {
+  min-width: 1980px;
+  width: max-content;
+  padding: 12px 16px 14px;
+}
+
+.ds-canvas-stage .ds-group--colors .ds-section-header {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+}
+
+.ds-canvas-stage .ds-group--colors .ds-component-grid--fixed {
+  align-items: flex-start;
+  gap: 12px 20px;
+}
+
+.ds-canvas-stage .ds-group--colors .ds-component-item {
+  flex: 1 1 0;
+  min-width: 620px;
+  max-width: 720px;
+  gap: 4px;
+}
+
+.ds-canvas-stage .ds-group--colors .ds-component-preview {
+  padding: 0;
+  margin: 0;
+}
+
 /* --- MixedRoutes component scope (landing /design-system parity) --- */
 
 .mr-scope {
@@ -65,15 +111,54 @@
   line-height: 1.5;
 }
 
-.mr-scope .gradient-text {
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-teal));
+/*
+ * Gradient text: use background-image (not the background shorthand) so background-clip: text
+ * is not reset to border-box — otherwise the gradient paints a full-width block behind invisible glyphs.
+ */
+.mr-scope .gradient-text,
+.mr-scope .mr-text-gradient {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.mr-scope .gradient-text {
+  background-image: linear-gradient(135deg, var(--neon-blue), var(--neon-teal));
+}
+
+/*
+ * Display titles: slightly tighter fade so more teal reads on a short line.
+ * Do not add .mr-text-style-sample on the same node — its color would hide the fill.
+ */
+.mr-scope .mr-text-gradient {
+  background-image: linear-gradient(
+    135deg,
+    var(--neon-blue) 0%,
+    var(--neon-teal) 42%,
+    var(--neon-teal) 100%
+  );
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 1.35;
 }
 
 .mr-scope .accent-text {
-  color: var(--neon-blue);
+  color: var(--link);
+}
+
+.mr-scope a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--neon-teal-rgb), 0.42);
+  text-underline-offset: 3px;
+}
+
+.mr-scope a:hover {
+  color: var(--link-hover);
+  text-decoration-color: rgba(var(--neon-teal-rgb), 0.78);
 }
 
 /* Foundations: color grids */
@@ -127,6 +212,135 @@
 
 .mr-scope .mr-subsection-title:first-child {
   margin-top: 0;
+}
+
+/* Color palette: panels in one horizontal row; dense grids = more columns, fewer rows */
+.mr-scope--color-palette .mr-color-panels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0 12px;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.mr-scope--color-palette .mr-color-panel {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mr-scope--color-palette .mr-color-panel--narrow {
+  flex: 0 0 200px;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.mr-scope--color-palette .mr-subsection-title {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.15;
+}
+
+.mr-scope--color-palette .mr-color-grid {
+  grid-template-columns: repeat(auto-fill, minmax(92px, 92px));
+  justify-content: start;
+  gap: 6px 8px;
+}
+
+/* Full-width swatch band on top of each card (like original), grid tracks stay fixed */
+.mr-scope--color-palette .mr-color-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mr-scope--color-palette .mr-color-swatch {
+  width: 100%;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.mr-scope--color-palette .mr-color-swatch.mr-color-swatch-gradient {
+  width: 100%;
+  min-height: 52px;
+  height: 52px;
+}
+
+.mr-scope--color-palette .mr-color-info {
+  padding: 6px 8px 7px;
+  gap: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mr-scope--color-palette .mr-color-name {
+  font-size: 0.8rem;
+  line-height: 1.15;
+}
+
+.mr-scope--color-palette .mr-color-info code {
+  font-size: 0.65rem;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* Light mode color previews — panel reads on dark DS canvas */
+.mr-scope.mr-scope--light {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, #e2e8f0, #cbd5e1);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: rgba(15, 23, 42, 0.92);
+}
+
+.mr-scope.mr-scope--light .mr-subsection-title {
+  color: rgba(15, 23, 42, 0.55);
+}
+
+.mr-scope.mr-scope--light .mr-color-grid {
+  gap: 12px;
+}
+
+.mr-scope.mr-scope--light.mr-scope--color-palette .mr-color-grid {
+  gap: 6px 8px;
+}
+
+.mr-scope.mr-scope--light.mr-scope--color-palette {
+  padding: 8px 10px 10px;
+}
+
+.mr-scope.mr-scope--light .mr-color-card {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+.mr-scope.mr-scope--light .mr-color-swatch {
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.mr-scope.mr-scope--light.mr-scope--color-palette .mr-color-swatch {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
+}
+
+.mr-scope.mr-scope--light .mr-color-name {
+  color: rgba(15, 23, 42, 0.9);
+}
+
+.mr-scope.mr-scope--light .mr-color-info code {
+  color: rgba(15, 23, 42, 0.45);
 }
 
 /* Typography demos */
@@ -224,16 +438,133 @@
 .mr-scope .mr-text-styles {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 24px;
+  gap: 0;
+  padding: 20px;
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.mr-scope .mr-text-styles p {
+.mr-scope .mr-text-style-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mr-scope .mr-text-style-item:first-child {
+  padding-top: 0;
+}
+
+.mr-scope .mr-text-style-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.mr-scope .mr-text-style-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mr-scope .mr-text-style-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.mr-scope .mr-text-style-head code {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.mr-scope .mr-text-style-sample {
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+
+.mr-scope .mr-text-style-sample.accent-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--link);
+}
+
+.mr-scope .mr-heading-row .mr-text-gradient {
+  margin: 0;
+}
+
+/* Typography preview — main column + text styles on the right (shorter overall height) */
+.mr-scope--typography {
+  width: 100%;
+}
+
+.mr-scope--typography .mr-type-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(220px, 0.9fr);
+  gap: 24px 32px;
+  align-items: start;
+}
+
+.mr-scope--typography .mr-type-col--main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.mr-scope--typography .mr-type-col--aside {
+  min-width: 0;
+}
+
+.mr-scope--typography .mr-type-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .mr-scope--typography .mr-type-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mr-scope--typography .mr-subsection-title {
+  margin: 0;
+}
+
+.mr-scope--typography .mr-weight-list {
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mr-scope--typography .mr-weight-item {
+  padding: 12px 0 14px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+
+.mr-scope--typography .mr-weight-item span:last-child {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.mr-scope--typography .mr-weight-label {
+  flex-shrink: 0;
 }
 
 /* Buttons */
@@ -262,6 +593,13 @@
   display: block;
 }
 
+.mr-scope .btn .ph,
+.mr-scope .btn .ph-fill {
+  font-size: 18px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
 .mr-scope .btn-sm {
   padding: 12px 18px;
   font-size: 0.9rem;
@@ -272,6 +610,11 @@
   height: 16px;
 }
 
+.mr-scope .btn-sm .ph,
+.mr-scope .btn-sm .ph-fill {
+  font-size: 16px;
+}
+
 .mr-scope .btn-lg {
   padding: 18px 34px;
   font-size: 1.05rem;
@@ -280,13 +623,12 @@
 .mr-scope .btn-primary {
   background: linear-gradient(
     135deg,
-    rgba(var(--neon-blue-rgb), 0.96),
-    rgba(var(--neon-teal-rgb), 0.96)
+    color-mix(in srgb, rgb(var(--neon-blue-rgb)) 68%, #020b14),
+    color-mix(in srgb, rgb(var(--neon-teal-rgb)) 62%, #020b14)
   );
-  border-color: rgba(255, 255, 255, 0.18);
-  color: rgba(3, 8, 18, 0.92);
-  box-shadow: 0 10px 38px rgba(var(--neon-blue-rgb), 0.18),
-    0 18px 70px rgba(var(--neon-teal-rgb), 0.12);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
 }
 
 .mr-scope .btn-primary::before {
@@ -294,12 +636,17 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 0.65;
+  opacity: 0.32;
   background: radial-gradient(
-    120% 120% at 30% 20%,
-    rgba(255, 255, 255, 0.45),
-    transparent 48%
+    120% 120% at 30% 18%,
+    rgba(255, 255, 255, 0.2),
+    transparent 52%
   );
+}
+
+.mr-scope .btn-primary:hover {
+  box-shadow: 0 6px 22px rgba(var(--neon-teal-rgb), 0.32);
+  filter: brightness(1.05);
 }
 
 .mr-scope .btn-white {
@@ -316,10 +663,10 @@
 }
 
 .mr-scope .btn-secondary {
-  background: linear-gradient(135deg, #1e5a8e 0%, #0d4d5c 100%);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  background: #162433;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .mr-scope .btn-app-store {
@@ -335,6 +682,11 @@
 .mr-scope .btn-app-store svg {
   width: 20px;
   height: 20px;
+}
+
+.mr-scope .btn-app-store .ph,
+.mr-scope .btn-app-store .ph-fill {
+  font-size: 20px;
 }
 
 .mr-scope .btn-app-store-text {
@@ -362,6 +714,14 @@
   gap: 20px;
 }
 
+/* Content-sized columns — 1fr was stretching cells and leaving huge gaps between buttons */
+.mr-scope .mr-button-grid--styles,
+.mr-scope .mr-button-grid--sizes {
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 12px;
+}
+
 .mr-scope .mr-button-item {
   display: flex;
   flex-direction: column;
@@ -377,7 +737,7 @@
 .mr-scope .mr-button-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -385,6 +745,12 @@
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
   margin: 0 0 12px;
+}
+
+.mr-scope .mr-section-note code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88em;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /* Plan cards */
@@ -466,6 +832,15 @@
   opacity: 0.9;
 }
 
+.mr-scope .plan-card-location .ph,
+.mr-scope .plan-card-location .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.9;
+  display: block;
+}
+
 .mr-scope .plan-card-attendees {
   display: flex;
   align-items: center;
@@ -476,6 +851,7 @@
 .mr-scope .plan-card-attendees .attendee-avatars {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .mr-scope .attendee-avatar {
@@ -483,10 +859,11 @@
   height: 26px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.32);
-  margin-left: -8px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  margin-left: -6px;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .mr-scope .attendee-avatar:first-child {
@@ -511,11 +888,22 @@
   gap: 18px;
 }
 
-.mr-scope .mr-plan-hero-carousel-stack {
+/* Hero: long plan rows (.mr-plan-rows) + horizontal mini carousel (.mr-plan-carousel). Root: .mr-scope.mr-plan-hero-carousel-stack */
+.mr-scope.mr-plan-hero-carousel-stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 20px;
+  max-width: 100%;
+}
+
+/* Long plan rows in hero stack: use full preview width (not the 390px rail cap) */
+.mr-scope.mr-plan-hero-carousel-stack .mr-plan-rows {
+  max-width: 100%;
+}
+
+.mr-scope.mr-plan-hero-carousel-stack .mr-plan-carousel {
+  max-width: 100%;
 }
 
 .mr-scope .mr-plan-carousel-block {
@@ -534,7 +922,7 @@
   overflow-x: auto;
   padding: 6px 0 10px;
   scroll-snap-type: x mandatory;
-  max-width: min(720px, 100%);
+  max-width: min(460px, 100%);
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -544,66 +932,215 @@
   height: 0;
 }
 
+/* Mini carousel — vertical gradient card, inset thumb, gold time, text on deeper gradient bottom
+   Outer padding matches .mr-plan-row so thumb inset feels like long plan cards */
 .mr-scope .plan-card-mini {
   position: relative;
-  width: 220px;
-  height: 156px;
-  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  width: 212px;
+  min-height: 260px;
+  height: auto;
+  padding: 10px 12px 14px;
+  border-radius: 28px;
   flex: 0 0 auto;
   scroll-snap-align: start;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
+  background-clip: padding-box;
+  isolation: isolate;
+  transform: translateZ(0);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 14px 36px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.mr-scope .plan-card-mini .plan-card-mini-overlay {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 12px;
+/* Carousel minis: natural height, tight stack under location (override min-height + margin-top: auto) */
+.mr-scope .mr-plan-carousel .plan-card-mini {
+  min-height: 0;
+}
+
+.mr-scope .mr-plan-carousel .plan-card-mini-body {
+  flex: 0 0 auto;
+}
+
+.mr-scope .mr-plan-carousel .plan-card-mini-social {
+  margin-top: 6px;
+  padding-top: 0;
+}
+
+.mr-scope .mr-plan-carousel .plan-card-mini-location {
+  margin-top: 2px;
+}
+
+.mr-scope .plan-card-mini.plan-card-cafe {
+  background:
+    linear-gradient(168deg, #5f7fa3 0%, #2a3f5c 42%, #101a2a 100%), #101a2a;
+}
+
+.mr-scope .plan-card-mini.plan-card-food {
+  background:
+    linear-gradient(168deg, #a89868 0%, #4f5c38 40%, #1a2214 100%), #1a2214;
+}
+
+/* Trivia / emoji mini — warm neutral shell (pairs with .mr-plan-row--surface game night) */
+.mr-scope .plan-card-mini.plan-card-trivia {
+  background:
+    linear-gradient(168deg, #4f4c48 0%, #32302e 44%, #1c1b1a 100%), #1c1b1a;
+}
+
+.mr-scope .plan-card-mini.plan-card-hiking {
+  background:
+    linear-gradient(168deg, #c8926a 0%, #4a6588 36%, #141c2a 100%), #141c2a;
+}
+
+.mr-scope .plan-card-mini-media {
+  width: 100%;
+  height: 114px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background-color: rgba(252, 248, 238, 0.94);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.mr-scope .plan-card-mini-media.plan-card-mini-media--emoji {
+  background-image: none !important;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(0, 0, 0, 0.38) 100%
+    ),
+    rgba(28, 26, 24, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 3.75rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.mr-scope .plan-card-mini-body {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  border-radius: 0 0 22px 22px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.72) 100%
-  );
-}
-
-.mr-scope .plan-card-mini-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 4px;
+  flex: 1;
+  min-height: 0;
 }
 
 .mr-scope .plan-card-mini-time {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
+  color: #e8c96b;
 }
 
 .mr-scope .plan-card-mini-title {
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 1.06rem;
+  font-weight: 800;
   letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.96);
+  line-height: 1.18;
+  color: rgba(255, 255, 255, 0.98);
+  margin-top: 2px;
 }
 
 .mr-scope .plan-card-mini-location {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 4px;
 }
 
 .mr-scope .plan-card-mini-location svg {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
+  opacity: 0.95;
+}
+
+.mr-scope .plan-card-mini-location .ph,
+.mr-scope .plan-card-mini-location .ph-fill {
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.95;
+  display: block;
+}
+
+.mr-scope .plan-card-mini-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.mr-scope .plan-card-mini-social svg {
+  flex-shrink: 0;
+  opacity: 0.92;
+}
+
+.mr-scope .plan-card-mini-social .ph,
+.mr-scope .plan-card-mini-social .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.92;
+  display: block;
+}
+
+.mr-scope .plan-card-mini-avatar-stack {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mr-scope .plan-card-mini-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  margin-left: -6px;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.mr-scope .plan-card-mini-avatar:first-child {
+  margin-left: 0;
+}
+
+/* Same diameter as avatars; sits in the overlap stack (not a wide pill) */
+.mr-scope .plan-card-mini-avatar-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  padding: 0;
+  margin-left: -6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.14);
+  border: none;
+  box-shadow: none;
 }
 
 .mr-scope .plan-card-cafe .plan-card-bg {
@@ -618,8 +1155,20 @@
   background-image: url("https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=800&h=600&q=80");
 }
 
-.mr-scope .plan-card-hiking.plan-card-mini .plan-card-bg {
-  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&h=600&q=80");
+.mr-scope .plan-card-mini.plan-card-cafe .plan-card-mini-media {
+  background-image: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&h=320&q=80");
+}
+
+.mr-scope .plan-card-mini.plan-card-food .plan-card-mini-media {
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=320&q=80");
+}
+
+.mr-scope .plan-card-mini.plan-card-trivia .plan-card-mini-media:not(.plan-card-mini-media--emoji) {
+  background-image: url("https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=400&h=320&q=80");
+}
+
+.mr-scope .plan-card-mini.plan-card-hiking .plan-card-mini-media {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&h=320&q=80");
 }
 
 /* Type pills & plan rows */
@@ -659,19 +1208,26 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 720px;
+  max-width: 390px;
+  width: 100%;
 }
 
-/* Long plan row — horizontal thumb + content (app + marketing spec) */
+/* Long plan row — horizontal thumb + content (mobile-first ~390px rail) */
 .mr-scope .mr-plan-row {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 16px;
-  padding: 14px 16px;
+  grid-template-columns: 96px 1fr;
+  gap: 10px;
+  padding: 10px 12px 14px;
   border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  align-items: start;
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  align-items: center;
+  /* Clip gradient + children to radius — avoids 1px “sliver” of canvas/section bg on the right edge */
+  overflow: hidden;
+  background-clip: padding-box;
+  isolation: isolate;
+  transform: translateZ(0);
 }
 
 /*
@@ -684,14 +1240,18 @@
   --mr-grad-a: rgba(100, 55, 130, 0.88);
   --mr-grad-b: rgba(55, 35, 75, 0.9);
   --mr-grad-c: rgba(18, 12, 28, 0.95);
-  background: linear-gradient(
-    var(--mr-grad-angle),
-    var(--mr-grad-a) 0%,
-    var(--mr-grad-b) 46%,
-    var(--mr-grad-c) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.28);
+  /* Solid underpaint + gradient avoids hairline gaps at rounded corners (zoomed DS canvas). */
+  background:
+    linear-gradient(
+      var(--mr-grad-angle),
+      var(--mr-grad-a) 0%,
+      var(--mr-grad-b) 46%,
+      var(--mr-grad-c) 100%
+    ),
+    var(--mr-grad-c);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 4px 28px rgba(0, 0, 0, 0.28);
 }
 
 .mr-scope .mr-plan-row--photo-gradient .mr-plan-row-title {
@@ -700,20 +1260,24 @@
 
 .mr-scope .mr-plan-row--photo-gradient .mr-plan-row-desc,
 .mr-scope .mr-plan-row--photo-gradient .mr-meta-row,
-.mr-scope .mr-plan-row--photo-gradient .mr-plan-row-hosted span {
+.mr-scope .mr-plan-row--photo-gradient .mr-plan-row-when-where-item,
+.mr-scope .mr-plan-row--photo-gradient .mr-plan-row-eyebrow,
+.mr-scope .mr-plan-row--photo-gradient .mr-plan-row-hosted span,
+.mr-scope .mr-plan-row--photo-gradient .plan-card-mini-time {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .mr-scope .mr-plan-row-media {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 96px;
+  height: 96px;
   border-radius: var(--radius-lg);
   background-size: cover;
-  background-position: center;
+  background-position: top left;
   border: 1px solid rgba(255, 255, 255, 0.18);
   flex-shrink: 0;
-  align-self: center;
+  align-self: start;
+  justify-self: start;
 }
 
 /* Emoji / icon slot instead of photo thumb */
@@ -723,62 +1287,82 @@
   place-items: center;
   background: rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
   user-select: none;
 }
 
 /* Neutral matte row (e.g. emoji plans with no photo gradient) */
 .mr-scope .mr-plan-row--surface {
-  background: linear-gradient(105deg, rgba(58, 56, 52, 0.97) 0%, rgba(40, 38, 36, 0.99) 100%);
-  border-color: rgba(255, 255, 255, 0.09);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background:
+    linear-gradient(
+      105deg,
+      rgba(58, 56, 52, 0.97) 0%,
+      rgba(40, 38, 36, 0.99) 100%
+    ),
+    rgba(40, 38, 36, 0.99);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Gradient shells (design system reference page) */
 /* Burgundy → plum (pairs with warm concert thumb; distinct from orange-forward accent row) */
 .mr-scope .mr-plan-row--sunset {
-  background: linear-gradient(
-    125deg,
-    rgba(118, 32, 52, 0.82) 0%,
-    rgba(78, 28, 88, 0.78) 44%,
-    rgba(20, 10, 28, 0.94) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(
+      125deg,
+      rgba(118, 32, 52, 0.82) 0%,
+      rgba(78, 28, 88, 0.78) 44%,
+      rgba(20, 10, 28, 0.94) 100%
+    ),
+    rgba(20, 10, 28, 0.94);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 .mr-scope .mr-plan-row--earth {
-  background: linear-gradient(
-    125deg,
-    rgba(90, 55, 35, 0.65) 0%,
-    rgba(45, 32, 28, 0.75) 50%,
-    rgba(18, 16, 22, 0.9) 100%
-  );
-  border-color: rgba(255, 200, 140, 0.12);
+  background:
+    linear-gradient(
+      125deg,
+      rgba(90, 55, 35, 0.65) 0%,
+      rgba(45, 32, 28, 0.75) 50%,
+      rgba(18, 16, 22, 0.9) 100%
+    ),
+    rgba(18, 16, 22, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 200, 140, 0.12);
 }
 
 .mr-scope .mr-plan-row--neutral {
-  background: linear-gradient(
-    180deg,
-    rgba(38, 42, 52, 0.95) 0%,
-    rgba(22, 24, 32, 0.98) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(38, 42, 52, 0.95) 0%,
+      rgba(22, 24, 32, 0.98) 100%
+    ),
+    rgba(22, 24, 32, 0.98);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 /* Sponsored / featured — teal field + glow (Your plans screenshot) */
 .mr-scope .mr-plan-row-sponsored {
-  background: linear-gradient(
-    105deg,
-    rgba(32, 224, 207, 0.22) 0%,
-    rgba(15, 55, 72, 0.55) 38%,
-    rgba(6, 12, 22, 0.92) 100%
-  );
-  border: 1px solid rgba(32, 224, 207, 0.45);
+  background:
+    linear-gradient(
+      105deg,
+      rgba(32, 224, 207, 0.22) 0%,
+      rgba(15, 55, 72, 0.55) 38%,
+      rgba(6, 12, 22, 0.92) 100%
+    ),
+    rgba(6, 12, 22, 0.92);
+  border: none;
   box-shadow:
+    inset 0 0 0 1px rgba(32, 224, 207, 0.45),
     0 0 0 1px rgba(32, 224, 207, 0.15),
     0 8px 32px rgba(32, 224, 207, 0.12),
     0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.mr-scope .mr-plan-row-sponsored .plan-card-mini-time {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .mr-scope .mr-sponsored-badge {
@@ -796,20 +1380,78 @@
   border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
+/* Small pill on row thumbs — must overlay the image (same anchor as .mr-sponsored-badge) */
+.mr-scope .mr-plan-row-media > .mr-plan-row-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 1;
+  margin: 0;
+  background: rgba(6, 8, 16, 0.82);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .mr-scope .mr-plan-row-content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   min-width: 0;
+  padding-top: 1px;
 }
 
-.mr-scope .mr-plan-row-top {
+/* Match .plan-card-mini-body rhythm: time → title is tight; breathe before location/avatars */
+.mr-scope .mr-plan-row-content > .mr-plan-row-title {
+  margin-top: 1px;
+}
+
+.mr-scope .mr-plan-row-content > .mr-plan-row-meta {
+  margin-top: 6px;
+}
+
+.mr-scope .mr-plan-row-top,
+.mr-scope .mr-plan-row-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
+/* When / status line above the title (avoids duplicating time in the meta row) */
+.mr-scope .mr-plan-row-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.mr-scope .mr-plan-row-eyebrow svg {
+  flex-shrink: 0;
+  opacity: 0.88;
+}
+
+.mr-scope .mr-plan-row-eyebrow .ph,
+.mr-scope .mr-plan-row-eyebrow .ph-fill {
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.88;
+  display: block;
+}
+
+.mr-scope .mr-plan-row-eyebrow .mr-plan-row-time {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Default time label (e.g. standalone); in when/where rows, .mr-plan-row-when-where-item resets typography */
 .mr-scope .mr-plan-row-time {
   font-size: 0.68rem;
   font-weight: 800;
@@ -832,6 +1474,14 @@
   color: rgba(255, 255, 255, 0.92);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.mr-scope .mr-plan-row-badge--sm {
+  padding: 2px 7px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
 }
 
 .mr-scope .mr-badge-gold {
@@ -877,6 +1527,68 @@
   justify-content: space-between;
 }
 
+/* Same overlapping stack as mini plan cards (see .plan-card-mini-avatar-stack) */
+.mr-scope .mr-plan-row-avatar-stack {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Time | place: each row is icon + label (same pattern as plan-card-location) */
+.mr-scope .mr-plan-row-when-where-split {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.mr-scope .mr-plan-row-when-where-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.mr-scope .mr-plan-row-when-where-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.mr-scope .mr-plan-row-when-where-item .ph,
+.mr-scope .mr-plan-row-when-where-item .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.9;
+  display: block;
+}
+
+/* Single location (or meta) line when time moved to .mr-plan-row-eyebrow */
+.mr-scope .mr-plan-row-when-where-item--solo {
+  min-width: 0;
+  flex: 1;
+}
+
+.mr-scope .mr-plan-row-when-where-item .mr-plan-row-time {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+
+.mr-scope .mr-plan-row-when-where-item .mr-plan-row-time--accent {
+  color: rgb(130, 245, 210);
+  text-shadow: 0 0 20px rgba(32, 224, 207, 0.35);
+}
+
 /* “Hosted by” row (compact long card variant) */
 .mr-scope .mr-plan-row-hosted {
   display: flex;
@@ -899,10 +1611,6 @@
   font-weight: 600;
 }
 
-.mr-scope .mr-plan-row--no-desc .mr-plan-row-meta {
-  margin-top: 4px;
-}
-
 .mr-scope .mr-meta-row {
   display: flex;
   align-items: center;
@@ -918,34 +1626,13 @@
   opacity: 0.9;
 }
 
-.mr-scope .mr-avatar-stack {
-  display: flex;
-  align-items: center;
-}
-
-.mr-scope .mr-avatar-stack img {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.28);
-  margin-left: -6px;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.mr-scope .mr-avatar-stack img:first-child {
-  margin-left: 0;
-}
-
-.mr-scope .mr-avatar-count {
-  margin-left: 8px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
-  background: rgba(6, 8, 16, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.mr-scope .mr-meta-row .ph,
+.mr-scope .mr-meta-row .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.9;
+  display: block;
 }
 
 /* Activity rows */
@@ -1033,6 +1720,14 @@
   width: 16px;
   height: 16px;
   opacity: 0.85;
+}
+
+.mr-scope .mr-activity-note .ph,
+.mr-scope .mr-activity-note .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.85;
+  display: block;
 }
 
 /* Event rows */
@@ -1141,6 +1836,14 @@
   flex-shrink: 0;
 }
 
+.mr-scope .mr-event-row-location .ph,
+.mr-scope .mr-event-row-location .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: block;
+}
+
 /* Event cards (stacked list) */
 .mr-scope .mr-event-cards-list {
   display: flex;
@@ -1230,6 +1933,15 @@
   opacity: 0.9;
 }
 
+.mr-scope .event-card-location .ph,
+.mr-scope .event-card-location .ph-fill {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.9;
+  display: block;
+}
+
 /* Mini event cards */
 .mr-scope .mr-event-mini-grid {
   display: grid;
@@ -1301,6 +2013,14 @@
   width: 13px;
   height: 13px;
   flex-shrink: 0;
+}
+
+.mr-scope .mr-event-mini-location .ph,
+.mr-scope .mr-event-mini-location .ph-fill {
+  font-size: 13px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: block;
 }
 
 /* Recent activity */
@@ -1707,6 +2427,13 @@
   height: 24px;
 }
 
+.mr-scope .mr-icon-box .ph,
+.mr-scope .mr-icon-box .ph-fill {
+  font-size: 24px;
+  line-height: 1;
+  display: block;
+}
+
 /* Radius & shadow */
 .mr-scope .mr-radius-grid {
   display: grid;
@@ -1779,7 +2506,100 @@
   word-break: break-all;
 }
 
-/* Forms */
+/* Shape preview — radius | shadows side by side; radius swatches in one row */
+.mr-scope--shape {
+  width: 100%;
+}
+
+.mr-scope--shape .mr-shape-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 20px 28px;
+  align-items: start;
+}
+
+.mr-scope--shape .mr-shape-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.mr-scope--shape .mr-subsection-title {
+  margin: 0;
+}
+
+.mr-scope--shape .mr-radius-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px 12px;
+  align-items: start;
+  width: 100%;
+}
+
+.mr-scope--shape .mr-radius-item {
+  gap: 8px;
+  min-width: 0;
+}
+
+.mr-scope--shape .mr-radius-box {
+  width: 100%;
+  max-width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.mr-scope--shape .mr-radius-info span {
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+.mr-scope--shape .mr-radius-info code {
+  font-size: 0.65rem;
+}
+
+.mr-scope--shape .mr-shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+  width: 100%;
+  max-width: none;
+}
+
+.mr-scope--shape .mr-shadow-item {
+  gap: 10px;
+}
+
+.mr-scope--shape .mr-shadow-box {
+  width: 100%;
+  max-width: 160px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .mr-scope--shape .mr-shape-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mr-scope--shape .mr-radius-grid {
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  }
+
+  .mr-scope--shape .mr-radius-box {
+    max-width: 72px;
+    height: 72px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mr-scope--shape .mr-shadow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Forms — same surface language as .mr-search-bar (no outline, light fill, rounded) */
 .mr-scope .mr-form-demo {
   max-width: 420px;
   display: flex;
@@ -1787,8 +2607,9 @@
   gap: 16px;
   padding: 22px;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  box-shadow: none;
 }
 
 .mr-scope .mr-form-demo .form-group label {
@@ -1802,21 +2623,24 @@
 .mr-scope .mr-form-demo .form-group select {
   width: 100%;
   margin-top: 6px;
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(6, 8, 16, 0.5);
+  padding: 12px 16px;
+  border-radius: var(--mr-input-radius);
+  border: none;
+  background: var(--mr-input-surface);
   color: rgba(255, 255, 255, 0.92);
   font-family: inherit;
   font-size: 0.95rem;
+  box-shadow: none;
+  transition: background 0.2s;
 }
 
 .mr-scope .mr-form-demo .form-group select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-color: var(--mr-input-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.55)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
+  background-position: right 16px center;
+  padding-right: 40px;
   cursor: pointer;
 }
 
@@ -1832,18 +2656,99 @@
 
 .mr-scope .mr-form-demo .form-group input::placeholder,
 .mr-scope .mr-form-demo .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 .mr-scope .mr-form-demo .form-group input:focus,
-.mr-scope .mr-form-demo .form-group textarea:focus,
+.mr-scope .mr-form-demo .form-group textarea:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: var(--mr-input-surface-focus);
+}
+
+/* Select: keep chevron — do not use background shorthand on :focus */
 .mr-scope .mr-form-demo .form-group select:focus {
   outline: none;
-  border-color: rgba(var(--neon-blue-rgb), 0.6);
-  box-shadow: 0 0 0 3px rgba(var(--neon-blue-rgb), 0.15);
+  border: none;
+  box-shadow: none;
+  background-color: var(--mr-input-surface-focus);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.65)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
 }
 
 /* ===== NAVIGATION ===== */
+
+/* Home feed top nav — gradient logo left, white Phosphor bell + avatar, rounded top */
+.mr-scope .mr-top-nav-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 10px 16px 12px;
+  background: rgba(6, 8, 14, 0.98);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mr-scope .mr-top-nav-home-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mr-scope .mr-top-nav-home-logo img,
+.mr-scope .mr-top-nav-home-logo svg {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.mr-scope .mr-top-nav-home-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* White Phosphor icons (home + inner top nav) — matches tab bar contrast */
+.mr-scope .mr-nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.mr-scope .mr-nav-icon-btn > i {
+  font-size: 24px;
+  line-height: 1;
+  display: block;
+}
+
+.mr-scope .mr-top-nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  flex-shrink: 0;
+}
+
+/* Inner screens: title left, same white actions (no logo) */
+.mr-scope .mr-nav-bar--inner {
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  background: rgba(6, 8, 14, 0.98);
+}
+
+.mr-scope .mr-nav-bar--inner .mr-nav-bar-title {
+  text-align: left;
+  margin-right: auto;
+}
 
 /* Top nav bar */
 .mr-scope .mr-nav-bar {
@@ -1877,6 +2782,13 @@
   height: 20px;
 }
 
+.mr-scope .mr-nav-bar-back .ph,
+.mr-scope .mr-nav-bar-back .ph-fill {
+  font-size: 20px;
+  line-height: 1;
+  display: block;
+}
+
 .mr-scope .mr-nav-bar-title {
   font-size: 1.05rem;
   font-weight: 800;
@@ -1905,18 +2817,26 @@
   height: 22px;
 }
 
-/* Bottom tab bar (matches screenshot: dark glass, 5 icon tabs) */
+.mr-scope .mr-nav-bar-action .ph,
+.mr-scope .mr-nav-bar-action .ph-fill {
+  font-size: 22px;
+  line-height: 1;
+  display: block;
+}
+
+/* Bottom tab bar — Phosphor icons (regular + fill), icon-only, dark dock */
 .mr-scope .mr-tab-bar {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-around;
-  height: 64px;
-  background: rgba(8, 16, 28, 0.95);
+  min-height: 56px;
+  padding: 10px 6px 14px;
+  background: rgba(6, 8, 14, 0.96);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0 8px;
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0 0 26px 26px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.04) inset;
 }
 
 .mr-scope .mr-tab-item {
@@ -1924,38 +2844,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
   flex: 1;
-  font-size: 0.62rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.42);
   text-decoration: none;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px 0;
+  padding: 6px 4px;
   transition: color 0.2s;
 }
 
-.mr-scope .mr-tab-item svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.8;
+.mr-scope .mr-tab-item > i {
+  font-size: 26px;
+  line-height: 1;
+  display: block;
 }
 
+/* Inactive = Phosphor Regular (outline); active = Phosphor Fill on first tab */
 .mr-scope .mr-tab-item.mr-tab-active {
-  color: var(--neon-blue);
+  color: rgba(255, 255, 255, 0.96);
 }
 
 .mr-scope .mr-tab-item.mr-tab-create {
   color: rgba(255, 255, 255, 0.42);
-}
-
-.mr-scope .mr-tab-item.mr-tab-create svg {
-  width: 28px;
-  height: 28px;
 }
 
 /* ===== SEARCH BAR ===== */
@@ -1965,23 +2876,36 @@
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: border-color 0.2s, background 0.2s;
+  border-radius: var(--mr-input-radius);
+  background: var(--mr-input-surface);
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s;
 }
 
 .mr-scope .mr-search-bar:focus-within {
-  border-color: rgba(var(--neon-blue-rgb), 0.5);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 0 3px rgba(var(--neon-blue-rgb), 0.1);
+  background: var(--mr-input-surface-focus);
 }
 
 .mr-scope .mr-search-bar svg {
   width: 18px;
   height: 18px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
+}
+
+.mr-scope .mr-search-bar .ph,
+.mr-scope .mr-search-bar .ph-fill {
+  font-size: 18px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+}
+
+.mr-scope .mr-search-bar:focus-within svg,
+.mr-scope .mr-search-bar:focus-within .ph,
+.mr-scope .mr-search-bar:focus-within .ph-fill {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .mr-scope .mr-search-bar input {
@@ -1995,7 +2919,7 @@
 }
 
 .mr-scope .mr-search-bar input::placeholder {
-  color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 /* ===== TOGGLE / SWITCH ===== */
@@ -2009,7 +2933,9 @@
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0;
-  transition: background 0.25s, border-color 0.25s;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
 }
 
 .mr-scope .mr-toggle::after {
@@ -2032,6 +2958,41 @@
 
 .mr-scope .mr-toggle.mr-toggle-on::after {
   transform: translateX(20px);
+}
+
+.mr-scope .mr-toggle:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+
+/* Base .ds-toggle inside MR previews — same brand blue + dark track as .mr-toggle / stepper */
+.mr-scope .ds-toggle {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.mr-scope .ds-toggle::after {
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.mr-scope .ds-toggle.is-on {
+  background: var(--neon-blue);
+  border-color: rgba(var(--neon-blue-rgb), 0.6);
+}
+
+.mr-scope .ds-toggle:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 3px;
+  border-radius: 16px;
 }
 
 .mr-scope .mr-toggle-row {
@@ -2073,22 +3034,32 @@
   max-width: 320px;
 }
 
+/* Large outline icon; gradient stroke lives in SVG defs — no circle plate */
 .mr-scope .mr-empty-state-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  width: 88px;
+  height: 88px;
   display: grid;
   place-items: center;
-  background: rgba(var(--neon-blue-rgb), 0.1);
-  border: 1px solid rgba(var(--neon-blue-rgb), 0.2);
-  color: var(--neon-blue);
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  flex-shrink: 0;
 }
 
 .mr-scope .mr-empty-state-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 88px;
+  height: 88px;
+  display: block;
+}
+
+/* Phosphor icons — brand gradient (icon font glyph) */
+.mr-scope .mr-empty-state-icon > .ph {
+  font-size: 88px;
+  line-height: 1;
+  display: block;
+  background: linear-gradient(135deg, #5ba5ff 0%, #20e0cf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .mr-scope .mr-empty-state-title {
@@ -2134,6 +3105,13 @@
   place-items: center;
   flex-shrink: 0;
   font-size: 1rem;
+}
+
+.mr-scope .mr-toast-icon .ph,
+.mr-scope .mr-toast-icon .ph-fill {
+  font-size: 18px;
+  line-height: 1;
+  display: block;
 }
 
 .mr-scope .mr-toast-icon.mr-toast-success {
@@ -2274,7 +3252,11 @@
 .mr-scope .mr-location-map {
   width: 100%;
   height: 160px;
-  background: linear-gradient(135deg, rgba(15, 25, 40, 0.95), rgba(8, 18, 32, 0.95));
+  background: linear-gradient(
+    135deg,
+    rgba(15, 25, 40, 0.95),
+    rgba(8, 18, 32, 0.95)
+  );
   position: relative;
   overflow: hidden;
 }
@@ -2300,6 +3282,13 @@
 .mr-scope .mr-location-map-pin svg {
   width: 32px;
   height: 32px;
+}
+
+.mr-scope .mr-location-map-pin .ph,
+.mr-scope .mr-location-map-pin .ph-fill {
+  font-size: 32px;
+  line-height: 1;
+  display: block;
 }
 
 .mr-scope .mr-location-map-radius {
@@ -2342,6 +3331,15 @@
   opacity: 0.7;
 }
 
+.mr-scope .mr-location-address .ph,
+.mr-scope .mr-location-address .ph-fill {
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.7;
+  display: block;
+}
+
 .mr-scope .mr-location-distance {
   font-size: 0.78rem;
   color: var(--neon-teal);
@@ -2353,67 +3351,202 @@
 .mr-scope .mr-modal-backdrop {
   position: relative;
   width: 360px;
-  min-height: 300px;
+  min-height: 320px;
   border-radius: var(--radius-lg);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
 }
 
+.mr-scope .mr-modal-backdrop--sheet {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mr-scope .mr-modal-backdrop--sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120% 80% at 50% 100%,
+    rgba(var(--neon-blue-rgb), 0.12),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
 .mr-scope .mr-bottom-sheet {
+  position: relative;
   width: 100%;
-  background: linear-gradient(180deg, rgba(14, 20, 32, 0.98), rgba(8, 14, 24, 0.99));
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 18px max(16px, env(safe-area-inset-bottom, 16px));
+  box-shadow:
+    0 -12px 48px rgba(0, 0, 0, 0.55),
+    0 -1px 0 rgba(var(--neon-teal-rgb), 0.15);
+}
+
+.mr-scope .mr-bottom-sheet--stylized {
+  background: linear-gradient(
+    165deg,
+    rgba(18, 32, 52, 0.98) 0%,
+    rgba(4, 10, 22, 0.99) 45%,
+    rgba(2, 8, 18, 1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: none;
-  padding: 12px 20px 24px;
-  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.mr-scope .mr-bottom-sheet-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 120%;
+  height: 70%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    rgba(var(--neon-blue-rgb), 0.22),
+    rgba(var(--neon-teal-rgb), 0.08) 42%,
+    transparent 68%
+  );
+  pointer-events: none;
 }
 
 .mr-scope .mr-bottom-sheet-handle {
-  width: 36px;
-  height: 4px;
+  position: relative;
+  width: 40px;
+  height: 5px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.15);
-  margin: 0 auto 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0.12)
+  );
+  margin: 6px auto 18px;
 }
 
-.mr-scope .mr-bottom-sheet-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
+.mr-scope .mr-bottom-sheet--stylized .mr-bottom-sheet-title {
+  position: relative;
+  margin: 0 8px 8px;
+  text-align: center;
+}
+
+.mr-scope .mr-bottom-sheet--stylized .mr-bottom-sheet-title .mr-text-gradient {
+  display: inline;
 }
 
 .mr-scope .mr-bottom-sheet-desc {
+  position: relative;
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin: 0 4px 22px;
+  text-align: center;
 }
 
 .mr-scope .mr-bottom-sheet-actions {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .mr-scope .mr-bottom-sheet-actions .btn {
   width: 100%;
 }
 
-/* Dialog (centered alert) */
+.mr-scope .mr-bottom-sheet-cancel {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+  font-weight: 650;
+}
+
+.mr-scope .mr-bottom-sheet-cancel::before {
+  display: none;
+}
+
+/* Centered alert (UIAlertController-style) */
 .mr-scope .mr-dialog {
-  width: 300px;
-  padding: 28px 24px 24px;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(14, 20, 32, 0.98), rgba(8, 14, 24, 0.99));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  width: 274px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
   text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.mr-scope .mr-dialog--ios {
+  background: rgba(44, 46, 50, 0.97);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.mr-scope .mr-dialog-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0;
+  padding: 20px 16px 8px;
+  letter-spacing: -0.02em;
+}
+
+.mr-scope .mr-dialog--ios .mr-dialog-title {
+  padding-bottom: 6px;
+}
+
+.mr-scope .mr-dialog-body {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.45;
+  margin: 0;
+  padding: 0 16px 18px;
+}
+
+.mr-scope .mr-ios-alert-footer {
+  display: flex;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.mr-scope .mr-ios-alert-footer--single {
+  flex-direction: column;
+}
+
+.mr-scope .mr-ios-alert-btn {
+  flex: 1;
+  min-height: 44px;
+  padding: 12px 8px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: rgb(var(--neon-blue-rgb));
+  font-family: inherit;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  cursor: default;
+}
+
+.mr-scope
+  .mr-ios-alert-footer:not(.mr-ios-alert-footer--single)
+  .mr-ios-alert-btn
+  + .mr-ios-alert-btn {
+  border-left: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.mr-scope .mr-ios-alert-btn--destructive {
+  color: #ff453a;
+  font-weight: 600;
+}
+
+.mr-scope .mr-ios-alert-btn--primary {
+  flex: none;
+  width: 100%;
+  font-weight: 600;
 }
 
 .mr-scope .mr-dialog-icon {
@@ -2436,20 +3569,6 @@
   background: rgba(22, 163, 74, 0.15);
   border: 1px solid rgba(22, 163, 74, 0.3);
   color: rgb(120, 255, 180);
-}
-
-.mr-scope .mr-dialog-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 8px;
-}
-
-.mr-scope .mr-dialog-body {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.55;
-  margin-bottom: 24px;
 }
 
 .mr-scope .mr-dialog-actions {
@@ -2529,7 +3648,11 @@
 }
 
 .mr-scope .mr-step-line.mr-step-line-active {
-  background: linear-gradient(90deg, var(--neon-blue), rgba(var(--neon-blue-rgb), 0.3));
+  background: linear-gradient(
+    90deg,
+    var(--neon-blue),
+    rgba(var(--neon-blue-rgb), 0.3)
+  );
 }
 
 .mr-scope .mr-step-line.mr-step-line-complete {
@@ -2539,12 +3662,21 @@
 /* ===== SKELETON LOADERS ===== */
 
 @keyframes mr-shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .mr-scope .mr-skeleton {
-  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
   background-size: 200% 100%;
   animation: mr-shimmer 1.5s ease-in-out infinite;
   border-radius: var(--radius-sm);

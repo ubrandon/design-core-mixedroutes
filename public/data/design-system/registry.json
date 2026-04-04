@@ -1,8 +1,8 @@
 {
   "groups": [
+    { "id": "colors", "name": "Colors" },
     { "id": "foundations", "name": "Foundations" },
-    { "id": "actions", "name": "Actions" },
-    { "id": "navigation", "name": "Navigation" },
+    { "id": "actions", "name": "Actions & navigation" },
     { "id": "inputs", "name": "Inputs & Controls" },
     { "id": "plans", "name": "Plans" },
     { "id": "activities-events", "name": "Activities & events" },
@@ -13,80 +13,124 @@
   ],
   "categories": [
     {
-      "group": "foundations",
-      "name": "Brand colors",
+      "group": "colors",
+      "name": "Palette",
       "layout": "row",
       "components": [
-        { "id": "mr-colors-bg", "file": "mixedroutes/colors-backgrounds.html", "label": "Backgrounds" },
-        { "id": "mr-colors-accent", "file": "mixedroutes/colors-accents.html", "label": "Accents" },
-        { "id": "mr-colors-text", "file": "mixedroutes/colors-text.html", "label": "Text & borders" }
+        {
+          "id": "mr-colors-dark",
+          "file": "mixedroutes/colors-dark-theme.html",
+          "label": "Dark theme"
+        },
+        {
+          "id": "mr-colors-light",
+          "file": "mixedroutes/colors-light-theme.html",
+          "label": "Light theme"
+        },
+        {
+          "id": "mr-colors-brand",
+          "file": "mixedroutes/colors-brand-feedback.html",
+          "label": "Brand & feedback"
+        }
       ]
     },
     {
       "group": "foundations",
       "name": "Typography",
       "components": [
-        { "id": "mr-type", "file": "mixedroutes/typography.html", "label": "DM Sans & styles" }
+        {
+          "id": "mr-type",
+          "file": "mixedroutes/typography.html",
+          "label": "DM Sans & styles"
+        }
       ]
     },
     {
       "group": "foundations",
       "name": "Shape",
-      "layout": "row",
       "components": [
-        { "id": "mr-radius", "file": "mixedroutes/shape-radius.html", "label": "Radius" },
-        { "id": "mr-shadow", "file": "mixedroutes/shape-shadows.html", "label": "Shadows" }
+        {
+          "id": "mr-shape",
+          "file": "mixedroutes/shape.html",
+          "label": "Radius & shadows"
+        }
       ]
     },
     {
       "group": "actions",
       "name": "Buttons",
       "components": [
-        { "id": "mr-buttons", "file": "mixedroutes/buttons.html", "label": "Variants & sizes" }
+        {
+          "id": "mr-buttons",
+          "file": "mixedroutes/buttons.html",
+          "label": "Styles, sizes & stores"
+        }
       ]
     },
     {
-      "group": "navigation",
+      "group": "actions",
       "name": "App navigation",
       "components": [
-        { "id": "mr-navigation", "file": "mixedroutes/navigation.html", "label": "Top nav & bottom tab bar" }
+        {
+          "id": "mr-navigation",
+          "file": "mixedroutes/navigation.html",
+          "label": "Top nav & bottom tab bar"
+        }
       ]
     },
     {
       "group": "inputs",
       "name": "Search",
       "components": [
-        { "id": "mr-search", "file": "mixedroutes/search-bar.html", "label": "Search bars" }
+        {
+          "id": "mr-search",
+          "file": "mixedroutes/search-bar.html",
+          "label": "Search bars"
+        }
       ]
     },
     {
       "group": "inputs",
       "name": "Toggles",
       "components": [
-        { "id": "mr-toggles", "file": "mixedroutes/toggles.html", "label": "Switches & settings rows" }
+        {
+          "id": "mr-toggles",
+          "file": "mixedroutes/toggles.html",
+          "label": "Switches & settings rows"
+        }
       ]
     },
     {
       "group": "inputs",
       "name": "Forms",
       "components": [
-        { "id": "mr-forms", "file": "mixedroutes/forms.html", "label": "Form fields" }
+        {
+          "id": "mr-forms",
+          "file": "mixedroutes/forms.html",
+          "label": "Form fields"
+        }
       ]
     },
     {
       "group": "inputs",
       "name": "Stepper",
       "components": [
-        { "id": "mr-stepper", "file": "mixedroutes/stepper.html", "label": "Multi-step flows" }
+        {
+          "id": "mr-stepper",
+          "file": "mixedroutes/stepper.html",
+          "label": "Multi-step flows"
+        }
       ]
     },
     {
       "group": "plans",
       "name": "Plan cards",
-      "layout": "row",
       "components": [
-        { "id": "mr-plan-hero", "file": "mixedroutes/plan-hero-cards.html", "label": "Hero & mini carousel" },
-        { "id": "mr-plan-long", "file": "mixedroutes/plan-long-rows.html", "label": "Long rows & sponsored" }
+        {
+          "id": "mr-plan-hero",
+          "file": "mixedroutes/plan-hero-cards.html",
+          "label": "Long rows, mini carousel & variants"
+        }
       ]
     },
     {
@@ -94,8 +138,16 @@
       "name": "Feeds",
       "layout": "row",
       "components": [
-        { "id": "mr-activity-rows", "file": "mixedroutes/activity-rows.html", "label": "Activity rows" },
-        { "id": "mr-event-rows", "file": "mixedroutes/event-rows.html", "label": "Event rows" }
+        {
+          "id": "mr-activity-rows",
+          "file": "mixedroutes/activity-rows.html",
+          "label": "Activity rows"
+        },
+        {
+          "id": "mr-event-rows",
+          "file": "mixedroutes/event-rows.html",
+          "label": "Event rows"
+        }
       ]
     },
     {
@@ -103,8 +155,16 @@
       "name": "Event cards",
       "layout": "row",
       "components": [
-        { "id": "mr-event-cards", "file": "mixedroutes/event-cards.html", "label": "Stacked cards" },
-        { "id": "mr-event-mini", "file": "mixedroutes/event-mini-cards.html", "label": "Mini cards" }
+        {
+          "id": "mr-event-cards",
+          "file": "mixedroutes/event-cards.html",
+          "label": "Stacked cards"
+        },
+        {
+          "id": "mr-event-mini",
+          "file": "mixedroutes/event-mini-cards.html",
+          "label": "Mini cards"
+        }
       ]
     },
     {
@@ -112,30 +172,96 @@
       "name": "People",
       "layout": "row",
       "components": [
-        { "id": "mr-recent", "file": "mixedroutes/recent-activity.html", "label": "Recent activity" },
-        { "id": "mr-social", "file": "mixedroutes/social-cards.html", "label": "Interests & groups" },
-        { "id": "mr-profile", "file": "mixedroutes/profile-cards.html", "label": "Profile cards" }
+        {
+          "id": "mr-recent",
+          "file": "mixedroutes/recent-activity.html",
+          "label": "Recent activity"
+        },
+        {
+          "id": "mr-social",
+          "file": "mixedroutes/social-cards.html",
+          "label": "Interests & groups"
+        },
+        {
+          "id": "mr-profile",
+          "file": "mixedroutes/profile-cards.html",
+          "label": "Profile cards"
+        },
+        {
+          "id": "mr-avatar-stack",
+          "file": "mixedroutes/avatar-stack.html",
+          "label": "Avatar stacks"
+        }
       ]
     },
     {
       "group": "social",
       "name": "Location",
       "components": [
-        { "id": "mr-location", "file": "mixedroutes/location-cards.html", "label": "Map & location cards" }
+        {
+          "id": "mr-location",
+          "file": "mixedroutes/location-cards.html",
+          "label": "Map & location cards"
+        }
       ]
     },
     {
       "group": "tags",
-      "name": "Labels",
+      "name": "Content types",
+      "layout": "row",
       "components": [
-        { "id": "mr-tags", "file": "mixedroutes/tags-filters.html", "label": "Chips, pills, tags" }
+        {
+          "id": "mr-tags-content-types",
+          "file": "mixedroutes/tags-content-types.html",
+          "label": "Plan, activity, event, place"
+        }
+      ]
+    },
+    {
+      "group": "tags",
+      "name": "Filter chips",
+      "layout": "row",
+      "components": [
+        {
+          "id": "mr-tags-filters",
+          "file": "mixedroutes/tags-filters-chips.html",
+          "label": "Topics & time"
+        }
+      ]
+    },
+    {
+      "group": "tags",
+      "name": "Status tags",
+      "layout": "row",
+      "components": [
+        {
+          "id": "mr-tags-status",
+          "file": "mixedroutes/tags-status.html",
+          "label": "Counts & states"
+        }
+      ]
+    },
+    {
+      "group": "tags",
+      "name": "On cards & heroes",
+      "layout": "row",
+      "components": [
+        {
+          "id": "mr-tags-on-cards",
+          "file": "mixedroutes/tags-on-cards.html",
+          "label": "Row badges, event pills, hero tags"
+        }
       ]
     },
     {
       "group": "feedback",
       "name": "Toasts",
       "components": [
-        { "id": "mr-toasts", "file": "mixedroutes/toasts.html", "label": "Success, error & info" }
+        {
+          "id": "mr-toasts",
+          "file": "mixedroutes/toasts.html",
+          "label": "Success, error & info"
+        }
       ]
     },
     {
@@ -143,28 +269,44 @@
       "name": "Modals & sheets",
       "layout": "row",
       "components": [
-        { "id": "mr-modals", "file": "mixedroutes/modals.html", "label": "Bottom sheet & dialogs" }
+        {
+          "id": "mr-modals",
+          "file": "mixedroutes/modals.html",
+          "label": "Bottom sheet & dialogs"
+        }
       ]
     },
     {
       "group": "feedback",
       "name": "Empty states",
       "components": [
-        { "id": "mr-empty", "file": "mixedroutes/empty-states.html", "label": "No content placeholders" }
+        {
+          "id": "mr-empty",
+          "file": "mixedroutes/empty-states.html",
+          "label": "No content placeholders"
+        }
       ]
     },
     {
       "group": "system",
       "name": "Skeletons",
       "components": [
-        { "id": "mr-skeletons", "file": "mixedroutes/skeletons.html", "label": "Loading placeholders" }
+        {
+          "id": "mr-skeletons",
+          "file": "mixedroutes/skeletons.html",
+          "label": "Loading placeholders"
+        }
       ]
     },
     {
       "group": "system",
       "name": "Icons",
       "components": [
-        { "id": "mr-icons", "file": "mixedroutes/icons.html", "label": "Marketing icons" }
+        {
+          "id": "mr-icons",
+          "file": "mixedroutes/icons.html",
+          "label": "Marketing icons"
+        }
       ]
     }
   ]
