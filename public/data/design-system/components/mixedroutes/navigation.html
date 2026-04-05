@@ -21,53 +21,54 @@
     </header>
   </div>
 
-  <p class="mr-subsection-title">Top nav — inner screen (title left, same actions)</p>
+  <p class="mr-subsection-title">Top nav — inner (Material / Android top app bar, Phosphor)</p>
   <div style="display:flex;flex-direction:column;gap:14px;max-width:390px;">
     <div class="mr-nav-bar mr-nav-bar--inner">
-      <button type="button" class="mr-nav-bar-back">
-        <i class="ph-fill ph-caret-left" aria-hidden="true"></i>
-        Back
+      <button type="button" class="mr-nav-bar-back" aria-label="Back">
+        <i class="ph ph-arrow-left" aria-hidden="true"></i>
       </button>
       <span class="mr-nav-bar-title">Your Plans</span>
-      <button type="button" class="mr-nav-bar-action">
-        <i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i>
+      <button type="button" class="mr-nav-bar-action" aria-label="Search">
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
       </button>
     </div>
     <div class="mr-nav-bar mr-nav-bar--inner">
-      <span class="mr-nav-bar-title" style="flex:1;">Explore</span>
-      <div class="mr-top-nav-home-actions" style="gap:12px;">
+      <span class="mr-nav-bar-title" style="flex: 1; min-width: 0">Explore</span>
+      <div class="mr-nav-bar-tools">
         <button type="button" class="mr-nav-icon-btn" aria-label="Notifications">
-          <i class="ph-fill ph-bell" aria-hidden="true"></i>
+          <i class="ph ph-bell" aria-hidden="true"></i>
         </button>
-        <img
-          class="mr-top-nav-avatar"
-          src="https://i.pravatar.cc/72?img=11"
-          alt=""
-          width="36"
-          height="36"
-          loading="lazy"
-        />
+        <button type="button" class="mr-nav-bar-avatar-btn" aria-label="Account">
+          <img
+            class="mr-top-nav-avatar"
+            src="https://i.pravatar.cc/72?img=11"
+            alt=""
+            width="40"
+            height="40"
+            loading="lazy"
+          />
+        </button>
       </div>
     </div>
   </div>
 
-  <p class="mr-subsection-title">Bottom tab bar (Phosphor — icon only)</p>
+  <p class="mr-subsection-title">Bottom tab bar (Phosphor — active filled, inactive outlined)</p>
   <div style="max-width:390px;">
     <div class="mr-tab-bar">
       <button type="button" class="mr-tab-item mr-tab-active" aria-label="Home">
         <i class="ph-fill ph-house" aria-hidden="true"></i>
       </button>
       <button type="button" class="mr-tab-item" aria-label="Explore">
-        <i class="ph-fill ph-compass" aria-hidden="true"></i>
+        <i class="ph ph-compass" aria-hidden="true"></i>
       </button>
       <button type="button" class="mr-tab-item mr-tab-create" aria-label="Create">
-        <i class="ph-fill ph-plus-circle" aria-hidden="true"></i>
+        <i class="ph ph-plus-circle" aria-hidden="true"></i>
       </button>
       <button type="button" class="mr-tab-item" aria-label="Profile">
-        <i class="ph-fill ph-user" aria-hidden="true"></i>
+        <i class="ph ph-user" aria-hidden="true"></i>
       </button>
       <button type="button" class="mr-tab-item" aria-label="Messages">
-        <i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i>
+        <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
       </button>
     </div>
   </div>

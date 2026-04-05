@@ -2,8 +2,8 @@
   "screens": [
     {
       "file": "home-feed.html",
-      "x": 1,
-      "y": -42,
+      "x": -18,
+      "y": -50,
       "width": 390
     }
   ]

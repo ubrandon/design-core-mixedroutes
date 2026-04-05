@@ -4,8 +4,8 @@
     { "id": "foundations", "name": "Foundations" },
     { "id": "actions", "name": "Actions & navigation" },
     { "id": "inputs", "name": "Inputs & Controls" },
-    { "id": "plans", "name": "Plans" },
-    { "id": "activities-events", "name": "Activities & events" },
+    { "id": "plans-events", "name": "Plans and events" },
+    { "id": "activities-events", "name": "Activities" },
     { "id": "social", "name": "Social & discovery" },
     { "id": "tags", "name": "Tags & filters" },
     { "id": "feedback", "name": "Feedback & overlays" },
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "group": "plans",
+      "group": "plans-events",
       "name": "Plan cards",
       "components": [
         {
@@ -134,24 +134,7 @@
       ]
     },
     {
-      "group": "activities-events",
-      "name": "Feeds",
-      "layout": "row",
-      "components": [
-        {
-          "id": "mr-activity-rows",
-          "file": "mixedroutes/activity-rows.html",
-          "label": "Activity rows"
-        },
-        {
-          "id": "mr-event-rows",
-          "file": "mixedroutes/event-rows.html",
-          "label": "Event rows"
-        }
-      ]
-    },
-    {
-      "group": "activities-events",
+      "group": "plans-events",
       "name": "Event cards",
       "layout": "row",
       "components": [
@@ -164,6 +147,17 @@
           "id": "mr-event-mini",
           "file": "mixedroutes/event-mini-cards.html",
           "label": "Mini cards"
+        }
+      ]
+    },
+    {
+      "group": "activities-events",
+      "name": "Feeds",
+      "components": [
+        {
+          "id": "mr-activity-rows",
+          "file": "mixedroutes/activity-rows.html",
+          "label": "Activity feed"
         }
       ]
     },
