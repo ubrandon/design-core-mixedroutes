@@ -1163,7 +1163,9 @@
   background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=320&q=80");
 }
 
-.mr-scope .plan-card-mini.plan-card-trivia .plan-card-mini-media:not(.plan-card-mini-media--emoji) {
+.mr-scope
+  .plan-card-mini.plan-card-trivia
+  .plan-card-mini-media:not(.plan-card-mini-media--emoji) {
   background-image: url("https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=400&h=320&q=80");
 }
 
@@ -1965,8 +1967,10 @@
   place-items: center;
   font-size: 0.65rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  background: var(--neon-teal);
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+  /* Same teal as .mr-location-distance / “Live now”, darkened for white type */
+  background: color-mix(in srgb, rgb(var(--neon-teal-rgb)) 62%, #020b14);
   border: 2px solid var(--bg-0);
 }
 
@@ -1992,7 +1996,7 @@
 .mr-scope .mr-recent-status {
   font-size: 0.65rem;
   font-weight: 700;
-  color: rgb(120, 255, 200);
+  color: var(--neon-teal);
 }
 
 /* Interests, groups, friends */
@@ -3246,56 +3250,33 @@
 
 .mr-scope .mr-location-map {
   width: 100%;
-  height: 160px;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 25, 40, 0.95),
-    rgba(8, 18, 32, 0.95)
-  );
+  height: 136px;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
-.mr-scope .mr-location-map-grid {
+/* Venue photos (Unsplash — swap url() per modifier; light overlay keeps text area readable) */
+.mr-scope .mr-location-map-bg {
   position: absolute;
   inset: 0;
+  background-color: #3a4250;
+  background-size: cover;
+  background-position: center;
+}
+
+.mr-scope .mr-location-map--rock-gym .mr-location-map-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+    linear-gradient(180deg, rgba(1, 11, 20, 0.18), rgba(1, 11, 20, 0.32)),
+    url("https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1600&q=80");
+  background-position: center 35%;
 }
 
-.mr-scope .mr-location-map-pin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  color: var(--neon-blue);
-  filter: drop-shadow(0 4px 12px rgba(var(--neon-blue-rgb), 0.4));
-}
-
-.mr-scope .mr-location-map-pin svg {
-  width: 32px;
-  height: 32px;
-}
-
-.mr-scope .mr-location-map-pin .ph,
-.mr-scope .mr-location-map-pin .ph-fill {
-  font-size: 32px;
-  line-height: 1;
-  display: block;
-}
-
-.mr-scope .mr-location-map-radius {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(var(--neon-blue-rgb), 0.08);
-  border: 1px solid rgba(var(--neon-blue-rgb), 0.2);
+.mr-scope .mr-location-map--cafe .mr-location-map-bg {
+  background-image:
+    linear-gradient(180deg, rgba(1, 11, 20, 0.14), rgba(1, 11, 20, 0.28)),
+    url("https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80");
+  background-position: center;
 }
 
 .mr-scope .mr-location-info {

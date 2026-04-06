@@ -4,8 +4,7 @@
     { "id": "foundations", "name": "Foundations" },
     { "id": "actions", "name": "Actions & navigation" },
     { "id": "inputs", "name": "Inputs & Controls" },
-    { "id": "plans-events", "name": "Plans and events" },
-    { "id": "activities-events", "name": "Activities" },
+    { "id": "all-cards", "name": "All card types" },
     { "id": "social", "name": "Social & discovery" },
     { "id": "tags", "name": "Tags & filters" },
     { "id": "feedback", "name": "Feedback & overlays" },
@@ -123,7 +122,7 @@
       ]
     },
     {
-      "group": "plans-events",
+      "group": "all-cards",
       "name": "Plan cards",
       "components": [
         {
@@ -134,7 +133,7 @@
       ]
     },
     {
-      "group": "plans-events",
+      "group": "all-cards",
       "name": "Event cards",
       "layout": "row",
       "components": [
@@ -151,13 +150,24 @@
       ]
     },
     {
-      "group": "activities-events",
+      "group": "all-cards",
       "name": "Feeds",
       "components": [
         {
           "id": "mr-activity-rows",
           "file": "mixedroutes/activity-rows.html",
           "label": "Activity feed"
+        }
+      ]
+    },
+    {
+      "group": "all-cards",
+      "name": "Location",
+      "components": [
+        {
+          "id": "mr-location",
+          "file": "mixedroutes/location-cards.html",
+          "label": "Map & location cards"
         }
       ]
     },
@@ -185,17 +195,6 @@
           "id": "mr-avatar-stack",
           "file": "mixedroutes/avatar-stack.html",
           "label": "Avatar stacks"
-        }
-      ]
-    },
-    {
-      "group": "social",
-      "name": "Location",
-      "components": [
-        {
-          "id": "mr-location",
-          "file": "mixedroutes/location-cards.html",
-          "label": "Map & location cards"
         }
       ]
     },
