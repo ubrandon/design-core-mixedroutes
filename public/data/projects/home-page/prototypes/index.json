@@ -1,3 +1,10 @@
 {
-  "prototypes": []
+  "prototypes": [
+    {
+      "id": "home-sample",
+      "name": "Home Sample",
+      "description": "",
+      "device": "mobile"
+    }
+  ]
 }
