@@ -75,20 +75,29 @@
 
       <div style="font-size: 0.7rem; font-weight: 800; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase; padding: 0 4px 8px">Notifications</div>
       <div style="border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); overflow: hidden; margin-bottom: 22px">
-        <div style="display: flex; align-items: center; padding: 12px 14px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06)">
-          <i class="ph-fill ph-bell" style="font-size: 18px; color: rgba(255,255,255,0.55)"></i>
-          <span style="flex: 1; font-size: 0.9rem; font-weight: 700; color: var(--text)">All</span>
-          <span style="width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg,#6dd5ed,#2193b0); display: flex; align-items: center; justify-content: center"><i class="ph-fill ph-check" style="font-size: 10px; color: #06080e"></i></span>
+        <div style="display: flex; align-items: flex-start; padding: 12px 14px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06)">
+          <i class="ph-fill ph-bell" style="font-size: 18px; color: rgba(255,255,255,0.55); margin-top: 2px"></i>
+          <div style="flex: 1; min-width: 0">
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--text)">All</div>
+            <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px; line-height: 1.4">Push for every new message, plan, and reply</div>
+          </div>
+          <span style="width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg,#6dd5ed,#2193b0); display: flex; align-items: center; justify-content: center; margin-top: 2px"><i class="ph-fill ph-check" style="font-size: 10px; color: #06080e"></i></span>
         </div>
-        <div style="display: flex; align-items: center; padding: 12px 14px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06)">
-          <i class="ph ph-at" style="font-size: 18px; color: rgba(255,255,255,0.55)"></i>
-          <span style="flex: 1; font-size: 0.9rem; font-weight: 700; color: var(--text)">Mentions only</span>
-          <span style="width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.25)"></span>
+        <div style="display: flex; align-items: flex-start; padding: 12px 14px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06)">
+          <i class="ph ph-at" style="font-size: 18px; color: rgba(255,255,255,0.55); margin-top: 2px"></i>
+          <div style="flex: 1; min-width: 0">
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--text)">Mentions only</div>
+            <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px; line-height: 1.4">Only when someone @mentions you or replies to your message</div>
+          </div>
+          <span style="width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.25); margin-top: 2px"></span>
         </div>
-        <div style="display: flex; align-items: center; padding: 12px 14px; gap: 12px">
-          <i class="ph ph-bell-slash" style="font-size: 18px; color: rgba(255,255,255,0.55)"></i>
-          <span style="flex: 1; font-size: 0.9rem; font-weight: 700; color: var(--text)">Off</span>
-          <span style="width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.25)"></span>
+        <div style="display: flex; align-items: flex-start; padding: 12px 14px; gap: 12px">
+          <i class="ph ph-bell-slash" style="font-size: 18px; color: rgba(255,255,255,0.55); margin-top: 2px"></i>
+          <div style="flex: 1; min-width: 0">
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--text)">Off</div>
+            <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px; line-height: 1.4">No push. New activity shows a badge in the group list</div>
+          </div>
+          <span style="width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.25); margin-top: 2px"></span>
         </div>
       </div>
 

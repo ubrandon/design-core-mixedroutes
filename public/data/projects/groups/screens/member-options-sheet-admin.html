@@ -19,11 +19,12 @@
         <div style="flex: 1; min-width: 0">
           <div style="display: flex; align-items: center; gap: 8px">
             <div style="font-size: 1.05rem; font-weight: 800; color: var(--text)">Sarah Kim</div>
-            <span style="display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.65rem; font-weight: 800; color: rgba(255,255,255,0.7); letter-spacing: 0.04em; text-transform: uppercase">
-              Member
+            <span style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: rgba(232, 201, 107, 0.14); border: 1px solid rgba(232, 201, 107, 0.35); font-size: 0.65rem; font-weight: 800; color: #e8c96b; letter-spacing: 0.04em; text-transform: uppercase">
+              <i class="ph-fill ph-shield-check" style="font-size: 10px"></i>
+              Admin
             </span>
           </div>
-          <div style="font-size: 0.78rem; color: rgba(255,255,255,0.5)">@sarahk · Member since Mar 14</div>
+          <div style="font-size: 0.78rem; color: rgba(255,255,255,0.5)">@sarahk · Admin since Mar 18</div>
         </div>
       </div>
 
@@ -40,10 +41,18 @@
       <div style="height: 1px; background: rgba(255,255,255,0.06); margin: 6px 0"></div>
 
       <button type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; background: transparent; border: 0; padding: 14px 8px; color: var(--text); text-align: left">
-        <i class="ph ph-shield-check" style="font-size: 22px; color: #e8c96b"></i>
+        <i class="ph ph-shield-slash" style="font-size: 22px; color: rgba(255,255,255,0.7)"></i>
         <div style="flex: 1">
-          <div style="font-size: 0.98rem; font-weight: 700">Make admin</div>
-          <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5)">Can edit info, invite, and remove members</div>
+          <div style="font-size: 0.98rem; font-weight: 700">Remove admin</div>
+          <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5)">Stays in the group as a regular member</div>
+        </div>
+      </button>
+
+      <button type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; background: transparent; border: 0; padding: 14px 8px; color: var(--text); text-align: left">
+        <i class="ph ph-crown-simple" style="font-size: 22px; color: #e8c96b"></i>
+        <div style="flex: 1">
+          <div style="font-size: 0.98rem; font-weight: 700">Transfer ownership</div>
+          <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5)">Make Sarah the group creator</div>
         </div>
       </button>
 
@@ -58,4 +67,5 @@
         Cancel
       </button>
     </div>
+  </div>
 </div>

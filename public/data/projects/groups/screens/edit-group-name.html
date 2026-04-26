@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<div style="background: var(--bg-0); overflow-x: clip; min-height: 100vh">
+  <div class="mr-scope" style="padding-bottom: 32px">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 18px 16px 8px">
+      <button type="button" style="background: transparent; border: 0; color: var(--text); font-size: 0.95rem; font-weight: 700; padding: 6px">
+        Cancel
+      </button>
+      <span style="font-size: 0.95rem; font-weight: 800; color: var(--text)">Group name</span>
+      <button type="button" class="accent-text" style="background: transparent; border: 0; font-size: 0.95rem; font-weight: 800; padding: 6px">
+        Save
+      </button>
+    </header>
+
+    <div style="padding: 18px 16px 0">
+      <label style="display: block; font-size: 0.78rem; font-weight: 800; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px">Name</label>
+      <div
+        style="
+          padding: 14px 16px;
+          border-radius: var(--mr-input-radius);
+          background: var(--mr-input-surface);
+          margin-bottom: 6px;
+          border: 1.5px solid rgba(109, 213, 237, 0.5);
+        "
+      >
+        <input
+          type="text"
+          value="Hiking Crew"
+          maxlength="40"
+          style="width: 100%; background: transparent; border: 0; color: var(--text); font-size: 1rem; outline: none"
+        />
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-bottom: 22px">
+        <span>Visible to anyone in the group</span>
+        <span>11 / 40</span>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 12px 14px;
+          border-radius: 14px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.06);
+        "
+      >
+        <i class="ph ph-info" style="font-size: 16px; color: rgba(255,255,255,0.55); margin-top: 2px"></i>
+        <div style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.5">
+          Members will see the new name right away. The invite link stays the same.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

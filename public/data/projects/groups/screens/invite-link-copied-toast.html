@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<div style="background: var(--bg-0); overflow-x: clip; min-height: 100vh; position: relative">
+  <div class="mr-scope" style="padding-bottom: 32px">
+    <header style="display: flex; align-items: center; gap: 8px; padding: 18px 16px 8px">
+      <button type="button" class="mr-nav-icon-btn" aria-label="Back">
+        <i class="ph ph-arrow-left" aria-hidden="true"></i>
+      </button>
+      <span style="font-size: 1.1rem; font-weight: 800; color: var(--text)">Group settings</span>
+    </header>
+
+    <div style="padding: 14px 16px 0">
+      <div style="font-size: 0.7rem; font-weight: 800; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase; padding: 0 4px 8px">Invite link</div>
+      <div style="border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 14px">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(0,0,0,0.25); margin-bottom: 12px">
+          <i class="ph ph-link" style="font-size: 16px; color: rgba(255,255,255,0.5)"></i>
+          <span style="flex: 1; font-size: 0.82rem; color: rgba(255,255,255,0.85); font-family: ui-monospace, SFMono-Regular, monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">mr.app/g/hiking-crew-x9k</span>
+          <button type="button" class="btn btn-secondary btn-sm" style="background: rgba(109, 213, 237, 0.18); border: 1px solid rgba(109, 213, 237, 0.45); color: #6dd5ed">
+            <i class="ph-fill ph-check" style="font-size: 12px; margin-right: 4px"></i>
+            Copied
+          </button>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="btn btn-secondary" style="flex: 1; padding: 10px; border-radius: 10px; font-size: 0.85rem">Regenerate</button>
+          <button type="button" class="btn btn-secondary" style="flex: 1; padding: 10px; border-radius: 10px; font-size: 0.85rem">Disable</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(20, 24, 36, 0.96);
+      border: 1px solid rgba(109, 213, 237, 0.4);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      max-width: calc(100% - 32px);
+    "
+  >
+    <span
+      style="
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6dd5ed, #2193b0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      "
+    >
+      <i class="ph-fill ph-check" style="font-size: 12px; color: #06080e"></i>
+    </span>
+    <span style="font-size: 0.88rem; font-weight: 700; color: var(--text); white-space: nowrap">Invite link copied</span>
+    <button type="button" style="background: transparent; border: 0; padding: 0; color: #6dd5ed; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase">Share</button>
+  </div>
+</div>

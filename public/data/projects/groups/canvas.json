@@ -161,6 +161,90 @@
       "x": 896,
       "y": 3840,
       "width": 390
+    },
+    {
+      "file": "member-options-sheet-admin.html",
+      "x": 1344,
+      "y": 3840,
+      "width": 390
+    },
+    {
+      "file": "member-options-sheet-self.html",
+      "x": 1792,
+      "y": 3840,
+      "width": 390
+    },
+    {
+      "file": "edit-group-name.html",
+      "x": 0,
+      "y": 5120,
+      "width": 390
+    },
+    {
+      "file": "edit-group-description.html",
+      "x": 448,
+      "y": 5120,
+      "width": 390
+    },
+    {
+      "file": "group-photo-picker-sheet.html",
+      "x": 896,
+      "y": 5120,
+      "width": 390
+    },
+    {
+      "file": "group-photo-crop.html",
+      "x": 1344,
+      "y": 5120,
+      "width": 390
+    },
+    {
+      "file": "invite-link-copied-toast.html",
+      "x": 1792,
+      "y": 5120,
+      "width": 390
+    },
+    {
+      "file": "leave-group-confirm.html",
+      "x": 0,
+      "y": 6400,
+      "width": 390
+    },
+    {
+      "file": "delete-group-confirm.html",
+      "x": 448,
+      "y": 6400,
+      "width": 390
+    },
+    {
+      "file": "invite-link-regenerate-confirm.html",
+      "x": 896,
+      "y": 6400,
+      "width": 390
+    },
+    {
+      "file": "invite-link-disable-confirm.html",
+      "x": 1344,
+      "y": 6400,
+      "width": 390
+    },
+    {
+      "file": "invite-join-success.html",
+      "x": 0,
+      "y": 7680,
+      "width": 390
+    },
+    {
+      "file": "invite-pending.html",
+      "x": 448,
+      "y": 7680,
+      "width": 390
+    },
+    {
+      "file": "new-shared-list-modal.html",
+      "x": 896,
+      "y": 7680,
+      "width": 390
     }
   ]
 }
