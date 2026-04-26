@@ -6,6 +6,12 @@
       "description": "",
       "createdAt": "2026-04-03T21:48:42.021Z",
       "createdBy": "Brandon"
+    },
+    {
+      "id": "groups",
+      "name": "Groups",
+      "description": "",
+      "createdAt": "2026-04-26T02:41:40.523Z"
     }
   ]
 }
