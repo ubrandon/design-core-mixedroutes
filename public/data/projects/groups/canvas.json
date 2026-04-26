@@ -3,73 +3,163 @@
     {
       "file": "friends-my-groups.html",
       "x": 0,
-      "y": -352,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "friends-empty-groups.html",
+      "x": 448,
+      "y": 0,
       "width": 390
     },
     {
       "file": "profile-with-groups.html",
-      "x": 416,
-      "y": -352,
+      "x": 896,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "profile-empty-groups.html",
+      "x": 1344,
+      "y": 0,
       "width": 390
     },
     {
       "file": "chats-tab-with-groups.html",
-      "x": 864,
-      "y": -352,
+      "x": 1792,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "chats-empty.html",
+      "x": 2240,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "notifications.html",
+      "x": 2688,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "notifications-empty.html",
+      "x": 3136,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "other-user-profile.html",
+      "x": 3584,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "other-user-profile-no-mutuals.html",
+      "x": 4032,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "plans-tab-with-group-plans.html",
+      "x": 4480,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "plans-tab-variant-a-cover-overlay.html",
+      "x": 4896,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "plans-tab-empty.html",
+      "x": 5312,
+      "y": 0,
       "width": 390
     },
     {
       "file": "create-group-basics.html",
       "x": 0,
-      "y": 864,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "create-group-members.html",
-      "x": 416,
-      "y": 864,
+      "x": 448,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "invite-preview.html",
-      "x": 832,
-      "y": 864,
+      "x": 896,
+      "y": 1280,
       "width": 390
     },
     {
-      "file": "group-home-empty.html",
-      "x": 0,
-      "y": 1840,
+      "file": "invite-already-member.html",
+      "x": 1344,
+      "y": 1280,
+      "width": 390
+    },
+    {
+      "file": "invite-expired.html",
+      "x": 1792,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "group-home.html",
-      "x": 430,
-      "y": 1840,
+      "x": 0,
+      "y": 2560,
+      "width": 390
+    },
+    {
+      "file": "group-home-empty.html",
+      "x": 448,
+      "y": 2560,
       "width": 390
     },
     {
       "file": "group-chat.html",
-      "x": 860,
-      "y": 1840,
+      "x": 896,
+      "y": 2560,
+      "width": 390
+    },
+    {
+      "file": "group-chat-empty.html",
+      "x": 1344,
+      "y": 2560,
       "width": 390
     },
     {
       "file": "create-group-plan.html",
-      "x": 1290,
-      "y": 1840,
+      "x": 1792,
+      "y": 2560,
+      "width": 390
+    },
+    {
+      "file": "attach-list-sheet.html",
+      "x": 2240,
+      "y": 2560,
       "width": 390
     },
     {
       "file": "group-members.html",
       "x": 0,
-      "y": 3200,
+      "y": 3840,
+      "width": 390
+    },
+    {
+      "file": "member-options-sheet.html",
+      "x": 448,
+      "y": 3840,
       "width": 390
     },
     {
       "file": "group-settings.html",
-      "x": 448,
-      "y": 3200,
+      "x": 896,
+      "y": 3840,
       "width": 390
     }
   ]
