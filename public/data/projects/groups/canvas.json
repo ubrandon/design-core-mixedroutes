@@ -14,8 +14,8 @@
     },
     {
       "file": "friends-all-users.html",
-      "x": 6272,
-      "y": 2784,
+      "x": 992,
+      "y": 384,
       "width": 390
     },
     {
@@ -80,44 +80,50 @@
     },
     {
       "file": "create-group-basics.html",
-      "x": 0,
-      "y": 1280,
+      "x": 1952,
+      "y": -896,
       "width": 390
     },
     {
       "file": "create-group-members.html",
-      "x": 448,
-      "y": 1280,
+      "x": 544,
+      "y": 384,
       "width": 390
     },
     {
       "file": "invite-preview.html",
-      "x": 896,
-      "y": 1280,
+      "x": 5344,
+      "y": 2528,
       "width": 390
     },
     {
       "file": "invite-already-member.html",
-      "x": 1344,
-      "y": 1280,
+      "x": 5792,
+      "y": 2528,
       "width": 390
     },
     {
       "file": "invite-expired.html",
-      "x": 1792,
-      "y": 1280,
+      "x": 6240,
+      "y": 2528,
+      "width": 390
+    },
+    {
+      "file": "invite-preview-peek.html",
+      "x": 544,
+      "y": -896,
       "width": 390
     },
     {
       "file": "group-home.html",
-      "x": 0,
-      "y": 2560,
+      "x": 96,
+      "y": -896,
       "width": 390
     },
     {
       "file": "group-home-empty.html",
-      "x": 448,
-      "y": 2560,
+      "x": 1056,
+      "y": -896,
       "width": 390
     },
     {
@@ -146,8 +152,8 @@
     },
     {
       "file": "group-members.html",
-      "x": 2944,
-      "y": 2560,
+      "x": 96,
+      "y": 384,
       "width": 390
     },
     {
@@ -249,277 +255,277 @@
     {
       "file": "model-a-row-label.html",
       "x": 0,
-      "y": 5440,
+      "y": 5056,
       "width": 480
     },
     {
       "file": "model-a-1-new-plan.html",
       "x": 544,
-      "y": 5440,
+      "y": 5056,
       "width": 390
     },
     {
       "file": "model-a-2-add-outsider-blocked.html",
       "x": 992,
-      "y": 5440,
+      "y": 5056,
       "width": 390
     },
     {
       "file": "model-a-3-group-home.html",
       "x": 1440,
-      "y": 5440,
+      "y": 5056,
       "width": 390
     },
     {
       "file": "model-b-row-label.html",
-      "x": 32,
-      "y": 6208,
+      "x": 5280,
+      "y": 9728,
       "width": 480
     },
     {
       "file": "model-b-1-share-link.html",
-      "x": 576,
-      "y": 6208,
+      "x": 5824,
+      "y": 9728,
       "width": 390
     },
     {
       "file": "model-b-2-rsvp-confirm.html",
-      "x": 1024,
-      "y": 6208,
+      "x": 6272,
+      "y": 9728,
       "width": 390
     },
     {
       "file": "model-b-3-group-home-after.html",
-      "x": 1472,
-      "y": 6208,
+      "x": 6720,
+      "y": 9728,
       "width": 390
     },
     {
       "file": "model-c-row-label.html",
-      "x": 32,
-      "y": 7040,
+      "x": 7328,
+      "y": 9728,
       "width": 480
     },
     {
       "file": "model-c-1-multi-attach.html",
-      "x": 576,
-      "y": 7040,
+      "x": 7872,
+      "y": 9728,
       "width": 390
     },
     {
       "file": "model-c-2-add-non-member.html",
-      "x": 1024,
-      "y": 7040,
+      "x": 8320,
+      "y": 9728,
       "width": 390
     },
     {
       "file": "model-c-3-group-home-shared.html",
-      "x": 1472,
-      "y": 7040,
+      "x": 8768,
+      "y": 9728,
       "width": 390
     },
     {
       "file": "model-d-row-label.html",
-      "x": 32,
-      "y": 7968,
+      "x": 5280,
+      "y": 10720,
       "width": 480
     },
     {
       "file": "model-d-1-circle-picker.html",
-      "x": 576,
-      "y": 7968,
+      "x": 5824,
+      "y": 10720,
       "width": 390
     },
     {
       "file": "model-d-2-circles-tab.html",
-      "x": 1024,
-      "y": 7968,
+      "x": 6272,
+      "y": 10720,
       "width": 390
     },
     {
       "file": "model-d-3-plan-card.html",
-      "x": 1472,
-      "y": 7968,
+      "x": 6720,
+      "y": 10720,
       "width": 390
     },
     {
       "file": "model-e-row-label.html",
-      "x": 64,
-      "y": 8832,
+      "x": 7296,
+      "y": 10720,
       "width": 480
     },
     {
       "file": "model-e-1-broadcast-picker.html",
-      "x": 608,
-      "y": 8832,
+      "x": 7840,
+      "y": 10720,
       "width": 390
     },
     {
       "file": "model-e-2-fork-view.html",
-      "x": 1056,
-      "y": 8832,
+      "x": 8288,
+      "y": 10720,
       "width": 390
     },
     {
       "file": "model-e-3-duplicate-feed.html",
-      "x": 1504,
-      "y": 8832,
+      "x": 8736,
+      "y": 10720,
       "width": 390
     },
     {
       "file": "model-d-flow-row-label.html",
-      "x": 96,
-      "y": 9700,
+      "x": 5280,
+      "y": 11680,
       "width": 480
     },
     {
       "file": "model-d-flow-1-friends-tab.html",
-      "x": 640,
-      "y": 9700,
+      "x": 5824,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-2-friend-profile.html",
-      "x": 1088,
-      "y": 9700,
+      "x": 6272,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-3-add-to-circle-sheet.html",
-      "x": 1536,
-      "y": 9700,
+      "x": 6720,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-8-create-circle.html",
-      "x": 1984,
-      "y": 9700,
+      "x": 7168,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-4-circle-detail.html",
-      "x": 2432,
-      "y": 9700,
+      "x": 7616,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-5-audience-picker.html",
-      "x": 2880,
-      "y": 9700,
+      "x": 8064,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-6-new-plan-with-circle.html",
-      "x": 3328,
-      "y": 9700,
+      "x": 8512,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-flow-7-explainer-sheet.html",
-      "x": 3776,
-      "y": 9700,
+      "x": 8960,
+      "y": 11680,
       "width": 390
     },
     {
       "file": "model-d-tags-row-label.html",
-      "x": 96,
-      "y": 10816,
+      "x": -32,
+      "y": 6112,
       "width": 480
     },
     {
       "file": "model-d-tags-1-friends-tab.html",
-      "x": 640,
-      "y": 10816,
+      "x": 512,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "model-d-tags-2-filtered-list.html",
-      "x": 1088,
-      "y": 10816,
+      "x": 960,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "model-d-tags-3-tag-as-popover.html",
-      "x": 1536,
-      "y": 10816,
+      "x": 1408,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "model-d-tags-4-friend-profile.html",
-      "x": 1984,
-      "y": 10816,
+      "x": 1856,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "model-d-tags-5-audience-picker.html",
-      "x": 2432,
-      "y": 10816,
+      "x": 2304,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "model-d-tags-6-tag-prompt.html",
-      "x": 2880,
-      "y": 10816,
+      "x": 2752,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "model-d-borrow-row-label.html",
-      "x": 96,
-      "y": 11712,
+      "x": 5280,
+      "y": 13088,
       "width": 480
     },
     {
       "file": "model-d-borrow-1-audience-picker.html",
-      "x": 640,
-      "y": 11712,
+      "x": 5824,
+      "y": 13088,
       "width": 390
     },
     {
       "file": "model-d-borrow-2-pick-members.html",
-      "x": 1088,
-      "y": 11712,
+      "x": 6272,
+      "y": 13088,
       "width": 390
     },
     {
       "file": "model-d-borrow-3-new-plan.html",
-      "x": 1536,
-      "y": 11712,
+      "x": 6720,
+      "y": 13088,
       "width": 390
     },
     {
       "file": "model-d-borrow-4-group-home-clean.html",
-      "x": 1984,
-      "y": 11712,
+      "x": 7168,
+      "y": 13088,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-row-label.html",
-      "x": 96,
-      "y": 12608,
+      "x": 5280,
+      "y": 13984,
       "width": 480
     },
     {
       "file": "model-d-borrow-alt-a-primary-secondary.html",
-      "x": 640,
-      "y": 12608,
+      "x": 5824,
+      "y": 13984,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-b-tap-sheet.html",
-      "x": 1088,
-      "y": 12608,
+      "x": 6272,
+      "y": 13984,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-c-overflow.html",
-      "x": 1536,
-      "y": 12608,
+      "x": 6720,
+      "y": 13984,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-d-mode-toggle.html",
-      "x": 1984,
-      "y": 12608,
+      "x": 7168,
+      "y": 13984,
       "width": 390
     }
   ]
