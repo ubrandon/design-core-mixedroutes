@@ -12,6 +12,18 @@
       "name": "Groups",
       "description": "",
       "createdAt": "2026-04-26T02:41:40.523Z"
+    },
+    {
+      "id": "saved-places",
+      "name": "Saved Places",
+      "description": "",
+      "createdAt": "2026-04-28T05:20:36.766Z"
+    },
+    {
+      "id": "you-page",
+      "name": "You Page",
+      "description": "",
+      "createdAt": "2026-04-28T12:00:00.000Z"
     }
   ]
 }

@@ -2,80 +2,80 @@
   "screens": [
     {
       "file": "friends-my-groups.html",
-      "x": 0,
-      "y": 0,
+      "x": 512,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "friends-empty-groups.html",
-      "x": 448,
-      "y": 0,
+      "x": 96,
+      "y": -2368,
+      "width": 390
+    },
+    {
+      "file": "friends-all-users.html",
+      "x": 6272,
+      "y": 2784,
       "width": 390
     },
     {
       "file": "profile-with-groups.html",
-      "x": 896,
-      "y": 0,
+      "x": 1568,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "profile-empty-groups.html",
-      "x": 1344,
-      "y": 0,
+      "x": 1152,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "chats-tab-with-groups.html",
-      "x": 1792,
-      "y": 0,
+      "x": 2496,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "chats-empty.html",
-      "x": 2240,
-      "y": 0,
+      "x": 2944,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "notifications.html",
-      "x": 2688,
-      "y": 0,
+      "x": 3392,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "notifications-empty.html",
-      "x": 3136,
-      "y": 0,
+      "x": 3840,
+      "y": 1280,
       "width": 390
     },
     {
       "file": "other-user-profile.html",
-      "x": 3584,
-      "y": 0,
-      "width": 390
-    },
-    {
-      "file": "other-user-profile-no-mutuals.html",
-      "x": 4032,
-      "y": 0,
+      "x": 1984,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "plans-tab-with-group-plans.html",
-      "x": 4480,
-      "y": 0,
+      "x": 4448,
+      "y": 1248,
       "width": 390
     },
     {
       "file": "plans-tab-variant-a-cover-overlay.html",
-      "x": 4896,
-      "y": 0,
+      "x": 4864,
+      "y": 1248,
       "width": 390
     },
     {
       "file": "plans-tab-empty.html",
-      "x": 5312,
-      "y": 0,
+      "x": 5280,
+      "y": 1248,
       "width": 390
     },
     {
@@ -492,7 +492,6 @@
       "y": 11712,
       "width": 390
     },
-
     {
       "file": "model-d-borrow-alt-row-label.html",
       "x": 96,
