@@ -13,8 +13,26 @@
       "width": 390
     },
     {
-      "file": "friends-all-users.html",
-      "x": 992,
+      "file": "invite-picker-default-v2.html",
+      "x": -96,
+      "y": 384,
+      "width": 390
+    },
+    {
+      "file": "invite-picker-group-locked-v2.html",
+      "x": 320,
+      "y": 384,
+      "width": 390
+    },
+    {
+      "file": "invite-picker-group-locked-v3.html",
+      "x": 736,
+      "y": 384,
+      "width": 390
+    },
+    {
+      "file": "people-page-with-suggested.html",
+      "x": -832,
       "y": 384,
       "width": 390
     },
@@ -32,26 +50,26 @@
     },
     {
       "file": "chats-tab-with-groups.html",
-      "x": 2496,
-      "y": 1280,
+      "x": -3040,
+      "y": 2656,
       "width": 390
     },
     {
       "file": "chats-empty.html",
-      "x": 2944,
-      "y": 1280,
+      "x": -2592,
+      "y": 2656,
       "width": 390
     },
     {
       "file": "notifications.html",
-      "x": 3392,
-      "y": 1280,
+      "x": -2112,
+      "y": 2656,
       "width": 390
     },
     {
       "file": "notifications-empty.html",
-      "x": 3840,
-      "y": 1280,
+      "x": -1696,
+      "y": 2656,
       "width": 390
     },
     {
@@ -62,20 +80,20 @@
     },
     {
       "file": "plans-tab-with-group-plans.html",
-      "x": 4448,
-      "y": 1248,
+      "x": -1088,
+      "y": 2624,
       "width": 390
     },
     {
       "file": "plans-tab-variant-a-cover-overlay.html",
-      "x": 4864,
-      "y": 1248,
+      "x": -672,
+      "y": 2624,
       "width": 390
     },
     {
       "file": "plans-tab-empty.html",
-      "x": 5280,
-      "y": 1248,
+      "x": -256,
+      "y": 2624,
       "width": 390
     },
     {
@@ -86,7 +104,7 @@
     },
     {
       "file": "create-group-members.html",
-      "x": 544,
+      "x": 1824,
       "y": 384,
       "width": 390
     },
@@ -152,7 +170,7 @@
     },
     {
       "file": "group-members.html",
-      "x": 96,
+      "x": 1376,
       "y": 384,
       "width": 390
     },
