@@ -14,536 +14,488 @@
     },
     {
       "file": "invite-picker-default-v2.html",
-      "x": -96,
-      "y": 384,
+      "x": 1536,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "invite-picker-group-locked-v2.html",
-      "x": 320,
-      "y": 384,
+      "x": 1952,
+      "y": -2368,
       "width": 390
     },
     {
-      "file": "invite-picker-group-locked-v3.html",
-      "x": 736,
-      "y": 384,
+      "file": "invite-picker-people-selected-v3.html",
+      "x": 2368,
+      "y": -2368,
+      "width": 390
+    },
+    {
+      "file": "activity-guests-list-compact-row.html",
+      "x": 3040,
+      "y": -2368,
+      "width": 390
+    },
+    {
+      "file": "activity-guests-list-fab-with-link.html",
+      "x": 3936,
+      "y": -2368,
+      "width": 390
+    },
+    {
+      "file": "activity-detail-in-group-v3.html",
+      "x": 1664,
+      "y": -416,
+      "width": 390
+    },
+    {
+      "file": "activity-detail-in-group-v3a.html",
+      "x": 2080,
+      "y": -416,
+      "width": 390
+    },
+    {
+      "file": "activity-detail-in-group-v3b.html",
+      "x": 2496,
+      "y": -416,
+      "width": 390
+    },
+    {
+      "file": "activity-invite-from-group.html",
+      "x": 2912,
+      "y": -416,
       "width": 390
     },
     {
       "file": "people-page-with-suggested.html",
-      "x": -832,
-      "y": 384,
+      "x": 928,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "profile-with-groups.html",
-      "x": 1568,
-      "y": -2368,
+      "x": 2016,
+      "y": 1344,
       "width": 390
     },
     {
       "file": "profile-empty-groups.html",
-      "x": 1152,
-      "y": -2368,
+      "x": 1600,
+      "y": 1344,
       "width": 390
     },
     {
-      "file": "chats-tab-with-groups.html",
-      "x": -3040,
-      "y": 2656,
+      "file": "chats-tab-mixed-types.html",
+      "x": 96,
+      "y": -416,
+      "width": 390
+    },
+    {
+      "file": "chats-tab-groups-filter.html",
+      "x": 512,
+      "y": -416,
       "width": 390
     },
     {
       "file": "chats-empty.html",
-      "x": -2592,
-      "y": 2656,
+      "x": 928,
+      "y": -416,
       "width": 390
     },
     {
-      "file": "notifications.html",
-      "x": -2112,
-      "y": 2656,
-      "width": 390
-    },
-    {
-      "file": "notifications-empty.html",
-      "x": -1696,
-      "y": 2656,
+      "file": "notifications-groups-only.html",
+      "x": 128,
+      "y": 1344,
       "width": 390
     },
     {
       "file": "other-user-profile.html",
-      "x": 1984,
-      "y": -2368,
+      "x": 2432,
+      "y": 1344,
       "width": 390
     },
     {
       "file": "plans-tab-with-group-plans.html",
-      "x": -1088,
-      "y": 2624,
+      "x": 3072,
+      "y": 1344,
       "width": 390
     },
     {
-      "file": "plans-tab-variant-a-cover-overlay.html",
-      "x": -672,
-      "y": 2624,
+      "file": "create-group-v7-basics-with-card.html",
+      "x": 3680,
+      "y": -416,
       "width": 390
     },
     {
-      "file": "plans-tab-empty.html",
-      "x": -256,
-      "y": 2624,
-      "width": 390
-    },
-    {
-      "file": "create-group-basics.html",
-      "x": 1952,
-      "y": -896,
-      "width": 390
-    },
-    {
-      "file": "create-group-members.html",
-      "x": 1824,
-      "y": 384,
+      "file": "create-group-v8-with-options.html",
+      "x": 4096,
+      "y": -416,
       "width": 390
     },
     {
       "file": "invite-preview.html",
-      "x": 5344,
-      "y": 2528,
+      "x": 288,
+      "y": 12416,
       "width": 390
     },
     {
       "file": "invite-already-member.html",
-      "x": 5792,
-      "y": 2528,
+      "x": 736,
+      "y": 12416,
       "width": 390
     },
     {
       "file": "invite-expired.html",
-      "x": 6240,
-      "y": 2528,
+      "x": 1184,
+      "y": 12416,
       "width": 390
     },
     {
-      "file": "invite-preview-peek.html",
-      "x": 544,
-      "y": -896,
+      "file": "group-home-v2.html",
+      "x": 5120,
+      "y": -416,
       "width": 390
     },
     {
-      "file": "group-home.html",
-      "x": 96,
-      "y": -896,
-      "width": 390
-    },
-    {
-      "file": "group-home-empty.html",
-      "x": 1056,
-      "y": -896,
+      "file": "group-home-empty-v2.html",
+      "x": 4704,
+      "y": -416,
       "width": 390
     },
     {
       "file": "group-chat.html",
-      "x": 896,
-      "y": 2560,
+      "x": 1728,
+      "y": 12416,
       "width": 390
     },
     {
-      "file": "group-chat-empty.html",
-      "x": 1344,
-      "y": 2560,
+      "file": "create-group-plan-v2-modular.html",
+      "x": 544,
+      "y": 1344,
       "width": 390
     },
     {
-      "file": "create-group-plan.html",
-      "x": 1792,
-      "y": 2560,
-      "width": 390
-    },
-    {
-      "file": "attach-list-sheet.html",
-      "x": 2240,
-      "y": 2560,
+      "file": "attach-list-sheet-v2.html",
+      "x": 960,
+      "y": 1344,
       "width": 390
     },
     {
       "file": "group-members.html",
-      "x": 1376,
-      "y": 384,
+      "x": 3456,
+      "y": -2368,
       "width": 390
     },
     {
       "file": "member-options-sheet.html",
-      "x": 3392,
-      "y": 2560,
+      "x": 2080,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "group-settings.html",
-      "x": 3840,
-      "y": 2560,
+      "x": 2496,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "member-options-sheet-admin.html",
-      "x": 4288,
-      "y": 2560,
+      "x": 2912,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "member-options-sheet-self.html",
-      "x": 4736,
-      "y": 2560,
-      "width": 390
-    },
-    {
-      "file": "edit-group-name.html",
-      "x": 0,
-      "y": 3968,
-      "width": 390
-    },
-    {
-      "file": "edit-group-description.html",
-      "x": 448,
-      "y": 3968,
-      "width": 390
-    },
-    {
-      "file": "group-photo-picker-sheet.html",
-      "x": 896,
-      "y": 3968,
-      "width": 390
-    },
-    {
-      "file": "group-photo-crop.html",
-      "x": 1344,
-      "y": 3968,
-      "width": 390
-    },
-    {
-      "file": "invite-link-copied-toast.html",
-      "x": 1792,
-      "y": 3968,
+      "x": 3328,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "leave-group-confirm.html",
-      "x": 2368,
-      "y": 3968,
+      "x": 128,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "delete-group-confirm.html",
-      "x": 2816,
-      "y": 3968,
+      "x": 544,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "invite-link-regenerate-confirm.html",
-      "x": 3264,
-      "y": 3968,
+      "x": 960,
+      "y": 3200,
       "width": 390
     },
     {
       "file": "invite-link-disable-confirm.html",
-      "x": 3712,
-      "y": 3968,
+      "x": 1376,
+      "y": 3200,
       "width": 390
-    },
-    {
-      "file": "invite-join-success.html",
-      "x": 4224,
-      "y": 3936,
-      "width": 390
-    },
-    {
-      "file": "invite-pending.html",
-      "x": 4672,
-      "y": 3936,
-      "width": 390
-    },
-    {
-      "file": "new-shared-list-modal.html",
-      "x": 5120,
-      "y": 3936,
-      "width": 390
-    },
-    {
-      "file": "model-a-row-label.html",
-      "x": 0,
-      "y": 5056,
-      "width": 480
     },
     {
       "file": "model-a-1-new-plan.html",
-      "x": 544,
-      "y": 5056,
+      "x": 896,
+      "y": 7488,
       "width": 390
     },
     {
       "file": "model-a-2-add-outsider-blocked.html",
-      "x": 992,
-      "y": 5056,
+      "x": 1344,
+      "y": 7488,
       "width": 390
     },
     {
       "file": "model-a-3-group-home.html",
-      "x": 1440,
-      "y": 5056,
+      "x": 1792,
+      "y": 7488,
       "width": 390
     },
     {
       "file": "model-b-row-label.html",
-      "x": 5280,
-      "y": 9728,
+      "x": 288,
+      "y": 13696,
       "width": 480
     },
     {
       "file": "model-b-1-share-link.html",
-      "x": 5824,
-      "y": 9728,
+      "x": 832,
+      "y": 13696,
       "width": 390
     },
     {
       "file": "model-b-2-rsvp-confirm.html",
-      "x": 6272,
-      "y": 9728,
+      "x": 1280,
+      "y": 13696,
       "width": 390
     },
     {
       "file": "model-b-3-group-home-after.html",
-      "x": 6720,
-      "y": 9728,
+      "x": 1728,
+      "y": 13696,
       "width": 390
     },
     {
       "file": "model-c-row-label.html",
-      "x": 7328,
-      "y": 9728,
+      "x": 2336,
+      "y": 13696,
       "width": 480
     },
     {
       "file": "model-c-1-multi-attach.html",
-      "x": 7872,
-      "y": 9728,
+      "x": 2880,
+      "y": 13696,
       "width": 390
     },
     {
       "file": "model-c-2-add-non-member.html",
-      "x": 8320,
-      "y": 9728,
+      "x": 3328,
+      "y": 13696,
       "width": 390
     },
     {
       "file": "model-c-3-group-home-shared.html",
-      "x": 8768,
-      "y": 9728,
+      "x": 3776,
+      "y": 13696,
       "width": 390
     },
     {
       "file": "model-d-row-label.html",
-      "x": 5280,
-      "y": 10720,
+      "x": 288,
+      "y": 14688,
       "width": 480
     },
     {
       "file": "model-d-1-circle-picker.html",
-      "x": 5824,
-      "y": 10720,
+      "x": 832,
+      "y": 14688,
       "width": 390
     },
     {
       "file": "model-d-2-circles-tab.html",
-      "x": 6272,
-      "y": 10720,
+      "x": 1280,
+      "y": 14688,
       "width": 390
     },
     {
       "file": "model-d-3-plan-card.html",
-      "x": 6720,
-      "y": 10720,
+      "x": 1728,
+      "y": 14688,
       "width": 390
     },
     {
       "file": "model-e-row-label.html",
-      "x": 7296,
-      "y": 10720,
+      "x": 2304,
+      "y": 14688,
       "width": 480
     },
     {
       "file": "model-e-1-broadcast-picker.html",
-      "x": 7840,
-      "y": 10720,
+      "x": 2848,
+      "y": 14688,
       "width": 390
     },
     {
       "file": "model-e-2-fork-view.html",
-      "x": 8288,
-      "y": 10720,
+      "x": 3296,
+      "y": 14688,
       "width": 390
     },
     {
       "file": "model-e-3-duplicate-feed.html",
-      "x": 8736,
-      "y": 10720,
+      "x": 3744,
+      "y": 14688,
       "width": 390
     },
     {
       "file": "model-d-flow-row-label.html",
-      "x": 5280,
-      "y": 11680,
+      "x": 288,
+      "y": 15648,
       "width": 480
     },
     {
       "file": "model-d-flow-1-friends-tab.html",
-      "x": 5824,
-      "y": 11680,
+      "x": 832,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-2-friend-profile.html",
-      "x": 6272,
-      "y": 11680,
+      "x": 1280,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-3-add-to-circle-sheet.html",
-      "x": 6720,
-      "y": 11680,
+      "x": 1728,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-8-create-circle.html",
-      "x": 7168,
-      "y": 11680,
+      "x": 2176,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-4-circle-detail.html",
-      "x": 7616,
-      "y": 11680,
+      "x": 2624,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-5-audience-picker.html",
-      "x": 8064,
-      "y": 11680,
+      "x": 3072,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-6-new-plan-with-circle.html",
-      "x": 8512,
-      "y": 11680,
+      "x": 3520,
+      "y": 15648,
       "width": 390
     },
     {
       "file": "model-d-flow-7-explainer-sheet.html",
-      "x": 8960,
-      "y": 11680,
+      "x": 3968,
+      "y": 15648,
       "width": 390
     },
     {
-      "file": "model-d-tags-row-label.html",
-      "x": -32,
-      "y": 6112,
-      "width": 480
-    },
-    {
       "file": "model-d-tags-1-friends-tab.html",
-      "x": 512,
-      "y": 6112,
+      "x": 864,
+      "y": 8544,
       "width": 390
     },
     {
       "file": "model-d-tags-2-filtered-list.html",
-      "x": 960,
-      "y": 6112,
+      "x": 1312,
+      "y": 8544,
       "width": 390
     },
     {
       "file": "model-d-tags-3-tag-as-popover.html",
-      "x": 1408,
-      "y": 6112,
+      "x": 1760,
+      "y": 8544,
       "width": 390
     },
     {
       "file": "model-d-tags-4-friend-profile.html",
-      "x": 1856,
-      "y": 6112,
+      "x": 2208,
+      "y": 8544,
       "width": 390
     },
     {
       "file": "model-d-tags-5-audience-picker.html",
-      "x": 2304,
-      "y": 6112,
+      "x": 2656,
+      "y": 8544,
       "width": 390
     },
     {
       "file": "model-d-tags-6-tag-prompt.html",
-      "x": 2752,
-      "y": 6112,
+      "x": 3104,
+      "y": 8544,
       "width": 390
     },
     {
       "file": "model-d-borrow-row-label.html",
-      "x": 5280,
-      "y": 13088,
+      "x": 288,
+      "y": 17056,
       "width": 480
     },
     {
       "file": "model-d-borrow-1-audience-picker.html",
-      "x": 5824,
-      "y": 13088,
+      "x": 832,
+      "y": 17056,
       "width": 390
     },
     {
       "file": "model-d-borrow-2-pick-members.html",
-      "x": 6272,
-      "y": 13088,
+      "x": 1280,
+      "y": 17056,
       "width": 390
     },
     {
       "file": "model-d-borrow-3-new-plan.html",
-      "x": 6720,
-      "y": 13088,
+      "x": 1728,
+      "y": 17056,
       "width": 390
     },
     {
       "file": "model-d-borrow-4-group-home-clean.html",
-      "x": 7168,
-      "y": 13088,
+      "x": 2176,
+      "y": 17056,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-row-label.html",
-      "x": 5280,
-      "y": 13984,
+      "x": 288,
+      "y": 17952,
       "width": 480
     },
     {
       "file": "model-d-borrow-alt-a-primary-secondary.html",
-      "x": 5824,
-      "y": 13984,
+      "x": 832,
+      "y": 17952,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-b-tap-sheet.html",
-      "x": 6272,
-      "y": 13984,
+      "x": 1280,
+      "y": 17952,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-c-overflow.html",
-      "x": 6720,
-      "y": 13984,
+      "x": 1728,
+      "y": 17952,
       "width": 390
     },
     {
       "file": "model-d-borrow-alt-d-mode-toggle.html",
-      "x": 7168,
-      "y": 13984,
+      "x": 2176,
+      "y": 17952,
       "width": 390
     }
   ]

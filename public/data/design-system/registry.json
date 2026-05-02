@@ -168,6 +168,11 @@
           "id": "mr-location",
           "file": "mixedroutes/location-cards.html",
           "label": "Map & location cards"
+        },
+        {
+          "id": "mr-places-list",
+          "file": "mixedroutes/places-list-cards.html",
+          "label": "Places list cards"
         }
       ]
     },

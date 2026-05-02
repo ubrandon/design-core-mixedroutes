@@ -4,45 +4,63 @@
 
 <div style="background: var(--bg-0); overflow-x: clip">
   <div class="mr-scope" style="padding-bottom: 8px">
-    <div
-      style="
-        position: relative;
-        padding: 18px 16px 24px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
-      "
-    >
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <button type="button" class="mr-nav-icon-btn" aria-label="Back">
-          <i class="ph ph-arrow-left" aria-hidden="true"></i>
-        </button>
-        <div style="display: flex; gap: 10px">
-          <button type="button" class="mr-nav-icon-btn" aria-label="Edit profile">
-            <i class="ph ph-pencil-simple" aria-hidden="true"></i>
-          </button>
-          <button type="button" class="mr-nav-icon-btn" aria-label="Settings">
-            <i class="ph ph-gear" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
+    <div style="position: relative; overflow: hidden">
+      <div
+        aria-hidden="true"
+        style="
+          position: absolute;
+          inset: -32px -32px 0;
+          background-image: url(https://i.pravatar.cc/600?img=11);
+          background-size: cover;
+          background-position: center;
+          filter: blur(36px) saturate(1.1);
+          transform: scale(1.18);
+          opacity: 0.85;
+        "
+      ></div>
+      <div
+        aria-hidden="true"
+        style="
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.18) 36%, rgba(0,0,0,0.55) 78%, var(--bg-0) 100%);
+        "
+      ></div>
 
-      <div style="display: flex; flex-direction: column; align-items: center; padding-top: 14px">
-        <img
-          src="https://i.pravatar.cc/200?img=11"
-          alt=""
-          width="120"
-          height="120"
-          style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.1)"
-          loading="lazy"
-        />
-        <div style="font-size: 1.7rem; font-weight: 800; color: var(--text); margin-top: 14px">Brandon Unglaub</div>
-        <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); margin-top: 2px">@brandon · Joined Feb 2026</div>
+      <div style="position: relative; padding: 18px 16px 24px">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <button type="button" aria-label="Back" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.45); border: 0; color: #fff; display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); cursor: pointer">
+            <i class="ph ph-arrow-left" style="font-size: 18px" aria-hidden="true"></i>
+          </button>
+          <div style="display: flex; gap: 10px">
+            <button type="button" aria-label="Edit profile" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.45); border: 0; color: #fff; display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); cursor: pointer">
+              <i class="ph ph-pencil-simple" style="font-size: 18px" aria-hidden="true"></i>
+            </button>
+            <button type="button" aria-label="Settings" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.45); border: 0; color: #fff; display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); cursor: pointer">
+              <i class="ph ph-gear" style="font-size: 18px" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; padding-top: 14px">
+          <img
+            src="https://i.pravatar.cc/200?img=11"
+            alt=""
+            width="120"
+            height="120"
+            style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255,255,255,0.16); box-shadow: 0 22px 44px rgba(0,0,0,0.5)"
+            loading="lazy"
+          />
+          <div style="font-size: 1.7rem; font-weight: 800; color: #fff; margin-top: 14px; letter-spacing: -0.01em">Brandon Unglaub</div>
+          <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin-top: 2px">@brandon · Joined Feb 2026</div>
+        </div>
       </div>
     </div>
 
     <div style="padding: 12px 16px 0">
       <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px">
         <span style="font-size: 1.1rem; font-weight: 800; color: var(--text)">Interests</span>
-        <span class="accent-text" style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase">Edit</span>
+        <span class="mr-section-action">Edit</span>
       </div>
       <div class="mr-chip-row" style="padding-bottom: 18px">
         <button type="button" class="mr-chip">🏋️ Weightlifting</button>
@@ -54,12 +72,15 @@
     <div style="padding: 6px 16px 0">
       <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px">
         <span style="font-size: 1.1rem; font-weight: 800; color: var(--text)">Groups</span>
-        <span class="accent-text" style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase">Create group</span>
+        <span class="mr-section-action">Create group</span>
       </div>
 
       <div class="ds-scroll-x" style="display: flex; gap: 12px; padding: 0 0 18px; -webkit-overflow-scrolling: touch">
         <div
           style="
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
             flex: 0 0 auto;
             width: 150px;
             border-radius: 18px;
@@ -72,6 +93,8 @@
             text-align: center;
           "
         >
+          <div aria-hidden="true" style="position: absolute; inset: 0; z-index: -2; background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=80'); background-size: cover; background-position: center; filter: blur(28px) saturate(1.2); transform: scale(1.4); opacity: 0.55"></div>
+          <div aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,10,18,0.35), rgba(8,10,18,0.7))"></div>
           <img
             src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=80"
             alt=""
@@ -86,6 +109,9 @@
 
         <div
           style="
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
             flex: 0 0 auto;
             width: 150px;
             border-radius: 18px;
@@ -98,6 +124,8 @@
             text-align: center;
           "
         >
+          <div aria-hidden="true" style="position: absolute; inset: 0; z-index: -2; background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=80'); background-size: cover; background-position: center; filter: blur(28px) saturate(1.2); transform: scale(1.4); opacity: 0.55"></div>
+          <div aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,10,18,0.35), rgba(8,10,18,0.7))"></div>
           <img
             src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=80"
             alt=""
@@ -149,7 +177,7 @@
     <div style="padding: 6px 16px 0">
       <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px">
         <span style="font-size: 1.1rem; font-weight: 800; color: var(--text)">My Lists</span>
-        <span class="accent-text" style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase">Create list</span>
+        <span class="mr-section-action">Create list</span>
       </div>
       <div style="display: flex; gap: 12px; padding-bottom: 18px">
         <div style="flex: 1; padding: 16px; border-radius: 18px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255,255,255,0.06)">
