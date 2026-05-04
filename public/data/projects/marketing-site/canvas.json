@@ -1,0 +1,22 @@
+{
+  "screens": [
+    {
+      "file": "hero-v1-reference.html",
+      "x": 0,
+      "y": 0,
+      "width": 1440
+    },
+    {
+      "file": "hero-v3-map.html",
+      "x": 0,
+      "y": 1184,
+      "width": 1440
+    },
+    {
+      "file": "hero-light.html",
+      "x": 1536,
+      "y": 0,
+      "width": 1440
+    }
+  ]
+}

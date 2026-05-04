@@ -24,6 +24,12 @@
       "name": "You Page",
       "description": "",
       "createdAt": "2026-04-28T12:00:00.000Z"
+    },
+    {
+      "id": "marketing-site",
+      "name": "Marketing Site",
+      "description": "",
+      "createdAt": "2026-05-04T01:38:04.548Z"
     }
   ]
 }

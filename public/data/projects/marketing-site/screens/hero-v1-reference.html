@@ -1,0 +1,641 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .mr-marketing.hero-v1 {
+    width: 1440px;
+    min-height: 1100px;
+    background:
+      radial-gradient(1100px 820px at 72% 58%, #2a6aa6 0%, #1d4a82 28%, #0f2a55 55%, #07182f 80%, #04101f 100%),
+      #04101f;
+    position: relative;
+    overflow: hidden;
+    font-family: "DM Sans", "Plus Jakarta Sans", sans-serif;
+    color: rgba(255, 255, 255, 0.94);
+  }
+  .hero-v1 .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 70px 0;
+    position: relative;
+    z-index: 5;
+  }
+  .hero-v1 .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-v1 .brand img { width: 38px; height: 38px; }
+  .hero-v1 .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .hero-v1 .nav-links a { text-decoration: none; color: inherit; }
+  .hero-v1 .nav-login {
+    padding: 13px 32px;
+    border-radius: 9999px;
+    background: rgba(91, 165, 255, 0.18);
+    border: 1px solid rgba(91, 165, 255, 0.4);
+    color: #cfe6ff;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .hero-v1 .stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding: 130px 80px 120px 110px;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-v1 .stage > .copy { padding-top: 20px; }
+
+  .hero-v1 h1 {
+    font-size: 5.6rem;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    margin: 0 0 32px;
+  }
+  .hero-v1 h1 .accent {
+    background-image: linear-gradient(180deg, #8cc4ff 0%, #6fb6f0 40%, #5fc8e0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: block;
+  }
+  .hero-v1 .sub {
+    font-size: 1.22rem;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 380px;
+    line-height: 1.45;
+    margin: 0 0 44px;
+  }
+  .hero-v1 .ctas { display: flex; gap: 14px; }
+  .hero-v1 .cta-primary {
+    background: #ffffff;
+    color: #03101c;
+    padding: 19px 42px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 1.02rem;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  }
+  .hero-v1 .cta-secondary {
+    background: rgba(91, 165, 255, 0.18);
+    color: #cfe6ff;
+    padding: 19px 42px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1.02rem;
+    border: 1px solid rgba(91, 165, 255, 0.32);
+    cursor: pointer;
+  }
+  .hero-v1 .testimonial {
+    margin-top: 56px;
+    color: rgba(255, 255, 255, 0.34);
+    font-style: italic;
+    font-size: 0.95rem;
+    max-width: 380px;
+    line-height: 1.4;
+  }
+  .hero-v1 .testimonial-stars {
+    color: rgba(255, 255, 255, 0.42);
+    margin-top: 8px;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-style: normal;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .hero-v1 .testimonial-stars .who {
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.32);
+  }
+
+  .hero-v1 .phones-stage {
+    position: relative;
+    width: 100%;
+    height: 820px;
+    perspective: 2200px;
+    transform-style: preserve-3d;
+  }
+  .hero-v1 .phone {
+    position: absolute;
+    width: 340px;
+    height: 720px;
+    border-radius: 56px;
+    background: #000;
+    border: 8px solid #0e1822;
+    box-shadow:
+      0 110px 140px rgba(0, 0, 0, 0.65),
+      0 40px 80px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+  }
+  .hero-v1 .phone .notch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 104px;
+    height: 28px;
+    background: #000;
+    border-radius: 9999px;
+    z-index: 10;
+  }
+  .hero-v1 .phone-back {
+    top: 0;
+    right: -10px;
+    transform: rotateY(-22deg) rotateX(8deg) rotate(-2deg);
+    transform-origin: center center;
+  }
+  .hero-v1 .phone-front {
+    top: 80px;
+    left: 30px;
+    transform: rotateY(14deg) rotateX(6deg) rotate(3deg);
+    transform-origin: center center;
+    z-index: 3;
+  }
+  .hero-v1 .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #02080f;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-v1 .status-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.92);
+    padding: 18px 28px 6px;
+  }
+  .hero-v1 .pscreen-title {
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 6px 18px 12px;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .hero-v1 .pscreen-icons {
+    display: flex; gap: 10px; align-items: center;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.85rem;
+  }
+  .hero-v1 .pscreen-tabs {
+    display: flex;
+    gap: 16px;
+    padding: 0 18px 12px;
+    font-size: 0.7rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0 0 8px;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .hero-v1 .pscreen-tabs .tab.active { color: #fff; position: relative; padding-bottom: 6px; }
+  .hero-v1 .pscreen-tabs .tab.active::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -13px;
+    height: 2px; background: #fff;
+  }
+  .hero-v1 .pscreen-search {
+    margin: 6px 14px 8px;
+    padding: 9px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-v1 .pscreen-filters {
+    display: flex; gap: 6px;
+    padding: 0 14px 10px;
+    font-size: 0.62rem;
+  }
+  .hero-v1 .pscreen-filter {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .hero-v1 .pscreen-ev {
+    margin: 0 14px 8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .hero-v1 .pscreen-ev .name { font-weight: 800; font-size: 0.82rem; color: rgba(255,255,255,0.95); }
+  .hero-v1 .pscreen-ev .desc { font-size: 0.65rem; line-height: 1.4; color: rgba(255,255,255,0.62); margin-top: 5px; }
+  .hero-v1 .pscreen-ev .meta { font-size: 0.58rem; color: rgba(255,255,255,0.5); margin-top: 7px; }
+
+  .hero-v1 .pscreen-front-tabs {
+    display: flex; gap: 6px;
+    padding: 0 14px 12px;
+    font-size: 0.62rem;
+  }
+  .hero-v1 .pf-tab {
+    padding: 8px 13px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 700;
+    display: inline-flex; gap: 5px; align-items: center;
+  }
+  .hero-v1 .pf-tab.active { background: #fff; color: #02080f; }
+
+  .hero-v1 .ecard {
+    margin: 8px 14px;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 195px;
+    position: relative;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+  }
+  .hero-v1 .ecard.b { height: 152px; }
+  .hero-v1 .ecard.c { height: 130px; }
+  .hero-v1 .ecard .img {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-v1 .ecard .img.festival {
+    background-image:
+      linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.65) 100%),
+      linear-gradient(180deg, #ff8a4d 0%, #b62b6e 50%, #321866 100%);
+  }
+  .hero-v1 .ecard .img.festival::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60px 30px at 30% 70%, rgba(255, 220, 120, 0.55), transparent 65%),
+      radial-gradient(40px 20px at 65% 80%, rgba(255, 180, 90, 0.45), transparent 65%),
+      radial-gradient(50px 26px at 80% 65%, rgba(255, 255, 255, 0.3), transparent 70%);
+  }
+  .hero-v1 .ecard .img.festival::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0; height: 35%;
+    background:
+      repeating-linear-gradient(90deg,
+        rgba(0, 0, 0, 0.55) 0px, rgba(0, 0, 0, 0.55) 4px,
+        rgba(0, 0, 0, 0.25) 4px, rgba(0, 0, 0, 0.25) 8px);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 50%);
+  }
+  .hero-v1 .ecard .img.hike {
+    background-image:
+      linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.55) 100%),
+      linear-gradient(180deg, #6cc7e3 0%, #5a9dab 35%, #2f6b56 70%, #1a3f2a 100%);
+  }
+  .hero-v1 .ecard .img.hike::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(120px 60px at 30% 65%, #2c5b3a, #1c3825 70%),
+      radial-gradient(140px 70px at 70% 70%, #4a7f55, #1c3825 70%);
+    opacity: 0.85;
+  }
+  .hero-v1 .ecard .img.compass {
+    background-image:
+      linear-gradient(135deg, #d6a043 0%, #b8741e 50%, #6b3a0c 100%);
+  }
+  .hero-v1 .ecard .img.compass::before {
+    content: "✦";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 220, 130, 0.8);
+    font-size: 70px;
+    text-shadow: 0 0 30px rgba(255, 200, 80, 0.6);
+  }
+  .hero-v1 .ecard .stamp {
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    backdrop-filter: blur(4px);
+  }
+  .hero-v1 .ecard .meta {
+    position: absolute;
+    left: 14px; right: 14px; bottom: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .hero-v1 .ecard .meta .name { font-weight: 800; font-size: 0.92rem; }
+  .hero-v1 .ecard .meta .loc { font-size: 0.66rem; opacity: 0.9; margin-top: 3px; display: flex; gap: 4px; align-items: center; }
+  .hero-v1 .ecard .meta .avs { display: flex; align-items: center; }
+  .hero-v1 .ecard .meta .av {
+    width: 24px; height: 24px;
+    border-radius: 9999px;
+    border: 2px solid #fff;
+    background: #888;
+    margin-left: -7px;
+    background-size: cover;
+  }
+  .hero-v1 .ecard .meta .more {
+    margin-left: 4px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 3px 7px;
+    border-radius: 9999px;
+  }
+  .hero-v1 .week-label {
+    padding: 6px 14px 6px;
+    font-weight: 800;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .hero-v1 .floating-card {
+    position: absolute;
+    width: 270px;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.65);
+    color: #fff;
+    z-index: 4;
+    top: 200px;
+    right: -60px;
+    transform: rotate(-1deg);
+    background: #5a2317;
+  }
+  .hero-v1 .floating-card .img {
+    height: 100%;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%),
+      linear-gradient(135deg, #d56b3a 0%, #a23e1e 50%, #5a2317 100%);
+    padding: 14px;
+  }
+  .hero-v1 .floating-card .img::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 100%;
+    background:
+      radial-gradient(80px 40px at 30% 30%, rgba(255, 220, 120, 0.4), transparent 60%),
+      radial-gradient(60px 30px at 70% 50%, rgba(255, 200, 100, 0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-v1 .floating-card .meta {
+    position: relative;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .hero-v1 .floating-card .pill {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+  }
+  .hero-v1 .floating-card .title {
+    position: relative;
+    font-weight: 800;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  .hero-v1 .floating-card .desc {
+    position: relative;
+    font-size: 0.72rem;
+    opacity: 0.92;
+    line-height: 1.4;
+  }
+  .hero-v1 .floating-card .loc {
+    position: relative;
+    margin-top: 10px;
+    font-size: 0.68rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.95;
+  }
+
+  .hero-v1 .going-pill {
+    position: absolute;
+    top: 290px;
+    left: 290px;
+    background: linear-gradient(135deg, #2fce72, #1c8848);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 6;
+    transform: rotate(-2deg);
+  }
+  .hero-v1 .plan-pill {
+    position: absolute;
+    top: 180px;
+    right: -90px;
+    background: linear-gradient(135deg, #4fd9c8, #1f9c8d);
+    color: #04241f;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 7;
+    transform: rotate(3deg);
+  }
+
+  .hero-v1 .scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 5;
+    font-size: 1.15rem;
+  }
+</style>
+
+<div class="mr-marketing hero-v1">
+  <header class="nav">
+    <div class="brand">
+      <img src="../../../design-system/mixedroutes-assets/icon-foreground.svg" alt="" />
+      MixedRoutes
+    </div>
+    <nav class="nav-links">
+      <a href="#" style="color:#fff">Home</a>
+      <a href="#">About</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+      <a href="#" class="nav-login">Login</a>
+    </nav>
+  </header>
+
+  <div class="stage">
+    <div class="copy">
+      <h1>
+        Life's offline.
+        <span class="accent">We just get</span>
+        <span class="accent">you there.</span>
+      </h1>
+      <p class="sub">Find things to do, make plans, and go together.</p>
+      <div class="ctas">
+        <button class="cta-primary">Get the app</button>
+        <button class="cta-secondary">Try on the web</button>
+      </div>
+      <div class="testimonial">
+        "So helpful when planning events."
+        <div class="testimonial-stars">
+          <span>★ ★ ★ ★ ★</span>
+          <span class="who">Sam, Theresa, PNW</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phones-stage">
+      <div class="phone phone-back">
+        <div class="phone-screen">
+          <span class="notch"></span>
+          <div class="status-row"><span>9:41</span><span>•••</span></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:0 18px 8px;">
+            <span class="pscreen-title" style="padding:0">Discover</span>
+            <span class="pscreen-icons">? 🔔 <span style="display:inline-block; width:22px; height:22px; border-radius:9999px; background:#888; background-image:url(https://i.pravatar.cc/64?img=15); background-size:cover"></span></span>
+          </div>
+          <div class="pscreen-tabs">
+            <span class="tab active">EVENTS</span>
+            <span class="tab">PLACES</span>
+            <span class="tab">PLANS</span>
+          </div>
+          <div class="pscreen-search">🔍 Search events…</div>
+          <div class="pscreen-filters">
+            <span class="pscreen-filter">📍 Asheville, NC</span>
+            <span class="pscreen-filter">📅 Anytime</span>
+          </div>
+          <div class="pscreen-ev">
+            <div class="name">Tech Innovations Expo</div>
+            <div class="desc">Discover the latest in tech and innovation at the Tech Innovations Expo, featuring workshops and keynote speake…</div>
+            <div class="meta">📅 Sunday, May 20</div>
+          </div>
+          <div class="pscreen-ev">
+            <div class="name">The Park</div>
+            <div class="desc">Experience the latest in tech and innovation at the Tech Innovations Expo, featuring workshops and keynote speake…</div>
+            <div class="meta">📅 Sunday, May 20 &nbsp; 📍 The Salvage Station, Asheville, NC</div>
+          </div>
+          <div class="pscreen-ev">
+            <div class="name">Culinary Delights Fair</div>
+            <div class="desc">Savor delicious dishes from around the world at the Culinary Delights Fair, with cooking demos and tastings.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone phone-front">
+        <div class="phone-screen">
+          <span class="notch"></span>
+          <div class="status-row"><span>9:41</span><span>•••</span></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:0 18px 12px;">
+            <span class="pscreen-title" style="padding:0">MixedRoutes</span>
+            <span class="pscreen-icons">? 🔔 <span style="display:inline-block; width:22px; height:22px; border-radius:9999px; background:#888; background-image:url(https://i.pravatar.cc/64?img=11); background-size:cover"></span></span>
+          </div>
+          <div class="pscreen-front-tabs">
+            <span class="pf-tab active">📅 Upcoming</span>
+            <span class="pf-tab">🔖 Someday</span>
+            <span class="pf-tab">✉️ Invites (3)</span>
+          </div>
+          <div class="ecard">
+            <div class="img festival"></div>
+            <span class="stamp">TODAY, 2 PM</span>
+            <div class="meta">
+              <div>
+                <div class="name">Music Festival 🎸</div>
+                <div class="loc">📍 Festival Location</div>
+              </div>
+              <div class="avs">
+                <span class="av" style="background-image:url(https://i.pravatar.cc/64?img=12)"></span>
+                <span class="av" style="background-image:url(https://i.pravatar.cc/64?img=22)"></span>
+                <span class="av" style="background-image:url(https://i.pravatar.cc/64?img=33)"></span>
+                <span class="more">+3</span>
+              </div>
+            </div>
+          </div>
+          <div class="week-label">This week</div>
+          <div class="ecard b">
+            <div class="img hike"></div>
+            <span class="stamp">TODAY, 2 PM</span>
+            <div class="meta">
+              <div>
+                <div class="name">Hiking Trip 🥾</div>
+                <div class="loc">📍 Mountain Trail</div>
+              </div>
+              <div class="avs">
+                <span class="av" style="background-image:url(https://i.pravatar.cc/64?img=44)"></span>
+                <span class="av" style="background-image:url(https://i.pravatar.cc/64?img=55)"></span>
+                <span class="more">+3</span>
+              </div>
+            </div>
+          </div>
+          <div class="ecard c">
+            <div class="img compass"></div>
+            <span class="stamp">TODAY, 2 PM</span>
+            <div class="meta">
+              <div>
+                <div class="name">Game Night 🎲</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="going-pill">✓ Going</div>
+      <div class="plan-pill">📅 Plan this</div>
+
+      <div class="floating-card">
+        <div class="img" style="position:relative; height:auto; min-height:140px;">
+          <div class="meta">
+            <span class="pill">Free</span>
+            <span class="pill">🎵 Live music</span>
+          </div>
+          <div class="title">Summer Sound Fest</div>
+          <div class="desc">Join us for the Summer Sound Fest! Experience a weekend packed with l…</div>
+          <div class="loc">📍 Asheville NC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">⌄</div>
+</div>
