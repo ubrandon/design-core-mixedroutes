@@ -32,14 +32,14 @@
     <div style="padding: 0 16px 10px">
       <div class="mr-search-bar">
         <i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i>
-        <input type="search" placeholder="Search plans, events, friends…" autocomplete="off" />
+        <input type="text" placeholder="Search plans, events, friends…" autocomplete="off" />
       </div>
     </div>
 
     <div class="ds-scroll-x" style="padding: 0 16px 8px">
       <div class="mr-chip-row" style="flex-wrap: nowrap; width: max-content; padding: 2px 0">
         <button type="button" class="mr-chip mr-chip-active">All</button>
-        <button type="button" class="mr-chip"><span>🎸</span> Music</button>
+        <button type="button" class="mr-chip"><span>🎵</span> Music</button>
         <button type="button" class="mr-chip"><span>🎨</span> Art</button>
         <button type="button" class="mr-chip"><span>🥾</span> Hiking</button>
         <button type="button" class="mr-chip"><span>🎮</span> Games</button>
@@ -59,36 +59,36 @@
       </div>
       <div class="mr-recent-activity" style="max-width: none; padding: 0 16px">
         <div class="mr-recent-item">
-          <div class="mr-recent-avatar">
+          <div class="mr-recent-avatar mr-recent-avatar--rounded">
             <img src="https://i.pravatar.cc/80?img=12" alt="" loading="lazy" />
             <span class="mr-recent-count" aria-hidden="true">1</span>
           </div>
-          <span class="mr-recent-name">John</span>
-          <span class="mr-recent-detail">Climbing • Rock Gym…</span>
-          <span class="mr-recent-status">Live now</span>
+          <div class="mr-recent-name">John</div>
+          <div class="mr-recent-detail">Climbing • Rock Gym…</div>
+          <div class="mr-recent-status">Live now</div>
         </div>
         <div class="mr-recent-item">
-          <div class="mr-recent-avatar">
+          <div class="mr-recent-avatar mr-recent-avatar--rounded">
             <img src="https://i.pravatar.cc/80?img=45" alt="" loading="lazy" />
           </div>
-          <span class="mr-recent-name">Concerts</span>
-          <span class="mr-recent-detail">Downtown stage</span>
-          <span class="mr-recent-status">Live now</span>
+          <div class="mr-recent-name">Concerts</div>
+          <div class="mr-recent-detail">Downtown stage</div>
+          <div class="mr-recent-status">Live now</div>
         </div>
         <div class="mr-recent-item">
           <div class="mr-recent-avatar">
             <img src="https://i.pravatar.cc/80?img=32" alt="" loading="lazy" />
           </div>
-          <span class="mr-recent-name">Sara</span>
-          <span class="mr-recent-detail">Food trucks • 2 friends</span>
+          <div class="mr-recent-name">Sara</div>
+          <div class="mr-recent-detail">Food trucks • 2 friends</div>
         </div>
         <div class="mr-recent-item">
-          <div class="mr-recent-avatar">
+          <div class="mr-recent-avatar mr-recent-avatar--rounded">
             <img src="https://i.pravatar.cc/80?img=8" alt="" loading="lazy" />
           </div>
-          <span class="mr-recent-name">Game night</span>
-          <span class="mr-recent-detail">Starts 8 PM</span>
-          <span class="mr-recent-status">Trending</span>
+          <div class="mr-recent-name">Game night</div>
+          <div class="mr-recent-detail">Starts 8 PM</div>
+          <div class="mr-recent-status">Trending</div>
         </div>
       </div>
     </div>
@@ -109,7 +109,10 @@
       </div>
       <div style="padding: 0 16px">
         <div class="mr-plan-carousel ds-scroll-x">
-          <div class="plan-card plan-card-mini plan-card-cafe">
+          <div
+            class="plan-card plan-card-mini plan-card-cafe plan-card-mini--photo-blur"
+            style="--mr-plan-card-bg: url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&amp;fit=crop&amp;w=400&amp;h=400&amp;q=80)"
+          >
             <div class="plan-card-mini-media" aria-hidden="true"></div>
             <div class="plan-card-mini-body">
               <div class="plan-card-mini-time">Today, 2 PM</div>
@@ -118,13 +121,20 @@
                 <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span>Asheville NC</span>
               </div>
-              <div class="plan-card-mini-social">
-                <i class="ph-fill ph-users" aria-hidden="true"></i>
-                <span>5 friends</span>
+              <div class="plan-card-mini-social plan-card-mini-social--avatars">
+                <div class="plan-card-mini-avatar-stack" aria-hidden="true">
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=5" alt="" loading="lazy" />
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=11" alt="" loading="lazy" />
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=19" alt="" loading="lazy" />
+                  <span class="plan-card-mini-avatar-more">+2</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="plan-card plan-card-mini plan-card-food">
+          <div
+            class="plan-card plan-card-mini plan-card-food plan-card-mini--photo-blur"
+            style="--mr-plan-card-bg: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=400&amp;h=400&amp;q=80)"
+          >
             <div class="plan-card-mini-media" aria-hidden="true"></div>
             <div class="plan-card-mini-body">
               <div class="plan-card-mini-time">Today, 2 PM</div>
@@ -146,7 +156,10 @@
       </div>
 
       <div class="mr-plan-rows" style="max-width: 100%; padding: 14px 16px 0; margin: 0">
-        <div class="mr-plan-row mr-plan-row-sponsored">
+        <div
+          class="mr-plan-row mr-plan-row--photo-blur mr-plan-row-sponsored"
+          style="--mr-plan-row-bg: url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&amp;fit=crop&amp;w=320&amp;h=320&amp;q=80)"
+        >
           <div
             class="mr-plan-row-media"
             style="background-image: url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&amp;fit=crop&amp;w=280&amp;h=280&amp;q=80)"
@@ -162,6 +175,13 @@
               <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
                 <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span>Asheville NC</span>
+              </div>
+              <div class="mr-plan-row-avatar-stack" aria-hidden="true">
+                <div class="plan-card-mini-avatar-stack">
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=11" alt="" loading="lazy" />
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=32" alt="" loading="lazy" />
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=14" alt="" loading="lazy" />
+                </div>
               </div>
             </div>
           </div>
@@ -227,7 +247,7 @@
               <span class="mr-activity-status mr-status-live">Live now</span>
             </div>
             <div class="mr-activity-title">Mike is rock climbing</div>
-            <div class="mr-activity-meta">30 min ago • Rock Gym, Asheville</div>
+            <div class="mr-activity-meta">Started 30 min ago • Rock Gym, Asheville NC</div>
             <div class="mr-activity-footer">
               <div class="mr-activity-note">
                 <i class="ph-fill ph-users" aria-hidden="true"></i>
@@ -245,7 +265,7 @@
               <span class="mr-activity-status mr-status-recurring">Recurring</span>
             </div>
             <div class="mr-activity-title">Emma wants to game</div>
-            <div class="mr-activity-meta">45 min ago • Downtown</div>
+            <div class="mr-activity-meta">Started 30 min ago • Downtown Cafe</div>
             <div class="mr-activity-footer">
               <div class="mr-activity-note">
                 <i class="ph-fill ph-users" aria-hidden="true"></i>
@@ -356,7 +376,10 @@
       <div style="font-size: 1.02rem; font-weight: 800; color: var(--text); padding: 0 16px 10px">Hiking</div>
       <div style="padding: 0 16px">
         <div class="mr-plan-carousel ds-scroll-x">
-          <div class="plan-card plan-card-mini plan-card-cafe">
+          <div
+            class="plan-card plan-card-mini plan-card-cafe plan-card-mini--photo-blur"
+            style="--mr-plan-card-bg: url(https://images.unsplash.com/photo-1502943693086-33b5b1cfdf2f?auto=format&amp;fit=crop&amp;w=400&amp;h=400&amp;q=80)"
+          >
             <div class="plan-card-mini-media" aria-hidden="true"></div>
             <div class="plan-card-mini-body">
               <div class="plan-card-mini-time">Sat, 8 AM</div>
@@ -373,7 +396,10 @@
               </div>
             </div>
           </div>
-          <div class="plan-card plan-card-mini plan-card-hiking">
+          <div
+            class="plan-card plan-card-mini plan-card-hiking plan-card-mini--photo-blur"
+            style="--mr-plan-card-bg: url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=400&amp;h=400&amp;q=80)"
+          >
             <div class="plan-card-mini-media" aria-hidden="true"></div>
             <div class="plan-card-mini-body">
               <div class="plan-card-mini-time">Sun, 7 AM</div>
@@ -382,8 +408,13 @@
                 <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
                 <span>Craggy Pinnacle</span>
               </div>
-              <div class="plan-card-mini-social">
-                <span>8 going</span>
+              <div class="plan-card-mini-social plan-card-mini-social--avatars">
+                <div class="plan-card-mini-avatar-stack" aria-hidden="true">
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=6" alt="" loading="lazy" />
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=18" alt="" loading="lazy" />
+                  <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=27" alt="" loading="lazy" />
+                  <span class="plan-card-mini-avatar-more">+5</span>
+                </div>
               </div>
             </div>
           </div>
