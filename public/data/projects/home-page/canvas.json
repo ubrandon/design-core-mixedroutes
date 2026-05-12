@@ -1,12 +1,6 @@
 {
   "screens": [
     {
-      "file": "home-feed-v3.html",
-      "x": 828,
-      "y": -64,
-      "width": 390
-    },
-    {
       "file": "home-feed-v4.html",
       "x": 1248,
       "y": -64,
@@ -14,7 +8,25 @@
     },
     {
       "file": "home-feed-v5.html",
-      "x": 1824,
+      "x": 1696,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-v6.html",
+      "x": 2432,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-v7.html",
+      "x": 2880,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-new-user.html",
+      "x": 3328,
       "y": -64,
       "width": 390
     }
