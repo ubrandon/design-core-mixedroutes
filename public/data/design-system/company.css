@@ -19,6 +19,9 @@
   /* Interactive text: teal (distinct from gradient / static blue emphasis) */
   --link: var(--neon-teal);
   --link-hover: #5ff0e4;
+  /* Section action: warm yellow used by uppercase "EDIT / NEW GROUP / NEW LIST / VIEW ALL" links */
+  --mr-section-action: #f5c451;
+  --mr-section-action-hover: #ffd97a;
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
   --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.35);
   --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -150,7 +153,7 @@
 }
 
 .mr-scope .mr-section-action {
-  color: #f5c451;
+  color: var(--mr-section-action);
   font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -160,6 +163,10 @@
   padding: 4px 0;
   cursor: pointer;
   text-decoration: none;
+}
+
+.mr-scope .mr-section-action:hover {
+  color: var(--mr-section-action-hover);
 }
 
 .mr-scope a {
@@ -1958,15 +1965,11 @@
   display: grid;
   grid-template-columns: 96px 1fr;
   gap: 14px;
-  padding: 14px;
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(
-    180deg,
-    rgba(11, 14, 22, 0.94),
-    rgba(6, 8, 16, 0.9)
-  );
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
 .mr-scope .event-card-media {
@@ -2056,9 +2059,10 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   max-width: 100%;
   min-height: 0;
+  gap: 10px;
 }
 
 .mr-scope .event-card.event-card--mini .event-card-media {
@@ -2067,9 +2071,8 @@
   flex-shrink: 0;
   aspect-ratio: 4 / 3;
   max-height: 118px;
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mr-scope .event-card.event-card--mini .event-card-img {
@@ -2080,7 +2083,7 @@
 }
 
 .mr-scope .event-card.event-card--mini .event-card-content {
-  padding: 11px 12px 13px;
+  padding: 0;
   min-height: 0;
 }
 

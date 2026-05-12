@@ -93,24 +93,33 @@
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.08em;
-    color: var(--neon-teal);
+    color: var(--mr-section-action);
     text-transform: uppercase;
   }
   .mr-see-more-tile {
-    flex: 0 0 auto;
-    width: 200px;
-    min-height: 230px;
-    border-radius: 18px;
-    border: 1px dashed rgba(var(--neon-teal-rgb), 0.4);
-    background: rgba(var(--neon-teal-rgb), 0.05);
+    flex: 1 1 auto;
+    min-width: 88px;
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 0;
+    margin-top: 56px;
+    color: rgba(255, 255, 255, 0.62);
+    background: transparent;
+    border: none;
+  }
+  .mr-see-more-tile .mr-see-more-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 8px;
-    color: var(--neon-teal);
-    text-align: center;
-    padding: 12px;
+    color: rgba(255, 255, 255, 0.78);
   }
   .mr-event-carousel {
     display: flex;
@@ -130,11 +139,12 @@
     scroll-snap-align: start;
   }
   .mr-see-more-tile i {
-    font-size: 28px;
+    font-size: 22px;
   }
   .mr-see-more-tile .label {
-    font-size: 0.82rem;
-    font-weight: 700;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
   .mr-fab {
     position: fixed;
@@ -308,9 +318,9 @@
               </div>
             </div>
           </div>
-          <div class="mr-see-more-tile">
-            <i class="ph ph-arrow-right" aria-hidden="true"></i>
-            <span class="label">See more in Concerts</span>
+          <div class="mr-see-more-tile" role="button" aria-label="See more concerts">
+            <div class="mr-see-more-circle"><i class="ph ph-caret-right" aria-hidden="true"></i></div>
+            <span class="label">See more</span>
           </div>
         </div>
       </div>
@@ -379,9 +389,9 @@
               </div>
             </div>
           </div>
-          <div class="mr-see-more-tile">
-            <i class="ph ph-arrow-right" aria-hidden="true"></i>
-            <span class="label">See more in Hiking</span>
+          <div class="mr-see-more-tile" role="button" aria-label="See more hiking">
+            <div class="mr-see-more-circle"><i class="ph ph-caret-right" aria-hidden="true"></i></div>
+            <span class="label">See more</span>
           </div>
         </div>
       </div>
@@ -432,9 +442,9 @@
               </div>
             </div>
           </div>
-          <div class="mr-see-more-tile">
-            <i class="ph ph-arrow-right" aria-hidden="true"></i>
-            <span class="label">See more in Gaming</span>
+          <div class="mr-see-more-tile" role="button" aria-label="See more gaming">
+            <div class="mr-see-more-circle"><i class="ph ph-caret-right" aria-hidden="true"></i></div>
+            <span class="label">See more</span>
           </div>
         </div>
       </div>

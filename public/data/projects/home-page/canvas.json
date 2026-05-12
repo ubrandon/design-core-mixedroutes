@@ -7,26 +7,38 @@
       "width": 390
     },
     {
-      "file": "home-feed-v5.html",
+      "file": "home-feed-v6.html",
       "x": 1696,
       "y": -64,
       "width": 390
     },
     {
-      "file": "home-feed-v6.html",
-      "x": 2432,
-      "y": -64,
-      "width": 390
-    },
-    {
-      "file": "home-feed-v7.html",
-      "x": 2880,
-      "y": -64,
-      "width": 390
-    },
-    {
       "file": "home-feed-new-user.html",
-      "x": 3328,
+      "x": 3648,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-invites.html",
+      "x": 4768,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-partial-empty.html",
+      "x": 2720,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-banner-stack.html",
+      "x": 3168,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "home-feed-header-variations.html",
+      "x": 5216,
       "y": -64,
       "width": 390
     }
