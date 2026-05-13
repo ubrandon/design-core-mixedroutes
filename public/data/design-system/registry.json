@@ -264,6 +264,17 @@
     },
     {
       "group": "feedback",
+      "name": "Banners",
+      "components": [
+        {
+          "id": "mr-welcome-banner",
+          "file": "mixedroutes/welcome-banner.html",
+          "label": "Welcome banner"
+        }
+      ]
+    },
+    {
+      "group": "feedback",
       "name": "Modals & sheets",
       "layout": "row",
       "components": [
