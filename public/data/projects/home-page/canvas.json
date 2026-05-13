@@ -41,6 +41,18 @@
       "x": 5216,
       "y": -64,
       "width": 390
+    },
+    {
+      "file": "home-feed-fab-open.html",
+      "x": 5664,
+      "y": -64,
+      "width": 390
+    },
+    {
+      "file": "nav-overview.html",
+      "x": 5664,
+      "y": 352,
+      "width": 390
     }
   ]
 }

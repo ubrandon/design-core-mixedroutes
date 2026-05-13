@@ -169,6 +169,26 @@
   color: var(--mr-section-action-hover);
 }
 
+/* Feed row / section heading — paired with .mr-section-action on the right */
+.mr-scope .mr-row-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.mr-scope .mr-row-link {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mr-section-action);
+}
+
 .mr-scope a {
   color: var(--link);
   text-decoration: underline;
