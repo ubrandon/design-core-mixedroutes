@@ -1,0 +1,257 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .mr-inbox-header {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px 10px;
+    background: linear-gradient(180deg, var(--bg-0) 78%, rgba(0, 0, 0, 0));
+  }
+  .mr-inbox-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .mr-inbox-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 16px 12px;
+    scrollbar-width: none;
+  }
+  .mr-inbox-tabs::-webkit-scrollbar { display: none; }
+  .mr-inbox-tab {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(6, 8, 16, 0.7);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .mr-inbox-tab.is-active {
+    background: rgba(var(--neon-teal-rgb), 0.16);
+    border-color: rgba(var(--neon-teal-rgb), 0.42);
+    color: var(--text);
+  }
+  .mr-inbox-tab .mr-inbox-tab-count {
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .mr-inbox-tab.is-active .mr-inbox-tab-count {
+    background: rgba(var(--neon-teal-rgb), 0.28);
+    color: var(--text);
+  }
+  .mr-inbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 6px 16px 24px;
+  }
+  .mr-inbox-card {
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+      var(--bg-1);
+    border: 1px solid rgba(var(--neon-teal-rgb), 0.24);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mr-inbox-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mr-inbox-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .mr-inbox-host {
+    font-size: 0.84rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.25;
+    flex: 1;
+    min-width: 0;
+  }
+  .mr-inbox-host strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+  .mr-inbox-pill {
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 999px;
+    color: var(--neon-teal);
+    background: rgba(var(--neon-teal-rgb), 0.14);
+    border: 1px solid rgba(var(--neon-teal-rgb), 0.28);
+    flex-shrink: 0;
+  }
+  .mr-inbox-card-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .mr-inbox-meta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .mr-inbox-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  .mr-inbox-meta i { font-size: 14px; }
+  .mr-inbox-deadline {
+    font-size: 0.74rem;
+    color: rgba(231, 76, 60, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .mr-inbox-deadline i { font-size: 12px; }
+  .mr-inbox-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .mr-inbox-btn {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    border: none;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .mr-inbox-btn.is-primary {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, rgb(var(--neon-blue-rgb)) 72%, #020b14),
+      color-mix(in srgb, rgb(var(--neon-teal-rgb)) 66%, #020b14)
+    );
+    color: rgba(255, 255, 255, 0.98);
+  }
+  .mr-inbox-section-label {
+    padding: 18px 16px 6px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.42);
+  }
+</style>
+
+<div style="background: var(--bg-0); overflow-x: clip; position: relative; min-height: 100vh">
+  <div class="mr-scope" style="padding-bottom: 24px">
+
+    <header class="mr-inbox-header">
+      <button type="button" class="mr-nav-icon-btn" aria-label="Back">
+        <i class="ph ph-arrow-left" aria-hidden="true"></i>
+      </button>
+      <div class="mr-inbox-title">Your invites</div>
+    </header>
+
+    <!-- Tabs only render for buckets that have items. Friend requests bucket hidden when empty. -->
+    <div class="mr-inbox-tabs" role="tablist">
+      <button type="button" class="mr-inbox-tab is-active" role="tab" aria-selected="true">
+        <i class="ph-fill ph-envelope-simple-open" aria-hidden="true"></i>
+        Invites
+        <span class="mr-inbox-tab-count">2</span>
+      </button>
+      <button type="button" class="mr-inbox-tab" role="tab" aria-selected="false">
+        <i class="ph-fill ph-user-plus" aria-hidden="true"></i>
+        Friend requests
+        <span class="mr-inbox-tab-count">3</span>
+      </button>
+    </div>
+
+    <div class="mr-inbox-list">
+
+      <div class="mr-inbox-card">
+        <div class="mr-inbox-card-head">
+          <img class="mr-inbox-avatar" src="https://i.pravatar.cc/72?img=5" alt="" loading="lazy" />
+          <div class="mr-inbox-host"><strong>Sara</strong> invited you</div>
+          <span class="mr-inbox-pill">New</span>
+        </div>
+        <div class="mr-inbox-card-title">Friday wine bar</div>
+        <div class="mr-inbox-meta-row">
+          <div class="mr-inbox-meta">
+            <i class="ph-fill ph-clock" aria-hidden="true"></i>
+            <span>Tonight, 8 PM</span>
+          </div>
+          <div class="mr-inbox-meta">
+            <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
+            <span>The Pour House</span>
+          </div>
+        </div>
+        <div class="mr-inbox-deadline">
+          <i class="ph-fill ph-timer" aria-hidden="true"></i>
+          <span>Reply by 6 PM</span>
+        </div>
+        <div class="mr-inbox-actions">
+          <button type="button" class="mr-inbox-btn">Decline</button>
+          <button type="button" class="mr-inbox-btn is-primary">Going</button>
+        </div>
+      </div>
+
+      <div class="mr-inbox-card">
+        <div class="mr-inbox-card-head">
+          <img class="mr-inbox-avatar" src="https://i.pravatar.cc/72?img=33" alt="" loading="lazy" />
+          <div class="mr-inbox-host"><strong>Marcus</strong> invited you</div>
+        </div>
+        <div class="mr-inbox-card-title">Saturday morning hike</div>
+        <div class="mr-inbox-meta-row">
+          <div class="mr-inbox-meta">
+            <i class="ph-fill ph-clock" aria-hidden="true"></i>
+            <span>Sat, 7 AM</span>
+          </div>
+          <div class="mr-inbox-meta">
+            <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
+            <span>Craggy Pinnacle</span>
+          </div>
+        </div>
+        <div class="mr-inbox-deadline">
+          <i class="ph-fill ph-timer" aria-hidden="true"></i>
+          <span>Reply by Fri 9 PM</span>
+        </div>
+        <div class="mr-inbox-actions">
+          <button type="button" class="mr-inbox-btn">Decline</button>
+          <button type="button" class="mr-inbox-btn is-primary">Going</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

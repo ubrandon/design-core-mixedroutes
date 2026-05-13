@@ -79,6 +79,25 @@
     padding: 4px 0;
     flex-shrink: 0;
   }
+  .mr-banner-dismiss {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+  .mr-banner-dismiss i {
+    font-size: 14px;
+  }
   .mr-onboard-stack {
     padding: 8px 16px 4px;
     display: flex;
@@ -238,6 +257,9 @@
         <div class="mr-banner-stub is-third" aria-hidden="true"></div>
         <div class="mr-banner-stub is-second" aria-hidden="true"></div>
         <div class="mr-banner-card is-top">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
           <div class="mr-banner-icon"><i class="ph-fill ph-hand-waving" aria-hidden="true"></i></div>
           <div class="mr-banner-body">
             <div class="mr-banner-title">Welcome to MixedRoutes</div>
