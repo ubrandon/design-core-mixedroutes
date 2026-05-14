@@ -38,7 +38,7 @@
     },
     {
       "file": "you-profile-example.html",
-      "x": 8864,
+      "x": 8096,
       "y": 3456,
       "width": 390
     },
@@ -57,6 +57,12 @@
     {
       "file": "home-feed-filter-hiking.html",
       "x": 6464,
+      "y": 3456,
+      "width": 390
+    },
+    {
+      "file": "home-feed-filter-hiking-slim.html",
+      "x": 6912,
       "y": 3456,
       "width": 390
     }
