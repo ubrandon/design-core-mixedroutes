@@ -2,8 +2,8 @@
   "screens": [
     {
       "file": "home-feed-new-user.html",
-      "x": 5760,
-      "y": 3488,
+      "x": 6784,
+      "y": 3456,
       "width": 390
     },
     {
@@ -14,7 +14,7 @@
     },
     {
       "file": "home-feed-invites.html",
-      "x": 4224,
+      "x": 4256,
       "y": 3456,
       "width": 390
     },
@@ -44,7 +44,7 @@
     },
     {
       "file": "you-profile-example.html",
-      "x": 6688,
+      "x": 7264,
       "y": 3456,
       "width": 390
     }
