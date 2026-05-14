@@ -330,6 +330,54 @@
   .mr-invite-deadline i {
     font-size: 12px;
   }
+  .mr-people-card {
+    flex: 0 0 auto;
+    width: 168px;
+    border-radius: 18px;
+    background: var(--bg-1);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    padding: 16px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    scroll-snap-align: start;
+    text-align: center;
+  }
+  .mr-people-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.06);
+  }
+  .mr-people-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+  .mr-people-sub {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.25;
+  }
+  .mr-people-btn {
+    margin-top: 4px;
+    padding: 8px 22px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: none;
+    color: rgba(255, 255, 255, 0.98);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, rgb(var(--neon-blue-rgb)) 72%, #020b14),
+      color-mix(in srgb, rgb(var(--neon-teal-rgb)) 66%, #020b14)
+    );
+  }
   .mr-fab {
     position: fixed;
     right: 16px;
@@ -829,6 +877,45 @@
           <div class="mr-see-more-tile" role="button" aria-label="See more picnics">
             <div class="mr-see-more-circle"><i class="ph ph-caret-right" aria-hidden="true"></i></div>
             <span class="label">See more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 14px 0 4px">
+      <div class="mr-row-header">
+        <span class="mr-row-title">People you may know</span>
+        <span class="mr-row-link">See all</span>
+      </div>
+      <div style="padding-left: 16px">
+        <div class="mr-event-carousel">
+          <div class="mr-people-card">
+            <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=5" alt="" loading="lazy" />
+            <div class="mr-people-name">Sara</div>
+            <div class="mr-people-sub">From your contacts</div>
+            <button type="button" class="mr-people-btn">Invite</button>
+          </div>
+          <div class="mr-people-card">
+            <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=33" alt="" loading="lazy" />
+            <div class="mr-people-name">Marcus</div>
+            <div class="mr-people-sub">From your contacts</div>
+            <button type="button" class="mr-people-btn">Invite</button>
+          </div>
+          <div class="mr-people-card">
+            <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=47" alt="" loading="lazy" />
+            <div class="mr-people-name">Devon</div>
+            <div class="mr-people-sub">2 mutual friends</div>
+            <button type="button" class="mr-people-btn">Invite</button>
+          </div>
+          <div class="mr-people-card">
+            <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=23" alt="" loading="lazy" />
+            <div class="mr-people-name">Priya</div>
+            <div class="mr-people-sub">From your contacts</div>
+            <button type="button" class="mr-people-btn">Invite</button>
+          </div>
+          <div class="mr-see-more-tile" role="button" aria-label="See all people">
+            <div class="mr-see-more-circle"><i class="ph ph-caret-right" aria-hidden="true"></i></div>
+            <span class="label">See all</span>
           </div>
         </div>
       </div>
