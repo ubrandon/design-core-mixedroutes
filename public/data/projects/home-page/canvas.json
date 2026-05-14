@@ -1,12 +1,6 @@
 {
   "screens": [
     {
-      "file": "home-feed-new-user.html",
-      "x": 6784,
-      "y": 3456,
-      "width": 390
-    },
-    {
       "file": "home-feed-welcome-card-variants.html",
       "x": 1664,
       "y": 3456,
@@ -44,7 +38,25 @@
     },
     {
       "file": "you-profile-example.html",
-      "x": 7264,
+      "x": 8864,
+      "y": 3456,
+      "width": 390
+    },
+    {
+      "file": "home-feed-empty-skeleton.html",
+      "x": 4704,
+      "y": 3456,
+      "width": 390
+    },
+    {
+      "file": "home-feed-empty-discover.html",
+      "x": 6016,
+      "y": 3456,
+      "width": 390
+    },
+    {
+      "file": "home-feed-filter-hiking.html",
+      "x": 6464,
       "y": 3456,
       "width": 390
     }
