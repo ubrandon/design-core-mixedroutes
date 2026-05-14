@@ -2,7 +2,7 @@
   "screens": [
     {
       "file": "home-feed-welcome-card-variants.html",
-      "x": 1664,
+      "x": 2112,
       "y": 3456,
       "width": 390
     },
@@ -10,7 +10,8 @@
       "file": "home-feed-invites.html",
       "x": 4256,
       "y": 3456,
-      "width": 390
+      "width": 390,
+      "name": "home-feed"
     },
     {
       "file": "nav-variations.html",
@@ -20,31 +21,31 @@
     },
     {
       "file": "nav-final.html",
-      "x": 2560,
+      "x": 2592,
       "y": 3456,
       "width": 1160
     },
     {
       "file": "home-feed-anatomy.html",
-      "x": 2080,
+      "x": 1216,
       "y": 3456,
       "width": 390
     },
     {
       "file": "home-feed-header-variations.html",
-      "x": 1248,
+      "x": 1696,
       "y": 3456,
       "width": 390
     },
     {
       "file": "you-profile-example.html",
-      "x": 5376,
+      "x": 5312,
       "y": 3456,
       "width": 390
     },
     {
       "file": "home-feed-empty-skeleton.html",
-      "x": 4704,
+      "x": 4672,
       "y": 3456,
       "width": 390
     },
