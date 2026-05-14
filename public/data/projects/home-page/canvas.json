@@ -26,19 +26,31 @@
     },
     {
       "file": "home-feed-invites.html",
-      "x": 3200,
+      "x": 6144,
       "y": 3456,
       "width": 390
     },
     {
       "file": "home-feed-invites-empty-v5-invite.html",
-      "x": 3648,
+      "x": 6592,
       "y": 3456,
       "width": 390
     },
     {
+      "file": "nav-variations.html",
+      "x": 3072,
+      "y": 3456,
+      "width": 1000
+    },
+    {
+      "file": "nav-finalist-a3.html",
+      "x": 4096,
+      "y": 3456,
+      "width": 760
+    },
+    {
       "file": "home-feed-anatomy.html",
-      "x": 2496,
+      "x": 2080,
       "y": 3456,
       "width": 390
     },
@@ -62,14 +74,14 @@
     },
     {
       "file": "home-feed-fab-open.html",
-      "x": 2080,
-      "y": 3456,
+      "x": 5216,
+      "y": 4000,
       "width": 390
     },
     {
       "file": "nav-overview.html",
-      "x": 2080,
-      "y": 3872,
+      "x": 4096,
+      "y": 4064,
       "width": 390
     }
   ]
