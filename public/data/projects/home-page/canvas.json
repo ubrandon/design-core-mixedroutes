@@ -38,15 +38,15 @@
     },
     {
       "file": "nav-variations.html",
-      "x": 3072,
+      "x": 2880,
       "y": 3456,
       "width": 1000
     },
     {
-      "file": "nav-finalist-a3.html",
+      "file": "nav-final.html",
       "x": 4096,
-      "y": 3456,
-      "width": 760
+      "y": 4064,
+      "width": 1160
     },
     {
       "file": "home-feed-anatomy.html",
@@ -74,14 +74,8 @@
     },
     {
       "file": "home-feed-fab-open.html",
-      "x": 5216,
-      "y": 4000,
-      "width": 390
-    },
-    {
-      "file": "nav-overview.html",
-      "x": 4096,
-      "y": 4064,
+      "x": 3648,
+      "y": -64,
       "width": 390
     }
   ]
