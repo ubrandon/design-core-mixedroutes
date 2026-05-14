@@ -2,8 +2,8 @@
   "screens": [
     {
       "file": "home-feed-new-user.html",
-      "x": 5376,
-      "y": 3456,
+      "x": 5760,
+      "y": 3488,
       "width": 390
     },
     {
