@@ -1,0 +1,236 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .mr-variants-page {
+    padding: 16px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .mr-variants-intro {
+    padding: 4px 0 4px;
+  }
+  .mr-variants-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .mr-variants-sub {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+  .mr-variants-section-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    padding-bottom: 6px;
+  }
+  .mr-banner-card {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    border-radius: 18px;
+    padding: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(var(--neon-teal-rgb), 0.22), rgba(var(--neon-blue-rgb), 0.08));
+    border: 1px solid rgba(var(--neon-teal-rgb), 0.36);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  }
+  .mr-banner-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(var(--neon-teal-rgb), 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--neon-teal);
+    flex-shrink: 0;
+  }
+  .mr-banner-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .mr-banner-title {
+    font-size: 0.96rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .mr-banner-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .mr-banner-cta {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--neon-teal);
+    background: none;
+    border: none;
+    padding: 4px 0;
+    flex-shrink: 0;
+  }
+  .mr-banner-dismiss {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+  .mr-banner-dismiss i {
+    font-size: 14px;
+  }
+</style>
+
+<div style="background: var(--bg-0); overflow-x: clip; position: relative; min-height: 100%">
+  <div class="mr-scope">
+
+    <header class="mr-top-nav-home">
+      <a class="mr-top-nav-home-logo" href="#" aria-label="MixedRoutes home">
+        <img src="../../../design-system/mixedroutes-assets/icon-foreground.svg" width="36" height="36" alt="" loading="lazy" />
+        <span class="mr-top-nav-home-wordmark">MixedRoutes</span>
+      </a>
+      <div class="mr-top-nav-home-actions">
+        <button type="button" class="mr-nav-icon-btn" aria-label="Notifications">
+          <i class="ph ph-bell" aria-hidden="true"></i>
+        </button>
+        <img class="mr-top-nav-avatar" src="https://i.pravatar.cc/72?img=11" alt="" width="36" height="36" loading="lazy" />
+      </div>
+    </header>
+
+    <div class="mr-variants-page">
+
+      <div class="mr-variants-intro">
+        <div class="mr-variants-title">Welcome card — copy explorations</div>
+        <div class="mr-variants-sub">Swipeable intro cards. Different angles for the same moment: voice, urgency, what to highlight.</div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">01 — Original</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-hand-waving" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Welcome to MixedRoutes</div>
+            <div class="mr-banner-desc">Let's get you set up in a few quick steps.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Start</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">12 — Progress tease</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-flag-checkered" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">1 of 3 done — keep going</div>
+            <div class="mr-banner-desc">Find a couple friends next and you're nearly there.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Next</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">04 — Value-led</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-sparkle" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Better suggestions, faster</div>
+            <div class="mr-banner-desc">Tell us what you like — we'll quiet the noise.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Tune it</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">06 — Social proof</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-users-three" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">12 friends already here</div>
+            <div class="mr-banner-desc">Connect with them so plans don't fly under the radar.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">See</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">07 — Local angle</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-map-pin" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Asheville's calling</div>
+            <div class="mr-banner-desc">Trails, shows, dinners — set up your Home in a minute.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Explore</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">08 — Action-first</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-calendar-plus" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Make your first plan</div>
+            <div class="mr-banner-desc">Coffee, a hike, a show. Invite a friend — done.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Plan</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">10 — Minimal</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><i class="ph-fill ph-circle-half" aria-hidden="true"></i></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Finish setting up</div>
+            <div class="mr-banner-desc">A few steps left.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Resume</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
