@@ -982,7 +982,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 244px;
+  width: 288px;
   min-height: 320px;
   height: auto;
   padding: 10px 14px 16px;
@@ -2079,10 +2079,13 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  overflow: visible;
+  overflow: hidden;
   max-width: 100%;
   min-height: 0;
-  gap: 10px;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
 }
 
 .mr-scope .event-card.event-card--mini .event-card-media {
@@ -2090,9 +2093,10 @@
   height: auto;
   flex-shrink: 0;
   aspect-ratio: 4 / 3;
-  max-height: 118px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 140px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mr-scope .event-card.event-card--mini .event-card-img {
@@ -2103,18 +2107,24 @@
 }
 
 .mr-scope .event-card.event-card--mini .event-card-content {
-  padding: 0;
+  padding: 12px;
   min-height: 0;
 }
 
 .mr-scope .event-card.event-card--mini .event-card-pills {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   gap: 6px;
 }
 
 .mr-scope .event-card.event-card--mini .event-card-pill {
-  padding: 4px 8px;
-  font-size: 0.6rem;
+  padding: 4px 9px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mr-scope .event-card.event-card--mini .event-card-title {
@@ -4058,4 +4068,18 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* Divider — subtle grey horizontal rule used between sections */
+.mr-scope .mr-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 0;
+  margin: 0 16px;
+}
+.mr-scope .mr-divider.is-flush {
+  margin: 0;
+}
+.mr-scope .mr-divider.is-spaced {
+  margin: 16px;
 }

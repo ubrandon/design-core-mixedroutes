@@ -11,6 +11,37 @@
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.42);
   }
+  .mr-var-section {
+    padding: 28px 16px 4px;
+  }
+  .mr-var-section:first-of-type {
+    padding-top: 14px;
+  }
+  .mr-var-section-eyebrow {
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--neon-teal);
+  }
+  .mr-var-section-title {
+    margin-top: 6px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .mr-var-section-sub {
+    margin-top: 4px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .mr-var-section-rule {
+    height: 1px;
+    margin: 12px 0 2px;
+    background: rgba(255, 255, 255, 0.08);
+  }
   .mr-greeting {
     padding: 6px 16px 18px;
   }
@@ -49,17 +80,6 @@
     color: rgba(255, 255, 255, 0.42);
     font-weight: 500;
   }
-  .mr-var-divider {
-    height: 1px;
-    margin: 0 16px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.08) 20%,
-      rgba(255, 255, 255, 0.08) 80%,
-      transparent
-    );
-  }
 </style>
 
 <div style="background: var(--bg-0); overflow-x: clip; position: relative">
@@ -81,6 +101,13 @@
       </div>
     </header>
 
+    <div class="mr-var-section">
+      <div class="mr-var-section-eyebrow">Section 01</div>
+      <div class="mr-var-section-title">Upcoming plans</div>
+      <div class="mr-var-section-sub">Surface what's on the calendar — or nudge a plan if the day is wide open.</div>
+      <div class="mr-var-section-rule"></div>
+    </div>
+
     <div class="mr-var-label">01 — Plans tonight</div>
     <div class="mr-greeting">
       <div class="mr-greeting-headline">
@@ -95,68 +122,8 @@
       </div>
     </div>
 
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">02 — Welcome back</div>
-    <div class="mr-greeting">
-      <div class="mr-greeting-headline">
-        <span class="gradient-text">Welcome back,</span> Brandon
-        <span class="mr-greeting-tail">A few things need you 👋</span>
-      </div>
-      <div class="mr-greeting-weather">
-        <i class="ph-fill ph-sun" aria-hidden="true"></i>
-        <span>74° · Sunny</span>
-        <span class="mr-greeting-sep">·</span>
-        <span class="mr-greeting-loc">Asheville</span>
-      </div>
-    </div>
-
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">03 — Hike weather</div>
-    <div class="mr-greeting">
-      <div class="mr-greeting-headline">
-        <span class="gradient-text">Hike weather,</span> Brandon
-        <span class="mr-greeting-tail">Trails are dry through Sunday 🥾</span>
-      </div>
-      <div class="mr-greeting-weather">
-        <i class="ph-fill ph-sun-horizon" aria-hidden="true"></i>
-        <span>68° · Light breeze</span>
-        <span class="mr-greeting-sep">·</span>
-        <span class="mr-greeting-loc">Pisgah Forest</span>
-      </div>
-    </div>
-
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">04 — Morning, brandon</div>
-    <div class="mr-greeting">
-      <div class="mr-greeting-headline">
-        <span class="gradient-text">Morning,</span> Brandon
-        <span class="mr-greeting-tail">Coffee run at 9 with the trail crew ☕</span>
-      </div>
-      <div class="mr-greeting-weather">
-        <i class="ph-fill ph-sun-dim" aria-hidden="true"></i>
-        <span>58° · Cool start</span>
-        <span class="mr-greeting-sep">·</span>
-        <span class="mr-greeting-loc">Asheville</span>
-      </div>
-    </div>
-
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">05 — Quiet day</div>
-    <div class="mr-greeting">
-      <div class="mr-greeting-headline">
-        <span class="gradient-text">Quiet day,</span> Brandon
-        <span class="mr-greeting-tail">Nothing on the calendar — make a plan? ✨</span>
-      </div>
-      <div class="mr-greeting-weather">
-        <i class="ph-fill ph-cloud" aria-hidden="true"></i>
-        <span>66° · Overcast</span>
-        <span class="mr-greeting-sep">·</span>
-        <span class="mr-greeting-loc">Asheville</span>
-      </div>
-    </div>
-
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">06 — Tonight's the night</div>
+    <div class="mr-divider"></div>
+    <div class="mr-var-label">02 — Tonight's the night</div>
     <div class="mr-greeting">
       <div class="mr-greeting-headline">
         <span class="gradient-text">Tonight's the night,</span> Brandon
@@ -170,31 +137,103 @@
       </div>
     </div>
 
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">07 — Trail day</div>
+    <div class="mr-divider"></div>
+    <div class="mr-var-label">03 — Quiet day</div>
     <div class="mr-greeting">
       <div class="mr-greeting-headline">
-        <span class="gradient-text">Trail day,</span> Brandon
-        <span class="mr-greeting-tail">Meet at Craggy Pinnacle, 7 AM sharp 🥾</span>
+        <span class="gradient-text">Quiet day,</span> Brandon
+        <span class="mr-greeting-tail">Nothing on the calendar — make a plan? ✨</span>
       </div>
       <div class="mr-greeting-weather">
-        <i class="ph-fill ph-mountains" aria-hidden="true"></i>
-        <span>54° · Cool & clear</span>
+        <i class="ph-fill ph-cloud" aria-hidden="true"></i>
+        <span>66° · Overcast</span>
         <span class="mr-greeting-sep">·</span>
-        <span class="mr-greeting-loc">Blue Ridge Pkwy</span>
+        <span class="mr-greeting-loc">Asheville</span>
       </div>
     </div>
 
-    <div class="mr-var-divider"></div>
-    <div class="mr-var-label">08 — New here</div>
+    <div class="mr-var-section">
+      <div class="mr-var-section-eyebrow">Section 02</div>
+      <div class="mr-var-section-title">Time of day</div>
+      <div class="mr-var-section-sub">Daily check-ins keyed to the clock — a return visit or a fresh morning.</div>
+      <div class="mr-var-section-rule"></div>
+    </div>
+
+    <div class="mr-var-label">04 — Morning</div>
     <div class="mr-greeting">
       <div class="mr-greeting-headline">
-        <span class="gradient-text">New here,</span> Brandon
-        <span class="mr-greeting-tail">Find your people in a few quick steps 👋</span>
+        <span class="gradient-text">Morning,</span> Brandon
+        <span class="mr-greeting-tail">Coffee run at 9 with the trail crew ☕</span>
+      </div>
+      <div class="mr-greeting-weather">
+        <i class="ph-fill ph-sun-dim" aria-hidden="true"></i>
+        <span>58° · Cool start</span>
+        <span class="mr-greeting-sep">·</span>
+        <span class="mr-greeting-loc">Asheville</span>
+      </div>
+    </div>
+
+    <div class="mr-divider"></div>
+    <div class="mr-var-label">05 — Welcome back</div>
+    <div class="mr-greeting">
+      <div class="mr-greeting-headline">
+        <span class="gradient-text">Welcome back,</span> Brandon
+        <span class="mr-greeting-tail">A few things need you 👋</span>
+      </div>
+      <div class="mr-greeting-weather">
+        <i class="ph-fill ph-sun" aria-hidden="true"></i>
+        <span>74° · Sunny</span>
+        <span class="mr-greeting-sep">·</span>
+        <span class="mr-greeting-loc">Asheville</span>
+      </div>
+    </div>
+
+    <div class="mr-var-section">
+      <div class="mr-var-section-eyebrow">Section 03</div>
+      <div class="mr-var-section-title">Interests</div>
+      <div class="mr-var-section-sub">Generic templates that swap in whatever interest the user picked — no AI needed.</div>
+      <div class="mr-var-section-rule"></div>
+    </div>
+
+    <div class="mr-var-label">06 — Interest label</div>
+    <div class="mr-greeting">
+      <div class="mr-greeting-headline">
+        <span class="gradient-text">Into hiking,</span> Brandon?
+        <span class="mr-greeting-tail">3 new things in your feed today 🥾</span>
+      </div>
+      <div class="mr-greeting-weather">
+        <i class="ph-fill ph-compass" aria-hidden="true"></i>
+        <span>Based on your interests</span>
+        <span class="mr-greeting-sep">·</span>
+        <span class="mr-greeting-loc">Asheville</span>
+      </div>
+    </div>
+
+    <div class="mr-divider"></div>
+    <div class="mr-var-label">07 — Activity count</div>
+    <div class="mr-greeting">
+      <div class="mr-greeting-headline">
+        <span class="gradient-text">For the gamers,</span> Brandon
+        <span class="mr-greeting-tail">4 friends online, 2 lobbies open 🎮</span>
+      </div>
+      <div class="mr-greeting-weather">
+        <i class="ph-fill ph-game-controller" aria-hidden="true"></i>
+        <span>Gaming · Tonight</span>
+        <span class="mr-greeting-sep">·</span>
+        <span class="mr-greeting-loc">Online</span>
+      </div>
+    </div>
+
+    <div class="mr-divider"></div>
+    <div class="mr-var-label">08 — Discover prompt</div>
+    <div class="mr-greeting">
+      <div class="mr-greeting-headline">
+        <span class="gradient-text">Picked for you,</span> Brandon
+        <span class="mr-greeting-tail">A few things that match what you're into ✨</span>
       </div>
       <div class="mr-greeting-weather">
         <i class="ph-fill ph-sparkle" aria-hidden="true"></i>
-        <span>Let's set things up</span>
+        <span>From your interests</span>
         <span class="mr-greeting-sep">·</span>
         <span class="mr-greeting-loc">Asheville</span>
       </div>

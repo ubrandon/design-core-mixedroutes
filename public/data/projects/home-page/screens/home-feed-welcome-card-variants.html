@@ -24,6 +24,19 @@
     margin-top: 4px;
     line-height: 1.35;
   }
+  .mr-variants-category {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text);
+    padding: 18px 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .mr-variants-category-sub {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.55);
+    padding-bottom: 10px;
+    line-height: 1.35;
+  }
   .mr-variants-section-label {
     font-size: 0.68rem;
     font-weight: 700;
@@ -122,17 +135,20 @@
     <div class="mr-variants-page">
 
       <div class="mr-variants-intro">
-        <div class="mr-variants-title">Welcome card — copy explorations</div>
-        <div class="mr-variants-sub">Swipeable intro cards. Different angles for the same moment: voice, urgency, what to highlight.</div>
+        <div class="mr-variants-title">Home feed banner — copy explorations</div>
+        <div class="mr-variants-sub">Swipeable banners grouped by what they ask the user to do. Different angles for voice, urgency, what to highlight.</div>
       </div>
 
+      <div class="mr-variants-category">Setup / first-time</div>
+      <div class="mr-variants-category-sub">The first thing a new user sees. Get them oriented and moving.</div>
+
       <div>
-        <div class="mr-variants-section-label">01 — Original</div>
+        <div class="mr-variants-section-label">Original — warm hello</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-hand-waving" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">👋</span></div>
           <div class="mr-banner-body">
             <div class="mr-banner-title">Welcome to MixedRoutes</div>
             <div class="mr-banner-desc">Let's get you set up in a few quick steps.</div>
@@ -142,12 +158,12 @@
       </div>
 
       <div>
-        <div class="mr-variants-section-label">12 — Progress tease</div>
+        <div class="mr-variants-section-label">Progress tease</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-flag-checkered" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">🏁</span></div>
           <div class="mr-banner-body">
             <div class="mr-banner-title">1 of 3 done — keep going</div>
             <div class="mr-banner-desc">Find a couple friends next and you're nearly there.</div>
@@ -157,27 +173,30 @@
       </div>
 
       <div>
-        <div class="mr-variants-section-label">04 — Value-led</div>
+        <div class="mr-variants-section-label">Minimal resume</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-sparkle" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">⏳</span></div>
           <div class="mr-banner-body">
-            <div class="mr-banner-title">Better suggestions, faster</div>
-            <div class="mr-banner-desc">Tell us what you like — we'll quiet the noise.</div>
+            <div class="mr-banner-title">Finish setting up</div>
+            <div class="mr-banner-desc">A few steps left.</div>
           </div>
-          <button type="button" class="mr-banner-cta">Tune it</button>
+          <button type="button" class="mr-banner-cta">Resume</button>
         </div>
       </div>
 
+      <div class="mr-variants-category">Social — add your friends</div>
+      <div class="mr-variants-category-sub">Plans get better with people you know. Surface who's here and how to reach them.</div>
+
       <div>
-        <div class="mr-variants-section-label">06 — Social proof</div>
+        <div class="mr-variants-section-label">Social proof</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-users-three" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">👥</span></div>
           <div class="mr-banner-body">
             <div class="mr-banner-title">12 friends already here</div>
             <div class="mr-banner-desc">Connect with them so plans don't fly under the radar.</div>
@@ -187,12 +206,123 @@
       </div>
 
       <div>
-        <div class="mr-variants-section-label">07 — Local angle</div>
+        <div class="mr-variants-section-label">Contacts invite</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-map-pin" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">📇</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Find friends from contacts</div>
+            <div class="mr-banner-desc">We'll match the people you already know — no spam.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Find</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">Invite nudge</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">💌</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Bring a friend along</div>
+            <div class="mr-banner-desc">It's way better with at least one person you know.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Invite</button>
+        </div>
+      </div>
+
+      <div class="mr-variants-category">Permissions</div>
+      <div class="mr-variants-category-sub">One-time asks for system access. Each one unlocks a feature, so lead with the payoff.</div>
+
+      <div>
+        <div class="mr-variants-section-label">Push notifications</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">🔔</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Don't miss the plan</div>
+            <div class="mr-banner-desc">Turn on notifications so you hear when friends are in.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Turn on</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">Location</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">📍</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Show stuff near you</div>
+            <div class="mr-banner-desc">Share your location so plans aren't 40 minutes away.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Allow</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">Calendar</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">📅</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Skip the back-and-forth</div>
+            <div class="mr-banner-desc">Connect your calendar so we only suggest times you're free.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Connect</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">Contacts access</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">👤</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Match people you know</div>
+            <div class="mr-banner-desc">We use contacts to find friends, then stop.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Allow</button>
+        </div>
+      </div>
+
+      <div class="mr-variants-category">Personalize your feed</div>
+      <div class="mr-variants-category-sub">Tune the suggestions. The more we know, the less noise you see.</div>
+
+      <div>
+        <div class="mr-variants-section-label">Value-led tuning</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">✨</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Better suggestions, faster</div>
+            <div class="mr-banner-desc">Tell us what you like — we'll quiet the noise.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Tune it</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="mr-variants-section-label">Local angle</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">🏔️</span></div>
           <div class="mr-banner-body">
             <div class="mr-banner-title">Asheville's calling</div>
             <div class="mr-banner-desc">Trails, shows, dinners — set up your Home in a minute.</div>
@@ -202,12 +332,30 @@
       </div>
 
       <div>
-        <div class="mr-variants-section-label">08 — Action-first</div>
+        <div class="mr-variants-section-label">Interests pick</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-calendar-plus" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">🎯</span></div>
+          <div class="mr-banner-body">
+            <div class="mr-banner-title">Pick a few things you're into</div>
+            <div class="mr-banner-desc">Trails, food, music, sports — we'll learn fast.</div>
+          </div>
+          <button type="button" class="mr-banner-cta">Pick</button>
+        </div>
+      </div>
+
+      <div class="mr-variants-category">Make your first plan</div>
+      <div class="mr-variants-category-sub">Activation. Push toward the first real plan once setup is mostly done.</div>
+
+      <div>
+        <div class="mr-variants-section-label">Action-first</div>
+        <div class="mr-banner-card">
+          <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
+            <i class="ph ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="mr-banner-icon"><span aria-hidden="true">🗓️</span></div>
           <div class="mr-banner-body">
             <div class="mr-banner-title">Make your first plan</div>
             <div class="mr-banner-desc">Coffee, a hike, a show. Invite a friend — done.</div>
@@ -217,17 +365,17 @@
       </div>
 
       <div>
-        <div class="mr-variants-section-label">10 — Minimal</div>
+        <div class="mr-variants-section-label">Suggestion nudge</div>
         <div class="mr-banner-card">
           <button type="button" class="mr-banner-dismiss" aria-label="Dismiss">
             <i class="ph ph-x" aria-hidden="true"></i>
           </button>
-          <div class="mr-banner-icon"><i class="ph-fill ph-circle-half" aria-hidden="true"></i></div>
+          <div class="mr-banner-icon"><span aria-hidden="true">☕</span></div>
           <div class="mr-banner-body">
-            <div class="mr-banner-title">Finish setting up</div>
-            <div class="mr-banner-desc">A few steps left.</div>
+            <div class="mr-banner-title">Coffee this week?</div>
+            <div class="mr-banner-desc">Pick someone, pick a time — we'll handle the rest.</div>
           </div>
-          <button type="button" class="mr-banner-cta">Resume</button>
+          <button type="button" class="mr-banner-cta">Start</button>
         </div>
       </div>
 
