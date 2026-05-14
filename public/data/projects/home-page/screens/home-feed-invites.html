@@ -516,6 +516,15 @@
   .mr-inbox-combo-title { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: -0.005em; }
   .mr-inbox-combo-value { display: inline-flex; align-items: center; gap: 6px; font-size: 1.05rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
   .mr-inbox-combo-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+  .mr-tab-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    display: block;
+  }
+  .mr-tab-item--avatar { padding: 2px 4px; }
 </style>
 
 <div style="background: var(--bg-0); overflow-x: clip; position: relative">
@@ -533,7 +542,9 @@
           </button>
           <span class="mr-notif-dot" aria-hidden="true"></span>
         </div>
-        <img class="mr-top-nav-avatar" src="https://i.pravatar.cc/72?img=11" alt="" width="36" height="36" loading="lazy" />
+        <button type="button" class="mr-nav-icon-btn" aria-label="Settings">
+          <i class="ph ph-gear-six" aria-hidden="true"></i>
+        </button>
       </div>
     </header>
 
@@ -899,11 +910,11 @@
         <button type="button" class="mr-tab-item" aria-label="Calendar">
           <i class="ph ph-calendar-blank" aria-hidden="true"></i>
         </button>
+        <button type="button" class="mr-tab-item mr-tab-item--avatar" aria-label="You">
+          <img class="mr-tab-avatar" src="https://i.pravatar.cc/72?img=11" alt="" width="36" height="36" loading="lazy" />
+        </button>
         <button type="button" class="mr-tab-item" aria-label="Explore">
           <i class="ph ph-compass" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="mr-tab-item" aria-label="You">
-          <i class="ph ph-user" aria-hidden="true"></i>
         </button>
         <button type="button" class="mr-tab-item" aria-label="Messages">
           <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
