@@ -331,13 +331,14 @@
     font-size: 12px;
   }
   .mr-people-card {
+    position: relative;
     flex: 0 0 auto;
-    width: 168px;
+    width: 216px;
     border-radius: 18px;
     background: var(--bg-1);
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
-    padding: 16px 12px 14px;
+    padding: 20px 14px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -345,12 +346,53 @@
     scroll-snap-align: start;
     text-align: center;
   }
+  .mr-people-add-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+  }
+  .mr-people-add-icon i {
+    font-size: 18px;
+  }
   .mr-people-avatar {
-    width: 72px;
-    height: 72px;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.06);
+  }
+  .mr-people-mutuals {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 0.74rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .mr-people-mutuals-avatars {
+    display: inline-flex;
+  }
+  .mr-people-mutuals-avatars img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--bg-1);
+    margin-left: -6px;
+  }
+  .mr-people-mutuals-avatars img:first-child {
+    margin-left: 0;
   }
   .mr-people-name {
     font-size: 1rem;
@@ -364,15 +406,25 @@
     color: rgba(255, 255, 255, 0.55);
     line-height: 1.25;
   }
-  .mr-people-btn {
-    margin-top: 4px;
-    padding: 7px 20px;
+  .mr-people-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 2px;
+  }
+  .mr-people-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 7px;
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 0.66rem;
     font-weight: 700;
-    border: none;
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--neon-teal);
+    background: rgba(var(--neon-teal-rgb), 0.12);
+    border: 1px solid rgba(var(--neon-teal-rgb), 0.22);
+    line-height: 1;
   }
   .mr-fab {
     position: fixed;
@@ -837,28 +889,83 @@
       <div style="padding-left: 16px">
         <div class="mr-event-carousel">
           <div class="mr-people-card">
+            <button type="button" class="mr-people-add-icon" aria-label="Add Sara">
+              <i class="ph ph-plus" aria-hidden="true"></i>
+            </button>
             <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=5" alt="" loading="lazy" />
             <div class="mr-people-name">Sara</div>
             <div class="mr-people-sub">From your contacts</div>
-            <button type="button" class="mr-people-btn">Add</button>
+            <div class="mr-people-mutuals">
+              <span class="mr-people-mutuals-avatars" aria-hidden="true">
+                <img src="https://i.pravatar.cc/40?img=11" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=33" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=47" alt="" loading="lazy" />
+              </span>
+              <span>3 mutuals</span>
+            </div>
+            <div class="mr-people-tags">
+              <span class="mr-people-tag">🍷 Wine</span>
+              <span class="mr-people-tag">🎵 Music</span>
+            </div>
           </div>
           <div class="mr-people-card">
+            <button type="button" class="mr-people-add-icon" aria-label="Add Marcus">
+              <i class="ph ph-plus" aria-hidden="true"></i>
+            </button>
             <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=33" alt="" loading="lazy" />
             <div class="mr-people-name">Marcus</div>
             <div class="mr-people-sub">From your contacts</div>
-            <button type="button" class="mr-people-btn">Add</button>
+            <div class="mr-people-mutuals">
+              <span class="mr-people-mutuals-avatars" aria-hidden="true">
+                <img src="https://i.pravatar.cc/40?img=12" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=23" alt="" loading="lazy" />
+              </span>
+              <span>2 mutuals</span>
+            </div>
+            <div class="mr-people-tags">
+              <span class="mr-people-tag">🥾 Hiking</span>
+              <span class="mr-people-tag">📷 Photo</span>
+            </div>
           </div>
           <div class="mr-people-card">
+            <button type="button" class="mr-people-add-icon" aria-label="Add Devon">
+              <i class="ph ph-plus" aria-hidden="true"></i>
+            </button>
             <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=47" alt="" loading="lazy" />
             <div class="mr-people-name">Devon</div>
-            <div class="mr-people-sub">2 mutual friends</div>
-            <button type="button" class="mr-people-btn">Add</button>
+            <div class="mr-people-sub">From your contacts</div>
+            <div class="mr-people-mutuals">
+              <span class="mr-people-mutuals-avatars" aria-hidden="true">
+                <img src="https://i.pravatar.cc/40?img=5" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=11" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=32" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=33" alt="" loading="lazy" />
+              </span>
+              <span>4 mutuals</span>
+            </div>
+            <div class="mr-people-tags">
+              <span class="mr-people-tag">🎸 Concerts</span>
+              <span class="mr-people-tag">🍔 Food</span>
+            </div>
           </div>
           <div class="mr-people-card">
+            <button type="button" class="mr-people-add-icon" aria-label="Add Priya">
+              <i class="ph ph-plus" aria-hidden="true"></i>
+            </button>
             <img class="mr-people-avatar" src="https://i.pravatar.cc/144?img=23" alt="" loading="lazy" />
             <div class="mr-people-name">Priya</div>
             <div class="mr-people-sub">From your contacts</div>
-            <button type="button" class="mr-people-btn">Add</button>
+            <div class="mr-people-mutuals">
+              <span class="mr-people-mutuals-avatars" aria-hidden="true">
+                <img src="https://i.pravatar.cc/40?img=47" alt="" loading="lazy" />
+                <img src="https://i.pravatar.cc/40?img=5" alt="" loading="lazy" />
+              </span>
+              <span>2 mutuals</span>
+            </div>
+            <div class="mr-people-tags">
+              <span class="mr-people-tag">☕ Coffee</span>
+              <span class="mr-people-tag">🎨 Art</span>
+            </div>
           </div>
           <div class="mr-see-more-tile" role="button" aria-label="See all people">
             <div class="mr-see-more-circle"><i class="ph ph-caret-right" aria-hidden="true"></i></div>
