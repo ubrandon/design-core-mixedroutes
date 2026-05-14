@@ -1,45 +1,15 @@
 {
   "screens": [
     {
-      "file": "row-label-r4.html",
-      "x": 1120,
-      "y": -1696,
-      "width": 360
-    },
-    {
       "file": "you-v19-hero-header.html",
-      "x": 1536,
-      "y": -1696,
+      "x": -448,
+      "y": -1952,
       "width": 390
     },
     {
       "file": "you-v20-cover-banner.html",
-      "x": 2880,
-      "y": -1696,
-      "width": 390
-    },
-    {
-      "file": "you-v21-card-header.html",
-      "x": 1984,
-      "y": -1696,
-      "width": 390
-    },
-    {
-      "file": "row-label-r3.html",
-      "x": -480,
-      "y": -1696,
-      "width": 360
-    },
-    {
-      "file": "you-v17-carousels.html",
-      "x": -32,
-      "y": -1696,
-      "width": 390
-    },
-    {
-      "file": "you-v18-nested-carousels.html",
-      "x": 416,
-      "y": -1696,
+      "x": 0,
+      "y": -1952,
       "width": 390
     },
     {
@@ -74,7 +44,7 @@
     },
     {
       "file": "you-v14-wallet.html",
-      "x": 1824,
+      "x": 1312,
       "y": 1408,
       "width": 390
     },
@@ -104,8 +74,8 @@
     },
     {
       "file": "edit-profile.html",
-      "x": 1344,
-      "y": 1408,
+      "x": 416,
+      "y": -1952,
       "width": 390
     },
     {
