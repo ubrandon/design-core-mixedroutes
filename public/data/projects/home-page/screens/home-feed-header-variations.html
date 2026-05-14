@@ -12,35 +12,38 @@
     color: rgba(255, 255, 255, 0.42);
   }
   .mr-var-section {
-    padding: 28px 16px 4px;
+    padding: 32px 16px 8px;
+    margin-top: 32px;
+    position: relative;
   }
   .mr-var-section:first-of-type {
-    padding-top: 14px;
+    margin-top: 0;
+    padding-top: 20px;
   }
-  .mr-var-section-eyebrow {
-    font-size: 0.66rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--neon-teal);
+  .mr-var-section:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
   }
   .mr-var-section-title {
-    margin-top: 6px;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     color: var(--text);
+    line-height: 1.2;
   }
   .mr-var-section-sub {
-    margin-top: 4px;
-    font-size: 0.82rem;
+    margin-top: 6px;
+    font-size: 0.85rem;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.55);
   }
   .mr-var-section-rule {
-    height: 1px;
-    margin: 12px 0 2px;
-    background: rgba(255, 255, 255, 0.08);
+    display: none;
   }
   .mr-greeting {
     padding: 6px 16px 18px;
@@ -102,10 +105,8 @@
     </header>
 
     <div class="mr-var-section">
-      <div class="mr-var-section-eyebrow">Section 01</div>
       <div class="mr-var-section-title">Upcoming plans</div>
       <div class="mr-var-section-sub">Surface what's on the calendar — or nudge a plan if the day is wide open.</div>
-      <div class="mr-var-section-rule"></div>
     </div>
 
     <div class="mr-greeting">
@@ -150,10 +151,8 @@
     </div>
 
     <div class="mr-var-section">
-      <div class="mr-var-section-eyebrow">Section 02</div>
       <div class="mr-var-section-title">Time of day</div>
       <div class="mr-var-section-sub">Daily check-ins keyed to the clock — a return visit or a fresh morning.</div>
-      <div class="mr-var-section-rule"></div>
     </div>
 
     <div class="mr-greeting">
@@ -184,10 +183,8 @@
     </div>
 
     <div class="mr-var-section">
-      <div class="mr-var-section-eyebrow">Section 03</div>
       <div class="mr-var-section-title">Interests</div>
       <div class="mr-var-section-sub">Generic templates that swap in whatever interest the user picked — no AI needed.</div>
-      <div class="mr-var-section-rule"></div>
     </div>
 
     <div class="mr-greeting">

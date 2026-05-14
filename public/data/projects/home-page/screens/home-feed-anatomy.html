@@ -7,36 +7,46 @@
     padding: 16px 16px 96px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
   }
   .mr-anat-intro {
     padding: 4px 0 2px;
   }
   .mr-anat-title {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--text);
     line-height: 1.2;
+    letter-spacing: -0.02em;
   }
   .mr-anat-sub {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
     margin-top: 6px;
     line-height: 1.4;
   }
-  .mr-anat-section { display: flex; flex-direction: column; gap: 8px; }
+  .mr-anat-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 32px 0 0;
+    margin-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .mr-anat-intro + .mr-anat-section {
+    margin-top: 24px;
+    padding-top: 0;
+    border-top: none;
+  }
   .mr-anat-label {
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--neon-teal);
+    display: none;
   }
   .mr-anat-name {
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--text);
     line-height: 1.2;
+    letter-spacing: -0.02em;
   }
   .mr-anat-desc {
     font-size: 0.8rem;

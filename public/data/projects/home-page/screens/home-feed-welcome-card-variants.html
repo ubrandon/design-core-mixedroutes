@@ -25,17 +25,28 @@
     line-height: 1.35;
   }
   .mr-variants-category {
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--text);
-    padding: 18px 0 4px;
-    letter-spacing: -0.01em;
+    padding: 32px 0 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 14px;
+  }
+  .mr-variants-category:first-of-type {
+    border-top: none;
+    margin-top: 4px;
+    padding-top: 8px;
+  }
+  .mr-variants-category + .mr-variants-category-sub {
+    margin-top: 0;
   }
   .mr-variants-category-sub {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.55);
-    padding-bottom: 10px;
-    line-height: 1.35;
+    padding: 6px 0 10px;
+    line-height: 1.4;
   }
   .mr-variants-section-label {
     font-size: 0.68rem;
