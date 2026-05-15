@@ -1993,11 +1993,32 @@
 }
 
 .mr-scope .event-card-media {
+  position: relative;
   width: 96px;
   height: 96px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Bookmark on the stacked event-card sits on its square thumbnail — same 28px / 16px treatment as the plus button */
+.mr-scope .event-card:not(.event-card--mini) .event-card-media::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(6, 8, 16, 0.65);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='rgba(255,255,255,0.95)'><path d='M184 32H72A16 16 0 0 0 56 48v176a8 8 0 0 0 12.24 6.78L128 193.43l59.77 37.35A8 8 0 0 0 200 224V48a16 16 0 0 0-16-16Zm0 177.57-51.77-32.35a8 8 0 0 0-8.48 0L72 209.57V48h112Z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
 }
 
 .mr-scope .event-card-img {
@@ -2076,6 +2097,7 @@
 }
 
 .mr-scope .event-card.event-card--mini {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -2086,6 +2108,27 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 18px;
+}
+
+/* Bookmark affordance on mini event/place cards — matches the people-card plus button (28px circle, 16px icon) */
+.mr-scope .event-card.event-card--mini::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(6, 8, 16, 0.65);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='rgba(255,255,255,0.95)'><path d='M184 32H72A16 16 0 0 0 56 48v176a8 8 0 0 0 12.24 6.78L128 193.43l59.77 37.35A8 8 0 0 0 200 224V48a16 16 0 0 0-16-16Zm0 177.57-51.77-32.35a8 8 0 0 0-8.48 0L72 209.57V48h112Z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: auto;
+  z-index: 2;
 }
 
 .mr-scope .event-card.event-card--mini .event-card-media {
@@ -3594,11 +3637,32 @@
 /* ===== LOCATION / MAP CARD ===== */
 
 .mr-scope .mr-location-card {
+  position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
   max-width: 360px;
+}
+
+/* Bookmark affordance on location/place cards — matches the people-card plus button */
+.mr-scope .mr-location-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(6, 8, 16, 0.65);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='rgba(255,255,255,0.95)'><path d='M184 32H72A16 16 0 0 0 56 48v176a8 8 0 0 0 12.24 6.78L128 193.43l59.77 37.35A8 8 0 0 0 200 224V48a16 16 0 0 0-16-16Zm0 177.57-51.77-32.35a8 8 0 0 0-8.48 0L72 209.57V48h112Z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
 }
 
 .mr-scope .mr-location-map {
