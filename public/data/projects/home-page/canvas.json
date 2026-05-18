@@ -2,69 +2,69 @@
   "screens": [
     {
       "file": "home-feed-welcome-card-variants.html",
-      "x": 2112,
-      "y": 3456,
+      "x": 4512,
+      "y": 864,
       "width": 390
     },
     {
       "file": "home-feed-invites.html",
-      "x": 4256,
-      "y": 3456,
+      "x": 5248,
+      "y": 864,
       "width": 390,
       "name": "home-feed"
     },
     {
       "file": "nav-variations.html",
-      "x": 1216,
-      "y": 160,
+      "x": -1920,
+      "y": 864,
       "width": 1000
     },
     {
       "file": "nav-final.html",
-      "x": 2592,
-      "y": 3456,
+      "x": -896,
+      "y": 864,
       "width": 1160
     },
     {
       "file": "home-feed-anatomy.html",
-      "x": 1216,
-      "y": 3456,
+      "x": 3616,
+      "y": 864,
       "width": 390
     },
     {
       "file": "home-feed-header-variations.html",
-      "x": 1696,
-      "y": 3456,
+      "x": 4096,
+      "y": 864,
       "width": 390
     },
     {
       "file": "you-profile-example.html",
-      "x": 5312,
-      "y": 3456,
+      "x": 6304,
+      "y": 864,
       "width": 390
     },
     {
       "file": "home-feed-empty-skeleton.html",
-      "x": 4672,
-      "y": 3456,
+      "x": 5664,
+      "y": 864,
       "width": 390
     },
     {
       "file": "home-feed-empty-discover.html",
-      "x": 2400,
-      "y": 160,
+      "x": -1920,
+      "y": 3264,
       "width": 390
     },
     {
       "file": "home-feed-filter-hiking.html",
-      "x": 2848,
-      "y": 160,
+      "x": -1472,
+      "y": 3264,
       "width": 390
     },
     {
       "file": "home-feed-filter-hiking-slim.html",
-      "x": 3296,
-      "y": 160,
+      "x": -1024,
+      "y": 3264,
       "width": 390
     }
   ]
