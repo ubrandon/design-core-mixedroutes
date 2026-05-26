@@ -8,50 +8,122 @@
     },
     {
       "file": "group-thread-attach-sheet.html",
-      "x": 416,
+      "x": 832,
       "y": 0,
       "width": 390
     },
     {
       "file": "group-thread-attach-sheet-list.html",
-      "x": 832,
+      "x": 416,
       "y": 0,
       "width": 390
     },
     {
       "file": "group-thread-new-channel-modal.html",
-      "x": 0,
-      "y": 960,
+      "x": 1408,
+      "y": 992,
       "width": 390
     },
     {
       "file": "group-thread-new-channel-sheet-v1.html",
-      "x": 416,
-      "y": 960,
+      "x": 1824,
+      "y": 992,
+      "width": 390
+    },
+    {
+      "file": "group-thread-new-channel-emoji-picker.html",
+      "x": 2240,
+      "y": 992,
       "width": 390
     },
     {
       "file": "group-thread-new-channel-inline-v3.html",
-      "x": 1248,
-      "y": 1952,
+      "x": 832,
+      "y": 992,
       "width": 390
     },
     {
       "file": "group-thread-admin.html",
       "x": 0,
-      "y": 1952,
+      "y": 992,
       "width": 390
     },
     {
       "file": "group-thread-manage-channels-sheet.html",
-      "x": 832,
-      "y": 1952,
+      "x": 416,
+      "y": 992,
       "width": 390
     },
     {
       "file": "group-thread-with-channels.html",
-      "x": 416,
-      "y": 1952,
+      "x": 2752,
+      "y": 992,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v2-bubble.html",
+      "x": 3168,
+      "y": 992,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v3-divider.html",
+      "x": 3584,
+      "y": 992,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v4-ribbon.html",
+      "x": 4000,
+      "y": 992,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v5-stack.html",
+      "x": 4416,
+      "y": 992,
+      "width": 390
+    },
+    {
+      "file": "group-thread-manage-tags-sheet.html",
+      "x": 896,
+      "y": 2112,
+      "width": 390
+    },
+    {
+      "file": "group-thread-new-tag-modal.html",
+      "x": 1312,
+      "y": 2112,
+      "width": 390
+    },
+    {
+      "file": "group-thread-manage-tags-list.html",
+      "x": 480,
+      "y": 2112,
+      "width": 390
+    },
+    {
+      "file": "group-thread-tags-filter.html",
+      "x": 0,
+      "y": 2112,
+      "width": 390
+    },
+    {
+      "file": "group-thread-tags-filter-v2-grouped.html",
+      "x": 1728,
+      "y": 2112,
+      "width": 390
+    },
+    {
+      "file": "group-thread-tags-filter-v3-directory.html",
+      "x": 2144,
+      "y": 2112,
+      "width": 390
+    },
+    {
+      "file": "group-thread-tags-filter-v4-segmented.html",
+      "x": 2560,
+      "y": 2112,
       "width": 390
     }
   ]

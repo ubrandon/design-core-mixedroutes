@@ -54,15 +54,16 @@
   .chat-scope .input-wrap .pre i { font-size: 16px; }
   .chat-scope .input-wrap .typed { color: #fff; font-size: 1rem; font-weight: 600; display: inline-flex; align-items: center; }
 
-  .chat-scope .icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
-  .chat-scope .icon-grid .ico { aspect-ratio: 1 / 1; border-radius: 12px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid transparent; }
-  .chat-scope .icon-grid .ico i { font-size: 20px; }
-  .chat-scope .icon-grid .ico.selected { background: rgba(91,165,255,0.18); color: #5eb3ff; border-color: rgba(91,165,255,0.5); }
+  .chat-scope .emoji-row { display: flex; align-items: center; gap: 8px; }
+  .chat-scope .emoji-row .em { flex: 1; aspect-ratio: 1 / 1; border-radius: 12px; background: rgba(255,255,255,0.04); display: inline-flex; align-items: center; justify-content: center; font-size: 1.55rem; line-height: 1; cursor: pointer; border: 1px solid transparent; }
+  .chat-scope .emoji-row .em.selected { background: rgba(91,165,255,0.16); border-color: rgba(91,165,255,0.5); }
+  .chat-scope .emoji-row .more { flex: 0 0 44px; aspect-ratio: 1 / 1; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.18); color: rgba(255,255,255,0.65); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+  .chat-scope .emoji-row .more i { font-size: 18px; }
 
-  .chat-scope .cta-row { padding: 18px 18px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .chat-scope .cta-row button { border: 0; border-radius: 12px; padding: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer; }
-  .chat-scope .cta-row .cancel { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
-  .chat-scope .cta-row .create { background: #5eb3ff; color: #0b0f14; }
+  .chat-scope .cta-row { padding: 18px 18px 0; display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; }
+  .chat-scope .cta-row button { border: 0; border-radius: 999px; padding: 14px; font-weight: 700; font-size: 0.95rem; cursor: pointer; }
+  .chat-scope .cta-row .cancel { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); }
+  .chat-scope .cta-row .create { background: linear-gradient(135deg, rgba(91,165,255,0.92), rgba(32,224,207,0.92)); color: #fff; }
 </style>
 
 <div class="mr-scope chat-scope">
@@ -115,26 +116,25 @@
         <div>
           <div class="label">Name</div>
           <div class="input-wrap">
-            <span class="pre"><i class="ph-fill ph-chat-circle-text"></i></span>
+            <span class="pre">📋</span>
             <span class="typed">Planning</span>
           </div>
         </div>
 
         <div>
-          <div class="label">Icon</div>
-          <div class="icon-grid">
-            <span class="ico selected"><i class="ph ph-chat-circle-text"></i></span>
-            <span class="ico"><i class="ph ph-calendar-blank"></i></span>
-            <span class="ico"><i class="ph ph-map-pin"></i></span>
-            <span class="ico"><i class="ph ph-ticket"></i></span>
-            <span class="ico"><i class="ph ph-fork-knife"></i></span>
-            <span class="ico"><i class="ph ph-camera"></i></span>
-            <span class="ico"><i class="ph ph-music-notes"></i></span>
-            <span class="ico"><i class="ph ph-hand-coins"></i></span>
-            <span class="ico"><i class="ph ph-checks"></i></span>
-            <span class="ico"><i class="ph ph-megaphone"></i></span>
-            <span class="ico"><i class="ph ph-confetti"></i></span>
-            <span class="ico"><i class="ph ph-sparkle"></i></span>
+          <div class="label">Emoji</div>
+          <div class="emoji-row">
+            <span class="em selected">📋</span>
+            <span class="em">📌</span>
+            <span class="em">📝</span>
+            <span class="em">📍</span>
+            <span class="em">🏷️</span>
+            <span class="em">🗓️</span>
+            <span class="em">⭐</span>
+            <span class="em">❤️</span>
+            <span class="em">🔥</span>
+            <span class="em">🎯</span>
+            <button type="button" class="more" aria-label="More emojis"><i class="ph ph-dots-three"></i></button>
           </div>
         </div>
       </div>
