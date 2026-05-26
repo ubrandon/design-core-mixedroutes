@@ -21,7 +21,7 @@
     },
     {
       "id": "you-page",
-      "name": "You Page",
+      "name": "Profile & Settings",
       "description": "",
       "createdAt": "2026-04-28T12:00:00.000Z"
     },
@@ -30,6 +30,12 @@
       "name": "Marketing Site",
       "description": "",
       "createdAt": "2026-05-04T01:38:04.548Z"
+    },
+    {
+      "id": "chat",
+      "name": "Chat",
+      "description": "",
+      "createdAt": "2026-05-26T03:20:31.154Z"
     }
   ]
 }

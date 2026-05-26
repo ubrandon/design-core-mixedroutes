@@ -4,17 +4,17 @@
 
 <div style="background: var(--bg-0); overflow-x: clip; min-height: 100vh">
   <div class="mr-scope" style="padding-bottom: 24px">
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 14px 14px 8px">
+    <header style="display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; padding: 14px 14px 8px">
       <button type="button" class="mr-nav-icon-btn" aria-label="Back"><i class="ph ph-x" aria-hidden="true"></i></button>
-      <span style="font-size: 1rem; font-weight: 800; color: var(--text)">Edit profile</span>
-      <button type="button" style="padding: 8px 14px; border-radius: 999px; background: #f5c451; border: 0; color: #15263a; font-weight: 800; font-size: 0.8rem; cursor: pointer">Save</button>
+      <span style="font-size: 1rem; font-weight: 800; color: var(--text); text-align: center">Edit profile</span>
+      <span aria-hidden="true"></span>
     </header>
 
     <div style="padding: 8px 16px 14px; display: flex; flex-direction: column; align-items: center">
       <div style="position: relative">
         <img src="https://i.pravatar.cc/200?img=11" alt="" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.1)" />
-        <button type="button" style="position: absolute; bottom: 0; right: 0; width: 34px; height: 34px; border-radius: 50%; background: #f5c451; border: 3px solid var(--bg-0); display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
-          <i class="ph-fill ph-camera" style="color: #15263a; font-size: 14px"></i>
+        <button type="button" style="position: absolute; bottom: 0; right: 0; width: 34px; height: 34px; border-radius: 50%; background: rgba(20,24,32,0.85); border: 1px solid rgba(255,255,255,0.14); display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+          <i class="ph-fill ph-camera" style="color: rgba(255,255,255,0.85); font-size: 14px"></i>
         </button>
       </div>
       <button type="button" style="margin-top: 10px; padding: 6px 12px; border-radius: 999px; background: transparent; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.75); font-weight: 700; font-size: 0.74rem; cursor: pointer">Change photo</button>
@@ -56,43 +56,19 @@
       </button>
     </div>
 
-    <div style="padding: 14px 16px 10px; font-size: 0.7rem; color: rgba(255,255,255,0.45); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase">What others can see</div>
-    <div style="padding: 0 16px 14px">
-      <div style="border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); overflow: hidden">
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.05)">
-          <div>
-            <div style="font-size: 0.88rem; font-weight: 800; color: var(--text)">Show interests</div>
-            <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px">Anyone</div>
-          </div>
-          <div style="width: 38px; height: 22px; background: #f5c451; border-radius: 999px; position: relative">
-            <div style="position: absolute; right: 2px; top: 2px; width: 18px; height: 18px; background: #fff; border-radius: 50%"></div>
-          </div>
+    <div style="padding: 14px 16px 14px">
+      <button type="button" style="width: 100%; display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--text); text-align: left; cursor: pointer; font: inherit">
+        <i class="ph ph-lock-key" style="font-size: 18px; color: rgba(255,255,255,0.85)"></i>
+        <div style="flex: 1; min-width: 0">
+          <div style="font-size: 0.92rem; font-weight: 800; color: var(--text)">Profile privacy</div>
+          <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px">Manage who sees your interests, groups, and plans</div>
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.05)">
-          <div>
-            <div style="font-size: 0.88rem; font-weight: 800; color: var(--text)">Show shared groups</div>
-            <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px">Friends only</div>
-          </div>
-          <div style="width: 38px; height: 22px; background: #f5c451; border-radius: 999px; position: relative">
-            <div style="position: absolute; right: 2px; top: 2px; width: 18px; height: 18px; background: #fff; border-radius: 50%"></div>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px">
-          <div>
-            <div style="font-size: 0.88rem; font-weight: 800; color: var(--text)">Show plans</div>
-            <div style="font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 2px">Friends only</div>
-          </div>
-          <div style="width: 38px; height: 22px; background: rgba(255,255,255,0.18); border-radius: 999px; position: relative">
-            <div style="position: absolute; left: 2px; top: 2px; width: 18px; height: 18px; background: #fff; border-radius: 50%"></div>
-          </div>
-        </div>
-      </div>
+        <i class="ph ph-caret-right" style="font-size: 16px; color: rgba(255,255,255,0.55)"></i>
+      </button>
     </div>
 
-    <div style="padding: 0 16px 14px">
-      <button type="button" style="width: 100%; padding: 12px; border-radius: 14px; background: rgba(91,165,255,0.12); border: 1px solid rgba(91,165,255,0.22); color: var(--text); font-weight: 800; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px">
-        <i class="ph ph-eye" style="color: #5ba5ff; font-size: 14px"></i> Preview as friend
-      </button>
+    <div style="padding: 8px 16px 14px">
+      <button type="button" class="btn btn-primary" style="width: 100%">Save</button>
     </div>
   </div>
 </div>
