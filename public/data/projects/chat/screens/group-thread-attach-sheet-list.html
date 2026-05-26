@@ -34,23 +34,32 @@
   .chat-scope .composer .input-pill .placeholder { color: rgba(255,255,255,0.5); font-size: 0.98rem; padding-left: 4px; }
   .chat-scope .composer .icon-btn { background: transparent; border: 0; color: rgba(255,255,255,0.55); width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
   .chat-scope .composer .icon-btn i { font-size: 22px; }
-  .chat-scope .composer .plus-btn { color: rgba(255,255,255,0.75); }
+  .chat-scope .composer .plus-btn { color: #5eb3ff; }
   .chat-scope .composer .send-btn { width: 44px; height: 44px; border-radius: 50%; background: #2c333d; color: rgba(255,255,255,0.85); border: 0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
   .chat-scope .composer .send-btn i { font-size: 20px; }
 
-  .chat-scope .scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 4; }
-  .chat-scope .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #161b22; border-top-left-radius: 18px; border-top-right-radius: 18px; padding: 10px 0 22px; z-index: 5; }
-  .chat-scope .sheet .grabber { width: 40px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.18); margin: 4px auto 14px; }
-  .chat-scope .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 0 18px 14px; }
-  .chat-scope .sheet-head h3 { margin: 0; font-size: 1.35rem; font-weight: 800; color: #fff; }
-  .chat-scope .add-btn { display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 0; color: #fff; font-weight: 700; font-size: 0.92rem; cursor: pointer; }
-  .chat-scope .add-btn i { font-size: 14px; }
-  .chat-scope .ch-list { padding: 0; }
-  .chat-scope .ch-row { display: grid; grid-template-columns: 32px 1fr auto auto; align-items: center; gap: 14px; padding: 14px 18px; border-top: 1px solid rgba(255,255,255,0.06); }
-  .chat-scope .ch-row .ch-ico { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; line-height: 1; }
-  .chat-scope .ch-row .name { color: #fff; font-weight: 600; font-size: 1rem; }
-  .chat-scope .ch-row .row-btn { background: transparent; border: 0; color: rgba(255,255,255,0.55); width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
-  .chat-scope .ch-row .row-btn i { font-size: 18px; }
+  .chat-scope .scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 4; }
+  .chat-scope .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #161b22; border-top-left-radius: 18px; border-top-right-radius: 18px; padding: 10px 8px 22px; z-index: 5; }
+  .chat-scope .sheet .grabber { width: 40px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.18); margin: 4px auto 12px; }
+  .chat-scope .sheet h3 { margin: 4px 12px 8px; font-size: 1.05rem; font-weight: 800; color: #fff; }
+
+  .chat-scope .row-list { display: flex; flex-direction: column; padding: 4px 4px; }
+  .chat-scope .row-item { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; padding: 12px 12px; background: transparent; border: 0; color: #fff; cursor: pointer; text-align: left; border-radius: 12px; }
+  .chat-scope .row-item:hover { background: rgba(255,255,255,0.03); }
+  .chat-scope .row-item .ico { width: 40px; height: 40px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; }
+  .chat-scope .row-item .ico i { font-size: 20px; color: #fff; }
+  .chat-scope .row-item .main { display: flex; flex-direction: column; gap: 2px; }
+  .chat-scope .row-item .label { font-size: 0.95rem; font-weight: 700; color: #fff; }
+  .chat-scope .row-item .sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); font-weight: 500; }
+  .chat-scope .row-item .chev { color: rgba(255,255,255,0.3); font-size: 16px; }
+  .chat-scope .row-item.photo .ico { background: linear-gradient(135deg, #6c5ce7, #a55eea); }
+  .chat-scope .row-item.camera .ico { background: linear-gradient(135deg, #2d3436, #535c68); }
+  .chat-scope .row-item.doc .ico { background: linear-gradient(135deg, #00a8ff, #0984e3); }
+  .chat-scope .row-item.channel .ico { background: linear-gradient(135deg, #2f7a72, #20bf6b); }
+  .chat-scope .row-item.location .ico { background: linear-gradient(135deg, #ff6b6b, #e84393); }
+  .chat-scope .row-item.poll .ico { background: linear-gradient(135deg, #fdcb6e, #e17055); }
+  .chat-scope .row-item.event .ico { background: linear-gradient(135deg, #00b894, #0fb9b1); }
+  .chat-scope .row-item.gif .ico { background: linear-gradient(135deg, #4834d4, #686de0); }
 </style>
 
 <div class="mr-scope chat-scope">
@@ -83,7 +92,7 @@
 
     <div class="composer">
       <div class="input-pill">
-        <button type="button" class="icon-btn plus-btn" aria-label="Add"><i class="ph ph-plus"></i></button>
+        <button type="button" class="icon-btn plus-btn" aria-label="Add"><i class="ph-fill ph-plus-circle"></i></button>
         <span class="placeholder">Message</span>
         <button type="button" class="icon-btn" aria-label="Photo"><i class="ph ph-image"></i></button>
         <button type="button" class="icon-btn" aria-label="Emoji"><i class="ph ph-smiley"></i></button>
@@ -92,37 +101,16 @@
     </div>
 
     <div class="scrim" aria-hidden="true"></div>
-    <div class="sheet" role="dialog" aria-label="Manage Channels">
+    <div class="sheet" role="dialog" aria-label="Add to chat">
       <div class="grabber"></div>
-      <div class="sheet-head">
-        <h3>Manage Channels</h3>
-        <button type="button" class="add-btn"><i class="ph ph-plus"></i> Add</button>
-      </div>
-      <div class="ch-list">
-        <div class="ch-row">
-          <span class="ch-ico">💬</span>
-          <span class="name">General</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-        </div>
-        <div class="ch-row">
-          <span class="ch-ico">🗓️</span>
-          <span class="name">Planning</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-        </div>
-        <div class="ch-row">
-          <span class="ch-ico">💸</span>
-          <span class="name">Bets</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-        </div>
-        <div class="ch-row">
-          <span class="ch-ico">📸</span>
-          <span class="name">Photos</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-        </div>
+      <h3>Add to chat</h3>
+      <div class="row-list">
+        <button class="row-item photo"><span class="ico"><i class="ph-fill ph-image"></i></span><span class="main"><span class="label">Photo or Video</span><span class="sub">Share from your library</span></span><i class="ph ph-caret-right chev"></i></button>
+        <button class="row-item camera"><span class="ico"><i class="ph-fill ph-camera"></i></span><span class="main"><span class="label">Camera</span><span class="sub">Capture a new shot</span></span><i class="ph ph-caret-right chev"></i></button>
+        <button class="row-item doc"><span class="ico"><i class="ph-fill ph-file"></i></span><span class="main"><span class="label">Document</span><span class="sub">Send PDFs, files, or drafts</span></span><i class="ph ph-caret-right chev"></i></button>
+        <button class="row-item channel"><span class="ico"><i class="ph-fill ph-chat-circle-text"></i></span><span class="main"><span class="label">New Channel</span><span class="sub">Break out a side conversation</span></span><i class="ph ph-caret-right chev"></i></button>
+        <button class="row-item location"><span class="ico"><i class="ph-fill ph-map-pin"></i></span><span class="main"><span class="label">Location</span><span class="sub">Share where you are</span></span><i class="ph ph-caret-right chev"></i></button>
+        <button class="row-item poll"><span class="ico"><i class="ph-fill ph-chart-bar"></i></span><span class="main"><span class="label">Poll</span><span class="sub">Get the group to vote</span></span><i class="ph ph-caret-right chev"></i></button>
       </div>
     </div>
   </div>

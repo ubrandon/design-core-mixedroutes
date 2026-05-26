@@ -38,19 +38,33 @@
   .chat-scope .composer .send-btn { width: 44px; height: 44px; border-radius: 50%; background: #2c333d; color: rgba(255,255,255,0.85); border: 0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
   .chat-scope .composer .send-btn i { font-size: 20px; }
 
-  .chat-scope .scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 4; }
-  .chat-scope .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #161b22; border-top-left-radius: 18px; border-top-right-radius: 18px; padding: 10px 0 22px; z-index: 5; }
+  .chat-scope .scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.55); z-index: 4; }
+
+  .chat-scope .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #161b22; border-top-left-radius: 18px; border-top-right-radius: 18px; padding: 10px 0 24px; z-index: 5; display: flex; flex-direction: column; }
   .chat-scope .sheet .grabber { width: 40px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.18); margin: 4px auto 14px; }
-  .chat-scope .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 0 18px 14px; }
-  .chat-scope .sheet-head h3 { margin: 0; font-size: 1.35rem; font-weight: 800; color: #fff; }
-  .chat-scope .add-btn { display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 0; color: #fff; font-weight: 700; font-size: 0.92rem; cursor: pointer; }
-  .chat-scope .add-btn i { font-size: 14px; }
-  .chat-scope .ch-list { padding: 0; }
-  .chat-scope .ch-row { display: grid; grid-template-columns: 32px 1fr auto auto; align-items: center; gap: 14px; padding: 14px 18px; border-top: 1px solid rgba(255,255,255,0.06); }
-  .chat-scope .ch-row .ch-ico { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; line-height: 1; }
-  .chat-scope .ch-row .name { color: #fff; font-weight: 600; font-size: 1rem; }
-  .chat-scope .ch-row .row-btn { background: transparent; border: 0; color: rgba(255,255,255,0.55); width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
-  .chat-scope .ch-row .row-btn i { font-size: 18px; }
+  .chat-scope .sheet-head { padding: 0 18px 14px; }
+  .chat-scope .sheet-head h3 { margin: 0 0 4px; font-size: 1.35rem; font-weight: 800; color: #fff; }
+  .chat-scope .sheet-head .sub { margin: 0; color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.35; }
+
+  .chat-scope .sheet-body { padding: 4px 18px 0; display: flex; flex-direction: column; gap: 18px; }
+  .chat-scope .label { color: rgba(255,255,255,0.55); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+
+  .chat-scope .input-wrap { display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: 10px; padding: 10px 12px; background: #1b2027; border: 1px solid rgba(91,165,255,0.5); border-radius: 12px; }
+  .chat-scope .input-wrap .pre { width: 34px; height: 34px; border-radius: 50%; background: rgba(91,165,255,0.18); color: #5eb3ff; display: inline-flex; align-items: center; justify-content: center; }
+  .chat-scope .input-wrap .pre i { font-size: 16px; }
+  .chat-scope .input-wrap .typed { color: #fff; font-size: 1rem; font-weight: 600; display: inline-flex; align-items: center; }
+  .chat-scope .input-wrap .typed::after { content: ''; display: inline-block; width: 2px; height: 18px; background: #5eb3ff; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .chat-scope .icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .chat-scope .icon-grid .ico { aspect-ratio: 1 / 1; border-radius: 12px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid transparent; }
+  .chat-scope .icon-grid .ico i { font-size: 20px; }
+  .chat-scope .icon-grid .ico.selected { background: rgba(91,165,255,0.18); color: #5eb3ff; border-color: rgba(91,165,255,0.5); }
+
+  .chat-scope .cta-row { padding: 18px 18px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chat-scope .cta-row button { border: 0; border-radius: 12px; padding: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer; }
+  .chat-scope .cta-row .cancel { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+  .chat-scope .cta-row .create { background: #5eb3ff; color: #0b0f14; }
 </style>
 
 <div class="mr-scope chat-scope">
@@ -92,37 +106,44 @@
     </div>
 
     <div class="scrim" aria-hidden="true"></div>
-    <div class="sheet" role="dialog" aria-label="Manage Channels">
+    <div class="sheet" role="dialog" aria-label="New Channel">
       <div class="grabber"></div>
       <div class="sheet-head">
-        <h3>Manage Channels</h3>
-        <button type="button" class="add-btn"><i class="ph ph-plus"></i> Add</button>
+        <h3>New Channel</h3>
+        <p class="sub">Organize this group's conversations by topic.</p>
       </div>
-      <div class="ch-list">
-        <div class="ch-row">
-          <span class="ch-ico">💬</span>
-          <span class="name">General</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
+
+      <div class="sheet-body">
+        <div>
+          <div class="label">Name</div>
+          <div class="input-wrap">
+            <span class="pre"><i class="ph-fill ph-chat-circle-text"></i></span>
+            <span class="typed">Planning</span>
+          </div>
         </div>
-        <div class="ch-row">
-          <span class="ch-ico">🗓️</span>
-          <span class="name">Planning</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
+
+        <div>
+          <div class="label">Icon</div>
+          <div class="icon-grid">
+            <span class="ico selected"><i class="ph ph-chat-circle-text"></i></span>
+            <span class="ico"><i class="ph ph-calendar-blank"></i></span>
+            <span class="ico"><i class="ph ph-map-pin"></i></span>
+            <span class="ico"><i class="ph ph-ticket"></i></span>
+            <span class="ico"><i class="ph ph-fork-knife"></i></span>
+            <span class="ico"><i class="ph ph-camera"></i></span>
+            <span class="ico"><i class="ph ph-music-notes"></i></span>
+            <span class="ico"><i class="ph ph-hand-coins"></i></span>
+            <span class="ico"><i class="ph ph-checks"></i></span>
+            <span class="ico"><i class="ph ph-megaphone"></i></span>
+            <span class="ico"><i class="ph ph-confetti"></i></span>
+            <span class="ico"><i class="ph ph-sparkle"></i></span>
+          </div>
         </div>
-        <div class="ch-row">
-          <span class="ch-ico">💸</span>
-          <span class="name">Bets</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-        </div>
-        <div class="ch-row">
-          <span class="ch-ico">📸</span>
-          <span class="name">Photos</span>
-          <button type="button" class="row-btn" aria-label="Delete"><i class="ph ph-trash"></i></button>
-          <button type="button" class="row-btn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-        </div>
+      </div>
+
+      <div class="cta-row">
+        <button type="button" class="cancel">Cancel</button>
+        <button type="button" class="create">Create channel</button>
       </div>
     </div>
   </div>

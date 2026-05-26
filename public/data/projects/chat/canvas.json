@@ -8,26 +8,68 @@
     },
     {
       "file": "group-thread-attach-sheet.html",
-      "x": 450,
+      "x": 416,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "group-thread-attach-sheet-list.html",
+      "x": 832,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "group-thread-attach-sheet-compact.html",
+      "x": 1248,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "group-thread-attach-sheet-gallery.html",
+      "x": 1664,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "group-thread-attach-sheet-rail.html",
+      "x": 2080,
       "y": 0,
       "width": 390
     },
     {
       "file": "group-thread-new-channel-modal.html",
-      "x": 900,
-      "y": 0,
+      "x": 0,
+      "y": 960,
+      "width": 390
+    },
+    {
+      "file": "group-thread-new-channel-sheet-v1.html",
+      "x": 416,
+      "y": 960,
+      "width": 390
+    },
+    {
+      "file": "group-thread-new-channel-inline-v3.html",
+      "x": 832,
+      "y": 960,
       "width": 390
     },
     {
       "file": "group-thread-admin.html",
-      "x": 1350,
-      "y": 0,
+      "x": 0,
+      "y": 1952,
       "width": 390
     },
     {
       "file": "group-thread-manage-channels-sheet.html",
-      "x": 1800,
-      "y": 0,
+      "x": 832,
+      "y": 1952,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels.html",
+      "x": 416,
+      "y": 1952,
       "width": 390
     }
   ]
