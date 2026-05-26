@@ -19,24 +19,6 @@
       "width": 390
     },
     {
-      "file": "group-thread-attach-sheet-compact.html",
-      "x": 1248,
-      "y": 0,
-      "width": 390
-    },
-    {
-      "file": "group-thread-attach-sheet-gallery.html",
-      "x": 1664,
-      "y": 0,
-      "width": 390
-    },
-    {
-      "file": "group-thread-attach-sheet-rail.html",
-      "x": 2080,
-      "y": 0,
-      "width": 390
-    },
-    {
       "file": "group-thread-new-channel-modal.html",
       "x": 0,
       "y": 960,
@@ -50,8 +32,8 @@
     },
     {
       "file": "group-thread-new-channel-inline-v3.html",
-      "x": 832,
-      "y": 960,
+      "x": 1248,
+      "y": 1952,
       "width": 390
     },
     {
