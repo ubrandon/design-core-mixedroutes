@@ -86,19 +86,19 @@
     },
     {
       "file": "group-thread-manage-tags-sheet.html",
-      "x": 1760,
+      "x": 1472,
       "y": 2112,
       "width": 390
     },
     {
       "file": "group-thread-new-tag-modal.html",
-      "x": 2176,
+      "x": 1888,
       "y": 2112,
       "width": 390
     },
     {
       "file": "group-thread-manage-tags-list.html",
-      "x": 1344,
+      "x": 1056,
       "y": 2112,
       "width": 390
     },
@@ -109,14 +109,8 @@
       "width": 390
     },
     {
-      "file": "group-thread-tags-filter-v2-grouped.html",
-      "x": 416,
-      "y": 2112,
-      "width": 390
-    },
-    {
       "file": "group-thread-tags-filter-v5-all-recent.html",
-      "x": 832,
+      "x": 416,
       "y": 2112,
       "width": 390
     }
