@@ -11,6 +11,12 @@
       "name": "Picker Flow V2",
       "description": "Inline V2 — chips, group swap, mixed warning sheet.",
       "device": "mobile"
+    },
+    {
+      "id": "picker-flow-v3",
+      "name": "Picker Flow V3",
+      "description": "Toggle V3 — switch between Invite friends and Add to group.",
+      "device": "mobile"
     }
   ]
 }
