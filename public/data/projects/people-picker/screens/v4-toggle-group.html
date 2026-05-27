@@ -23,8 +23,8 @@
   .v4-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
   .v4-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
 
-  .v4-label { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 10px; color: rgba(255,255,255,0.72); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
-  .v4-label .count { color: rgba(255,255,255,0.46); }
+  .v4-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
+  .v4-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 
   .v4-grouplist { padding: 0 20px; display: flex; flex-direction: column; }
   .v4-grouprow { display: grid; grid-template-columns: 48px 1fr 22px; align-items: center; gap: 13px; padding: 11px 8px; margin: 0 -4px; border-radius: 14px; }
@@ -46,13 +46,13 @@
   <div class="v4-wrap">
     <div class="v4-body">
       <header class="v4-header">
-        <div class="v4-title">Pick a group</div>
+        <div class="v4-title">Who's going?</div>
         <button type="button" class="v4-close" aria-label="Close"><i class="ph ph-x"></i></button>
       </header>
 
       <div class="v4-toggle">
         <button type="button"><i class="ph ph-user"></i>Invite friends</button>
-        <button type="button" class="is-active"><i class="ph ph-users-three"></i>Add to a group</button>
+        <button type="button" class="is-active"><i class="ph ph-users-three"></i>Add to group</button>
       </div>
 
       <div class="v4-search">
@@ -60,7 +60,7 @@
         <input type="search" placeholder="Search groups" />
       </div>
 
-      <div class="v4-label"><span>Your groups</span></div>
+      <div class="v4-label"><span>Add to group</span></div>
       <div class="v4-grouplist">
         <div class="v4-grouprow">
           <div class="gthumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>

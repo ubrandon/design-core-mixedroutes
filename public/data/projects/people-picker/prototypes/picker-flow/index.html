@@ -31,6 +31,7 @@
   .v5-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
 
   .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
+  .v5-label.tight-top { padding-top: 0; }
   .v5-label.sm { align-items: center; padding: 6px 20px 10px; color: rgba(255,255,255,0.72); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
   .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .v5-label.sm .count { color: rgba(255,255,255,0.46); font-size: inherit; letter-spacing: inherit; }
@@ -43,7 +44,7 @@
   .v5-group.is-on .v5-thumb { box-shadow: 0 0 0 2px var(--neon-teal); }
   .v5-group.is-on .v5-thumb::after { content: ""; position: absolute; right: 4px; bottom: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--neon-teal); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23061016' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 12 10 18 20 6'/></svg>"); background-size: 12px 12px; background-repeat: no-repeat; background-position: center; box-shadow: 0 0 0 2px var(--v5-bg); }
   .v5-gname { color: #fff; font-size: 0.92rem; line-height: 1.15; font-weight: 850; }
-  .v5-gmeta { color: rgba(255,255,255,0.5); font-size: 0.74rem; font-weight: 700; line-height: 1.2; margin-top: 2px; }
+  .v5-gmeta { color: rgba(255,255,255,0.5); font-size: 0.74rem; font-weight: 700; line-height: 1.2; margin-top: -4px; }
   .v5-group.is-on .v5-gname { color: var(--neon-teal); }
 
   .v5-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
@@ -247,7 +248,7 @@
     // Friends section
     if (state.mode === 'group') {
       // Locked friends list with hint above
-      html += '<div class="v5-label"><span>Or invite friends</span></div>';
+      html += '<div class="v5-label tight-top"><span>Or invite friends</span></div>';
       html += '<div class="v5-groups-hint">';
       html += '<i class="ph ph-user"></i>';
       html += '<div><div class="txt">Switch to <b>friends</b>?</div>';
@@ -272,22 +273,37 @@
         html += '</div>';
         html += '<div class="v5-label sm"><span>Friends</span><span class="count">' + state.selectedFriends.size + ' selected</span></div>';
       } else {
-        html += '<div class="v5-label"><span>Or invite friends</span></div>';
+        html += '<div class="v5-label tight-top"><span>Or invite friends</span></div>';
       }
-      html += '<div class="v5-list">';
-      FRIENDS.forEach(function (f) {
+      var friendRow = function (f) {
         var on = state.selectedFriends.has(f.id);
-        html += '<div class="v5-row ' + (on ? 'is-on' : '') + '" data-act="toggle-friend" data-id="' + f.id + '">';
-        html += avatarHTML(f);
-        html += '<div><div class="v5-name">' + f.name + '</div><div class="v5-handle">' + f.handle + '</div></div>';
-        if (on) {
-          html += '<span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>';
-        } else {
-          html += '<span class="mr-checkbox"><i class="ph ph-square"></i></span>';
-        }
+        var row = '<div class="v5-row ' + (on ? 'is-on' : '') + '" data-act="toggle-friend" data-id="' + f.id + '">';
+        row += avatarHTML(f);
+        row += '<div><div class="v5-name">' + f.name + '</div><div class="v5-handle">' + f.handle + '</div></div>';
+        row += on
+          ? '<span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>'
+          : '<span class="mr-checkbox"><i class="ph ph-square"></i></span>';
+        row += '</div>';
+        return row;
+      };
+      if (state.mode === 'friends') {
+        html += '<div class="v5-list">';
+        FRIENDS.forEach(function (f) { html += friendRow(f); });
         html += '</div>';
-      });
-      html += '</div>';
+      } else {
+        var primary = FRIENDS.filter(function (f) { return !f.muted; }).slice(0, 4);
+        var suggested = FRIENDS.filter(function (f) { return primary.indexOf(f) === -1; });
+        html += '<div class="v5-label sm"><span>Friends</span></div>';
+        html += '<div class="v5-list">';
+        primary.forEach(function (f) { html += friendRow(f); });
+        html += '</div>';
+        if (suggested.length) {
+          html += '<div class="v5-label sm"><span>Suggested</span></div>';
+          html += '<div class="v5-list">';
+          suggested.forEach(function (f) { html += friendRow(f); });
+          html += '</div>';
+        }
+      }
     }
 
     html += '</div>'; // .v5-body
