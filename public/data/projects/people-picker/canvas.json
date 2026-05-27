@@ -80,58 +80,58 @@
     },
     {
       "file": "v3-default-grouppills.html",
-      "x": 96,
-      "y": 18432,
+      "x": 128,
+      "y": 18112,
       "width": 390
     },
     {
       "file": "v3-default-selected.html",
-      "x": 512,
-      "y": 18432,
+      "x": 544,
+      "y": 18112,
       "width": 390
     },
     {
       "file": "v3-switch-to-group.html",
-      "x": 928,
-      "y": 18432,
+      "x": 960,
+      "y": 18112,
       "width": 390
     },
     {
       "file": "v3-group-plan.html",
-      "x": 1344,
-      "y": 18432,
+      "x": 1376,
+      "y": 18112,
       "width": 390
     },
     {
       "file": "v3-add-outsider.html",
-      "x": 1760,
-      "y": 18432,
+      "x": 1792,
+      "y": 18112,
       "width": 390
     },
     {
       "file": "v3-default-after-leave.html",
-      "x": 2176,
-      "y": 18432,
+      "x": 2208,
+      "y": 18112,
       "width": 390
     },
     {
       "file": "v4-toggle-people.html",
-      "x": 96,
-      "y": 21312,
+      "x": 128,
+      "y": 20448,
       "width": 390,
       "name": "v3-toggle-people"
     },
     {
       "file": "v4-toggle-group.html",
-      "x": 512,
-      "y": 21312,
+      "x": 544,
+      "y": 20448,
       "width": 390,
       "name": "v3-toggle-group"
     },
     {
       "file": "v4-toggle-group-members.html",
-      "x": 928,
-      "y": 21312,
+      "x": 960,
+      "y": 20448,
       "width": 390,
       "name": "v3-toggle-group-members"
     },
@@ -143,19 +143,19 @@
     },
     {
       "file": "create-add-people-group-all.html",
-      "x": 928,
+      "x": 896,
       "y": 6144,
       "width": 390
     },
     {
       "file": "create-add-people-group-some.html",
-      "x": 1344,
+      "x": 1312,
       "y": 6144,
       "width": 390
     },
     {
       "file": "create-add-people-group-selected.html",
-      "x": 1856,
+      "x": 1792,
       "y": 6144,
       "width": 390
     },
@@ -167,78 +167,78 @@
     },
     {
       "file": "v6-inline-default.html",
-      "x": 96,
-      "y": 20320,
+      "x": 128,
+      "y": 19456,
       "width": 390,
       "name": "v2-inline-default"
     },
     {
       "file": "v6-inline-people-selected.html",
-      "x": 512,
-      "y": 20320,
+      "x": 544,
+      "y": 19456,
       "width": 390,
       "name": "v2-inline-people-selected"
     },
     {
       "file": "v6-inline-group-selected.html",
-      "x": 928,
-      "y": 20320,
+      "x": 960,
+      "y": 19456,
       "width": 390,
       "name": "v2-inline-group-selected"
     },
     {
       "file": "v6-inline-mixed-warning.html",
-      "x": 1344,
-      "y": 20320,
+      "x": 1376,
+      "y": 19456,
       "width": 390,
       "name": "v2-inline-mixed-warning"
     },
     {
       "file": "invite-people-friends.html",
-      "x": 0,
-      "y": 8608,
+      "x": 32,
+      "y": 9568,
       "width": 390
     },
     {
       "file": "invite-people-group-all.html",
-      "x": 416,
-      "y": 8608,
+      "x": 448,
+      "y": 9568,
       "width": 390
     },
     {
       "file": "invite-people-group-some.html",
-      "x": 832,
-      "y": 8608,
+      "x": 864,
+      "y": 9568,
       "width": 390
     },
     {
       "file": "manage-people-friends.html",
-      "x": 0,
-      "y": 7616,
+      "x": 32,
+      "y": 8576,
       "width": 390
     },
     {
       "file": "manage-people-group.html",
-      "x": 416,
-      "y": 7616,
+      "x": 480,
+      "y": 8576,
       "width": 390
     },
     {
       "file": "v4-inline-default.html",
-      "x": 96,
-      "y": 22240,
+      "x": 128,
+      "y": 21376,
       "width": 390
     },
     {
       "file": "v4-inline-selected.html",
-      "x": 512,
-      "y": 22240,
+      "x": 544,
+      "y": 21376,
       "width": 390
     },
     {
       "file": "v4-inline-group-members.html",
-      "x": 928,
-      "y": 22240,
+      "x": 960,
+      "y": 21376,
       "width": 390
     }
   ]

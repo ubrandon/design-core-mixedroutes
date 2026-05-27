@@ -37,8 +37,8 @@
   .v5-label.sm .count { color: rgba(255,255,255,0.46); font-size: inherit; letter-spacing: inherit; }
   .v5-label .action { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.04em; text-transform: none; padding: 4px 0; cursor: pointer; }
 
-  .v5-groups { display: flex; gap: 14px; padding: 0 20px 18px; overflow-x: auto; }
-  .v5-group { flex: 0 0 96px; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; background: transparent; border: 0; position: relative; cursor: pointer; }
+  .v5-groups { display: flex; gap: 8px; padding: 0 20px 18px; overflow-x: auto; }
+  .v5-group { flex: 0 0 96px; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; background: transparent; border: 0; position: relative; cursor: pointer; }
   .v5-thumb { width: 64px; height: 64px; border-radius: 18px; overflow: hidden; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; position: relative; }
   .v5-thumb img { width: 100%; height: 100%; object-fit: cover; }
   .v5-group.is-on .v5-thumb { box-shadow: 0 0 0 2px var(--neon-teal); }
@@ -126,7 +126,7 @@
       ]
     },
     {
-      id: 'gym', name: 'Climbing gym',
+      id: 'gym', name: 'Climbing',
       thumb: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80',
       members: [
         { id: 'kai',  name: 'Kai Brun',  handle: '@kaibrun', avatar: 'https://i.pravatar.cc/96?img=64' },
@@ -207,8 +207,6 @@
     html += '<div class="v5-body">';
     html += '<header class="v5-header"><div class="v5-title">Who\'s going?</div>';
     html += '<button type="button" class="v5-close" data-act="close" aria-label="Close"><i class="ph ph-x"></i></button></header>';
-
-    html += '<div class="v5-search"><i class="ph ph-magnifying-glass"></i><input type="search" placeholder="Search people" /></div>';
 
     // Friends mode: chips
     if (state.mode === 'friends' && state.selectedFriends.size > 0) {
