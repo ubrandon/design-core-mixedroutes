@@ -21,7 +21,7 @@
   .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
   .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 
-  .v5-groups { display: flex; gap: 14px; padding: 0 20px 18px; overflow-x: auto; }
+  .v5-groups { display: flex; gap: 14px; padding: 0 20px 6px; overflow-x: auto; }
   .v5-group { flex: 0 0 96px; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; background: transparent; border: 0; }
   .v5-thumb { width: 64px; height: 64px; border-radius: 18px; overflow: hidden; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; }
   .v5-thumb img { width: 100%; height: 100%; object-fit: cover; }
@@ -36,7 +36,7 @@
   .v5-name { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
   .v5-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
 
-  .v5-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 12px; }
+  .v5-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   .v5-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
   .v5-cta .ghost { background: rgba(255,255,255,0.08); }
   .v5-cta .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); }
@@ -53,7 +53,7 @@
 
       <div class="v5-search">
         <i class="ph ph-magnifying-glass"></i>
-        <input type="search" placeholder="Search people or groups" />
+        <input type="search" placeholder="Search people" />
       </div>
 
       <div class="v5-label"><span>Add to a group</span></div>
@@ -61,17 +61,14 @@
         <div class="v5-group">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Lake House</div>
-          <div class="v5-gmeta">8 members</div>
         </div>
         <div class="v5-group">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Family</div>
-          <div class="v5-gmeta">4 members</div>
         </div>
         <div class="v5-group">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Climbing gym</div>
-          <div class="v5-gmeta">3 members</div>
         </div>
       </div>
 
@@ -111,7 +108,6 @@
     </div>
 
     <div class="v5-cta">
-      <button type="button" class="ghost">Cancel</button>
       <button type="button" class="primary" disabled>Add to plan</button>
     </div>
   </div>
