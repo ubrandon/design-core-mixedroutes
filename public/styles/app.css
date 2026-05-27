@@ -1330,15 +1330,19 @@ article.tile-card--prototype {
 
 /* On phones: drop the frame and fill the viewport */
 @media (max-width: 800px) {
-  .preview-page { padding: 0 !important; min-height: 100vh; }
+  html, body { max-width: 100vw; overflow-x: hidden; }
+  .preview-page {
+    min-height: 100svh !important;
+    padding: 0 0 env(safe-area-inset-bottom) !important;
+    box-sizing: border-box;
+  }
   .phone-frame-wrap { width: 100%; }
   .phone-frame,
   .phone-frame--desktop,
   .phone-frame--online,
   .phone-frame--responsive {
     width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
+    height: calc(100svh - env(safe-area-inset-bottom)) !important;
     max-width: none !important;
     border-radius: 0 !important;
     border: none !important;
