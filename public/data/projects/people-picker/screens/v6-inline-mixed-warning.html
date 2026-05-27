@@ -45,11 +45,11 @@
   .v6-sheet .grab { width: 36px; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.18); margin: 0 auto 14px; }
   .v6-sheet .ico { width: 44px; height: 44px; border-radius: 14px; background: rgba(245,196,81,0.14); color: var(--v6-warn); display: inline-flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 12px; }
   .v6-sheet h3 { color: #fff; font-size: 1.18rem; font-weight: 850; margin: 0 0 6px; letter-spacing: -0.005em; }
-  .v6-sheet p { color: rgba(255,255,255,0.7); font-size: 0.92rem; line-height: 1.35; margin: 0 0 14px; font-weight: 700; }
-  .v6-sheet .who { display: flex; flex-direction: column; gap: 6px; margin: 0 0 16px; padding: 10px 12px; background: rgba(255,255,255,0.05); border-radius: 12px; }
-  .v6-sheet .who-row { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 10px; }
-  .v6-sheet .who-row img, .v6-sheet .who-row .av-sm { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; font-size: 0.74rem; font-weight: 900; background: #4a5462; color: #fff; }
-  .v6-sheet .who-name { color: #fff; font-size: 0.9rem; font-weight: 850; }
+  .v6-sheet p { color: rgba(255,255,255,0.7); font-size: 0.92rem; line-height: 1.35; margin: 0 0 12px; font-weight: 700; }
+  .v6-sheet .who { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; max-height: 132px; overflow-y: auto; }
+  .v6-sheet .who-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; background: rgba(255,255,255,0.06); border-radius: 999px; }
+  .v6-sheet .who-chip img, .v6-sheet .who-chip .av-sm { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; font-size: 0.64rem; font-weight: 900; background: #4a5462; color: #fff; }
+  .v6-sheet .who-name { color: #fff; font-size: 0.86rem; font-weight: 850; }
   .v6-sheet .actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
   .v6-sheet button { min-height: 50px; border: 0; border-radius: 999px; font-size: 0.98rem; font-weight: 850; }
   .v6-sheet .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); color: #fff; }
@@ -76,8 +76,8 @@
       <div class="v6-chips">
         <span class="mr-pp-chip"><span class="mr-pp-chip-avatar is-initials">M</span>Milo<button type="button" class="mr-pp-chip-remove"><i class="ph ph-x"></i></button></span>
         <span class="mr-pp-chip"><img class="mr-pp-chip-avatar" src="https://i.pravatar.cc/64?img=12" alt="" loading="lazy" />Nova<button type="button" class="mr-pp-chip-remove"><i class="ph ph-x"></i></button></span>
-        <span class="mr-pp-chip"><img class="mr-pp-chip-avatar" src="https://i.pravatar.cc/64?img=49" alt="" loading="lazy" />Lila<button type="button" class="mr-pp-chip-remove"><i class="ph ph-x"></i></button></span>
         <span class="mr-pp-chip is-conflict"><img class="mr-pp-chip-avatar" src="https://i.pravatar.cc/64?img=33" alt="" loading="lazy" />Soren<button type="button" class="mr-pp-chip-remove"><i class="ph ph-x"></i></button></span>
+        <span class="mr-pp-chip is-conflict"><span class="mr-pp-chip-avatar is-initials">PS</span>Piper<button type="button" class="mr-pp-chip-remove"><i class="ph ph-x"></i></button></span>
       </div>
 
       <div class="v6-label"><span>Add a group</span></div>
@@ -109,13 +109,13 @@
           <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
         </div>
         <div class="v6-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
-          <div><div class="v6-name">Lila Quill</div><div class="v6-meta">@lilaquill</div></div>
+          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
+          <div><div class="v6-name">Soren Vale</div><div class="v6-meta">@sorenvale</div></div>
           <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
         </div>
         <div class="v6-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
-          <div><div class="v6-name">Soren Vale</div><div class="v6-meta">@sorenvale</div></div>
+          <span class="av muted">PS</span>
+          <div><div class="v6-name">Piper Sol</div><div class="v6-meta">@pipersol</div></div>
           <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
         </div>
       </div>
@@ -129,10 +129,14 @@
     <div class="v6-sheet">
       <div class="grab"></div>
       <div class="ico"><i class="ph-fill ph-warning"></i></div>
-      <h3>1 person isn't in Lake House</h3>
-      <p>A Lake House plan can only invite group members. Drop them, or keep the plan open to everyone.</p>
+      <h3>2 people aren't in Lake House</h3>
+      <p>A Lake House plan can only invite group members. These people aren't in the group:</p>
+      <div class="who">
+        <span class="who-chip"><img src="https://i.pravatar.cc/64?img=33" alt="" loading="lazy" /><span class="who-name">Soren Vale</span></span>
+        <span class="who-chip"><span class="av-sm">PS</span><span class="who-name">Piper Sol</span></span>
+      </div>
       <div class="actions">
-        <button type="button" class="primary">Use Lake House</button>
+        <button type="button" class="primary">Drop them, use Lake House</button>
         <button type="button" class="ghost">Keep everyone, no group</button>
       </div>
     </div>
