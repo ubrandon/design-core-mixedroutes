@@ -18,12 +18,11 @@
   .v5-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
   .v5-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
 
-  .v5-groups-hint { margin: 0 20px 16px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--v5-line); display: grid; grid-template-columns: 20px 1fr auto; align-items: start; gap: 12px; }
-  .v5-groups-hint i { color: rgba(255,255,255,0.55); font-size: 17px; line-height: 1.2; }
-  .v5-groups-hint .txt { color: #fff; font-size: 0.92rem; font-weight: 850; line-height: 1.2; }
-  .v5-groups-hint .txt b { color: #fff; font-weight: 850; }
-  .v5-groups-hint .sub { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 700; line-height: 1.3; margin-top: 3px; }
-  .v5-groups-hint .show { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.84rem; font-weight: 850; padding: 4px 4px; }
+  .v5-groups-hint { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: #0c0f12; border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; }
+  .v5-groups-hint > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
+  .v5-groups-hint .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; flex: 1; }
+  .v5-groups-hint .txt b { color: var(--neon-teal); font-weight: 850; }
+  .v5-groups-hint .swap { color: var(--neon-teal); font-size: 20px; line-height: 1; }
 
   .v5-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
   .v5-chips .mr-pp-chip { flex: 0 0 auto; }
@@ -77,12 +76,9 @@
       </div>
 
       <div class="v5-groups-hint">
-        <i class="ph ph-users-three"></i>
-        <div>
-          <div class="txt">Switch to a <b>group</b>?</div>
-          <div class="sub">Group plans can't mix in friends outside the group.</div>
-        </div>
-        <button type="button" class="show">Clear friends</button>
+        <i class="ph-fill ph-squares-four"></i>
+        <div class="txt">Switch to a <b>group</b> plan</div>
+        <i class="ph-fill ph-user-switch swap"></i>
       </div>
 
       <div class="v5-label"><span>Friends</span><span class="count">3 selected</span></div>
