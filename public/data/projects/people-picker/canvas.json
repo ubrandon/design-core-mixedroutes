@@ -113,6 +113,18 @@
       "x": 3040,
       "y": 5280,
       "width": 390
+    },
+    {
+      "file": "v4-toggle-people.html",
+      "x": 0,
+      "y": 6400,
+      "width": 390
+    },
+    {
+      "file": "v4-toggle-group.html",
+      "x": 448,
+      "y": 6400,
+      "width": 390
     }
   ]
 }
