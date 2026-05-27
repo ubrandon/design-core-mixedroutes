@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../../../../data/design-system/company.css" />
 
 <style>
-  .v5-scope { --v5-bg: #06080e; --v5-line: rgba(255,255,255,0.08); }
+  .v5-scope { --v5-bg: #06080e; --v5-line: rgba(255,255,255,0.08); --v5-warn: #f5c451; }
   .v5-scope, .v5-scope * { box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
   .v5-scope::-webkit-scrollbar, .v5-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .v5-wrap { background: var(--v5-bg); height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-body); }
@@ -21,7 +21,7 @@
   .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 8px 20px 10px; color: #fff; font-size: 1.1rem; font-weight: 850; letter-spacing: -0.005em; }
   .v5-label .hint { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 700; text-transform: none; letter-spacing: 0; }
 
-  .v5-groups { display: flex; gap: 14px; padding: 0 20px 14px; overflow-x: auto; }
+  .v5-groups { display: flex; gap: 14px; padding: 0 20px 12px; overflow-x: auto; }
   .v5-group { flex: 0 0 96px; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; background: transparent; border: 0; position: relative; }
   .v5-thumb { width: 64px; height: 64px; border-radius: 18px; overflow: hidden; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; position: relative; }
   .v5-thumb img { width: 100%; height: 100%; object-fit: cover; }
@@ -29,16 +29,25 @@
   .v5-group.is-on::after { content: ""; position: absolute; left: calc(50% + 14px); top: 46px; width: 22px; height: 22px; border-radius: 50%; background: var(--neon-teal); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23061016' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 12 10 18 20 6'/></svg>"); background-size: 13px 13px; background-repeat: no-repeat; background-position: center; box-shadow: 0 0 0 2px var(--v5-bg); }
   .v5-gname { color: #fff; font-size: 0.92rem; line-height: 1.15; font-weight: 850; }
   .v5-group.is-on .v5-gname { color: var(--neon-teal); }
+  .v5-group.is-pressed .v5-thumb { box-shadow: 0 0 0 2px var(--v5-warn); }
+  .v5-group.is-pressed .v5-gname { color: var(--v5-warn); }
   .v5-gmeta { color: rgba(255,255,255,0.54); font-size: 0.76rem; font-weight: 700; margin-top: -2px; }
 
-  .v5-section-head { padding: 14px 20px 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .v5-confirm { margin: 0 20px 14px; padding: 14px 16px; border-radius: 16px; background: rgba(245,196,81,0.1); border: 1px solid rgba(245,196,81,0.4); display: grid; grid-template-columns: 22px 1fr; gap: 12px; }
+  .v5-confirm i { color: var(--v5-warn); font-size: 19px; line-height: 1.2; }
+  .v5-confirm .ttl { color: #fff; font-size: 0.96rem; font-weight: 850; line-height: 1.2; }
+  .v5-confirm .sub { color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 700; line-height: 1.35; margin-top: 4px; }
+  .v5-confirm .acts { display: flex; gap: 8px; margin-top: 12px; }
+  .v5-confirm .acts button { flex: 1; min-height: 40px; border-radius: 999px; border: 0; font-size: 0.86rem; font-weight: 850; }
+  .v5-confirm .acts .keep { background: rgba(255,255,255,0.1); color: #fff; }
+  .v5-confirm .acts .switch { background: var(--v5-warn); color: #1a1300; }
+
+  .v5-section-head { padding: 10px 20px 6px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .v5-section-head .ttl { color: rgba(255,255,255,0.85); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
   .v5-section-head .ttl .pill { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: rgba(32,224,207,0.18); color: var(--neon-teal); font-size: 0.66rem; font-weight: 850; letter-spacing: 0.04em; vertical-align: middle; }
   .v5-section-head .ttl .pill.muted { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); }
-  .v5-section-head .action { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.82rem; font-weight: 850; padding: 4px 0; cursor: pointer; }
 
-  .v5-note { margin: 0 20px 4px; color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 700; line-height: 1.35; }
-  .v5-note b { color: rgba(255,255,255,0.85); font-weight: 850; }
+  .v5-dim { opacity: 0.4; pointer-events: none; }
 
   .v5-list { padding: 0 20px; display: flex; flex-direction: column; }
   .v5-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 13px; padding: 11px 8px; margin: 0 -4px; border-radius: 14px; }
@@ -47,10 +56,7 @@
   .v5-row .av.muted { background: #4a5462; color: #fff; }
   .v5-name { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
   .v5-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
-  .v5-row .host { color: #f5c451; font-weight: 800; font-size: 0.8rem; }
-
-  .v5-expand { margin: 4px 0 2px; padding: 10px 0; background: transparent; border: 0; color: var(--neon-teal); font-size: 0.84rem; font-weight: 850; display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; cursor: pointer; }
-  .v5-expand i { font-size: 14px; }
+  .v5-row .host { color: var(--v5-warn); font-weight: 800; font-size: 0.8rem; }
 
   .v5-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   .v5-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
@@ -77,10 +83,10 @@
           <div class="v5-gname">Lake House</div>
           <div class="v5-gmeta">8 going</div>
         </div>
-        <div class="v5-group">
+        <div class="v5-group is-pressed">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Family</div>
-          <div class="v5-gmeta">6 members</div>
+          <div class="v5-gmeta">Tap to switch</div>
         </div>
         <div class="v5-group">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
@@ -89,54 +95,60 @@
         </div>
       </div>
 
-      <div class="v5-section-head">
-        <span class="ttl">Lake House members <span class="pill">8 of 8</span></span>
-        <button type="button" class="action">Deselect all</button>
-      </div>
-      <div class="v5-list">
-        <div class="v5-row is-on">
-          <span class="av">M</span>
-          <div><div class="v5-name">Milo Wren</div><div class="v5-handle"><span class="host">Host</span></div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+      <div class="v5-confirm">
+        <i class="ph-fill ph-warning"></i>
+        <div>
+          <div class="ttl">Switch group to Family?</div>
+          <div class="sub">A plan can only be tied to one group. Lake House members will be removed, but your 2 guests stay.</div>
+          <div class="acts">
+            <button type="button" class="keep">Keep Lake House</button>
+            <button type="button" class="switch">Switch to Family</button>
+          </div>
         </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
-          <div><div class="v5-name">Nova Finch</div><div class="v5-handle">@novafinch</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
-          <div><div class="v5-name">Lila Quill</div><div class="v5-handle">@lilaquill</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <button type="button" class="v5-expand">Show 5 more members <i class="ph ph-caret-down"></i></button>
       </div>
 
-      <div class="v5-section-head">
-        <span class="ttl">Outside the group <span class="pill muted">+ Guests</span></span>
-      </div>
-      <div class="v5-note">Anyone you add here joins as a <b>guest</b> &mdash; they won't be added to Lake House.</div>
-      <div class="v5-list" style="margin-top:8px;">
-        <div class="v5-row">
-          <span class="av muted">PS</span>
-          <div><div class="v5-name">Piper Sol</div><div class="v5-handle">@pipersol</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+      <div class="v5-dim">
+        <div class="v5-section-head">
+          <span class="ttl">Lake House members <span class="pill">8 of 8</span></span>
         </div>
-        <div class="v5-row">
-          <img class="av" src="https://i.pravatar.cc/96?img=23" alt="" loading="lazy" />
-          <div><div class="v5-name">Rosa Klein</div><div class="v5-handle">@rosaklein</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+        <div class="v5-list">
+          <div class="v5-row is-on">
+            <span class="av">M</span>
+            <div><div class="v5-name">Milo Wren</div><div class="v5-handle"><span class="host">Host</span></div></div>
+            <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          </div>
+          <div class="v5-row is-on">
+            <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
+            <div><div class="v5-name">Nova Finch</div><div class="v5-handle">@novafinch</div></div>
+            <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          </div>
+          <div class="v5-row is-on">
+            <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
+            <div><div class="v5-name">Lila Quill</div><div class="v5-handle">@lilaquill</div></div>
+            <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          </div>
         </div>
-        <div class="v5-row">
-          <img class="av" src="https://i.pravatar.cc/96?img=58" alt="" loading="lazy" />
-          <div><div class="v5-name">Eli Park</div><div class="v5-handle">@elipark</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+
+        <div class="v5-section-head">
+          <span class="ttl">Outside the group <span class="pill">2 guests</span></span>
+        </div>
+        <div class="v5-list">
+          <div class="v5-row is-on">
+            <span class="av muted">PS</span>
+            <div><div class="v5-name">Piper Sol</div><div class="v5-handle">@pipersol</div></div>
+            <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          </div>
+          <div class="v5-row is-on">
+            <img class="av" src="https://i.pravatar.cc/96?img=23" alt="" loading="lazy" />
+            <div><div class="v5-name">Rosa Klein</div><div class="v5-handle">@rosaklein</div></div>
+            <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="v5-cta">
-      <button type="button" class="primary">Invite Lake House (8)</button>
+      <button type="button" class="primary">Invite 8 members + 2 guests</button>
     </div>
   </div>
 </div>

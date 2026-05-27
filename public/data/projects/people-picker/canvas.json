@@ -137,32 +137,98 @@
     },
     {
       "file": "create-add-people-default.html",
-      "x": 0,
-      "y": 6144,
+      "x": 416,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "create-add-people-group-all.html",
-      "x": 896,
-      "y": 6144,
+      "x": 1408,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "create-add-people-group-some.html",
-      "x": 1312,
-      "y": 6144,
+      "x": 1824,
+      "y": 6112,
       "width": 390
     },
     {
       "file": "create-add-people-group-selected.html",
-      "x": 1792,
-      "y": 6144,
+      "x": 2240,
+      "y": 6112,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-default-vA.html",
+      "x": 0,
+      "y": 6112,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-friends-vA.html",
+      "x": 3456,
+      "y": 6912,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-friends-vB.html",
+      "x": 3872,
+      "y": 6912,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-friends-vC.html",
+      "x": 4288,
+      "y": 6912,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-group-selected-vA.html",
+      "x": 4704,
+      "y": 6912,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-group-selected-vB.html",
+      "x": 5120,
+      "y": 6912,
+      "width": 390
+    },
+    {
+      "file": "create-add-people-group-selected-vC.html",
+      "x": 5536,
+      "y": 6912,
       "width": 390
     },
     {
       "file": "create-add-people-friends.html",
-      "x": 416,
-      "y": 6144,
+      "x": 928,
+      "y": 6112,
+      "width": 390
+    },
+    {
+      "file": "flex-mix-default.html",
+      "x": 0,
+      "y": 7296,
+      "width": 390
+    },
+    {
+      "file": "flex-mix-group-picked.html",
+      "x": 448,
+      "y": 7296,
+      "width": 390
+    },
+    {
+      "file": "flex-mix-with-guests.html",
+      "x": 896,
+      "y": 7296,
+      "width": 390
+    },
+    {
+      "file": "flex-mix-switch-group.html",
+      "x": 1344,
+      "y": 7296,
       "width": 390
     },
     {
@@ -195,32 +261,32 @@
     },
     {
       "file": "invite-people-friends.html",
-      "x": 32,
-      "y": 9568,
+      "x": 64,
+      "y": 10464,
       "width": 390
     },
     {
       "file": "invite-people-group-all.html",
-      "x": 448,
-      "y": 9568,
+      "x": 480,
+      "y": 10464,
       "width": 390
     },
     {
       "file": "invite-people-group-some.html",
-      "x": 864,
-      "y": 9568,
+      "x": 896,
+      "y": 10464,
       "width": 390
     },
     {
       "file": "manage-people-friends.html",
-      "x": 32,
-      "y": 8576,
+      "x": 64,
+      "y": 9472,
       "width": 390
     },
     {
       "file": "manage-people-group.html",
-      "x": 480,
-      "y": 8576,
+      "x": 512,
+      "y": 9472,
       "width": 390
     },
     {

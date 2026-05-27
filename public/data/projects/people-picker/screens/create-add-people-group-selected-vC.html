@@ -21,12 +21,16 @@
   .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
   .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 
-  .v5-groups-hint { margin: 0 20px 16px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--v5-line); display: grid; grid-template-columns: 20px 1fr auto; align-items: start; gap: 12px; }
-  .v5-groups-hint i { color: rgba(255,255,255,0.55); font-size: 17px; line-height: 1.2; }
+  .v5-groups-hint { margin: 0 20px 16px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--v5-line); display: grid; grid-template-columns: 20px 1fr; align-items: start; gap: 12px; }
+  .v5-groups-hint i.lead { color: rgba(255,255,255,0.55); font-size: 17px; line-height: 1.2; }
   .v5-groups-hint .txt { color: #fff; font-size: 0.92rem; font-weight: 850; line-height: 1.2; }
   .v5-groups-hint .txt b { color: #fff; font-weight: 850; }
   .v5-groups-hint .sub { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 700; line-height: 1.3; margin-top: 3px; }
-  .v5-groups-hint .show { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.84rem; font-weight: 850; padding: 4px 4px; }
+  .v5-groups-hint .btn-row { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .v5-groups-hint .btn-row button { min-height: 44px; border-radius: 999px; font-size: 0.88rem; font-weight: 900; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+  .v5-groups-hint .btn-row .switch-btn { background: transparent; border: 1px solid var(--neon-teal); color: var(--neon-teal); }
+  .v5-groups-hint .btn-row .switch-btn i { color: var(--neon-teal); font-size: 14px; }
+  .v5-groups-hint .btn-row .clear-btn { background: transparent; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.78); }
 
   .v5-groups { display: flex; gap: 14px; padding: 0 20px 18px; overflow-x: auto; }
   .v5-group { flex: 0 0 96px; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; background: transparent; border: 0; position: relative; }
@@ -84,12 +88,15 @@
 
       <div class="v5-label"><span>Or invite friends</span></div>
       <div class="v5-groups-hint">
-        <i class="ph ph-user"></i>
+        <i class="ph ph-user lead"></i>
         <div>
           <div class="txt">Switch to <b>friends</b>?</div>
           <div class="sub">Group plans can't mix in friends outside the group.</div>
         </div>
-        <button type="button" class="show">Clear group</button>
+        <div class="btn-row">
+          <button type="button" class="switch-btn"><i class="ph-bold ph-user"></i>Switch to friends</button>
+          <button type="button" class="clear-btn">Clear group</button>
+        </div>
       </div>
       <div class="v5-list">
         <div class="v5-row">
