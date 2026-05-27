@@ -17,6 +17,12 @@
       "name": "Picker Flow V3",
       "description": "Toggle V3 — switch between Invite friends and Add to group.",
       "device": "mobile"
+    },
+    {
+      "id": "picker-flow-v4",
+      "name": "Picker Flow V4",
+      "description": "Recents up top, groups inline with people, drill in to pick group members.",
+      "device": "mobile"
     }
   ]
 }

@@ -2,136 +2,136 @@
   "screens": [
     {
       "file": "picker-default.html",
-      "x": 128,
-      "y": 13312,
+      "x": 96,
+      "y": 16224,
       "width": 390
     },
     {
       "file": "picker-people-selected.html",
-      "x": 576,
-      "y": 13312,
+      "x": 544,
+      "y": 16224,
       "width": 390
     },
     {
       "file": "picker-group-selected.html",
-      "x": 992,
-      "y": 13312,
+      "x": 960,
+      "y": 16224,
       "width": 390
     },
     {
       "file": "guests-group-plan-flexible.html",
-      "x": 128,
-      "y": 14240,
+      "x": 96,
+      "y": 17152,
       "width": 390
     },
     {
       "file": "guests-group-plan-locked.html",
-      "x": 576,
-      "y": 14240,
+      "x": 544,
+      "y": 17152,
       "width": 390
     },
     {
       "file": "v2-people-plan.html",
-      "x": 2848,
-      "y": 13248,
+      "x": 2816,
+      "y": 16160,
       "width": 390
     },
     {
       "file": "v2-switch-to-group.html",
-      "x": 3296,
-      "y": 13248,
+      "x": 3264,
+      "y": 16160,
       "width": 390
     },
     {
       "file": "v2-group-everyone.html",
-      "x": 3744,
-      "y": 13248,
+      "x": 3712,
+      "y": 16160,
       "width": 390
     },
     {
       "file": "v2-group-selected.html",
-      "x": 4160,
-      "y": 13248,
+      "x": 4128,
+      "y": 16160,
       "width": 390
     },
     {
       "file": "v2-leave-group.html",
-      "x": 4608,
-      "y": 13248,
+      "x": 4576,
+      "y": 16160,
       "width": 390
     },
     {
       "file": "v2-people-plan-mixed.html",
-      "x": 5056,
-      "y": 13248,
+      "x": 5024,
+      "y": 16160,
       "width": 390
     },
     {
       "file": "v3-default.html",
-      "x": 3296,
-      "y": 14240,
+      "x": 3264,
+      "y": 17152,
       "width": 390
     },
     {
       "file": "v3-default-grouprows.html",
-      "x": 2848,
-      "y": 14240,
+      "x": 2816,
+      "y": 17152,
       "width": 390
     },
     {
       "file": "v3-default-grouppills.html",
-      "x": 128,
-      "y": 15904,
+      "x": 96,
+      "y": 18432,
       "width": 390
     },
     {
       "file": "v3-default-selected.html",
-      "x": 544,
-      "y": 15904,
+      "x": 512,
+      "y": 18432,
       "width": 390
     },
     {
       "file": "v3-switch-to-group.html",
-      "x": 960,
-      "y": 15904,
+      "x": 928,
+      "y": 18432,
       "width": 390
     },
     {
       "file": "v3-group-plan.html",
-      "x": 1376,
-      "y": 15904,
+      "x": 1344,
+      "y": 18432,
       "width": 390
     },
     {
       "file": "v3-add-outsider.html",
-      "x": 1792,
-      "y": 15904,
+      "x": 1760,
+      "y": 18432,
       "width": 390
     },
     {
       "file": "v3-default-after-leave.html",
-      "x": 2208,
-      "y": 15904,
+      "x": 2176,
+      "y": 18432,
       "width": 390
     },
     {
       "file": "v4-toggle-people.html",
-      "x": 0,
-      "y": 8224,
+      "x": 96,
+      "y": 21312,
       "width": 390,
       "name": "v3-toggle-people"
     },
     {
       "file": "v4-toggle-group.html",
-      "x": 416,
-      "y": 8224,
+      "x": 512,
+      "y": 21312,
       "width": 390,
       "name": "v3-toggle-group"
     },
     {
       "file": "v4-toggle-group-members.html",
-      "x": 832,
-      "y": 8224,
+      "x": 928,
+      "y": 21312,
       "width": 390,
       "name": "v3-toggle-group-members"
     },
@@ -167,60 +167,78 @@
     },
     {
       "file": "v6-inline-default.html",
-      "x": 0,
-      "y": 7168,
+      "x": 96,
+      "y": 20320,
       "width": 390,
       "name": "v2-inline-default"
     },
     {
       "file": "v6-inline-people-selected.html",
-      "x": 416,
-      "y": 7168,
+      "x": 512,
+      "y": 20320,
       "width": 390,
       "name": "v2-inline-people-selected"
     },
     {
       "file": "v6-inline-group-selected.html",
-      "x": 832,
-      "y": 7168,
+      "x": 928,
+      "y": 20320,
       "width": 390,
       "name": "v2-inline-group-selected"
     },
     {
       "file": "v6-inline-mixed-warning.html",
-      "x": 1248,
-      "y": 7168,
+      "x": 1344,
+      "y": 20320,
       "width": 390,
       "name": "v2-inline-mixed-warning"
     },
     {
       "file": "invite-people-friends.html",
-      "x": 96,
-      "y": 11616,
+      "x": 0,
+      "y": 8608,
       "width": 390
     },
     {
       "file": "invite-people-group-all.html",
-      "x": 512,
-      "y": 11616,
+      "x": 416,
+      "y": 8608,
       "width": 390
     },
     {
       "file": "invite-people-group-some.html",
-      "x": 928,
-      "y": 11616,
+      "x": 832,
+      "y": 8608,
       "width": 390
     },
     {
       "file": "manage-people-friends.html",
-      "x": 96,
-      "y": 10624,
+      "x": 0,
+      "y": 7616,
       "width": 390
     },
     {
       "file": "manage-people-group.html",
+      "x": 416,
+      "y": 7616,
+      "width": 390
+    },
+    {
+      "file": "v4-inline-default.html",
+      "x": 96,
+      "y": 22240,
+      "width": 390
+    },
+    {
+      "file": "v4-inline-selected.html",
       "x": 512,
-      "y": 10624,
+      "y": 22240,
+      "width": 390
+    },
+    {
+      "file": "v4-inline-group-members.html",
+      "x": 928,
+      "y": 22240,
       "width": 390
     }
   ]
