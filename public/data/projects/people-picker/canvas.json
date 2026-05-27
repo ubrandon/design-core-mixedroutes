@@ -86,31 +86,31 @@
     },
     {
       "file": "v3-default-selected.html",
-      "x": 1248,
+      "x": 416,
       "y": 5280,
       "width": 390
     },
     {
       "file": "v3-switch-to-group.html",
-      "x": 1696,
+      "x": 832,
       "y": 5280,
       "width": 390
     },
     {
       "file": "v3-group-plan.html",
-      "x": 2144,
+      "x": 1248,
       "y": 5280,
       "width": 390
     },
     {
       "file": "v3-add-outsider.html",
-      "x": 2592,
+      "x": 1664,
       "y": 5280,
       "width": 390
     },
     {
       "file": "v3-default-after-leave.html",
-      "x": 3040,
+      "x": 2080,
       "y": 5280,
       "width": 390
     },
@@ -130,6 +130,30 @@
       "file": "v4-toggle-group-members.html",
       "x": 832,
       "y": 6400,
+      "width": 390
+    },
+    {
+      "file": "v5-default.html",
+      "x": 0,
+      "y": 7520,
+      "width": 390
+    },
+    {
+      "file": "v5-group-drilldown.html",
+      "x": 448,
+      "y": 7520,
+      "width": 390
+    },
+    {
+      "file": "v5-group-partial.html",
+      "x": 896,
+      "y": 7520,
+      "width": 390
+    },
+    {
+      "file": "v5-default-with-group.html",
+      "x": 1344,
+      "y": 7520,
       "width": 390
     }
   ]
