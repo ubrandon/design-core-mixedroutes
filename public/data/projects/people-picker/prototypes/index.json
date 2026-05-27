@@ -1,3 +1,10 @@
 {
-  "prototypes": []
+  "prototypes": [
+    {
+      "id": "picker-flow",
+      "name": "Picker Flow",
+      "description": "Who's going? — default, friends, and group flows.",
+      "device": "mobile"
+    }
+  ]
 }

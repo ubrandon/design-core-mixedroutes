@@ -135,31 +135,61 @@
     {
       "file": "create-add-people-default.html",
       "x": 0,
-      "y": 7520,
+      "y": 6144,
       "width": 390
     },
     {
       "file": "create-add-people-group-all.html",
       "x": 928,
-      "y": 7520,
+      "y": 6144,
       "width": 390
     },
     {
       "file": "create-add-people-group-some.html",
       "x": 1344,
-      "y": 7520,
+      "y": 6144,
       "width": 390
     },
     {
       "file": "create-add-people-group-selected.html",
       "x": 1856,
-      "y": 7520,
+      "y": 6144,
       "width": 390
     },
     {
       "file": "create-add-people-friends.html",
       "x": 416,
-      "y": 7520,
+      "y": 6144,
+      "width": 390
+    },
+    {
+      "file": "v6-inline-default.html",
+      "x": 0,
+      "y": 7168,
+      "width": 390
+    },
+    {
+      "file": "v6-inline-people-selected.html",
+      "x": 416,
+      "y": 7168,
+      "width": 390
+    },
+    {
+      "file": "v6-inline-group-selected.html",
+      "x": 832,
+      "y": 7168,
+      "width": 390
+    },
+    {
+      "file": "v6-inline-conflict-prompt.html",
+      "x": 1248,
+      "y": 7168,
+      "width": 390
+    },
+    {
+      "file": "v6-inline-mixed-warning.html",
+      "x": 1664,
+      "y": 7168,
       "width": 390
     },
     {

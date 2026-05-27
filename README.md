@@ -45,6 +45,9 @@ Each person on the team needs their own Cursor account. There's no separate Desi
 - **Prototypes** -- fully interactive mini-apps with working forms, animations, navigation, and real behavior
 - **Design systems** -- shared component libraries that keep everything consistent
 
+> **Prototypes are fully functional, not link-navigation between mocked screens.**
+> When you build a prototype, state is real: selecting people updates chips/counts/CTAs, toggling members updates "X of Y" labels, clearing resets state, etc. Static screens belong on the canvas — prototypes simulate the actual feature behavior. If you only need clickthroughs between fixed mocks, that's a canvas job, not a prototype.
+
 ### Example prompts
 
 > "Build a signup flow with email, password, and confirm. Show inline validation and a success animation."
