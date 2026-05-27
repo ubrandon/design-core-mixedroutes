@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .pp-scope { --pp-bg: #06080e; --pp-accent: #5eb3ff; --pp-accent-2: #20e0cf; }
+  .pp-scope, .pp-scope * { scrollbar-width: none; -ms-overflow-style: none; }
+  .pp-scope::-webkit-scrollbar, .pp-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .pp-scope .pp-wrap { background: var(--pp-bg); height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+  .pp-scope .pp-body { flex: 1; overflow-y: auto; }
+
+  .pp-scope .pp-header { display: grid; grid-template-columns: 1fr 24px; align-items: center; padding: 22px 20px 12px; }
+  .pp-scope .pp-title { font-size: 1.7rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
+  .pp-scope .pp-close { background: transparent; border: 0; color: rgba(255,255,255,0.85); width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
+  .pp-scope .pp-close i { font-size: 22px; }
+
+  .pp-scope .pp-search { display: grid; grid-template-columns: 22px 1fr; align-items: center; gap: 10px; margin: 0 20px 14px; padding: 12px 16px; background: rgba(255,255,255,0.05); border-radius: 999px; }
+  .pp-scope .pp-search i { font-size: 18px; color: rgba(255,255,255,0.55); }
+  .pp-scope .pp-search input { background: transparent; border: 0; outline: 0; color: #fff; font-size: 0.95rem; width: 100%; padding: 0; }
+  .pp-scope .pp-search input::placeholder { color: rgba(255,255,255,0.5); }
+
+  .pp-scope .pp-chips { display: flex; flex-wrap: wrap; gap: 10px; padding: 2px 20px 14px; }
+  .pp-scope .pp-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 5px; border-radius: 999px; background: transparent; border: 1.5px solid var(--pp-accent); color: #fff; font-size: 0.92rem; font-weight: 700; }
+  .pp-scope .pp-chip .thumb { width: 26px; height: 26px; border-radius: 8px; object-fit: cover; }
+  .pp-scope .pp-chip .x { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,0.18); color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-left: 2px; }
+  .pp-scope .pp-chip .x i { font-size: 11px; }
+
+  .pp-scope .pp-section-label { padding: 4px 20px 8px; font-size: 0.95rem; font-weight: 800; color: #fff; }
+  .pp-scope .pp-section-label.lg { font-size: 1.3rem; padding-top: 10px; padding-bottom: 4px; }
+
+  .pp-scope .pp-groups { display: flex; gap: 12px; padding: 0 20px 8px; }
+  .pp-scope .pp-groups .mr-group-card { flex: 0 0 auto; }
+  .pp-scope .pp-groups .mr-group-card.is-selected { border-color: var(--pp-accent); box-shadow: 0 0 0 1.5px var(--pp-accent) inset; }
+  .pp-scope .pp-groups .mr-group-card.is-selected .mr-group-detail { color: var(--pp-accent); font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+  .pp-scope .pp-groups .mr-group-card.is-selected .mr-group-detail i { font-size: 13px; }
+
+  .pp-scope .pp-friends { padding: 0 20px; display: flex; flex-direction: column; }
+  .pp-scope .pp-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 14px; padding: 10px 4px; }
+  .pp-scope .pp-row .av { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+  .pp-scope .pp-row .av.initials { background: var(--pp-accent-2); color: #06080e; font-size: 0.95rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+  .pp-scope .pp-row .av.placeholder { background: #5a6470; color: #fff; }
+  .pp-scope .pp-row .name { font-size: 0.98rem; font-weight: 800; color: #fff; }
+  .pp-scope .pp-row .handle { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 1px; }
+  .pp-scope .pp-row .cbx { width: 22px; height: 22px; border-radius: 6px; border: 1.6px solid rgba(255,255,255,0.28); }
+
+  .pp-scope .pp-cta { padding: 12px 20px 22px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 12px; }
+  .pp-scope .pp-cta button { border: 0; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 0.98rem; cursor: pointer; }
+  .pp-scope .pp-cta .cancel { background: rgba(255,255,255,0.08); color: #fff; }
+  .pp-scope .pp-cta .add { background: linear-gradient(135deg, var(--pp-accent-2), var(--pp-accent)); color: #fff; }
+</style>
+
+<div class="mr-scope pp-scope">
+  <div class="pp-wrap">
+    <div class="pp-body">
+      <header class="pp-header">
+        <div class="pp-title">Who's going?</div>
+        <button type="button" class="pp-close" aria-label="Close"><i class="ph ph-x"></i></button>
+      </header>
+
+      <div class="pp-search">
+        <i class="ph ph-magnifying-glass"></i>
+        <input type="search" placeholder="Search people" />
+      </div>
+
+      <div class="pp-chips">
+        <span class="pp-chip">
+          <img class="thumb" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=120" alt="" loading="lazy" />
+          Family
+          <span class="x"><i class="ph ph-x"></i></span>
+        </span>
+      </div>
+
+      <div class="pp-section-label">Add to a group</div>
+
+      <div class="pp-groups ds-scroll-x">
+        <div class="mr-group-card is-selected" style="--mr-group-bg: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80')">
+          <div class="mr-group-avatar">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" />
+          </div>
+          <div class="mr-group-title">Family</div>
+          <div class="mr-group-detail"><i class="ph-fill ph-check-circle"></i> All 8 invited</div>
+        </div>
+        <div class="mr-group-card">
+          <div class="mr-group-avatar" style="display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.08)">
+            <i class="ph ph-users-three" style="font-size: 26px; color: #fff"></i>
+          </div>
+          <div class="mr-group-title">Test Group</div>
+          <div class="mr-group-detail">4 members</div>
+        </div>
+        <div class="mr-group-card" style="--mr-group-bg: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80')">
+          <div class="mr-group-avatar">
+            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" />
+          </div>
+          <div class="mr-group-title">Otters</div>
+          <div class="mr-group-detail">3 members</div>
+        </div>
+      </div>
+
+      <div class="pp-section-label lg">Or Invite people</div>
+      <div class="pp-section-label">Friends</div>
+
+      <div class="pp-friends">
+        <div class="pp-row">
+          <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
+          <div>
+            <div class="name">Eric Hechavarria</div>
+            <div class="handle">@erichech</div>
+          </div>
+          <span class="cbx"></span>
+        </div>
+
+        <div class="pp-row">
+          <span class="av initials">B</span>
+          <div>
+            <div class="name">Brandon Unglaub</div>
+            <div class="handle">@mixyboi</div>
+          </div>
+          <span class="cbx"></span>
+        </div>
+
+        <div class="pp-row">
+          <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
+          <div>
+            <div class="name">Carol Unglaub</div>
+            <div class="handle">@clu</div>
+          </div>
+          <span class="cbx"></span>
+        </div>
+      </div>
+
+      <div class="pp-section-label">Suggested</div>
+
+      <div class="pp-friends">
+        <div class="pp-row">
+          <span class="av initials placeholder">EH</span>
+          <div>
+            <div class="name">eric1 hech1</div>
+            <div class="handle">@eric1</div>
+          </div>
+          <span class="cbx"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pp-cta">
+      <button type="button" class="cancel">Cancel</button>
+      <button type="button" class="add">Add to plan</button>
+    </div>
+  </div>
+</div>

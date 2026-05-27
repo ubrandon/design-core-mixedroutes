@@ -36,6 +36,12 @@
       "name": "Chat",
       "description": "",
       "createdAt": "2026-05-26T03:20:31.154Z"
+    },
+    {
+      "id": "people-picker",
+      "name": "People Picker",
+      "description": "",
+      "createdAt": "2026-05-27T01:22:21.619Z"
     }
   ]
 }

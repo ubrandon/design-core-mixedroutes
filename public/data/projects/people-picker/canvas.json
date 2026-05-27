@@ -1,0 +1,34 @@
+{
+  "screens": [
+    {
+      "file": "picker-default.html",
+      "x": 0,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "picker-people-selected.html",
+      "x": 440,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "picker-group-selected.html",
+      "x": 880,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "guests-group-plan-flexible.html",
+      "x": 0,
+      "y": 1120,
+      "width": 390
+    },
+    {
+      "file": "guests-group-plan-locked.html",
+      "x": 448,
+      "y": 1120,
+      "width": 390
+    }
+  ]
+}
