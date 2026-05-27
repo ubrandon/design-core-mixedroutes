@@ -32,7 +32,8 @@
   .v5-summary .actions { display: flex; gap: 8px; }
   .v5-summary .actions button { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.84rem; font-weight: 850; padding: 4px 6px; }
 
-  .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 10px; color: rgba(255,255,255,0.72); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+  .v5-label { display: flex; align-items: center; justify-content: space-between; padding: 6px 20px 10px; color: rgba(255,255,255,0.72); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+  .v5-label .action { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.04em; text-transform: none; padding: 4px 0; cursor: pointer; }
 
   .v5-list { padding: 0 20px; display: flex; flex-direction: column; }
   .v5-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 13px; padding: 11px 8px; margin: 0 -4px; border-radius: 14px; }
@@ -53,7 +54,7 @@
     <div class="v5-body">
       <header class="v5-header">
         <button type="button" class="v5-back" aria-label="Back"><i class="ph ph-arrow-left"></i></button>
-        <div class="v5-title">Otters</div>
+        <div class="v5-title">Lake House</div>
         <button type="button" class="v5-close" aria-label="Close"><i class="ph ph-x"></i></button>
       </header>
 
@@ -61,24 +62,17 @@
         <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" />
         <div>
           <div class="v5-banner-label">Group plan</div>
-          <div class="v5-banner-name">Otters</div>
+          <div class="v5-banner-name">Lake House</div>
           <div class="v5-banner-meta">8 members · all invited</div>
         </div>
       </div>
 
       <div class="v5-search">
         <i class="ph ph-magnifying-glass"></i>
-        <input type="search" placeholder="Search Otters members" />
+        <input type="search" placeholder="Search Lake House members" />
       </div>
 
-      <div class="v5-summary">
-        <div class="left">All 8 going <span class="muted">· tap to deselect</span></div>
-        <div class="actions">
-          <button type="button">Deselect all</button>
-        </div>
-      </div>
-
-      <div class="v5-label"><span>Otters members</span></div>
+      <div class="v5-label"><span>Lake House members</span><button type="button" class="action">Deselect all</button></div>
       <div class="v5-list">
         <div class="v5-row is-on">
           <span class="av">M</span>
@@ -120,7 +114,7 @@
 
     <div class="v5-cta">
       <button type="button" class="ghost">Cancel</button>
-      <button type="button" class="primary">Invite all Otters</button>
+      <button type="button" class="primary">Invite all members</button>
     </div>
   </div>
 </div>
