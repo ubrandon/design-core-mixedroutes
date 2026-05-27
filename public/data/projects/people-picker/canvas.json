@@ -161,6 +161,24 @@
       "x": 416,
       "y": 7520,
       "width": 390
+    },
+    {
+      "file": "edit-people-friends.html",
+      "x": 0,
+      "y": 8512,
+      "width": 390
+    },
+    {
+      "file": "edit-people-group-all.html",
+      "x": 544,
+      "y": 8512,
+      "width": 390
+    },
+    {
+      "file": "edit-people-group-some.html",
+      "x": 960,
+      "y": 8512,
+      "width": 390
     }
   ]
 }
