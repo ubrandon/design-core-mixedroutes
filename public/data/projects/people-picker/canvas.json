@@ -136,6 +136,27 @@
       "name": "v3-toggle-group-members"
     },
     {
+      "file": "v4-toggle-people-empty.html",
+      "x": 0,
+      "y": 9120,
+      "width": 390,
+      "name": "v3-toggle-people-empty"
+    },
+    {
+      "file": "v4-toggle-group-with-people.html",
+      "x": 416,
+      "y": 9120,
+      "width": 390,
+      "name": "v3-toggle-group-with-people"
+    },
+    {
+      "file": "v4-toggle-mixed-warning.html",
+      "x": 832,
+      "y": 9120,
+      "width": 390,
+      "name": "v3-toggle-mixed-warning"
+    },
+    {
       "file": "create-add-people-default.html",
       "x": 0,
       "y": 6144,

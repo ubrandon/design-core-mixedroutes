@@ -39,6 +39,7 @@
   .v4-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
   .v4-cta .ghost { background: rgba(255,255,255,0.08); }
   .v4-cta .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); }
+  .v4-cta .primary[disabled] { opacity: 0.5; }
 </style>
 
 <div class="mr-scope v4-scope">
@@ -59,18 +60,18 @@
         <input type="search" placeholder="Search people" />
       </div>
 
-      <div class="v4-label"><span>Invite friends</span><span class="count">2 selected</span></div>
+      <div class="v4-label"><span>Invite friends</span></div>
       <div class="v4-sublabel">Friends</div>
       <div class="v4-list">
-        <div class="v4-row is-on">
+        <div class="v4-row">
           <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
           <div><div class="v4-name">Nova Finch</div><div class="v4-handle">@novafinch</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
-        <div class="v4-row is-on">
+        <div class="v4-row">
           <span class="av">M</span>
           <div><div class="v4-name">Milo Wren</div><div class="v4-handle">@milowren</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
         <div class="v4-row">
           <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
@@ -105,7 +106,7 @@
 
     <div class="v4-cta">
       <button type="button" class="ghost">Cancel</button>
-      <button type="button" class="primary">Add 2 to plan</button>
+      <button type="button" class="primary" disabled>Add to plan</button>
     </div>
   </div>
 </div>

@@ -28,6 +28,7 @@
   .mr-pp-chip.is-conflict { background: rgba(245,196,81,0.15); color: var(--v6-warn); border-color: rgba(245,196,81,0.45); }
 
   .v6-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
+  .v6-label.v6-label--tight { padding-top: 0; margin-top: -4px; }
   .v6-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .v6-sublabel { padding: 4px 20px 6px; color: rgba(255,255,255,0.55); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 
@@ -281,7 +282,7 @@
       html += '<button type="button" class="v6-linkbtn" data-act="clear-group">Clear group, keep people</button>';
     } else {
       // People view: Friends + Suggested
-      html += '<div class="v6-label"><span>Invite friends</span>'
+      html += '<div class="v6-label v6-label--tight"><span>Or invite friends</span>'
         + (state.selectedPeople.size > 0 ? '<span class="count">' + state.selectedPeople.size + ' selected</span>' : '')
         + '</div>';
       html += '<div class="v6-sublabel">Friends</div>';
