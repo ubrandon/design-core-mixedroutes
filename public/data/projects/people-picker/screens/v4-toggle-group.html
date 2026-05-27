@@ -28,25 +28,25 @@
 
   .v4-grouplist { padding: 0 20px; display: flex; flex-direction: column; }
   .v4-grouprow { display: grid; grid-template-columns: 48px 1fr 22px; align-items: center; gap: 13px; padding: 11px 8px; margin: 0 -4px; border-radius: 14px; }
-  .v4-grouprow.is-on { background: rgba(32,224,207,0.09); }
   .v4-grouprow .gthumb { width: 48px; height: 48px; border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; }
   .v4-grouprow .gthumb img { width: 100%; height: 100%; object-fit: cover; }
   .v4-grouprow .gthumb i { color: #fff; font-size: 22px; }
   .v4-grouprow .gname { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
   .v4-grouprow .gmeta { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
-  .v4-grouprow .gmeta .on { color: var(--neon-teal); font-weight: 800; }
+  .v4-grouprow .chev { color: rgba(255,255,255,0.4); font-size: 18px; display: inline-flex; align-items: center; justify-content: center; }
 
   .v4-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 12px; }
   .v4-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
   .v4-cta .ghost { background: rgba(255,255,255,0.08); }
   .v4-cta .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); }
+  .v4-cta .primary[disabled] { opacity: 0.5; }
 </style>
 
 <div class="mr-scope v4-scope">
   <div class="v4-wrap">
     <div class="v4-body">
       <header class="v4-header">
-        <div class="v4-title">Who's going?</div>
+        <div class="v4-title">Pick a group</div>
         <button type="button" class="v4-close" aria-label="Close"><i class="ph ph-x"></i></button>
       </header>
 
@@ -62,37 +62,37 @@
 
       <div class="v4-label"><span>Your groups</span></div>
       <div class="v4-grouplist">
-        <div class="v4-grouprow is-on">
+        <div class="v4-grouprow">
           <div class="gthumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
-          <div><div class="gname">Otters</div><div class="gmeta"><span class="on">All 8 invited</span></div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          <div><div class="gname">Otters</div><div class="gmeta">8 members</div></div>
+          <span class="chev"><i class="ph ph-caret-right"></i></span>
         </div>
         <div class="v4-grouprow">
           <div class="gthumb"><i class="ph ph-users-three"></i></div>
           <div><div class="gname">Test Group</div><div class="gmeta">4 members</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+          <span class="chev"><i class="ph ph-caret-right"></i></span>
         </div>
         <div class="v4-grouprow">
           <div class="gthumb"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div><div class="gname">Climbing</div><div class="gmeta">3 members</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+          <span class="chev"><i class="ph ph-caret-right"></i></span>
         </div>
         <div class="v4-grouprow">
           <div class="gthumb"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div><div class="gname">Studio Crew</div><div class="gmeta">6 members</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+          <span class="chev"><i class="ph ph-caret-right"></i></span>
         </div>
         <div class="v4-grouprow">
           <div class="gthumb"><i class="ph ph-pizza"></i></div>
           <div><div class="gname">Sunday Dinners</div><div class="gmeta">5 members</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+          <span class="chev"><i class="ph ph-caret-right"></i></span>
         </div>
       </div>
     </div>
 
     <div class="v4-cta">
       <button type="button" class="ghost">Cancel</button>
-      <button type="button" class="primary">Add Otters to plan</button>
+      <button type="button" class="primary" disabled>Pick a group</button>
     </div>
   </div>
 </div>
