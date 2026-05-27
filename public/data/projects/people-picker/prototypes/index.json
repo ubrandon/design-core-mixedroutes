@@ -5,6 +5,12 @@
       "name": "Picker Flow",
       "description": "Who's going? — default, friends, and group flows.",
       "device": "mobile"
+    },
+    {
+      "id": "picker-flow-v2",
+      "name": "Picker Flow V2",
+      "description": "Inline V2 — chips, group swap, mixed warning sheet.",
+      "device": "mobile"
     }
   ]
 }
