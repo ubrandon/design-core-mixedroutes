@@ -21,37 +21,49 @@
     {
       "file": "guests-group-plan-flexible.html",
       "x": 0,
-      "y": 1120,
+      "y": 928,
       "width": 390
     },
     {
       "file": "guests-group-plan-locked.html",
       "x": 448,
-      "y": 1120,
+      "y": 928,
       "width": 390
     },
     {
-      "file": "share-switch-to-group-confirm.html",
+      "file": "v2-people-plan.html",
       "x": 0,
-      "y": 2240,
+      "y": 2304,
       "width": 390
     },
     {
-      "file": "share-group-all-members.html",
-      "x": 440,
-      "y": 2240,
+      "file": "v2-switch-to-group.html",
+      "x": 448,
+      "y": 2304,
       "width": 390
     },
     {
-      "file": "share-group-selected-members.html",
-      "x": 880,
-      "y": 2240,
+      "file": "v2-group-everyone.html",
+      "x": 896,
+      "y": 2304,
       "width": 390
     },
     {
-      "file": "share-leave-group-confirm.html",
-      "x": 1320,
-      "y": 2240,
+      "file": "v2-group-selected.html",
+      "x": 1312,
+      "y": 2304,
+      "width": 390
+    },
+    {
+      "file": "v2-leave-group.html",
+      "x": 1760,
+      "y": 2304,
+      "width": 390
+    },
+    {
+      "file": "v2-people-plan-mixed.html",
+      "x": 2208,
+      "y": 2304,
       "width": 390
     }
   ]
