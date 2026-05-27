@@ -29,6 +29,30 @@
       "x": 448,
       "y": 1120,
       "width": 390
+    },
+    {
+      "file": "share-switch-to-group-confirm.html",
+      "x": 0,
+      "y": 2240,
+      "width": 390
+    },
+    {
+      "file": "share-group-all-members.html",
+      "x": 440,
+      "y": 2240,
+      "width": 390
+    },
+    {
+      "file": "share-group-selected-members.html",
+      "x": 880,
+      "y": 2240,
+      "width": 390
+    },
+    {
+      "file": "share-leave-group-confirm.html",
+      "x": 1320,
+      "y": 2240,
+      "width": 390
     }
   ]
 }

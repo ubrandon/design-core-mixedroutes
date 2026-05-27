@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .sp-scope { --sp-bg: #06080e; --sp-panel: #121923; --sp-soft: rgba(255,255,255,0.06); --sp-line: rgba(255,255,255,0.1); }
+  .sp-scope, .sp-scope * { box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
+  .sp-scope::-webkit-scrollbar, .sp-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .sp-wrap { background: var(--sp-bg); height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-body); }
+  .sp-body { flex: 1; overflow-y: auto; padding-bottom: 8px; }
+  .sp-header { display: grid; grid-template-columns: 32px 1fr 32px; align-items: center; gap: 10px; padding: 18px 18px 12px; }
+  .sp-icon-btn { width: 32px; height: 32px; border: 0; border-radius: 999px; background: transparent; color: rgba(255,255,255,0.86); display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+  .sp-icon-btn i { font-size: 22px; }
+  .sp-title { text-align: center; color: #fff; font-size: 1rem; font-weight: 800; }
+  .sp-headline { padding: 4px 20px 12px; }
+  .sp-headline h1 { margin: 0 0 4px; color: #fff; font-size: 1.55rem; line-height: 1.12; font-weight: 850; letter-spacing: 0; }
+  .sp-headline p { margin: 0; color: rgba(255,255,255,0.58); font-size: 0.88rem; line-height: 1.4; }
+  .sp-search { display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 10px; margin: 0 20px 14px; padding: 12px 15px; background: rgba(255,255,255,0.07); border-radius: 999px; }
+  .sp-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
+  .sp-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
+  .sp-label { display: flex; align-items: center; justify-content: space-between; padding: 4px 20px 8px; color: rgba(255,255,255,0.74); font-size: 0.76rem; font-weight: 850; letter-spacing: 0.06em; text-transform: uppercase; }
+  .sp-context { margin: 0 20px 14px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .sp-context span { min-height: 34px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.58); font-size: 0.86rem; font-weight: 800; }
+  .sp-context .is-active { color: #061016; background: var(--neon-teal); }
+  .sp-chips { display: flex; gap: 8px; padding: 0 20px 16px; overflow-x: auto; }
+  .sp-chip { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px 5px 5px; border: 1px solid rgba(32,224,207,0.48); border-radius: 999px; color: #fff; font-size: 0.86rem; font-weight: 800; background: rgba(32,224,207,0.08); }
+  .sp-chip img, .sp-chip .initial { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; background: var(--neon-teal); color: #061016; font-size: 0.76rem; font-weight: 900; }
+  .sp-groups { display: flex; gap: 12px; padding: 0 20px 16px; overflow-x: auto; }
+  .sp-group { flex: 0 0 142px; min-height: 144px; border: 1px solid var(--sp-line); border-radius: 16px; background: rgba(255,255,255,0.035); padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; text-align: center; }
+  .sp-group.is-selected { border: 2px solid var(--neon-teal); background: rgba(32,224,207,0.08); padding: 11px; }
+  .sp-thumb { width: 56px; height: 56px; border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center; }
+  .sp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .sp-thumb i { color: #fff; font-size: 26px; }
+  .sp-group-title { color: #fff; font-size: 0.96rem; font-weight: 850; line-height: 1.1; }
+  .sp-group-meta { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 700; }
+  .sp-group.is-selected .sp-group-meta { color: var(--neon-teal); }
+  .sp-list { padding: 0 20px; display: flex; flex-direction: column; }
+  .sp-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 12px; padding: 10px 4px; }
+  .sp-row.is-on { background: rgba(32,224,207,0.08); border-radius: 12px; padding-left: 10px; padding-right: 10px; margin: 0 -6px; }
+  .sp-row img, .sp-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; background: var(--neon-teal); color: #061016; font-weight: 900; }
+  .sp-name { color: #fff; font-size: 0.96rem; font-weight: 850; line-height: 1.15; }
+  .sp-meta { color: rgba(255,255,255,0.52); font-size: 0.8rem; margin-top: 2px; }
+  .sp-check { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid rgba(255,255,255,0.26); display: inline-flex; align-items: center; justify-content: center; }
+  .sp-check.is-on { border-color: var(--neon-teal); background: var(--neon-teal); color: #061016; }
+  .sp-check i { font-size: 13px; }
+  .sp-cta { padding: 12px 20px 20px; display: grid; grid-template-columns: 1fr 1.35fr; gap: 12px; }
+  .sp-cta button { min-height: 48px; border: 0; border-radius: 999px; color: #fff; font-size: 0.96rem; font-weight: 850; }
+  .sp-cta .ghost { background: rgba(255,255,255,0.08); }
+  .sp-cta .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); }
+  .sp-scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.54); display: flex; align-items: flex-end; padding: 0 14px 14px; }
+  .sp-sheet { width: 100%; border-radius: 24px; background: #101722; border: 1px solid rgba(255,255,255,0.12); padding: 18px; box-shadow: 0 24px 80px rgba(0,0,0,0.55); }
+  .sp-sheet-icon { width: 42px; height: 42px; border-radius: 14px; background: rgba(32,224,207,0.13); color: var(--neon-teal); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .sp-sheet-icon i { font-size: 22px; }
+  .sp-sheet h2 { margin: 0 0 6px; color: #fff; font-size: 1.22rem; line-height: 1.18; font-weight: 850; letter-spacing: 0; }
+  .sp-sheet p { margin: 0 0 14px; color: rgba(255,255,255,0.66); font-size: 0.9rem; line-height: 1.42; }
+  .sp-note { display: flex; gap: 9px; align-items: flex-start; padding: 11px 12px; border-radius: 14px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.72); font-size: 0.84rem; line-height: 1.35; margin-bottom: 14px; }
+  .sp-note i { color: #f5c451; font-size: 16px; margin-top: 1px; }
+  .sp-sheet-actions { display: grid; grid-template-columns: 1fr 1.25fr; gap: 10px; }
+  .sp-sheet-actions button { min-height: 48px; border-radius: 999px; border: 0; color: #fff; font-size: 0.94rem; font-weight: 850; }
+  .sp-sheet-actions .ghost { background: rgba(255,255,255,0.08); }
+  .sp-sheet-actions .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); }
+</style>
+
+<div class="mr-scope sp-scope">
+  <div class="sp-wrap">
+    <div class="sp-body">
+      <header class="sp-header">
+        <button type="button" class="sp-icon-btn" aria-label="Back"><i class="ph ph-arrow-left"></i></button>
+        <div class="sp-title">Invite</div>
+        <button type="button" class="sp-icon-btn" aria-label="Close"><i class="ph ph-x"></i></button>
+      </header>
+
+      <div class="sp-headline">
+        <h1>Who's going?</h1>
+        <p>Invite people directly, or switch this plan into a group plan.</p>
+      </div>
+
+      <div class="sp-search">
+        <i class="ph ph-magnifying-glass"></i>
+        <input type="search" placeholder="Search groups or people" />
+      </div>
+
+      <div class="sp-context">
+        <span class="is-active">People</span>
+        <span>Group</span>
+      </div>
+
+      <div class="sp-label">Selected people</div>
+      <div class="sp-chips">
+        <span class="sp-chip"><img src="https://i.pravatar.cc/64?img=12" alt="" loading="lazy" />Nova</span>
+        <span class="sp-chip"><span class="initial">M</span>Milo</span>
+      </div>
+
+      <div class="sp-label">Groups</div>
+      <div class="sp-groups">
+        <div class="sp-group is-selected">
+          <div class="sp-thumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
+          <div class="sp-group-title">Family</div>
+          <div class="sp-group-meta">Switch to group</div>
+        </div>
+        <div class="sp-group">
+          <div class="sp-thumb"><i class="ph ph-users-three"></i></div>
+          <div class="sp-group-title">Test Group</div>
+          <div class="sp-group-meta">4 members</div>
+        </div>
+      </div>
+
+      <div class="sp-label">Friends</div>
+      <div class="sp-list">
+        <div class="sp-row is-on">
+          <img src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
+          <div><div class="sp-name">Nova Finch</div><div class="sp-meta">@novafinch</div></div>
+          <span class="sp-check is-on"><i class="ph-fill ph-check"></i></span>
+        </div>
+        <div class="sp-row is-on">
+          <span class="sp-avatar">M</span>
+          <div><div class="sp-name">Milo Wren</div><div class="sp-meta">@milowren</div></div>
+          <span class="sp-check is-on"><i class="ph-fill ph-check"></i></span>
+        </div>
+        <div class="sp-row">
+          <img src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
+          <div><div class="sp-name">Lila Quill</div><div class="sp-meta">@lilaquill</div></div>
+          <span class="sp-check"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-cta">
+      <button type="button" class="ghost">Cancel</button>
+      <button type="button" class="primary">Add to plan</button>
+    </div>
+
+    <div class="sp-scrim">
+      <div class="sp-sheet">
+        <div class="sp-sheet-icon"><i class="ph ph-users-three"></i></div>
+        <h2>Switch to a group plan?</h2>
+        <p>Family will become the plan context. You can invite everyone in the group or choose specific Family members next.</p>
+        <div class="sp-note"><i class="ph-fill ph-warning-circle"></i><span>People who are not in Family will be removed from this plan.</span></div>
+        <div class="sp-sheet-actions">
+          <button type="button" class="ghost">Keep people</button>
+          <button type="button" class="primary">Switch to Family</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
