@@ -1,0 +1,120 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .v5-scope { --v5-bg: #06080e; --v5-line: rgba(255,255,255,0.08); }
+  .v5-scope, .v5-scope * { box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
+  .v5-scope::-webkit-scrollbar, .v5-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .v5-wrap { background: var(--v5-bg); height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-body); }
+  .v5-body { flex: 1; overflow-y: auto; padding-bottom: 8px; }
+
+  .v5-header { display: grid; grid-template-columns: 1fr 28px; align-items: center; padding: 22px 20px 14px; }
+  .v5-title { color: #fff; font-size: 1.7rem; font-weight: 850; letter-spacing: -0.01em; }
+  .v5-close { background: transparent; border: 0; color: rgba(255,255,255,0.85); width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+  .v5-close i { font-size: 22px; }
+
+  .v5-banner { margin: 0 20px 18px; padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.05); display: grid; grid-template-columns: 44px 1fr 18px; align-items: center; gap: 14px; }
+  .v5-banner .bicon { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.78); }
+  .v5-banner .bicon i { font-size: 20px; }
+  .v5-banner .btitle { color: #fff; font-size: 1.02rem; font-weight: 850; line-height: 1.15; }
+  .v5-banner .btxt { color: rgba(255,255,255,0.6); font-size: 0.88rem; font-weight: 700; margin-top: 4px; }
+  .v5-banner .chev { color: rgba(255,255,255,0.45); font-size: 18px; }
+
+  .v5-section { color: rgba(255,255,255,0.62); font-size: 0.72rem; font-weight: 850; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 20px 8px; }
+
+  .v5-row { display: grid; grid-template-columns: 44px 1fr 24px; align-items: center; gap: 13px; padding: 10px 20px; }
+  .v5-row .av { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; background: var(--neon-teal); color: #061016; font-weight: 900; position: relative; }
+  .v5-row .av.muted { background: #4a5462; color: #fff; }
+  .v5-row .av .dot { position: absolute; bottom: -2px; right: -2px; width: 18px; height: 18px; border-radius: 50%; background: #2dd073; border: 2px solid var(--v5-bg); display: inline-flex; align-items: center; justify-content: center; }
+  .v5-row .av .dot i { color: #061016; font-size: 10px; font-weight: 900; }
+  .v5-name { color: #fff; font-size: 1.02rem; font-weight: 850; line-height: 1.15; }
+  .v5-status { color: rgba(255,255,255,0.55); font-size: 0.86rem; font-weight: 700; margin-top: 2px; }
+  .v5-status .host { color: var(--neon-amber, #ffd25a); font-weight: 850; }
+  .v5-status .going { color: #fff; font-weight: 850; }
+  .v5-edit { background: transparent; border: 0; color: rgba(255,255,255,0.55); padding: 0; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; }
+  .v5-edit i { font-size: 18px; }
+
+  .v5-invite-fab { position: absolute; right: 20px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border: 0; border-radius: 999px; background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); color: #fff; font-size: 0.98rem; font-weight: 850; box-shadow: 0 10px 30px rgba(32,224,207,0.25); }
+  .v5-invite-fab i { font-size: 18px; }
+</style>
+
+<div class="mr-scope v5-scope">
+  <div class="v5-wrap">
+    <div class="v5-body">
+      <header class="v5-header">
+        <div class="v5-title">Guests</div>
+        <button type="button" class="v5-close" aria-label="Close"><i class="ph ph-x"></i></button>
+      </header>
+
+      <div class="v5-banner">
+        <span class="bicon"><i class="ph ph-link-simple"></i></span>
+        <div>
+          <div class="btitle">Share with link</div>
+          <div class="btxt">Send a link so anyone can join the plan.</div>
+        </div>
+        <i class="ph ph-caret-right chev"></i>
+      </div>
+
+      <div class="v5-section">Going · 3</div>
+
+      <div class="v5-row">
+        <span class="av">
+          <span>B</span>
+          <span class="dot"><i class="ph-fill ph-check"></i></span>
+        </span>
+        <div>
+          <div class="v5-name">Brandon Unglaub</div>
+          <div class="v5-status"><span class="going">Going</span> · <span class="host">Host</span></div>
+        </div>
+        <button type="button" class="v5-edit"><i class="ph ph-pencil-simple"></i></button>
+      </div>
+
+      <div class="v5-row">
+        <span class="av">
+          <img src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+          <span class="dot"><i class="ph-fill ph-check"></i></span>
+        </span>
+        <div>
+          <div class="v5-name">Nova Finch</div>
+          <div class="v5-status"><span class="going">Going</span></div>
+        </div>
+        <button type="button" class="v5-edit"><i class="ph ph-pencil-simple"></i></button>
+      </div>
+
+      <div class="v5-row">
+        <span class="av">
+          <img src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+          <span class="dot"><i class="ph-fill ph-check"></i></span>
+        </span>
+        <div>
+          <div class="v5-name">Lila Quill</div>
+          <div class="v5-status"><span class="going">Going</span></div>
+        </div>
+        <button type="button" class="v5-edit"><i class="ph ph-pencil-simple"></i></button>
+      </div>
+
+      <div class="v5-section">Invites pending · 2</div>
+
+      <div class="v5-row">
+        <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
+        <div>
+          <div class="v5-name">Soren Vale</div>
+          <div class="v5-status">Pending</div>
+        </div>
+        <button type="button" class="v5-edit"><i class="ph ph-pencil-simple"></i></button>
+      </div>
+
+      <div class="v5-row">
+        <span class="av muted">PS</span>
+        <div>
+          <div class="v5-name">Piper Sol</div>
+          <div class="v5-status">Pending</div>
+        </div>
+        <button type="button" class="v5-edit"><i class="ph ph-pencil-simple"></i></button>
+      </div>
+    </div>
+
+    <button type="button" class="v5-invite-fab"><i class="ph ph-user-plus"></i>Invite</button>
+  </div>
+</div>

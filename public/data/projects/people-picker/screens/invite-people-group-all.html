@@ -44,16 +44,23 @@
   .v5-friendlock .txt b { color: #fff; font-weight: 850; }
 
   .v5-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 12px; }
+  .v5-cta.single, .v5-cta:has(.single) { grid-template-columns: 1fr; }
   .v5-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
   .v5-cta .ghost { background: rgba(255,255,255,0.08); }
   .v5-cta .primary { background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue)); }
+
+  .v5-empty { margin: 40px 28px 0; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .v5-empty > i { color: var(--neon-teal); font-size: 44px; margin-bottom: 14px; }
+  .v5-empty .etitle { color: #fff; font-size: 1.25rem; font-weight: 850; }
+  .v5-empty .etxt { color: rgba(255,255,255,0.62); font-size: 0.94rem; line-height: 1.4; margin-top: 8px; max-width: 280px; }
+  .v5-empty .eswitch { margin-top: 22px; background: rgba(255,255,255,0.08); border: 0; color: #fff; font-weight: 850; font-size: 0.94rem; padding: 12px 20px; border-radius: 999px; }
 </style>
 
 <div class="mr-scope v5-scope">
   <div class="v5-wrap">
     <div class="v5-body">
       <header class="v5-header">
-        <div class="v5-title">Edit guests</div>
+        <div class="v5-title">Invite more</div>
         <button type="button" class="v5-close" aria-label="Close"><i class="ph ph-x"></i></button>
       </header>
 
@@ -61,64 +68,20 @@
         <div class="gthumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
         <div>
           <div class="gname">Lake House</div>
-          <div class="gmeta">8 members · all invited</div>
-        </div>
-        <button type="button" class="gx" aria-label="Remove group"><i class="ph ph-x"></i></button>
-      </div>
-
-      <div class="v5-search">
-        <i class="ph ph-magnifying-glass"></i>
-        <input type="search" placeholder="Search Lake House members" />
-      </div>
-
-      <div class="v5-label"><span>Lake House members</span><span class="count">Deselect all</span></div>
-      <div class="v5-list">
-        <div class="v5-row is-on">
-          <span class="av">M</span>
-          <div><div class="v5-name">Milo Wren</div><div class="v5-host">Host</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
-          <div><div class="v5-name">Nova Finch</div><div class="v5-handle">@novafinch</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
-          <div><div class="v5-name">Lila Quill</div><div class="v5-handle">@lilaquill</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
-          <div><div class="v5-name">Soren Vale</div><div class="v5-handle">@sorenvale</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=44" alt="" loading="lazy" />
-          <div><div class="v5-name">Wren Holt</div><div class="v5-handle">@wrenholt</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=22" alt="" loading="lazy" />
-          <div><div class="v5-name">Iris Mae</div><div class="v5-handle">@irismae</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=14" alt="" loading="lazy" />
-          <div><div class="v5-name">Theo Mar</div><div class="v5-handle">@theomar</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          <div class="gmeta">8 of 8 invited</div>
         </div>
       </div>
 
-      <div class="v5-friendlock">
-        <i class="ph ph-lock-simple"></i>
-        <div class="txt">To invite friends outside <b>Lake House</b>, remove the group first.</div>
+      <div class="v5-empty">
+        <i class="ph ph-check-circle"></i>
+        <div class="etitle">Everyone's invited</div>
+        <div class="etxt">All Lake House members are on this plan. To invite anyone outside the group, switch the plan over.</div>
+        <button type="button" class="eswitch">Switch to a friends plan</button>
       </div>
     </div>
 
     <div class="v5-cta">
-      <button type="button" class="ghost">Cancel</button>
-      <button type="button" class="primary">Save changes</button>
+      <button type="button" class="primary single">Done</button>
     </div>
   </div>
 </div>
