@@ -65,6 +65,54 @@
       "x": 2208,
       "y": 2304,
       "width": 390
+    },
+    {
+      "file": "v3-default.html",
+      "x": 0,
+      "y": 5280,
+      "width": 390
+    },
+    {
+      "file": "v3-default-grouprows.html",
+      "x": 0,
+      "y": 3296,
+      "width": 390
+    },
+    {
+      "file": "v3-default-grouppills.html",
+      "x": 448,
+      "y": 5280,
+      "width": 390
+    },
+    {
+      "file": "v3-default-selected.html",
+      "x": 1248,
+      "y": 5280,
+      "width": 390
+    },
+    {
+      "file": "v3-switch-to-group.html",
+      "x": 1696,
+      "y": 5280,
+      "width": 390
+    },
+    {
+      "file": "v3-group-plan.html",
+      "x": 2144,
+      "y": 5280,
+      "width": 390
+    },
+    {
+      "file": "v3-add-outsider.html",
+      "x": 2592,
+      "y": 5280,
+      "width": 390
+    },
+    {
+      "file": "v3-default-after-leave.html",
+      "x": 3040,
+      "y": 5280,
+      "width": 390
     }
   ]
 }
