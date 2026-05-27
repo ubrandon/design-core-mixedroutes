@@ -1329,7 +1329,7 @@ article.tile-card--prototype {
 }
 
 /* On phones: drop the frame and fill the viewport */
-@media (max-width: 480px) {
+@media (max-width: 800px) {
   .preview-page { padding: 0 !important; min-height: 100vh; }
   .phone-frame-wrap { width: 100%; }
   .phone-frame,
