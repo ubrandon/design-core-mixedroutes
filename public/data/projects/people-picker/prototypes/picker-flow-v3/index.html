@@ -34,15 +34,11 @@
   .v3-toggle button i { font-size: 17px; }
   .v3-toggle button.is-active { background: #fff; color: #061016; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
 
-  .v3-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
-  .v3-chips:empty { display: none; }
-  .v3-chips .mr-pp-chip { flex: 0 0 auto; }
-
   .v3-search { display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 10px; margin: 0 20px 16px; padding: 12px 15px; background: rgba(255,255,255,0.07); border-radius: 999px; }
   .v3-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
   .v3-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
 
-  .v3-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
+  .v3-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.6rem; font-weight: 850; letter-spacing: -0.01em; text-transform: none; }
   .v3-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .v3-label .action { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.86rem; font-weight: 850; padding: 4px 0; cursor: pointer; letter-spacing: 0; text-transform: none; }
 
@@ -159,10 +155,6 @@
   };
 
   function findGroup(id) { return GROUPS.find(function (g) { return g.id === id; }); }
-  function findPerson(id) {
-    return FRIENDS.concat(SUGGESTED).find(function (p) { return p.id === id; });
-  }
-  function firstName(name) { return name.split(' ')[0]; }
 
   function escAttr(s) { return String(s).replace(/"/g, '&quot;'); }
 
@@ -170,10 +162,6 @@
     var cls = 'av' + (p.muted ? ' muted' : '');
     if (p.avatar) return '<img class="' + cls + '" src="' + escAttr(p.avatar) + '" alt="" loading="lazy" />';
     return '<span class="' + cls + '">' + (p.initials || p.name[0]) + '</span>';
-  }
-  function chipAvatarHTML(p) {
-    if (p.avatar) return '<img class="mr-pp-chip-avatar" src="' + escAttr(p.avatar) + '" alt="" loading="lazy" />';
-    return '<span class="mr-pp-chip-avatar is-initials">' + (p.initials || p.name[0]) + '</span>';
   }
 
   var toastTimer;
@@ -242,15 +230,6 @@
     html += '</div>';
 
     if (isPeople) {
-      if (peopleCount > 0) {
-        html += '<div class="v3-chips">';
-        state.selectedPeople.forEach(function (pid) {
-          var p = findPerson(pid); if (!p) return;
-          html += '<span class="mr-pp-chip">' + chipAvatarHTML(p) + firstName(p.name);
-          html += '<button type="button" class="mr-pp-chip-remove" data-act="remove-person" data-id="' + pid + '" aria-label="Remove"><i class="ph ph-x"></i></button></span>';
-        });
-        html += '</div>';
-      }
       html += '<div class="v3-search"><i class="ph ph-magnifying-glass"></i><input type="search" placeholder="Search people" /></div>';
       html += '<div class="v3-label"><span>Friends</span>' + (peopleCount > 0 ? '<span class="count">' + peopleCount + ' selected</span>' : '') + '</div>';
       html += '<div class="v3-list">';
@@ -346,11 +325,6 @@
       case 'toggle-person':
         if (state.selectedPeople.has(id)) state.selectedPeople.delete(id);
         else state.selectedPeople.add(id);
-        render();
-        return;
-
-      case 'remove-person':
-        state.selectedPeople.delete(id);
         render();
         return;
 

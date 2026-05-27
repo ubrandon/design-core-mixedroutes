@@ -1328,6 +1328,31 @@ article.tile-card--prototype {
   display: block;
 }
 
+/* On phones: drop the frame and fill the viewport */
+@media (max-width: 480px) {
+  .preview-page { padding: 0 !important; min-height: 100vh; }
+  .phone-frame-wrap { width: 100%; }
+  .phone-frame,
+  .phone-frame--desktop,
+  .phone-frame--online,
+  .phone-frame--responsive {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .phone-iframe,
+  .phone-frame--desktop .phone-iframe,
+  .phone-frame--online .phone-iframe,
+  .phone-frame--responsive .phone-iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
 /* ── Preview page (prototype viewer) ── */
 .preview-page {
   min-height: 100vh;
