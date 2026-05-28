@@ -144,21 +144,21 @@
     },
     {
       "file": "create-add-people-group-all.html",
-      "x": 1920,
+      "x": 1824,
       "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-group-all"
     },
     {
       "file": "create-add-people-group-some.html",
-      "x": 2336,
+      "x": 2240,
       "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-group-some"
     },
     {
       "file": "create-add-people-group-selected.html",
-      "x": 2752,
+      "x": 2656,
       "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-group-selected"
@@ -226,14 +226,14 @@
     },
     {
       "file": "v1b-create-add-people-switched-toast.html",
-      "x": 992,
+      "x": 896,
       "y": 5184,
       "width": 390,
       "name": "v1b-add-people-switched-undo"
     },
     {
       "file": "v1b-create-add-people-undo-restored.html",
-      "x": 1408,
+      "x": 1312,
       "y": 5184,
       "width": 390,
       "name": "v1b-add-people-undo-restored"

@@ -40,10 +40,10 @@
   .v5-name { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
   .v5-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
 
-  /* confirmation toast after Undo — calm green, no action button, auto-dismisses */
-  .v5-toast { margin: 0 20px 10px; padding: 13px 16px; border-radius: 14px; background: #14241e; border: 1px solid rgba(32,224,207,0.3); display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 12px; box-shadow: 0 12px 28px rgba(0,0,0,0.45); }
+  /* native-style floating toast — confirmation after Undo, auto-dismisses */
+  .v5-toast { margin: 0 14px 12px; padding: 12px 18px; border-radius: 16px; background: rgba(38,42,54,0.92); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
   .v5-toast > i { color: var(--neon-teal); font-size: 19px; }
-  .v5-toast .txt { color: #fff; font-size: 0.88rem; font-weight: 800; }
+  .v5-toast .txt { color: rgba(255,255,255,0.92); font-size: 0.9rem; font-weight: 700; }
 
   .v5-cta { padding: 4px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   .v5-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
