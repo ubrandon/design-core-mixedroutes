@@ -292,47 +292,33 @@
     },
     {
       "file": "invite-people-friends.html",
-      "x": -32,
-      "y": 7360,
+      "x": 960,
+      "y": 6304,
       "width": 390
     },
     {
       "file": "invite-people-group-all.html",
-      "x": 384,
-      "y": 7360,
+      "x": 1376,
+      "y": 6304,
       "width": 390
     },
     {
       "file": "invite-people-group-some.html",
-      "x": 800,
-      "y": 7360,
+      "x": 1792,
+      "y": 6304,
       "width": 390
     },
     {
-      "file": "manage-people-friends.html",
-      "x": -32,
-      "y": 6368,
-      "width": 390,
-      "name": "manage-people-friends-plan"
-    },
-    {
-      "file": "manage-people-group.html",
-      "x": 384,
-      "y": 6368,
-      "width": 390,
-      "name": "manage-people-group-plan"
-    },
-    {
       "file": "manage-people-friends-vB.html",
-      "x": 928,
-      "y": 6368,
+      "x": -32,
+      "y": 6304,
       "width": 390,
       "name": "manage-people-friends-plan-vB"
     },
     {
       "file": "manage-people-group-vB.html",
-      "x": 1344,
-      "y": 6368,
+      "x": 384,
+      "y": 6304,
       "width": 390,
       "name": "manage-people-group-plan-vB"
     },
