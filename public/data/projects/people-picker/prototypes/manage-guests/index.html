@@ -1,12 +1,17 @@
-<link rel="stylesheet" href="../../../../styles/shared.css" />
-<link rel="stylesheet" href="../../../../styles/ds.css" />
-<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link rel="stylesheet" href="../../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../../data/design-system/company.css" />
 
 <style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0a0f14; overflow-x: clip; scrollbar-width: none; -ms-overflow-style: none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  body { font-family: var(--font-body); }
+
   .pv-scope { --pv-bg: #0a0f14; --pv-card: #161d27; --pv-card-2: #1a2230; --pv-green: #34c759; --pv-green-soft: rgba(52,199,89,0.16); --pv-red: #ff5a5f; }
   .pv-scope, .pv-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
   .pv-scope::-webkit-scrollbar, .pv-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
-  .pv-scope .pv-wrap { background: var(--pv-bg); min-height: 844px; position: relative; }
+  .pv-scope .pv-wrap { background: var(--pv-bg); min-height: 100vh; min-height: 100dvh; position: relative; font-family: var(--font-body); }
 
   .pv-scope .pv-hero { position: relative; height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 24px 34px;
     background-image: linear-gradient(180deg, rgba(10,15,20,0.3) 0%, rgba(10,15,20,0.05) 28%, rgba(10,15,20,0.55) 78%, var(--pv-bg) 100%), url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80");
@@ -77,6 +82,9 @@
   .pv-scope .pv-mini .m:first-child { margin-left: 0; }
   .pv-scope .pv-mini .m.initials { background: #5a687c; color: #fff; font-size: 0.6rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
   .pv-scope .pv-rsvp .tile.going .pv-mini .m { border-color: #16271b; }
+
+  .pv-scope .pv-toast { position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%) translateY(20px); background: rgba(255,255,255,0.96); color: #061016; font-weight: 850; font-size: 0.9rem; padding: 12px 18px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 200; }
+  .pv-scope .pv-toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 
 <div class="mr-scope pv-scope">
@@ -84,25 +92,25 @@
 
     <div class="pv-hero">
       <div class="pv-topbar">
-        <button type="button" class="pv-iconbtn" aria-label="Back"><i class="ph ph-arrow-left"></i></button>
+        <button type="button" class="pv-iconbtn" aria-label="Back" data-act="back"><i class="ph ph-arrow-left"></i></button>
         <div class="right">
-          <button type="button" class="pv-iconbtn" aria-label="Share"><i class="ph ph-share-network"></i></button>
-          <button type="button" class="pv-iconbtn" aria-label="Edit"><i class="ph ph-pencil-simple"></i></button>
-          <button type="button" class="pv-iconbtn" aria-label="More"><i class="ph ph-dots-three-vertical"></i></button>
+          <button type="button" class="pv-iconbtn" aria-label="Share" data-act="share"><i class="ph ph-share-network"></i></button>
+          <button type="button" class="pv-iconbtn" aria-label="Edit" data-act="edit"><i class="ph ph-pencil-simple"></i></button>
+          <button type="button" class="pv-iconbtn" aria-label="More" data-act="more"><i class="ph ph-dots-three-vertical"></i></button>
         </div>
       </div>
 
       <div class="pv-chip">JUL 12 - JUL 19</div>
       <div class="pv-event-title">Tulum Friends Trip</div>
       <div class="pv-actions">
-        <button type="button" class="pv-act chat"><i class="ph-fill ph-chat-circle"></i> Chat</button>
-        <button type="button" class="pv-act going"><i class="ph-fill ph-check-circle"></i> Going</button>
+        <button type="button" class="pv-act chat" data-act="chat"><i class="ph-fill ph-chat-circle"></i> Chat</button>
+        <button type="button" class="pv-act going" id="rsvp-btn" data-act="rsvp"><i class="ph-fill ph-check-circle"></i> Going</button>
       </div>
     </div>
 
     <div class="pv-body">
 
-      <div class="pv-guestbar">
+      <div class="pv-guestbar" data-act="manage-guests">
         <div class="pv-stack">
           <span class="pv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=12" alt="" /><span class="badge"><i class="ph-fill ph-check"></i></span></span>
           <span class="pv-avwrap"><span class="gav initials">MG</span><span class="badge"><i class="ph-fill ph-check"></i></span></span>
@@ -147,7 +155,7 @@
       </div>
 
       <div class="pv-card">
-        <div class="pv-guest-head">
+        <div class="pv-guest-head" data-act="manage-guests">
           <span class="ic"><i class="ph ph-users-three"></i></span>
           <div>
             <div class="t1">10 guests</div>
@@ -186,4 +194,64 @@
 
     </div>
   </div>
+  <div class="pv-toast" id="toast"></div>
 </div>
+
+<script>
+(function () {
+  var scope = document.currentScript.closest('.pv-scope');
+  var toastEl = scope.querySelector('#toast');
+  var toastTimer;
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('is-on'); }, 1800);
+  }
+
+  var rsvp = 'going';
+  function setRsvp(next) {
+    rsvp = next;
+    var btn = scope.querySelector('#rsvp-btn');
+    if (rsvp === 'going') {
+      btn.classList.add('going');
+      btn.innerHTML = '<i class="ph-fill ph-check-circle"></i> Going';
+      toast('You\'re going');
+    } else {
+      btn.classList.remove('going');
+      btn.innerHTML = '<i class="ph ph-circle"></i> RSVP';
+      toast('RSVP removed');
+    }
+  }
+
+  scope.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-act]');
+    if (!t) return;
+    var act = t.getAttribute('data-act');
+
+    switch (act) {
+      case 'rsvp':
+        setRsvp(rsvp === 'going' ? 'none' : 'going');
+        return;
+      case 'manage-guests':
+        toast('Manage guests');
+        return;
+      case 'chat':
+        toast('Opening chat');
+        return;
+      case 'share':
+        toast('Share');
+        return;
+      case 'edit':
+        toast('Edit plan');
+        return;
+      case 'more':
+        toast('More options');
+        return;
+      case 'back':
+        toast('Back');
+        return;
+    }
+  });
+})();
+</script>

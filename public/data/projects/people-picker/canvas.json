@@ -317,24 +317,30 @@
       "width": 390
     },
     {
-      "file": "invite-guests-group-default.html",
-      "x": 2400,
+      "file": "invite-guests-pick-group.html",
+      "x": 1888,
       "y": 6304,
       "width": 390
     },
     {
-      "file": "invite-guests-switch-to-group-confirm.html",
-      "x": 1888,
+      "file": "invite-guests-group-default.html",
+      "x": 2912,
       "y": 6304,
-      "width": 390,
-      "name": "invite-guests-switch-to-group-confirm"
+      "width": 390
     },
     {
       "file": "invite-guests-switch-to-friends-confirm.html",
-      "x": 2816,
+      "x": 3328,
       "y": 6304,
       "width": 390,
       "name": "invite-guests-switch-to-friends-confirm"
+    },
+    {
+      "file": "switch-confirm-vB-pills.html",
+      "x": 2304,
+      "y": 6304,
+      "width": 390,
+      "name": "switch-confirm-vB-pills"
     },
     {
       "file": "v4-inline-default.html",
