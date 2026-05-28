@@ -137,29 +137,29 @@
     },
     {
       "file": "create-add-people-default.html",
-      "x": 0,
-      "y": 6144,
+      "x": -32,
+      "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-default"
     },
     {
       "file": "create-add-people-group-all.html",
-      "x": 992,
-      "y": 6144,
+      "x": 1920,
+      "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-group-all"
     },
     {
       "file": "create-add-people-group-some.html",
-      "x": 1408,
-      "y": 6144,
+      "x": 2336,
+      "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-group-some"
     },
     {
       "file": "create-add-people-group-selected.html",
-      "x": 1824,
-      "y": 6144,
+      "x": 2752,
+      "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-group-selected"
     },
@@ -219,10 +219,24 @@
     },
     {
       "file": "create-add-people-friends.html",
-      "x": 512,
-      "y": 6144,
+      "x": 480,
+      "y": 5184,
       "width": 390,
       "name": "v1-create-add-people-friends"
+    },
+    {
+      "file": "v1b-create-add-people-switched-toast.html",
+      "x": 992,
+      "y": 5184,
+      "width": 390,
+      "name": "v1b-add-people-switched-undo"
+    },
+    {
+      "file": "v1b-create-add-people-undo-restored.html",
+      "x": 1408,
+      "y": 5184,
+      "width": 390,
+      "name": "v1b-add-people-undo-restored"
     },
     {
       "file": "flex-mix-default.html",

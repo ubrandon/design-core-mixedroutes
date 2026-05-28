@@ -25,8 +25,10 @@
 
   .v5-switch { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; cursor: pointer; }
   .v5-switch > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
-  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; flex: 1; }
+  .v5-switch .col { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; }
   .v5-switch .txt b { color: var(--neon-teal); font-weight: 850; }
+  .v5-switch .sub { color: rgba(255,255,255,0.55); font-size: 0.85rem; font-weight: 500; line-height: 1.25; }
   .v5-switch .swap { color: rgba(255,255,255,0.55); font-size: 22px; line-height: 1; }
 
   .v5-groups { display: flex; gap: 14px; padding: 0 20px 18px; overflow-x: auto; }
@@ -90,7 +92,10 @@
       <div class="v5-label"><span>Or invite people</span></div>
       <div class="v5-switch">
         <i class="ph-fill ph-users-three"></i>
-        <div class="txt">Switch to <b>friends</b> plan</div>
+        <div class="col">
+          <div class="txt">Switch to <b>friends</b> plan</div>
+          <div class="sub">Pick individual friends instead of the group</div>
+        </div>
         <i class="ph-fill ph-arrows-left-right swap"></i>
       </div>
       <div class="v5-sublabel"><span>Friends</span></div>
