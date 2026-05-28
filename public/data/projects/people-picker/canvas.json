@@ -323,6 +323,20 @@
       "name": "manage-people-group-plan"
     },
     {
+      "file": "manage-people-friends-vB.html",
+      "x": 800,
+      "y": 6368,
+      "width": 390,
+      "name": "manage-people-friends-plan-vB"
+    },
+    {
+      "file": "manage-people-group-vB.html",
+      "x": 1216,
+      "y": 6368,
+      "width": 390,
+      "name": "manage-people-group-plan-vB"
+    },
+    {
       "file": "v4-inline-default.html",
       "x": 128,
       "y": 21376,
