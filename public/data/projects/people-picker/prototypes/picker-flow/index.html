@@ -82,6 +82,11 @@
 
   .v5-toast { position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%) translateY(20px); background: rgba(255,255,255,0.96); color: #061016; font-weight: 850; font-size: 0.9rem; padding: 12px 18px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 100; }
   .v5-toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .v5-undo { margin: 4px 20px 0; padding: 16px 20px; border-radius: 16px; background: rgba(255,255,255,0.08); border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 12px; }
+  .v5-undo .msg { flex: 1; display: flex; align-items: center; gap: 12px; color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.2; }
+  .v5-undo .msg > i { color: var(--neon-teal); font-size: 20px; line-height: 1; }
+  .v5-undo .undo { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.98rem; font-weight: 850; padding: 4px 4px; cursor: pointer; }
 </style>
 
 <div class="mr-scope v5-scope">
@@ -149,7 +154,9 @@
     route: 'picker',
     selectedFriends: new Set(),
     selectedGroupId: null,
-    selectedMembers: {}
+    selectedMembers: {},
+    clearedFriends: [],
+    showRestored: false
   };
 
   // ----- HELPERS -----
@@ -157,6 +164,12 @@
   function findGroup(id) { return GROUPS.find(function (g) { return g.id === id; }); }
   function firstName(name) { return name.split(' ')[0]; }
   function escAttr(s) { return String(s).replace(/"/g, '&quot;'); }
+  function nameList(names) {
+    if (names.length === 0) return '';
+    if (names.length === 1) return names[0];
+    if (names.length === 2) return names[0] + ' and ' + names[1];
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  }
 
   function selectGroup(groupId) {
     var g = findGroup(groupId);
@@ -276,10 +289,10 @@
     } else {
       // Default + friends modes
       if (state.mode === 'friends') {
-        html += '<div class="v5-groups-hint" data-act="clear-friends">';
+        html += '<div class="v5-groups-hint" data-act="switch-to-group">';
         html += '<i class="ph-fill ph-squares-four"></i>';
         html += '<div class="col"><div class="txt">Switch to a <b>group</b> plan</div>';
-        html += '<div class="sub">Use a whole group instead of picking friends</div></div>';
+        html += '<div class="sub">Invite a whole group instead of these picks</div></div>';
         html += '<i class="ph-fill ph-arrows-left-right swap"></i>';
         html += '</div>';
         html += '<div class="v5-label"><span>Or invite people</span><span class="count">' + state.selectedFriends.size + ' selected</span></div>';
@@ -312,6 +325,20 @@
     }
 
     html += '</div>'; // .v5-body
+
+    // Undo bar — pinned above the CTA, after switching away from friends
+    if (state.clearedFriends.length > 0) {
+      var clearedNames = state.clearedFriends.map(function (f) { return firstName(f.name); });
+      html += '<div class="v5-undo">';
+      html += '<div class="msg">Cleared ' + nameList(clearedNames) + '</div>';
+      html += '<button type="button" class="undo" data-act="undo-clear">Undo</button>';
+      html += '</div>';
+    } else if (state.showRestored) {
+      var rn = state.selectedFriends.size;
+      html += '<div class="v5-undo">';
+      html += '<div class="msg"><i class="ph ph-arrow-counter-clockwise"></i>Your ' + rn + ' pick' + (rn === 1 ? '' : 's') + ' ' + (rn === 1 ? 'is' : 'are') + ' back</div>';
+      html += '</div>';
+    }
 
     // CTA
     var ctaLabel = 'Add to plan';
@@ -396,6 +423,12 @@
     var act = t.getAttribute('data-act');
     var id = t.getAttribute('data-id');
 
+    // Dismiss the undo/restored bars on any action other than the undo flow itself
+    if (act !== 'switch-to-group' && act !== 'undo-clear') {
+      state.clearedFriends = [];
+      state.showRestored = false;
+    }
+
     switch (act) {
       case 'close':
         toast('Closed');
@@ -421,8 +454,21 @@
         render();
         return;
       case 'clear-group':
-      case 'clear-friends':
         clearAll();
+        render();
+        return;
+      case 'switch-to-group':
+        state.clearedFriends = Array.from(state.selectedFriends).map(findFriend).filter(Boolean);
+        state.selectedFriends.clear();
+        state.showRestored = false;
+        state.mode = 'default';
+        render();
+        return;
+      case 'undo-clear':
+        state.clearedFriends.forEach(function (f) { state.selectedFriends.add(f.id); });
+        state.clearedFriends = [];
+        state.mode = state.selectedFriends.size > 0 ? 'friends' : 'default';
+        state.showRestored = true;
         render();
         return;
       case 'cta':
