@@ -34,12 +34,15 @@
   .v5-label .action { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.04em; text-transform: none; padding: 4px 0; cursor: pointer; }
 
   .v5-list { padding: 0; display: flex; flex-direction: column; }
-  .v5-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 13px; padding: 11px 20px; border-radius: 0; width: 100%; }
+  .v5-row { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 13px; padding: 11px 20px; border-radius: 0; width: 100%; }
   .v5-row.is-on { background: rgba(32,224,207,0.09); }
   .v5-row .av { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; background: var(--neon-teal); color: #061016; font-weight: 900; }
   .v5-name { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
   .v5-meta { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
   .v5-meta .host { color: var(--v5-warn); font-weight: 800; }
+  .v5-row.is-inplan { opacity: 0.72; }
+  .v5-inplan { display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border-radius: 999px; white-space: nowrap; justify-self: end; font-size: 0.66rem; font-weight: 850; letter-spacing: 0.04em; text-transform: uppercase; color: var(--neon-teal); background: rgba(32,224,207,0.14); border: 1px solid rgba(32,224,207,0.3); }
+  .v5-inplan i { font-size: 12px; }
 
   .v5-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; }
   .v5-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
@@ -71,49 +74,52 @@
 
       <div class="v5-bannernote"><i class="ph-fill ph-info"></i><span>Any guests who aren't members will need to be added to the group.</span></div>
 
-      <div class="v5-label"><span>Lake House members</span><button type="button" class="action">Deselect all</button></div>
+      <div class="v5-label"><span>Group members</span><button type="button" class="action">Deselect all</button></div>
       <div class="v5-list">
-        <div class="v5-row is-on">
-          <span class="av">M</span>
-          <div><div class="v5-name">Milo Wren</div><div class="v5-meta"><span class="host">Host</span></div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
-          <div><div class="v5-name">Nova Finch</div><div class="v5-meta">@novafinch</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
-          <div><div class="v5-name">Lila Quill</div><div class="v5-meta">@lilaquill</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
-          <div><div class="v5-name">Soren Vale</div><div class="v5-meta">@sorenvale</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
-          <img class="av" src="https://i.pravatar.cc/96?img=44" alt="" loading="lazy" />
-          <div><div class="v5-name">Wren Holt</div><div class="v5-meta">@wrenholt</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
+        <div class="v5-row">
           <img class="av" src="https://i.pravatar.cc/96?img=22" alt="" loading="lazy" />
           <div><div class="v5-name">Iris Mae</div><div class="v5-meta">@irismae</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
-        <div class="v5-row is-on">
+        <div class="v5-row">
           <img class="av" src="https://i.pravatar.cc/96?img=15" alt="" loading="lazy" />
           <div><div class="v5-name">Theo Mar</div><div class="v5-meta">@theomar</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
+          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+        </div>
+      </div>
+
+      <div class="v5-label" style="padding-top: 22px;"><span>Already in plan</span></div>
+      <div class="v5-list">
+        <div class="v5-row is-inplan">
+          <span class="av">M</span>
+          <div><div class="v5-name">Milo Wren</div><div class="v5-meta"><span class="host">Host</span></div></div>
+        </div>
+        <div class="v5-row is-inplan">
+          <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
+          <div><div class="v5-name">Nova Finch</div><div class="v5-meta">@novafinch</div></div>
+        </div>
+        <div class="v5-row is-inplan">
+          <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
+          <div><div class="v5-name">Lila Quill</div><div class="v5-meta">@lilaquill</div></div>
+        </div>
+        <div class="v5-row is-inplan">
+          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
+          <div><div class="v5-name">Soren Vale</div><div class="v5-meta">@sorenvale</div></div>
+        </div>
+        <div class="v5-row is-inplan">
+          <img class="av" src="https://i.pravatar.cc/96?img=44" alt="" loading="lazy" />
+          <div><div class="v5-name">Wren Holt</div><div class="v5-meta">@wrenholt</div></div>
+        </div>
+        <div class="v5-row is-inplan">
+          <img class="av" src="https://i.pravatar.cc/96?img=98" alt="" loading="lazy" />
+          <div><div class="v5-name">Juno Rey</div><div class="v5-meta">@junorey</div></div>
         </div>
       </div>
     </div>
 
     <div class="v5-cta">
       <button type="button" class="ghost">Cancel</button>
-      <button type="button" class="primary">Invite all members</button>
+      <button type="button" class="primary">Invite 2 guests</button>
     </div>
   </div>
 </div>
