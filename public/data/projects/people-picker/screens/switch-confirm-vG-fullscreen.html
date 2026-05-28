@@ -52,6 +52,12 @@
   .v5-bannernote { display: grid; grid-template-columns: 16px 1fr; gap: 9px; align-items: flex-start; margin: -6px 22px 16px; color: rgba(255,255,255,0.5); font-size: 0.84rem; line-height: 1.4; }
   .v5-bannernote i { color: rgba(255,255,255,0.45); font-size: 15px; margin-top: 1px; }
 
+  .v5-uninvite { margin: 0 20px 18px; }
+  .v5-uninvite-label { color: var(--v5-warn); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+  .v5-uninvite-note { color: rgba(255,255,255,0.5); font-size: 0.84rem; line-height: 1.4; margin-top: 6px; }
+  .v5-uninvite-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .v5-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; font-size: 0.92rem; font-weight: 800; background: rgba(245,196,81,0.12); color: #e7c474; }
+  .v5-pill img, .v5-pill .av { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 900; background: #4a5462; color: #fff; }
 
 </style>
 
@@ -72,7 +78,14 @@
         </div>
       </div>
 
-      <div class="v5-bannernote"><i class="ph-fill ph-info"></i><span>Any guests who aren't members will need to be added to the group.</span></div>
+      <div class="v5-uninvite">
+        <div class="v5-uninvite-label">Will be uninvited</div>
+        <div class="v5-uninvite-note">Any guests who aren't members will need to be added to the group.</div>
+        <div class="v5-uninvite-pills">
+          <span class="v5-pill"><span class="av">LM</span>Lila</span>
+          <span class="v5-pill"><img src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />Soren</span>
+        </div>
+      </div>
 
       <div class="v5-label"><span>Group members</span><button type="button" class="action">Deselect all</button></div>
       <div class="v5-list">

@@ -20,13 +20,11 @@
   .v5-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
   .v5-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
 
-  .v5-switch { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; cursor: pointer; }
-  .v5-switch > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
-  .v5-switch .col { flex: 1; display: flex; flex-direction: column; gap: 4px; }
-  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; }
-  .v5-switch .txt b { color: var(--neon-teal); font-weight: 850; }
-  .v5-switch .sub { color: rgba(255,255,255,0.55); font-size: 0.85rem; font-weight: 500; line-height: 1.25; }
-  .v5-switch .swap { color: var(--neon-teal); font-size: 22px; line-height: 1; }
+  .v5-grouplink { margin: 4px 20px 10px; display: flex; align-items: center; gap: 12px; width: calc(100% - 40px); color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 800; text-align: left; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 13px 16px; cursor: pointer; }
+  .v5-grouplink i { font-size: 19px; }
+  .v5-grouplink .v5-grouplink-icon { color: var(--neon-teal); }
+  .v5-grouplink .v5-grouplink-label { flex: 1; }
+  .v5-grouplink .v5-grouplink-chevron { font-size: 16px; opacity: 0.45; }
 
   .v5-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
   .v5-chips .mr-pp-chip { flex: 0 0 auto; }
@@ -67,14 +65,6 @@
       <div class="v5-search">
         <i class="ph ph-magnifying-glass"></i>
         <input type="search" placeholder="Search Lake House members" />
-      </div>
-
-      <div class="v5-switch">
-        <div class="col">
-          <div class="txt">Switch to a <b>friends</b> plan</div>
-          <div class="sub">Open this plan to anyone, not just Lake House members.</div>
-        </div>
-        <i class="ph-fill ph-user-switch swap"></i>
       </div>
 
       <div class="v5-chips">
@@ -121,6 +111,7 @@
       </div>
 
       <div class="v5-sublabel"><span>Not in this group</span></div>
+      <button type="button" class="v5-grouplink"><i class="ph-fill ph-user-switch v5-grouplink-icon"></i><span class="v5-grouplink-label">Switch to a friends plan to invite anyone</span><i class="ph ph-caret-right v5-grouplink-chevron"></i></button>
       <div class="v5-list">
         <div class="v5-row locked">
           <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
