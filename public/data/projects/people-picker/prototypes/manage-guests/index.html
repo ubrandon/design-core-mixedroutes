@@ -8,11 +8,13 @@
   html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
   body { font-family: var(--font-body); }
 
-  .pv-scope { --pv-bg: #0a0f14; --pv-card: #161d27; --pv-card-2: #1a2230; --pv-green: #34c759; --pv-green-soft: rgba(52,199,89,0.16); --pv-red: #ff5a5f; }
+  .pv-scope { --pv-bg: #0a0f14; --pv-card: #161d27; --pv-card-2: #1a2230; --pv-green: #34c759; --pv-green-soft: rgba(52,199,89,0.16); --pv-red: #ff5a5f; --pv-teal: #20e0cf; --pv-blue: #5eb3ff; }
   .pv-scope, .pv-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
   .pv-scope::-webkit-scrollbar, .pv-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
-  .pv-scope .pv-wrap { background: var(--pv-bg); min-height: 100vh; min-height: 100dvh; position: relative; font-family: var(--font-body); }
+  .pv-scope .pv-wrap { background: var(--pv-bg); height: 100vh; height: 100dvh; position: relative; overflow: hidden; font-family: var(--font-body); }
 
+  /* ===== PLAN DETAIL ===== */
+  .pv-scope .pv-scroll { height: 100%; overflow-y: auto; }
   .pv-scope .pv-hero { position: relative; height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 24px 34px;
     background-image: linear-gradient(180deg, rgba(10,15,20,0.3) 0%, rgba(10,15,20,0.05) 28%, rgba(10,15,20,0.55) 78%, var(--pv-bg) 100%), url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80");
     background-size: cover; background-position: center; }
@@ -34,7 +36,7 @@
 
   .pv-scope .pv-body { padding: 0 20px 32px; }
 
-  .pv-scope .pv-guestbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 2px 26px; }
+  .pv-scope .pv-guestbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 2px 26px; cursor: pointer; }
   .pv-scope .pv-stack { display: flex; align-items: center; }
   .pv-scope .pv-avwrap { position: relative; display: inline-flex; margin-left: -14px; }
   .pv-scope .pv-avwrap:first-child { margin-left: 0; }
@@ -62,11 +64,12 @@
   .pv-scope .pv-row .t1 { font-size: 1.1rem; font-weight: 800; color: #fff; }
   .pv-scope .pv-row .t2 { font-size: 0.92rem; color: rgba(255,255,255,0.55); margin-top: 3px; }
 
-  .pv-scope .pv-guest-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .pv-scope .pv-guest-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; cursor: pointer; }
   .pv-scope .pv-guest-head .ic { width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.07); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .pv-scope .pv-guest-head .ic i { font-size: 24px; color: rgba(255,255,255,0.85); }
   .pv-scope .pv-guest-head .t1 { font-size: 1.1rem; font-weight: 800; color: #fff; }
   .pv-scope .pv-guest-head .t2 { font-size: 0.92rem; color: rgba(255,255,255,0.55); margin-top: 3px; }
+  .pv-scope .pv-guest-head .chev { margin-left: auto; color: rgba(255,255,255,0.5); font-size: 22px; }
 
   .pv-scope .pv-rsvp { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
   .pv-scope .pv-rsvp .tile { background: rgba(255,255,255,0.04); border-radius: 14px; padding: 16px 8px 14px; text-align: center; border: 1.5px solid transparent; cursor: pointer; }
@@ -83,6 +86,63 @@
   .pv-scope .pv-mini .m.initials { background: #5a687c; color: #fff; font-size: 0.6rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
   .pv-scope .pv-rsvp .tile.going .pv-mini .m { border-color: #16271b; }
 
+  /* ===== SHEET (guests + invite live in a sliding panel) ===== */
+  .pv-scope .pv-sheet { position: absolute; inset: 0; z-index: 50; background: var(--pv-bg); display: flex; flex-direction: column; transform: translateY(100%); transition: transform 0.32s cubic-bezier(0.22,1,0.36,1); }
+  .pv-scope .pv-sheet.is-open { transform: translateY(0); }
+  .pv-scope .pv-sheet-body { flex: 1; overflow-y: auto; padding: 22px 20px 0; }
+
+  .pv-scope .gp-header { display: grid; grid-template-columns: 28px 1fr 32px; align-items: center; gap: 8px; padding: 0 0 18px; }
+  .pv-scope .gp-header.no-add { grid-template-columns: 28px 1fr; }
+  .pv-scope .gp-back { background: transparent; border: 0; color: rgba(255,255,255,0.85); width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
+  .pv-scope .gp-back i { font-size: 22px; }
+  .pv-scope .gp-title { font-size: 1.6rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
+  .pv-scope .gp-add-top { background: transparent; border: 0; color: var(--pv-teal); width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
+  .pv-scope .gp-add-top i { font-size: 24px; }
+
+  .pv-scope .gp-label { padding: 4px 4px 8px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: baseline; justify-content: space-between; }
+  .pv-scope .gp-label .count { color: rgba(255,255,255,0.46); }
+
+  .pv-scope .gp-list { display: flex; flex-direction: column; }
+  .pv-scope .gp-grow { display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 14px; padding: 10px 4px; }
+  .pv-scope .gp-grow .av { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .pv-scope .gp-grow .av.initials { background: var(--pv-teal); color: #06080e; font-size: 1rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+  .pv-scope .gp-grow .av.host-av { background: #5a687c; color: #fff; }
+  .pv-scope .gp-grow .name { font-size: 1rem; font-weight: 800; color: #fff; }
+  .pv-scope .gp-grow .meta { font-size: 0.84rem; color: rgba(255,255,255,0.55); margin-top: 2px; }
+  .pv-scope .gp-grow .meta.host { color: #f5c451; font-weight: 800; }
+  .pv-scope .gp-grow .meta.pending { color: var(--pv-blue); font-weight: 800; }
+  .pv-scope .gp-grow .meta.going { color: var(--pv-green); font-weight: 800; }
+  .pv-scope .gp-grow .tag { font-size: 0.78rem; font-weight: 800; color: rgba(255,255,255,0.5); }
+  .pv-scope .gp-grow .rm { background: transparent; border: 0; color: rgba(255,255,255,0.5); padding: 6px; cursor: pointer; display: inline-flex; }
+  .pv-scope .gp-grow .rm i { font-size: 20px; }
+  .pv-scope .gp-grow.is-new { animation: pv-pop 0.45s ease; }
+  @keyframes pv-pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .pv-scope .gp-cta { padding: 12px 20px 22px; }
+  .pv-scope .gp-cta .done { width: 100%; border: 0; border-radius: 999px; padding: 16px; font-weight: 850; font-size: 1rem; color: #fff; background: rgba(255,255,255,0.08); cursor: pointer; }
+
+  /* ===== INVITE (reuse v5 styling, scoped to pv) ===== */
+  .pv-scope .iv-search { display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 10px; margin: 4px 4px 16px; padding: 12px 15px; background: rgba(255,255,255,0.07); border-radius: 999px; }
+  .pv-scope .iv-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
+  .pv-scope .iv-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
+  .pv-scope .iv-chips { display: flex; gap: 8px; padding: 0 4px 14px; overflow-x: auto; flex-wrap: nowrap; }
+  .pv-scope .iv-chips:empty { display: none; }
+  .pv-scope .iv-chips .mr-pp-chip { flex: 0 0 auto; }
+  .pv-scope .iv-sublabel { padding: 6px 4px 8px; color: rgba(255,255,255,0.5); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pv-scope .iv-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 13px; padding: 11px 4px; width: 100%; cursor: pointer; border-radius: 12px; }
+  .pv-scope .iv-row.is-on { background: rgba(32,224,207,0.09); }
+  .pv-scope .iv-row.is-locked { cursor: default; opacity: 0.55; }
+  .pv-scope .iv-row .av { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: inline-flex; align-items: center; justify-content: center; background: var(--pv-teal); color: #061016; font-weight: 900; }
+  .pv-scope .iv-row .av.muted { background: #4a5462; color: #fff; }
+  .pv-scope .iv-name { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
+  .pv-scope .iv-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
+  .pv-scope .iv-cta { padding: 12px 20px 22px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; }
+  .pv-scope .iv-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; cursor: pointer; }
+  .pv-scope .iv-cta .ghost { background: rgba(255,255,255,0.08); }
+  .pv-scope .iv-cta .primary { background: linear-gradient(135deg, var(--pv-teal), var(--pv-blue)); }
+  .pv-scope .iv-cta .primary[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+  /* ===== TOAST ===== */
   .pv-scope .pv-toast { position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%) translateY(20px); background: rgba(255,255,255,0.96); color: #061016; font-weight: 850; font-size: 0.9rem; padding: 12px 18px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 200; }
   .pv-scope .pv-toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
@@ -90,109 +150,114 @@
 <div class="mr-scope pv-scope">
   <div class="pv-wrap">
 
-    <div class="pv-hero">
-      <div class="pv-topbar">
-        <button type="button" class="pv-iconbtn" aria-label="Back" data-act="back"><i class="ph ph-arrow-left"></i></button>
-        <div class="right">
-          <button type="button" class="pv-iconbtn" aria-label="Share" data-act="share"><i class="ph ph-share-network"></i></button>
-          <button type="button" class="pv-iconbtn" aria-label="Edit" data-act="edit"><i class="ph ph-pencil-simple"></i></button>
-          <button type="button" class="pv-iconbtn" aria-label="More" data-act="more"><i class="ph ph-dots-three-vertical"></i></button>
+    <!-- ===== PLAN DETAIL (home) ===== -->
+    <div class="pv-scroll">
+      <div class="pv-hero">
+        <div class="pv-topbar">
+          <button type="button" class="pv-iconbtn" aria-label="Back" data-act="back"><i class="ph ph-arrow-left"></i></button>
+          <div class="right">
+            <button type="button" class="pv-iconbtn" aria-label="Share" data-act="share"><i class="ph ph-share-network"></i></button>
+            <button type="button" class="pv-iconbtn" aria-label="Edit" data-act="edit"><i class="ph ph-pencil-simple"></i></button>
+            <button type="button" class="pv-iconbtn" aria-label="More" data-act="more"><i class="ph ph-dots-three-vertical"></i></button>
+          </div>
+        </div>
+
+        <div class="pv-chip">JUL 12 - JUL 19</div>
+        <div class="pv-event-title">Tulum Friends Trip</div>
+        <div class="pv-actions">
+          <button type="button" class="pv-act chat" data-act="chat"><i class="ph-fill ph-chat-circle"></i> Chat</button>
+          <button type="button" class="pv-act going" id="rsvp-btn" data-act="rsvp"><i class="ph-fill ph-check-circle"></i> Going</button>
         </div>
       </div>
 
-      <div class="pv-chip">JUL 12 - JUL 19</div>
-      <div class="pv-event-title">Tulum Friends Trip</div>
-      <div class="pv-actions">
-        <button type="button" class="pv-act chat" data-act="chat"><i class="ph-fill ph-chat-circle"></i> Chat</button>
-        <button type="button" class="pv-act going" id="rsvp-btn" data-act="rsvp"><i class="ph-fill ph-check-circle"></i> Going</button>
+      <div class="pv-body">
+
+        <div class="pv-guestbar" data-act="manage-guests">
+          <div class="pv-stack" id="pv-stack"></div>
+          <div class="pv-guest-meta">
+            <div class="txt">
+              <div class="n" id="pv-guestcount-bar">10 guests</div>
+              <div class="s">View and invite</div>
+            </div>
+            <i class="ph ph-caret-right chev"></i>
+          </div>
+        </div>
+
+        <div class="pv-desc">
+          <p>A whole week in Tulum with the crew. Beach house is booked, let me know if these dates work for everyone. We can still shift a day or two!</p>
+          <p>Flights are cheapest if we lock in by June 1st.</p>
+        </div>
+
+        <div class="pv-section-title">Trip details</div>
+
+        <div class="pv-card">
+          <div class="pv-row">
+            <span class="ic"><i class="ph ph-calendar-blank"></i></span>
+            <div>
+              <div class="t1">Sat, Jul 12 - Sat, Jul 19</div>
+              <div class="t2">7 nights in Tulum, Mexico</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pv-card">
+          <div class="pv-row">
+            <span class="ic"><i class="ph ph-house-line"></i></span>
+            <div>
+              <div class="t1">Casa Palma beach house</div>
+              <div class="t2">4 bedrooms, sleeps 10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pv-card">
+          <div class="pv-guest-head" data-act="manage-guests">
+            <span class="ic"><i class="ph ph-users-three"></i></span>
+            <div>
+              <div class="t1" id="pv-guestcount-card">10 guests</div>
+              <div class="t2">Hosted by Brandon Unglaub</div>
+            </div>
+            <i class="ph ph-caret-right chev"></i>
+          </div>
+
+          <div class="pv-rsvp">
+            <div class="tile going active-going">
+              <div class="num" id="pv-going-num">4</div>
+              <div class="lbl">Going</div>
+              <div class="pv-mini">
+                <img class="m" src="https://i.pravatar.cc/120?img=12" alt="" />
+                <img class="m" src="https://i.pravatar.cc/120?img=32" alt="" />
+                <span class="m initials">MG</span>
+                <span class="m initials">AM</span>
+              </div>
+            </div>
+            <div class="tile maybe">
+              <div class="num" id="pv-maybe-num">6</div>
+              <div class="lbl">Maybe</div>
+              <div class="pv-mini">
+                <img class="m" src="https://i.pravatar.cc/120?img=45" alt="" />
+                <span class="m initials">S</span>
+                <span class="m initials">CS</span>
+                <span class="m initials">+3</span>
+              </div>
+            </div>
+            <div class="tile no">
+              <div class="num">0</div>
+              <div class="lbl">Not going</div>
+              <div class="pv-mini"></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="pv-body">
-
-      <div class="pv-guestbar" data-act="manage-guests">
-        <div class="pv-stack">
-          <span class="pv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=12" alt="" /><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="pv-avwrap"><span class="gav initials">MG</span><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="pv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=32" alt="" /><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="pv-avwrap"><span class="gav initials">AM</span><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="pv-avwrap"><span class="gav q">?</span></span>
-        </div>
-        <div class="pv-guest-meta">
-          <div class="txt">
-            <div class="n">10 guests</div>
-            <div class="s">View and invite</div>
-          </div>
-          <i class="ph ph-caret-right chev"></i>
-        </div>
-      </div>
-
-      <div class="pv-desc">
-        <p>A whole week in Tulum with the crew. Beach house is booked, let me know if these dates work for everyone. We can still shift a day or two!</p>
-        <p>Flights are cheapest if we lock in by June 1st.</p>
-      </div>
-
-      <div class="pv-section-title">Trip details</div>
-
-      <div class="pv-card">
-        <div class="pv-row">
-          <span class="ic"><i class="ph ph-calendar-blank"></i></span>
-          <div>
-            <div class="t1">Sat, Jul 12 - Sat, Jul 19</div>
-            <div class="t2">7 nights in Tulum, Mexico</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pv-card">
-        <div class="pv-row">
-          <span class="ic"><i class="ph ph-house-line"></i></span>
-          <div>
-            <div class="t1">Casa Palma beach house</div>
-            <div class="t2">4 bedrooms, sleeps 10</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pv-card">
-        <div class="pv-guest-head" data-act="manage-guests">
-          <span class="ic"><i class="ph ph-users-three"></i></span>
-          <div>
-            <div class="t1">10 guests</div>
-            <div class="t2">Hosted by Brandon Unglaub</div>
-          </div>
-        </div>
-
-        <div class="pv-rsvp">
-          <div class="tile going active-going">
-            <div class="num">4</div>
-            <div class="lbl">Going</div>
-            <div class="pv-mini">
-              <img class="m" src="https://i.pravatar.cc/120?img=12" alt="" />
-              <img class="m" src="https://i.pravatar.cc/120?img=32" alt="" />
-              <span class="m initials">MG</span>
-              <span class="m initials">AM</span>
-            </div>
-          </div>
-          <div class="tile maybe">
-            <div class="num">6</div>
-            <div class="lbl">Maybe</div>
-            <div class="pv-mini">
-              <img class="m" src="https://i.pravatar.cc/120?img=45" alt="" />
-              <span class="m initials">S</span>
-              <span class="m initials">CS</span>
-              <span class="m initials">+3</span>
-            </div>
-          </div>
-          <div class="tile no">
-            <div class="num">0</div>
-            <div class="lbl">Not going</div>
-            <div class="pv-mini"></div>
-          </div>
-        </div>
-      </div>
-
+    <!-- ===== SHEET: guests list + invite live here ===== -->
+    <div class="pv-sheet" id="sheet">
+      <div class="pv-sheet-body" id="sheet-body"></div>
+      <div id="sheet-cta"></div>
     </div>
+
   </div>
   <div class="pv-toast" id="toast"></div>
 </div>
@@ -200,58 +265,295 @@
 <script>
 (function () {
   var scope = document.currentScript.closest('.pv-scope');
-  var toastEl = scope.querySelector('#toast');
+
+  // ----- DATA -----
+  // Guests already on the plan (host + 9 others = 10).
+  var GUESTS = [
+    { id: 'brandon', name: 'Brandon Unglaub', meta: 'Host', status: 'host', avatar: 'https://i.pravatar.cc/120?img=12' },
+    { id: 'mg',   name: 'Mara Gold',   meta: 'Going',  status: 'going', initials: 'MG' },
+    { id: 'leo',  name: 'Leo Park',    meta: 'Going',  status: 'going', avatar: 'https://i.pravatar.cc/120?img=32' },
+    { id: 'am',   name: 'Ava Mendez',  meta: 'Going',  status: 'going', initials: 'AM' },
+    { id: 'sky',  name: 'Sky Rivera',  meta: 'Maybe',  status: 'maybe', avatar: 'https://i.pravatar.cc/120?img=45' },
+    { id: 'sam',  name: 'Sam Cole',    meta: 'Maybe',  status: 'maybe', initials: 'S' },
+    { id: 'cs',   name: 'Cara Singh',  meta: 'Maybe',  status: 'maybe', initials: 'CS' },
+    { id: 'jun',  name: 'Juno Pax',    meta: 'Maybe',  status: 'maybe', avatar: 'https://i.pravatar.cc/120?img=18' },
+    { id: 'theo', name: 'Theo Mar',    meta: 'Maybe',  status: 'maybe', avatar: 'https://i.pravatar.cc/120?img=15' },
+    { id: 'noor', name: 'Noor Vega',   meta: 'Maybe',  status: 'maybe', avatar: 'https://i.pravatar.cc/120?img=23' }
+  ];
+
+  // People you can still invite.
+  var CANDIDATES = [
+    { id: 'soren', name: 'Soren Vale', handle: '@sorenvale', avatar: 'https://i.pravatar.cc/96?img=33' },
+    { id: 'piper', name: 'Piper Sol',  handle: '@pipersol',  initials: 'PS', muted: true },
+    { id: 'wren',  name: 'Wren Holt',  handle: '@wrenholt',  avatar: 'https://i.pravatar.cc/96?img=44' },
+    { id: 'iris',  name: 'Iris Mae',   handle: '@irismae',   avatar: 'https://i.pravatar.cc/96?img=22' },
+    { id: 'kai',   name: 'Kai Brun',   handle: '@kaibrun',   avatar: 'https://i.pravatar.cc/96?img=64' }
+  ];
+
+  // ----- STATE -----
+  // route: 'plan' | 'guests' | 'invite'
+  var state = { route: 'plan', selected: new Set(), justInvited: [] };
+
+  // ----- HELPERS -----
+  function findCandidate(id) { return CANDIDATES.find(function (c) { return c.id === id; }); }
+  function firstName(n) { return n.split(' ')[0]; }
+  function escAttr(s) { return String(s).replace(/"/g, '&quot;'); }
+  function avSrc(p) { return p.avatar; }
+  function pendingCount() { return GUESTS.filter(function (g) { return g.status === 'pending'; }).length; }
+
+  // ----- TOAST -----
   var toastTimer;
   function toast(msg) {
-    toastEl.textContent = msg;
-    toastEl.classList.add('is-on');
+    var el = scope.querySelector('#toast');
+    el.textContent = msg;
+    el.classList.add('is-on');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toastEl.classList.remove('is-on'); }, 1800);
+    toastTimer = setTimeout(function () { el.classList.remove('is-on'); }, 1800);
   }
 
-  var rsvp = 'going';
-  function setRsvp(next) {
-    rsvp = next;
-    var btn = scope.querySelector('#rsvp-btn');
-    if (rsvp === 'going') {
-      btn.classList.add('going');
-      btn.innerHTML = '<i class="ph-fill ph-check-circle"></i> Going';
-      toast('You\'re going');
-    } else {
-      btn.classList.remove('going');
-      btn.innerHTML = '<i class="ph ph-circle"></i> RSVP';
-      toast('RSVP removed');
+  // ----- PLAN DETAIL: keep guest count + stack in sync -----
+  function syncPlan() {
+    var total = GUESTS.length;
+    scope.querySelector('#pv-guestcount-bar').textContent = total + ' guests';
+    scope.querySelector('#pv-guestcount-card').textContent = total + ' guests';
+    scope.querySelector('#pv-going-num').textContent = GUESTS.filter(function (g) { return g.status === 'going' || g.status === 'host'; }).length;
+    scope.querySelector('#pv-maybe-num').textContent = GUESTS.filter(function (g) { return g.status === 'maybe'; }).length;
+
+    var stack = scope.querySelector('#pv-stack');
+    var shown = GUESTS.slice(0, 4);
+    var html = '';
+    shown.forEach(function (g) {
+      var checked = (g.status === 'going' || g.status === 'host') ? '<span class="badge"><i class="ph-fill ph-check"></i></span>' : '';
+      if (g.avatar) html += '<span class="pv-avwrap"><img class="gav" src="' + escAttr(g.avatar) + '" alt="" />' + checked + '</span>';
+      else html += '<span class="pv-avwrap"><span class="gav initials">' + (g.initials || g.name[0]) + '</span>' + checked + '</span>';
+    });
+    html += '<span class="pv-avwrap"><span class="gav q">+' + (total - shown.length) + '</span></span>';
+    stack.innerHTML = html;
+  }
+
+  // ----- AVATAR HTML (guests list) -----
+  function guestAv(g) {
+    if (g.avatar) return '<img class="av" src="' + escAttr(g.avatar) + '" alt="" loading="lazy" />';
+    var extra = g.status === 'host' ? ' host-av' : '';
+    return '<span class="av initials' + extra + '">' + (g.initials || g.name[0]) + '</span>';
+  }
+
+  // ----- RENDER: GUESTS LIST -----
+  function renderGuests() {
+    var body = scope.querySelector('#sheet-body');
+    var cta = scope.querySelector('#sheet-cta');
+    var html = '';
+
+    html += '<header class="gp-header">';
+    html += '<button type="button" class="gp-back" data-act="guests-back" aria-label="Back"><i class="ph ph-arrow-left"></i></button>';
+    html += '<div class="gp-title">Guests</div>';
+    html += '<button type="button" class="gp-add-top" data-act="go-invite" aria-label="Invite"><i class="ph ph-user-plus"></i></button>';
+    html += '</header>';
+
+    var going = GUESTS.filter(function (g) { return g.status === 'host' || g.status === 'going'; });
+    var maybe = GUESTS.filter(function (g) { return g.status === 'maybe'; });
+    var pending = GUESTS.filter(function (g) { return g.status === 'pending'; });
+
+    function rowHTML(g, isNew) {
+      var metaCls = g.status === 'host' ? 'host' : (g.status === 'pending' ? 'pending' : (g.status === 'going' ? 'going' : ''));
+      var r = '<div class="gp-grow' + (isNew ? ' is-new' : '') + '">' + guestAv(g);
+      r += '<div><div class="name">' + g.name + '</div><div class="meta ' + metaCls + '">' + g.meta + '</div></div>';
+      if (g.status === 'pending') {
+        r += '<button type="button" class="rm" data-act="uninvite" data-id="' + g.id + '" aria-label="Remove"><i class="ph ph-x"></i></button>';
+      } else if (g.status === 'host') {
+        r += '<span class="tag">You</span>';
+      } else {
+        r += '<span></span>';
+      }
+      r += '</div>';
+      return r;
     }
+
+    html += '<div class="gp-label"><span>Going</span><span class="count">' + going.length + '</span></div>';
+    html += '<div class="gp-list">';
+    going.forEach(function (g) { html += rowHTML(g, false); });
+    html += '</div>';
+
+    if (pending.length) {
+      html += '<div class="gp-label"><span>Invites pending</span><span class="count">' + pending.length + '</span></div>';
+      html += '<div class="gp-list">';
+      pending.forEach(function (g) { html += rowHTML(g, state.justInvited.indexOf(g.id) !== -1); });
+      html += '</div>';
+    }
+
+    html += '<div class="gp-label"><span>Maybe</span><span class="count">' + maybe.length + '</span></div>';
+    html += '<div class="gp-list">';
+    maybe.forEach(function (g) { html += rowHTML(g, false); });
+    html += '</div>';
+
+    body.innerHTML = html;
+    cta.innerHTML = '<div class="gp-cta"><button type="button" class="done" data-act="guests-done">Done</button></div>';
   }
 
+  // ----- RENDER: INVITE -----
+  function renderInvite() {
+    var body = scope.querySelector('#sheet-body');
+    var cta = scope.querySelector('#sheet-cta');
+    var html = '';
+
+    html += '<header class="gp-header no-add">';
+    html += '<button type="button" class="gp-back" data-act="invite-back" aria-label="Back"><i class="ph ph-arrow-left"></i></button>';
+    html += '<div class="gp-title">Invite guests</div>';
+    html += '</header>';
+
+    html += '<div class="iv-search"><i class="ph ph-magnifying-glass"></i><input type="search" placeholder="Search people" /></div>';
+
+    if (state.selected.size > 0) {
+      html += '<div class="iv-chips">';
+      state.selected.forEach(function (cid) {
+        var c = findCandidate(cid);
+        if (!c) return;
+        var av = c.avatar
+          ? '<img class="mr-pp-chip-avatar" src="' + escAttr(c.avatar) + '" alt="" loading="lazy" />'
+          : '<span class="mr-pp-chip-avatar is-initials">' + (c.initials || c.name[0]) + '</span>';
+        html += '<span class="mr-pp-chip">' + av + firstName(c.name);
+        html += '<button type="button" class="mr-pp-chip-remove" data-act="chip-remove" data-id="' + cid + '" aria-label="Remove"><i class="ph ph-x"></i></button></span>';
+      });
+      html += '</div>';
+    }
+
+    // Already on the plan, shown locked so it's clear they can't be re-invited.
+    html += '<div class="iv-sublabel">Already invited</div>';
+    var onPlan = GUESTS.filter(function (g) { return g.status !== 'host'; }).slice(0, 2);
+    onPlan.forEach(function (g) {
+      var av = g.avatar ? '<img class="av" src="' + escAttr(g.avatar) + '" alt="" />' : '<span class="av muted">' + (g.initials || g.name[0]) + '</span>';
+      html += '<div class="iv-row is-locked">' + av;
+      html += '<div><div class="iv-name">' + g.name + '</div><div class="iv-handle">On the plan</div></div>';
+      html += '<span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span></div>';
+    });
+
+    html += '<div class="iv-sublabel">Suggested</div>';
+    CANDIDATES.forEach(function (c) {
+      var on = state.selected.has(c.id);
+      var av = c.avatar
+        ? '<img class="av" src="' + escAttr(c.avatar) + '" alt="" loading="lazy" />'
+        : '<span class="av' + (c.muted ? ' muted' : '') + '">' + (c.initials || c.name[0]) + '</span>';
+      html += '<div class="iv-row ' + (on ? 'is-on' : '') + '" data-act="toggle-cand" data-id="' + c.id + '">' + av;
+      html += '<div><div class="iv-name">' + c.name + '</div><div class="iv-handle">' + c.handle + '</div></div>';
+      html += on
+        ? '<span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>'
+        : '<span class="mr-checkbox"><i class="ph ph-square"></i></span>';
+      html += '</div>';
+    });
+
+    body.innerHTML = html;
+
+    var n = state.selected.size;
+    var label = n === 0 ? 'Select people' : 'Invite ' + n + ' ' + (n === 1 ? 'person' : 'people');
+    cta.innerHTML = '<div class="iv-cta"><button type="button" class="ghost" data-act="invite-back">Cancel</button>'
+      + '<button type="button" class="primary" data-act="send-invites"' + (n === 0 ? ' disabled' : '') + '>' + label + '</button></div>';
+  }
+
+  // ----- SHEET / ROUTING -----
+  function openSheet() { scope.querySelector('#sheet').classList.add('is-open'); }
+  function closeSheet() { scope.querySelector('#sheet').classList.remove('is-open'); }
+
+  function go(route) {
+    state.route = route;
+    if (route === 'plan') {
+      syncPlan();
+      closeSheet();
+      return;
+    }
+    if (route === 'guests') renderGuests();
+    if (route === 'invite') renderInvite();
+    openSheet();
+  }
+
+  // ----- EVENTS -----
   scope.addEventListener('click', function (e) {
     var t = e.target.closest('[data-act]');
     if (!t) return;
     var act = t.getAttribute('data-act');
+    var id = t.getAttribute('data-id');
 
     switch (act) {
-      case 'rsvp':
-        setRsvp(rsvp === 'going' ? 'none' : 'going');
-        return;
+      // plan detail
       case 'manage-guests':
-        toast('Manage guests');
+        state.justInvited = [];
+        go('guests');
         return;
-      case 'chat':
-        toast('Opening chat');
+      case 'rsvp': {
+        var btn = scope.querySelector('#rsvp-btn');
+        if (btn.classList.contains('going')) {
+          btn.classList.remove('going');
+          btn.innerHTML = '<i class="ph ph-circle"></i> RSVP';
+          toast('RSVP removed');
+        } else {
+          btn.classList.add('going');
+          btn.innerHTML = '<i class="ph-fill ph-check-circle"></i> Going';
+          toast('You\'re going');
+        }
         return;
-      case 'share':
-        toast('Share');
+      }
+      case 'chat':  toast('Opening chat'); return;
+      case 'share': toast('Share'); return;
+      case 'edit':  toast('Edit plan'); return;
+      case 'more':  toast('More options'); return;
+      case 'back':  toast('Back'); return;
+
+      // guests list
+      case 'go-invite':
+        state.selected.clear();
+        go('invite');
         return;
-      case 'edit':
-        toast('Edit plan');
+      case 'guests-back':
+      case 'guests-done':
+        go('plan');
+        if (act === 'guests-done') toast('Guests updated');
         return;
-      case 'more':
-        toast('More options');
+      case 'uninvite': {
+        var i = GUESTS.findIndex(function (g) { return g.id === id; });
+        if (i !== -1) {
+          var removed = GUESTS.splice(i, 1)[0];
+          // return them to the invite pool
+          CANDIDATES.push({ id: removed.id, name: removed.name, handle: '@' + removed.id, avatar: removed.avatar, initials: removed.initials });
+          toast('Removed ' + firstName(removed.name));
+          renderGuests();
+        }
         return;
-      case 'back':
-        toast('Back');
+      }
+
+      // invite
+      case 'toggle-cand':
+        if (state.selected.has(id)) state.selected.delete(id);
+        else state.selected.add(id);
+        renderInvite();
         return;
+      case 'chip-remove':
+        e.stopPropagation();
+        state.selected.delete(id);
+        renderInvite();
+        return;
+      case 'invite-back':
+        go('guests');
+        return;
+      case 'send-invites': {
+        if (state.selected.size === 0) return;
+        var added = [];
+        state.selected.forEach(function (cid) {
+          var c = findCandidate(cid);
+          if (!c) return;
+          GUESTS.push({ id: c.id, name: c.name, meta: 'Pending', status: 'pending', avatar: c.avatar, initials: c.initials });
+          added.push(c.id);
+          var ci = CANDIDATES.findIndex(function (x) { return x.id === cid; });
+          if (ci !== -1) CANDIDATES.splice(ci, 1);
+        });
+        var n = added.length;
+        state.justInvited = added;
+        state.selected.clear();
+        go('guests');
+        toast('Invited ' + n + ' ' + (n === 1 ? 'person' : 'people'));
+        return;
+      }
     }
   });
+
+  syncPlan();
 })();
 </script>

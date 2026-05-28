@@ -8,7 +8,7 @@
     },
     {
       "file": "plan-detail-friend-vacation-group.html",
-      "x": 2528,
+      "x": 2336,
       "y": 6304,
       "width": 390
     },
@@ -311,7 +311,7 @@
     },
     {
       "file": "manage-people-group-vB.html",
-      "x": 2944,
+      "x": 2752,
       "y": 6304,
       "width": 390,
       "name": "manage-people-group-plan-vB"
@@ -330,13 +330,25 @@
     },
     {
       "file": "invite-guests-group-default.html",
-      "x": 3360,
+      "x": 3168,
       "y": 6304,
       "width": 390
     },
     {
       "file": "invite-guests-switch-to-friends-confirm.html",
-      "x": 3776,
+      "x": 544,
+      "y": 13856,
+      "width": 390
+    },
+    {
+      "file": "invite-guests-switch-to-friends-confirm-native.html",
+      "x": 3584,
+      "y": 6304,
+      "width": 390
+    },
+    {
+      "file": "invite-guests-friends-default-after-switch.html",
+      "x": 4000,
       "y": 6304,
       "width": 390
     },
