@@ -9,27 +9,32 @@
   .v5-wrap { background: var(--v5-bg); height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-body); }
   .v5-body { flex: 1; overflow-y: auto; padding-bottom: 8px; }
 
-  .v5-header { display: grid; grid-template-columns: 1fr 28px; align-items: center; padding: 22px 20px 8px; }
+  .v5-header { display: grid; grid-template-columns: 1fr 28px; align-items: center; padding: 22px 20px 4px; }
   .v5-title { color: #fff; font-size: 1.7rem; font-weight: 850; letter-spacing: -0.01em; }
   .v5-close { background: transparent; border: 0; color: rgba(255,255,255,0.85); width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
   .v5-close i { font-size: 22px; }
+  .v5-sub { color: rgba(255,255,255,0.5); font-size: 0.88rem; font-weight: 700; padding: 0 20px 12px; display: inline-flex; align-items: center; gap: 6px; }
+  .v5-sub i { font-size: 14px; color: rgba(255,255,255,0.45); }
 
-  .v5-search { display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 10px; margin: 8px 20px 14px; padding: 12px 15px; background: rgba(255,255,255,0.07); border-radius: 999px; }
+  .v5-search { display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 10px; margin: 4px 20px 14px; padding: 12px 15px; background: rgba(255,255,255,0.07); border-radius: 999px; }
   .v5-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
   .v5-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
+
+  .v5-switch { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; cursor: pointer; }
+  .v5-switch > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
+  .v5-switch .col { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; }
+  .v5-switch .txt b { color: var(--neon-teal); font-weight: 850; }
+  .v5-switch .sub { color: rgba(255,255,255,0.55); font-size: 0.85rem; font-weight: 500; line-height: 1.25; }
+  .v5-switch .swap { color: var(--neon-teal); font-size: 22px; line-height: 1; }
 
   .v5-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
   .v5-chips .mr-pp-chip { flex: 0 0 auto; }
 
-  .v5-switch { margin: 0 20px 16px; padding: 16px 20px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--v5-line); display: grid; grid-template-columns: 1fr 22px; align-items: center; column-gap: 14px; cursor: pointer; }
-  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; }
-  .v5-switch .txt b { color: var(--neon-teal); font-weight: 850; }
-  .v5-switch .sub { grid-column: 1; color: rgba(255,255,255,0.5); font-size: 0.8rem; font-weight: 700; margin-top: 3px; }
-  .v5-switch .swap { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--neon-teal); font-size: 22px; line-height: 1; }
-
   .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
   .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .v5-sublabel { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 8px; color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .v5-sublabel .count { color: rgba(255,255,255,0.46); }
 
   .v5-list { padding: 0 20px; display: flex; flex-direction: column; }
   .v5-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 13px; padding: 11px 8px; margin: 0 -4px; border-radius: 14px; }
@@ -39,29 +44,37 @@
   .v5-name { color: #fff; font-size: 0.98rem; font-weight: 850; line-height: 1.15; }
   .v5-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
 
-  /* native-style floating toast — confirmation after Undo, auto-dismisses */
-  .v5-toast { margin: 0 14px 12px; padding: 12px 18px; border-radius: 16px; background: rgba(38,42,54,0.92); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
-  .v5-toast > i { color: var(--neon-teal); font-size: 19px; }
-  .v5-toast .txt { color: rgba(255,255,255,0.92); font-size: 0.9rem; font-weight: 700; }
+  .v5-row.locked { opacity: 0.62; }
+  .v5-row.locked .av { opacity: 0.7; }
+  .v5-lock { color: rgba(255,255,255,0.4); font-size: 18px; justify-self: center; }
+  .v5-handle.note { color: rgba(245,196,81,0.85); }
 
-  .v5-cta { padding: 4px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .v5-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   .v5-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
+  .v5-cta .ghost { background: rgba(255,255,255,0.08); }
   .v5-cta .primary { background: linear-gradient(135deg, #24b8aa, #4c87cf); }
-
-
 </style>
 
 <div class="mr-scope v5-scope">
   <div class="v5-wrap">
     <div class="v5-body">
       <header class="v5-header">
-        <div class="v5-title">Who's going?</div>
+        <div class="v5-title">Invite guests</div>
         <button type="button" class="v5-close" aria-label="Close"><i class="ph ph-x"></i></button>
       </header>
+      <div class="v5-sub"><i class="ph ph-users-three"></i>Lake House group · only members can join</div>
 
       <div class="v5-search">
         <i class="ph ph-magnifying-glass"></i>
-        <input type="search" placeholder="Search people" />
+        <input type="search" placeholder="Search Lake House members" />
+      </div>
+
+      <div class="v5-switch">
+        <div class="col">
+          <div class="txt">Switch to a <b>friends</b> plan</div>
+          <div class="sub">Open this plan to anyone, not just Lake House members.</div>
+        </div>
+        <i class="ph-fill ph-user-switch swap"></i>
       </div>
 
       <div class="v5-chips">
@@ -82,15 +95,8 @@
         </span>
       </div>
 
-      <div class="v5-label"><span>Add to a group</span></div>
-      <div class="v5-switch">
-        <div class="txt">Switch to a <b>group</b> plan</div>
-        <div class="sub">Pick a group to attach this plan to</div>
-        <i class="ph-fill ph-user-switch swap"></i>
-      </div>
-
-      <div class="v5-label"><span>Or invite people</span><span class="count">3 selected</span></div>
-      <div class="v5-sublabel"><span>Friends</span></div>
+      <div class="v5-label"><span>Invite more</span><span class="count">2 selected</span></div>
+      <div class="v5-sublabel"><span>Group members</span><span class="count">4</span></div>
       <div class="v5-list">
         <div class="v5-row is-on">
           <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
@@ -98,43 +104,39 @@
           <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
         </div>
         <div class="v5-row is-on">
-          <span class="av">M</span>
-          <div><div class="v5-name">Milo Wren</div><div class="v5-handle">@milowren</div></div>
-          <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-        <div class="v5-row is-on">
           <img class="av" src="https://i.pravatar.cc/96?img=49" alt="" loading="lazy" />
           <div><div class="v5-name">Lila Quill</div><div class="v5-handle">@lilaquill</div></div>
           <span class="mr-checkbox is-checked"><i class="ph-fill ph-check-square"></i></span>
-        </div>
-      </div>
-      <div class="v5-sublabel"><span>Suggested</span></div>
-      <div class="v5-list">
-        <div class="v5-row">
-          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
-          <div><div class="v5-name">Soren Vale</div><div class="v5-handle">@sorenvale</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
-        </div>
-        <div class="v5-row">
-          <span class="av muted">PS</span>
-          <div><div class="v5-name">Piper Sol</div><div class="v5-handle">@pipersol</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
         <div class="v5-row">
           <img class="av" src="https://i.pravatar.cc/96?img=44" alt="" loading="lazy" />
           <div><div class="v5-name">Wren Holt</div><div class="v5-handle">@wrenholt</div></div>
           <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
+        <div class="v5-row">
+          <img class="av" src="https://i.pravatar.cc/96?img=14" alt="" loading="lazy" />
+          <div><div class="v5-name">Theo Mar</div><div class="v5-handle">@theomar</div></div>
+          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
+        </div>
+      </div>
+
+      <div class="v5-sublabel"><span>Not in this group</span></div>
+      <div class="v5-list">
+        <div class="v5-row locked">
+          <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
+          <div><div class="v5-name">Soren Vale</div><div class="v5-handle note">Add to Lake House to invite</div></div>
+          <i class="ph ph-lock-simple v5-lock"></i>
+        </div>
+        <div class="v5-row locked">
+          <span class="av muted">PS</span>
+          <div><div class="v5-name">Piper Sol</div><div class="v5-handle note">Add to Lake House to invite</div></div>
+          <i class="ph ph-lock-simple v5-lock"></i>
+        </div>
       </div>
     </div>
 
-    <div class="v5-toast">
-      <i class="ph-fill ph-arrow-counter-clockwise"></i>
-      <div class="txt">Your 3 picks are back</div>
-    </div>
-
     <div class="v5-cta">
-      <button type="button" class="primary">Invite 2 people</button>
+      <button type="button" class="primary">Invite 2 members</button>
     </div>
   </div>
 </div>

@@ -314,8 +314,13 @@
       "file": "invite-guests-friends-default.html",
       "x": 1472,
       "y": 6304,
-      "width": 390,
-      "name": "invite-guests-friends-default"
+      "width": 390
+    },
+    {
+      "file": "invite-guests-group-default.html",
+      "x": 2400,
+      "y": 6304,
+      "width": 390
     },
     {
       "file": "invite-guests-switch-to-group-confirm.html",
@@ -326,7 +331,7 @@
     },
     {
       "file": "invite-guests-switch-to-friends-confirm.html",
-      "x": 2304,
+      "x": 2816,
       "y": 6304,
       "width": 390,
       "name": "invite-guests-switch-to-friends-confirm"
