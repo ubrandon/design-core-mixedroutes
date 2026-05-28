@@ -292,20 +292,20 @@
     },
     {
       "file": "invite-people-friends.html",
-      "x": 960,
-      "y": 6304,
+      "x": -32,
+      "y": 7328,
       "width": 390
     },
     {
       "file": "invite-people-group-all.html",
-      "x": 1376,
-      "y": 6304,
+      "x": 384,
+      "y": 7328,
       "width": 390
     },
     {
       "file": "invite-people-group-some.html",
-      "x": 1792,
-      "y": 6304,
+      "x": 800,
+      "y": 7328,
       "width": 390
     },
     {
@@ -321,6 +321,27 @@
       "y": 6304,
       "width": 390,
       "name": "manage-people-group-plan-vB"
+    },
+    {
+      "file": "invite-guests-friends-default.html",
+      "x": 928,
+      "y": 6304,
+      "width": 390,
+      "name": "invite-guests-friends-default"
+    },
+    {
+      "file": "invite-guests-switch-to-group-confirm.html",
+      "x": 1344,
+      "y": 6304,
+      "width": 390,
+      "name": "invite-guests-switch-to-group-confirm"
+    },
+    {
+      "file": "invite-guests-switch-to-friends-confirm.html",
+      "x": 1760,
+      "y": 6304,
+      "width": 390,
+      "name": "invite-guests-switch-to-friends-confirm"
     },
     {
       "file": "v4-inline-default.html",
