@@ -56,7 +56,7 @@
   .v5-groups-hint .col { flex: 1; display: flex; flex-direction: column; }
   .v5-groups-hint .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; }
   .v5-groups-hint .txt b { color: var(--neon-teal); font-weight: 850; }
-  .v5-groups-hint .swap { color: rgba(255,255,255,0.55); font-size: 22px; line-height: 1; }
+  .v5-groups-hint .swap { color: var(--neon-teal); font-size: 22px; line-height: 1; }
   .v5-groups-hint .sub { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 700; line-height: 1.3; margin-top: 3px; }
   .v5-groups-hint .show { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.84rem; font-weight: 850; padding: 4px 4px; cursor: pointer; }
 
@@ -263,10 +263,9 @@
       // Locked friends list with hint above
       html += '<div class="v5-label tight-top"><span>Or invite people</span></div>';
       html += '<div class="v5-groups-hint" data-act="clear-group">';
-      html += '<i class="ph-fill ph-users-three"></i>';
       html += '<div class="col"><div class="txt">Switch to <b>friends</b> plan</div>';
       html += '<div class="sub">Pick individual friends instead of the group</div></div>';
-      html += '<i class="ph-fill ph-arrows-left-right swap"></i>';
+      html += '<i class="ph-fill ph-user-switch swap"></i>';
       html += '</div>';
       var lockedPrimary = FRIENDS.filter(function (f) { return !f.muted; }).slice(0, 2);
       var lockedSuggested = FRIENDS.filter(function (f) { return lockedPrimary.indexOf(f) === -1; }).slice(0, 1);
@@ -290,10 +289,9 @@
       // Default + friends modes
       if (state.mode === 'friends') {
         html += '<div class="v5-groups-hint" data-act="switch-to-group">';
-        html += '<i class="ph-fill ph-squares-four"></i>';
         html += '<div class="col"><div class="txt">Switch to a <b>group</b> plan</div>';
-        html += '<div class="sub">Invite a whole group instead of these picks</div></div>';
-        html += '<i class="ph-fill ph-arrows-left-right swap"></i>';
+        html += '<div class="sub">Pick a group to attach this plan to</div></div>';
+        html += '<i class="ph-fill ph-user-switch swap"></i>';
         html += '</div>';
         html += '<div class="v5-label"><span>Or invite people</span><span class="count">' + state.selectedFriends.size + ' selected</span></div>';
       } else {

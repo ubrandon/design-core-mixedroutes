@@ -1,6 +1,12 @@
 {
   "screens": [
     {
+      "file": "plan-detail-friend-vacation.html",
+      "x": -32,
+      "y": 6304,
+      "width": 390
+    },
+    {
       "file": "picker-default.html",
       "x": 96,
       "y": 16224,
@@ -291,54 +297,36 @@
       "name": "v2-inline-mixed-warning"
     },
     {
-      "file": "invite-people-friends.html",
-      "x": -32,
-      "y": 7328,
-      "width": 390
-    },
-    {
-      "file": "invite-people-group-all.html",
-      "x": 384,
-      "y": 7328,
-      "width": 390
-    },
-    {
-      "file": "invite-people-group-some.html",
-      "x": 800,
-      "y": 7328,
-      "width": 390
-    },
-    {
       "file": "manage-people-friends-vB.html",
-      "x": -32,
+      "x": 512,
       "y": 6304,
       "width": 390,
       "name": "manage-people-friends-plan-vB"
     },
     {
       "file": "manage-people-group-vB.html",
-      "x": 384,
+      "x": 928,
       "y": 6304,
       "width": 390,
       "name": "manage-people-group-plan-vB"
     },
     {
       "file": "invite-guests-friends-default.html",
-      "x": 928,
+      "x": 1472,
       "y": 6304,
       "width": 390,
       "name": "invite-guests-friends-default"
     },
     {
       "file": "invite-guests-switch-to-group-confirm.html",
-      "x": 1344,
+      "x": 1888,
       "y": 6304,
       "width": 390,
       "name": "invite-guests-switch-to-group-confirm"
     },
     {
       "file": "invite-guests-switch-to-friends-confirm.html",
-      "x": 1760,
+      "x": 2304,
       "y": 6304,
       "width": 390,
       "name": "invite-guests-switch-to-friends-confirm"
