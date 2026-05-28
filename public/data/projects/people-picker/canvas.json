@@ -137,32 +137,36 @@
     },
     {
       "file": "create-add-people-default.html",
-      "x": 416,
-      "y": 6112,
-      "width": 390
+      "x": 0,
+      "y": 6144,
+      "width": 390,
+      "name": "v1-create-add-people-default"
     },
     {
       "file": "create-add-people-group-all.html",
-      "x": 1408,
-      "y": 6112,
-      "width": 390
+      "x": 992,
+      "y": 6144,
+      "width": 390,
+      "name": "v1-create-add-people-group-all"
     },
     {
       "file": "create-add-people-group-some.html",
-      "x": 1824,
-      "y": 6112,
-      "width": 390
+      "x": 1408,
+      "y": 6144,
+      "width": 390,
+      "name": "v1-create-add-people-group-some"
     },
     {
       "file": "create-add-people-group-selected.html",
-      "x": 2240,
-      "y": 6112,
-      "width": 390
+      "x": 1824,
+      "y": 6144,
+      "width": 390,
+      "name": "v1-create-add-people-group-selected"
     },
     {
       "file": "create-add-people-default-vA.html",
-      "x": 0,
-      "y": 6112,
+      "x": 128,
+      "y": 19104,
       "width": 390
     },
     {
@@ -215,9 +219,10 @@
     },
     {
       "file": "create-add-people-friends.html",
-      "x": 928,
-      "y": 6112,
-      "width": 390
+      "x": 512,
+      "y": 6144,
+      "width": 390,
+      "name": "v1-create-add-people-friends"
     },
     {
       "file": "flex-mix-default.html",

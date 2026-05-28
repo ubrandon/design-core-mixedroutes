@@ -18,17 +18,19 @@
   .v5-search i { color: rgba(255,255,255,0.54); font-size: 17px; }
   .v5-search input { width: 100%; border: 0; outline: 0; padding: 0; background: transparent; color: #fff; font: inherit; font-size: 0.94rem; }
 
-  .v5-groups-hint { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: #0c0f12; border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; }
-  .v5-groups-hint > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
-  .v5-groups-hint .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; flex: 1; }
-  .v5-groups-hint .txt b { color: var(--neon-teal); font-weight: 850; }
-  .v5-groups-hint .swap { color: var(--neon-teal); font-size: 20px; line-height: 1; }
+  .v5-switch { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; cursor: pointer; }
+  .v5-switch > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
+  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; flex: 1; }
+  .v5-switch .txt b { color: var(--neon-teal); font-weight: 850; }
+  .v5-switch .swap { color: rgba(255,255,255,0.55); font-size: 22px; line-height: 1; }
 
   .v5-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
   .v5-chips .mr-pp-chip { flex: 0 0 auto; }
 
-  .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 10px; color: rgba(255,255,255,0.72); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
-  .v5-label .count { color: rgba(255,255,255,0.46); }
+  .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
+  .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .v5-sublabel { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 8px; color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .v5-sublabel .count { color: rgba(255,255,255,0.46); }
 
   .v5-list { padding: 0 20px; display: flex; flex-direction: column; }
   .v5-row { display: grid; grid-template-columns: 44px 1fr 22px; align-items: center; gap: 13px; padding: 11px 8px; margin: 0 -4px; border-radius: 14px; }
@@ -75,13 +77,14 @@
         </span>
       </div>
 
-      <div class="v5-groups-hint">
+      <div class="v5-switch">
         <i class="ph-fill ph-squares-four"></i>
         <div class="txt">Switch to a <b>group</b> plan</div>
-        <i class="ph-fill ph-user-switch swap"></i>
+        <i class="ph-fill ph-arrows-left-right swap"></i>
       </div>
 
-      <div class="v5-label"><span>Friends</span><span class="count">3 selected</span></div>
+      <div class="v5-label"><span>Or invite people</span><span class="count">3 selected</span></div>
+      <div class="v5-sublabel"><span>Friends</span></div>
       <div class="v5-list">
         <div class="v5-row is-on">
           <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" />
@@ -98,6 +101,9 @@
           <div><div class="v5-name">Lila Quill</div><div class="v5-handle">@lilaquill</div></div>
           <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
+      </div>
+      <div class="v5-sublabel"><span>Suggested</span></div>
+      <div class="v5-list">
         <div class="v5-row">
           <img class="av" src="https://i.pravatar.cc/96?img=33" alt="" loading="lazy" />
           <div><div class="v5-name">Soren Vale</div><div class="v5-handle">@sorenvale</div></div>

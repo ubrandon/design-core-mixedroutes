@@ -20,12 +20,14 @@
 
   .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
   .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .v5-sublabel { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 8px; color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .v5-sublabel .count { color: rgba(255,255,255,0.46); }
 
-  .v5-groups-hint { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: #0c0f12; border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; }
-  .v5-groups-hint > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
-  .v5-groups-hint .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; flex: 1; }
-  .v5-groups-hint .txt b { color: var(--neon-teal); font-weight: 850; }
-  .v5-groups-hint .swap { color: var(--neon-teal); font-size: 20px; line-height: 1; }
+  .v5-switch { margin: 0 20px 16px; padding: 18px 22px; border-radius: 18px; background: #0c0f12; border: 1px solid var(--v5-line); display: flex; align-items: center; gap: 14px; cursor: pointer; }
+  .v5-switch > i { color: var(--neon-teal); font-size: 22px; line-height: 1; }
+  .v5-switch .txt { color: #fff; font-size: 1rem; font-weight: 850; line-height: 1.2; flex: 1; }
+  .v5-switch .txt b { color: var(--neon-teal); font-weight: 850; }
+  .v5-switch .swap { color: rgba(255,255,255,0.55); font-size: 22px; line-height: 1; }
 
   .v5-groups { display: flex; gap: 14px; padding: 0 20px 18px; overflow-x: auto; }
   .v5-group { flex: 0 0 96px; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; background: transparent; border: 0; position: relative; }
@@ -35,6 +37,7 @@
   .v5-group.is-on .v5-thumb { box-shadow: 0 0 0 2px var(--neon-teal); }
   .v5-group.is-on::after { content: ""; position: absolute; left: calc(50% + 14px); top: 46px; width: 22px; height: 22px; border-radius: 50%; background: var(--neon-teal); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23061016' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 12 10 18 20 6'/></svg>"); background-size: 13px 13px; background-repeat: no-repeat; background-position: center; box-shadow: 0 0 0 2px var(--v5-bg); }
   .v5-gname { color: #fff; font-size: 0.92rem; line-height: 1.15; font-weight: 850; }
+  .v5-gmeta { color: rgba(255,255,255,0.5); font-size: 0.74rem; font-weight: 700; line-height: 1.2; margin-top: -4px; }
   .v5-group.is-on .v5-gname { color: var(--neon-teal); }
 
   .v5-list { padding: 0 20px; display: flex; flex-direction: column; }
@@ -70,29 +73,36 @@
         <div class="v5-group is-on">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Lake House</div>
+          <div class="v5-gmeta">8 members</div>
         </div>
         <div class="v5-group">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Family</div>
+          <div class="v5-gmeta">6 members</div>
         </div>
         <div class="v5-group">
           <div class="v5-thumb"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=200&h=200&q=80" alt="" loading="lazy" /></div>
           <div class="v5-gname">Climbing gym</div>
+          <div class="v5-gmeta">12 members</div>
         </div>
       </div>
 
-      <div class="v5-label"><span>Or invite friends</span></div>
-      <div class="v5-groups-hint">
+      <div class="v5-label"><span>Or invite people</span></div>
+      <div class="v5-switch">
         <i class="ph-fill ph-users-three"></i>
         <div class="txt">Switch to <b>friends</b> plan</div>
-        <i class="ph-fill ph-user-switch swap"></i>
+        <i class="ph-fill ph-arrows-left-right swap"></i>
       </div>
+      <div class="v5-sublabel"><span>Friends</span></div>
       <div class="v5-list">
         <div class="v5-row">
           <img class="av" src="https://i.pravatar.cc/96?img=12" alt="" loading="lazy" style="opacity:0.4" />
           <div style="opacity:0.4"><div class="v5-name">Nova Finch</div><div class="v5-handle">@novafinch</div></div>
           <span class="mr-checkbox" style="opacity:0.3"><i class="ph ph-square"></i></span>
         </div>
+      </div>
+      <div class="v5-sublabel"><span>Suggested</span></div>
+      <div class="v5-list">
         <div class="v5-row">
           <span class="av" style="opacity:0.4">PS</span>
           <div style="opacity:0.4"><div class="v5-name">Piper Sol</div><div class="v5-handle">@pipersol</div></div>

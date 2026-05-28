@@ -2,7 +2,7 @@
   "prototypes": [
     {
       "id": "picker-flow",
-      "name": "Picker Flow",
+      "name": "Picker Flow V1",
       "description": "Who's going? — default, friends, and group flows.",
       "device": "mobile"
     },
