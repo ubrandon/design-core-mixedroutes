@@ -7,7 +7,7 @@
   .v5-scope, .v5-scope * { box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
   .v5-scope::-webkit-scrollbar, .v5-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .v5-wrap { background: var(--v5-bg); height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-body); }
-  .v5-body { flex: 1; overflow-y: auto; padding-bottom: 8px; }
+  .v5-body { flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 16px; }
 
   .v5-header { display: grid; grid-template-columns: 1fr 28px; align-items: center; padding: 22px 20px 8px; }
   .v5-title { color: #fff; font-size: 1.7rem; font-weight: 850; letter-spacing: -0.01em; }
@@ -29,8 +29,8 @@
   .v5-chips { display: flex; gap: 8px; padding: 0 20px 14px; overflow-x: auto; flex-wrap: nowrap; }
   .v5-chips .mr-pp-chip { flex: 0 0 auto; }
 
-  .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 20px 12px; color: #fff; font-size: 1.25rem; font-weight: 850; letter-spacing: -0.005em; }
-  .v5-label .count { color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .v5-label { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 10px; color: rgba(255,255,255,0.72); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+  .v5-label .count { color: rgba(255,255,255,0.46); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .v5-sublabel { display: flex; align-items: baseline; justify-content: space-between; padding: 6px 20px 8px; color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .v5-sublabel .count { color: rgba(255,255,255,0.46); }
 
@@ -124,11 +124,6 @@
         <div class="v5-row">
           <img class="av" src="https://i.pravatar.cc/96?img=44" alt="" loading="lazy" />
           <div><div class="v5-name">Wren Holt</div><div class="v5-handle">@wrenholt</div></div>
-          <span class="mr-checkbox"><i class="ph ph-square"></i></span>
-        </div>
-        <div class="v5-row">
-          <img class="av" src="https://i.pravatar.cc/96?img=22" alt="" loading="lazy" />
-          <div><div class="v5-name">Iris Mae</div><div class="v5-handle">@irismae</div></div>
           <span class="mr-checkbox"><i class="ph ph-square"></i></span>
         </div>
       </div>

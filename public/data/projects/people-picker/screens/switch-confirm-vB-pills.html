@@ -24,7 +24,9 @@
   .vB-top .eyebrow { color: var(--vB-warn); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
   .vB-top .eyebrow i { font-size: 14px; }
 
-  .vB-sheet p { margin: 0 0 16px; color: rgba(255,255,255,0.66); font-size: 0.94rem; line-height: 1.45; }
+  .vB-sheet p { margin: 0 0 10px; color: rgba(255,255,255,0.66); font-size: 0.94rem; line-height: 1.45; }
+  .vB-hint { display: grid; grid-template-columns: 17px 1fr; gap: 9px; align-items: flex-start; color: rgba(255,255,255,0.5); font-size: 0.84rem; line-height: 1.4; margin-bottom: 18px; }
+  .vB-hint i { color: rgba(255,255,255,0.45); font-size: 16px; margin-top: 1px; }
 
   .vB-section { margin-bottom: 14px; }
   .vB-sec-label { color: rgba(255,255,255,0.5); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
@@ -35,9 +37,6 @@
   .vB-chip.stay .av { background: var(--neon-teal); color: #061016; }
   .vB-chip.drop { background: rgba(245,196,81,0.12); color: #e7c474; text-decoration: line-through; text-decoration-color: rgba(245,196,81,0.5); }
   .vB-chip.drop .av { background: #4a5462; color: #fff; }
-
-  .vB-note { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: flex-start; color: rgba(255,255,255,0.6); font-size: 0.86rem; line-height: 1.4; margin-bottom: 18px; padding: 12px 14px; border-radius: 14px; background: rgba(245,196,81,0.08); }
-  .vB-note i { color: var(--vB-warn); font-size: 16px; margin-top: 1px; }
 
   .vB-actions { display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; }
   .vB-actions button { min-height: 50px; border-radius: 999px; border: 0; color: #fff; font-size: 0.96rem; font-weight: 850; }
@@ -62,7 +61,8 @@
             <h2>Make this a Lake House plan?</h2>
           </div>
         </div>
-        <p>Only Lake House members can stay on a group plan.</p>
+        <p>This plan gets added to the group and can only be shared with members.</p>
+        <div class="vB-hint"><i class="ph-fill ph-info"></i><span>You'll need to invite them to the group first.</span></div>
 
         <div class="vB-section">
           <div class="vB-sec-label">Stays</div>
@@ -77,8 +77,6 @@
             <span class="vB-chip drop"><img src="https://i.pravatar.cc/64?img=33" alt="" />Soren</span>
           </div>
         </div>
-
-        <div class="vB-note"><i class="ph-fill ph-warning"></i><span>You can re-invite them later if they join Lake House.</span></div>
 
         <div class="vB-actions">
           <button type="button" class="ghost">Cancel</button>

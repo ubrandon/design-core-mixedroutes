@@ -337,10 +337,17 @@
     },
     {
       "file": "switch-confirm-vB-pills.html",
-      "x": 2304,
+      "x": 3872,
       "y": 6304,
       "width": 390,
       "name": "switch-confirm-vB-pills"
+    },
+    {
+      "file": "switch-confirm-vG-fullscreen.html",
+      "x": 2304,
+      "y": 6304,
+      "width": 390,
+      "name": "switch-confirm-vG-fullscreen"
     },
     {
       "file": "v4-inline-default.html",
