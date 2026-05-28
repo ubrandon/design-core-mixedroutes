@@ -7,6 +7,12 @@
       "width": 390
     },
     {
+      "file": "plan-detail-friend-vacation-group.html",
+      "x": 2528,
+      "y": 6304,
+      "width": 390
+    },
+    {
       "file": "picker-default.html",
       "x": 96,
       "y": 16224,
@@ -298,42 +304,41 @@
     },
     {
       "file": "manage-people-friends-vB.html",
-      "x": 512,
+      "x": 384,
       "y": 6304,
       "width": 390,
       "name": "manage-people-friends-plan-vB"
     },
     {
       "file": "manage-people-group-vB.html",
-      "x": 2400,
+      "x": 2944,
       "y": 6304,
       "width": 390,
       "name": "manage-people-group-plan-vB"
     },
     {
       "file": "invite-guests-friends-default.html",
-      "x": 928,
+      "x": 800,
       "y": 6304,
       "width": 390
     },
     {
       "file": "invite-guests-pick-group.html",
-      "x": 1344,
+      "x": 1216,
       "y": 6304,
       "width": 390
     },
     {
       "file": "invite-guests-group-default.html",
-      "x": 2816,
+      "x": 3360,
       "y": 6304,
       "width": 390
     },
     {
       "file": "invite-guests-switch-to-friends-confirm.html",
-      "x": 3232,
+      "x": 3776,
       "y": 6304,
-      "width": 390,
-      "name": "invite-guests-switch-to-friends-confirm"
+      "width": 390
     },
     {
       "file": "switch-confirm-vB-pills.html",
@@ -344,7 +349,7 @@
     },
     {
       "file": "switch-confirm-vG-fullscreen.html",
-      "x": 1760,
+      "x": 1632,
       "y": 6304,
       "width": 390
     },
