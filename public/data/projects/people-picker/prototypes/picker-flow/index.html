@@ -247,19 +247,30 @@
     // Friends section
     if (state.mode === 'group') {
       // Locked friends list with hint above
-      html += '<div class="v5-label tight-top"><span>Or invite friends</span></div>';
+      html += '<div class="v5-label tight-top"><span>Or invite people</span></div>';
       html += '<div class="v5-groups-hint" data-act="clear-group">';
       html += '<i class="ph-fill ph-users-three"></i>';
       html += '<div class="txt">Switch to <b>friends</b> plan</div>';
       html += '<i class="ph-fill ph-arrows-left-right swap"></i>';
       html += '</div>';
+      var lockedPrimary = FRIENDS.filter(function (f) { return !f.muted; }).slice(0, 2);
+      var lockedSuggested = FRIENDS.filter(function (f) { return lockedPrimary.indexOf(f) === -1; }).slice(0, 1);
+      var lockedRow = function (f) {
+        var row = '<div class="v5-row is-locked">' + avatarHTML(f);
+        row += '<div><div class="v5-name">' + f.name + '</div><div class="v5-handle">' + f.handle + '</div></div>';
+        row += '<span class="mr-checkbox"><i class="ph ph-square"></i></span></div>';
+        return row;
+      };
+      html += '<div class="v5-label sm"><span>Friends</span></div>';
       html += '<div class="v5-list">';
-      FRIENDS.slice(0, 3).forEach(function (f) {
-        html += '<div class="v5-row is-locked">' + avatarHTML(f);
-        html += '<div><div class="v5-name">' + f.name + '</div><div class="v5-handle">' + f.handle + '</div></div>';
-        html += '<span class="mr-checkbox"><i class="ph ph-square"></i></span></div>';
-      });
+      lockedPrimary.forEach(function (f) { html += lockedRow(f); });
       html += '</div>';
+      if (lockedSuggested.length) {
+        html += '<div class="v5-label sm"><span>Suggested</span></div>';
+        html += '<div class="v5-list">';
+        lockedSuggested.forEach(function (f) { html += lockedRow(f); });
+        html += '</div>';
+      }
     } else {
       // Default + friends modes
       if (state.mode === 'friends') {
@@ -268,9 +279,9 @@
         html += '<div class="txt">Switch to a <b>group</b> plan</div>';
         html += '<i class="ph-fill ph-arrows-left-right swap"></i>';
         html += '</div>';
-        html += '<div class="v5-label sm"><span>Friends</span><span class="count">' + state.selectedFriends.size + ' selected</span></div>';
+        html += '<div class="v5-label"><span>Or invite people</span><span class="count">' + state.selectedFriends.size + ' selected</span></div>';
       } else {
-        html += '<div class="v5-label tight-top"><span>Or invite friends</span></div>';
+        html += '<div class="v5-label tight-top"><span>Or invite people</span></div>';
       }
       var friendRow = function (f) {
         var on = state.selectedFriends.has(f.id);
@@ -283,23 +294,17 @@
         row += '</div>';
         return row;
       };
-      if (state.mode === 'friends') {
+      var primary = FRIENDS.filter(function (f) { return !f.muted; }).slice(0, 4);
+      var suggested = FRIENDS.filter(function (f) { return primary.indexOf(f) === -1; });
+      html += '<div class="v5-label sm"><span>Friends</span></div>';
+      html += '<div class="v5-list">';
+      primary.forEach(function (f) { html += friendRow(f); });
+      html += '</div>';
+      if (suggested.length) {
+        html += '<div class="v5-label sm"><span>Suggested</span></div>';
         html += '<div class="v5-list">';
-        FRIENDS.forEach(function (f) { html += friendRow(f); });
+        suggested.forEach(function (f) { html += friendRow(f); });
         html += '</div>';
-      } else {
-        var primary = FRIENDS.filter(function (f) { return !f.muted; }).slice(0, 4);
-        var suggested = FRIENDS.filter(function (f) { return primary.indexOf(f) === -1; });
-        html += '<div class="v5-label sm"><span>Friends</span></div>';
-        html += '<div class="v5-list">';
-        primary.forEach(function (f) { html += friendRow(f); });
-        html += '</div>';
-        if (suggested.length) {
-          html += '<div class="v5-label sm"><span>Suggested</span></div>';
-          html += '<div class="v5-list">';
-          suggested.forEach(function (f) { html += friendRow(f); });
-          html += '</div>';
-        }
       }
     }
 
