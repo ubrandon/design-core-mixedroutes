@@ -251,28 +251,32 @@
       "name": "v1b-add-people-undo-restored"
     },
     {
-      "file": "flex-mix-default.html",
-      "x": 96,
-      "y": 15040,
-      "width": 390
-    },
-    {
-      "file": "flex-mix-group-picked.html",
-      "x": 512,
-      "y": 15040,
-      "width": 390
+      "file": "v1-create-add-people-default-copy.html",
+      "x": -32,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-default"
     },
     {
       "file": "flex-mix-with-guests.html",
-      "x": 928,
-      "y": 15040,
-      "width": 390
+      "x": 1216,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-with-friends"
     },
     {
-      "file": "flex-mix-switch-group.html",
-      "x": 1440,
-      "y": 15040,
-      "width": 390
+      "file": "flex-mix-group-picked-vA.html",
+      "x": 384,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-vA-note-footer"
+    },
+    {
+      "file": "flex-mix-group-picked-vC.html",
+      "x": 800,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-vC-callout"
     },
     {
       "file": "v6-inline-default.html",
@@ -337,7 +341,7 @@
     {
       "file": "invite-guests-switch-to-friends-confirm.html",
       "x": 544,
-      "y": 13856,
+      "y": 15200,
       "width": 390
     },
     {
@@ -355,7 +359,7 @@
     {
       "file": "switch-confirm-vB-pills.html",
       "x": 96,
-      "y": 13856,
+      "y": 15200,
       "width": 390,
       "name": "switch-confirm-vB-pills"
     },
