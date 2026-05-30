@@ -151,7 +151,7 @@
     </div>
 
     <div class="v5c-cta">
-      <button type="button" class="primary">Invite group (3)</button>
+      <button type="button" class="primary">Invite (5)</button>
     </div>
   </div>
 </div>
@@ -196,7 +196,8 @@
           '<button type="button" class="mr-pp-chip-remove" aria-label="Remove"><i class="ph ph-x"></i></button>' +
           '</span>';
       }).join('');
-      cta.textContent = 'Invite group (' + selected.length + ')';
+      var outsideOn = sectionRows('friends').filter(function (r) { return r.classList.contains('is-on'); }).length;
+      cta.textContent = (outsideOn ? 'Invite (' : 'Invite group (') + selected.length + ')';
       toggleBtns.forEach(updateToggle);
     }
 

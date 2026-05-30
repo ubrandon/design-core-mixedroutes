@@ -29,6 +29,12 @@
       "name": "Manage guests",
       "description": "Plan detail for a friend vacation, entry point for managing guests.",
       "device": "mobile"
+    },
+    {
+      "id": "flex-selection",
+      "name": "Flex selection",
+      "description": "Pick a group, pick people, or both. Selecting a group swaps in a banner and an Outside the group list.",
+      "device": "mobile"
     }
   ]
 }
