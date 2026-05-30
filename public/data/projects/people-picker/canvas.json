@@ -258,25 +258,18 @@
       "name": "add-outside-groups-default"
     },
     {
-      "file": "flex-mix-with-guests.html",
-      "x": 1216,
-      "y": 8352,
-      "width": 390,
-      "name": "add-outside-groups-with-friends"
-    },
-    {
-      "file": "flex-mix-group-picked-vA.html",
-      "x": 1632,
-      "y": 8352,
-      "width": 390,
-      "name": "add-outside-groups-vA-note-footer"
-    },
-    {
       "file": "flex-mix-group-picked-vC.html",
       "x": 384,
       "y": 8352,
       "width": 390,
       "name": "add-outside-groups-vC-callout"
+    },
+    {
+      "file": "flex-mix-group-picked-vC-outside-selected.html",
+      "x": 800,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-vC-friends-selected"
     },
     {
       "file": "v6-inline-default.html",

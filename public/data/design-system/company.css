@@ -244,10 +244,10 @@
 .mr-scope .mr-subsection-title {
   margin: 20px 0 12px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .mr-scope .mr-subsection-title:first-child {
