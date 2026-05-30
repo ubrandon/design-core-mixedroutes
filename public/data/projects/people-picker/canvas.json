@@ -259,24 +259,31 @@
     },
     {
       "file": "flex-mix-group-picked-vC.html",
-      "x": 448,
-      "y": 8352,
+      "x": -32,
+      "y": 9888,
       "width": 390,
       "name": "add-outside-groups-vC-callout"
     },
     {
-      "file": "flex-mix-group-banner-vC.html",
-      "x": -32,
-      "y": 9632,
-      "width": 390,
-      "name": "add-outside-groups-vC-banner"
-    },
-    {
       "file": "flex-mix-group-picked-vC-outside-selected.html",
-      "x": 864,
-      "y": 8352,
+      "x": 384,
+      "y": 9888,
       "width": 390,
       "name": "add-outside-groups-vC-friends-selected"
+    },
+    {
+      "file": "add-outside-groups-people-selected.html",
+      "x": 1344,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-people-selected"
+    },
+    {
+      "file": "add-outside-groups-people-selected-more.html",
+      "x": 1760,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-people-selected-more"
     },
     {
       "file": "v6-inline-default.html",
@@ -386,6 +393,20 @@
       "x": 960,
       "y": 21376,
       "width": 390
+    },
+    {
+      "file": "flex-mix-group-banner-vC-callout.html",
+      "x": 448,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-callout"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-friends-selected.html",
+      "x": 864,
+      "y": 8352,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-friends-selected"
     }
   ]
 }

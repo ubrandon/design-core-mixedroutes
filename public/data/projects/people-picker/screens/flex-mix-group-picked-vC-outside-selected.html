@@ -61,7 +61,7 @@
   .v5c-chips:empty { display: none; }
 </style>
 
-<div class="mr-scope v5c-scope">
+<div class="mr-scope v5c-scope v5c-scope-friends">
   <div class="v5c-wrap">
     <div class="v5c-body">
       <header class="v5c-header">
@@ -97,9 +97,9 @@
 
       <div class="v5c-sublabel-row" style="margin-top:-8px;">
         <span class="v5c-sublabel">Group Members</span>
-        <button type="button" class="action">Deselect all</button>
+        <button type="button" class="action" data-toggle-all="members">Deselect all (3)</button>
       </div>
-      <div class="v5c-list">
+      <div class="v5c-list" data-section="members">
         <div class="v5c-row is-on">
           <span class="av">M</span>
           <div><div class="v5c-name">Milo Wren</div><div class="v5c-handle"><span class="host">Host</span></div></div>
@@ -119,8 +119,11 @@
 
       <div class="v5c-label" style="padding-top:28px;padding-bottom:4px;"><span>More people</span></div>
       <p class="v5c-subtext">Added to this plan as guests, not to Lake House.</p>
-      <div class="v5c-sublabel">Friends</div>
-      <div class="v5c-list">
+      <div class="v5c-sublabel-row">
+        <span class="v5c-sublabel">Friends</span>
+        <button type="button" class="action" data-toggle-all="friends">Deselect all (2)</button>
+      </div>
+      <div class="v5c-list" data-section="friends">
         <div class="v5c-row is-on">
           <span class="av muted">PS</span>
           <div><div class="v5c-name">Piper Sol</div><div class="v5c-handle">@pipersol</div></div>
@@ -159,14 +162,14 @@
     </div>
 
     <div class="v5c-cta">
-      <button type="button" class="primary">Invite Lake House (3)</button>
+      <button type="button" class="primary">Invite group (3)</button>
     </div>
   </div>
 </div>
 
 <script>
   (function () {
-    var scope = document.querySelector('.v5c-scope');
+    var scope = document.querySelector('.v5c-scope-friends');
     if (!scope) return;
     var chips = scope.querySelector('.v5c-chips');
     var cta = scope.querySelector('.v5c-cta .primary');
@@ -181,6 +184,20 @@
       return '<span class="mr-pp-chip-avatar is-initials">' + initials + '</span>';
     }
 
+    var toggleBtns = Array.prototype.slice.call(scope.querySelectorAll('[data-toggle-all]'));
+
+    function sectionRows(key) {
+      var list = scope.querySelector('.v5c-list[data-section="' + key + '"]');
+      return list ? Array.prototype.slice.call(list.querySelectorAll('.v5c-row')) : [];
+    }
+
+    function updateToggle(btn) {
+      var secRows = sectionRows(btn.getAttribute('data-toggle-all'));
+      var on = secRows.filter(function (r) { return r.classList.contains('is-on'); }).length;
+      var allOn = on === secRows.length && secRows.length > 0;
+      btn.textContent = (allOn ? 'Deselect all (' : 'Select all (') + (allOn ? on : secRows.length) + ')';
+    }
+
     function render() {
       var selected = rows.filter(function (r) { return r.classList.contains('is-on'); });
       chips.innerHTML = selected.map(function (r) {
@@ -190,7 +207,8 @@
           '<button type="button" class="mr-pp-chip-remove" aria-label="Remove"><i class="ph ph-x"></i></button>' +
           '</span>';
       }).join('');
-      cta.textContent = 'Invite Lake House (' + selected.length + ')';
+      cta.textContent = 'Invite group (' + selected.length + ')';
+      toggleBtns.forEach(updateToggle);
     }
 
     function setRow(row, on) {
@@ -205,6 +223,14 @@
     rows.forEach(function (row) {
       row.addEventListener('click', function () {
         setRow(row, !row.classList.contains('is-on'));
+      });
+    });
+
+    toggleBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var secRows = sectionRows(btn.getAttribute('data-toggle-all'));
+        var allOn = secRows.every(function (r) { return r.classList.contains('is-on'); }) && secRows.length > 0;
+        secRows.forEach(function (r) { setRow(r, !allOn); });
       });
     });
 
