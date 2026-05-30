@@ -182,6 +182,11 @@
       "layout": "row",
       "components": [
         {
+          "id": "mr-people-rows",
+          "file": "mixedroutes/people-rows.html",
+          "label": "Person list rows"
+        },
+        {
           "id": "mr-recent",
           "file": "mixedroutes/recent-activity.html",
           "label": "Recent activity"

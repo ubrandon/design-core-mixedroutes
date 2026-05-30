@@ -4208,6 +4208,54 @@
   color: var(--neon-teal);
 }
 
+/* Person list-item — full-width row with avatar, name/handle, trailing control */
+.mr-scope .mr-pp-row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.mr-scope .mr-pp-row.is-selected {
+  background: rgba(32, 224, 207, 0.09);
+}
+.mr-scope .mr-pp-row .mr-pp-row-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neon-teal);
+  color: #06080e;
+  font-weight: 900;
+}
+.mr-scope .mr-pp-row .mr-pp-row-avatar.is-initials {
+  background: #4a5462;
+  color: #fff;
+}
+.mr-scope .mr-pp-row .mr-pp-row-body {
+  min-width: 0;
+}
+.mr-scope .mr-pp-row .mr-pp-row-name {
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 850;
+  line-height: 1.15;
+}
+.mr-scope .mr-pp-row .mr-pp-row-handle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
 /* App-icon style group card for people picker (rounded-square thumbnail) */
 .mr-scope .mr-pp-group-card {
   flex: 0 0 auto;
