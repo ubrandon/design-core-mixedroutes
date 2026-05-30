@@ -259,14 +259,21 @@
     },
     {
       "file": "flex-mix-group-picked-vC.html",
-      "x": 384,
+      "x": 448,
       "y": 8352,
       "width": 390,
       "name": "add-outside-groups-vC-callout"
     },
     {
+      "file": "flex-mix-group-banner-vC.html",
+      "x": -32,
+      "y": 9632,
+      "width": 390,
+      "name": "add-outside-groups-vC-banner"
+    },
+    {
       "file": "flex-mix-group-picked-vC-outside-selected.html",
-      "x": 800,
+      "x": 864,
       "y": 8352,
       "width": 390,
       "name": "add-outside-groups-vC-friends-selected"
