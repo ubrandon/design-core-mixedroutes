@@ -24,8 +24,8 @@
   .pv-scope .pv-act { display: inline-flex; align-items: center; gap: 9px; padding: 14px 28px; border-radius: 999px; font-size: 1.05rem; font-weight: 700; cursor: pointer; border: 1.5px solid transparent; }
   .pv-scope .pv-act i { font-size: 19px; }
   .pv-scope .pv-act.chat { background: rgba(74,86,104,0.85); color: #fff; }
-  .pv-scope .pv-act.going { background: rgba(40,70,48,0.55); color: var(--pv-green); border-color: rgba(52,199,89,0.7); }
-  .pv-scope .pv-act.going i { color: var(--pv-green); }
+  .pv-scope .pv-act.going { background: rgba(40,70,48,0.55); color: #fff; border-color: var(--pv-green); }
+  .pv-scope .pv-act.going i { color: #fff; }
 
   .pv-scope .pv-body { padding: 0 20px 32px; }
 
@@ -86,6 +86,9 @@
   .pv-scope .pv-info .t1 { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; line-height: 1.1; }
   .pv-scope .pv-info .sub { font-size: 0.96rem; font-weight: 700; color: rgba(255,255,255,0.55); margin-top: 6px; }
 
+  .pv-scope .pv-place .pv-ph { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .pv-scope .pv-place .ph-go { width: 44px; height: 44px; border-radius: 13px; border: 0; background: rgba(255,255,255,0.1); color: #fff; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+  .pv-scope .pv-place .ph-go i { font-size: 20px; }
   .pv-scope .pv-place .t1 { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; line-height: 1.1; }
   .pv-scope .pv-place .addr { font-size: 0.96rem; color: rgba(255,255,255,0.55); margin-top: 7px; line-height: 1.4; display: inline-flex; align-items: center; gap: 7px; }
   .pv-scope .pv-place .addr i { font-size: 16px; }
@@ -108,7 +111,7 @@
   .pv-scope .pv-link .pv-link-body { min-width: 0; flex: 1; }
   .pv-scope .pv-link .pv-link-title { font-size: 1.1rem; font-weight: 800; color: #fff; }
   .pv-scope .pv-link .pv-link-url { font-size: 0.92rem; color: #4a9fff; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .pv-scope .pv-link .pv-link-ext { color: rgba(255,255,255,0.4); font-size: 18px; flex-shrink: 0; align-self: flex-start; }
+  .pv-scope .pv-link .pv-link-ext { color: rgba(255,255,255,0.4); font-size: 24px; flex-shrink: 0; align-self: center; }
 </style>
 
 <div class="mr-scope pv-scope">
@@ -171,8 +174,13 @@
       </div>
 
       <div class="pv-card pv-place">
-        <div class="t1">Casa Palma</div>
-        <div class="addr"><i class="ph-fill ph-map-pin"></i> 24 Shoreline Dr, Seaside</div>
+        <div class="pv-ph">
+          <div>
+            <div class="t1">Casa Palma</div>
+            <div class="addr"><i class="ph-fill ph-map-pin"></i> 24 Shoreline Dr, Seaside</div>
+          </div>
+          <button type="button" class="ph-go" aria-label="Directions"><i class="ph ph-navigation-arrow"></i></button>
+        </div>
         <div class="pv-rating">
           <span class="score">4.6</span>
           <span class="stars">
@@ -188,7 +196,7 @@
           <span class="road r2"></span>
           <span class="road r3"></span>
           <i class="ph-fill ph-map-pin pin"></i>
-          <span class="locate"><i class="ph-fill ph-navigation-arrow"></i></span>
+          <span class="locate"><i class="ph-fill ph-map-pin"></i></span>
           <span style="position:absolute; top:46%; left:53%; font-size:0.78rem; font-weight:700; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.7);">Casa Palma</span>
         </div>
       </div>
