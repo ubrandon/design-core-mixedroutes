@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .pm-scope { --pv-bg: #0a0f14; --pv-card: #161d27; --pv-card-2: #1a2230; --pv-green: #34c759; --pv-green-soft: rgba(52,199,89,0.16); --pv-red: #ff5a5f; }
+  .pm-scope, .pm-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
+  .pm-scope::-webkit-scrollbar, .pm-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .pm-scope .pv-wrap { background: var(--pv-bg); min-height: 844px; position: relative; padding-bottom: 96px; }
+
+  /* shorter, cleaner hero */
+  .pm-scope .pv-hero { position: relative; height: 300px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 0 22px 24px;
+    background-image: linear-gradient(180deg, rgba(10,15,20,0.35) 0%, rgba(10,15,20,0.05) 30%, rgba(10,15,20,0.6) 80%, var(--pv-bg) 100%), url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80");
+    background-size: cover; background-position: center; }
+
+  .pm-scope .pv-topbar { position: absolute; top: 18px; left: 16px; right: 16px; z-index: 2; display: flex; align-items: center; justify-content: space-between; }
+  .pm-scope .pv-topbar .right { display: flex; gap: 10px; }
+  .pm-scope .pv-iconbtn { width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(20,28,38,0.55); backdrop-filter: blur(8px); color: #fff; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .pm-scope .pv-iconbtn i { font-size: 20px; }
+
+  .pm-scope .pv-chip { background: rgba(20,28,38,0.7); backdrop-filter: blur(8px); color: #fff; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.05em; padding: 8px 16px; border-radius: 999px; }
+  .pm-scope .pv-event-title { margin-top: 12px; font-size: 2.35rem; font-weight: 800; color: #fff; text-align: left; letter-spacing: -0.02em; line-height: 1.05; text-shadow: 0 2px 16px rgba(0,0,0,0.5); }
+  .pm-scope .pv-event-sub { margin-top: 8px; font-size: 1rem; color: rgba(255,255,255,0.8); text-shadow: 0 1px 8px rgba(0,0,0,0.6); display: flex; align-items: center; gap: 7px; }
+  .pm-scope .pv-event-sub i { font-size: 17px; opacity: 0.8; }
+
+  .pm-scope .pv-body { padding: 0 20px 24px; }
+
+  /* RSVP summary chips moved up top, single line */
+  .pm-scope .pv-rsvprow { display: flex; align-items: center; gap: 10px; padding: 18px 2px 6px; }
+  .pm-scope .pv-stack { display: flex; align-items: center; }
+  .pm-scope .pv-avwrap { position: relative; display: inline-flex; margin-left: -12px; }
+  .pm-scope .pv-avwrap:first-child { margin-left: 0; }
+  .pm-scope .pv-stack .gav { width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--pv-bg); object-fit: cover; display: block; }
+  .pm-scope .pv-stack .gav.initials { background: #5a687c; color: #fff; font-size: 0.8rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+  .pm-scope .pv-rsvprow .meta { display: flex; flex-direction: column; }
+  .pm-scope .pv-rsvprow .meta .g { font-size: 1rem; font-weight: 800; color: #fff; }
+  .pm-scope .pv-rsvprow .meta .g b { color: var(--pv-green); }
+  .pm-scope .pv-rsvprow .meta .s { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1px; }
+  .pm-scope .pv-rsvprow .chev { margin-left: auto; color: rgba(255,255,255,0.4); font-size: 22px; }
+
+  .pm-scope .pv-desc { font-size: 1.05rem; line-height: 1.55; color: rgba(255,255,255,0.82); padding: 16px 2px 0; }
+  .pm-scope .pv-desc p { margin: 0; }
+
+  .pm-scope .pv-section-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 26px 2px 14px; letter-spacing: -0.01em; }
+
+  /* flat list rows, no heavy cards */
+  .pm-scope .pv-flat { background: rgba(26,34,48,0.5); border-radius: 18px; overflow: hidden; }
+  .pm-scope .pv-frow { display: flex; align-items: center; gap: 14px; padding: 16px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .pm-scope .pv-frow:last-child { border-bottom: 0; }
+  .pm-scope .pv-frow .ic { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .pm-scope .pv-frow .ic i { font-size: 21px; color: rgba(255,255,255,0.8); }
+  .pm-scope .pv-frow .t1 { font-size: 1.02rem; font-weight: 700; color: #fff; }
+  .pm-scope .pv-frow .t2 { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .pm-scope .pv-frow .chev { margin-left: auto; color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+
+  /* sticky bottom RSVP bar */
+  .pm-scope .pv-rsvpbar { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px 22px; background: linear-gradient(180deg, rgba(10,15,20,0) 0%, var(--pv-bg) 32%); display: flex; gap: 10px; }
+  .pm-scope .pv-rb { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px; border-radius: 14px; font-size: 1.02rem; font-weight: 800; cursor: pointer; border: 1.5px solid transparent; }
+  .pm-scope .pv-rb i { font-size: 19px; }
+  .pm-scope .pv-rb.going { background: var(--pv-green); color: #06120a; flex: 1.6; }
+  .pm-scope .pv-rb.maybe { background: rgba(255,255,255,0.08); color: #fff; }
+  .pm-scope .pv-rb.chat { background: rgba(74,86,104,0.85); color: #fff; flex: 0 0 54px; padding: 15px 0; }
+</style>
+
+<div class="mr-scope pm-scope">
+  <div class="pv-wrap">
+
+    <div class="pv-hero">
+      <div class="pv-topbar">
+        <button type="button" class="pv-iconbtn" aria-label="Back"><i class="ph ph-arrow-left"></i></button>
+        <div class="right">
+          <button type="button" class="pv-iconbtn" aria-label="Share"><i class="ph ph-share-network"></i></button>
+          <button type="button" class="pv-iconbtn" aria-label="More"><i class="ph ph-dots-three-vertical"></i></button>
+        </div>
+      </div>
+
+      <div class="pv-chip">JUN 7 - JUN 14</div>
+      <div class="pv-event-title">Friends Trip</div>
+      <div class="pv-event-sub"><i class="ph-fill ph-map-pin"></i> Casa Palma, Seaside</div>
+    </div>
+
+    <div class="pv-body">
+
+      <div class="pv-rsvprow">
+        <div class="pv-stack">
+          <span class="pv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=12" alt="" /></span>
+          <span class="pv-avwrap"><span class="gav initials">MG</span></span>
+          <span class="pv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=32" alt="" /></span>
+          <span class="pv-avwrap"><span class="gav initials">AM</span></span>
+        </div>
+        <div class="meta">
+          <div class="g"><b>4 going</b> · 6 maybe</div>
+          <div class="s">10 invited</div>
+        </div>
+        <i class="ph ph-caret-right chev"></i>
+      </div>
+
+      <div class="pv-desc">
+        <p>A whole week away with the crew. The beach house is booked, so let me know if these dates work.</p>
+      </div>
+
+      <div class="pv-section-title">Details</div>
+      <div class="pv-flat">
+        <div class="pv-frow">
+          <span class="ic"><i class="ph-fill ph-calendar-blank"></i></span>
+          <div><div class="t1">Sat, Jun 7 - Sat, Jun 14</div><div class="t2">7 nights · check-in 3 PM</div></div>
+        </div>
+        <div class="pv-frow">
+          <span class="ic"><i class="ph-fill ph-map-pin"></i></span>
+          <div><div class="t1">Casa Palma beach house</div><div class="t2">24 Shoreline Dr, Seaside · 4.6 ★</div></div>
+          <i class="ph ph-caret-right chev"></i>
+        </div>
+        <div class="pv-frow">
+          <span class="ic"><i class="ph-fill ph-link-simple"></i></span>
+          <div><div class="t1">Event page</div><div class="t2">communitynewspapers.com</div></div>
+          <i class="ph ph-arrow-square-out chev"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pv-rsvpbar">
+      <button type="button" class="pv-rb chat" aria-label="Chat"><i class="ph-fill ph-chat-circle"></i></button>
+      <button type="button" class="pv-rb maybe">Maybe</button>
+      <button type="button" class="pv-rb going"><i class="ph-fill ph-check-circle"></i> Going</button>
+    </div>
+
+  </div>
+</div>
