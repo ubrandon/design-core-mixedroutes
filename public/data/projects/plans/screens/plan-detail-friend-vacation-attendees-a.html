@@ -6,14 +6,15 @@
   .av-scope { --pv-bg: #0a0f14; --pv-card: #161d27; --pv-card-2: #1a2230; --pv-green: #34c759; --pv-green-soft: rgba(52,199,89,0.16); --pv-amber: #f5b400; --pv-red: #ff5a5f; }
   .av-scope, .av-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
   .av-scope::-webkit-scrollbar, .av-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
-  .av-scope .av-wrap { background: var(--pv-bg); min-height: 844px; padding: 26px 20px; display: flex; align-items: center; }
+  .av-scope .av-wrap { background: var(--pv-bg); padding: 24px 20px; }
 
   /* Same card frame as the original */
   .av-scope .pv-card { background: rgba(26,34,48,0.6); border-radius: 20px; padding: 20px 18px; width: 100%; }
 
   /* Header: host avatar + privacy + share, inside the card */
-  .av-scope .av-head { display: flex; align-items: center; gap: 13px; margin-bottom: 16px; }
-  .av-scope .av-head .ha { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .av-scope .av-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .av-scope .av-head .ic { width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.07); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .av-scope .av-head .ic i { font-size: 24px; color: rgba(255,255,255,0.85); }
   .av-scope .av-head .ht { flex: 1; min-width: 0; }
   .av-scope .av-head .ht .t1 { font-size: 1.1rem; font-weight: 800; color: #fff; }
   .av-scope .av-head .ht .t2 { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 2px; display: inline-flex; align-items: center; gap: 6px; }
@@ -52,7 +53,7 @@
     <div class="pv-card">
 
       <div class="av-head">
-        <img class="ha" src="https://i.pravatar.cc/120?img=12" alt="" />
+        <span class="ic"><i class="ph-fill ph-users-three"></i></span>
         <div class="ht">
           <div class="t1">10 guests</div>
           <div class="t2"><i class="ph-fill ph-lock-simple"></i> Private &middot; hosted by Brandon</div>

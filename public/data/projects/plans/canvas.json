@@ -14,44 +14,50 @@
     },
     {
       "file": "plan-detail-friend-vacation-attendees-a.html",
-      "x": 896,
+      "x": 1984,
       "y": 0,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-b.html",
-      "x": 1344,
-      "y": 0,
+      "x": 1984,
+      "y": 576,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-c.html",
-      "x": 1792,
+      "x": 1568,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "plan-detail-friend-vacation-cards-restyle.html",
+      "x": 1088,
       "y": 0,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-minimal.html",
-      "x": 2240,
-      "y": 0,
+      "x": 0,
+      "y": 1824,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-cost.html",
-      "x": 2688,
-      "y": 0,
+      "x": 0,
+      "y": 2912,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-itinerary.html",
-      "x": 3136,
-      "y": 0,
+      "x": 448,
+      "y": 2912,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-checklist.html",
-      "x": 3584,
-      "y": 0,
+      "x": 896,
+      "y": 2912,
       "width": 390
     }
   ]
