@@ -25,6 +25,13 @@
       "width": 390
     },
     {
+      "file": "plan-detail-friend-vacation-attendees-d.html",
+      "x": 2496,
+      "y": 0,
+      "width": 390,
+      "name": "plan-detail-attendees-final"
+    },
+    {
       "file": "plan-detail-friend-vacation-attendees-c.html",
       "x": 1664,
       "y": 0,
@@ -75,7 +82,7 @@
       "size": 48
     },
     {
-      "text": "Attendees",
+      "text": "Attendee exploration",
       "x": 1664,
       "y": -96,
       "size": 48
