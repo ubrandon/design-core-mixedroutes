@@ -8,7 +8,7 @@
     },
     {
       "file": "plan-detail-friend-vacation-group.html",
-      "x": 448,
+      "x": 416,
       "y": 0,
       "width": 390
     },
@@ -32,7 +32,7 @@
     },
     {
       "file": "plan-detail-friend-vacation-cards-restyle.html",
-      "x": 1088,
+      "x": 1152,
       "y": 0,
       "width": 390
     },
@@ -59,6 +59,14 @@
       "x": 896,
       "y": 2912,
       "width": 390
+    }
+  ],
+  "texts": [
+    {
+      "text": "Current designs",
+      "x": 0,
+      "y": -96,
+      "size": 48
     }
   ]
 }
