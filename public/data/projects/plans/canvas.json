@@ -16,100 +16,129 @@
     },
     {
       "file": "plan-detail-friend-vacation-attendees-a.html",
-      "x": 1472,
-      "y": 1920,
+      "x": 928,
+      "y": 3616,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-b.html",
-      "x": 1472,
-      "y": 2496,
+      "x": 928,
+      "y": 4192,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-d.html",
-      "x": 1888,
-      "y": 1920,
+      "x": 1344,
+      "y": 3616,
       "width": 390,
       "name": "plan-detail-attendees-final"
     },
     {
       "file": "plan-detail-friend-vacation-attendees-h.html",
-      "x": 1888,
-      "y": 2336,
+      "x": 1344,
+      "y": 4032,
       "width": 390,
       "name": "plan-detail-attendees-rsvp-states"
     },
     {
       "file": "plan-detail-friend-vacation-attendees-c.html",
-      "x": 1056,
-      "y": 1920,
+      "x": 512,
+      "y": 3616,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-cards-restyle.html",
-      "x": 544,
-      "y": 1920,
-      "width": 390
-    },
-    {
-      "file": "plan-detail-friend-vacation-minimal.html",
       "x": 0,
-      "y": 1920,
+      "y": 3616,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-cost.html",
-      "x": 0,
-      "y": 4064,
+      "x": 32,
+      "y": 5376,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-itinerary.html",
-      "x": 448,
-      "y": 4064,
+      "x": 480,
+      "y": 5376,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-checklist.html",
-      "x": 896,
-      "y": 4064,
+      "x": 928,
+      "y": 5376,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-d-copy.html",
-      "x": 2528,
-      "y": 1920,
+      "x": 1888,
+      "y": 3616,
       "width": 390,
       "name": "plan-detail-attendees-final-going"
     },
     {
       "file": "plan-detail-friend-vacation-attendees-noreply.html",
-      "x": 2528,
-      "y": 2624,
+      "x": 1888,
+      "y": 4320,
       "width": 390,
       "name": "plan-detail-attendees-final-noreply"
     },
     {
       "file": "plan-detail-friend-vacation-attendees-notgoing.html",
-      "x": 2528,
-      "y": 2272,
+      "x": 1888,
+      "y": 3968,
       "width": 390,
       "name": "plan-detail-attendees-final-notgoing"
     },
     {
       "file": "plan-detail-friend-vacation-attendees-friends2.html",
-      "x": 2976,
-      "y": 1920,
+      "x": 2336,
+      "y": 3616,
       "width": 390,
       "name": "plan-detail-attendees-final-friends"
     },
     {
       "file": "plan-detail-friend-vacation-attendees-public2.html",
-      "x": 2976,
-      "y": 2272,
+      "x": 2336,
+      "y": 3968,
       "width": 390,
       "name": "plan-detail-attendees-final-public"
+    },
+    {
+      "file": "plan-detail-friend-vacation-attendees-maybe.html",
+      "x": 2336,
+      "y": 4320,
+      "width": 390,
+      "name": "plan-detail-attendees-final-maybe"
+    },
+    {
+      "file": "plan-detail-friend-vacation-attendees-empty.html",
+      "x": 2784,
+      "y": 3616,
+      "width": 390,
+      "name": "plan-detail-attendees-final-empty"
+    },
+    {
+      "file": "plan-detail-friend-vacation-copy.html",
+      "x": 0,
+      "y": 1920,
+      "width": 390,
+      "name": "plan-detail-friends Copy"
+    },
+    {
+      "file": "plan-detail-friend-vacation-copy2.html",
+      "x": 544,
+      "y": 1920,
+      "width": 390,
+      "name": "plan-detail-friends Copy 2"
+    },
+    {
+      "file": "plan-detail-friend-vacation-copy3.html",
+      "x": 960,
+      "y": 1920,
+      "width": 390,
+      "name": "plan-detail-friends Copy 3"
     }
   ],
   "texts": [
@@ -121,25 +150,19 @@
     },
     {
       "text": "Card styles",
-      "x": 544,
-      "y": 1824,
+      "x": 0,
+      "y": 3520,
       "size": 48
     },
     {
       "text": "Attendee explorations",
-      "x": 1056,
-      "y": 1824,
+      "x": 512,
+      "y": 3520,
       "size": 48
     },
     {
       "text": "Plan layouts",
       "x": 0,
-      "y": 1824,
-      "size": 48
-    },
-    {
-      "text": "New attendee",
-      "x": 2528,
       "y": 1824,
       "size": 48
     }
