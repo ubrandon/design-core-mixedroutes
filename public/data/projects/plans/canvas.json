@@ -1,0 +1,16 @@
+{
+  "screens": [
+    {
+      "file": "plan-detail-friend-vacation.html",
+      "x": 0,
+      "y": 0,
+      "width": 390
+    },
+    {
+      "file": "plan-detail-friend-vacation-group.html",
+      "x": 448,
+      "y": 0,
+      "width": 390
+    }
+  ]
+}

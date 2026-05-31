@@ -42,6 +42,12 @@
       "name": "People Picker",
       "description": "",
       "createdAt": "2026-05-27T01:22:21.619Z"
+    },
+    {
+      "id": "plans",
+      "name": "Plans",
+      "description": "",
+      "createdAt": "2026-05-31T06:29:00.000Z"
     }
   ]
 }
