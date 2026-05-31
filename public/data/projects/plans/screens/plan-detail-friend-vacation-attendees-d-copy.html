@@ -20,7 +20,8 @@
   .dv-scope .dv-head .sh i { font-size: 19px; }
 
   /* Going / maybe / out summary, no progress bar */
-  .dv-scope .dv-summary { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; }
+  .dv-scope .dv-summary { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; cursor: pointer; }
+  .dv-scope .dv-summary .sum-chev { margin-left: auto; color: rgba(255,255,255,0.4); font-size: 20px; flex-shrink: 0; }
   .dv-scope .dv-summary .seg { display: inline-flex; align-items: center; gap: 7px; font-size: 0.92rem; font-weight: 700; color: rgba(255,255,255,0.85); }
   .dv-scope .dv-summary .seg .d { width: 8px; height: 8px; border-radius: 50%; }
   .dv-scope .dv-summary .seg .d.go { background: var(--pv-green); }
@@ -81,26 +82,10 @@
         <button type="button" class="sh" aria-label="Share"><i class="ph ph-share-network"></i></button>
       </div>
 
-      <div class="dv-guestbar">
-        <div class="dv-stack">
-          <span class="dv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=12" alt="" /><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="dv-avwrap"><span class="gav initials">MG</span><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="dv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=32" alt="" /><span class="badge"><i class="ph-fill ph-check"></i></span></span>
-          <span class="dv-avwrap"><img class="gav" src="https://i.pravatar.cc/120?img=45" alt="" /></span>
-        </div>
-        <div class="dv-guest-meta">
-          <div class="txt">
-            <div class="n">10 guests</div>
-            <div class="s">View and invite</div>
-          </div>
-          <i class="ph ph-caret-right chev"></i>
-        </div>
-      </div>
-
       <div class="dv-summary">
         <span class="seg"><span class="d go"></span><b data-count="going">4</b> going</span>
         <span class="seg"><span class="d mb"></span><b data-count="maybe">6</b> maybe</span>
-        <span class="seg"><span class="d no"></span><b data-count="out">0</b> out</span>
+        <i class="ph ph-caret-right sum-chev"></i>
       </div>
 
       <div class="dv-rsvp" data-state="going">
