@@ -14,25 +14,25 @@
     },
     {
       "file": "plan-detail-friend-vacation-attendees-a.html",
-      "x": 1984,
+      "x": 2080,
       "y": 0,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-b.html",
-      "x": 1984,
+      "x": 2080,
       "y": 576,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-attendees-c.html",
-      "x": 1568,
+      "x": 1664,
       "y": 0,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-cards-restyle.html",
-      "x": 1152,
+      "x": 1088,
       "y": 0,
       "width": 390
     },
@@ -45,19 +45,19 @@
     {
       "file": "plan-detail-friend-vacation-cost.html",
       "x": 0,
-      "y": 2912,
+      "y": 3040,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-itinerary.html",
       "x": 448,
-      "y": 2912,
+      "y": 3040,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-checklist.html",
       "x": 896,
-      "y": 2912,
+      "y": 3040,
       "width": 390
     }
   ],
@@ -66,6 +66,24 @@
       "text": "Current designs",
       "x": 0,
       "y": -96,
+      "size": 48
+    },
+    {
+      "text": "New cards",
+      "x": 1088,
+      "y": -96,
+      "size": 48
+    },
+    {
+      "text": "Attendees",
+      "x": 1664,
+      "y": -96,
+      "size": 48
+    },
+    {
+      "text": "Alt plan layouts",
+      "x": 0,
+      "y": 1728,
       "size": 48
     }
   ]
