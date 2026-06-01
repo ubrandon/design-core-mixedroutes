@@ -8,9 +8,47 @@
     },
     {
       "file": "plans-upcoming-banner.html",
-      "x": 450,
+      "x": 512,
       "y": 0,
       "width": 390
+    },
+    {
+      "file": "plans-invites-review.html",
+      "x": 0,
+      "y": 1472,
+      "width": 390
+    },
+    {
+      "file": "plans-invites-sheet.html",
+      "x": 960,
+      "y": 0,
+      "width": 390
+    }
+  ],
+  "texts": [
+    {
+      "text": "Current design",
+      "x": 0,
+      "y": -96,
+      "size": 48
+    },
+    {
+      "text": "New layout",
+      "x": 512,
+      "y": -96,
+      "size": 48
+    },
+    {
+      "text": "Invites",
+      "x": 960,
+      "y": -96,
+      "size": 48
+    },
+    {
+      "text": "Explorations",
+      "x": 0,
+      "y": 1376,
+      "size": 48
     }
   ]
 }

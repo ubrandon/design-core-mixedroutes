@@ -1,0 +1,260 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .invrev-scope, .invrev-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
+  .invrev-scope::-webkit-scrollbar, .invrev-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+  .invrev-scope .ivr-wrap { background: var(--bg-0); min-height: 844px; position: relative; display: flex; flex-direction: column; }
+
+  .invrev-scope .ivr-nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 16px 6px; }
+  .invrev-scope .ivr-back { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 0; cursor: pointer; background: rgba(255,255,255,0.06); color: var(--text); font-size: 18px; }
+  .invrev-scope .ivr-nav-title { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+  .invrev-scope .ivr-skip-all { font-size: 0.86rem; font-weight: 700; color: rgba(255,255,255,0.55); background: none; border: 0; cursor: pointer; }
+
+  .invrev-scope .ivr-progress { display: flex; gap: 6px; padding: 8px 16px 4px; }
+  .invrev-scope .ivr-progress-seg { flex: 1; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.12); transition: background 0.2s; }
+  .invrev-scope .ivr-progress-seg.is-active { background: var(--neon-teal); }
+  .invrev-scope .ivr-progress-seg.is-done { background: rgba(var(--neon-teal-rgb), 0.4); }
+
+  .invrev-scope .ivr-count { padding: 12px 16px 2px; font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.5); }
+
+  .invrev-scope .ivr-stage { flex: 1; position: relative; padding: 6px 16px 0; }
+
+  .invrev-scope .ivr-card { position: relative; border-radius: 24px; overflow: hidden; background: var(--bg-1, #11151c); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+  .invrev-scope .ivr-card.is-behind { position: absolute; top: 18px; left: 28px; right: 28px; z-index: -1; opacity: 0.5; transform: scale(0.97); }
+  .invrev-scope .ivr-card.is-behind-2 { top: 30px; left: 40px; right: 40px; opacity: 0.28; transform: scale(0.94); }
+
+  .invrev-scope .ivr-hero { position: relative; height: 224px; }
+  .invrev-scope .ivr-hero-img { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .invrev-scope .ivr-hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.55) 78%, rgba(0,0,0,0.82)); }
+  .invrev-scope .ivr-hero-from { position: absolute; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; background: rgba(0,0,0,0.42); backdrop-filter: blur(6px); }
+  .invrev-scope .ivr-hero-from img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; }
+  .invrev-scope .ivr-hero-from span { font-size: 0.82rem; font-weight: 700; color: #fff; }
+  .invrev-scope .ivr-hero-when { position: absolute; left: 16px; bottom: 14px; right: 16px; }
+  .invrev-scope .ivr-hero-eyebrow { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--neon-teal); }
+  .invrev-scope .ivr-hero-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.15; margin-top: 3px; }
+
+  .invrev-scope .ivr-body { padding: 16px; }
+  .invrev-scope .ivr-meta-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; }
+  .invrev-scope .ivr-meta-row i { font-size: 19px; color: rgba(255,255,255,0.55); width: 22px; text-align: center; flex-shrink: 0; }
+  .invrev-scope .ivr-meta-row .ivr-meta-text { font-size: 0.92rem; color: rgba(255,255,255,0.85); }
+  .invrev-scope .ivr-meta-row .ivr-meta-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+  .invrev-scope .ivr-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 10px 0; }
+
+  .invrev-scope .ivr-going { display: flex; align-items: center; gap: 10px; padding: 4px 0 2px; }
+  .invrev-scope .ivr-going-stack { display: flex; }
+  .invrev-scope .ivr-going-stack img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-1, #11151c); margin-left: -8px; }
+  .invrev-scope .ivr-going-stack img:first-child { margin-left: 0; }
+  .invrev-scope .ivr-going-text { font-size: 0.84rem; color: rgba(255,255,255,0.6); }
+  .invrev-scope .ivr-going-text b { color: rgba(255,255,255,0.85); font-weight: 700; }
+
+  .invrev-scope .ivr-note { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); }
+  .invrev-scope .ivr-note-from { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.55); margin-bottom: 3px; }
+  .invrev-scope .ivr-note-text { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.4; }
+
+  .invrev-scope .ivr-actions { display: flex; align-items: center; gap: 10px; padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); }
+  .invrev-scope .ivr-act { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 0; border-radius: 16px; font-size: 0.98rem; font-weight: 800; cursor: pointer; border: 1px solid transparent; }
+  .invrev-scope .ivr-act i { font-size: 19px; }
+  .invrev-scope .ivr-act-decline { flex: 0 0 56px; padding: 15px 0; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+  .invrev-scope .ivr-act-maybe { background: #162433; border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.92); }
+  .invrev-scope .ivr-act-accept { flex: 1.4; background: linear-gradient(135deg, #24b8aa, #4c87cf); color: #fff; }
+
+  .invrev-scope .ivr-done { display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; flex: 1; padding: 0 32px; }
+  .invrev-scope .ivr-done.is-shown { display: flex; }
+  .invrev-scope .ivr-done-emoji { font-size: 52px; }
+  .invrev-scope .ivr-done-title { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-top: 14px; }
+  .invrev-scope .ivr-done-sub { font-size: 0.92rem; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.4; }
+  .invrev-scope .ivr-done-btn { margin-top: 24px; padding: 14px 28px; border-radius: 999px; border: 0; cursor: pointer; background: linear-gradient(135deg, #24b8aa, #4c87cf); color: #fff; font-size: 1rem; font-weight: 800; }
+</style>
+
+<div class="invrev-scope mr-scope">
+  <div class="ivr-wrap">
+    <div class="ivr-nav">
+      <button type="button" class="ivr-back" aria-label="Back"><i class="ph ph-caret-left" aria-hidden="true"></i></button>
+      <div class="ivr-nav-title">Invites</div>
+      <button type="button" class="ivr-skip-all">Decide later</button>
+    </div>
+
+    <div class="ivr-progress" aria-hidden="true">
+      <div class="ivr-progress-seg is-active"></div>
+      <div class="ivr-progress-seg"></div>
+      <div class="ivr-progress-seg"></div>
+    </div>
+
+    <div class="ivr-count"><span class="ivr-count-num">1</span> of 3</div>
+
+    <div class="ivr-stage">
+      <div class="ivr-card is-behind is-behind-2" aria-hidden="true">
+        <div class="ivr-hero" style="height: 120px"><div class="ivr-hero-img" style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=70)"></div></div>
+      </div>
+      <div class="ivr-card is-behind" aria-hidden="true">
+        <div class="ivr-hero" style="height: 120px"><div class="ivr-hero-img" style="background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&q=70)"></div></div>
+      </div>
+
+      <div class="ivr-card ivr-card-top">
+        <div class="ivr-hero">
+          <div class="ivr-hero-img" style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=720&q=80)"></div>
+          <div class="ivr-hero-shade"></div>
+          <div class="ivr-hero-from">
+            <img src="https://i.pravatar.cc/48?img=32" alt="" />
+            <span>Maya invited you</span>
+          </div>
+          <div class="ivr-hero-when">
+            <div class="ivr-hero-eyebrow">Sat, Jun 6 · 7:30 PM</div>
+            <div class="ivr-hero-title">Rooftop Dinner Party</div>
+          </div>
+        </div>
+
+        <div class="ivr-body">
+          <div class="ivr-meta-row">
+            <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
+            <div>
+              <div class="ivr-meta-text">The Highline Rooftop</div>
+              <div class="ivr-meta-sub">12 min away · Downtown</div>
+            </div>
+          </div>
+          <div class="ivr-meta-row">
+            <i class="ph-fill ph-clock" aria-hidden="true"></i>
+            <div class="ivr-meta-text">7:30 PM – 11:00 PM</div>
+          </div>
+
+          <div class="ivr-divider"></div>
+
+          <div class="ivr-going">
+            <div class="ivr-going-stack" aria-hidden="true">
+              <img src="https://i.pravatar.cc/48?img=12" alt="" />
+              <img src="https://i.pravatar.cc/48?img=45" alt="" />
+              <img src="https://i.pravatar.cc/48?img=5" alt="" />
+            </div>
+            <div class="ivr-going-text"><b>Jordan, Sam, +4</b> are going</div>
+          </div>
+
+          <div class="ivr-note">
+            <div class="ivr-note-from">Note from Maya</div>
+            <div class="ivr-note-text">Bring a bottle if you can! Starting with drinks then dinner around 8.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ivr-actions">
+      <button type="button" class="ivr-act ivr-act-decline" aria-label="Decline"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <button type="button" class="ivr-act ivr-act-maybe"><i class="ph ph-question" aria-hidden="true"></i> Maybe</button>
+      <button type="button" class="ivr-act ivr-act-accept"><i class="ph-fill ph-check" aria-hidden="true"></i> I'm in</button>
+    </div>
+
+    <div class="ivr-done">
+      <div class="ivr-done-emoji">🎉</div>
+      <div class="ivr-done-title">All caught up</div>
+      <div class="ivr-done-sub">You've replied to every invite. Your plans are updated.</div>
+      <button type="button" class="ivr-done-btn">Back to Plans</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const scope = document.querySelector('.invrev-scope');
+    if (!scope) return;
+
+    const invites = [
+      {
+        from: 'Maya', avatar: 'https://i.pravatar.cc/48?img=32',
+        img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=720&q=80',
+        eyebrow: 'Sat, Jun 6 · 7:30 PM', title: 'Rooftop Dinner Party',
+        place: 'The Highline Rooftop', placeSub: '12 min away · Downtown', time: '7:30 PM – 11:00 PM',
+        going: '<b>Jordan, Sam, +4</b> are going',
+        goingImgs: ['https://i.pravatar.cc/48?img=12','https://i.pravatar.cc/48?img=45','https://i.pravatar.cc/48?img=5'],
+        note: 'Bring a bottle if you can! Starting with drinks then dinner around 8.'
+      },
+      {
+        from: 'Theo', avatar: 'https://i.pravatar.cc/48?img=15',
+        img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=720&q=80',
+        eyebrow: 'Sun, Jun 7 · 10:00 AM', title: 'Morning Trail Run',
+        place: 'Riverside Park Loop', placeSub: '8 min away · East Side', time: '10:00 AM – 11:30 AM',
+        going: '<b>Priya, Alex</b> are going',
+        goingImgs: ['https://i.pravatar.cc/48?img=20','https://i.pravatar.cc/48?img=8'],
+        note: 'Easy pace, all levels welcome. Coffee after!'
+      },
+      {
+        from: 'Renee', avatar: 'https://i.pravatar.cc/48?img=47',
+        img: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=720&q=80',
+        eyebrow: 'Fri, Jun 12 · 8:00 PM', title: 'Game Night',
+        place: "Renee's Place", placeSub: '20 min away · Westgate', time: '8:00 PM – late',
+        going: '<b>Sam, Devon, +2</b> are going',
+        goingImgs: ['https://i.pravatar.cc/48?img=45','https://i.pravatar.cc/48?img=60'],
+        note: 'Snacks provided. Bring your favorite party game!'
+      }
+    ];
+
+    let idx = 0;
+    const total = invites.length;
+
+    const stage = scope.querySelector('.ivr-stage');
+    const topCard = scope.querySelector('.ivr-card-top');
+    const actions = scope.querySelector('.ivr-actions');
+    const done = scope.querySelector('.ivr-done');
+    const countNum = scope.querySelector('.ivr-count-num');
+    const segs = scope.querySelectorAll('.ivr-progress-seg');
+
+    function render() {
+      const inv = invites[idx];
+      countNum.textContent = idx + 1;
+      segs.forEach(function (s, i) {
+        s.classList.toggle('is-active', i === idx);
+        s.classList.toggle('is-done', i < idx);
+      });
+      topCard.querySelector('.ivr-hero-img').style.backgroundImage = 'url(' + inv.img + ')';
+      topCard.querySelector('.ivr-hero-from img').src = inv.avatar;
+      topCard.querySelector('.ivr-hero-from span').textContent = inv.from + ' invited you';
+      topCard.querySelector('.ivr-hero-eyebrow').textContent = inv.eyebrow;
+      topCard.querySelector('.ivr-hero-title').textContent = inv.title;
+      const metas = topCard.querySelectorAll('.ivr-meta-row');
+      metas[0].querySelector('.ivr-meta-text').textContent = inv.place;
+      metas[0].querySelector('.ivr-meta-sub').textContent = inv.placeSub;
+      metas[1].querySelector('.ivr-meta-text').textContent = inv.time;
+      topCard.querySelector('.ivr-going-text').innerHTML = inv.going;
+      const stackImgs = topCard.querySelectorAll('.ivr-going-stack img');
+      stackImgs.forEach(function (img, i) {
+        if (inv.goingImgs[i]) { img.style.display = ''; img.src = inv.goingImgs[i]; }
+        else { img.style.display = 'none'; }
+      });
+      topCard.querySelector('.ivr-note-from').textContent = 'Note from ' + inv.from;
+      topCard.querySelector('.ivr-note-text').textContent = inv.note;
+    }
+
+    function advance() {
+      idx++;
+      if (idx >= total) {
+        stage.style.display = 'none';
+        actions.style.display = 'none';
+        scope.querySelector('.ivr-progress').style.display = 'none';
+        scope.querySelector('.ivr-count').style.display = 'none';
+        done.classList.add('is-shown');
+        return;
+      }
+      topCard.style.transition = 'transform 0.18s ease, opacity 0.18s ease';
+      topCard.style.transform = 'translateY(14px)';
+      topCard.style.opacity = '0';
+      setTimeout(function () {
+        render();
+        topCard.style.transition = 'none';
+        topCard.style.transform = 'translateY(-10px)';
+        requestAnimationFrame(function () {
+          topCard.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+          topCard.style.transform = 'translateY(0)';
+          topCard.style.opacity = '1';
+        });
+      }, 170);
+    }
+
+    actions.querySelectorAll('.ivr-act').forEach(function (btn) {
+      btn.addEventListener('click', advance);
+    });
+
+    render();
+  })();
+</script>
