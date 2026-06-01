@@ -3,40 +3,56 @@
 <link rel="stylesheet" href="../../../../data/design-system/company.css" />
 
 <style>
-  .cal-scope, .cal-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
-  .cal-scope::-webkit-scrollbar, .cal-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .calb-scope, .calb-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
+  .calb-scope::-webkit-scrollbar, .calb-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
-  .cal-scope .cal-wrap { background: var(--bg-0); min-height: 844px; position: relative; padding-bottom: 12px; }
+  .calb-scope .cal-wrap { background: var(--bg-0); min-height: 844px; position: relative; padding-bottom: 12px; }
 
-  .cal-scope .cal-top { display: flex; align-items: center; justify-content: space-between; padding: 22px 16px 14px; }
-  .cal-scope .cal-title { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
-  .cal-scope .cal-top-actions { display: flex; align-items: center; gap: 16px; }
-  .cal-scope .cal-top-actions i { font-size: 22px; color: rgba(255,255,255,0.85); cursor: pointer; }
+  .calb-scope .cal-top { display: flex; align-items: center; justify-content: space-between; padding: 22px 16px 14px; }
+  .calb-scope .cal-title { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+  .calb-scope .cal-top-actions { display: flex; align-items: center; gap: 16px; }
+  .calb-scope .cal-top-actions i { font-size: 22px; color: rgba(255,255,255,0.85); cursor: pointer; }
 
-  .cal-scope .cal-filters { display: flex; gap: 8px; overflow-x: auto; flex-wrap: nowrap; padding: 4px 16px 16px; }
-  .cal-scope .cal-filters .mr-chip { flex: 0 0 auto; white-space: nowrap; cursor: pointer; }
-  .cal-scope .cal-filters .mr-chip i { font-size: 15px; }
+  .calb-scope .cal-filters { display: flex; gap: 8px; overflow-x: auto; flex-wrap: nowrap; padding: 4px 16px 16px; }
+  .calb-scope .cal-filters .mr-chip { flex: 0 0 auto; white-space: nowrap; cursor: pointer; }
+  .calb-scope .cal-filters .mr-chip i { font-size: 15px; }
 
-  .cal-scope .cal-section { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text); padding: 16px 16px 12px; }
+  .calb-scope .calb-invite { margin: 0 16px 4px; border-radius: 20px; padding: 18px; display: flex; gap: 14px; align-items: center; cursor: pointer;
+    background: linear-gradient(135deg, rgba(var(--neon-teal-rgb), 0.22), rgba(var(--neon-blue-rgb), 0.08)), var(--bg-0);
+    border: 1px solid rgba(var(--neon-teal-rgb), 0.36); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32); }
+  .calb-scope .calb-invite-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; flex-shrink: 0;
+    background: linear-gradient(150deg, #67c7ee, #6aa3f5); box-shadow: 0 6px 16px rgba(70,160,232,0.4); }
+  .calb-scope .calb-invite-body { flex: 1; min-width: 0; }
+  .calb-scope .calb-invite-title { font-size: 1.02rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+  .calb-scope .calb-invite-desc { font-size: 0.84rem; color: rgba(255,255,255,0.7); margin-top: 3px; line-height: 1.3; }
+  .calb-scope .calb-invite-cta { display: inline-flex; align-items: center; gap: 4px; font-size: 0.9rem; font-weight: 800; color: var(--neon-teal); background: none; border: none; padding: 4px 0; flex-shrink: 0; cursor: pointer; }
+  .calb-scope .calb-invite-cta i { font-size: 16px; }
 
-  .cal-scope .cal-list { padding: 0 16px; }
-  .cal-scope .cal-list .mr-plan-rows { max-width: none; margin-bottom: 14px; }
-  .cal-scope .mr-plan-row-title { line-height: 1.25; }
-  .cal-scope .mr-plan-row-meta { flex-wrap: nowrap; }
-  .cal-scope .mr-plan-row-when-where-item { min-width: 0; }
-  .cal-scope .mr-plan-row-when-where-item span { white-space: nowrap; }
+  .calb-scope .cal-section { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text); padding: 16px 16px 12px; }
 
-  .cal-scope .cal-newplan { position: fixed; right: 16px; bottom: 92px; z-index: 8; display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; border: 0; cursor: pointer;
-    background: linear-gradient(120deg, #46c7e8, #6aa9f5); color: #fff; font-size: 1rem; font-weight: 800; box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
-  .cal-scope .cal-newplan i { font-size: 19px; }
+  .calb-scope .cal-list { padding: 0 16px; }
+  .calb-scope .cal-list .mr-plan-rows { max-width: none; margin-bottom: 14px; }
+  .calb-scope .mr-plan-row-title { line-height: 1.25; }
+  .calb-scope .mr-plan-row-meta { flex-wrap: nowrap; }
+  .calb-scope .mr-plan-row-when-where-item { min-width: 0; }
+  .calb-scope .mr-plan-row-when-where-item span { white-space: nowrap; }
 
-  .cal-scope .cal-tabwrap { position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, var(--bg-0) 34%); }
-  .cal-scope .mr-tab-item--avatar { padding: 2px 4px; }
-  .cal-scope .mr-tab-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; opacity: 0.92; }
-  .cal-scope .mr-tab-item--avatar.mr-tab-active .mr-tab-avatar { opacity: 1; border: 2px solid var(--neon-teal); }
+  .calb-scope .calb-declined { display: flex; align-items: center; gap: 8px; padding: 4px 16px 2px; font-size: 0.86rem; color: rgba(255,255,255,0.55); }
+  .calb-scope .calb-declined i { font-size: 16px; color: rgba(255,255,255,0.5); }
+  .calb-scope .calb-declined-show { color: var(--neon-blue); font-weight: 700; cursor: pointer; }
+  .calb-scope .calb-declined-dot { color: rgba(255,255,255,0.4); }
+
+  .calb-scope .cal-newplan { position: fixed; right: 16px; bottom: 92px; z-index: 8; display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; border: 0; cursor: pointer;
+    background: linear-gradient(120deg, #46c7e8, #6aa9f5); color: #fff; font-size: 1rem; font-weight: 800; box-shadow: 0 10px 28px rgba(70,160,232,0.4); }
+  .calb-scope .cal-newplan i { font-size: 19px; }
+
+  .calb-scope .cal-tabwrap { position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, var(--bg-0) 34%); }
+  .calb-scope .mr-tab-item--avatar { padding: 2px 4px; }
+  .calb-scope .mr-tab-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; opacity: 0.92; }
+  .calb-scope .mr-tab-item--avatar.mr-tab-active .mr-tab-avatar { opacity: 1; border: 2px solid var(--neon-teal); }
 </style>
 
-<div class="cal-scope mr-scope">
+<div class="calb-scope mr-scope">
   <div class="cal-wrap">
     <div class="cal-top">
       <div class="cal-title">Plans</div>
@@ -49,9 +65,16 @@
     <div class="cal-filters">
       <button type="button" class="mr-chip mr-chip-active"><i class="ph-fill ph-calendar-blank"></i> Upcoming</button>
       <button type="button" class="mr-chip"><i class="ph ph-bookmark-simple"></i> Ideas</button>
-      <button type="button" class="mr-chip"><i class="ph ph-envelope-simple"></i> Invites (0)</button>
       <button type="button" class="mr-chip"><i class="ph ph-clock"></i> Past</button>
-      <button type="button" class="mr-chip"><i class="ph ph-thumbs-down"></i> Declined</button>
+    </div>
+
+    <div class="calb-invite" role="button">
+      <div class="calb-invite-icon"><i class="ph-fill ph-tray" aria-hidden="true"></i></div>
+      <div class="calb-invite-body">
+        <div class="calb-invite-title">3 invites need a reply</div>
+        <div class="calb-invite-desc">2 are for this weekend</div>
+      </div>
+      <button type="button" class="calb-invite-cta">Review <i class="ph ph-caret-right" aria-hidden="true"></i></button>
     </div>
 
     <div class="cal-section">Today</div>
@@ -94,6 +117,13 @@
           </div>
         </div>
       </div>
+     </div>
+
+     <div class="calb-declined">
+       <i class="ph ph-thumbs-down" aria-hidden="true"></i>
+       <span>You declined 1 plan today</span>
+       <span class="calb-declined-dot">&bull;</span>
+       <span class="calb-declined-show" role="button">Show</span>
      </div>
     </div>
 
@@ -152,7 +182,7 @@
 
 <script>
   (function () {
-    const scope = document.querySelector('.cal-scope');
+    const scope = document.querySelector('.calb-scope');
     if (!scope) return;
     scope.querySelectorAll('.cal-filters .mr-chip').forEach(function (pill) {
       pill.addEventListener('click', function () {
