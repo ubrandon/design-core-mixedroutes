@@ -62,13 +62,13 @@
     },
     {
       "file": "group-thread-with-channels-v2-bubble.html",
-      "x": 3616,
+      "x": 4448,
       "y": 1152,
       "width": 390
     },
     {
       "file": "group-thread-with-channels-v3-divider.html",
-      "x": 4032,
+      "x": 3616,
       "y": 1152,
       "width": 390
     },
@@ -110,7 +110,7 @@
     },
     {
       "file": "group-thread-with-channels-v5-stack-reactions.html",
-      "x": 4448,
+      "x": 4032,
       "y": 1152,
       "width": 390
     },
