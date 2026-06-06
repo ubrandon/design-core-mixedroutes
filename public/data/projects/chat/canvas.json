@@ -61,24 +61,6 @@
       "width": 390
     },
     {
-      "file": "group-thread-with-channels-v2-bubble.html",
-      "x": 4448,
-      "y": 1152,
-      "width": 390
-    },
-    {
-      "file": "group-thread-with-channels-v3-divider.html",
-      "x": 3616,
-      "y": 1152,
-      "width": 390
-    },
-    {
-      "file": "group-thread-with-channels-v4-ribbon.html",
-      "x": 3200,
-      "y": 1152,
-      "width": 390
-    },
-    {
       "file": "group-thread-manage-tags-sheet.html",
       "x": 1312,
       "y": 2432,
@@ -109,12 +91,6 @@
       "width": 390
     },
     {
-      "file": "group-thread-with-channels-v5-stack-reactions.html",
-      "x": 4032,
-      "y": 1152,
-      "width": 390
-    },
-    {
       "file": "group-thread-with-channels-v5-stack-reactions-dropdown.html",
       "x": 2528,
       "y": 2432,
@@ -124,6 +100,18 @@
       "file": "group-thread-with-channels-v5-stack-reactions-sheet.html",
       "x": 2944,
       "y": 2432,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v2-bubble-cap5-teal.html",
+      "x": 3104,
+      "y": 1152,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v2-bubble-cap5-blue.html",
+      "x": 3520,
+      "y": 1152,
       "width": 390
     }
   ],
@@ -153,7 +141,7 @@
       "size": 48
     },
     {
-      "text": "Channel",
+      "text": "Widget",
       "x": 2656,
       "y": 1056,
       "size": 48
@@ -172,7 +160,7 @@
     },
     {
       "text": "Exploration",
-      "x": 3200,
+      "x": 3104,
       "y": 1056,
       "size": 48
     },

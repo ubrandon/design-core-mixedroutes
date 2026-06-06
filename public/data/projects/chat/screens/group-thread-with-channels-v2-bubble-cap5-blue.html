@@ -11,6 +11,7 @@
   .chat-scope .chat-header .back { background: transparent; border: 0; color: rgba(255,255,255,0.95); display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
   .chat-scope .chat-header .back i { font-size: 22px; }
   .chat-scope .chat-header .avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; }
+  .chat-scope .chat-header .avatar.emoji { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #5eb3ff, #2f7a72); font-size: 18px; }
   .chat-scope .chat-header .title { font-size: 1rem; font-weight: 800; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .chat-scope .chat-header .tag-btn { background: transparent; border: 0; color: rgba(255,255,255,0.85); padding: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
   .chat-scope .chat-header .tag-btn i { font-size: 20px; }
@@ -32,19 +33,22 @@
   .chat-scope .day-divider { text-align: center; color: rgba(255,255,255,0.55); font-size: 0.85rem; padding: 6px 0; }
   .chat-scope .seen { text-align: center; color: rgba(255,255,255,0.45); font-size: 0.78rem; padding: 6px 0 2px; }
 
-  /* V3 — Inline pill divider: minimal, ambient. Shows a centered pill with channel + count, tap to expand */
-  .chat-scope .ch-divider { display: flex; align-items: center; gap: 8px; padding: 8px 4px 4px; }
-  .chat-scope .ch-divider .line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(255,184,77,0.35), transparent); }
-  .chat-scope .ch-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: rgba(255,184,77,0.12); border: 1px solid rgba(255,184,77,0.3); color: #ffb84d; font-size: 0.85rem; font-weight: 700; white-space: nowrap; cursor: pointer; }
-  .chat-scope .ch-pill .pill-emoji { font-size: 14px; }
-  .chat-scope .ch-pill .pill-count { background: #ffb84d; color: #0b0f14; font-weight: 800; font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; }
-  .chat-scope .ch-pill i { font-size: 14px; opacity: 0.8; }
-
-  /* Preview row that appears under the divider, condensed */
-  .chat-scope .ch-preview { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 8px; padding: 0 18px; color: rgba(255,255,255,0.7); font-size: 0.88rem; }
-  .chat-scope .ch-preview .av { width: 22px; height: 22px; border-radius: 50%; background: #2c8d8b; color: #fff; font-size: 0.66rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
-  .chat-scope .ch-preview .who { color: #fff; font-weight: 600; }
-  .chat-scope .ch-preview .reply-mini { color: #5eb3ff; font-weight: 600; font-size: 0.82rem; }
+  /* V2 cap5 — channel bubble that stacks up to 5 replies inline, then a +N more cutoff */
+  .chat-scope .ch-bubble-row { display: grid; grid-template-columns: 36px 1fr; gap: 8px; align-items: flex-start; }
+  .chat-scope .ch-bubble-row .ch-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #7dd3fc, #38bdf8); color: #fff; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
+  .chat-scope .ch-bubble { position: relative; max-width: 92%; background: var(--chat-surface); border-bottom-left-radius: 6px; border-radius: var(--bubble-radius); padding: 8px 12px 6px 14px; overflow: hidden; }
+  .chat-scope .ch-bubble::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #38bdf8; }
+  .chat-scope .ch-bubble .ch-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 0.74rem; font-weight: 700; color: #38bdf8; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 6px; }
+  .chat-scope .ch-bubble .ch-chip .dot { width: 5px; height: 5px; border-radius: 50%; background: #38bdf8; }
+  .chat-scope .ch-reply { display: grid; grid-template-columns: 22px 1fr; gap: 7px; align-items: flex-start; padding: 4px 0; }
+  .chat-scope .ch-reply + .ch-reply { border-top: 1px solid rgba(255,255,255,0.05); }
+  .chat-scope .ch-reply img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; margin-top: 1px; }
+  .chat-scope .ch-reply .ch-init { width: 22px; height: 22px; border-radius: 50%; background: #4b5563; color: #fff; font-size: 0.62rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .chat-scope .ch-reply .ch-name { font-size: 0.78rem; font-weight: 800; color: #5eb3ff; }
+  .chat-scope .ch-reply .ch-text { color: #fff; font-size: 0.92rem; line-height: 1.3; }
+  .chat-scope .ch-bubble .more { display: flex; align-items: center; gap: 7px; margin-top: 6px; padding-top: 7px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.84rem; font-weight: 700; color: var(--muted); cursor: pointer; }
+  .chat-scope .ch-bubble .more .more-tag { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: #16a34a; color: #fff; font-size: 0.7rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .chat-scope .ch-bubble .more .more-caret { margin-left: auto; font-size: 16px; color: rgba(255,255,255,0.4); }
 
   /* Channel tabs above composer */
   .chat-scope .channel-tabs { position: relative; z-index: 2; display: flex; align-items: center; gap: 8px; padding: 8px 10px 8px 12px; overflow-x: auto; background: rgba(11,15,20,0.92); border-top: 1px solid rgba(255,255,255,0.05); }
@@ -72,8 +76,8 @@
 
     <header class="chat-header">
       <button type="button" class="back" aria-label="Back"><i class="ph ph-caret-left"></i></button>
-      <img class="avatar" src="https://i.pravatar.cc/80?img=15" alt="" />
-      <div class="title">UFC 329: McGregor vs. Hollowa…</div>
+      <div class="avatar emoji" aria-hidden="true">🍻</div>
+      <div class="title">The Bois</div>
       <button type="button" class="tag-btn" aria-label="Tag"><i class="ph ph-tag"></i></button>
     </header>
 
@@ -95,29 +99,37 @@
         </div>
       </div>
 
-      <div class="msg-row out">
-        <div class="msg-stack">
-          <div class="bubble out">Oh nice ok</div>
-        </div>
-      </div>
-
       <div class="day-divider">Today</div>
 
-      <!-- V3 — Inline pill divider (ambient, low-noise). Single preview line under it. -->
-      <div class="ch-divider" role="button" aria-label="Jump to Games channel">
-        <span class="line"></span>
-        <span class="ch-pill">
-          <span class="pill-emoji">🎮</span>
-          Games
-          <span class="pill-count">2</span>
-          <i class="ph ph-arrow-up-right"></i>
-        </span>
-        <span class="line"></span>
-      </div>
-      <div class="ch-preview">
-        <span class="av">B</span>
-        <span><span class="who">Brandon:</span> Anyone want to run a Rocket League set tonight?</span>
-        <span class="reply-mini">Open</span>
+      <!-- V2 cap5 — busy Games channel: 5 replies shown inline, then +N more cutoff -->
+      <div class="ch-bubble-row">
+        <div class="ch-avatar">🎮</div>
+        <div class="ch-bubble" role="button" aria-label="Open Games channel">
+          <div class="ch-chip">Trips channel</div>
+
+          <div class="ch-reply">
+            <div class="ch-init">B</div>
+            <div><span class="ch-name">Brandon</span> <span class="ch-text">Locking trip dates, thinking July ✈️</span></div>
+          </div>
+          <div class="ch-reply">
+            <img src="https://i.pravatar.cc/40?img=12" alt="" />
+            <div><span class="ch-name" style="color:#fca5a5">Eric</span> <span class="ch-text">July works, flights are cheap that week</span></div>
+          </div>
+          <div class="ch-reply">
+            <img src="https://i.pravatar.cc/40?img=32" alt="" />
+            <div><span class="ch-name" style="color:#c084fc">Maya</span> <span class="ch-text">Cabin or hotel this time?</span></div>
+          </div>
+          <div class="ch-reply">
+            <img src="https://i.pravatar.cc/40?img=45" alt="" />
+            <div><span class="ch-name" style="color:#fbbf24">Devon</span> <span class="ch-text">Cabin, way more room for everyone</span></div>
+          </div>
+          <div class="ch-reply">
+            <img src="https://i.pravatar.cc/40?img=8" alt="" />
+            <div><span class="ch-name">Brandon</span> <span class="ch-text">Sending the booking link tonight</span></div>
+          </div>
+
+          <div class="more"><span class="more-tag">14</span> replies in channel <i class="ph ph-caret-right more-caret"></i></div>
+        </div>
       </div>
 
       <div class="msg-row">
@@ -136,8 +148,8 @@
     <div class="channel-tabs">
       <button type="button" class="ch-tab active">Main</button>
       <button type="button" class="ch-tab">
-        <span class="tab-emoji">🎮</span> Games
-        <span class="tab-badge">2</span>
+        <span class="tab-emoji">✈️</span> Trips
+        <span class="tab-badge">14</span>
       </button>
       <button type="button" class="ch-tab"><span class="tab-emoji">🗓️</span> Plans</button>
       <button type="button" class="ch-tab"><span class="tab-emoji">🪨</span> Rocks</button>
