@@ -104,12 +104,30 @@
     },
     {
       "file": "group-thread-with-channels-v2-bubble-cap5-teal.html",
+      "x": 0,
+      "y": 4928,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v3-bubble-widget-card.html",
+      "x": 416,
+      "y": 4928,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v3-bubble-widget-card-actions.html",
+      "x": 832,
+      "y": 4928,
+      "width": 390
+    },
+    {
+      "file": "group-thread-with-channels-v3-bubble-widget-card-icons.html",
       "x": 3104,
       "y": 1152,
       "width": 390
     },
     {
-      "file": "group-thread-with-channels-v2-bubble-cap5-blue.html",
+      "file": "group-thread-with-channels-v3-bubble-widget-card-more.html",
       "x": 3520,
       "y": 1152,
       "width": 390
@@ -159,7 +177,7 @@
       "size": 48
     },
     {
-      "text": "Exploration",
+      "text": "New design",
       "x": 3104,
       "y": 1056,
       "size": 48
@@ -168,6 +186,18 @@
       "text": "Reactions",
       "x": 2528,
       "y": 2336,
+      "size": 48
+    },
+    {
+      "text": "Exploration",
+      "x": 0,
+      "y": 4672,
+      "size": 48
+    },
+    {
+      "text": "Channel widget",
+      "x": 0,
+      "y": 4832,
       "size": 48
     }
   ]
