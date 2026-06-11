@@ -408,13 +408,6 @@
       "name": "add-outside-groups-banner-vC-outside-panel"
     },
     {
-      "file": "flex-mix-group-banner-vC-outside-inline-divider.html",
-      "x": 480,
-      "y": 4576,
-      "width": 390,
-      "name": "add-outside-groups-banner-vC-outside-inline-divider"
-    },
-    {
       "file": "plan-detail-friend-vacation-copy.html",
       "x": 2400,
       "y": 4576,
@@ -507,13 +500,6 @@
       "width": 390
     },
     {
-      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-only.html",
-      "x": 896,
-      "y": 4576,
-      "width": 390,
-      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-only"
-    },
-    {
       "file": "plan-detail-friend-vacation-copy-copy-2.html",
       "x": 4000,
       "y": 4576,
@@ -526,18 +512,18 @@
       "width": 390
     },
     {
-      "file": "flex-mix-group-banner-vC-outside-inline-divider-copy.html",
-      "x": -1536,
-      "y": 4576,
-      "width": 390,
-      "name": "add-outside-groups-banner-vC-outside-inline-divider Copy"
-    },
-    {
       "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row.html",
-      "x": -1952,
+      "x": 480,
       "y": 4576,
       "width": 390,
       "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-only.html",
+      "x": 896,
+      "y": 4576,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-only"
     }
   ],
   "texts": [
