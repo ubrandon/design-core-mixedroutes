@@ -150,28 +150,28 @@
     {
       "file": "create-add-people-default.html",
       "x": 64,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1-create-add-people-default"
     },
     {
       "file": "create-add-people-group-all.html",
       "x": 1920,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1-create-add-people-group-all"
     },
     {
       "file": "create-add-people-group-some.html",
       "x": 2336,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1-create-add-people-group-some"
     },
     {
       "file": "create-add-people-group-selected.html",
       "x": 2752,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1-create-add-people-group-selected"
     },
@@ -232,30 +232,23 @@
     {
       "file": "create-add-people-friends.html",
       "x": 576,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1-create-add-people-friends"
     },
     {
       "file": "v1b-create-add-people-switched-toast.html",
       "x": 992,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1b-add-people-switched-undo"
     },
     {
       "file": "v1b-create-add-people-undo-restored.html",
       "x": 1408,
-      "y": 10176,
+      "y": 9856,
       "width": 390,
       "name": "v1b-add-people-undo-restored"
-    },
-    {
-      "file": "v1-create-add-people-default-copy.html",
-      "x": 32,
-      "y": 4576,
-      "width": 390,
-      "name": "add-outside-groups-default"
     },
     {
       "file": "flex-mix-group-picked-vC.html",
@@ -408,6 +401,20 @@
       "name": "add-outside-groups-banner-vC-friends-selected"
     },
     {
+      "file": "flex-mix-group-banner-vC-outside-panel.html",
+      "x": 7616,
+      "y": 21888,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-outside-panel"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-outside-inline-divider.html",
+      "x": 32,
+      "y": 6016,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-outside-inline-divider"
+    },
+    {
       "file": "plan-detail-friend-vacation-copy.html",
       "x": 2400,
       "y": 4576,
@@ -415,42 +422,82 @@
     },
     {
       "file": "manage-people-friends-vB-copy-2.html",
-      "x": 2816,
-      "y": 4576,
+      "x": 7616,
+      "y": 19616,
       "width": 390,
       "name": "manage-people-friends-plan-vB Copy"
     },
     {
-      "file": "invite-guests-friends-default-copy-2.html",
-      "x": 3264,
-      "y": 3552,
-      "width": 390
-    },
-    {
-      "file": "invite-guests-pick-group-copy-2.html",
-      "x": 3680,
-      "y": 3552,
-      "width": 390
-    },
-    {
-      "file": "switch-confirm-vG-fullscreen-copy-2.html",
-      "x": 4096,
-      "y": 3552,
-      "width": 390
-    },
-    {
       "file": "manage-people-vC-bottom-cta.html",
-      "x": 3264,
-      "y": 4576,
+      "x": 8064,
+      "y": 19616,
       "width": 390,
       "name": "manage-people-vC-bottom-cta"
     },
     {
       "file": "manage-people-vD-bottom-bar-share.html",
-      "x": 3680,
+      "x": 8480,
+      "y": 19616,
+      "width": 390
+    },
+    {
+      "file": "manage-people-vE-privacy-top.html",
+      "x": 2848,
+      "y": 4576,
+      "width": 390
+    },
+    {
+      "file": "v1-create-add-people-default-copy-copy.html",
+      "x": 32,
       "y": 4576,
       "width": 390,
-      "name": "manage-people-vD-bottom-bar-share"
+      "name": "add-outside-groups-default Copy"
+    },
+    {
+      "file": "v1-create-add-people-default-copy-copy-2.html",
+      "x": 7616,
+      "y": 20672,
+      "width": 390,
+      "name": "add-outside-groups-default Copy"
+    },
+    {
+      "file": "add-outside-groups-people-selected-copy.html",
+      "x": 8992,
+      "y": 20672,
+      "width": 390
+    },
+    {
+      "file": "add-outside-groups-people-selected-more-copy.html",
+      "x": 9408,
+      "y": 20672,
+      "width": 390,
+      "name": "add-outside-groups-people-selected-more Copy"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-callout-copy.html",
+      "x": 8096,
+      "y": 20672,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-callout Copy"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-friends-selected-copy.html",
+      "x": 8512,
+      "y": 20672,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-friends-selected Copy"
+    },
+    {
+      "file": "plan-detail-friend-vacation-copy-copy.html",
+      "x": 9984,
+      "y": 20672,
+      "width": 390
+    },
+    {
+      "file": "manage-people-vE-privacy-top-copy.html",
+      "x": 10432,
+      "y": 20672,
+      "width": 390
     }
   ],
   "texts": [
@@ -469,7 +516,7 @@
     {
       "text": "Group OR people",
       "x": 64,
-      "y": 10080,
+      "y": 9760,
       "size": 48
     },
     {
@@ -482,6 +529,24 @@
       "text": "Add to a plan",
       "x": 2400,
       "y": 4480,
+      "size": 48
+    },
+    {
+      "text": "Archive",
+      "x": 7616,
+      "y": 19520,
+      "size": 48
+    },
+    {
+      "text": "Invite new plan",
+      "x": 7616,
+      "y": 20576,
+      "size": 48
+    },
+    {
+      "text": "Add to a plan",
+      "x": 9984,
+      "y": 20576,
       "size": 48
     }
   ]
