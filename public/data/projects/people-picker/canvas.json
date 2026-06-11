@@ -552,6 +552,19 @@
       "y": 4576,
       "width": 390,
       "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple Copy no-invited"
+    },
+    {
+      "file": "people-page.html",
+      "x": 0,
+      "y": 6176,
+      "width": 390
+    },
+    {
+      "file": "people-page-empty.html",
+      "x": 416,
+      "y": 6176,
+      "width": 390,
+      "name": "people-page-empty"
     }
   ],
   "texts": [
@@ -611,8 +624,8 @@
     },
     {
       "text": "People page",
-      "x": 32,
-      "y": 6176,
+      "x": 0,
+      "y": 6080,
       "size": 48
     }
   ]
