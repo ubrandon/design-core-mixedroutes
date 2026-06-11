@@ -54,19 +54,19 @@
     },
     {
       "file": "plan-detail-friend-vacation-cost.html",
-      "x": 32,
+      "x": 0,
       "y": 3712,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-itinerary.html",
-      "x": 480,
+      "x": 448,
       "y": 3712,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-checklist.html",
-      "x": 928,
+      "x": 896,
       "y": 3712,
       "width": 390
     },
@@ -120,46 +120,25 @@
       "name": "plan-detail-attendees-final-empty"
     },
     {
-      "file": "plan-detail-friend-vacation-copy.html",
-      "x": 992,
-      "y": 0,
-      "width": 390,
-      "name": "plan-detail-friends Copy"
-    },
-    {
       "file": "plan-detail-friend-vacation-copy2.html",
-      "x": 3296,
-      "y": 0,
+      "x": 1792,
+      "y": 3712,
       "width": 390,
       "name": "plan-detail-friends-final"
     },
     {
-      "file": "plan-detail-friend-vacation-copy3.html",
-      "x": 1440,
-      "y": 0,
-      "width": 390,
-      "name": "plan-detail-friends Copy 3"
-    },
-    {
       "file": "plan-detail-friend-vacation-copy3-edit.html",
-      "x": 1856,
-      "y": 0,
+      "x": 1344,
+      "y": 3712,
       "width": 390,
       "name": "plan-detail-friends Copy 3 Edit"
     },
     {
-      "file": "plan-detail-friend-vacation-copy2-loc.html",
-      "x": 2272,
+      "file": "plan-detail-friend-vacation-final-restyle.html",
+      "x": 928,
       "y": 0,
       "width": 390,
-      "name": "plan-detail-friends Copy 2 Loc"
-    },
-    {
-      "file": "plan-detail-friend-vacation-copy4.html",
-      "x": 2688,
-      "y": 0,
-      "width": 390,
-      "name": "plan-detail-friends-final-desc-title"
+      "name": "plan-detail-friends-final-restyle"
     }
   ],
   "texts": [
@@ -182,15 +161,21 @@
       "size": 48
     },
     {
-      "text": "Plan layouts",
-      "x": 992,
-      "y": -96,
+      "text": "Plan Ideas",
+      "x": 0,
+      "y": 3616,
       "size": 48
     },
     {
       "text": "New design",
-      "x": 3296,
+      "x": 928,
       "y": -96,
+      "size": 48
+    },
+    {
+      "text": "Explorations",
+      "x": 0,
+      "y": 1760,
       "size": 48
     }
   ]
