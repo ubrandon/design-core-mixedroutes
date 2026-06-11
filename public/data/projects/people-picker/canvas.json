@@ -512,6 +512,13 @@
       "width": 390
     },
     {
+      "file": "manage-people-vE-privacy-top-copy-2-remove-group-confirm.html",
+      "x": 4672,
+      "y": 4576,
+      "width": 390,
+      "name": "manage-people-vE-privacy-top-copy-2 remove-group-confirm"
+    },
+    {
       "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row.html",
       "x": 12160,
       "y": 12192,
@@ -540,11 +547,11 @@
       "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple-members"
     },
     {
-      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-simple-copy.html",
-      "x": 4672,
+      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-simple-copy-no-invited.html",
+      "x": 5120,
       "y": 4576,
       "width": 390,
-      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple Copy"
+      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple Copy no-invited"
     }
   ],
   "texts": [
@@ -600,6 +607,12 @@
       "text": "Add to a group plan",
       "x": 3840,
       "y": 4480,
+      "size": 48
+    },
+    {
+      "text": "People page",
+      "x": 32,
+      "y": 6176,
       "size": 48
     }
   ]
