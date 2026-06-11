@@ -40,10 +40,9 @@
   .v5gr-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
   .v5gr-row .host { color: #f5c451; font-weight: 800; font-size: 0.8rem; }
 
-  .v5gr-divider { display: flex; align-items: center; gap: 12px; margin: 28px 20px 2px; }
-  .v5gr-divider .line { flex: 1; height: 1px; background: rgba(255,255,255,0.14); }
-  .v5gr-divider .ttl { color: rgba(255,255,255,0.6); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.09em; text-transform: uppercase; white-space: nowrap; }
-  .v5gr-divider-note { margin: 0; padding: 6px 20px 0; text-align: center; color: rgba(255,255,255,0.45); font-size: 0.78rem; font-weight: 700; line-height: 1.4; }
+  .v5gr-outside-sub { margin: 0; padding: 2px 20px 0; color: rgba(255,255,255,0.6); font-size: 0.84rem; font-weight: 700; line-height: 1.4; }
+  .v5gr-seclabel { display: flex; align-items: baseline; justify-content: space-between; padding: 18px 20px 6px; color: rgba(255,255,255,0.55); font-size: 0.92rem; font-weight: 800; }
+  .v5gr-seclabel .action { background: transparent; border: 0; color: var(--neon-teal); font-size: 0.78rem; font-weight: 850; padding: 0; cursor: pointer; }
 
   .v5gr-cta { padding: 14px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   .v5gr-cta button { min-height: 50px; border: 0; border-radius: 999px; color: #fff; font-size: 0.98rem; font-weight: 850; }
@@ -111,14 +110,10 @@
         </div>
       </div>
 
-      <div class="v5gr-divider">
-        <span class="line"></span>
-        <span class="ttl">Outside the group</span>
-        <span class="line"></span>
-      </div>
-      <p class="v5gr-divider-note">Users below are invited to the plan only</p>
+      <div class="v5gr-label" style="padding-top:28px; padding-bottom:2px;"><span>Outside the group</span></div>
+      <p class="v5gr-outside-sub">Invited to this plan only, not added to the group</p>
 
-      <div class="v5gr-label" style="padding-top:16px;">
+      <div class="v5gr-seclabel">
         <span>Friends</span>
         <button type="button" class="action" data-toggle-all="friends">Select all (2)</button>
       </div>
@@ -135,7 +130,7 @@
         </div>
       </div>
 
-      <div class="v5gr-label" style="padding-top:20px;"><span>Suggested</span></div>
+      <div class="v5gr-seclabel" style="padding-top:14px;"><span>Suggested</span></div>
       <div class="v5gr-list">
         <div class="v5gr-row">
           <img class="av" src="https://i.pravatar.cc/96?img=58" alt="" loading="lazy" />

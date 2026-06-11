@@ -501,29 +501,50 @@
     },
     {
       "file": "plan-detail-friend-vacation-copy-copy-2.html",
-      "x": 4000,
+      "x": 3840,
       "y": 4576,
       "width": 390
     },
     {
       "file": "manage-people-vE-privacy-top-copy-2.html",
-      "x": 4416,
+      "x": 4256,
       "y": 4576,
       "width": 390
     },
     {
       "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row.html",
-      "x": 480,
-      "y": 4576,
+      "x": 12160,
+      "y": 12192,
       "width": 390,
       "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row"
     },
     {
       "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-only.html",
+      "x": 12576,
+      "y": 12192,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-only"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-simple.html",
+      "x": 480,
+      "y": 4576,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-simple-members.html",
       "x": 896,
       "y": 4576,
       "width": 390,
-      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-only"
+      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple-members"
+    },
+    {
+      "file": "flex-mix-group-banner-vC-outside-inline-divider-group-row-simple-copy.html",
+      "x": 4672,
+      "y": 4576,
+      "width": 390,
+      "name": "add-outside-groups-banner-vC-outside-inline-divider-group-row-simple Copy"
     }
   ],
   "texts": [
@@ -577,7 +598,7 @@
     },
     {
       "text": "Add to a group plan",
-      "x": 4000,
+      "x": 3840,
       "y": 4480,
       "size": 48
     }

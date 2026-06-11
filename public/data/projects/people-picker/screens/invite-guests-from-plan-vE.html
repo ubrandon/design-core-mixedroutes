@@ -59,7 +59,7 @@
       </div>
 
       <div class="invp-chips">
-        <span class="invp-chips-hint">Select people to invite</span>
+        <span class="invp-chips-hint">Select to add to a group or invite friends</span>
       </div>
 
       <div class="invp-label" style="padding-top:0;"><span>Groups</span></div>
@@ -151,7 +151,7 @@
     function render() {
       var on = rows.filter(function (r) { return r.classList.contains('is-on'); });
       if (on.length === 0) {
-        chips.innerHTML = '<span class="invp-chips-hint">Select people to invite</span>';
+        chips.innerHTML = '<span class="invp-chips-hint">Select to add to a group or invite friends</span>';
         cta.textContent = 'Invite';
         cta.disabled = true;
         return;
