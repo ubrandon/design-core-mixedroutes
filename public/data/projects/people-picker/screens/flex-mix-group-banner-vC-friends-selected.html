@@ -107,7 +107,7 @@
       </div>
 
       <div class="v5c-label" style="padding-top:28px;padding-bottom:4px;"><span>Outside the group</span></div>
-      <p class="v5c-subtext">Invited to this plan only, not added to Lake House.</p>
+      <p class="v5c-subtext">Invited to this plan only, not added to the group.</p>
       <div class="v5c-sublabel-row">
         <span class="v5c-sublabel">Friends</span>
         <button type="button" class="action" data-toggle-all="friends">Deselect all (2)</button>
@@ -151,7 +151,7 @@
     </div>
 
     <div class="v5c-cta">
-      <button type="button" class="primary">Invite (5)</button>
+      <button type="button" class="primary">Invite group + 2 more</button>
     </div>
   </div>
 </div>
@@ -196,8 +196,9 @@
           '<button type="button" class="mr-pp-chip-remove" aria-label="Remove"><i class="ph ph-x"></i></button>' +
           '</span>';
       }).join('');
-      var outsideOn = sectionRows('friends').filter(function (r) { return r.classList.contains('is-on'); }).length;
-      cta.textContent = (outsideOn ? 'Invite (' : 'Invite group (') + selected.length + ')';
+      var memberOn = sectionRows('members').filter(function (r) { return r.classList.contains('is-on'); }).length;
+      var extraOn = selected.length - memberOn;
+      cta.textContent = extraOn === 0 ? 'Invite group (' + memberOn + ')' : 'Invite group + ' + extraOn + ' more';
       toggleBtns.forEach(updateToggle);
     }
 

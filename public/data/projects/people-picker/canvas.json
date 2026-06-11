@@ -2,14 +2,14 @@
   "screens": [
     {
       "file": "plan-detail-friend-vacation.html",
-      "x": -32,
-      "y": 6304,
+      "x": 64,
+      "y": 11296,
       "width": 390
     },
     {
       "file": "plan-detail-friend-vacation-group.html",
-      "x": 2336,
-      "y": 6304,
+      "x": 2432,
+      "y": 11296,
       "width": 390
     },
     {
@@ -149,29 +149,29 @@
     },
     {
       "file": "create-add-people-default.html",
-      "x": -32,
-      "y": 5184,
+      "x": 64,
+      "y": 10176,
       "width": 390,
       "name": "v1-create-add-people-default"
     },
     {
       "file": "create-add-people-group-all.html",
-      "x": 1824,
-      "y": 5184,
+      "x": 1920,
+      "y": 10176,
       "width": 390,
       "name": "v1-create-add-people-group-all"
     },
     {
       "file": "create-add-people-group-some.html",
-      "x": 2240,
-      "y": 5184,
+      "x": 2336,
+      "y": 10176,
       "width": 390,
       "name": "v1-create-add-people-group-some"
     },
     {
       "file": "create-add-people-group-selected.html",
-      "x": 2656,
-      "y": 5184,
+      "x": 2752,
+      "y": 10176,
       "width": 390,
       "name": "v1-create-add-people-group-selected"
     },
@@ -231,56 +231,56 @@
     },
     {
       "file": "create-add-people-friends.html",
-      "x": 480,
-      "y": 5184,
+      "x": 576,
+      "y": 10176,
       "width": 390,
       "name": "v1-create-add-people-friends"
     },
     {
       "file": "v1b-create-add-people-switched-toast.html",
-      "x": 896,
-      "y": 5184,
+      "x": 992,
+      "y": 10176,
       "width": 390,
       "name": "v1b-add-people-switched-undo"
     },
     {
       "file": "v1b-create-add-people-undo-restored.html",
-      "x": 1312,
-      "y": 5184,
+      "x": 1408,
+      "y": 10176,
       "width": 390,
       "name": "v1b-add-people-undo-restored"
     },
     {
       "file": "v1-create-add-people-default-copy.html",
-      "x": -32,
-      "y": 8352,
+      "x": 32,
+      "y": 4576,
       "width": 390,
       "name": "add-outside-groups-default"
     },
     {
       "file": "flex-mix-group-picked-vC.html",
-      "x": -32,
-      "y": 9888,
+      "x": 64,
+      "y": 12992,
       "width": 390,
       "name": "add-outside-groups-vC-callout"
     },
     {
       "file": "flex-mix-group-picked-vC-outside-selected.html",
-      "x": 384,
-      "y": 9888,
+      "x": 480,
+      "y": 12992,
       "width": 390,
       "name": "add-outside-groups-vC-friends-selected"
     },
     {
       "file": "add-outside-groups-people-selected.html",
-      "x": 1344,
-      "y": 8352,
+      "x": 1408,
+      "y": 4576,
       "width": 390
     },
     {
       "file": "add-outside-groups-people-selected-more.html",
-      "x": 1760,
-      "y": 8352,
+      "x": 1824,
+      "y": 4576,
       "width": 390,
       "name": "add-outside-groups-people-selected-more"
     },
@@ -314,34 +314,34 @@
     },
     {
       "file": "manage-people-friends-vB.html",
-      "x": 384,
-      "y": 6304,
+      "x": 480,
+      "y": 11296,
       "width": 390,
       "name": "manage-people-friends-plan-vB"
     },
     {
       "file": "manage-people-group-vB.html",
-      "x": 2752,
-      "y": 6304,
+      "x": 2848,
+      "y": 11296,
       "width": 390,
       "name": "manage-people-group-plan-vB"
     },
     {
       "file": "invite-guests-friends-default.html",
-      "x": 800,
-      "y": 6304,
+      "x": 896,
+      "y": 11296,
       "width": 390
     },
     {
       "file": "invite-guests-pick-group.html",
-      "x": 1216,
-      "y": 6304,
+      "x": 1312,
+      "y": 11296,
       "width": 390
     },
     {
       "file": "invite-guests-group-default.html",
-      "x": 3168,
-      "y": 6304,
+      "x": 3264,
+      "y": 11296,
       "width": 390
     },
     {
@@ -352,14 +352,14 @@
     },
     {
       "file": "invite-guests-switch-to-friends-confirm-native.html",
-      "x": 3584,
-      "y": 6304,
+      "x": 3680,
+      "y": 11296,
       "width": 390
     },
     {
       "file": "invite-guests-friends-default-after-switch.html",
-      "x": 4000,
-      "y": 6304,
+      "x": 4096,
+      "y": 11296,
       "width": 390
     },
     {
@@ -371,8 +371,8 @@
     },
     {
       "file": "switch-confirm-vG-fullscreen.html",
-      "x": 1632,
-      "y": 6304,
+      "x": 1728,
+      "y": 11296,
       "width": 390
     },
     {
@@ -395,17 +395,94 @@
     },
     {
       "file": "flex-mix-group-banner-vC-callout.html",
-      "x": 448,
-      "y": 8352,
+      "x": 512,
+      "y": 4576,
       "width": 390,
       "name": "add-outside-groups-banner-vC-callout"
     },
     {
       "file": "flex-mix-group-banner-vC-friends-selected.html",
-      "x": 864,
-      "y": 8352,
+      "x": 928,
+      "y": 4576,
       "width": 390,
       "name": "add-outside-groups-banner-vC-friends-selected"
+    },
+    {
+      "file": "plan-detail-friend-vacation-copy.html",
+      "x": 2400,
+      "y": 4576,
+      "width": 390
+    },
+    {
+      "file": "manage-people-friends-vB-copy-2.html",
+      "x": 2816,
+      "y": 4576,
+      "width": 390,
+      "name": "manage-people-friends-plan-vB Copy"
+    },
+    {
+      "file": "invite-guests-friends-default-copy-2.html",
+      "x": 3264,
+      "y": 3552,
+      "width": 390
+    },
+    {
+      "file": "invite-guests-pick-group-copy-2.html",
+      "x": 3680,
+      "y": 3552,
+      "width": 390
+    },
+    {
+      "file": "switch-confirm-vG-fullscreen-copy-2.html",
+      "x": 4096,
+      "y": 3552,
+      "width": 390
+    },
+    {
+      "file": "manage-people-vC-bottom-cta.html",
+      "x": 3264,
+      "y": 4576,
+      "width": 390,
+      "name": "manage-people-vC-bottom-cta"
+    },
+    {
+      "file": "manage-people-vD-bottom-bar-share.html",
+      "x": 3680,
+      "y": 4576,
+      "width": 390,
+      "name": "manage-people-vD-bottom-bar-share"
+    }
+  ],
+  "texts": [
+    {
+      "text": "Group AND people - Alt",
+      "x": 64,
+      "y": 12896,
+      "size": 48
+    },
+    {
+      "text": "Group AND people",
+      "x": 32,
+      "y": 4384,
+      "size": 48
+    },
+    {
+      "text": "Group OR people",
+      "x": 64,
+      "y": 10080,
+      "size": 48
+    },
+    {
+      "text": "Invite new plan",
+      "x": 32,
+      "y": 4480,
+      "size": 48
+    },
+    {
+      "text": "Add to a plan",
+      "x": 2400,
+      "y": 4480,
+      "size": 48
     }
   ]
 }
