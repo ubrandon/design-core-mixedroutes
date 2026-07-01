@@ -388,6 +388,123 @@ function saveDesignerProfile(data) {
   });
 }
 
+/**
+ * Wire a "Created by" dropdown that only lets you pick a real user from
+ * `.designer`. No free-typed attribution — choosing "Add a user…" reveals an
+ * input that persists the new name to `.designer` and re-selects it.
+ * opts: { select, addRow, addInput, addBtn, defaultToOwner }.
+ * Returns { refresh(preferredName) -> Promise, getValue() -> Promise<string> }.
+ */
+function setupAttributionPicker(opts) {
+  const select = opts.select;
+  const addRow = opts.addRow;
+  const addInput = opts.addInput;
+  const addBtn = opts.addBtn;
+  const ADD = "__add_user__";
+  let profile = { name: "", company: "", team: [] };
+
+  function names() {
+    return designerAttributionNames(profile);
+  }
+
+  // Toggle the add-user row via inline display so it works regardless of the
+  // `hidden` attribute, which an inline display style would otherwise override.
+  function showAddRow(on) {
+    addRow.style.display = on ? "flex" : "none";
+  }
+
+  function rebuild(selected) {
+    const list = names();
+    const want = String(selected == null ? "" : selected).trim();
+    const known = list.some((n) => n.toLowerCase() === want.toLowerCase());
+    select.innerHTML = "";
+    select.appendChild(new Option(opts.emptyLabel || "Unassigned", ""));
+    if (want && !known) select.appendChild(new Option(want, want));
+    list.forEach((n) => select.appendChild(new Option(n, n)));
+    select.appendChild(new Option("+ Add a user…", ADD));
+    select.value = want;
+    syncAddRow();
+  }
+
+  function syncAddRow() {
+    const adding = select.value === ADD;
+    showAddRow(adding);
+    if (adding) {
+      addInput.value = "";
+      addInput.focus();
+    }
+  }
+
+  // Persist a new team member to `.designer`, then re-select them. Resolves to
+  // the added name, or null if nothing was added (blank input or save failed).
+  function commitAdd() {
+    const name = addInput.value.trim();
+    if (!name) {
+      addInput.focus();
+      return Promise.resolve(null);
+    }
+    const existing = names().find((n) => n.toLowerCase() === name.toLowerCase());
+    if (existing) {
+      rebuild(existing);
+      return Promise.resolve(existing);
+    }
+    const team = Array.isArray(profile.team) ? profile.team.slice() : [];
+    team.push({ name });
+    const next = { name: profile.name || "", company: profile.company || "", team };
+    return saveDesignerProfile(next)
+      .then(() => {
+        profile = next;
+        rebuild(name);
+        return name;
+      })
+      .catch((err) => {
+        if (typeof showToast === "function") showToast(err.message || "Could not add user");
+        return null;
+      });
+  }
+
+  showAddRow(false);
+  select.addEventListener("change", syncAddRow);
+  addBtn.addEventListener("click", function () {
+    commitAdd();
+  });
+  addInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      commitAdd();
+    }
+  });
+
+  return {
+    refresh: function (preferredName) {
+      return fetchDesignerProfile()
+        .then((prof) => {
+          profile = prof || { name: "", company: "", team: [] };
+          let want = preferredName != null ? String(preferredName).trim() : "";
+          if (!want && opts.defaultToOwner) want = String(profile.name || "").trim();
+          rebuild(want);
+          return profile;
+        })
+        .catch(() => {
+          profile = { name: "", company: "", team: [] };
+          rebuild(preferredName || "");
+        });
+    },
+    // Resolves to the chosen name ("" = Unassigned). If "Add a user…" is active,
+    // commit the typed name first; rejects if nothing valid was added so the
+    // caller can abort instead of wiping attribution.
+    getValue: function () {
+      if (select.value === ADD) {
+        return commitAdd().then((added) => {
+          if (!added) return Promise.reject(new Error("add-user-incomplete"));
+          return added;
+        });
+      }
+      return Promise.resolve(select.value.trim());
+    },
+  };
+}
+
 function syncProjectIndexEntry(projectId, patch) {
   return fetchJSON("data/projects/index.json").then((idx) => {
     const projects = Array.isArray(idx.projects) ? idx.projects.slice() : [];
@@ -399,5 +516,407 @@ function syncProjectIndexEntry(projectId, patch) {
     });
     projects[i] = next;
     return putDataJson("data/projects/index.json", { projects });
+  });
+}
+
+/* ── Project status & tags (optional metadata) ── */
+const PROJECT_STATUSES = [
+  { value: "draft", label: "Draft" },
+  { value: "in-progress", label: "In progress" },
+  { value: "shipped", label: "Shipped" },
+  { value: "archived", label: "Archived" },
+];
+
+function normalizeProjectStatus(value) {
+  const v = String(value || "").trim().toLowerCase();
+  return PROJECT_STATUSES.some((s) => s.value === v) ? v : "";
+}
+
+function projectStatusLabel(value) {
+  const s = PROJECT_STATUSES.find((x) => x.value === normalizeProjectStatus(value));
+  return s ? s.label : "";
+}
+
+/** Accepts an array or comma-separated string; returns a de-duped, trimmed list. */
+function normalizeProjectTags(value) {
+  const raw = Array.isArray(value) ? value : String(value || "").split(",");
+  const seen = new Set();
+  const out = [];
+  for (const item of raw) {
+    const t = String(item || "").trim();
+    if (!t) continue;
+    const key = t.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(t);
+  }
+  return out;
+}
+
+/** Stable hue (0–359) derived from a project id, for per-project color accents. */
+function projectHue(id) {
+  const s = String(id || "");
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+  return h;
+}
+
+/* ── Current user & per-user prefs ──
+   Favorites, recents, theme, and filters are saved per user. Which user you are
+   is remembered per browser (localStorage); their prefs live in a committed
+   file (public/data/users/<slug>.json) when the dev server is running, with a
+   localStorage mirror for instant, offline reads. */
+const CURRENT_USER_KEY = "design-core:current-user";
+const PREFS_MIRROR_PREFIX = "design-core:prefs:";
+const LEGACY_FAVORITES_KEY = "design-core:favorites";
+const LEGACY_RECENTS_KEY = "design-core:recents";
+const GUEST_SLUG = "__guest__";
+const RECENTS_MAX = 12;
+
+let _userState = null;
+let _userStateSlug = null;
+let _prefsSaveTimer = null;
+let _pendingSave = null;
+
+function readLsArray(key) {
+  try {
+    const v = JSON.parse(localStorage.getItem(key) || "[]");
+    return Array.isArray(v) ? v : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeLs(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {}
+}
+
+/** Display name of the selected user ("" = nobody picked yet). */
+function getCurrentUserName() {
+  try {
+    return (localStorage.getItem(CURRENT_USER_KEY) || "").trim();
+  } catch {
+    return "";
+  }
+}
+
+/** Folder/file-safe id for a user name. */
+function userSlug(name) {
+  const t = String(name || "").trim();
+  if (!t) return "";
+  const s = slugifyDataId(t, "");
+  if (s) return s;
+  // Non-latin names slugify to empty; derive a stable id so each gets its own bucket.
+  let h = 0;
+  for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0;
+  return "u-" + h.toString(16);
+}
+
+function currentUserSlug() {
+  return userSlug(getCurrentUserName());
+}
+
+function defaultPrefs() {
+  return { name: "", favorites: [], recents: [], theme: null, filters: { sort: "", status: "" }, navCollapsed: null, updatedAt: 0 };
+}
+
+function normalizePrefs(p) {
+  const d = defaultPrefs();
+  if (!p || typeof p !== "object") return d;
+  return {
+    name: typeof p.name === "string" ? p.name : "",
+    favorites: Array.isArray(p.favorites) ? p.favorites.filter((x) => typeof x === "string") : [],
+    recents: Array.isArray(p.recents) ? p.recents.filter((e) => e && typeof e.id === "string") : [],
+    theme: p.theme === "light" || p.theme === "dark" ? p.theme : null,
+    filters: {
+      sort: p.filters && typeof p.filters.sort === "string" ? p.filters.sort : "",
+      status: p.filters && typeof p.filters.status === "string" ? p.filters.status : "",
+    },
+    navCollapsed: typeof p.navCollapsed === "boolean" ? p.navCollapsed : null,
+    updatedAt: typeof p.updatedAt === "number" ? p.updatedAt : 0,
+  };
+}
+
+function prefsMirrorKey(slug) {
+  return PREFS_MIRROR_PREFIX + (slug || GUEST_SLUG);
+}
+
+function readPrefsMirror(slug) {
+  try {
+    const v = JSON.parse(localStorage.getItem(prefsMirrorKey(slug)) || "null");
+    return v && typeof v === "object" ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+function writePrefsMirror(slug, prefs) {
+  try {
+    localStorage.setItem(prefsMirrorKey(slug), JSON.stringify(prefs));
+  } catch {}
+}
+
+/** Loads the active user's prefs into memory (sync, from the mirror or legacy keys). */
+function hydrateUserState() {
+  const slug = currentUserSlug();
+  const mirror = readPrefsMirror(slug);
+  let prefs;
+  if (mirror) {
+    prefs = normalizePrefs(mirror);
+  } else {
+    prefs = defaultPrefs();
+    const legFav = readLsArray(LEGACY_FAVORITES_KEY).filter((x) => typeof x === "string");
+    const legRec = readLsArray(LEGACY_RECENTS_KEY).filter((e) => e && typeof e.id === "string");
+    if (legFav.length) prefs.favorites = legFav.slice();
+    if (legRec.length) prefs.recents = legRec.slice(0, RECENTS_MAX);
+    writePrefsMirror(slug, prefs);
+    // One-time migration: drop the old per-browser keys so the next user starts clean.
+    try { localStorage.removeItem(LEGACY_FAVORITES_KEY); localStorage.removeItem(LEGACY_RECENTS_KEY); } catch {}
+  }
+  prefs.name = getCurrentUserName() || prefs.name || "";
+  _userState = prefs;
+  _userStateSlug = slug;
+  return prefs;
+}
+
+/** The active user's prefs object (re-hydrates if the selected user changed). */
+function userState() {
+  if (_userState === null || _userStateSlug !== currentUserSlug()) hydrateUserState();
+  return _userState;
+}
+
+function emitUserPrefsChanged() {
+  try {
+    window.dispatchEvent(new CustomEvent("dc:user-prefs-changed"));
+  } catch {}
+}
+
+function emitUserChanged() {
+  try {
+    window.dispatchEvent(new CustomEvent("dc:user-changed", { detail: { name: getCurrentUserName() } }));
+  } catch {}
+}
+
+/** Writes prefs to the local mirror immediately and debounce-saves to the server for a real user. */
+function persistUserPrefs() {
+  const slug = currentUserSlug();
+  const prefs = userState();
+  prefs.name = getCurrentUserName() || prefs.name || "";
+  prefs.updatedAt = Date.now();
+  writePrefsMirror(slug, prefs);
+  if (slug) {
+    _pendingSave = { slug, prefs };
+    clearTimeout(_prefsSaveTimer);
+    _prefsSaveTimer = setTimeout(flushPendingPrefsSave, 400);
+  }
+}
+
+/** Flushes any debounced server save immediately (e.g. before switching user). */
+function flushPendingPrefsSave() {
+  clearTimeout(_prefsSaveTimer);
+  const p = _pendingSave;
+  _pendingSave = null;
+  if (p && p.slug) saveUserPrefsToServer(p.slug, p.prefs);
+}
+
+function fetchUserPrefs(slug) {
+  if (!slug) return Promise.resolve(null);
+  return fetch("/api/user-prefs?user=" + encodeURIComponent(slug))
+    .then((r) => { if (!r.ok) throw new Error("unavailable"); return r.json(); })
+    .catch(() => null);
+}
+
+function saveUserPrefsToServer(slug, prefs) {
+  if (!slug) return Promise.resolve(false);
+  return fetch("/api/user-prefs", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ user: slug, prefs }),
+  }).then((r) => r.ok).catch(() => false);
+}
+
+/** Pulls the authoritative server copy for the selected user; seeds the server file if none exists yet. */
+function refreshUserPrefsFromServer() {
+  const slug = currentUserSlug();
+  if (!slug) return Promise.resolve(userState());
+  return fetchUserPrefs(slug).then((server) => {
+    // Ignore a stale response if the user switched while the request was in flight.
+    if (currentUserSlug() !== slug) return _userState;
+    if (server && typeof server === "object") {
+      const incoming = normalizePrefs(server);
+      const localTs = (userState().updatedAt) || 0;
+      // Adopt the server copy only when it's at least as fresh as the local mirror;
+      // otherwise the local mirror has newer offline/in-flight edits — keep and push them up.
+      if ((incoming.updatedAt || 0) >= localTs) {
+        incoming.name = getCurrentUserName() || incoming.name || "";
+        _userState = incoming;
+        _userStateSlug = slug;
+        writePrefsMirror(slug, incoming);
+        applyUserTheme();
+        emitUserPrefsChanged();
+      } else {
+        persistUserPrefs();
+      }
+    } else {
+      persistUserPrefs();
+    }
+    return _userState;
+  });
+}
+
+/** Applies the active user's saved theme (also caches it in dc-theme for no-flash boot). */
+function applyUserTheme() {
+  const t = userState().theme;
+  if (t === "light" || t === "dark") {
+    document.documentElement.setAttribute("data-theme", t);
+    try { localStorage.setItem("dc-theme", t); } catch {}
+  }
+}
+
+/** Switches the active user; loads their prefs and notifies the page. Pass "" to clear. */
+function setCurrentUser(name) {
+  flushPendingPrefsSave();
+  const n = String(name || "").trim();
+  try {
+    if (n) localStorage.setItem(CURRENT_USER_KEY, n);
+    else localStorage.removeItem(CURRENT_USER_KEY);
+  } catch {}
+  hydrateUserState();
+  applyUserTheme();
+  emitUserChanged();
+  emitUserPrefsChanged();
+  refreshUserPrefsFromServer();
+}
+
+function getFavoriteProjectIds() {
+  return userState().favorites.filter((x) => typeof x === "string");
+}
+
+function isFavoriteProject(id) {
+  return getFavoriteProjectIds().includes(id);
+}
+
+/** Toggles favorite state for a project id; returns the new state (true = favorited). */
+function toggleFavoriteProject(id) {
+  const list = userState().favorites;
+  const i = list.indexOf(id);
+  if (i >= 0) list.splice(i, 1);
+  else list.unshift(id);
+  persistUserPrefs();
+  emitUserPrefsChanged();
+  return list.includes(id);
+}
+
+/** Reorders favorites to match the given id order (drag-and-drop in the side rail). */
+function setFavoriteOrder(ids) {
+  const have = new Set(userState().favorites);
+  const next = [];
+  ids.forEach((id) => { if (have.has(id) && !next.includes(id)) next.push(id); });
+  userState().favorites.forEach((id) => { if (!next.includes(id)) next.push(id); });
+  _userState.favorites = next;
+  persistUserPrefs();
+  emitUserPrefsChanged();
+}
+
+/** Records that the user just opened a project (most-recent first, capped). */
+function recordRecentProject(id) {
+  if (!id) return;
+  const list = userState().recents.filter((e) => e && e.id && e.id !== id);
+  list.unshift({ id, ts: Date.now() });
+  _userState.recents = list.slice(0, RECENTS_MAX);
+  persistUserPrefs();
+  emitUserPrefsChanged();
+}
+
+/** Recently opened project ids, most recent first. */
+function getRecentProjectIds() {
+  return userState().recents
+    .filter((e) => e && typeof e.id === "string")
+    .map((e) => e.id);
+}
+
+/** Collapsed state for the side rail (per user); falls back to the page default. */
+function getNavCollapsed(defaultVal) {
+  const v = userState().navCollapsed;
+  return typeof v === "boolean" ? v : !!defaultVal;
+}
+
+function setNavCollapsed(val) {
+  userState().navCollapsed = !!val;
+  _userState.navCollapsed = !!val;
+  persistUserPrefs();
+}
+
+/** Saved home sort/status filter for the active user. */
+function getViewPref(which) {
+  const f = userState().filters || {};
+  return which === "status" ? (f.status || "") : (f.sort || "");
+}
+
+function setViewPrefs(sort, status) {
+  userState().filters = { sort: sort || "", status: status || "" };
+  _userState.filters = { sort: sort || "", status: status || "" };
+  persistUserPrefs();
+}
+
+/** Saves the active user's theme choice (called by the nav theme toggle). */
+function setUserTheme(theme) {
+  userState().theme = theme === "light" || theme === "dark" ? theme : null;
+  _userState.theme = userState().theme;
+  persistUserPrefs();
+}
+
+/** Committed list of users for the picker; works on the static site too. */
+function fetchUsersIndex() {
+  return fetchJSON("data/users/index.json")
+    .then((d) => (Array.isArray(d.users) ? d.users : []))
+    .catch(() => []);
+}
+
+/** Names the identity picker can offer: the designer team plus any committed users. */
+function fetchSelectableUsers() {
+  return Promise.all([
+    fetchDesignerProfile().then((p) => designerAttributionNames(p)).catch(() => []),
+    fetchUsersIndex().then((list) => list.map((u) => u && u.name).filter(Boolean)).catch(() => []),
+  ]).then(([a, b]) => {
+    const seen = new Set();
+    const out = [];
+    [...a, ...b].forEach((n) => {
+      const t = String(n || "").trim();
+      const k = t.toLowerCase();
+      if (t && !seen.has(k)) { seen.add(k); out.push(t); }
+    });
+    return out;
+  });
+}
+
+/** Adds a name to the designer team so attribution pickers include it too. */
+function addDesignerTeamMember(name) {
+  const n = String(name || "").trim();
+  if (!n) return Promise.resolve(false);
+  return fetchDesignerProfile()
+    .then((prof) => {
+      const team = Array.isArray(prof.team) ? prof.team.slice() : [];
+      if (team.some((m) => m && String(m.name || "").trim().toLowerCase() === n.toLowerCase())) return true;
+      team.push({ name: n });
+      return saveDesignerProfile({ name: prof.name || "", company: prof.company || "", team })
+        .then(() => true)
+        .catch(() => false);
+    })
+    .catch(() => false);
+}
+
+// Load the active user's prefs on script load, then refresh from the server.
+hydrateUserState();
+applyUserTheme();
+try { refreshUserPrefsFromServer(); } catch {}
+
+/** One request that returns counts/dates for every project (local dev server only). */
+function fetchProjectsSummary() {
+  return fetch("/api/projects-summary").then((r) => {
+    if (!r.ok) throw new Error("unavailable");
+    return r.json();
   });
 }
