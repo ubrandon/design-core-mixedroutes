@@ -7,20 +7,14 @@
       "width": 390
     },
     {
-      "file": "plans-upcoming-banner.html",
+      "file": "plans-upcoming-suggested.html",
       "x": 512,
       "y": 0,
       "width": 390
     },
     {
-      "file": "plans-invites-review.html",
-      "x": 0,
-      "y": 1472,
-      "width": 390
-    },
-    {
-      "file": "plans-invites-sheet.html",
-      "x": 960,
+      "file": "plans-invites-page.html",
+      "x": 1024,
       "y": 0,
       "width": 390
     }
@@ -33,21 +27,15 @@
       "size": 48
     },
     {
-      "text": "New layout",
+      "text": "Suggested tweaks",
       "x": 512,
       "y": -96,
       "size": 48
     },
     {
-      "text": "Invites",
-      "x": 960,
+      "text": "Invites page",
+      "x": 1024,
       "y": -96,
-      "size": 48
-    },
-    {
-      "text": "Explorations",
-      "x": 0,
-      "y": 1376,
       "size": 48
     }
   ]

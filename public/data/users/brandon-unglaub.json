@@ -1,0 +1,47 @@
+{
+  "name": "Brandon Unglaub",
+  "favorites": [
+    "ach-revamp",
+    "brandon-misc",
+    "ach-bulk-edit",
+    "retail-wires",
+    "wires"
+  ],
+  "recents": [
+    {
+      "id": "calendar",
+      "ts": 1782941958155
+    },
+    {
+      "id": "home-page",
+      "ts": 1782941915779
+    },
+    {
+      "id": "ach-revamp",
+      "ts": 1782860985280
+    },
+    {
+      "id": "brandon-misc",
+      "ts": 1782850894619
+    },
+    {
+      "id": "ach-origination",
+      "ts": 1782850878577
+    },
+    {
+      "id": "wires",
+      "ts": 1782846592337
+    },
+    {
+      "id": "business-self-enrollment",
+      "ts": 1782840727113
+    }
+  ],
+  "theme": "light",
+  "filters": {
+    "sort": "",
+    "status": ""
+  },
+  "navCollapsed": true,
+  "updatedAt": 1782941958155
+}
