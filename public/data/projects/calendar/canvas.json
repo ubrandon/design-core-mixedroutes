@@ -14,7 +14,7 @@
     },
     {
       "file": "plans-invites-page.html",
-      "x": 1024,
+      "x": 960,
       "y": 0,
       "width": 390
     }
@@ -27,14 +27,14 @@
       "size": 48
     },
     {
-      "text": "Suggested tweaks",
+      "text": "Updated",
       "x": 512,
       "y": -96,
       "size": 48
     },
     {
       "text": "Invites page",
-      "x": 1024,
+      "x": 960,
       "y": -96,
       "size": 48
     }
