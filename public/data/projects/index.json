@@ -54,6 +54,13 @@
       "name": "Calendar",
       "description": "",
       "createdAt": "2026-05-31T18:00:00.000Z"
+    },
+    {
+      "id": "onboarding",
+      "name": "Onboarding",
+      "description": "",
+      "createdBy": "Brandon Unglaub",
+      "createdAt": "2026-07-01T22:08:41.216Z"
     }
   ]
 }

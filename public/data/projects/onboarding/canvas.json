@@ -1,0 +1,61 @@
+{
+  "screens": [
+    {
+      "file": "welcome.html",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "name": "Welcome"
+    },
+    {
+      "file": "sign-up.html",
+      "x": 430,
+      "y": 0,
+      "width": 390,
+      "name": "Sign up with email"
+    },
+    {
+      "file": "verify-email.html",
+      "x": 860,
+      "y": 0,
+      "width": 390,
+      "name": "Verify email"
+    },
+    {
+      "file": "create-username.html",
+      "x": 1290,
+      "y": 0,
+      "width": 390,
+      "name": "Create username"
+    },
+    {
+      "file": "pick-interests.html",
+      "x": 1720,
+      "y": 0,
+      "width": 390,
+      "name": "Pick interests"
+    },
+    {
+      "file": "log-in.html",
+      "x": 2150,
+      "y": 0,
+      "width": 390,
+      "name": "Log in"
+    },
+    {
+      "file": "home-feed.html",
+      "x": 2580,
+      "y": 0,
+      "width": 390,
+      "name": "Home feed"
+    }
+  ],
+  "texts": [
+    {
+      "text": "Current designs",
+      "x": 0,
+      "y": -96,
+      "size": 48
+    }
+  ]
+}
