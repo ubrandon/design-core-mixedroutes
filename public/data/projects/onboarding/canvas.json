@@ -79,57 +79,57 @@
     },
     {
       "file": "create-profile.html",
-      "x": 1344,
-      "y": 1504,
+      "x": 2208,
+      "y": 1664,
       "width": 390,
       "name": "Create profile (one step)"
     },
     {
       "file": "find-friends.html",
-      "x": 1760,
-      "y": 1504,
+      "x": 2720,
+      "y": 1664,
       "width": 390,
       "name": "Find friends (contact sync)"
     },
     {
       "file": "friend-suggestions.html",
-      "x": 2176,
-      "y": 1504,
+      "x": 3136,
+      "y": 1664,
       "width": 390,
       "name": "Friend suggestions"
     },
     {
       "file": "tour-plans.html",
-      "x": 2624,
-      "y": 1504,
+      "x": 4160,
+      "y": 1664,
       "width": 390,
       "name": "Tour 1: Plans"
     },
     {
       "file": "tour-groups.html",
-      "x": 3040,
-      "y": 1504,
+      "x": 4576,
+      "y": 1664,
       "width": 390,
       "name": "Tour 2: Groups"
     },
     {
       "file": "tour-discover.html",
-      "x": 3488,
-      "y": 1504,
+      "x": 4992,
+      "y": 1664,
       "width": 390,
       "name": "Tour 3: Discover"
     },
     {
       "file": "notifications-ask.html",
-      "x": 3904,
-      "y": 1504,
+      "x": 3648,
+      "y": 1664,
       "width": 390,
       "name": "Notifications ask"
     },
     {
       "file": "home-first-time.html",
-      "x": 4352,
-      "y": 1504,
+      "x": 5504,
+      "y": 1664,
       "width": 390,
       "name": "First home feed"
     },
@@ -143,21 +143,14 @@
     {
       "file": "welcome-v2-photo-moving-text.html",
       "x": 0,
-      "y": 1504,
+      "y": 1664,
       "width": 390,
       "name": "Welcome alt I: Photo + moving text"
     },
     {
-      "file": "sign-up-v2.html",
-      "x": 448,
-      "y": 1504,
-      "width": 390,
-      "name": "Sign up with email (v2)"
-    },
-    {
       "file": "verify-email-v2.html",
-      "x": 896,
-      "y": 1504,
+      "x": 1312,
+      "y": 1664,
       "width": 390,
       "name": "Verify email (v2)"
     },
@@ -167,6 +160,27 @@
       "y": 5184,
       "width": 390,
       "name": "Welcome alt J: Emoji activity pill"
+    },
+    {
+      "file": "ob3-enter-email.html",
+      "x": 480,
+      "y": 1664,
+      "width": 390,
+      "name": "Enter your email"
+    },
+    {
+      "file": "ob3-login.html",
+      "x": 1760,
+      "y": 1664,
+      "width": 390,
+      "name": "Log in (existing account)"
+    },
+    {
+      "file": "ob3-sign-up.html",
+      "x": 896,
+      "y": 1664,
+      "width": 390,
+      "name": "Sign up (new account)"
     }
   ],
   "texts": [
@@ -177,15 +191,57 @@
       "size": 48
     },
     {
-      "text": "Proposed onboarding",
+      "text": "New flow",
       "x": 0,
-      "y": 1408,
+      "y": 1568,
       "size": 48
     },
     {
       "text": "Concepts",
       "x": 0,
       "y": 5088,
+      "size": 48
+    },
+    {
+      "text": "Email signup",
+      "x": 480,
+      "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Email login",
+      "x": 1760,
+      "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Setup",
+      "x": 2208,
+      "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Invite",
+      "x": 2720,
+      "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Features",
+      "x": 4160,
+      "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Push",
+      "x": 3648,
+      "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Home",
+      "x": 5504,
+      "y": 1568,
       "size": 48
     }
   ]
