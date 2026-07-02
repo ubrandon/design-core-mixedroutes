@@ -128,10 +128,17 @@
     },
     {
       "file": "welcome-v2-photo-moving-text.html",
-      "x": 0,
+      "x": 448,
       "y": 5216,
       "width": 390,
       "name": "Welcome alt I: Photo + moving text"
+    },
+    {
+      "file": "welcome-v3-orbit.html",
+      "x": 896,
+      "y": 5216,
+      "width": 390,
+      "name": "Welcome alt N: Friends in orbit"
     },
     {
       "file": "verify-email-v4.html",
@@ -167,6 +174,20 @@
       "y": 1664,
       "width": 390,
       "name": "Welcome alt M: Emoji pattern + moving text"
+    },
+    {
+      "file": "welcome-v2-emoji-pattern-copy.html",
+      "x": 1344,
+      "y": 5216,
+      "width": 390,
+      "name": "Welcome alt M: Emoji pattern + moving text Copy"
+    },
+    {
+      "file": "welcome-copy.html",
+      "x": 0,
+      "y": 5216,
+      "width": 390,
+      "name": "Welcome Copy"
     }
   ],
   "texts": [
