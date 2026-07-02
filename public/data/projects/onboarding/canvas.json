@@ -78,50 +78,43 @@
       "name": "Create profile (one step)"
     },
     {
-      "file": "find-friends.html",
-      "x": 2720,
-      "y": 1664,
-      "width": 390,
-      "name": "Find friends (contact sync)"
-    },
-    {
       "file": "friend-suggestions.html",
-      "x": 3136,
+      "x": 3552,
       "y": 1664,
       "width": 390,
       "name": "Friend suggestions"
     },
     {
-      "file": "tour-plans.html",
-      "x": 4160,
+      "file": "tour-plans-v2.html",
+      "x": 4608,
       "y": 1664,
       "width": 390,
-      "name": "Tour 1: Plans"
+      "name": "Tour 1 v2: Plans (big hero)"
     },
     {
-      "file": "tour-groups.html",
-      "x": 4576,
+      "file": "tour-groups-v2.html",
+      "x": 5024,
       "y": 1664,
       "width": 390,
-      "name": "Tour 2: Groups"
+      "name": "Tour 2 v2: Groups (big hero)"
     },
     {
-      "file": "tour-discover.html",
-      "x": 4992,
+      "file": "tour-discover-v2.html",
+      "x": 5440,
       "y": 1664,
       "width": 390,
-      "name": "Tour 3: Discover"
+      "name": "Tour 3 v2: Discover (big hero)"
     },
     {
-      "file": "notifications-ask.html",
-      "x": 3648,
+      "file": "notifications-ask-alt-big-image.html",
+      "x": 4096,
       "y": 1664,
       "width": 390,
-      "name": "Notifications ask"
+      "name": "Notifications ask alt A: Bigger image"
     },
     {
       "file": "home-first-time.html",
-      "x": 5504,
+      "x": 5952,
       "y": 1664,
       "width": 390,
       "name": "First home feed"
@@ -181,6 +174,20 @@
       "y": 1664,
       "width": 390,
       "name": "Welcome Copy"
+    },
+    {
+      "file": "find-friends-alt-minimal.html",
+      "x": 2720,
+      "y": 1664,
+      "width": 390,
+      "name": "Find friends alt B: Minimal centered"
+    },
+    {
+      "file": "find-friends-no-matches.html",
+      "x": 3136,
+      "y": 1664,
+      "width": 390,
+      "name": "No matches: Be the first"
     }
   ],
   "texts": [
@@ -215,7 +222,7 @@
       "size": 48
     },
     {
-      "text": "Setup",
+      "text": "Profile setup",
       "x": 2208,
       "y": 1568,
       "size": 48
@@ -228,19 +235,19 @@
     },
     {
       "text": "Features",
-      "x": 4160,
+      "x": 4608,
       "y": 1568,
       "size": 48
     },
     {
       "text": "Push",
-      "x": 3648,
+      "x": 4096,
       "y": 1568,
       "size": 48
     },
     {
       "text": "Home",
-      "x": 5504,
+      "x": 5952,
       "y": 1568,
       "size": 48
     }
