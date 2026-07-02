@@ -132,6 +132,27 @@
       "y": 1504,
       "width": 390,
       "name": "First home feed"
+    },
+    {
+      "file": "welcome-v2-one-stack.html",
+      "x": 0,
+      "y": 2624,
+      "width": 390,
+      "name": "Welcome alt D: One stack, no divider"
+    },
+    {
+      "file": "welcome-v2-photo-moving-text.html",
+      "x": 448,
+      "y": 2624,
+      "width": 390,
+      "name": "Welcome alt I: Photo + moving text"
+    },
+    {
+      "file": "welcome-v2-emoji-pill.html",
+      "x": 896,
+      "y": 2624,
+      "width": 390,
+      "name": "Welcome alt J: Emoji activity pill"
     }
   ],
   "texts": [
@@ -145,6 +166,12 @@
       "text": "Proposed onboarding",
       "x": 0,
       "y": 1408,
+      "size": 48
+    },
+    {
+      "text": "Welcome button layout variations",
+      "x": 0,
+      "y": 2528,
       "size": 48
     }
   ]
