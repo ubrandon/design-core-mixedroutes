@@ -85,25 +85,25 @@
       "name": "Friend suggestions"
     },
     {
-      "file": "tour-plans-v2.html",
+      "file": "tour-discover-v3.html",
       "x": 4608,
       "y": 1664,
       "width": 390,
-      "name": "Tour 1 v2: Plans (big hero)"
+      "name": "Tour 1 v3: Discover (near you)"
     },
     {
-      "file": "tour-groups-v2.html",
+      "file": "tour-plans-v3.html",
       "x": 5024,
       "y": 1664,
       "width": 390,
-      "name": "Tour 2 v2: Groups (big hero)"
+      "name": "Tour 2 v3: Plans (no group chat)"
     },
     {
-      "file": "tour-discover-v2.html",
+      "file": "tour-groups-v3.html",
       "x": 5440,
       "y": 1664,
       "width": 390,
-      "name": "Tour 3 v2: Discover (big hero)"
+      "name": "Tour 3 v3: Groups (one tap)"
     },
     {
       "file": "notifications-ask-alt-big-image.html",
