@@ -1,8 +1,51 @@
 <link rel="stylesheet" href="../../../../styles/shared.css" />
 <link rel="stylesheet" href="../../../../styles/ds.css" />
 <link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
+  .mr9-root {
+    background: #f2f2f7;
+    font-family: 'Geist', sans-serif;
+    color: #1a2332;
+    overflow-x: clip;
+    position: relative;
+  }
+  .mr9-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px 6px;
+  }
+  .mr9-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mr9-wordmark {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #1a2332;
+  }
+  .mr9-header-actions {
+    display: flex;
+    gap: 6px;
+  }
+  .mr9-icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(118, 118, 128, 0.12);
+    color: #1a2332;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mr9-icon-btn i {
+    font-size: 20px;
+  }
   .mr9-greeting {
     padding: 22px 16px 10px;
   }
@@ -11,24 +54,29 @@
     font-weight: 800;
     letter-spacing: -0.025em;
     line-height: 1.12;
-    color: var(--text);
+    color: #1a2332;
   }
   .mr9-greeting-tail {
     display: block;
     font-size: 1.15rem;
     font-weight: 500;
     letter-spacing: -0.01em;
-    color: rgba(255, 255, 255, 0.62);
+    color: #5c6b7d;
     margin-top: 10px;
+  }
+  .mr9-gradient-text {
+    background: linear-gradient(145deg, #14b8a6, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .mr9-checklist {
     margin: 14px 16px 20px;
     border-radius: 20px;
     padding: 20px 18px;
-    background:
-      linear-gradient(135deg, rgba(var(--neon-teal-rgb), 0.22), rgba(var(--neon-blue-rgb), 0.08)),
-      var(--bg-0);
-    border: 1px solid rgba(var(--neon-teal-rgb), 0.36);
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(59, 130, 246, 0.06)), #ffffff;
+    border: 1px solid rgba(20, 184, 166, 0.35);
+    box-shadow: 0 8px 24px rgba(26, 35, 50, 0.08);
   }
   .mr9-checklist-head {
     display: flex;
@@ -40,26 +88,26 @@
   .mr9-checklist-title {
     font-size: 1.15rem;
     font-weight: 800;
-    color: var(--text);
+    color: #1a2332;
   }
   .mr9-checklist-count {
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--neon-teal);
+    color: #0d9a8a;
     flex-shrink: 0;
   }
   .mr9-checklist-desc {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.72);
+    color: #5c6b7d;
     line-height: 1.35;
     margin-bottom: 14px;
   }
   .mr9-progress {
     height: 6px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(16, 23, 36, 0.12);
     overflow: hidden;
     margin-bottom: 16px;
   }
@@ -67,7 +115,7 @@
     width: 33%;
     height: 100%;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue));
+    background: linear-gradient(145deg, #14b8a6, #3b82f6);
   }
   .mr9-task {
     display: flex;
@@ -76,18 +124,18 @@
     padding: 11px 0;
   }
   .mr9-task + .mr9-task {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(16, 23, 36, 0.1);
   }
   .mr9-task-icon {
     width: 38px;
     height: 38px;
     border-radius: 12px;
-    background: rgba(var(--neon-teal-rgb), 0.14);
+    background: rgba(20, 184, 166, 0.14);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 19px;
-    color: var(--neon-teal);
+    color: #0d9a8a;
     flex-shrink: 0;
   }
   .mr9-task-label {
@@ -95,18 +143,18 @@
     min-width: 0;
     font-size: 1rem;
     font-weight: 700;
-    color: var(--text);
+    color: #1a2332;
   }
   .mr9-task-label small {
     display: block;
     font-size: 0.85rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.62);
+    color: #5c6b7d;
     margin-top: 2px;
   }
   .mr9-task.is-done .mr9-task-label {
     text-decoration: line-through;
-    color: rgba(255, 255, 255, 0.55);
+    color: #848994;
   }
   .mr9-task-go {
     flex-shrink: 0;
@@ -114,12 +162,12 @@
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--neon-teal);
+    color: #0d9a8a;
   }
   .mr9-task-done-icon {
     flex-shrink: 0;
     font-size: 22px;
-    color: var(--neon-teal);
+    color: #0d9a8a;
   }
   .mr9-row-header {
     display: flex;
@@ -131,7 +179,7 @@
   .mr9-row-title {
     font-size: 1.35rem;
     font-weight: 800;
-    color: var(--text);
+    color: #1a2332;
   }
   .mr9-row-link {
     display: inline-flex;
@@ -140,7 +188,7 @@
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.85);
+    color: #5c6b7d;
     text-transform: uppercase;
     flex-shrink: 0;
   }
@@ -158,8 +206,9 @@
     flex: 0 0 auto;
     width: 195px;
     border-radius: 22px;
-    background: #161c26;
+    background: #ffffff;
     overflow: hidden;
+    box-shadow: 0 4px 14px rgba(26, 35, 50, 0.06);
   }
   .mr9-card-media {
     height: 120px;
@@ -178,7 +227,7 @@
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.62);
+    color: #848994;
     margin-bottom: 8px;
   }
   .mr9-card-title {
@@ -186,14 +235,14 @@
     font-weight: 800;
     letter-spacing: -0.01em;
     line-height: 1.25;
-    color: rgba(255, 255, 255, 0.98);
+    color: #1a2332;
     margin-bottom: 12px;
   }
   .mr9-card-location {
     display: flex;
     align-items: center;
     gap: 7px;
-    color: rgba(255, 255, 255, 0.62);
+    color: #5c6b7d;
     font-size: 0.88rem;
     white-space: nowrap;
     overflow: hidden;
@@ -218,21 +267,46 @@
     padding: 15px 26px;
     border-radius: 999px;
     border: none;
-    background: linear-gradient(135deg, var(--neon-teal), var(--neon-blue));
+    background: linear-gradient(145deg, #14b8a6, #3b82f6);
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: 800;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 10px 26px rgba(59, 130, 246, 0.35);
   }
   .mr9-new-plan i {
     font-size: 22px;
+  }
+  .mr9-tab-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 8px;
+    padding: 10px 6px 22px;
+    background: #ffffff;
+    border-radius: 26px 26px 0 0;
+    box-shadow: 0 -6px 20px rgba(26, 35, 50, 0.08);
+  }
+  .mr9-tab-item {
+    border: none;
+    background: none;
+    color: #848994;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+  }
+  .mr9-tab-item i {
+    font-size: 26px;
+  }
+  .mr9-tab-item.is-active {
+    color: #0d9a8a;
   }
   .mr9-tab-avatar {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #3d4552;
-    color: rgba(255, 255, 255, 0.92);
+    background: #d8dde5;
+    color: #1a2332;
     font-size: 0.82rem;
     font-weight: 700;
     display: flex;
@@ -241,22 +315,22 @@
   }
 </style>
 
-<div style="background: var(--bg-0); overflow-x: clip; position: relative">
+<div class="mr9-root">
   <div class="mr9-scope" style="padding-bottom: 8px">
 
-    <header class="mr-top-nav-home">
-      <a class="mr-top-nav-home-logo" href="#" aria-label="MixedRoutes home">
+    <header class="mr9-header">
+      <a class="mr9-logo" href="#" aria-label="MixedRoutes home">
         <img src="../../../design-system/mixedroutes-assets/icon-foreground.svg" width="36" height="36" alt="" loading="lazy" />
-        <span class="mr-top-nav-home-wordmark">MixedRoutes</span>
+        <span class="mr9-wordmark">MixedRoutes</span>
       </a>
-      <div class="mr-top-nav-home-actions">
-        <button type="button" class="mr-nav-icon-btn" aria-label="Find people">
+      <div class="mr9-header-actions">
+        <button type="button" class="mr9-icon-btn" aria-label="Find people">
           <i class="ph ph-user-plus" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-nav-icon-btn" aria-label="Notifications">
+        <button type="button" class="mr9-icon-btn" aria-label="Notifications">
           <i class="ph ph-bell" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-nav-icon-btn" aria-label="Settings">
+        <button type="button" class="mr9-icon-btn" aria-label="Settings">
           <i class="ph ph-gear-six" aria-hidden="true"></i>
         </button>
       </div>
@@ -264,7 +338,7 @@
 
     <div class="mr9-greeting">
       <div class="mr9-greeting-headline">
-        <span class="gradient-text">Welcome</span>, Brandon
+        <span class="mr9-gradient-text">Welcome</span>, Brandon
         <span class="mr9-greeting-tail">Let's get your first plan going &#127793;</span>
       </div>
     </div>
@@ -337,27 +411,27 @@
 
     <div style="height: 16px"></div>
 
-    <div style="position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, var(--bg-0) 55%)">
+    <div style="position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, #f2f2f7 55%)">
       <div class="mr9-new-plan-row">
         <button type="button" class="mr9-new-plan">
           <i class="ph-fill ph-calendar-blank" aria-hidden="true"></i>
           New plan
         </button>
       </div>
-      <div class="mr-tab-bar" style="margin: 0 8px 0">
-        <button type="button" class="mr-tab-item mr-tab-active" aria-label="Home">
+      <div class="mr9-tab-bar">
+        <button type="button" class="mr9-tab-item is-active" aria-label="Home">
           <i class="ph-fill ph-house" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item" aria-label="Explore">
+        <button type="button" class="mr9-tab-item" aria-label="Explore">
           <i class="ph ph-compass" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item" aria-label="You">
+        <button type="button" class="mr9-tab-item" aria-label="You">
           <span class="mr9-tab-avatar" aria-hidden="true">BR</span>
         </button>
-        <button type="button" class="mr-tab-item" aria-label="Calendar">
+        <button type="button" class="mr9-tab-item" aria-label="Calendar">
           <i class="ph ph-calendar-blank" aria-hidden="true"></i>
         </button>
-        <button type="button" class="mr-tab-item" aria-label="Messages">
+        <button type="button" class="mr9-tab-item" aria-label="Messages">
           <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
         </button>
       </div>

@@ -44,91 +44,91 @@
     },
     {
       "file": "home-feed.html",
-      "x": 2580,
+      "x": 3872,
       "y": 0,
       "width": 390,
       "name": "Home feed"
     },
     {
       "file": "notifications-sheet.html",
-      "x": 3010,
+      "x": 2592,
       "y": 0,
       "width": 390,
       "name": "Notifications sheet"
     },
     {
       "file": "notifications-os-prompt.html",
-      "x": 3440,
+      "x": 3008,
       "y": 0,
       "width": 390,
       "name": "Notifications OS prompt"
     },
     {
       "file": "get-the-app-sheet.html",
-      "x": 3870,
+      "x": 3456,
       "y": 0,
       "width": 390,
       "name": "Get the app sheet (mobile web)"
     },
     {
       "file": "welcome-v2.html",
-      "x": 0,
-      "y": 1504,
+      "x": 448,
+      "y": 3968,
       "width": 390,
       "name": "Welcome (v2)"
     },
     {
       "file": "create-profile.html",
-      "x": 448,
+      "x": 1344,
       "y": 1504,
       "width": 390,
       "name": "Create profile (one step)"
     },
     {
       "file": "find-friends.html",
-      "x": 864,
+      "x": 1760,
       "y": 1504,
       "width": 390,
       "name": "Find friends (contact sync)"
     },
     {
       "file": "friend-suggestions.html",
-      "x": 1280,
+      "x": 2176,
       "y": 1504,
       "width": 390,
       "name": "Friend suggestions"
     },
     {
       "file": "tour-plans.html",
-      "x": 1728,
+      "x": 2624,
       "y": 1504,
       "width": 390,
       "name": "Tour 1: Plans"
     },
     {
       "file": "tour-groups.html",
-      "x": 2144,
+      "x": 3040,
       "y": 1504,
       "width": 390,
       "name": "Tour 2: Groups"
     },
     {
       "file": "tour-discover.html",
-      "x": 2592,
+      "x": 3488,
       "y": 1504,
       "width": 390,
       "name": "Tour 3: Discover"
     },
     {
       "file": "notifications-ask.html",
-      "x": 3008,
+      "x": 3904,
       "y": 1504,
       "width": 390,
       "name": "Notifications ask"
     },
     {
       "file": "home-first-time.html",
-      "x": 3456,
+      "x": 4352,
       "y": 1504,
       "width": 390,
       "name": "First home feed"
@@ -136,21 +136,35 @@
     {
       "file": "welcome-v2-one-stack.html",
       "x": 0,
-      "y": 2624,
+      "y": 3968,
       "width": 390,
       "name": "Welcome alt D: One stack, no divider"
     },
     {
       "file": "welcome-v2-photo-moving-text.html",
-      "x": 448,
-      "y": 2624,
+      "x": 0,
+      "y": 1504,
       "width": 390,
       "name": "Welcome alt I: Photo + moving text"
     },
     {
+      "file": "sign-up-v2.html",
+      "x": 448,
+      "y": 1504,
+      "width": 390,
+      "name": "Sign up with email (v2)"
+    },
+    {
+      "file": "verify-email-v2.html",
+      "x": 896,
+      "y": 1504,
+      "width": 390,
+      "name": "Verify email (v2)"
+    },
+    {
       "file": "welcome-v2-emoji-pill.html",
       "x": 896,
-      "y": 2624,
+      "y": 3968,
       "width": 390,
       "name": "Welcome alt J: Emoji activity pill"
     }
@@ -169,9 +183,9 @@
       "size": 48
     },
     {
-      "text": "Welcome button layout variations",
+      "text": "Concepts",
       "x": 0,
-      "y": 2528,
+      "y": 3872,
       "size": 48
     }
   ]
