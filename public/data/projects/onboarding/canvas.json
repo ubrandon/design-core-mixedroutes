@@ -167,6 +167,90 @@
       "y": 3968,
       "width": 390,
       "name": "Welcome alt J: Emoji activity pill"
+    },
+    {
+      "file": "ob2-welcome.html",
+      "x": 0,
+      "y": 2816,
+      "width": 390,
+      "name": "Welcome (v3)"
+    },
+    {
+      "file": "ob2-sign-up.html",
+      "x": 430,
+      "y": 2816,
+      "width": 390,
+      "name": "Sign up with email (v3)"
+    },
+    {
+      "file": "ob2-verify-email.html",
+      "x": 860,
+      "y": 2816,
+      "width": 390,
+      "name": "Verify email (v3)"
+    },
+    {
+      "file": "ob2-create-profile.html",
+      "x": 1290,
+      "y": 2816,
+      "width": 390,
+      "name": "Create profile (step 1 of 4)"
+    },
+    {
+      "file": "ob2-find-friends.html",
+      "x": 1720,
+      "y": 2816,
+      "width": 390,
+      "name": "Find friends (step 2 of 4)"
+    },
+    {
+      "file": "ob2-friend-suggestions.html",
+      "x": 2150,
+      "y": 2816,
+      "width": 390,
+      "name": "Friend suggestions (step 2 of 4)"
+    },
+    {
+      "file": "ob2-pick-interests.html",
+      "x": 2580,
+      "y": 2816,
+      "width": 390,
+      "name": "Pick interests (step 3 of 4)"
+    },
+    {
+      "file": "ob2-notifications-ask.html",
+      "x": 3010,
+      "y": 2816,
+      "width": 390,
+      "name": "Notifications ask (step 4 of 4)"
+    },
+    {
+      "file": "ob2-tour-plans.html",
+      "x": 3440,
+      "y": 2816,
+      "width": 390,
+      "name": "Tour 1: Plans (v2)"
+    },
+    {
+      "file": "ob2-tour-groups.html",
+      "x": 3870,
+      "y": 2816,
+      "width": 390,
+      "name": "Tour 2: Groups (v2)"
+    },
+    {
+      "file": "ob2-tour-discover.html",
+      "x": 4300,
+      "y": 2816,
+      "width": 390,
+      "name": "Tour 3: Discover (v2)"
+    },
+    {
+      "file": "ob2-home-first-time.html",
+      "x": 4730,
+      "y": 2816,
+      "width": 390,
+      "name": "First home feed (v2)"
     }
   ],
   "texts": [
@@ -180,6 +264,12 @@
       "text": "Proposed onboarding",
       "x": 0,
       "y": 1408,
+      "size": 48
+    },
+    {
+      "text": "Proposed onboarding v2",
+      "x": 0,
+      "y": 2720,
       "size": 48
     },
     {
