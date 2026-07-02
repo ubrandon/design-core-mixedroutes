@@ -71,13 +71,6 @@
       "name": "Get the app sheet (mobile web)"
     },
     {
-      "file": "welcome-v2.html",
-      "x": 448,
-      "y": 5184,
-      "width": 390,
-      "name": "Welcome (v2)"
-    },
-    {
       "file": "create-profile.html",
       "x": 2208,
       "y": 1664,
@@ -134,16 +127,9 @@
       "name": "First home feed"
     },
     {
-      "file": "welcome-v2-one-stack.html",
-      "x": 0,
-      "y": 5184,
-      "width": 390,
-      "name": "Welcome alt D: One stack, no divider"
-    },
-    {
       "file": "welcome-v2-photo-moving-text.html",
       "x": 0,
-      "y": 1664,
+      "y": 5216,
       "width": 390,
       "name": "Welcome alt I: Photo + moving text"
     },
@@ -153,13 +139,6 @@
       "y": 1664,
       "width": 390,
       "name": "Verify email (v2)"
-    },
-    {
-      "file": "welcome-v2-emoji-pill.html",
-      "x": 896,
-      "y": 5184,
-      "width": 390,
-      "name": "Welcome alt J: Emoji activity pill"
     },
     {
       "file": "ob3-enter-email.html",
@@ -181,6 +160,13 @@
       "y": 1664,
       "width": 390,
       "name": "Sign up (new account)"
+    },
+    {
+      "file": "welcome-v2-emoji-pattern.html",
+      "x": 0,
+      "y": 1664,
+      "width": 390,
+      "name": "Welcome alt M: Emoji pattern + moving text"
     }
   ],
   "texts": [
