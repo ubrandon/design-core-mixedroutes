@@ -155,11 +155,11 @@
       "name": "Log in (existing account)"
     },
     {
-      "file": "ob3-sign-up.html",
+      "file": "ob3-sign-up-v2.html",
       "x": 896,
       "y": 1664,
       "width": 390,
-      "name": "Sign up (new account)"
+      "name": "Sign up (new account) v2"
     },
     {
       "file": "welcome-v2-emoji-pattern.html",
