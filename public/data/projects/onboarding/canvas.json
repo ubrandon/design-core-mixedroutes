@@ -134,11 +134,11 @@
       "name": "Welcome alt I: Photo + moving text"
     },
     {
-      "file": "verify-email-v2.html",
+      "file": "verify-email-v4.html",
       "x": 1312,
       "y": 1664,
       "width": 390,
-      "name": "Verify email (v2)"
+      "name": "Verify email (v4)"
     },
     {
       "file": "ob3-enter-email.html",
