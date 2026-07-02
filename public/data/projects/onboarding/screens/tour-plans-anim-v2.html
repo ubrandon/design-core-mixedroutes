@@ -15,9 +15,9 @@
   .mr-plan2 .plan2-emoji.e2 { animation: plan2Float 4s ease-in-out infinite alternate, fadeE2 12s ease infinite; }
   .mr-plan2 .plan2-emoji.e3 { animation: plan2Float 4s ease-in-out infinite alternate, fadeE3 12s ease infinite; }
   @keyframes plan2Float { from{transform:translateY(0) var(--rot)} to{transform:translateY(-10px) var(--rot)} }
-  @keyframes fadeE1 { 0%{opacity:.85} 31%{opacity:.85} 34%{opacity:0} 97%{opacity:0} 100%{opacity:.85} }
-  @keyframes fadeE2 { 0%{opacity:0} 31%{opacity:0} 34%{opacity:.85} 64%{opacity:.85} 67%{opacity:0} 100%{opacity:0} }
-  @keyframes fadeE3 { 0%{opacity:0} 64%{opacity:0} 67%{opacity:.85} 97%{opacity:.85} 100%{opacity:0} }
+  @keyframes fadeE1 { 0%{opacity:1} 31%{opacity:1} 34%{opacity:0} 97%{opacity:0} 100%{opacity:1} }
+  @keyframes fadeE2 { 0%{opacity:0} 31%{opacity:0} 34%{opacity:1} 64%{opacity:1} 67%{opacity:0} 100%{opacity:0} }
+  @keyframes fadeE3 { 0%{opacity:0} 64%{opacity:0} 67%{opacity:1} 97%{opacity:1} 100%{opacity:0} }
 
   .mr-plan2 .plan2-badge { animation: plan2Badge 4s ease infinite; }
   @keyframes plan2Badge {
@@ -26,8 +26,6 @@
     54%,90%{opacity:1;transform:scale(1)}
     96%,100%{opacity:0;transform:scale(0)}
   }
-  .mr-plan2 .plan2-check path { stroke-dasharray: 26; animation: plan2Draw 4s ease infinite; }
-  @keyframes plan2Draw { 0%,47%{stroke-dashoffset:26} 58%,90%{stroke-dashoffset:0} 96%,100%{stroke-dashoffset:26} }
   .mr-plan2 .plan2-toast.t1 { animation: toastT1 12s ease infinite; }
   .mr-plan2 .plan2-toast.t2 { animation: toastT2 12s ease infinite; }
   .mr-plan2 .plan2-toast.t3 { animation: toastT3 12s ease infinite; }
@@ -52,31 +50,34 @@
   <div style="position: relative; height: 470px; flex-shrink: 0; background: linear-gradient(160deg, #e4eefe, #d7f5f0); border-radius: 0 0 32px 32px; overflow: hidden;">
     <span style="position: absolute; top: 18px; right: 16px; color: #5c6b7d; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; z-index: 6;">Skip</span>
 
-    <div class="plan2-emoji e1" style="--rot: rotate(-12deg); position: absolute; top: 56px; left: 10px; font-size: 66px;">&#127829;</div>
-    <div class="plan2-emoji e1" style="--rot: rotate(12deg); position: absolute; bottom: 28px; right: 12px; font-size: 62px;">&#127916;</div>
-    <div class="plan2-emoji e2" style="--rot: rotate(-10deg); position: absolute; top: 56px; left: 10px; font-size: 66px;">&#9749;</div>
-    <div class="plan2-emoji e2" style="--rot: rotate(12deg); position: absolute; bottom: 28px; right: 12px; font-size: 62px;">&#129360;</div>
-    <div class="plan2-emoji e3" style="--rot: rotate(-12deg); position: absolute; top: 56px; left: 10px; font-size: 66px;">&#127874;</div>
-    <div class="plan2-emoji e3" style="--rot: rotate(12deg); position: absolute; bottom: 28px; right: 12px; font-size: 62px;">&#129395;</div>
+    <div class="plan2-emoji e1" style="--rot: rotate(-12deg); position: absolute; top: 70px; left: 34px; font-size: 62px; z-index: 4;">&#127829;</div>
+    <div class="plan2-emoji e2" style="--rot: rotate(-10deg); position: absolute; top: 70px; left: 34px; font-size: 62px; z-index: 4;">&#9749;</div>
+    <div class="plan2-emoji e3" style="--rot: rotate(-12deg); position: absolute; top: 70px; left: 34px; font-size: 62px; z-index: 4;">&#127874;</div>
 
-    <div style="position: absolute; top: 150px; left: 28px; right: 28px; background: #ffffff; border-radius: 22px; padding: 22px 20px; box-shadow: 0 18px 44px rgba(16,23,36,0.18); transform: rotate(-2deg); z-index: 2;">
+    <div style="position: absolute; top: 92px; left: 28px; right: 28px; background: #ffffff; border-radius: 22px; padding: 22px 20px; box-shadow: 0 18px 44px rgba(16,23,36,0.18); transform: rotate(-2deg); z-index: 2;">
 
-      <div class="plan2-badge" style="position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(145deg, #12b886, #0d9a8a); box-shadow: 0 6px 16px rgba(13,154,138,0.4); display: flex; align-items: center; justify-content: center; z-index: 3;">
-        <svg class="plan2-check" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 L10 18.5 L20 6.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div style="position: absolute; bottom: 18px; right: 16px; width: 44px; height: 44px; box-sizing: border-box; border-radius: 50%; border: 2px solid #c7ced8; background: #ffffff; display: flex; align-items: center; justify-content: center; z-index: 5;">
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 L10 18.5 L20 6.5" stroke="#c7ced8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="plan2-badge" style="position: absolute; bottom: 18px; right: 16px; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(145deg, #12b886, #0d9a8a); box-shadow: 0 6px 16px rgba(13,154,138,0.4); display: flex; align-items: center; justify-content: center; z-index: 6;">
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 L10 18.5 L20 6.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
 
       <div style="display: grid; margin-bottom: 16px;">
         <div class="plan2-scene s1">
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=560&h=200&q=80" alt="" style="width: 100%; height: 124px; object-fit: cover; border-radius: 14px; display: block; margin: -12px -10px 14px;" />
           <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #e07020; margin-bottom: 6px;">Friday &bull; 7 PM</div>
           <div style="font-size: 24px; font-weight: 700; margin-bottom: 10px;">&#127829; Movie night</div>
           <div style="display: flex; align-items: center; gap: 7px; font-size: 14px; color: #5c6b7d;"><i class="ph-fill ph-map-pin" style="font-size: 16px;"></i>Alex's place</div>
         </div>
         <div class="plan2-scene s2">
+          <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=560&h=200&q=80" alt="" style="width: 100%; height: 124px; object-fit: cover; border-radius: 14px; display: block; margin: -12px -10px 14px;" />
           <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #e07020; margin-bottom: 6px;">Sunday &bull; 11 AM</div>
           <div style="font-size: 24px; font-weight: 700; margin-bottom: 10px;">&#9749; Weekend brunch</div>
           <div style="display: flex; align-items: center; gap: 7px; font-size: 14px; color: #5c6b7d;"><i class="ph-fill ph-map-pin" style="font-size: 16px;"></i>Farmhouse Cafe</div>
         </div>
         <div class="plan2-scene s3">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=560&h=200&q=80" alt="" style="width: 100%; height: 124px; object-fit: cover; border-radius: 14px; display: block; margin: -12px -10px 14px;" />
           <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #e07020; margin-bottom: 6px;">Saturday &bull; 8 PM</div>
           <div style="font-size: 24px; font-weight: 700; margin-bottom: 10px;">&#127874; Maya's birthday</div>
           <div style="display: flex; align-items: center; gap: 7px; font-size: 14px; color: #5c6b7d;"><i class="ph-fill ph-map-pin" style="font-size: 16px;"></i>The Rooftop</div>
@@ -94,15 +95,15 @@
       </div>
     </div>
 
-    <div class="plan2-toast t1" style="position: absolute; top: 114px; right: 22px; background: #ffffff; border-radius: 999px; padding: 9px 16px; box-shadow: 0 10px 26px rgba(16,23,36,0.16); font-size: 14px; font-weight: 700; z-index: 3; display: flex; align-items: center; gap: 7px;">
+    <div class="plan2-toast t1" style="position: absolute; top: 70px; right: 22px; background: #ffffff; border-radius: 999px; padding: 9px 16px; box-shadow: 0 10px 26px rgba(16,23,36,0.16); font-size: 14px; font-weight: 700; z-index: 3; display: flex; align-items: center; gap: 7px;">
       <img src="https://i.pravatar.cc/48?img=12" alt="" style="width: 22px; height: 22px; border-radius: 50%;" />
       Jordan is in &#127881;
     </div>
-    <div class="plan2-toast t2" style="position: absolute; top: 114px; right: 22px; background: #ffffff; border-radius: 999px; padding: 9px 16px; box-shadow: 0 10px 26px rgba(16,23,36,0.16); font-size: 14px; font-weight: 700; z-index: 3; display: flex; align-items: center; gap: 7px;">
+    <div class="plan2-toast t2" style="position: absolute; top: 70px; right: 22px; background: #ffffff; border-radius: 999px; padding: 9px 16px; box-shadow: 0 10px 26px rgba(16,23,36,0.16); font-size: 14px; font-weight: 700; z-index: 3; display: flex; align-items: center; gap: 7px;">
       <img src="https://i.pravatar.cc/48?img=47" alt="" style="width: 22px; height: 22px; border-radius: 50%;" />
       Priya is in &#127881;
     </div>
-    <div class="plan2-toast t3" style="position: absolute; top: 114px; right: 22px; background: #ffffff; border-radius: 999px; padding: 9px 16px; box-shadow: 0 10px 26px rgba(16,23,36,0.16); font-size: 14px; font-weight: 700; z-index: 3; display: flex; align-items: center; gap: 7px;">
+    <div class="plan2-toast t3" style="position: absolute; top: 70px; right: 22px; background: #ffffff; border-radius: 999px; padding: 9px 16px; box-shadow: 0 10px 26px rgba(16,23,36,0.16); font-size: 14px; font-weight: 700; z-index: 3; display: flex; align-items: center; gap: 7px;">
       <img src="https://i.pravatar.cc/48?img=68" alt="" style="width: 22px; height: 22px; border-radius: 50%;" />
       Leo is in &#127881;
     </div>
