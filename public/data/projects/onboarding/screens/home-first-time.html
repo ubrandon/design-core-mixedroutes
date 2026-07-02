@@ -8,7 +8,8 @@
     background: #f2f2f7;
     font-family: 'Geist', sans-serif;
     color: #1a2332;
-    overflow-x: clip;
+    height: 844px;
+    overflow: hidden;
     position: relative;
   }
   .mr9-header {
@@ -277,47 +278,22 @@
   .mr9-new-plan i {
     font-size: 22px;
   }
-  .mr9-tab-bar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 8px;
-    padding: 10px 6px 22px;
-    background: #ffffff;
-    border-radius: 26px 26px 0 0;
-    box-shadow: 0 -6px 20px rgba(26, 35, 50, 0.08);
+  .mr9-tab-scope .mr-tab-bar {
+    border-radius: 0;
   }
-  .mr9-tab-item {
-    border: none;
-    background: none;
-    color: #848994;
+  .mr9-tab-scope .mr-tab-avatar {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 14px;
-  }
-  .mr9-tab-item i {
-    font-size: 26px;
-  }
-  .mr9-tab-item.is-active {
-    color: #0d9a8a;
-  }
-  .mr9-tab-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
     background: #d8dde5;
     color: #1a2332;
-    font-size: 0.82rem;
+    font-size: 12px;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 </style>
 
 <div class="mr9-root">
-  <div class="mr9-scope" style="padding-bottom: 8px">
+  <div class="mr9-scope">
 
     <header class="mr9-header">
       <a class="mr9-logo" href="#" aria-label="MixedRoutes home">
@@ -349,7 +325,7 @@
         <div class="mr9-checklist-title">Get started</div>
         <div class="mr9-checklist-count">1 of 3</div>
       </div>
-      <div class="mr9-checklist-desc">Three quick things and this feed fills up with your people's plans.</div>
+      <div class="mr9-checklist-desc">A few quick things and this feed fills up with your people's plans.</div>
       <div class="mr9-progress"><div class="mr9-progress-fill"></div></div>
 
       <div class="mr9-task is-done">
@@ -358,18 +334,18 @@
         <i class="ph-fill ph-check-circle mr9-task-done-icon" aria-hidden="true"></i>
       </div>
       <div class="mr9-task">
-        <div class="mr9-task-icon"><i class="ph-fill ph-users-three" aria-hidden="true"></i></div>
-        <div class="mr9-task-label">
-          Create a group
-          <small>Save your crew for one-tap invites</small>
-        </div>
-        <span class="mr9-task-go">Go</span>
-      </div>
-      <div class="mr9-task">
         <div class="mr9-task-icon"><i class="ph-fill ph-calendar-plus" aria-hidden="true"></i></div>
         <div class="mr9-task-label">
           Make your first plan
           <small>Even "tacos on Tuesday" counts</small>
+        </div>
+        <span class="mr9-task-go">Go</span>
+      </div>
+      <div class="mr9-task">
+        <div class="mr9-task-icon"><i class="ph-fill ph-compass" aria-hidden="true"></i></div>
+        <div class="mr9-task-label">
+          Discover events and places
+          <small>Find one you like and plan around it</small>
         </div>
         <span class="mr9-task-go">Go</span>
       </div>
@@ -412,29 +388,31 @@
 
     <div style="height: 16px"></div>
 
-    <div style="position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, #f2f2f7 55%)">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, #f2f2f7 55%)">
       <div class="mr9-new-plan-row">
         <button type="button" class="mr9-new-plan">
           <i class="ph-fill ph-calendar-blank" aria-hidden="true"></i>
           New plan
         </button>
       </div>
-      <div class="mr9-tab-bar">
-        <button type="button" class="mr9-tab-item is-active" aria-label="Home">
-          <i class="ph-fill ph-house" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="mr9-tab-item" aria-label="Plans">
-          <i class="ph ph-calendar-blank" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="mr9-tab-item" aria-label="You">
-          <span class="mr9-tab-avatar" aria-hidden="true">BR</span>
-        </button>
-        <button type="button" class="mr9-tab-item" aria-label="Discover">
-          <i class="ph ph-compass" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="mr9-tab-item" aria-label="Chat">
-          <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
-        </button>
+      <div class="mr-scope mr9-tab-scope">
+        <div class="mr-tab-bar mr-tab-bar--light">
+          <button type="button" class="mr-tab-item mr-tab-active" aria-label="Home">
+            <i class="ph-fill ph-house" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="mr-tab-item" aria-label="Calendar">
+            <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="mr-tab-item mr-tab-item--avatar" aria-label="You">
+            <span class="mr-tab-avatar" aria-hidden="true">BR</span>
+          </button>
+          <button type="button" class="mr-tab-item" aria-label="Explore">
+            <i class="ph ph-compass" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="mr-tab-item" aria-hidden="false" aria-label="Messages">
+            <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

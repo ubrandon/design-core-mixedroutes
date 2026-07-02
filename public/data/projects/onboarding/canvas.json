@@ -86,24 +86,45 @@
     },
     {
       "file": "tour-discover-v3.html",
-      "x": 4608,
-      "y": 1664,
+      "x": 1568,
+      "y": 5216,
       "width": 390,
       "name": "Tour 1 v3: Discover (near you)"
     },
     {
       "file": "tour-plans-v3.html",
-      "x": 5024,
-      "y": 1664,
+      "x": 1984,
+      "y": 5216,
       "width": 390,
       "name": "Tour 2 v3: Plans (no group chat)"
     },
     {
       "file": "tour-groups-v3.html",
+      "x": 2400,
+      "y": 5216,
+      "width": 390,
+      "name": "Tour 3 v3: Groups (one tap)"
+    },
+    {
+      "file": "tour-discover-anim-v2.html",
+      "x": 4608,
+      "y": 1664,
+      "width": 390,
+      "name": "Tour 1 anim v2: Discover (no search)"
+    },
+    {
+      "file": "tour-plans-anim-v2.html",
+      "x": 5024,
+      "y": 1664,
+      "width": 390,
+      "name": "Tour 2 anim v2: Plans (I'm in to Going)"
+    },
+    {
+      "file": "tour-groups-anim-v2.html",
       "x": 5440,
       "y": 1664,
       "width": 390,
-      "name": "Tour 3 v3: Groups (one tap)"
+      "name": "Tour 3 anim v2: Group chat + channels"
     },
     {
       "file": "notifications-ask-alt-big-image.html",

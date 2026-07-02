@@ -53,20 +53,41 @@
     </div>
   </div>
 
-  <p class="mr-subsection-title">Bottom tab bar (Phosphor — active filled, inactive outlined)</p>
+  <p class="mr-subsection-title">Bottom tab bar (Phosphor — active filled, inactive outlined; order: Home, Calendar, You, Explore, Messages)</p>
   <div style="max-width:390px;">
     <div class="mr-tab-bar">
       <button type="button" class="mr-tab-item mr-tab-active" aria-label="Home">
         <i class="ph-fill ph-house" aria-hidden="true"></i>
       </button>
+      <button type="button" class="mr-tab-item" aria-label="Calendar">
+        <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="mr-tab-item mr-tab-item--avatar" aria-label="You">
+        <img class="mr-tab-avatar" src="https://i.pravatar.cc/72?img=11" alt="" width="36" height="36" loading="lazy" />
+      </button>
       <button type="button" class="mr-tab-item" aria-label="Explore">
         <i class="ph ph-compass" aria-hidden="true"></i>
       </button>
-      <button type="button" class="mr-tab-item mr-tab-create" aria-label="Create">
-        <i class="ph ph-plus-circle" aria-hidden="true"></i>
+      <button type="button" class="mr-tab-item" aria-label="Messages">
+        <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
       </button>
-      <button type="button" class="mr-tab-item" aria-label="Profile">
-        <i class="ph ph-user" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <p class="mr-subsection-title">Bottom tab bar — light variant (for light-mode screens, e.g. onboarding)</p>
+  <div style="max-width:390px;">
+    <div class="mr-tab-bar mr-tab-bar--light">
+      <button type="button" class="mr-tab-item mr-tab-active" aria-label="Home">
+        <i class="ph-fill ph-house" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="mr-tab-item" aria-label="Calendar">
+        <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="mr-tab-item mr-tab-item--avatar" aria-label="You">
+        <img class="mr-tab-avatar" src="https://i.pravatar.cc/72?img=11" alt="" width="36" height="36" loading="lazy" />
+      </button>
+      <button type="button" class="mr-tab-item" aria-label="Explore">
+        <i class="ph ph-compass" aria-hidden="true"></i>
       </button>
       <button type="button" class="mr-tab-item" aria-label="Messages">
         <i class="ph ph-chat-teardrop-text" aria-hidden="true"></i>
