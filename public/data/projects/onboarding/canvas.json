@@ -129,42 +129,42 @@
     {
       "file": "tour-spark-v4-light.html",
       "x": 0,
-      "y": 6368,
+      "y": 8608,
       "width": 390,
       "name": "Tour v4 light — 1: Find a spark"
     },
     {
       "file": "tour-plan-v4-light.html",
       "x": 416,
-      "y": 6368,
+      "y": 8608,
       "width": 390,
       "name": "Tour v4 light — 2: Make the plan"
     },
     {
       "file": "tour-memory-v4-light.html",
       "x": 832,
-      "y": 6368,
+      "y": 8608,
       "width": 390,
       "name": "Tour v4 light — 3: Keep the memories"
     },
     {
       "file": "tour-product-discover-v5.html",
       "x": 1504,
-      "y": 6336,
+      "y": 8576,
       "width": 390,
       "name": "Tour v5 light product UI — 1: Discover"
     },
     {
       "file": "tour-product-plan-v5.html",
       "x": 1920,
-      "y": 6336,
+      "y": 8576,
       "width": 390,
       "name": "Tour v5 light product UI — 2: Plans and RSVP"
     },
     {
       "file": "tour-product-chat-v5.html",
       "x": 2336,
-      "y": 6336,
+      "y": 8576,
       "width": 390,
       "name": "Tour v5 light product UI — 3: Group chat channels"
     },
@@ -251,6 +251,34 @@
       "y": 1664,
       "width": 390,
       "name": "No matches: Be the first"
+    },
+    {
+      "file": "signup-photo-alt-a-focused.html",
+      "x": 2848,
+      "y": 8576,
+      "width": 390,
+      "name": "Sign up alt A: Focused first step"
+    },
+    {
+      "file": "signup-photo-alt-b-all-in-one.html",
+      "x": 3264,
+      "y": 8576,
+      "width": 390,
+      "name": "Sign up alt B: Compact all-in-one"
+    },
+    {
+      "file": "signup-photo-alt-c-social-proof.html",
+      "x": 3680,
+      "y": 8576,
+      "width": 390,
+      "name": "Sign up alt C: Social proof"
+    },
+    {
+      "file": "signup-photo-alt-d-conversational.html",
+      "x": 4096,
+      "y": 8576,
+      "width": 390,
+      "name": "Sign up alt D: Conversational"
     }
   ],
   "texts": [
@@ -305,13 +333,13 @@
     {
       "text": "Tour concept — Light mode",
       "x": 0,
-      "y": 6272,
+      "y": 8512,
       "size": 48
     },
     {
       "text": "Tour concept — Product UI · Light",
       "x": 1504,
-      "y": 6240,
+      "y": 8480,
       "size": 48
     },
     {
@@ -324,6 +352,12 @@
       "text": "Home",
       "x": 5952,
       "y": 1568,
+      "size": 48
+    },
+    {
+      "text": "Sign up explorations — Photo welcome",
+      "x": 2848,
+      "y": 8480,
       "size": 48
     }
   ]
