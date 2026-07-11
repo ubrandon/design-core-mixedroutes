@@ -1,0 +1,175 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  .bb2 {
+    font-family: "DM Sans", -apple-system, sans-serif;
+    background: #f6f3ed;
+    color: #21261f;
+    padding: 36px 32px 40px;
+    overflow-x: clip;
+  }
+  .bb2 * { box-sizing: border-box; }
+  .bb2-kicker {
+    font-family: "Inter", sans-serif; font-weight: 700; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: #bc4b26; margin: 0 0 10px;
+  }
+  .bb2-title {
+    font-family: "Inter", sans-serif; font-weight: 800; font-size: 34px;
+    letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 6px;
+  }
+  .bb2-sub { margin: 0 0 28px; font-size: 14px; color: rgba(33, 38, 31, 0.7); }
+  .bb2-label {
+    font-family: "Inter", sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: rgba(33, 38, 31, 0.55);
+    margin: 26px 0 12px;
+  }
+  .bb2-swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .bb2-swatch { border-radius: 12px; overflow: hidden; border: 1px solid rgba(33, 38, 31, 0.12); background: #fff; }
+  .bb2-swatch-chip { height: 54px; }
+  .bb2-swatch-info { padding: 8px 10px; }
+  .bb2-swatch-name { font-family: "Inter", sans-serif; font-weight: 700; font-size: 12px; }
+  .bb2-swatch-role { font-size: 11px; line-height: 1.45; color: rgba(33, 38, 31, 0.6); }
+  .bb2-rule-card {
+    background: #fff; border-radius: 12px; padding: 14px 16px;
+    border: 1px solid rgba(33, 38, 31, 0.1); font-size: 13px; line-height: 1.55;
+  }
+  .bb2-rule-card b { font-family: "Inter", sans-serif; font-weight: 700; }
+  .bb2-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bb2-states { display: flex; gap: 10px; flex-wrap: wrap; }
+  .bb2-state {
+    display: inline-flex; align-items: center; gap: 7px; font-family: "Inter", sans-serif;
+    font-weight: 700; font-size: 13px; color: #fff; padding: 9px 16px; border-radius: 999px;
+  }
+  .bb2-dark {
+    border-radius: 12px; padding: 18px 20px; background: #29201a; color: #f6f3ed;
+  }
+  .bb2-dark-title { font-family: "Inter", sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.02em; margin: 0 0 4px; }
+  .bb2-dark-note { font-size: 12px; line-height: 1.6; color: rgba(246, 243, 237, 0.7); margin: 0; }
+  .bb2-imagery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bb2-img-card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 10; background: #e8e1d3; }
+  .bb2-img-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bb2-img-tag {
+    position: absolute; left: 10px; bottom: 10px; font-family: "Inter", sans-serif;
+    font-weight: 700; font-size: 11px; color: #fff; padding: 4px 10px; border-radius: 999px;
+    background: rgba(20, 24, 18, 0.55); backdrop-filter: blur(4px);
+  }
+  .bb2-dont {
+    border-radius: 12px; border: 1.5px dashed rgba(33, 38, 31, 0.25); padding: 14px 16px;
+    font-size: 12px; line-height: 1.6; color: rgba(33, 38, 31, 0.65); background: rgba(255, 255, 255, 0.5);
+  }
+  .bb2-note { font-size: 12px; line-height: 1.6; color: rgba(33, 38, 31, 0.6); margin: 8px 0 0; }
+  .bb2-wordmark {
+    font-family: "Inter", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em;
+  }
+  .bb2-type-card { background: #fff; border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(33, 38, 31, 0.1); }
+  .bb2-display {
+    font-family: "Inter", sans-serif; font-weight: 800; font-size: 38px;
+    letter-spacing: -0.025em; line-height: 1.05; margin: 0;
+  }
+  .bb2-type-meta { font-size: 11px; color: rgba(33, 38, 31, 0.55); margin: 6px 0 14px; }
+  .bb2-body-sample { font-size: 15px; line-height: 1.7; color: rgba(33, 38, 31, 0.7); margin: 0; }
+  .bb2-plan-grid { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: start; }
+  .bb2-plan {
+    position: relative; margin: 0; border-radius: 12px; overflow: hidden;
+    aspect-ratio: 3 / 4; background: #e8e1d3;
+  }
+  .bb2-plan img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bb2-plan-caption {
+    position: absolute; inset: auto 0 0 0; display: flex; flex-direction: column; gap: 3px;
+    padding: 48px 14px 13px; color: #fff;
+    background: linear-gradient(180deg, rgba(15, 18, 14, 0) 0%, rgba(15, 18, 14, 0.78) 60%);
+  }
+  .bb2-plan-title { font-family: "Inter", sans-serif; font-weight: 800; font-size: 15px; }
+  .bb2-plan-meta { font-size: 12px; color: rgba(255, 255, 255, 0.85); }
+  .bb2-plan-going {
+    margin-top: 7px; align-self: flex-start; font-size: 11px; font-weight: 700; padding: 3px 9px;
+    border-radius: 999px; background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35); backdrop-filter: blur(4px); color: #fff;
+  }
+</style>
+
+<div class="bb2">
+  <p class="bb2-kicker">Brand board · 2 of 2</p>
+  <h1 class="bb2-title">The full identity, per the brand doc.</h1>
+  <p class="bb2-sub">From VISUAL_IDENTITY.md in the app repo. Everything on board 1, plus the two colors the landing page never shows and the rules for using them.</p>
+
+  <p class="bb2-label">Full palette · paper and ink, one ember</p>
+  <div class="bb2-swatches">
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#f6f3ed;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Paper #f6f3ed</div><div class="bb2-swatch-role">Default ground, never pure white pages</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#21261f;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Ink #21261f</div><div class="bb2-swatch-role">Text and UI, never pure black</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#bc4b26;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Clay #bc4b26</div><div class="bb2-swatch-role">The accent: CTAs, eyebrows, the creed band</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#2e4636;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Pine #2e4636</div><div class="bb2-swatch-role">The quiet second color: confirmed and resolved states</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#8f2f2f;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Brick #8f2f2f</div><div class="bb2-swatch-role">Errors only, never decorative</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#29201a;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Roast #29201a</div><div class="bb2-swatch-role">Footers and warm dark bands</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#e8e1d3;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Sand #e8e1d3</div><div class="bb2-swatch-role">Cards, wells, hover fills</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:#f2e0d0;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Blush #f2e0d0</div><div class="bb2-swatch-role">Alternate warm well, use sparingly</div></div></div>
+    <div class="bb2-swatch"><div class="bb2-swatch-chip" style="background:linear-gradient(180deg, rgba(20,24,18,0) 0%, rgba(20,24,18,0.72) 100%), url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=400&q=60') center/cover;"></div><div class="bb2-swatch-info"><div class="bb2-swatch-name">Photography</div><div class="bb2-swatch-role">Supplies most of the color on any surface</div></div></div>
+  </div>
+
+  <p class="bb2-label">Color rules</p>
+  <div class="bb2-rules">
+    <div class="bb2-rule-card"><b style="color:#bc4b26;">Clay is scarce.</b> One accent moment per view. A full clay band is the loudest the brand gets, earn it with a statement.</div>
+    <div class="bb2-rule-card"><b>Clay shouts, pine settles.</b> Clay marks the invitation and the ask; pine marks the resolved state: you're in, it's locked.</div>
+    <div class="bb2-rule-card"><b style="color:#8f2f2f;">Errors never wear clay.</b> Any nearby red would read as the accent, so errors use brick and plain words.</div>
+    <div class="bb2-rule-card"><b>No blues, teals, or neon.</b> The only gradients allowed are photo scrims. The app's current teal predates this identity.</div>
+  </div>
+  <div class="bb2-states" style="margin-top:12px;">
+    <span class="bb2-state" style="background:#bc4b26;">Get the app</span>
+    <span class="bb2-state" style="background:#2e4636;">You're in ✓</span>
+    <span class="bb2-state" style="background:#8f2f2f;">Couldn't save</span>
+  </div>
+
+  <p class="bb2-label">Type</p>
+  <div class="bb2-type-card">
+    <p class="bb2-display">Go where life is.</p>
+    <p class="bb2-type-meta">Display: Inter 800, tight tracking, short sentences that end with a period.</p>
+    <p class="bb2-body-sample">Body: DM Sans, regular, roomy line height. Warm and plain, it reads like a person, not a product tour.</p>
+    <p class="bb2-type-meta" style="margin:14px 0 0;"><span style="font-family:'Inter',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#bc4b26;">Eyebrow labels</span> &nbsp; Inter 700, uppercase, wide tracking, clay.</p>
+  </div>
+
+  <p class="bb2-label">Wordmark &amp; type rules</p>
+  <div class="bb2-rule-card">
+    <span class="bb2-wordmark">MixedRoutes</span>
+    <p class="bb2-note" style="margin-top:6px;">The wordmark is the logo: Inter 800, ink on paper or white on photography. No swooshes, no pins, no gradient marks. Headlines are short sentences with a period, set heavy; no thin weights anywhere, and all-caps only for small eyebrow labels.</p>
+  </div>
+
+  <p class="bb2-label">Imagery · the identity itself</p>
+  <div class="bb2-imagery">
+    <div class="bb2-img-card">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=70" alt="Friends at a long dinner table outdoors at dusk" />
+      <span class="bb2-img-tag">Real light, mid-moment, unposed</span>
+    </div>
+    <div class="bb2-img-card">
+      <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=70" alt="Two friends hiking a trail" />
+      <span class="bb2-img-tag">Small groups, 2 to 8, the scale of a plan</span>
+    </div>
+  </div>
+  <div class="bb2-dont" style="margin-top:10px;">
+    <b style="font-family:'Inter',sans-serif;">Never:</b> stock-photo smiles at the camera, phones as heroes, festival crowds, cold or moody edits, or screenshots floating in device mockups on white. Phone screens live inside sand or blush wells, cropped off the edge.
+  </div>
+
+  <p class="bb2-label">The signature: plan card</p>
+  <div class="bb2-plan-grid">
+    <figure class="bb2-plan">
+      <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=75" alt="Two friends hiking a mountain trail" />
+      <figcaption class="bb2-plan-caption">
+        <span class="bb2-plan-title">Saturday sunrise hike</span>
+        <span class="bb2-plan-meta">Sat · 6:00 AM · Craggy Gardens</span>
+        <span class="bb2-plan-going">4 going</span>
+      </figcaption>
+    </figure>
+    <div class="bb2-rule-card">
+      A 3:4 photo, 12px corners, warm scrim from the bottom, white Inter 800 title, one meta line, and the frosted going pill. Same anatomy everywhere: landing, social, ads, invites, merch. Vary the photo and the words, never the shape. The pill is the tell, keep its style exact.
+    </div>
+  </div>
+
+  <p class="bb2-label">Dark mode is a place, not an inversion</p>
+  <div class="bb2-dark">
+    <p class="bb2-dark-title">Warm darks, paper text.</p>
+    <p class="bb2-dark-note">Night surfaces come from roast and photo-scrim tones, text is paper rather than pure white, and clay and pine stay as they are. Never cool gray, never pure black, never a mechanical flip.</p>
+  </div>
+
+  <p class="bb2-note">Three tests for any new surface: does a photo of real life carry the moment, does it feel warm and physical rather than cold and digital, and would it still feel like us printed on a shirt.</p>
+</div>

@@ -1,6 +1,22 @@
 {
   "screens": [
-    { "file": "redesign2-landing.html", "x": 0, "y": 0, "width": 1280 },
-    { "file": "redesign2-landing-v2.html", "x": 1320, "y": 0, "width": 1280 }
+    {
+      "file": "redesign2-landing.html",
+      "x": 0,
+      "y": 0,
+      "width": 1280
+    },
+    {
+      "file": "redesign2-landing-v2.html",
+      "x": 1320,
+      "y": 0,
+      "width": 1280
+    },
+    {
+      "file": "brand-board-identity-doc.html",
+      "x": 3616,
+      "y": 0,
+      "width": 860
+    }
   ]
 }
