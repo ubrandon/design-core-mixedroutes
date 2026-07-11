@@ -1,0 +1,174 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  .bbe {
+    font-family: "Space Grotesk", -apple-system, sans-serif;
+    background: #101014;
+    color: #f4f4ef;
+    padding: 36px 32px 40px;
+    overflow-x: clip;
+  }
+  .bbe * { box-sizing: border-box; }
+  .bbe-kicker {
+    font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 12px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #d8f34e; margin: 0 0 10px;
+  }
+  .bbe-title {
+    font-weight: 700; font-size: 36px; text-transform: uppercase;
+    letter-spacing: -0.01em; line-height: 1.02; margin: 0 0 6px;
+  }
+  .bbe-sub { margin: 0 0 28px; font-size: 14px; color: rgba(244, 244, 239, 0.65); }
+  .bbe-label {
+    font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase; color: rgba(244, 244, 239, 0.5);
+    margin: 26px 0 12px;
+  }
+  .bbe-swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .bbe-swatch { border-radius: 4px; overflow: hidden; border: 1px solid rgba(244, 244, 239, 0.15); background: #17171d; }
+  .bbe-swatch-chip { height: 54px; }
+  .bbe-swatch-name { font-weight: 700; font-size: 12px; }
+  .bbe-swatch-info { padding: 8px 10px; }
+  .bbe-swatch-role { font-size: 11px; line-height: 1.45; color: rgba(244, 244, 239, 0.55); }
+  .bbe-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bbe-rule-card {
+    background: #17171d; border-radius: 4px; padding: 14px 16px;
+    border: 1px solid rgba(244, 244, 239, 0.12); font-size: 13px; line-height: 1.55;
+    color: rgba(244, 244, 239, 0.8);
+  }
+  .bbe-rule-card b { color: #f4f4ef; }
+  .bbe-states { display: flex; gap: 10px; flex-wrap: wrap; }
+  .bbe-state {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .bbe-type-card { background: #17171d; border-radius: 4px; padding: 20px 22px; border: 1px solid rgba(244, 244, 239, 0.12); }
+  .bbe-display {
+    font-weight: 700; font-size: 40px; text-transform: uppercase;
+    letter-spacing: -0.01em; line-height: 1.02; margin: 0;
+  }
+  .bbe-type-meta { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: rgba(244, 244, 239, 0.5); margin: 6px 0 14px; }
+  .bbe-body-sample { font-size: 15px; line-height: 1.7; color: rgba(244, 244, 239, 0.7); margin: 0; }
+  .bbe-wordmark {
+    font-weight: 700; font-size: 26px; text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  .bbe-wordmark span { color: #d8f34e; }
+  .bbe-imagery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bbe-img-card { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 16 / 10; background: #17171d; }
+  .bbe-img-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.25) contrast(1.08); }
+  .bbe-img-tag {
+    position: absolute; left: 10px; bottom: 10px; font-family: "IBM Plex Mono", monospace;
+    font-weight: 600; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #101014; padding: 5px 10px; border-radius: 3px; background: #d8f34e;
+  }
+  .bbe-dont {
+    border-radius: 4px; border: 1.5px dashed rgba(244, 244, 239, 0.3); padding: 14px 16px;
+    font-size: 12px; line-height: 1.6; color: rgba(244, 244, 239, 0.6); background: rgba(23, 23, 29, 0.6);
+  }
+  .bbe-note { font-size: 12px; line-height: 1.6; color: rgba(244, 244, 239, 0.55); margin: 8px 0 0; }
+  .bbe-plan-grid { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: start; }
+  .bbe-plan {
+    position: relative; margin: 0; border-radius: 4px; overflow: hidden;
+    aspect-ratio: 3 / 4; background: #17171d; border: 1px solid rgba(216, 243, 78, 0.5);
+  }
+  .bbe-plan img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.25) contrast(1.08); }
+  .bbe-plan-caption {
+    position: absolute; inset: auto 0 0 0; display: flex; flex-direction: column; gap: 3px;
+    padding: 48px 14px 13px; color: #f4f4ef;
+    background: linear-gradient(180deg, rgba(16, 16, 20, 0) 0%, rgba(16, 16, 20, 0.85) 65%);
+  }
+  .bbe-plan-title { font-weight: 700; font-size: 15px; text-transform: uppercase; }
+  .bbe-plan-meta { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: rgba(244, 244, 239, 0.8); }
+  .bbe-plan-going {
+    margin-top: 7px; align-self: flex-start; font-family: "IBM Plex Mono", monospace;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 4px 9px; border-radius: 3px; background: #d8f34e; color: #101014;
+  }
+  .bbe-light {
+    border-radius: 4px; padding: 18px 20px; background: #f4f4ef; color: #101014;
+  }
+  .bbe-light-title { font-weight: 700; font-size: 18px; text-transform: uppercase; margin: 0 0 4px; }
+  .bbe-light-note { font-size: 12px; line-height: 1.6; color: rgba(16, 16, 20, 0.7); margin: 0; }
+</style>
+
+<div class="bbe">
+  <p class="bbe-kicker">Identity variation A / Electric</p>
+  <h1 class="bbe-title">After dark,<br />all signal.</h1>
+  <p class="bbe-sub">A complete identity swap: night-first, loud, and graphic. For a brand that feels like the group chat lighting up at 9pm.</p>
+
+  <p class="bbe-label">Palette / one volt on black</p>
+  <div class="bbe-swatches">
+    <div class="bbe-swatch"><div class="bbe-swatch-chip" style="background:#101014;"></div><div class="bbe-swatch-info"><div class="bbe-swatch-name">Blackout #101014</div><div class="bbe-swatch-role">Default ground, near-black with a cool cast</div></div></div>
+    <div class="bbe-swatch"><div class="bbe-swatch-chip" style="background:#f4f4ef;"></div><div class="bbe-swatch-info"><div class="bbe-swatch-name">Chalk #f4f4ef</div><div class="bbe-swatch-role">Text and light surfaces, never pure white</div></div></div>
+    <div class="bbe-swatch"><div class="bbe-swatch-chip" style="background:#d8f34e;"></div><div class="bbe-swatch-info"><div class="bbe-swatch-name">Volt #d8f34e</div><div class="bbe-swatch-role">The accent: CTAs, tags, the going pill</div></div></div>
+    <div class="bbe-swatch"><div class="bbe-swatch-chip" style="background:#7a5cff;"></div><div class="bbe-swatch-info"><div class="bbe-swatch-name">Ultra #7a5cff</div><div class="bbe-swatch-role">Second voice: confirmed states, hover glow</div></div></div>
+    <div class="bbe-swatch"><div class="bbe-swatch-chip" style="background:#ff5e5e;"></div><div class="bbe-swatch-info"><div class="bbe-swatch-name">Flare #ff5e5e</div><div class="bbe-swatch-role">Errors only, hot and unmistakable</div></div></div>
+    <div class="bbe-swatch"><div class="bbe-swatch-chip" style="background:#17171d;"></div><div class="bbe-swatch-info"><div class="bbe-swatch-name">Slate #17171d</div><div class="bbe-swatch-role">Cards and wells, one step up from ground</div></div></div>
+  </div>
+
+  <p class="bbe-label">Color rules</p>
+  <div class="bbe-rules">
+    <div class="bbe-rule-card"><b style="color:#d8f34e;">Volt is a strobe, not a wash.</b> It hits small: buttons, tags, underlines. Never a full volt background.</div>
+    <div class="bbe-rule-card"><b style="color:#7a5cff;">Ultra is the afterglow.</b> Confirmed, joined, done. It never competes with volt in the same block.</div>
+    <div class="bbe-rule-card"><b>Photos run hot.</b> Saturation up, contrast up, flash-photo energy. No faded film looks.</div>
+    <div class="bbe-rule-card"><b>Sharp corners everywhere.</b> 4px max. This identity is cut, not rounded.</div>
+  </div>
+  <div class="bbe-states" style="margin-top:12px;">
+    <span class="bbe-state" style="background:#d8f34e; color:#101014;">Get the app</span>
+    <span class="bbe-state" style="background:#7a5cff; color:#f4f4ef;">You're in</span>
+    <span class="bbe-state" style="background:#ff5e5e; color:#101014;">Couldn't save</span>
+  </div>
+
+  <p class="bbe-label">Type</p>
+  <div class="bbe-type-card">
+    <p class="bbe-display">Go where<br />life is.</p>
+    <p class="bbe-type-meta">DISPLAY: SPACE GROTESK 700, ALL CAPS, TIGHT LEADING</p>
+    <p class="bbe-body-sample">Body: Space Grotesk regular at reading size. Labels, metadata, and timestamps switch to IBM Plex Mono, like a ticket stub or a setlist.</p>
+  </div>
+
+  <p class="bbe-label">Wordmark &amp; type rules</p>
+  <div class="bbe-rule-card">
+    <span class="bbe-wordmark">Mixed<span>Routes</span></span>
+    <p class="bbe-note" style="margin-top:6px;">The wordmark sets in caps with Routes in volt. Headlines are all caps and break aggressively across lines. Mono is for facts only: dates, counts, places. Never set a headline in mono.</p>
+  </div>
+
+  <p class="bbe-label">Imagery / flash and motion</p>
+  <div class="bbe-imagery">
+    <div class="bbe-img-card">
+      <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=900&q=70" alt="Concert crowd under warm stage light" />
+      <span class="bbe-img-tag">Night, flash, mid-laugh</span>
+    </div>
+    <div class="bbe-img-card">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=70" alt="Friends at a night event with lights" />
+      <span class="bbe-img-tag">Small crews, big energy</span>
+    </div>
+  </div>
+  <div class="bbe-dont" style="margin-top:10px;">
+    <b>Never:</b> daylight stock scenes, pastel edits, soft-focus lifestyle shots, or corporate smiles. If a photo would work in a bank ad, it does not work here.
+  </div>
+
+  <p class="bbe-label">The signature: plan card</p>
+  <div class="bbe-plan-grid">
+    <figure class="bbe-plan">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=75" alt="Friends at a night event" />
+      <figcaption class="bbe-plan-caption">
+        <span class="bbe-plan-title">Warehouse show</span>
+        <span class="bbe-plan-meta">FRI / 9:00 PM / EASTSIDE</span>
+        <span class="bbe-plan-going">4 going</span>
+      </figcaption>
+    </figure>
+    <div class="bbe-rule-card">
+      Same anatomy as the core card but cut sharp: 4px corners, a volt keyline, caps title, mono meta line, and a solid volt going tag. The keyline plus tag is the tell for this identity.
+    </div>
+  </div>
+
+  <p class="bbe-label">Light mode is the daylight exception</p>
+  <div class="bbe-light">
+    <p class="bbe-light-title">Chalk ground, same volt.</p>
+    <p class="bbe-light-note">Daytime surfaces flip to chalk with blackout text. Volt and ultra stay exactly as they are, and photos keep the hot edit. It should still feel like night waiting to happen.</p>
+  </div>
+
+  <p class="bbe-note">Test for any new surface: would it look at home on a gig poster, a wristband, or a story posted at 1am. If it feels calm, push it louder.</p>
+</div>
