@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  .st5 { position: relative; width: 1284px; height: 2778px; overflow: hidden; background: linear-gradient(160deg, #15619d 0%, #1f8ec0 55%, #2fa9d5 100%); font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
+  .st5 * { box-sizing: border-box; }
+  .st5-emoji { position: absolute; top: 130px; left: 0; right: 0; margin: 0; text-align: center; font-size: 110px; }
+  .st5-headline { position: absolute; top: 280px; left: 0; right: 0; margin: 0; text-align: center; font-size: 120px; font-weight: 900; line-height: 1.06; letter-spacing: -0.01em; color: #ffffff; }
+  .st5-sub { position: absolute; top: 600px; left: 0; right: 0; margin: 0; text-align: center; font-size: 56px; font-weight: 400; color: rgba(255, 255, 255, 0.95); }
+  .st5-phone { position: absolute; top: 740px; left: 162px; width: 960px; height: 1960px; border-radius: 130px; background: #1a1a1c; border: 5px solid #55555a; padding: 20px; box-shadow: 0 60px 140px rgba(0, 10, 30, 0.5); }
+  .st5-screen { position: relative; width: 100%; height: 100%; border-radius: 112px; background: #0b0f16; overflow: hidden; padding: 50px 46px 0; }
+  .st5-island { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: 260px; height: 72px; border-radius: 60px; background: #000; z-index: 5; }
+  .st5-header { display: flex; align-items: center; gap: 34px; margin-top: 140px; }
+  .st5-header i { font-size: 52px; color: #e8edf5; }
+  .st5-header h2 { margin: 0; font-size: 52px; font-weight: 700; color: #ffffff; }
+  .st5-banner { position: relative; height: 560px; margin-top: 48px; border-radius: 44px; overflow: hidden; }
+  .st5-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .st5-banner span { position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 12px; height: 72px; padding: 0 34px; border-radius: 50px; background: rgba(12, 18, 28, 0.72); color: #ffffff; font-size: 27px; font-weight: 700; letter-spacing: 0.14em; }
+  .st5-banner span i { font-size: 30px; }
+  .st5-name { display: flex; align-items: center; margin-top: 44px; height: 112px; padding: 0 22px; border-radius: 60px; background: #1a2432; border: 2px solid #2a3648; }
+  .st5-name-chip { display: inline-flex; align-items: center; gap: 18px; height: 76px; padding: 0 36px; border-radius: 50px; background: #ffffff; color: #101724; font-size: 36px; font-weight: 700; }
+  .st5-name-chip i { font-size: 32px; color: #6d7b90; }
+  .st5-tags { display: flex; gap: 20px; margin-top: 36px; }
+  .st5-tag { display: inline-flex; align-items: center; height: 78px; padding: 0 36px; border-radius: 50px; background: #ffffff; color: #101724; font-size: 30px; font-weight: 700; }
+  .st5-tag.is-ghost { background: transparent; border: 2px solid #2a3648; color: #7d8ca1; }
+  .st5-card { position: absolute; left: 36px; right: 96px; top: 1660px; z-index: 8; padding: 44px; border-radius: 52px; background: #101a2b; box-shadow: 0 50px 120px rgba(0, 10, 30, 0.6); }
+  .st5-card-head { display: flex; align-items: center; gap: 24px; margin-bottom: 36px; }
+  .st5-card-icon { width: 80px; height: 80px; border-radius: 24px; background: linear-gradient(140deg, #5b2fb8, #8b5cf6); display: flex; align-items: center; justify-content: center; }
+  .st5-card-icon i { font-size: 44px; color: #ffffff; }
+  .st5-card-head h3 { flex: 1; margin: 0; font-size: 44px; font-weight: 800; color: #ffffff; }
+  .st5-card-head > i { font-size: 40px; color: #7d8ca1; }
+  .st5-block { border-radius: 32px; background: #182234; padding: 32px 36px; margin-bottom: 28px; }
+  .st5-block-label { margin: 0 0 12px; font-size: 27px; font-weight: 700; color: #7d8ca1; }
+  .st5-block-text { margin: 0; font-size: 33px; line-height: 1.45; font-weight: 500; color: #e8edf5; }
+  .st5-attach { display: flex; align-items: center; gap: 26px; border-radius: 32px; background: #182234; padding: 26px 32px; }
+  .st5-attach img { width: 92px; height: 92px; border-radius: 20px; object-fit: cover; flex: none; }
+  .st5-attach-copy { flex: 1; min-width: 0; }
+  .st5-attach-copy b { display: block; font-size: 32px; font-weight: 700; color: #ffffff; }
+  .st5-attach-copy span { display: block; margin-top: 6px; font-size: 27px; color: #6ea8e8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st5-attach > i { font-size: 36px; color: #7d8ca1; flex: none; }
+  .st5-actions { display: flex; align-items: center; gap: 22px; margin-top: 36px; }
+  .st5-add { width: 84px; height: 84px; border-radius: 50%; background: #182234; display: flex; align-items: center; justify-content: center; }
+  .st5-add i { font-size: 44px; color: #b9c5d6; }
+  .st5-action { display: inline-flex; align-items: center; gap: 14px; height: 84px; padding: 0 36px; border-radius: 50px; background: #182234; color: #dbe3ee; font-size: 29px; font-weight: 700; letter-spacing: 0.1em; }
+  .st5-action i { font-size: 34px; }
+  .st5-share { position: absolute; right: -40px; bottom: -44px; display: inline-flex; align-items: center; height: 108px; padding: 0 56px; border-radius: 60px; background: linear-gradient(90deg, #22b8c8 0%, #3b82f6 100%); color: #ffffff; font-size: 38px; font-weight: 700; box-shadow: 0 20px 50px rgba(10, 60, 130, 0.5); }
+</style>
+
+<div class="st5">
+  <p class="st5-emoji">✍️</p>
+  <h1 class="st5-headline">Idea to plan in<br />seconds</h1>
+  <p class="st5-sub">Add details, invite friends, done</p>
+
+  <div class="st5-phone">
+    <div class="st5-screen">
+      <div class="st5-island"></div>
+
+      <div class="st5-header">
+        <i class="ph ph-arrow-left"></i>
+        <h2>Plan activity</h2>
+      </div>
+
+      <div class="st5-banner">
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <span><i class="ph ph-pencil-simple"></i>EDIT BANNER</span>
+      </div>
+
+      <div class="st5-name">
+        <span class="st5-name-chip">Friend Trip!<i class="ph ph-x"></i></span>
+      </div>
+
+      <div class="st5-tags">
+        <span class="st5-tag">Travel</span>
+        <span class="st5-tag">Beaches</span>
+        <span class="st5-tag is-ghost">More tags</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="st5-card">
+    <div class="st5-card-head">
+      <div class="st5-card-icon"><i class="ph-fill ph-list-checks"></i></div>
+      <h3>What&rsquo;s happening?</h3>
+      <i class="ph ph-trash"></i>
+    </div>
+
+    <div class="st5-block">
+      <p class="st5-block-label">Description</p>
+      <p class="st5-block-text">Five days on the Big Island. Snorkeling, volcanoes, and probably matching shirts.</p>
+    </div>
+
+    <div class="st5-attach">
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=300&q=75" alt="" />
+      <div class="st5-attach-copy">
+        <b>Our Airbnb link</b>
+        <span>https://www.airbnb.com/rooms/23...</span>
+      </div>
+      <i class="ph ph-x"></i>
+    </div>
+
+    <div class="st5-actions">
+      <span class="st5-add"><i class="ph ph-plus"></i></span>
+      <span class="st5-action"><i class="ph ph-currency-dollar"></i>COST</span>
+      <span class="st5-action"><i class="ph ph-backpack"></i>BRING</span>
+    </div>
+
+    <span class="st5-share">Share plan</span>
+  </div>
+</div>

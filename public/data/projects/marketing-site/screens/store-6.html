@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  .st6 { position: relative; width: 1284px; height: 2778px; overflow: hidden; background: linear-gradient(160deg, #125c9a 0%, #1d86bc 55%, #2b9fd0 100%); font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
+  .st6 * { box-sizing: border-box; }
+  .st6-emoji { position: absolute; top: 130px; left: 0; right: 0; margin: 0; text-align: center; font-size: 110px; }
+  .st6-headline { position: absolute; top: 280px; left: 0; right: 0; margin: 0; text-align: center; font-size: 120px; font-weight: 900; line-height: 1.06; letter-spacing: -0.01em; color: #ffffff; }
+  .st6-sub { position: absolute; top: 600px; left: 0; right: 0; margin: 0; text-align: center; font-size: 56px; font-weight: 400; color: rgba(255, 255, 255, 0.95); }
+  .st6-phone { position: absolute; top: 740px; left: 162px; width: 960px; height: 1960px; border-radius: 130px; background: #1a1a1c; border: 5px solid #55555a; padding: 20px; box-shadow: 0 60px 140px rgba(0, 10, 30, 0.5); }
+  .st6-screen { position: relative; width: 100%; height: 100%; border-radius: 112px; background: #0b0f16; overflow: hidden; padding: 50px 46px 0; }
+  .st6-island { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: 260px; height: 72px; border-radius: 60px; background: #000; z-index: 5; }
+  .st6-header { display: flex; align-items: center; justify-content: space-between; margin-top: 140px; }
+  .st6-header h2 { margin: 0; font-size: 58px; font-weight: 800; color: #ffffff; }
+  .st6-header-right { display: flex; align-items: center; gap: 34px; }
+  .st6-header-right i { font-size: 48px; color: #e8edf5; }
+  .st6-avatar { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 46px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
+  .st6-rows { margin-top: 56px; }
+  .st6-row { display: flex; align-items: flex-start; gap: 28px; padding: 34px 8px; border-bottom: 2px solid #151f2e; }
+  .st6-row-av { width: 96px; height: 96px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 52px; flex: none; }
+  .st6-row-copy { flex: 1; min-width: 0; }
+  .st6-row-copy b { display: block; font-size: 36px; font-weight: 700; color: #ffffff; }
+  .st6-row-copy span { display: block; margin-top: 8px; font-size: 29px; color: #93a2b8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st6-row-time { font-size: 26px; color: #7d8ca1; flex: none; margin-top: 6px; }
+  .st6-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: space-around; padding: 0 60px; background: rgba(10, 14, 22, 0.96); border-top: 2px solid #1c2636; }
+  .st6-nav i { font-size: 56px; color: #6d7b90; }
+  .st6-nav i.is-on { color: #3b82f6; }
+  .st6-chat { position: absolute; left: 90px; right: 30px; top: 1620px; z-index: 8; padding: 44px 44px 40px; border-radius: 52px; background: #0f1828; box-shadow: 0 50px 120px rgba(0, 10, 30, 0.6); }
+  .st6-bubble { max-width: 78%; padding: 26px 34px; border-radius: 40px; font-size: 33px; line-height: 1.4; font-weight: 500; margin-bottom: 24px; }
+  .st6-bubble.is-them { background: #17b8a6; color: #ffffff; border-bottom-right-radius: 12px; margin-left: auto; }
+  .st6-bubble.is-me { background: #223047; color: #e8edf5; border-bottom-left-radius: 12px; }
+  .st6-bubble .st6-tag { display: inline-flex; align-items: center; margin-top: 14px; height: 48px; padding: 0 22px; border-radius: 40px; border: 2px solid rgba(232, 237, 245, 0.4); font-size: 22px; font-weight: 700; letter-spacing: 0.12em; color: #b9c5d6; }
+  .st6-bubble .st6-tag { display: inline-flex; }
+  .st6-bubble b { display: block; }
+  .st6-chat-tabs { display: flex; gap: 18px; margin: 34px 0; }
+  .st6-chat-tab { display: inline-flex; align-items: center; gap: 12px; height: 72px; padding: 0 30px; border-radius: 50px; background: #1a2432; color: #b9c5d6; font-size: 28px; font-weight: 700; position: relative; }
+  .st6-chat-tab.is-on { background: #ffffff; color: #101724; }
+  .st6-chat-tab .st6-badge { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #3b82f6; color: #ffffff; font-size: 24px; font-weight: 800; }
+  .st6-input { display: flex; align-items: center; gap: 22px; height: 104px; padding: 0 20px 0 40px; border-radius: 60px; background: #1a2432; border: 2px solid #2a3648; }
+  .st6-input span { flex: 1; font-size: 34px; font-weight: 500; color: #e8edf5; }
+  .st6-input > i { font-size: 42px; color: #7d8ca1; }
+  .st6-send { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(90deg, #22b8c8 0%, #3b82f6 100%); display: flex; align-items: center; justify-content: center; flex: none; }
+  .st6-send i { font-size: 40px; color: #ffffff; }
+</style>
+
+<div class="st6">
+  <p class="st6-emoji">💬</p>
+  <h1 class="st6-headline">Chats built<br />around real life</h1>
+  <p class="st6-sub">Group chat, reimagined</p>
+
+  <div class="st6-phone">
+    <div class="st6-screen">
+      <div class="st6-island"></div>
+
+      <div class="st6-header">
+        <h2>Chats</h2>
+        <div class="st6-header-right">
+          <i class="ph ph-question"></i>
+          <i class="ph ph-bell"></i>
+          <div class="st6-avatar">🧑‍🦱</div>
+        </div>
+      </div>
+
+      <div class="st6-rows">
+        <div class="st6-row">
+          <div class="st6-row-av" style="background: #2e4636;">🥾</div>
+          <div class="st6-row-copy"><b>Hiking Thursdays 🏔️</b><span>Can&rsquo;t believe a beaver stole my phone!</span></div>
+          <span class="st6-row-time">4:23 PM</span>
+        </div>
+        <div class="st6-row">
+          <div class="st6-row-av" style="background: #b8d4f0;">🧔</div>
+          <div class="st6-row-copy"><b>Ryan Gosling</b><span>Have you seen my notebook?</span></div>
+          <span class="st6-row-time">Yesterday</span>
+        </div>
+        <div class="st6-row">
+          <div class="st6-row-av" style="background: #6b3fa0;">🎮</div>
+          <div class="st6-row-copy"><b>Game Night</b><span>Im on, anyone else joining?</span></div>
+          <span class="st6-row-time">Sep 10</span>
+        </div>
+        <div class="st6-row">
+          <div class="st6-row-av" style="background: #b35a14;">🌴</div>
+          <div class="st6-row-copy"><b>Costa Rica Friend Trip</b><span>Everyone have their passports?</span></div>
+          <span class="st6-row-time">Jan 24</span>
+        </div>
+        <div class="st6-row" style="border-bottom: 0;">
+          <div class="st6-row-av" style="background: #8a2f4f;">🎉</div>
+          <div class="st6-row-copy"><b>The Group Chat</b><span>Let&rsquo;s all go out this weekend!</span></div>
+          <span class="st6-row-time">Jan 12</span>
+        </div>
+      </div>
+
+      <div class="st6-nav">
+        <i class="ph ph-calendar-blank"></i>
+        <i class="ph ph-compass"></i>
+        <i class="ph ph-plus-circle"></i>
+        <i class="ph ph-user"></i>
+        <i class="ph-fill ph-chat-circle is-on"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="st6-chat">
+    <div class="st6-bubble is-them">Hell yeah, when and where?</div>
+    <div class="st6-bubble is-me"><b>Saturday 4pm @ the Sound Hall</b><span class="st6-tag">PLANNING</span></div>
+    <div class="st6-bubble is-me">EXCITED!</div>
+
+    <div class="st6-chat-tabs">
+      <span class="st6-chat-tab is-on">Main</span>
+      <span class="st6-chat-tab">Plans<span class="st6-badge">2</span></span>
+      <span class="st6-chat-tab">Memes</span>
+      <span class="st6-chat-tab">🖌️ Inspiration</span>
+    </div>
+
+    <div class="st6-input">
+      <span>Let&rsquo;s go!</span>
+      <i class="ph ph-smiley"></i>
+      <span class="st6-send"><i class="ph-fill ph-paper-plane-right"></i></span>
+    </div>
+  </div>
+</div>

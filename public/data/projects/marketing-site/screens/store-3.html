@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  .st3 { position: relative; width: 1284px; height: 2778px; overflow: hidden; background: linear-gradient(160deg, #1467a3 0%, #1e84bb 55%, #2a9ccd 100%); font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
+  .st3 * { box-sizing: border-box; }
+  .st3-emoji { position: absolute; top: 130px; left: 0; right: 0; margin: 0; text-align: center; font-size: 110px; }
+  .st3-headline { position: absolute; top: 280px; left: 0; right: 0; margin: 0; text-align: center; font-size: 120px; font-weight: 900; line-height: 1.06; letter-spacing: -0.01em; color: #ffffff; }
+  .st3-sub { position: absolute; top: 600px; left: 0; right: 0; margin: 0; text-align: center; font-size: 56px; font-weight: 400; color: rgba(255, 255, 255, 0.95); }
+  .st3-phone { position: absolute; top: 740px; left: 162px; width: 960px; height: 1960px; border-radius: 130px; background: #1a1a1c; border: 5px solid #55555a; padding: 20px; box-shadow: 0 60px 140px rgba(0, 10, 30, 0.5); }
+  .st3-screen { position: relative; width: 100%; height: 100%; border-radius: 112px; background: #0b0f16; overflow: hidden; padding: 50px 46px 0; }
+  .st3-island { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: 260px; height: 72px; border-radius: 60px; background: #000; z-index: 5; }
+  .st3-header { display: flex; align-items: center; justify-content: space-between; margin-top: 140px; }
+  .st3-header h2 { margin: 0; font-size: 58px; font-weight: 800; color: #ffffff; }
+  .st3-header-right { display: flex; align-items: center; gap: 34px; }
+  .st3-header-right i { font-size: 48px; color: #e8edf5; }
+  .st3-avatar { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 46px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
+  .st3-tabs { display: flex; gap: 64px; margin-top: 54px; }
+  .st3-tab { padding-bottom: 18px; font-size: 32px; font-weight: 700; letter-spacing: 0.14em; color: #7d8ca1; }
+  .st3-tab.is-on { color: #ffffff; border-bottom: 6px solid #3b82f6; }
+  .st3-search { display: flex; align-items: center; gap: 22px; height: 96px; margin-top: 44px; padding: 0 38px; border-radius: 60px; background: #1a2432; color: #7d8ca1; font-size: 34px; font-weight: 500; }
+  .st3-search i { font-size: 38px; }
+  .st3-filters { display: flex; gap: 22px; margin-top: 34px; }
+  .st3-filter { display: inline-flex; align-items: center; gap: 14px; height: 78px; padding: 0 32px; border-radius: 50px; background: #1a2432; border: 2px solid #2a3648; color: #dbe3ee; font-size: 30px; font-weight: 600; }
+  .st3-filter i { font-size: 32px; color: #6ea8e8; }
+  .st3-spacer { height: 440px; }
+  .st3-item { border-radius: 40px; background: #141d2b; padding: 38px 40px; margin-bottom: 36px; }
+  .st3-item-tags { display: flex; gap: 16px; margin-bottom: 16px; }
+  .st3-item-tag { display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: 40px; background: #223047; color: #9fb2c8; font-size: 24px; font-weight: 700; }
+  .st3-item h3 { margin: 0 0 12px; font-size: 42px; font-weight: 700; color: #ffffff; }
+  .st3-item p { margin: 0 0 20px; font-size: 28px; line-height: 1.4; color: #93a2b8; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .st3-meta { display: flex; align-items: center; gap: 14px; margin-top: 10px; font-size: 27px; font-weight: 500; color: #b9c5d6; }
+  .st3-meta i { font-size: 30px; color: #7d8ca1; }
+  .st3-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: space-around; padding: 0 60px; background: rgba(10, 14, 22, 0.96); border-top: 2px solid #1c2636; }
+  .st3-nav i { font-size: 56px; color: #6d7b90; }
+  .st3-nav i.is-on { color: #3b82f6; }
+  .st3-feature { position: absolute; left: 34px; right: 34px; top: 1400px; z-index: 8; display: flex; gap: 32px; padding: 36px; border-radius: 48px; background: linear-gradient(120deg, #b35a14 0%, #e08a2e 100%); box-shadow: 0 50px 120px rgba(0, 10, 30, 0.55); }
+  .st3-feature img { width: 250px; height: 250px; border-radius: 30px; object-fit: cover; flex: none; }
+  .st3-feature-copy { min-width: 0; }
+  .st3-feature h3 { margin: 4px 0 12px; font-size: 46px; font-weight: 800; color: #ffffff; }
+  .st3-feature p { margin: 0 0 18px; font-size: 29px; line-height: 1.4; color: rgba(255, 255, 255, 0.92); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .st3-feature-loc { display: flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 600; color: #ffffff; }
+  .st3-feature-loc i { font-size: 30px; }
+  .st3-cta { position: absolute; right: 60px; bottom: -52px; display: inline-flex; align-items: center; height: 104px; padding: 0 52px; border-radius: 60px; background: linear-gradient(90deg, #22b8c8 0%, #3b82f6 100%); color: #ffffff; font-size: 36px; font-weight: 700; box-shadow: 0 20px 50px rgba(10, 60, 130, 0.5); }
+</style>
+
+<div class="st3">
+  <p class="st3-emoji">🎉</p>
+  <h1 class="st3-headline">Every event in<br />your city</h1>
+  <p class="st3-sub">Big or small, we&rsquo;ve got them all</p>
+
+  <div class="st3-phone">
+    <div class="st3-screen">
+      <div class="st3-island"></div>
+
+      <div class="st3-header">
+        <h2>Discover</h2>
+        <div class="st3-header-right">
+          <i class="ph ph-question"></i>
+          <i class="ph ph-bell"></i>
+          <div class="st3-avatar">🧑‍🦱</div>
+        </div>
+      </div>
+
+      <div class="st3-tabs">
+        <span class="st3-tab is-on">EVENTS</span>
+        <span class="st3-tab">PLACES</span>
+        <span class="st3-tab">PLANS</span>
+      </div>
+
+      <div class="st3-search"><i class="ph ph-magnifying-glass"></i>Search events...</div>
+
+      <div class="st3-filters">
+        <span class="st3-filter"><i class="ph-fill ph-map-pin"></i>Asheville, NC</span>
+        <span class="st3-filter"><i class="ph-fill ph-calendar-blank"></i>Anytime</span>
+      </div>
+
+      <div class="st3-spacer"></div>
+
+      <div class="st3-item">
+        <div class="st3-item-tags"><span class="st3-item-tag">Free</span><span class="st3-item-tag">Tech</span></div>
+        <h3>💻 Tech Innovations Expo</h3>
+        <p>Explore the latest in technology and innovation at the Tech Innovations Expo, featuring workshops and keynote speake...</p>
+        <div class="st3-meta"><i class="ph-fill ph-calendar-blank"></i>Sunday, May 20</div>
+        <div class="st3-meta"><i class="ph-fill ph-map-pin"></i>The Grey Eagle, Asheville, NC</div>
+      </div>
+
+      <div class="st3-item">
+        <div class="st3-item-tags"><span class="st3-item-tag">Art</span></div>
+        <h3>🎨 Art in the Park</h3>
+        <p>Local makers, live painting, and food trucks in the park all afternoon. Bring a blanket and stay a while.</p>
+        <div class="st3-meta"><i class="ph-fill ph-calendar-blank"></i>Sunday, May 20</div>
+        <div class="st3-meta"><i class="ph-fill ph-map-pin"></i>The Salvage Station, Asheville, NC</div>
+      </div>
+
+      <div class="st3-item">
+        <div class="st3-item-tags"><span class="st3-item-tag">Food</span></div>
+        <h3>🍜 Culinary Delights Fair</h3>
+        <p>Savor delicious dishes from around the world at the Culinary Delights Fair, with cooking demos and tastings.</p>
+        <div class="st3-meta"><i class="ph-fill ph-calendar-blank"></i>Saturday, May 26</div>
+      </div>
+
+      <div class="st3-nav">
+        <i class="ph-fill ph-calendar-blank"></i>
+        <i class="ph-fill ph-compass is-on"></i>
+        <i class="ph ph-plus-circle"></i>
+        <i class="ph ph-user"></i>
+        <i class="ph ph-chat-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="st3-feature">
+    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=75" alt="" />
+    <div class="st3-feature-copy">
+      <h3>Summer Sound Fest</h3>
+      <p>Join us for the Summer Sound Fest! Experience a weekend packed with live music across three stages.</p>
+      <div class="st3-feature-loc"><i class="ph-fill ph-map-pin"></i>Asheville NC</div>
+    </div>
+    <span class="st3-cta">Plan this event</span>
+  </div>
+</div>
