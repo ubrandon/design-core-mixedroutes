@@ -5,11 +5,11 @@
 <style>
   .ps1 { position: relative; width: 1284px; height: 2778px; overflow: hidden; background: linear-gradient(155deg, #0e3866 0%, #14528c 48%, #1a76ae 100%); font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
   .ps1 * { box-sizing: border-box; }
-  .ps1-headline { position: absolute; top: 150px; left: 150px; margin: 0; font-size: 196px; font-weight: 900; line-height: 0.98; letter-spacing: -0.01em; background: linear-gradient(100deg, #4a9fe8 5%, #3ee6c8 95%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .ps1-sub { position: absolute; top: 590px; left: 155px; margin: 0; max-width: 760px; font-size: 66px; font-weight: 300; line-height: 1.35; color: #ffffff; }
+  .ps1-headline { position: absolute; top: 150px; left: 150px; margin: 0; font-size: 196px; font-weight: 900; line-height: 0.98; letter-spacing: -0.01em; background: linear-gradient(100deg, #35a2f0 5%, #45f0d0 95%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .ps1-sub { position: absolute; top: 590px; left: 155px; margin: 0; max-width: 620px; font-size: 66px; font-weight: 300; line-height: 1.35; color: #ffffff; }
 
-  /* Phone */
-  .ps1-phone { position: absolute; top: 830px; right: -170px; width: 980px; height: 2200px; transform: rotate(-12deg); transform-origin: top left; border-radius: 150px; background: #1a1a1c; border: 5px solid #55555a; padding: 22px; box-shadow: -60px 80px 160px rgba(0, 10, 30, 0.55); }
+  /* Shared feed phone -- identical geometry on both panels, panel 2 shifts left by 1284 */
+  .ps1-phone { position: absolute; top: 800px; left: 400px; width: 1080px; height: 2300px; transform: rotate(-12deg); transform-origin: top left; border-radius: 150px; background: #1a1a1c; border: 5px solid #55555a; padding: 22px; box-shadow: -60px 80px 160px rgba(0, 10, 30, 0.55); }
   .ps1-btn-side { position: absolute; left: -11px; width: 7px; border-radius: 4px; background: #606066; }
   .ps1-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #0b0b10; overflow: hidden; padding: 54px 56px 0; }
   .ps1-island { position: absolute; top: 54px; left: 50%; transform: translateX(-50%); width: 300px; height: 84px; border-radius: 60px; background: #000; z-index: 5; display: flex; align-items: center; justify-content: flex-end; padding-right: 26px; }
@@ -21,14 +21,14 @@
   .ps1-header-right i { font-size: 54px; color: #e8edf5; }
   .ps1-avatar { width: 78px; height: 78px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 52px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
 
-  .ps1-tabs { display: flex; gap: 26px; margin-top: 66px; width: 1400px; }
-  .ps1-tab { display: inline-flex; align-items: center; gap: 18px; height: 92px; padding: 0 42px; border-radius: 60px; font-size: 37px; font-weight: 700; color: #dbe3ee; background: rgba(52, 65, 88, 0.55); white-space: nowrap; }
-  .ps1-tab i { font-size: 42px; }
+  .ps1-tabs { display: flex; gap: 22px; margin-top: 66px; width: 1400px; }
+  .ps1-tab { display: inline-flex; align-items: center; gap: 16px; height: 90px; padding: 0 34px; border-radius: 60px; font-size: 34px; font-weight: 700; color: #dbe3ee; background: rgba(52, 65, 88, 0.55); white-space: nowrap; }
+  .ps1-tab i { font-size: 40px; }
   .ps1-tab.is-on { background: #ffffff; color: #101724; }
   .ps1-tab.is-on i { color: #d64545; }
 
   .ps1-section { margin: 78px 0 36px; font-size: 56px; font-weight: 600; color: #ffffff; }
-  .ps1-card { position: relative; border-radius: 52px; overflow: hidden; height: 590px; margin-bottom: 56px; }
+  .ps1-card { position: relative; border-radius: 52px; overflow: hidden; height: 600px; margin-bottom: 56px; }
   .ps1-card-photo { position: absolute; inset: 0; width: 100%; height: 62%; object-fit: cover; }
   .ps1-card-body { position: absolute; left: 0; right: 0; bottom: 0; height: 46%; padding: 80px 44px 0; }
   .ps1-card.is-purple .ps1-card-body { background: linear-gradient(120deg, #5b2fb8 0%, #8b5cf6 100%); }
