@@ -1,29 +1,45 @@
 {
   "screens": [
     {
-      "file": "redesign2-landing.html",
-      "x": 0,
-      "y": 0,
-      "width": 1280
-    },
-    {
       "file": "redesign2-landing-v2.html",
       "x": 1320,
       "y": 0,
       "width": 1280
     },
     {
-      "file": "brand-board-identity-doc.html",
-      "x": 3616,
-      "y": 0,
-      "width": 860
-    },
-    {
       "file": "brand-board-variation-field-notes.html",
-      "x": 4512,
+      "x": 2880,
       "y": 0,
       "width": 860,
       "name": "Identity B · Field Notes"
+    },
+    {
+      "file": "brand-board-variation-golden-hour.html",
+      "x": 3776,
+      "y": 0,
+      "width": 860,
+      "name": "Identity D · Golden Hour"
+    },
+    {
+      "file": "brand-board-variation-blue-hour.html",
+      "x": 4672,
+      "y": 0,
+      "width": 860,
+      "name": "Identity E · Blue Hour"
+    },
+    {
+      "file": "playstore-1.html",
+      "x": 1376,
+      "y": 7712,
+      "width": 1284,
+      "name": "Play Store · 1 (1284x2778)"
+    },
+    {
+      "file": "playstore-2.html",
+      "x": 2688,
+      "y": 7712,
+      "width": 1284,
+      "name": "Play Store · 2 (1284x2778)"
     }
   ]
 }
