@@ -15,21 +15,21 @@
     },
     {
       "file": "brand-board-variation-field-notes.html",
-      "x": 1408,
-      "y": 15776,
+      "x": 4544,
+      "y": 0,
       "width": 860,
       "name": "Identity B · Field Notes"
     },
     {
       "file": "brand-board-variation-golden-hour.html",
-      "x": 4768,
+      "x": 5440,
       "y": 0,
       "width": 860,
       "name": "Identity D · Golden Hour"
     },
     {
       "file": "brand-board-variation-blue-hour-voice.html",
-      "x": 5664,
+      "x": 6336,
       "y": 0,
       "width": 860,
       "name": "Identity E2 · Blue Hour · Voice"
@@ -47,6 +47,20 @@
       "y": 8512,
       "width": 1284,
       "name": "Store 2 · Interests"
+    },
+    {
+      "file": "store-1b.html",
+      "x": 1344,
+      "y": 11590,
+      "width": 1284,
+      "name": "Store 1B · Life's offline"
+    },
+    {
+      "file": "store-2b.html",
+      "x": 2656,
+      "y": 11590,
+      "width": 1284,
+      "name": "Store 2B · Interests"
     },
     {
       "file": "store-3.html",
@@ -82,6 +96,34 @@
       "y": 8512,
       "width": 1284,
       "name": "Store 7 · Day & night"
+    },
+    {
+      "file": "interests-line-art.html",
+      "x": 7328,
+      "y": 32,
+      "width": 300,
+      "name": "Illustration guide · Line art"
+    },
+    {
+      "file": "interests-line-art-social.html",
+      "x": 7776,
+      "y": 32,
+      "width": 420,
+      "name": "Line art · Social interests"
+    },
+    {
+      "file": "interests-line-art-active.html",
+      "x": 8224,
+      "y": 32,
+      "width": 420,
+      "name": "Line art · Active interests"
+    },
+    {
+      "file": "interests-line-art-creative.html",
+      "x": 8672,
+      "y": 32,
+      "width": 420,
+      "name": "Line art · Creative interests"
     }
   ]
 }
