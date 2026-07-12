@@ -5,63 +5,60 @@
 <style>
   .st7 { position: relative; width: 1284px; height: 2778px; overflow: hidden; background: linear-gradient(160deg, #1a76ae 0%, #2a9ccd 55%, #3fb6dc 100%); font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
   .st7 * { box-sizing: border-box; }
-  .st7-emoji { position: absolute; top: 130px; left: 0; right: 0; text-align: center; font-size: 110px; }
-  .st7-headline { position: absolute; top: 280px; left: 0; right: 0; margin: 0; text-align: center; font-size: 120px; font-weight: 900; line-height: 1.06; letter-spacing: -0.01em; color: #ffffff; }
-  .st7-sub { position: absolute; top: 600px; left: 0; right: 0; margin: 0; text-align: center; font-size: 56px; font-weight: 400; color: rgba(255,255,255,0.95); }
+  .st7-headline { position: absolute; top: 190px; left: 0; right: 0; margin: 0; text-align: center; font-size: 120px; font-weight: 900; line-height: 1.06; letter-spacing: -0.01em; color: #ffffff; }
+  .st7-sub { position: absolute; top: 510px; left: 0; right: 0; margin: 0; text-align: center; font-size: 56px; font-weight: 400; color: rgba(255,255,255,0.95); }
 
   .st7-phone { position: absolute; width: 1000px; height: 2120px; transform: rotate(-32deg) scale(0.82); border-radius: 150px; background: #e8e8ec; border: 5px solid #b9b9c2; padding: 22px; box-shadow: -60px 80px 160px rgba(0, 10, 30, 0.45); }
   .st7-phone.is-light { top: 700px; left: 400px; z-index: 5; }
   .st7-phone.is-dark { top: 1430px; left: -150px; z-index: 3; background: #1a1a1c; border-color: #55555a; }
   .st7-btn-side { position: absolute; left: -11px; width: 7px; border-radius: 4px; background: #a9a9b2; }
   .st7-phone.is-dark .st7-btn-side { background: #606066; }
-  .st7-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #f4f5f8; overflow: hidden; padding: 54px 56px 0; }
-  .st7-phone.is-dark .st7-screen { background: #0b0b10; }
+  .st7-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #f2f2f7; overflow: hidden; padding: 54px 56px 0; }
+  .st7-phone.is-dark .st7-screen { background: #0d1118; }
   .st7-island { position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 290px; height: 80px; border-radius: 60px; background: #000; z-index: 5; display: flex; align-items: center; justify-content: flex-end; padding-right: 26px; }
   .st7-island span { width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2a3a55 0%, #0a0d14 60%); }
 
-  .st7-header { display: flex; align-items: center; justify-content: space-between; margin-top: 126px; }
-  .st7-header img { height: 62px; }
-  .st7-phone.is-light .st7-header img { filter: invert(1) brightness(0.25); }
+  .st7-header { display: flex; align-items: center; justify-content: space-between; margin-top: 140px; }
+  .st7-header h2 { margin: 0; font-size: 54px; font-weight: 700; color: #1a2332; }
+  .st7-phone.is-dark .st7-header h2 { color: #e8edf5; }
   .st7-header-right { display: flex; align-items: center; gap: 38px; }
-  .st7-header-right i { font-size: 52px; color: #38445a; }
+  .st7-header-right i { font-size: 50px; color: #1a2332; }
   .st7-phone.is-dark .st7-header-right i { color: #e8edf5; }
-  .st7-avatar { width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
 
-  .st7-tabs { display: flex; gap: 22px; margin-top: 60px; width: 1400px; }
-  .st7-tab { display: inline-flex; align-items: center; gap: 16px; height: 88px; padding: 0 34px; border-radius: 60px; font-size: 33px; font-weight: 700; color: #3c4759; background: #e2e6ee; white-space: nowrap; }
-  .st7-tab i { font-size: 40px; }
-  .st7-phone.is-dark .st7-tab { color: #dbe3ee; background: rgba(52, 65, 88, 0.55); }
-  .st7-tab.is-on { background: #131a28; color: #ffffff; }
-  .st7-phone.is-dark .st7-tab.is-on { background: #ffffff; color: #101724; }
-  .st7-tab.is-on i { color: #45d0c8; }
-  .st7-phone.is-dark .st7-tab.is-on i { color: #d64545; }
+  .st7-tabs { display: flex; gap: 18px; margin-top: 52px; width: 1400px; }
+  .st7-chip { display: inline-flex; align-items: center; gap: 14px; height: 76px; padding: 0 30px; border-radius: 100px; background: #e4eefe; border: 3px solid rgba(0, 0, 0, 0.16); color: #1a2332; font-size: 30px; font-weight: 600; white-space: nowrap; }
+  .st7-chip i { font-size: 38px; }
+  .st7-phone.is-dark .st7-chip { background: #1b2432; border-color: rgba(255, 255, 255, 0.14); color: #dbe3ee; }
+  .st7-chip.is-on { background: #101724; color: #e8edf5; font-weight: 700; }
+  .st7-phone.is-dark .st7-chip.is-on { background: #e8edf5; color: #101724; }
 
-  .st7-section { margin: 70px 0 34px; font-size: 54px; font-weight: 600; color: #101724; }
+  .st7-section { margin: 60px 0 30px; font-size: 46px; font-weight: 600; letter-spacing: -0.01em; color: #101724; }
   .st7-phone.is-dark .st7-section { color: #ffffff; }
-  .st7-card { position: relative; border-radius: 52px; overflow: hidden; height: 580px; margin-bottom: 54px; }
-  .st7-card-photo { position: absolute; inset: 0; width: 100%; height: 62%; object-fit: cover; }
-  .st7-card-body { position: absolute; left: 0; right: 0; bottom: 0; height: 46%; padding: 78px 44px 0; }
-  .st7-card.is-purple .st7-card-body { background: linear-gradient(120deg, #5b2fb8 0%, #8b5cf6 100%); }
-  .st7-card.is-green .st7-card-body { background: linear-gradient(120deg, #0e8a6c 0%, #2fb98d 100%); }
-  .st7-card.is-orange .st7-card-body { background: linear-gradient(120deg, #b35a14 0%, #e08a2e 100%); }
-  .st7-when { position: absolute; top: -36px; left: 44px; display: inline-flex; align-items: center; height: 72px; padding: 0 36px; border-radius: 50px; background: rgba(15, 20, 30, 0.72); color: #ffffff; font-size: 29px; font-weight: 700; letter-spacing: 0.14em; }
-  .st7-card-title { margin: 0; font-size: 50px; font-weight: 800; color: #ffffff; }
-  .st7-card-loc { display: flex; align-items: center; gap: 14px; margin-top: 14px; font-size: 32px; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
-  .st7-card-loc i { font-size: 33px; }
-  .st7-going { position: absolute; right: 40px; bottom: 92px; display: flex; align-items: center; }
-  .st7-going span { width: 62px; height: 62px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.85); margin-left: -20px; display: flex; align-items: center; justify-content: center; font-size: 38px; }
-  .st7-going .st7-more { background: #1f2937; color: #fff; font-size: 25px; font-weight: 700; }
 
-  .st7-nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; height: 190px; padding: 36px 90px 0; display: flex; justify-content: space-between; background: #ffffff; border-top: 2px solid #e4e7ee; }
-  .st7-nav i { font-size: 62px; color: #8a94a8; }
-  .st7-nav i.is-on { color: #131a28; }
-  .st7-phone.is-dark .st7-nav { background: #101521; border-top-color: #232c3d; }
+  .st7-card { position: relative; display: flex; gap: 16px; padding: 16px; border-radius: 64px; background: #1d232b; color: #ffffff; overflow: hidden; isolation: isolate; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.1); margin-bottom: 36px; }
+  .st7-card::after { content: ""; position: absolute; inset: 0; border-radius: 64px; border: 2px solid rgba(255, 255, 255, 0.2); pointer-events: none; }
+  .st7-glow { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); z-index: -1; }
+  .st7-thumb { width: 230px; height: 230px; border-radius: 48px; background-size: cover; background-position: center; border: 2px solid rgba(255, 255, 255, 0.2); flex: none; }
+  .st7-card-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 0 14px; }
+  .st7-when { margin: 0; font-size: 29px; font-weight: 700; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); line-height: 1; }
+  .st7-card-title { margin: 0; font-size: 46px; font-weight: 700; line-height: 1.2; color: #ffffff; }
+  .st7-meta { display: flex; align-items: center; justify-content: space-between; min-height: 50px; }
+  .st7-loc { display: flex; align-items: center; gap: 10px; font-size: 29px; font-weight: 500; color: #ffffff; min-width: 0; }
+  .st7-loc i { font-size: 33px; }
+  .st7-avs { display: flex; align-items: center; flex: none; }
+  .st7-avs span { width: 54px; height: 54px; border-radius: 50%; margin-left: -14px; display: flex; align-items: center; justify-content: center; font-size: 34px; }
+  .st7-avs .st7-more { background: #7d8ca1; color: #fff; font-size: 23px; font-weight: 700; }
+
+  .st7-nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; height: 190px; padding: 36px 90px 0; display: flex; justify-content: space-between; align-items: flex-start; background: #ffffff; box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12); }
+  .st7-nav i { font-size: 62px; color: #3e4558; }
+  .st7-nav i.is-on { color: #101724; }
+  .st7-nav-you { width: 66px; height: 66px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 44px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
+  .st7-phone.is-dark .st7-nav { background: #101521; box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4); }
   .st7-phone.is-dark .st7-nav i { color: #6c7a90; }
   .st7-phone.is-dark .st7-nav i.is-on { color: #ffffff; }
 </style>
 
 <div class="st7">
-  <div class="st7-emoji">😎</div>
   <h1 class="st7-headline">Looks good any<br />time of day</h1>
   <p class="st7-sub">Light or dark mode, your choice</p>
 
@@ -72,61 +69,69 @@
     <div class="st7-screen">
       <div class="st7-island"><span></span></div>
       <div class="st7-header">
-        <img src="../img/white-logo.svg" alt="MixedRoutes" />
+        <h2>Plans</h2>
         <div class="st7-header-right">
-          <i class="ph ph-question"></i>
+          <i class="ph ph-user-plus"></i>
           <i class="ph ph-bell"></i>
-          <div class="st7-avatar">🧑‍🦱</div>
+          <i class="ph ph-gear-six"></i>
         </div>
       </div>
       <div class="st7-tabs">
-        <span class="st7-tab is-on"><i class="ph-fill ph-calendar-heart"></i>Upcoming</span>
-        <span class="st7-tab"><i class="ph-fill ph-bookmark-simple"></i>Someday</span>
-        <span class="st7-tab"><i class="ph-fill ph-envelope-simple"></i>Invites (3)</span>
+        <span class="st7-chip is-on"><i class="ph-fill ph-calendar-blank"></i>Upcoming</span>
+        <span class="st7-chip"><i class="ph ph-bookmark-simple"></i>Ideas</span>
+        <span class="st7-chip"><i class="ph ph-envelope-simple"></i>Invites (3)</span>
       </div>
       <div class="st7-section">Today</div>
-      <div class="st7-card is-purple">
-        <img class="st7-card-photo" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=75" alt="" />
-        <div class="st7-card-body">
-          <span class="st7-when">TODAY, 2 PM</span>
+      <div class="st7-card">
+        <div class="st7-glow" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=200&q=50');"></div>
+        <div class="st7-thumb" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=75');"></div>
+        <div class="st7-card-copy">
+          <p class="st7-when">Today, 2 PM</p>
           <h3 class="st7-card-title">Music Festival 🎸</h3>
-          <div class="st7-card-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
-          <div class="st7-going">
-            <span style="background: #f3c6a5; margin-left: 0;">👩</span>
-            <span style="background: #b8d4f0;">🧔</span>
-            <span style="background: #e8c4d8;">👩‍🦰</span>
-            <span class="st7-more">+3</span>
+          <div class="st7-meta">
+            <div class="st7-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
+            <div class="st7-avs">
+              <span style="background: #f3c6a5; margin-left: 0;">👩</span>
+              <span style="background: #b8d4f0;">🧔</span>
+              <span class="st7-more">+3</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="st7-section">This week</div>
-      <div class="st7-card is-green">
-        <img class="st7-card-photo" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=75" alt="" />
-        <div class="st7-card-body">
-          <span class="st7-when">SATURDAY, 9 AM</span>
+      <div class="st7-card">
+        <div class="st7-glow" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=200&q=50');"></div>
+        <div class="st7-thumb" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=75');"></div>
+        <div class="st7-card-copy">
+          <p class="st7-when">Saturday, 9 AM</p>
           <h3 class="st7-card-title">Hiking Trip 🥾</h3>
-          <div class="st7-card-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
-          <div class="st7-going">
-            <span style="background: #b8d4f0; margin-left: 0;">🧑</span>
-            <span style="background: #f3c6a5;">👩‍🦰</span>
-            <span class="st7-more">+3</span>
+          <div class="st7-meta">
+            <div class="st7-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
+            <div class="st7-avs">
+              <span style="background: #b8d4f0; margin-left: 0;">🧑</span>
+              <span style="background: #f3c6a5;">👩‍🦰</span>
+              <span class="st7-more">+3</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="st7-card is-orange">
-        <img class="st7-card-photo" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
-        <div class="st7-card-body">
-          <span class="st7-when">FRIDAY, 7 PM</span>
+      <div class="st7-card">
+        <div class="st7-glow" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=200&q=50');"></div>
+        <div class="st7-thumb" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=75');"></div>
+        <div class="st7-card-copy">
+          <p class="st7-when">Friday, 7 PM</p>
           <h3 class="st7-card-title">Game Night 🎮</h3>
-          <div class="st7-card-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+          <div class="st7-meta">
+            <div class="st7-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+          </div>
         </div>
       </div>
       <div class="st7-nav">
-        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-house"></i>
         <i class="ph ph-compass"></i>
-        <i class="ph ph-plus-circle"></i>
-        <i class="ph ph-user"></i>
-        <i class="ph ph-chat-circle"></i>
+        <span class="st7-nav-you">🧑‍🦱</span>
+        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-chat"></i>
       </div>
     </div>
   </div>
@@ -138,61 +143,70 @@
     <div class="st7-screen">
       <div class="st7-island"><span></span></div>
       <div class="st7-header">
-        <img src="../img/white-logo.svg" alt="MixedRoutes" />
+        <h2>Plans</h2>
         <div class="st7-header-right">
-          <i class="ph ph-question"></i>
+          <i class="ph ph-user-plus"></i>
           <i class="ph ph-bell"></i>
-          <div class="st7-avatar">🧑‍🦱</div>
+          <i class="ph ph-gear-six"></i>
         </div>
       </div>
       <div class="st7-tabs">
-        <span class="st7-tab is-on"><i class="ph-fill ph-calendar-heart"></i>Upcoming</span>
-        <span class="st7-tab"><i class="ph-fill ph-bookmark-simple"></i>Someday</span>
-        <span class="st7-tab"><i class="ph-fill ph-envelope-simple"></i>Invites (3)</span>
+        <span class="st7-chip is-on"><i class="ph-fill ph-calendar-blank"></i>Upcoming</span>
+        <span class="st7-chip"><i class="ph ph-bookmark-simple"></i>Ideas</span>
+        <span class="st7-chip"><i class="ph ph-envelope-simple"></i>Invites (3)</span>
       </div>
       <div class="st7-section">Today</div>
-      <div class="st7-card is-purple">
-        <img class="st7-card-photo" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=75" alt="" />
-        <div class="st7-card-body">
-          <span class="st7-when">TODAY, 2 PM</span>
+      <div class="st7-card">
+        <div class="st7-glow" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=200&q=50');"></div>
+        <div class="st7-thumb" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=75');"></div>
+        <div class="st7-card-copy">
+          <p class="st7-when">Today, 2 PM</p>
           <h3 class="st7-card-title">Music Festival 🎸</h3>
-          <div class="st7-card-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
-          <div class="st7-going">
-            <span style="background: #f3c6a5; margin-left: 0;">👩</span>
-            <span style="background: #b8d4f0;">🧔</span>
-            <span style="background: #f0d9b8;">👨</span>
-            <span class="st7-more">+3</span>
+          <div class="st7-meta">
+            <div class="st7-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
+            <div class="st7-avs">
+              <span style="background: #f3c6a5; margin-left: 0;">👩</span>
+              <span style="background: #b8d4f0;">🧔</span>
+              <span style="background: #f0d9b8;">👨</span>
+              <span class="st7-more">+3</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="st7-section">This week</div>
-      <div class="st7-card is-green">
-        <img class="st7-card-photo" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=75" alt="" />
-        <div class="st7-card-body">
-          <span class="st7-when">SATURDAY, 9 AM</span>
+      <div class="st7-card">
+        <div class="st7-glow" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=200&q=50');"></div>
+        <div class="st7-thumb" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=75');"></div>
+        <div class="st7-card-copy">
+          <p class="st7-when">Saturday, 9 AM</p>
           <h3 class="st7-card-title">Hiking Trip 🥾</h3>
-          <div class="st7-card-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
-          <div class="st7-going">
-            <span style="background: #b8d4f0; margin-left: 0;">🧑</span>
-            <span style="background: #f3c6a5;">👩‍🦰</span>
-            <span class="st7-more">+3</span>
+          <div class="st7-meta">
+            <div class="st7-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
+            <div class="st7-avs">
+              <span style="background: #b8d4f0; margin-left: 0;">🧑</span>
+              <span style="background: #f3c6a5;">👩‍🦰</span>
+              <span class="st7-more">+3</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="st7-card is-orange">
-        <img class="st7-card-photo" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
-        <div class="st7-card-body">
-          <span class="st7-when">FRIDAY, 7 PM</span>
+      <div class="st7-card">
+        <div class="st7-glow" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=200&q=50');"></div>
+        <div class="st7-thumb" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=75');"></div>
+        <div class="st7-card-copy">
+          <p class="st7-when">Friday, 7 PM</p>
           <h3 class="st7-card-title">Game Night 🎮</h3>
-          <div class="st7-card-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+          <div class="st7-meta">
+            <div class="st7-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+          </div>
         </div>
       </div>
       <div class="st7-nav">
-        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-house"></i>
         <i class="ph ph-compass"></i>
-        <i class="ph ph-plus-circle"></i>
-        <i class="ph ph-user"></i>
-        <i class="ph ph-chat-circle"></i>
+        <span class="st7-nav-you">🧑‍🦱</span>
+        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-chat"></i>
       </div>
     </div>
   </div>
