@@ -99,17 +99,24 @@
     },
     {
       "file": "interests-line-art.html",
-      "x": 7328,
-      "y": 32,
+      "x": 8128,
+      "y": 0,
       "width": 300,
       "name": "Illustration guide · Line art"
     },
     {
+      "file": "brand-board-variation-blue-hour-illustrated.html",
+      "x": 7232,
+      "y": 0,
+      "width": 860,
+      "name": "Identity E3 · Blue Hour · Illustrated"
+    },
+    {
       "file": "interests-line-art-accent.html",
-      "x": 7688,
-      "y": 32,
+      "x": 8448,
+      "y": 0,
       "width": 300,
-      "name": "Illustration guide · Line art + clay accent"
+      "name": "Illustration guide · Line art + orange accent"
     }
   ]
 }
