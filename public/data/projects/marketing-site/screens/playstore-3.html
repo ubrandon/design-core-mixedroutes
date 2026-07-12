@@ -1,0 +1,199 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  .ps3 { position: relative; width: 1284px; height: 2778px; overflow: hidden; background: linear-gradient(200deg, #3f9be0 0%, #1e74c4 55%, #0f4e97 100%); font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
+  .ps3 * { box-sizing: border-box; }
+  .ps3-emoji { position: absolute; top: 130px; left: 0; right: 0; text-align: center; font-size: 110px; }
+  .ps3-headline { position: absolute; top: 280px; left: 0; right: 0; margin: 0; text-align: center; font-size: 148px; font-weight: 900; line-height: 1.04; letter-spacing: -0.01em; color: #ffffff; }
+  .ps3-sub { position: absolute; top: 640px; left: 0; right: 0; margin: 0; text-align: center; font-size: 62px; font-weight: 300; color: #ffffff; }
+
+  .ps3-phone { position: absolute; width: 1000px; height: 2120px; transform: rotate(-32deg) scale(0.82); border-radius: 150px; background: #e8e8ec; border: 5px solid #b9b9c2; padding: 22px; box-shadow: -60px 80px 160px rgba(0, 10, 30, 0.45); }
+  .ps3-phone.is-light { top: 700px; left: 400px; z-index: 5; }
+  .ps3-phone.is-dark { top: 1430px; left: -150px; z-index: 3; background: #1a1a1c; border-color: #55555a; }
+  .ps3-btn-side { position: absolute; left: -11px; width: 7px; border-radius: 4px; background: #a9a9b2; }
+  .ps3-phone.is-dark .ps3-btn-side { background: #606066; }
+  .ps3-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #f4f5f8; overflow: hidden; padding: 54px 56px 0; }
+  .ps3-phone.is-dark .ps3-screen { background: #0b0b10; }
+  .ps3-island { position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 290px; height: 80px; border-radius: 60px; background: #000; z-index: 5; display: flex; align-items: center; justify-content: flex-end; padding-right: 26px; }
+  .ps3-island span { width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2a3a55 0%, #0a0d14 60%); }
+
+  .ps3-header { display: flex; align-items: center; justify-content: space-between; margin-top: 126px; }
+  .ps3-header img { height: 62px; }
+  .ps3-phone.is-light .ps3-header img { filter: invert(1) brightness(0.25); }
+  .ps3-header-right { display: flex; align-items: center; gap: 38px; }
+  .ps3-header-right i { font-size: 52px; color: #38445a; }
+  .ps3-phone.is-dark .ps3-header-right i { color: #e8edf5; }
+  .ps3-avatar { width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
+
+  .ps3-tabs { display: flex; gap: 22px; margin-top: 60px; width: 1400px; }
+  .ps3-tab { display: inline-flex; align-items: center; gap: 16px; height: 88px; padding: 0 34px; border-radius: 60px; font-size: 33px; font-weight: 700; color: #3c4759; background: #e2e6ee; white-space: nowrap; }
+  .ps3-tab i { font-size: 40px; }
+  .ps3-phone.is-dark .ps3-tab { color: #dbe3ee; background: rgba(52, 65, 88, 0.55); }
+  .ps3-tab.is-on { background: #131a28; color: #ffffff; }
+  .ps3-phone.is-dark .ps3-tab.is-on { background: #ffffff; color: #101724; }
+  .ps3-tab.is-on i { color: #45d0c8; }
+  .ps3-phone.is-dark .ps3-tab.is-on i { color: #d64545; }
+
+  .ps3-section { margin: 70px 0 34px; font-size: 54px; font-weight: 600; color: #101724; }
+  .ps3-phone.is-dark .ps3-section { color: #ffffff; }
+  .ps3-card { position: relative; border-radius: 52px; overflow: hidden; height: 580px; margin-bottom: 54px; }
+  .ps3-card-photo { position: absolute; inset: 0; width: 100%; height: 62%; object-fit: cover; }
+  .ps3-card-body { position: absolute; left: 0; right: 0; bottom: 0; height: 46%; padding: 78px 44px 0; }
+  .ps3-card.is-purple .ps3-card-body { background: linear-gradient(120deg, #5b2fb8 0%, #8b5cf6 100%); }
+  .ps3-card.is-green .ps3-card-body { background: linear-gradient(120deg, #0e8a6c 0%, #2fb98d 100%); }
+  .ps3-card.is-orange .ps3-card-body { background: linear-gradient(120deg, #b35a14 0%, #e08a2e 100%); }
+  .ps3-when { position: absolute; top: -36px; left: 44px; display: inline-flex; align-items: center; height: 72px; padding: 0 36px; border-radius: 50px; background: rgba(15, 20, 30, 0.72); color: #ffffff; font-size: 29px; font-weight: 700; letter-spacing: 0.14em; }
+  .ps3-card-title { margin: 0; font-size: 50px; font-weight: 800; color: #ffffff; }
+  .ps3-card-loc { display: flex; align-items: center; gap: 14px; margin-top: 14px; font-size: 32px; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
+  .ps3-card-loc i { font-size: 33px; }
+  .ps3-going { position: absolute; right: 40px; bottom: 92px; display: flex; align-items: center; }
+  .ps3-going span { width: 62px; height: 62px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.85); margin-left: -20px; display: flex; align-items: center; justify-content: center; font-size: 38px; }
+  .ps3-going .ps3-more { background: #1f2937; color: #fff; font-size: 25px; font-weight: 700; }
+
+  .ps3-nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; height: 190px; padding: 36px 90px 0; display: flex; justify-content: space-between; background: #ffffff; border-top: 2px solid #e4e7ee; }
+  .ps3-nav i { font-size: 62px; color: #8a94a8; }
+  .ps3-nav i.is-on { color: #131a28; }
+  .ps3-phone.is-dark .ps3-nav { background: #101521; border-top-color: #232c3d; }
+  .ps3-phone.is-dark .ps3-nav i { color: #6c7a90; }
+  .ps3-phone.is-dark .ps3-nav i.is-on { color: #ffffff; }
+</style>
+
+<div class="ps3">
+  <div class="ps3-emoji">😎</div>
+  <h1 class="ps3-headline">Looks good any<br />time of day</h1>
+  <p class="ps3-sub">Light or dark mode, your choice</p>
+
+  <div class="ps3-phone is-dark">
+    <span class="ps3-btn-side" style="top: 400px; height: 90px;"></span>
+    <span class="ps3-btn-side" style="top: 540px; height: 150px;"></span>
+    <span class="ps3-btn-side" style="top: 720px; height: 150px;"></span>
+    <div class="ps3-screen">
+      <div class="ps3-island"><span></span></div>
+      <div class="ps3-header">
+        <img src="../img/white-logo.svg" alt="MixedRoutes" />
+        <div class="ps3-header-right">
+          <i class="ph ph-question"></i>
+          <i class="ph ph-bell"></i>
+          <div class="ps3-avatar">🧑‍🦱</div>
+        </div>
+      </div>
+      <div class="ps3-tabs">
+        <span class="ps3-tab is-on"><i class="ph-fill ph-calendar-heart"></i>Upcoming</span>
+        <span class="ps3-tab"><i class="ph-fill ph-bookmark-simple"></i>Someday</span>
+        <span class="ps3-tab"><i class="ph-fill ph-envelope-simple"></i>Invites (3)</span>
+      </div>
+      <div class="ps3-section">Today</div>
+      <div class="ps3-card is-purple">
+        <img class="ps3-card-photo" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <div class="ps3-card-body">
+          <span class="ps3-when">TODAY, 2 PM</span>
+          <h3 class="ps3-card-title">Music Festival 🎸</h3>
+          <div class="ps3-card-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
+          <div class="ps3-going">
+            <span style="background: #f3c6a5; margin-left: 0;">👩</span>
+            <span style="background: #b8d4f0;">🧔</span>
+            <span style="background: #e8c4d8;">👩‍🦰</span>
+            <span class="ps3-more">+3</span>
+          </div>
+        </div>
+      </div>
+      <div class="ps3-section">This week</div>
+      <div class="ps3-card is-green">
+        <img class="ps3-card-photo" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <div class="ps3-card-body">
+          <span class="ps3-when">SATURDAY, 9 AM</span>
+          <h3 class="ps3-card-title">Hiking Trip 🥾</h3>
+          <div class="ps3-card-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
+          <div class="ps3-going">
+            <span style="background: #b8d4f0; margin-left: 0;">🧑</span>
+            <span style="background: #f3c6a5;">👩‍🦰</span>
+            <span class="ps3-more">+3</span>
+          </div>
+        </div>
+      </div>
+      <div class="ps3-card is-orange">
+        <img class="ps3-card-photo" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <div class="ps3-card-body">
+          <span class="ps3-when">FRIDAY, 7 PM</span>
+          <h3 class="ps3-card-title">Game Night 🎮</h3>
+          <div class="ps3-card-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+        </div>
+      </div>
+      <div class="ps3-nav">
+        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-compass"></i>
+        <i class="ph ph-plus-circle"></i>
+        <i class="ph ph-user"></i>
+        <i class="ph ph-chat-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="ps3-phone is-light">
+    <span class="ps3-btn-side" style="top: 400px; height: 90px;"></span>
+    <span class="ps3-btn-side" style="top: 540px; height: 150px;"></span>
+    <span class="ps3-btn-side" style="top: 720px; height: 150px;"></span>
+    <div class="ps3-screen">
+      <div class="ps3-island"><span></span></div>
+      <div class="ps3-header">
+        <img src="../img/white-logo.svg" alt="MixedRoutes" />
+        <div class="ps3-header-right">
+          <i class="ph ph-question"></i>
+          <i class="ph ph-bell"></i>
+          <div class="ps3-avatar">🧑‍🦱</div>
+        </div>
+      </div>
+      <div class="ps3-tabs">
+        <span class="ps3-tab is-on"><i class="ph-fill ph-calendar-heart"></i>Upcoming</span>
+        <span class="ps3-tab"><i class="ph-fill ph-bookmark-simple"></i>Someday</span>
+        <span class="ps3-tab"><i class="ph-fill ph-envelope-simple"></i>Invites (3)</span>
+      </div>
+      <div class="ps3-section">Today</div>
+      <div class="ps3-card is-purple">
+        <img class="ps3-card-photo" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <div class="ps3-card-body">
+          <span class="ps3-when">TODAY, 2 PM</span>
+          <h3 class="ps3-card-title">Music Festival 🎸</h3>
+          <div class="ps3-card-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
+          <div class="ps3-going">
+            <span style="background: #f3c6a5; margin-left: 0;">👩</span>
+            <span style="background: #b8d4f0;">🧔</span>
+            <span style="background: #f0d9b8;">👨</span>
+            <span class="ps3-more">+3</span>
+          </div>
+        </div>
+      </div>
+      <div class="ps3-section">This week</div>
+      <div class="ps3-card is-green">
+        <img class="ps3-card-photo" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <div class="ps3-card-body">
+          <span class="ps3-when">SATURDAY, 9 AM</span>
+          <h3 class="ps3-card-title">Hiking Trip 🥾</h3>
+          <div class="ps3-card-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
+          <div class="ps3-going">
+            <span style="background: #b8d4f0; margin-left: 0;">🧑</span>
+            <span style="background: #f3c6a5;">👩‍🦰</span>
+            <span class="ps3-more">+3</span>
+          </div>
+        </div>
+      </div>
+      <div class="ps3-card is-orange">
+        <img class="ps3-card-photo" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
+        <div class="ps3-card-body">
+          <span class="ps3-when">FRIDAY, 7 PM</span>
+          <h3 class="ps3-card-title">Game Night 🎮</h3>
+          <div class="ps3-card-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+        </div>
+      </div>
+      <div class="ps3-nav">
+        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-compass"></i>
+        <i class="ph ph-plus-circle"></i>
+        <i class="ph ph-user"></i>
+        <i class="ph ph-chat-circle"></i>
+      </div>
+    </div>
+  </div>
+</div>

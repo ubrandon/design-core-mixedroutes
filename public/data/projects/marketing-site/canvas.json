@@ -40,6 +40,20 @@
       "y": 7712,
       "width": 1284,
       "name": "Play Store · 2 (1284x2778)"
+    },
+    {
+      "file": "playstore-3.html",
+      "x": 4512,
+      "y": 7712,
+      "width": 1284,
+      "name": "Play Store · 3 (1284x2778)"
+    },
+    {
+      "file": "playstore-4.html",
+      "x": 5824,
+      "y": 7712,
+      "width": 1284,
+      "name": "Play Store · 4 (1284x2778)"
     }
   ]
 }
