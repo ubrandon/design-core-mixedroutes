@@ -10,15 +10,15 @@
   "recents": [
     {
       "id": "marketing-site",
-      "ts": 1783799050947
+      "ts": 1783828458397
+    },
+    {
+      "id": "onboarding",
+      "ts": 1783828454848
     },
     {
       "id": "home-page",
       "ts": 1783799041845
-    },
-    {
-      "id": "onboarding",
-      "ts": 1782943722137
     },
     {
       "id": "saved-places",
@@ -63,5 +63,5 @@
     "status": ""
   },
   "navCollapsed": true,
-  "updatedAt": 1783799050947
+  "updatedAt": 1783828458397
 }

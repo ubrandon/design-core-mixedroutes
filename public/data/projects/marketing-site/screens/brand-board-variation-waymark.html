@@ -1,0 +1,183 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+<style>
+  .bbw {
+    font-family: "Archivo", -apple-system, sans-serif;
+    background:
+      repeating-radial-gradient(circle at 85% 12%, transparent 0 34px, rgba(31, 54, 44, 0.06) 34px 35px),
+      repeating-radial-gradient(circle at 8% 88%, transparent 0 46px, rgba(31, 54, 44, 0.05) 46px 47px),
+      #efe9dc;
+    color: #1f362c;
+    padding: 36px 32px 40px;
+    overflow-x: clip;
+  }
+  .bbw * { box-sizing: border-box; }
+  .bbw-kicker {
+    font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #e4572e; margin: 0 0 10px;
+  }
+  .bbw-title {
+    font-family: "Archivo Black", sans-serif; font-size: 34px;
+    letter-spacing: -0.01em; line-height: 1.06; margin: 0 0 6px;
+  }
+  .bbw-sub { margin: 0 0 24px; font-size: 14px; line-height: 1.6; color: rgba(31, 54, 44, 0.68); }
+  .bbw-routeline {
+    height: 34px; margin: 0 0 4px; position: relative;
+    background: none; border: none;
+  }
+  .bbw-routeline svg { display: block; width: 100%; height: 100%; }
+  .bbw-label {
+    font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(31, 54, 44, 0.55); margin: 26px 0 12px; display: flex; align-items: center; gap: 10px;
+  }
+  .bbw-label::after { content: ""; flex: 1; border-top: 2px dashed rgba(31, 54, 44, 0.25); }
+  .bbw-swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .bbw-swatch { border-radius: 10px; overflow: hidden; border: 2px solid #1f362c; background: #fbf8f1; }
+  .bbw-swatch-chip { height: 52px; border-bottom: 2px solid #1f362c; }
+  .bbw-swatch-info { padding: 8px 10px; }
+  .bbw-swatch-name { font-weight: 700; font-size: 12px; }
+  .bbw-swatch-role { font-size: 11px; line-height: 1.45; color: rgba(31, 54, 44, 0.62); }
+  .bbw-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bbw-rule-card {
+    background: #fbf8f1; border: 2px solid #1f362c; border-radius: 10px; padding: 14px 16px;
+    font-size: 13px; line-height: 1.55;
+  }
+  .bbw-states { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .bbw-state {
+    display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 13px;
+    color: #fbf8f1; padding: 10px 18px; border-radius: 10px; border: 2px solid #1f362c;
+    box-shadow: 3px 3px 0 #1f362c;
+  }
+  .bbw-type-card { background: #fbf8f1; border: 2px solid #1f362c; border-radius: 10px; padding: 20px 22px; }
+  .bbw-display {
+    font-family: "Archivo Black", sans-serif; font-size: 36px;
+    letter-spacing: -0.01em; line-height: 1.06; margin: 0;
+  }
+  .bbw-display .bbw-hand { font-family: "Caveat", cursive; font-size: 42px; color: #e4572e; letter-spacing: 0; }
+  .bbw-type-meta { font-size: 11px; color: rgba(31, 54, 44, 0.55); margin: 6px 0 14px; }
+  .bbw-body-sample { font-size: 15px; line-height: 1.7; color: rgba(31, 54, 44, 0.72); margin: 0; }
+  .bbw-wordmark { font-family: "Archivo Black", sans-serif; font-size: 25px; letter-spacing: -0.01em; }
+  .bbw-wordmark svg { vertical-align: -4px; margin-left: 6px; }
+  .bbw-imagery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bbw-img-card { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16 / 10; background: #ddd5c2; border: 2px solid #1f362c; }
+  .bbw-img-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bbw-img-tag {
+    position: absolute; left: 10px; bottom: 10px; font-weight: 700; font-size: 11px;
+    color: #1f362c; padding: 4px 11px; border-radius: 999px; background: #fbf8f1; border: 2px solid #1f362c;
+  }
+  .bbw-dont {
+    border-radius: 10px; border: 2px dashed rgba(31, 54, 44, 0.4); padding: 14px 16px;
+    font-size: 12px; line-height: 1.6; color: rgba(31, 54, 44, 0.65); background: rgba(251, 248, 241, 0.7);
+  }
+  .bbw-note { font-size: 12px; line-height: 1.6; color: rgba(31, 54, 44, 0.6); margin: 8px 0 0; }
+  .bbw-plan-grid { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: start; }
+  .bbw-plan {
+    position: relative; margin: 0; border-radius: 12px; overflow: hidden;
+    aspect-ratio: 3 / 4; background: #ddd5c2; border: 2px solid #1f362c; box-shadow: 4px 4px 0 #1f362c;
+  }
+  .bbw-plan img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bbw-plan-caption {
+    position: absolute; inset: auto 0 0 0; display: flex; flex-direction: column; gap: 3px;
+    padding: 12px 14px 13px; background: #fbf8f1; border-top: 2px solid #1f362c;
+  }
+  .bbw-plan-title { font-family: "Archivo Black", sans-serif; font-size: 14px; }
+  .bbw-plan-meta { font-size: 11px; color: rgba(31, 54, 44, 0.65); }
+  .bbw-plan-going {
+    position: absolute; top: 10px; right: 10px; font-weight: 700; font-size: 11px;
+    padding: 4px 11px; border-radius: 999px; background: #e4572e; color: #fbf8f1;
+    border: 2px solid #1f362c; transform: rotate(6deg);
+  }
+  .bbw-dark { border-radius: 10px; padding: 18px 20px; background: #1f362c; color: #efe9dc; border: 2px solid #1f362c; }
+  .bbw-dark-title { font-family: "Archivo Black", sans-serif; font-size: 18px; margin: 0 0 4px; }
+  .bbw-dark-note { font-size: 12px; line-height: 1.6; color: rgba(239, 233, 220, 0.72); margin: 0; }
+</style>
+
+<div class="bbw">
+  <p class="bbw-kicker">Identity variation D · Waymark</p>
+  <h1 class="bbw-title">Every plan draws a line on the map.</h1>
+  <p class="bbw-sub">The ownable device: a dashed route line with a start dot and an end flag. It runs through every layout, connecting people to plans. Nobody else in social owns a trail mark.</p>
+
+  <div class="bbw-routeline">
+    <svg viewBox="0 0 780 34" fill="none" preserveAspectRatio="none">
+      <path d="M8 26 C 140 26, 180 6, 320 10 S 560 30, 690 14" stroke="#e4572e" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round"/>
+      <circle cx="8" cy="26" r="6" fill="#1f362c"/>
+      <path d="M690 14 L690 0 L706 4 L690 8" fill="#e4572e" stroke="#1f362c" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <p class="bbw-label">Palette · trail map</p>
+  <div class="bbw-swatches">
+    <div class="bbw-swatch"><div class="bbw-swatch-chip" style="background:#efe9dc;"></div><div class="bbw-swatch-info"><div class="bbw-swatch-name">Kraft #efe9dc</div><div class="bbw-swatch-role">Default ground, with faint contour lines</div></div></div>
+    <div class="bbw-swatch"><div class="bbw-swatch-chip" style="background:#1f362c;"></div><div class="bbw-swatch-info"><div class="bbw-swatch-name">Spruce #1f362c</div><div class="bbw-swatch-role">Text plus every border and offset shadow</div></div></div>
+    <div class="bbw-swatch"><div class="bbw-swatch-chip" style="background:#e4572e;"></div><div class="bbw-swatch-info"><div class="bbw-swatch-name">Blaze #e4572e</div><div class="bbw-swatch-role">The route line, CTAs, and the going tag</div></div></div>
+    <div class="bbw-swatch"><div class="bbw-swatch-chip" style="background:#f2b63c;"></div><div class="bbw-swatch-info"><div class="bbw-swatch-name">Marigold #f2b63c</div><div class="bbw-swatch-role">Highlights and waypoint badges</div></div></div>
+    <div class="bbw-swatch"><div class="bbw-swatch-chip" style="background:#3f6f8f;"></div><div class="bbw-swatch-info"><div class="bbw-swatch-name">River #3f6f8f</div><div class="bbw-swatch-role">Confirmed states, calm like water on a map</div></div></div>
+    <div class="bbw-swatch"><div class="bbw-swatch-chip" style="background:#fbf8f1;"></div><div class="bbw-swatch-info"><div class="bbw-swatch-name">Blank #fbf8f1</div><div class="bbw-swatch-role">Cards, always inked with a spruce border</div></div></div>
+  </div>
+
+  <p class="bbw-label">Color and line rules</p>
+  <div class="bbw-rules">
+    <div class="bbw-rule-card"><b style="color:#e4572e;">Blaze marks the way.</b> The route line, the primary button, and the going tag. If it points forward, it's blaze.</div>
+    <div class="bbw-rule-card"><b>Everything is inked.</b> 2px spruce borders on every card and button, with a hard offset shadow. No soft shadows, ever.</div>
+    <div class="bbw-rule-card"><b>The route line is sacred.</b> Always dashed, always one start dot and one end flag. It never decorates; it always connects two real things.</div>
+    <div class="bbw-rule-card"><b style="color:#3f6f8f;">River means settled.</b> Confirmed, joined, saved. Errors are blaze text with an underline, never a new red.</div>
+  </div>
+  <div class="bbw-states" style="margin-top:12px;">
+    <span class="bbw-state" style="background:#e4572e;">Get the app</span>
+    <span class="bbw-state" style="background:#3f6f8f;">You're in ✓</span>
+    <span class="bbw-state" style="background:#fbf8f1; color:#e4572e; box-shadow:none;">Couldn't save</span>
+  </div>
+
+  <p class="bbw-label">Type</p>
+  <div class="bbw-type-card">
+    <p class="bbw-display">Go where <span class="bbw-hand">life</span> is.</p>
+    <p class="bbw-type-meta">Display: Archivo Black, with one hand-marked word in Caveat, like a note on a map.</p>
+    <p class="bbw-body-sample">Body: Archivo, sturdy and plain. The handwriting is rationed: one word in a headline or one margin note per screen, never a full sentence.</p>
+  </div>
+
+  <p class="bbw-label">Wordmark &amp; marks</p>
+  <div class="bbw-rule-card">
+    <span class="bbw-wordmark">MixedRoutes<svg width="34" height="18" viewBox="0 0 34 18" fill="none"><path d="M2 14 C 10 14, 12 4, 22 6" stroke="#e4572e" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round"/><circle cx="2" cy="14" r="3" fill="#1f362c"/><path d="M22 6 L22 -1 L31 1.5 L22 4" fill="#e4572e"/></svg></span>
+    <p class="bbw-note" style="margin-top:6px;">The wordmark carries a small route line off its last letter: dot, dashes, flag. That mark alone works as the app icon, a sticker, and a favicon. Waypoint badges (circled numbers on marigold) count people, stops, and streaks.</p>
+  </div>
+
+  <p class="bbw-label">Imagery · shot from inside the group</p>
+  <div class="bbw-imagery">
+    <div class="bbw-img-card">
+      <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=70" alt="Two friends hiking a trail" />
+      <span class="bbw-img-tag">On the way, not arrived</span>
+    </div>
+    <div class="bbw-img-card">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=70" alt="Friends at a long outdoor dinner" />
+      <span class="bbw-img-tag">The destination is people</span>
+    </div>
+  </div>
+  <div class="bbw-dont" style="margin-top:10px;">
+    <b>Never:</b> drone shots, empty landscapes without people, gear close-ups, or anything that reads as a hiking brand. The map language is about plans with friends, not the outdoors.
+  </div>
+
+  <p class="bbw-label">The signature: plan card</p>
+  <div class="bbw-plan-grid">
+    <figure class="bbw-plan">
+      <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=75" alt="Two friends hiking a mountain trail" />
+      <span class="bbw-plan-going">4 going</span>
+      <figcaption class="bbw-plan-caption">
+        <span class="bbw-plan-title">Saturday sunrise hike</span>
+        <span class="bbw-plan-meta">Sat · 6:00 AM · Craggy Gardens</span>
+      </figcaption>
+    </figure>
+    <div class="bbw-rule-card">
+      Inked border, hard offset shadow, caption printed below the photo, and the going tag tilted 6 degrees in the corner like a price sticker. The tilt plus the ink border is the tell for this identity.
+    </div>
+  </div>
+
+  <p class="bbw-label">Dark mode is the night trail</p>
+  <div class="bbw-dark">
+    <p class="bbw-dark-title">Spruce ground, kraft text.</p>
+    <p class="bbw-dark-note">Night flips to spruce with kraft text, borders go kraft, and blaze stays blaze. The contour lines fade up slightly, like a map read by headlamp.</p>
+  </div>
+
+  <p class="bbw-note">Test for any new surface: could you find the start dot and the flag. If a screen has no journey on it, it is not finished.</p>
+</div>

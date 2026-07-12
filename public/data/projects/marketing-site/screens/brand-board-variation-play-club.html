@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  .bbp { --blue:#2743e8; --butter:#fff0a8; --coral:#ff665a; --mint:#9fe3cb; --plum:#41204f; --milk:#fffdf5; font-family:"Manrope",sans-serif; background:var(--butter); color:var(--plum); padding:34px 32px 42px; overflow:hidden; }
+  .bbp * { box-sizing:border-box; }
+  .bbp-head { position:relative; min-height:210px; padding:26px 250px 28px 27px; border-radius:30px; background:var(--blue); color:var(--milk); overflow:hidden; }
+  .bbp-head:before,.bbp-head:after { content:""; position:absolute; border-radius:50%; }
+  .bbp-head:before { width:210px; height:210px; right:12px; top:-74px; background:var(--coral); }
+  .bbp-head:after { width:128px; height:128px; right:102px; bottom:-52px; background:var(--mint); border:10px solid var(--butter); }
+  .bbp-kicker,.bbp-label { font-size:10px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+  .bbp-kicker { margin:0 0 10px; color:var(--butter); }
+  .bbp-title { margin:0; font-family:"Fredoka",sans-serif; font-size:45px; line-height:.98; letter-spacing:-.025em; }
+  .bbp-sub { max-width:500px; margin:12px 0 0; font-size:13px; line-height:1.6; color:rgba(255,253,245,.78); }
+  .bbp-sticker { position:absolute; z-index:2; right:28px; bottom:24px; padding:12px 16px; border:3px solid var(--plum); border-radius:50%; background:var(--butter); color:var(--plum); font-family:"Fredoka",sans-serif; font-size:13px; transform:rotate(-8deg); box-shadow:4px 4px 0 var(--plum); }
+  .bbp-label { margin:28px 0 11px; color:rgba(65,32,79,.62); }
+  .bbp-swatches { display:grid; grid-template-columns:repeat(3,1fr); gap:11px; }
+  .bbp-swatch { display:grid; grid-template-columns:72px 1fr; min-height:78px; overflow:hidden; border:2px solid var(--plum); border-radius:18px; background:var(--milk); box-shadow:3px 3px 0 rgba(65,32,79,.85); }
+  .bbp-chip { min-height:100%; border-right:2px solid var(--plum); }
+  .bbp-swatch-copy { padding:12px 10px; }
+  .bbp-swatch b { display:block; font-family:"Fredoka",sans-serif; font-size:13px; }
+  .bbp-swatch span { display:block; margin-top:3px; font-size:9px; line-height:1.35; color:rgba(65,32,79,.62); }
+  .bbp-rules { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .bbp-rule { padding:16px 14px; border-radius:20px; border:2px solid var(--plum); background:var(--milk); font-size:11px; line-height:1.5; }
+  .bbp-rule b { display:block; margin-bottom:4px; font-family:"Fredoka",sans-serif; font-size:15px; color:var(--blue); }
+  .bbp-type { display:grid; grid-template-columns:1.2fr .8fr; gap:11px; }
+  .bbp-type-main { position:relative; min-height:190px; padding:23px; overflow:hidden; border:2px solid var(--plum); border-radius:26px; background:var(--coral); color:var(--plum); }
+  .bbp-display { position:relative; z-index:1; margin:0; font-family:"Fredoka",sans-serif; font-size:46px; line-height:.94; letter-spacing:-.025em; }
+  .bbp-type-main:after { content:"YES!"; position:absolute; right:-10px; bottom:-10px; font-family:"Fredoka",sans-serif; font-size:72px; color:rgba(255,240,168,.48); transform:rotate(-7deg); }
+  .bbp-meta { position:relative; z-index:1; margin:15px 0 0; font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .bbp-type-side { padding:20px; border:2px solid var(--plum); border-radius:26px; background:var(--milk); }
+  .bbp-wordmark { display:inline-flex; align-items:center; font-family:"Fredoka",sans-serif; font-size:28px; font-weight:700; color:var(--blue); letter-spacing:-.03em; }
+  .bbp-wordmark:after { content:"↗"; display:grid; place-items:center; width:27px; height:27px; margin-left:5px; border-radius:50%; background:var(--coral); color:var(--plum); font-size:16px; }
+  .bbp-body { margin:13px 0 0; font-size:12px; line-height:1.6; color:rgba(65,32,79,.68); }
+  .bbp-images { display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+  .bbp-photo { position:relative; aspect-ratio:16/10; margin:0; overflow:hidden; border:2px solid var(--plum); border-radius:26px; background:var(--mint); }
+  .bbp-photo:first-child { transform:rotate(-1deg); }
+  .bbp-photo:last-child { transform:rotate(1deg); }
+  .bbp-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.12) brightness(1.04); }
+  .bbp-caption { position:absolute; left:12px; bottom:12px; padding:7px 11px; border:2px solid var(--plum); border-radius:999px; background:var(--butter); color:var(--plum); font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
+  .bbp-signature { display:grid; grid-template-columns:230px 1fr; gap:17px; }
+  .bbp-plan { position:relative; min-height:310px; margin:0; overflow:hidden; border:3px solid var(--plum); border-radius:30px; background:var(--blue); box-shadow:6px 6px 0 var(--plum); }
+  .bbp-plan img { width:100%; height:205px; object-fit:cover; display:block; filter:saturate(1.12); }
+  .bbp-plan-copy { display:block; padding:13px 14px 16px; color:var(--milk); }
+  .bbp-plan-title { display:block; font-family:"Fredoka",sans-serif; font-size:18px; }
+  .bbp-plan-meta { display:block; margin-top:4px; font-size:9px; color:rgba(255,253,245,.75); text-transform:uppercase; letter-spacing:.06em; }
+  .bbp-going { display:inline-block; margin-top:9px; padding:5px 10px; border-radius:999px; background:var(--butter); color:var(--plum); font-size:9px; font-weight:800; }
+  .bbp-voice { display:grid; grid-template-columns:1fr 1fr; gap:10px; align-content:center; padding:22px; border:2px solid var(--plum); border-radius:30px; background:var(--mint); }
+  .bbp-bubble { padding:14px; border:2px solid var(--plum); border-radius:18px 18px 18px 5px; background:var(--milk); font-size:12px; line-height:1.45; box-shadow:3px 3px 0 var(--plum); }
+  .bbp-bubble:nth-child(2) { border-radius:18px 18px 5px 18px; background:var(--coral); transform:translateY(9px); }
+  .bbp-bubble b { font-family:"Fredoka",sans-serif; font-size:15px; }
+  .bbp-foot { margin:15px 2px 0; font-size:10px; line-height:1.55; color:rgba(65,32,79,.62); }
+</style>
+
+<div class="bbp">
+  <header class="bbp-head">
+    <p class="bbp-kicker">Identity variation C · Play Club</p>
+    <h1 class="bbp-title">More yes<br />in the group chat.</h1>
+    <p class="bbp-sub">A buoyant social identity that treats making plans like play: colorful, generous, low-pressure, and built around the joy of getting everyone in.</p>
+    <span class="bbp-sticker">show up!</span>
+  </header>
+
+  <p class="bbp-label">Palette · five friends, no wallflowers</p>
+  <div class="bbp-swatches">
+    <div class="bbp-swatch"><div class="bbp-chip" style="background:#2743e8"></div><div class="bbp-swatch-copy"><b>Club Blue · #2743E8</b><span>Brand anchor and high-confidence actions</span></div></div>
+    <div class="bbp-swatch"><div class="bbp-chip" style="background:#fff0a8"></div><div class="bbp-swatch-copy"><b>Butter · #FFF0A8</b><span>Sunny default canvas and breathing room</span></div></div>
+    <div class="bbp-swatch"><div class="bbp-chip" style="background:#ff665a"></div><div class="bbp-swatch-copy"><b>High Five · #FF665A</b><span>Replies, prompts, celebratory moments</span></div></div>
+    <div class="bbp-swatch"><div class="bbp-chip" style="background:#9fe3cb"></div><div class="bbp-swatch-copy"><b>Pool · #9FE3CB</b><span>Confirmed, available, and calm fills</span></div></div>
+    <div class="bbp-swatch"><div class="bbp-chip" style="background:#41204f"></div><div class="bbp-swatch-copy"><b>Plum · #41204F</b><span>Outlines and text, never pure black</span></div></div>
+    <div class="bbp-swatch"><div class="bbp-chip" style="background:#fffdf5"></div><div class="bbp-swatch-copy"><b>Milk · #FFFDF5</b><span>Cards, bubbles, and photo labels</span></div></div>
+  </div>
+
+  <p class="bbp-label">Rules of play</p>
+  <div class="bbp-rules">
+    <div class="bbp-rule"><b>Color takes turns.</b>One dominant, one supporting, one tiny surprise. Never make all five shout at once.</div>
+    <div class="bbp-rule"><b>Round means social.</b>Circles, pills, and soft corners cue people and conversation; outlines keep them crisp.</div>
+    <div class="bbp-rule"><b>Copy talks back.</b>Buttons say “I’m in,” empty states say “Who are we missing?” The product sounds like a friend.</div>
+    <div class="bbp-rule"><b>Celebrate the yes.</b>Small tilts, stickers, stamps, and color shifts reward momentum without confetti overload.</div>
+  </div>
+
+  <p class="bbp-label">Type · a smile in the headline, clarity everywhere else</p>
+  <div class="bbp-type">
+    <div class="bbp-type-main"><p class="bbp-display">Let’s make<br />a thing of it.</p><p class="bbp-meta">Fredoka 700 · compact · conversational</p></div>
+    <div class="bbp-type-side"><div class="bbp-wordmark">MixedRoutes</div><p class="bbp-body">Fredoka owns names, invitations, and expressive one-liners. Manrope keeps logistics, messages, forms, and navigation calm and highly legible.</p></div>
+  </div>
+
+  <p class="bbp-label">Imagery · bright, close, gloriously imperfect</p>
+  <div class="bbp-images">
+    <figure class="bbp-photo"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=75" alt="Friends laughing together outdoors" /><figcaption class="bbp-caption">Connection over destination</figcaption></figure>
+    <figure class="bbp-photo"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=75" alt="Friends raising glasses around a table" /><figcaption class="bbp-caption">Crop close · keep the mess</figcaption></figure>
+  </div>
+
+  <p class="bbp-label">Signature object · the club card</p>
+  <div class="bbp-signature">
+    <figure class="bbp-plan"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=700&q=75" alt="Friends spending time together at a cafe" /><figcaption class="bbp-plan-copy"><span class="bbp-plan-title">Patio hangs, finally</span><span class="bbp-plan-meta">Thursday · 6:30 PM · Lolo’s</span><span class="bbp-going">6 friends are in</span></figcaption></figure>
+    <div class="bbp-voice"><div class="bbp-bubble"><b>Who’s free Friday?</b><br />I found something good.</div><div class="bbp-bubble"><b>Me me me.</b><br />Add me before it fills up.</div><div class="bbp-bubble"><b>Plans feel alive.</b><br />Cards borrow from stickers, chat bubbles, and party flyers—not productivity software.</div><div class="bbp-bubble"><b>Never childish.</b><br />Joyful shapes meet disciplined spacing and straightforward product language.</div></div>
+  </div>
+  <p class="bbp-foot">This direction makes MixedRoutes feel welcoming, extroverted, and easy to join. The test: does it lower the social stakes while making the outcome feel more fun?</p>
+</div>

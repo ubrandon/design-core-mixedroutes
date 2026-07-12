@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  .bbt {
+    font-family: "Inter", -apple-system, sans-serif;
+    background: #14161c;
+    color: #f2efe6;
+    padding: 36px 32px 40px;
+    overflow-x: clip;
+  }
+  .bbt * { box-sizing: border-box; }
+  .bbt-kicker {
+    font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #ff4d6d; margin: 0 0 10px;
+  }
+  .bbt-title {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 36px;
+    letter-spacing: -0.02em; line-height: 1.04; margin: 0 0 6px;
+  }
+  .bbt-sub { margin: 0 0 28px; font-size: 14px; line-height: 1.6; color: rgba(242, 239, 230, 0.62); }
+  .bbt-label {
+    font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(242, 239, 230, 0.45); margin: 26px 0 12px;
+  }
+  .bbt-swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .bbt-swatch { border-radius: 10px; overflow: hidden; background: #1d2029; }
+  .bbt-swatch-chip { height: 52px; }
+  .bbt-swatch-info { padding: 8px 10px; }
+  .bbt-swatch-name { font-weight: 700; font-size: 12px; }
+  .bbt-swatch-role { font-size: 11px; line-height: 1.45; color: rgba(242, 239, 230, 0.5); }
+  .bbt-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bbt-rule-card {
+    background: #1d2029; border-radius: 10px; padding: 14px 16px;
+    font-size: 13px; line-height: 1.55; color: rgba(242, 239, 230, 0.75);
+  }
+  .bbt-rule-card b { color: #f2efe6; }
+  .bbt-states { display: flex; gap: 10px; flex-wrap: wrap; }
+  .bbt-state {
+    display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 8px;
+  }
+  .bbt-ticket {
+    position: relative; background: #f2efe6; color: #14161c; border-radius: 14px;
+    display: grid; grid-template-columns: 1fr 118px;
+  }
+  .bbt-ticket-main { padding: 18px 20px; }
+  .bbt-ticket-stub {
+    position: relative; border-left: 2px dashed rgba(20, 22, 28, 0.35);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    padding: 14px 10px;
+  }
+  .bbt-ticket::before, .bbt-ticket::after {
+    content: ""; position: absolute; width: 22px; height: 22px; border-radius: 50%;
+    background: #14161c; right: 107px;
+  }
+  .bbt-ticket::before { top: -11px; }
+  .bbt-ticket::after { bottom: -11px; }
+  .bbt-ticket-event { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.01em; margin: 0 0 2px; }
+  .bbt-ticket-meta { font-size: 12px; color: rgba(20, 22, 28, 0.6); }
+  .bbt-ticket-row { display: flex; gap: 18px; margin-top: 12px; }
+  .bbt-ticket-field-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(20, 22, 28, 0.45); }
+  .bbt-ticket-field-value { font-weight: 700; font-size: 13px; }
+  .bbt-ticket-admit { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(20, 22, 28, 0.45); writing-mode: vertical-rl; transform: rotate(180deg); position: absolute; left: 8px; top: 50%; translate: 0 -50%; }
+  .bbt-ticket-count { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 30px; color: #ff4d6d; }
+  .bbt-ticket-count-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(20, 22, 28, 0.5); }
+  .bbt-barcode { display: flex; gap: 2px; height: 26px; align-items: stretch; margin-top: 6px; }
+  .bbt-barcode i { display: block; background: #14161c; }
+  .bbt-type-card { background: #1d2029; border-radius: 10px; padding: 20px 22px; }
+  .bbt-display {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 38px;
+    letter-spacing: -0.02em; line-height: 1.04; margin: 0;
+  }
+  .bbt-type-meta { font-size: 11px; color: rgba(242, 239, 230, 0.45); margin: 6px 0 14px; }
+  .bbt-body-sample { font-size: 15px; line-height: 1.7; color: rgba(242, 239, 230, 0.7); margin: 0; }
+  .bbt-wordmark { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.01em; color: #f2efe6; }
+  .bbt-imagery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bbt-img-card { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16 / 10; background: #1d2029; }
+  .bbt-img-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bbt-img-tag {
+    position: absolute; left: 10px; bottom: 10px; font-weight: 700; font-size: 11px;
+    color: #14161c; padding: 4px 11px; border-radius: 6px; background: #f2efe6;
+  }
+  .bbt-dont {
+    border-radius: 10px; border: 1.5px dashed rgba(242, 239, 230, 0.3); padding: 14px 16px;
+    font-size: 12px; line-height: 1.6; color: rgba(242, 239, 230, 0.55);
+  }
+  .bbt-note { font-size: 12px; line-height: 1.6; color: rgba(242, 239, 230, 0.5); margin: 8px 0 0; }
+  .bbt-light { border-radius: 10px; padding: 18px 20px; background: #f2efe6; color: #14161c; }
+  .bbt-light-title { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 18px; margin: 0 0 4px; }
+  .bbt-light-note { font-size: 12px; line-height: 1.6; color: rgba(20, 22, 28, 0.65); margin: 0; }
+</style>
+
+<div class="bbt">
+  <p class="bbt-kicker">Identity variation E · Stub</p>
+  <h1 class="bbt-title">Every plan is a ticket. Keep the stub.</h1>
+  <p class="bbt-sub">The ownable device: plans render as paper tickets with a perforated stub, punch-hole notches, and a barcode. RSVP tears the stub. Past plans become a collection, your life's ticket drawer.</p>
+
+  <p class="bbt-label">The device itself</p>
+  <div class="bbt-ticket">
+    <span class="bbt-ticket-admit">Admit friends</span>
+    <div class="bbt-ticket-main" style="padding-left:32px;">
+      <p class="bbt-ticket-event">Saturday sunrise hike</p>
+      <span class="bbt-ticket-meta">Hosted by Maya · Craggy Gardens</span>
+      <div class="bbt-ticket-row">
+        <span><span class="bbt-ticket-field-label">Date</span><br /><span class="bbt-ticket-field-value">Sat, Jul 12</span></span>
+        <span><span class="bbt-ticket-field-label">Time</span><br /><span class="bbt-ticket-field-value">6:00 AM</span></span>
+        <span><span class="bbt-ticket-field-label">Crew</span><br /><span class="bbt-ticket-field-value">Trail Rats</span></span>
+      </div>
+    </div>
+    <div class="bbt-ticket-stub">
+      <span class="bbt-ticket-count">4</span>
+      <span class="bbt-ticket-count-label">Going</span>
+      <span class="bbt-barcode"><i style="width:3px"></i><i style="width:1px"></i><i style="width:2px"></i><i style="width:4px"></i><i style="width:1px"></i><i style="width:2px"></i><i style="width:1px"></i><i style="width:3px"></i><i style="width:2px"></i><i style="width:1px"></i><i style="width:4px"></i><i style="width:2px"></i></span>
+    </div>
+  </div>
+
+  <p class="bbt-label">Palette · box office</p>
+  <div class="bbt-swatches">
+    <div class="bbt-swatch"><div class="bbt-swatch-chip" style="background:#14161c;"></div><div class="bbt-swatch-info"><div class="bbt-swatch-name">House lights #14161c</div><div class="bbt-swatch-role">Default ground, the room before the show</div></div></div>
+    <div class="bbt-swatch"><div class="bbt-swatch-chip" style="background:#f2efe6;"></div><div class="bbt-swatch-info"><div class="bbt-swatch-name">Ticket paper #f2efe6</div><div class="bbt-swatch-role">Tickets and light surfaces, warm not white</div></div></div>
+    <div class="bbt-swatch"><div class="bbt-swatch-chip" style="background:#ff4d6d;"></div><div class="bbt-swatch-info"><div class="bbt-swatch-name">Stamp #ff4d6d</div><div class="bbt-swatch-role">The accent: CTAs, counts, the torn edge</div></div></div>
+    <div class="bbt-swatch"><div class="bbt-swatch-chip" style="background:#2fbf8f;"></div><div class="bbt-swatch-info"><div class="bbt-swatch-name">Valid #2fbf8f</div><div class="bbt-swatch-role">Confirmed: your stub is torn, you're on the list</div></div></div>
+    <div class="bbt-swatch"><div class="bbt-swatch-chip" style="background:#f2b63c;"></div><div class="bbt-swatch-info"><div class="bbt-swatch-name">Marquee #f2b63c</div><div class="bbt-swatch-role">Featured plans and highlights, used rarely</div></div></div>
+    <div class="bbt-swatch"><div class="bbt-swatch-chip" style="background:#1d2029;"></div><div class="bbt-swatch-info"><div class="bbt-swatch-name">Backstage #1d2029</div><div class="bbt-swatch-role">Cards and wells on the dark ground</div></div></div>
+  </div>
+
+  <p class="bbt-label">Rules</p>
+  <div class="bbt-rules">
+    <div class="bbt-rule-card"><b>Paper on dark.</b> Tickets are always ticket paper on the dark ground. Never a dark ticket, never paper on paper.</div>
+    <div class="bbt-rule-card"><b style="color:#ff4d6d;">Stamp is the ask.</b> Buy-in moments only: join, invite, get the app. One stamp per view.</div>
+    <div class="bbt-rule-card"><b>The perforation is real.</b> Dashed line plus two punch notches, always. If a card has no stub, it is not a plan.</div>
+    <div class="bbt-rule-card"><b style="color:#2fbf8f;">Valid means torn.</b> Once you RSVP, the stub visually separates and the count ticks up. That animation is the brand.</div>
+  </div>
+  <div class="bbt-states" style="margin-top:12px;">
+    <span class="bbt-state" style="background:#ff4d6d; color:#14161c;">Get the app</span>
+    <span class="bbt-state" style="background:#2fbf8f; color:#14161c;">You're in ✓</span>
+    <span class="bbt-state" style="background:#1d2029; color:#ff4d6d;">Couldn't save</span>
+  </div>
+
+  <p class="bbt-label">Type</p>
+  <div class="bbt-type-card">
+    <p class="bbt-display">Go where life is.</p>
+    <p class="bbt-type-meta">Display: Bricolage Grotesque 800, characterful and wide-jawed, tight leading.</p>
+    <p class="bbt-body-sample">Body: Inter, quiet on purpose so the tickets do the talking. Field labels on tickets are tiny caps with wide tracking, exactly like real ticket stock.</p>
+  </div>
+
+  <p class="bbt-label">Wordmark</p>
+  <div class="bbt-rule-card">
+    <span class="bbt-wordmark">MixedRoutes</span>
+    <p class="bbt-note" style="margin-top:6px;">Bricolage 800, paper on dark. In marketing it can sit inside a ticket shape with the tagline in the stub. The punch-hole notch pair is the secondary mark: it can crop photos, frame avatars, and cut the app icon.</p>
+  </div>
+
+  <p class="bbt-label">Imagery · the show, not the poster</p>
+  <div class="bbt-imagery">
+    <div class="bbt-img-card">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=70" alt="Friends at a night event with lights" />
+      <span class="bbt-img-tag">Mid-event, in the crowd</span>
+    </div>
+    <div class="bbt-img-card">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=70" alt="Friends at a long dinner table at dusk" />
+      <span class="bbt-img-tag">A dinner counts as a show</span>
+    </div>
+  </div>
+  <div class="bbt-dont" style="margin-top:10px;">
+    <b>Never:</b> literal concert cliches only. A picnic, a hike, and a movie night all get tickets too. And never fake a barcode that looks scannable next to a real one; ours is abstract on purpose.
+  </div>
+
+  <p class="bbt-label">Light mode is the matinee</p>
+  <div class="bbt-light">
+    <p class="bbt-light-title">Paper room, dark ink.</p>
+    <p class="bbt-light-note">Daytime flips to ticket paper with house-lights ink, and tickets get a thin ink border to hold their shape. Stamp and valid stay exactly as they are.</p>
+  </div>
+
+  <p class="bbt-note">Test for any new surface: does saying yes feel like getting a ticket, and does showing up feel like keeping the stub. If nothing tears, it is not this brand.</p>
+</div>

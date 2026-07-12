@@ -19,11 +19,46 @@
       "width": 860
     },
     {
-      "file": "brand-board-variation-electric.html",
-      "x": 4536,
+      "file": "brand-board-variation-field-notes.html",
+      "x": 4512,
       "y": 0,
       "width": 860,
-      "name": "Identity A · Electric"
+      "name": "Identity B · Field Notes"
+    },
+    {
+      "file": "brand-board-variation-play-club.html",
+      "x": 6376,
+      "y": 0,
+      "width": 860,
+      "name": "Identity C · Play Club"
+    },
+    {
+      "file": "brand-board-variation-wayfinder.html",
+      "x": 7296,
+      "y": 0,
+      "width": 860,
+      "name": "Identity D · Wayfinder"
+    },
+    {
+      "file": "brand-board-variation-waymark.html",
+      "x": 8216,
+      "y": 0,
+      "width": 860,
+      "name": "Identity E · Waymark"
+    },
+    {
+      "file": "brand-board-variation-stub.html",
+      "x": 9136,
+      "y": 0,
+      "width": 860,
+      "name": "Identity F · Stub"
+    },
+    {
+      "file": "brand-board-variation-patch.html",
+      "x": 10056,
+      "y": 0,
+      "width": 860,
+      "name": "Identity G · Patch"
     }
   ]
 }
