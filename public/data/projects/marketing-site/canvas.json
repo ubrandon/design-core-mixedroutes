@@ -2,8 +2,8 @@
   "screens": [
     {
       "file": "redesign2-landing-v2.html",
-      "x": 1320,
-      "y": 0,
+      "x": 3520,
+      "y": 20064,
       "width": 1280
     },
     {
@@ -15,24 +15,17 @@
     },
     {
       "file": "brand-board-variation-field-notes.html",
-      "x": 4544,
-      "y": 0,
+      "x": 1280,
+      "y": 20032,
       "width": 860,
       "name": "Identity B · Field Notes"
     },
     {
       "file": "brand-board-variation-golden-hour.html",
-      "x": 5440,
-      "y": 0,
+      "x": 2176,
+      "y": 20032,
       "width": 860,
       "name": "Identity D · Golden Hour"
-    },
-    {
-      "file": "brand-board-variation-blue-hour-voice.html",
-      "x": 6336,
-      "y": 0,
-      "width": 860,
-      "name": "Identity E2 · Blue Hour · Voice"
     },
     {
       "file": "store-1.html",
@@ -49,18 +42,18 @@
       "name": "Store 2 · Interests"
     },
     {
-      "file": "store-1b.html",
+      "file": "store-1c.html",
       "x": 1344,
-      "y": 11590,
+      "y": 11808,
       "width": 1284,
-      "name": "Store 1B · Life's offline"
+      "name": "Store 1C · Blue Hour"
     },
     {
-      "file": "store-2b.html",
+      "file": "store-2c.html",
       "x": 2656,
-      "y": 11590,
+      "y": 11808,
       "width": 1284,
-      "name": "Store 2B · Interests"
+      "name": "Store 2C · Interests · Blue Hour"
     },
     {
       "file": "store-3.html",
@@ -99,24 +92,32 @@
     },
     {
       "file": "interests-line-art.html",
-      "x": 8128,
-      "y": 0,
+      "x": 3136,
+      "y": 20064,
       "width": 300,
       "name": "Illustration guide · Line art"
     },
     {
       "file": "brand-board-variation-blue-hour-illustrated.html",
-      "x": 7232,
+      "x": 4224,
       "y": 0,
       "width": 860,
       "name": "Identity E3 · Blue Hour · Illustrated"
     },
     {
       "file": "interests-line-art-accent.html",
-      "x": 8448,
+      "x": 5120,
       "y": 0,
       "width": 300,
       "name": "Illustration guide · Line art + orange accent"
+    }
+  ],
+  "texts": [
+    {
+      "text": "Archive",
+      "x": 1280,
+      "y": 19936,
+      "size": 48
     }
   ]
 }

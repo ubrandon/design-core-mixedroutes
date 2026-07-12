@@ -43,15 +43,17 @@
   .bbv3-images { display:grid; grid-template-columns:1.25fr .75fr; gap:12px; }
   .bbv3-photo { position:relative; min-height:225px; overflow:hidden; border-radius:16px; background:var(--mist); }
   .bbv3-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-  .bbv3-caption { position:absolute; left:10px; bottom:10px; max-width:82%; padding:6px 10px; border-radius:999px; background:#fff; font-size:9px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+  .bbv3-caption { position:absolute; left:0; right:0; bottom:0; padding:36px 16px 12px; background:linear-gradient(to top, rgba(10,16,26,.72), rgba(10,16,26,0)); color:#fff; font-size:9px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
   .bbv3-rules { display:grid; gap:12px; }
   .bbv3-rule { padding:15px 16px; border-radius:16px; background:#fff; border:1px solid rgba(26,35,50,.1); font-size:11px; line-height:1.55; color:#5c6b7d; }
   .bbv3-rule b { color:var(--ink); }
   .bbv3-art-card { position:relative; min-height:150px; overflow:hidden; border-radius:16px; background:var(--ink); }
   .bbv3-art-card svg { position:absolute; inset:0; width:100%; height:100%; }
-  .bbv3-signature { display:grid; grid-template-columns:230px 1fr; gap:16px; align-items:stretch; }
+  .bbv3-signature { display:grid; grid-template-columns:230px 230px 1fr; gap:16px; align-items:stretch; }
   .bbv3-plan { position:relative; min-height:300px; overflow:hidden; border-radius:20px; background:var(--ink); }
   .bbv3-plan svg { position:absolute; left:0; right:0; top:6px; width:100%; height:64%; }
+  .bbv3-plan > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .bbv3-plan-photo:after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(16,23,36,.82), rgba(16,23,36,0) 55%); }
   .bbv3-plan-copy { position:absolute; inset:auto 14px 14px; z-index:1; color:#fff; }
   .bbv3-plan-title { display:block; font-weight:800; font-size:19px; line-height:1.08; letter-spacing:-.015em; }
   .bbv3-plan-meta { display:block; margin-top:6px; font-size:9px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.78); }
@@ -134,33 +136,33 @@
     </div>
   </div>
 
-  <p class="bbv3-label">Signature object · the plan card, drawn instead of shot</p>
+  <p class="bbv3-label">Signature object · the plan card, shot or drawn</p>
   <div class="bbv3-signature">
+    <figure class="bbv3-plan bbv3-plan-photo">
+      <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=700&q=75" alt="Friends out in the evening" />
+      <figcaption class="bbv3-plan-copy"><span class="bbv3-plan-title">Trivia at the Fox</span><span class="bbv3-plan-meta">It's official · Wednesday · 8 PM</span><span class="bbv3-plan-going">4 going · locked in</span></figcaption>
+    </figure>
     <figure class="bbv3-plan">
       <svg viewBox="0 0 560 420" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#9fc3d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <g transform="rotate(-5 280 260)">
-          <path d="M290 330 L400 120 L510 330" />
-          <path d="M378 160 L392 172 L402 158 L414 172 L422 160" />
-          <path d="M430 330 L466 268 M448 330 L482 274 M466 330 L496 282" opacity="0.6" />
-          <path d="M348 330 L420 196 L492 330" opacity="0.45" />
-          <path d="M60 330 L150 195 L240 330 Z" />
-          <path d="M150 195 L150 330" opacity="0.6" />
-          <path d="M126 330 L150 262 L174 330" />
-          <path d="M150 195 L144 160 L178 172 L148 182" />
-          <path d="M86 322 L106 290 M194 290 L214 322" opacity="0.5" />
-          <path d="M248 322 C 240 302 252 290 266 268 C 274 288 284 302 276 322 C 270 328 254 328 248 322 Z" stroke="#e08a5e" />
-          <path d="M257 320 C 253 310 257 303 264 292 C 269 302 271 310 267 320" stroke="#e08a5e" opacity="0.7" />
-          <path d="M236 334 L288 326 M238 326 L290 334" />
-          <line x1="30" y1="330" x2="530" y2="330" />
+        <g transform="rotate(-4 280 260)">
+          <path d="M150 190 h180 v62 a 90 90 0 0 1 -180 0 Z" />
+          <path d="M330 206 h24 a 34 34 0 0 1 0 68 h-28" />
+          <path d="M170 220 h140" opacity="0.5" />
+          <path d="M172 300 L192 272 M194 312 L216 282" opacity="0.5" />
+          <path d="M196 160 c -8 -13 8 -21 0 -36 M240 162 c -8 -13 8 -21 0 -36 M284 160 c -8 -13 8 -21 0 -36" stroke="#e08a5e" />
+          <path d="M140 342 a 100 20 0 0 0 200 0" opacity="0.7" />
+          <circle cx="448" cy="292" r="46" />
+          <circle cx="448" cy="292" r="18" />
+          <path d="M481 285 l 2 14 M469 317 l -11 7 M437 315 l -11 8 M415 285 l -2 14 M426 267 l 11 -7 M459 257 l 11 7" opacity="0.8" />
+          <line x1="60" y1="342" x2="520" y2="342" />
         </g>
-        <path d="M300 84 q 8 -10 16 0 q 8 -10 16 0 M352 66 q 6 -8 12 0 q 6 -8 12 0" opacity="0.8" />
         <path d="M110 80 h20 M120 70 v20 M470 60 h16 M478 52 v16" />
         <circle cx="210" cy="60" r="3" /><circle cx="330" cy="96" r="3" /><circle cx="60" cy="150" r="3" /><circle cx="520" cy="150" r="3" />
         <path d="M360 40 l60 26" stroke-dasharray="10 12" opacity="0.8" />
       </svg>
-      <figcaption class="bbv3-plan-copy"><span class="bbv3-plan-title">Campfire at Bear Ridge</span><span class="bbv3-plan-meta">It's official · Saturday · 7 PM</span><span class="bbv3-plan-going">4 going · locked in</span></figcaption>
+      <figcaption class="bbv3-plan-copy"><span class="bbv3-plan-title">Coffee at Copper Cup</span><span class="bbv3-plan-meta">It's official · Saturday · 10 AM</span><span class="bbv3-plan-going">4 going · locked in</span></figcaption>
     </figure>
-    <div class="bbv3-manifesto"><q>We do not win when you stay. We win when you go.</q><p>The manifesto's closing beat, pulled onto the board. When there is no photo yet, the plan card wears the line art, the clay flame marks the plan that is actually happening, the same job the gradient count does in the app.</p></div>
+    <div class="bbv3-manifesto"><q>We do not win when you stay. We win when you go.</q><p>The manifesto's closing beat, pulled onto the board. The plan card works both ways: a warm photo when the place is real, line art with the clay steam when there is no photo yet. Same card, same gradient count, two skins.</p></div>
   </div>
   <p class="bbv3-foot">What changed from E2: words untouched, two cards now carry the illustration language. Line art lives on ink, one mist-blue stroke, one clay accent on the living thing in the scene. Photos keep every other slot; illustration is for the app's ideas, never a substitute for real life.</p>
 </div>
