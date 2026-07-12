@@ -103,27 +103,6 @@
       "y": 32,
       "width": 300,
       "name": "Illustration guide · Line art"
-    },
-    {
-      "file": "interests-line-art-social.html",
-      "x": 7776,
-      "y": 32,
-      "width": 420,
-      "name": "Line art · Social interests"
-    },
-    {
-      "file": "interests-line-art-active.html",
-      "x": 8224,
-      "y": 32,
-      "width": 420,
-      "name": "Line art · Active interests"
-    },
-    {
-      "file": "interests-line-art-creative.html",
-      "x": 8672,
-      "y": 32,
-      "width": 420,
-      "name": "Line art · Creative interests"
     }
   ]
 }
