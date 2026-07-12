@@ -103,6 +103,13 @@
       "y": 32,
       "width": 300,
       "name": "Illustration guide · Line art"
+    },
+    {
+      "file": "interests-line-art-accent.html",
+      "x": 7688,
+      "y": 32,
+      "width": 300,
+      "name": "Illustration guide · Line art + clay accent"
     }
   ]
 }
