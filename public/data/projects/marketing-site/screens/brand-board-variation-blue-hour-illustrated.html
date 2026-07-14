@@ -20,6 +20,8 @@
   .bbv3-swatch-copy { padding:9px 11px 11px; }
   .bbv3-swatch b { display:block; font-size:11px; }
   .bbv3-swatch span { display:block; margin-top:2px; font-size:9px; line-height:1.4; color:#5c6b7d; }
+  .bbv3-grads { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .bbv3-grad-chip { height:92px; }
   .bbv3-lines { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .bbv3-line { padding:16px 18px; background:#fff; border-radius:16px; border:1px solid rgba(26,35,50,.1); }
   .bbv3-line-job { display:block; font-size:9px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--ember); }
@@ -82,6 +84,15 @@
     <div class="bbv3-swatch"><div class="bbv3-chip" style="background:#e8880a"></div><div class="bbv3-swatch-copy"><b>Ember · #E8880A</b><span>Links and labels, the warm counterweight</span></div></div>
     <div class="bbv3-swatch"><div class="bbv3-chip" style="background:#e4eefe"></div><div class="bbv3-swatch-copy"><b>Mist · #E4EEFE</b><span>Chips and quiet fills, from the app</span></div></div>
   </div>
+
+  <p class="bbv3-label">Pastel gradients · soft grounds for feature visuals</p>
+  <div class="bbv3-grads">
+    <div class="bbv3-swatch"><div class="bbv3-grad-chip" style="background:linear-gradient(160deg,#d7f5f0,#fdeee0)"></div><div class="bbv3-swatch-copy"><b>Fresh Air · Mint to Peach</b><span>The lead. Cool opens, warm lands, both sides of the brand in one wash</span></div></div>
+    <div class="bbv3-swatch"><div class="bbv3-grad-chip" style="background:linear-gradient(160deg,#e4eefe,#d7f5f0)"></div><div class="bbv3-swatch-copy"><b>Clear Sky · Mist to Mint</b><span>The CTA gradient at a whisper, for planning and app-focused features</span></div></div>
+    <div class="bbv3-swatch"><div class="bbv3-grad-chip" style="background:linear-gradient(160deg,#fdeee0,#fbe3d4)"></div><div class="bbv3-swatch-copy"><b>First Light · Peach to Clay</b><span>The warm one, for people and gathering moments</span></div></div>
+    <div class="bbv3-swatch"><div class="bbv3-grad-chip" style="background:linear-gradient(160deg,#fdeee0,#e4eefe)"></div><div class="bbv3-swatch-copy"><b>Dusk · Peach to Mist</b><span>Warm opens, cool lands, the reverse mood for evening plans</span></div></div>
+  </div>
+  <p class="bbv3-foot" style="margin-top:10px">Always 160deg, always two stops, always light enough for ink text and white cards to sit on top. Alternate cool-led and warm-led down a page; never stack two of the same lead.</p>
 
   <p class="bbv3-label">The lines, by job · every layer has one sentence</p>
   <div class="bbv3-lines">

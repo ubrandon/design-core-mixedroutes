@@ -144,7 +144,7 @@
     -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 84%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 84%, transparent 100%);
   }
-  .rlbhi-ev-feed { animation: rlbhi-ev-scroll 14s linear infinite; }
+  .rlbhi-ev-feed { animation: rlbhi-ev-scroll 26s linear infinite; }
   @keyframes rlbhi-ev-scroll {
     from { transform: translateY(0); }
     to { transform: translateY(-50%); }
@@ -154,22 +154,17 @@
     display: flex; align-items: center; gap: 12px; background: #fff;
     border-radius: 16px; padding: 11px; box-shadow: 0 6px 18px rgba(16, 23, 36, 0.08);
   }
-  .rlbhi-ev-thumb {
-    width: 62px; height: 62px; border-radius: 12px; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; font-size: 30px;
-  }
+  .rlbhi-ev-photo { width: 78px; height: 78px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+  .rlbhi-ev-text { min-width: 0; }
   .rlbhi-ev-meta { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #e07020; }
   .rlbhi-ev-title { font-size: 15px; font-weight: 700; margin-top: 2px; color: #1a2332; }
-  .rlbhi-ev-t-teal { background: #d7f5f0; }
-  .rlbhi-ev-t-peach { background: #fdeee0; }
-  .rlbhi-ev-t-blue { background: #e4eefe; }
-  .rlbhi-ev-t-purple { background: #efe7ff; }
+  .rlbhi-ev-desc { font-size: 13px; color: #5c6b7d; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .rlbhi-ev-pill {
     position: absolute; bottom: 16px; left: 50%; z-index: 5;
     display: flex; align-items: center; gap: 7px; background: #fff; border-radius: 999px;
     padding: 9px 16px; box-shadow: 0 12px 30px rgba(16, 23, 36, 0.16);
     font-size: 13px; font-weight: 700; white-space: nowrap; color: #1a2332;
-    animation: rlbhi-ev-pillfloat 3.6s ease-in-out infinite alternate;
+    animation: rlbhi-ev-pillfloat 5s ease-in-out infinite alternate;
   }
   .rlbhi-ev-pill i { color: #e07020; font-size: 17px; }
   @keyframes rlbhi-ev-pillfloat {
@@ -493,54 +488,54 @@
               <div class="rlbhi-ev-feed">
                 <div class="rlbhi-ev-half">
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🎸</div>
-                    <div><div class="rlbhi-ev-meta">Fri · 8 PM</div><div class="rlbhi-ev-title">Bluegrass night</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=400&q=75" alt="A guitarist playing" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Fri · 8 PM</div><div class="rlbhi-ev-title">Bluegrass night</div><div class="rlbhi-ev-desc">Local string band, no cover</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-purple">☕</div>
-                    <div><div class="rlbhi-ev-meta">Café · 0.3 mi</div><div class="rlbhi-ev-title">Coffee &amp; vinyl</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=75" alt="A cup of coffee" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Café · 0.3 mi</div><div class="rlbhi-ev-title">Coffee &amp; vinyl</div><div class="rlbhi-ev-desc">Sunday morning listening session</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🥾</div>
-                    <div><div class="rlbhi-ev-meta">Sun · 9 AM</div><div class="rlbhi-ev-title">Sunrise hike</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=75" alt="Sunlit mountain ridgeline" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Sun · 9 AM</div><div class="rlbhi-ev-title">Sunrise hike</div><div class="rlbhi-ev-desc">Easy 5 mile loop, all welcome</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-blue">🌮</div>
-                    <div><div class="rlbhi-ev-meta">Sat · 12 PM</div><div class="rlbhi-ev-title">Food truck rally</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=400&q=75" alt="Street food tacos" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Sat · 12 PM</div><div class="rlbhi-ev-title">Food truck rally</div><div class="rlbhi-ev-desc">12 trucks in the River Arts District</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🍻</div>
-                    <div><div class="rlbhi-ev-meta">Tue · 7 PM</div><div class="rlbhi-ev-title">Trivia night</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?auto=format&fit=crop&w=400&q=75" alt="Glasses of beer on a bar" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Tue · 7 PM</div><div class="rlbhi-ev-title">Trivia night</div><div class="rlbhi-ev-desc">Teams of four, winners drink free</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🎨</div>
-                    <div><div class="rlbhi-ev-meta">Sat · 10 AM</div><div class="rlbhi-ev-title">Makers market</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=400&q=75" alt="A local market stall" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Sat · 10 AM</div><div class="rlbhi-ev-title">Makers market</div><div class="rlbhi-ev-desc">Local art, prints, and ceramics</div></div>
                   </div>
                 </div>
                 <div class="rlbhi-ev-half">
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🎸</div>
-                    <div><div class="rlbhi-ev-meta">Fri · 8 PM</div><div class="rlbhi-ev-title">Bluegrass night</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=400&q=75" alt="A guitarist playing" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Fri · 8 PM</div><div class="rlbhi-ev-title">Bluegrass night</div><div class="rlbhi-ev-desc">Local string band, no cover</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-purple">☕</div>
-                    <div><div class="rlbhi-ev-meta">Café · 0.3 mi</div><div class="rlbhi-ev-title">Coffee &amp; vinyl</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=75" alt="A cup of coffee" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Café · 0.3 mi</div><div class="rlbhi-ev-title">Coffee &amp; vinyl</div><div class="rlbhi-ev-desc">Sunday morning listening session</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🥾</div>
-                    <div><div class="rlbhi-ev-meta">Sun · 9 AM</div><div class="rlbhi-ev-title">Sunrise hike</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=75" alt="Sunlit mountain ridgeline" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Sun · 9 AM</div><div class="rlbhi-ev-title">Sunrise hike</div><div class="rlbhi-ev-desc">Easy 5 mile loop, all welcome</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-blue">🌮</div>
-                    <div><div class="rlbhi-ev-meta">Sat · 12 PM</div><div class="rlbhi-ev-title">Food truck rally</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=400&q=75" alt="Street food tacos" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Sat · 12 PM</div><div class="rlbhi-ev-title">Food truck rally</div><div class="rlbhi-ev-desc">12 trucks in the River Arts District</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🍻</div>
-                    <div><div class="rlbhi-ev-meta">Tue · 7 PM</div><div class="rlbhi-ev-title">Trivia night</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?auto=format&fit=crop&w=400&q=75" alt="Glasses of beer on a bar" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Tue · 7 PM</div><div class="rlbhi-ev-title">Trivia night</div><div class="rlbhi-ev-desc">Teams of four, winners drink free</div></div>
                   </div>
                   <div class="rlbhi-ev-card">
-                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🎨</div>
-                    <div><div class="rlbhi-ev-meta">Sat · 10 AM</div><div class="rlbhi-ev-title">Makers market</div></div>
+                    <img class="rlbhi-ev-photo" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=400&q=75" alt="A local market stall" />
+                    <div class="rlbhi-ev-text"><div class="rlbhi-ev-meta">Sat · 10 AM</div><div class="rlbhi-ev-title">Makers market</div><div class="rlbhi-ev-desc">Local art, prints, and ceramics</div></div>
                   </div>
                 </div>
               </div>
