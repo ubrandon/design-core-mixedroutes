@@ -23,8 +23,8 @@
   .st3c-filters { display: flex; gap: 16px; margin-top: 32px; }
   .st3c-chip { display: inline-flex; align-items: center; gap: 14px; height: 72px; padding: 0 28px; border-radius: 100px; background: #e4eefe; border: 3px solid rgba(0, 0, 0, 0.16); color: #1a2332; font-size: 28px; font-weight: 600; }
   .st3c-chip i { font-size: 36px; color: #1a2332; }
-  .st3c-spacer { height: 470px; }
   .st3c-item { display: flex; gap: 28px; padding: 24px 0; }
+  .st3c-item:first-of-type { margin-top: 28px; }
   .st3c-thumb { width: 192px; height: 192px; border-radius: 48px; object-fit: cover; flex: none; }
   .st3c-item-copy { flex: 1; min-width: 0; }
   .st3c-date { margin: 0 0 10px; font-size: 27px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(16, 23, 36, 0.7); }
@@ -130,7 +130,25 @@
         <span class="st3c-chip"><i class="ph ph-calendar-blank"></i>Anytime</span>
       </div>
 
-      <div class="st3c-spacer"></div>
+      <div class="st3c-item">
+        <img class="st3c-thumb" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=400&q=75" alt="" />
+        <div class="st3c-item-copy">
+          <p class="st3c-date">Saturday, May 19</p>
+          <h3>Farmers Market Morning</h3>
+          <p>Fresh produce, baked goods, and local crafts from over forty vendors downtown.</p>
+          <div class="st3c-loc"><i class="ph-fill ph-map-pin"></i>North Market St, Asheville, NC</div>
+        </div>
+      </div>
+
+      <div class="st3c-item">
+        <img class="st3c-thumb" src="https://images.unsplash.com/photo-1545989253-02cc26577f88?auto=format&fit=crop&w=400&q=75" alt="" />
+        <div class="st3c-item-copy">
+          <p class="st3c-date">Saturday, May 19</p>
+          <h3>Downtown Gallery Crawl</h3>
+          <p>An evening walk through open studios and galleries across the arts district.</p>
+          <div class="st3c-loc"><i class="ph-fill ph-map-pin"></i>River Arts District, Asheville, NC</div>
+        </div>
+      </div>
 
       <div class="st3c-item">
         <img class="st3c-thumb" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=400&q=75" alt="" />
@@ -165,7 +183,7 @@
       <div class="st3c-nav">
         <i class="ph ph-house"></i>
         <i class="ph-fill ph-compass is-on"></i>
-        <span class="st3c-nav-you">🧑‍🦱</span>
+        <span class="st3c-nav-you" style="background: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover;"></span>
         <i class="ph ph-calendar-blank"></i>
         <i class="ph ph-chat"></i>
       </div>

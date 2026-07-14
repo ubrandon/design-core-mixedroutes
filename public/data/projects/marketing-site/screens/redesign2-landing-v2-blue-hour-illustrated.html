@@ -55,7 +55,7 @@
     position: absolute; inset: 0;
     background:
       linear-gradient(90deg, rgba(10, 14, 22, 0.62) 0%, rgba(10, 14, 22, 0.2) 55%, rgba(10, 14, 22, 0) 75%),
-      linear-gradient(180deg, rgba(10, 14, 22, 0.66) 0%, rgba(10, 14, 22, 0) 38%),
+      linear-gradient(180deg, rgba(10, 14, 22, 0.78) 0%, rgba(10, 14, 22, 0) 44%),
       linear-gradient(180deg, rgba(10, 14, 22, 0) 32%, rgba(10, 14, 22, 0.82) 100%);
   }
   .rlbhi-nav {
@@ -131,6 +131,51 @@
   }
   .rlbhi-feature.rlbhi-flip .rlbhi-feature-visual { background: #f3e6d3; }
 
+  /* local-events visual: app FeatureTour style, scrolling feed on pastel gradient */
+  .rlbhi-ev-stage { position: relative; width: 100%; max-width: 400px; height: 470px; display: flex; flex-direction: column; }
+  .rlbhi-ev-chiprow { display: flex; gap: 7px; flex-shrink: 0; overflow: hidden; }
+  .rlbhi-ev-chip {
+    flex-shrink: 0; padding: 8px 15px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; color: #5c6b7d; background: #fff;
+  }
+  .rlbhi-ev-chip-on { color: #fff; background: var(--bh-grad); }
+  .rlbhi-ev-mask {
+    flex: 1; overflow: hidden; margin-top: 16px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 84%, transparent 100%);
+  }
+  .rlbhi-ev-feed { animation: rlbhi-ev-scroll 14s linear infinite; }
+  @keyframes rlbhi-ev-scroll {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+  }
+  .rlbhi-ev-half { display: flex; flex-direction: column; gap: 12px; padding-bottom: 12px; }
+  .rlbhi-ev-card {
+    display: flex; align-items: center; gap: 12px; background: #fff;
+    border-radius: 16px; padding: 11px; box-shadow: 0 6px 18px rgba(16, 23, 36, 0.08);
+  }
+  .rlbhi-ev-thumb {
+    width: 62px; height: 62px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 30px;
+  }
+  .rlbhi-ev-meta { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #e07020; }
+  .rlbhi-ev-title { font-size: 15px; font-weight: 700; margin-top: 2px; color: #1a2332; }
+  .rlbhi-ev-t-teal { background: #d7f5f0; }
+  .rlbhi-ev-t-peach { background: #fdeee0; }
+  .rlbhi-ev-t-blue { background: #e4eefe; }
+  .rlbhi-ev-t-purple { background: #efe7ff; }
+  .rlbhi-ev-pill {
+    position: absolute; bottom: 16px; left: 50%; z-index: 5;
+    display: flex; align-items: center; gap: 7px; background: #fff; border-radius: 999px;
+    padding: 9px 16px; box-shadow: 0 12px 30px rgba(16, 23, 36, 0.16);
+    font-size: 13px; font-weight: 700; white-space: nowrap; color: #1a2332;
+    animation: rlbhi-ev-pillfloat 3.6s ease-in-out infinite alternate;
+  }
+  .rlbhi-ev-pill i { color: #e07020; font-size: 17px; }
+  @keyframes rlbhi-ev-pillfloat {
+    from { transform: translateX(-50%) translateY(0) rotate(-2deg); }
+    to { transform: translateX(-50%) translateY(-7px) rotate(-2deg); }
+  }
   /* animated phone mockups, light-mode app */
 
   .rlbhi-phone {
@@ -350,7 +395,7 @@
 <div class="rlbhi" style="background: #f5f2ec;">
 
   <section class="rlbhi-hero">
-    <img class="rlbhi-hero-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=2200&q=80" alt="Friends sharing dinner at a long table on a patio" />
+    <img class="rlbhi-hero-img" src="https://images.unsplash.com/photo-1532498551838-b7a1cfac622e?auto=format&fit=crop&w=2200&q=80" alt="A group of friends at a mountain summit with prayer flags" />
     <div class="rlbhi-hero-shade"></div>
 
     <header class="rlbhi-nav">
@@ -436,54 +481,71 @@
           <h3 class="rlbhi-feature-title">What's actually happening near you.</h3>
           <p class="rlbhi-feature-desc">Open mics, block parties, the trivia night two blocks over. Full details right in the app, and any event becomes a plan in two taps.</p>
         </div>
-        <div class="rlbhi-feature-visual">
-          <div class="rlbhi-phone">
-            <div class="rlbhi-screen">
-              <div class="rlbhi-status">
-                <span>9:41</span>
-                <span style="display:flex; gap:5px;"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></span>
-              </div>
-              <div class="rlbhi-app-title">Discover</div>
-              <div class="rlbhi-search"><i class="ph ph-magnifying-glass"></i> Search events near you</div>
-              <div class="rlbhi-chips">
-                <span class="rlbhi-chip rlbhi-chip-dark">All</span>
-                <span class="rlbhi-chip rlbhi-chip-anim">Outdoors</span>
-                <span class="rlbhi-chip">Music</span>
-                <span class="rlbhi-chip">Food</span>
-              </div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d1">
-                <div class="rlbhi-card-icon" style="background:#e07020;"><i class="ph ph-mountains"></i></div>
-                <div>
-                  <div class="rlbhi-card-title">Sunrise hike, Craggy Gardens</div>
-                  <div class="rlbhi-card-meta">Sat · 6:00 AM · 3.2 mi away</div>
+        <div class="rlbhi-feature-visual" style="background: linear-gradient(160deg, #d7f5f0, #fdeee0); padding: 44px 36px 0;">
+          <div class="rlbhi-ev-stage">
+            <div class="rlbhi-ev-chiprow">
+              <span class="rlbhi-ev-chip rlbhi-ev-chip-on">For you</span>
+              <span class="rlbhi-ev-chip">Live music</span>
+              <span class="rlbhi-ev-chip">Food</span>
+              <span class="rlbhi-ev-chip">Outdoors</span>
+            </div>
+            <div class="rlbhi-ev-mask">
+              <div class="rlbhi-ev-feed">
+                <div class="rlbhi-ev-half">
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🎸</div>
+                    <div><div class="rlbhi-ev-meta">Fri · 8 PM</div><div class="rlbhi-ev-title">Bluegrass night</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-purple">☕</div>
+                    <div><div class="rlbhi-ev-meta">Café · 0.3 mi</div><div class="rlbhi-ev-title">Coffee &amp; vinyl</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🥾</div>
+                    <div><div class="rlbhi-ev-meta">Sun · 9 AM</div><div class="rlbhi-ev-title">Sunrise hike</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-blue">🌮</div>
+                    <div><div class="rlbhi-ev-meta">Sat · 12 PM</div><div class="rlbhi-ev-title">Food truck rally</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🍻</div>
+                    <div><div class="rlbhi-ev-meta">Tue · 7 PM</div><div class="rlbhi-ev-title">Trivia night</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🎨</div>
+                    <div><div class="rlbhi-ev-meta">Sat · 10 AM</div><div class="rlbhi-ev-title">Makers market</div></div>
+                  </div>
                 </div>
-                <span class="rlbhi-going-pill">4 going</span>
-              </div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d2">
-                <div class="rlbhi-card-icon" style="background:#7c3aed;"><i class="ph ph-music-notes"></i></div>
-                <div>
-                  <div class="rlbhi-card-title">Open mic night</div>
-                  <div class="rlbhi-card-meta">Thu · 8:00 PM · The Grey Eagle</div>
+                <div class="rlbhi-ev-half">
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🎸</div>
+                    <div><div class="rlbhi-ev-meta">Fri · 8 PM</div><div class="rlbhi-ev-title">Bluegrass night</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-purple">☕</div>
+                    <div><div class="rlbhi-ev-meta">Café · 0.3 mi</div><div class="rlbhi-ev-title">Coffee &amp; vinyl</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🥾</div>
+                    <div><div class="rlbhi-ev-meta">Sun · 9 AM</div><div class="rlbhi-ev-title">Sunrise hike</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-blue">🌮</div>
+                    <div><div class="rlbhi-ev-meta">Sat · 12 PM</div><div class="rlbhi-ev-title">Food truck rally</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-peach">🍻</div>
+                    <div><div class="rlbhi-ev-meta">Tue · 7 PM</div><div class="rlbhi-ev-title">Trivia night</div></div>
+                  </div>
+                  <div class="rlbhi-ev-card">
+                    <div class="rlbhi-ev-thumb rlbhi-ev-t-teal">🎨</div>
+                    <div><div class="rlbhi-ev-meta">Sat · 10 AM</div><div class="rlbhi-ev-title">Makers market</div></div>
+                  </div>
                 </div>
-                <span class="rlbhi-going-pill">12 going</span>
-              </div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d3">
-                <div class="rlbhi-card-icon" style="background:#0d9a8a;"><i class="ph ph-fork-knife"></i></div>
-                <div>
-                  <div class="rlbhi-card-title">Food truck rally</div>
-                  <div class="rlbhi-card-meta">Fri · 5:30 PM · River Arts District</div>
-                </div>
-                <span class="rlbhi-going-pill">8 going</span>
-              </div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d4">
-                <div class="rlbhi-card-icon" style="background:#c0204a;"><i class="ph ph-ticket"></i></div>
-                <div>
-                  <div class="rlbhi-card-title">Trivia at The Copper Fox</div>
-                  <div class="rlbhi-card-meta">Thu · 7:00 PM · Downtown</div>
-                </div>
-                <span class="rlbhi-going-pill">5 going</span>
               </div>
             </div>
+            <div class="rlbhi-ev-pill"><i class="ph-fill ph-sparkle"></i> Picked from your interests</div>
           </div>
         </div>
       </article>
@@ -692,7 +754,7 @@
   </section>
 
   <section class="rlbhi-final">
-    <img class="rlbhi-final-img" src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=2200&q=80" alt="Friends around a campfire at dusk" />
+    <img class="rlbhi-final-img" src="../img/campfire-footer.png" alt="Friends around a campfire at dusk" />
     <div class="rlbhi-final-shade"></div>
     <div class="rlbhi-final-content">
       <h2 class="rlbhi-h2 rlbhi-final-h2">Soon is not a plan.</h2>

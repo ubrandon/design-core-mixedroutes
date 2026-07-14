@@ -28,95 +28,46 @@
       "name": "Identity D · Golden Hour"
     },
     {
-      "file": "store-1.html",
-      "x": 1344,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 1 · Life's offline"
-    },
-    {
-      "file": "store-2.html",
-      "x": 2656,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 2 · Interests"
-    },
-    {
       "file": "store-1c.html",
-      "x": 1344,
-      "y": 11808,
+      "x": 3296,
+      "y": 8608,
       "width": 1284,
       "name": "Store 1C · Blue Hour"
     },
     {
       "file": "store-2c.html",
-      "x": 2656,
-      "y": 11808,
+      "x": 4608,
+      "y": 8608,
       "width": 1284,
       "name": "Store 2C · Interests · Blue Hour"
     },
     {
       "file": "store-3c.html",
-      "x": 3968,
-      "y": 11808,
+      "x": 5920,
+      "y": 8608,
       "width": 1284,
       "name": "Store 3C · Every event · Blue Hour"
     },
     {
       "file": "store-4c.html",
-      "x": 5280,
-      "y": 11808,
+      "x": 7232,
+      "y": 8608,
       "width": 1284,
       "name": "Store 4C · Organized · Blue Hour"
     },
     {
       "file": "store-5c.html",
-      "x": 6592,
-      "y": 11808,
+      "x": 8544,
+      "y": 8608,
       "width": 1284,
       "name": "Store 5C · Idea to plan · Blue Hour"
     },
     {
       "file": "store-6c.html",
-      "x": 7904,
-      "y": 11808,
+      "x": 9856,
+      "y": 8608,
       "width": 1284,
       "name": "Store 6C · Chats · Blue Hour"
-    },
-    {
-      "file": "store-3.html",
-      "x": 3968,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 3 · Every event"
-    },
-    {
-      "file": "store-4.html",
-      "x": 5280,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 4 · Organized"
-    },
-    {
-      "file": "store-5.html",
-      "x": 6592,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 5 · Idea to plan"
-    },
-    {
-      "file": "store-6.html",
-      "x": 7904,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 6 · Chats"
-    },
-    {
-      "file": "store-7.html",
-      "x": 9216,
-      "y": 8512,
-      "width": 1284,
-      "name": "Store 7 · Day & night"
     },
     {
       "file": "interests-line-art.html",
@@ -127,15 +78,15 @@
     },
     {
       "file": "brand-board-variation-blue-hour-illustrated.html",
-      "x": 5984,
-      "y": -32,
+      "x": 4704,
+      "y": 0,
       "width": 860,
       "name": "Identity E3 · Blue Hour · Illustrated"
     },
     {
       "file": "interests-line-art-accent.html",
-      "x": 6880,
-      "y": -32,
+      "x": 5600,
+      "y": 0,
       "width": 300,
       "name": "Illustration guide · Line art + orange accent"
     }
@@ -145,6 +96,12 @@
       "text": "Archive",
       "x": 1280,
       "y": 19936,
+      "size": 48
+    },
+    {
+      "text": "App store images",
+      "x": 3296,
+      "y": 8512,
       "size": 48
     }
   ]
