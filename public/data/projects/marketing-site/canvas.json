@@ -56,6 +56,34 @@
       "name": "Store 2C · Interests · Blue Hour"
     },
     {
+      "file": "store-3c.html",
+      "x": 3968,
+      "y": 11808,
+      "width": 1284,
+      "name": "Store 3C · Every event · Blue Hour"
+    },
+    {
+      "file": "store-4c.html",
+      "x": 5280,
+      "y": 11808,
+      "width": 1284,
+      "name": "Store 4C · Organized · Blue Hour"
+    },
+    {
+      "file": "store-5c.html",
+      "x": 6592,
+      "y": 11808,
+      "width": 1284,
+      "name": "Store 5C · Idea to plan · Blue Hour"
+    },
+    {
+      "file": "store-6c.html",
+      "x": 7904,
+      "y": 11808,
+      "width": 1284,
+      "name": "Store 6C · Chats · Blue Hour"
+    },
+    {
       "file": "store-3.html",
       "x": 3968,
       "y": 8512,

@@ -32,9 +32,9 @@
   .st1c-greet h1 b { font-weight: 700; background: linear-gradient(90deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .st1c-greet h3 { margin: 20px 0 0; font-size: 47px; font-weight: 600; color: #5c6b7d; }
 
-  .st1c-row-head { display: flex; align-items: center; justify-content: space-between; margin: 96px 14px 40px; }
+  .st1c-row-head { display: flex; align-items: center; justify-content: space-between; margin: 56px 14px 28px; }
   .st1c-row-head h2 { margin: 0; font-size: 57px; font-weight: 700; color: #1a2332; }
-  .st1c-row-action { display: flex; align-items: center; gap: 10px; font-size: 36px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #e8880a; }
+  .st1c-row-action { display: flex; align-items: center; gap: 10px; font-size: 36px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #5c6b7d; }
   .st1c-row-action i { font-size: 36px; }
 
   .st1c-cards { display: flex; gap: 42px; padding: 0 14px; }
@@ -50,7 +50,19 @@
   .st1c-going { display: flex; align-items: center; }
   .st1c-going span { width: 66px; height: 66px; border-radius: 50%; border: 5px solid #1d232b; margin-left: -22px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
   .st1c-going span:first-child { margin-left: 0; }
+  .st1c-going span img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
   .st1c-going .st1c-more { background: #343c4a; color: #fff; font-size: 27px; font-weight: 700; }
+
+  /* Events row, matches the app's SerpCard at ~2.6x scale */
+  .st1c-ecard { position: relative; flex: none; width: 510px; border-radius: 83px; background: #ffffff; overflow: hidden; color: #1a2332; box-shadow: 0 10px 21px rgba(26,35,50,0.06), 0 21px 52px rgba(26,35,50,0.1); }
+  .st1c-ecard-img { display: block; width: 100%; aspect-ratio: 2.15 / 1; object-fit: cover; }
+  .st1c-esave { position: absolute; top: 28px; right: 28px; width: 94px; height: 94px; border-radius: 50%; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; }
+  .st1c-esave i { font-size: 50px; color: #fff; }
+  .st1c-ecard-details { display: flex; flex-direction: column; gap: 12px; padding: 42px; }
+  .st1c-ecard-date { font-size: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: #1a2332; opacity: 0.7; }
+  .st1c-ecard-title { margin: 0; font-size: 47px; font-weight: 700; line-height: 1.2; color: #1a2332; }
+  .st1c-ecard-meta { display: flex; align-items: center; gap: 12px; margin-top: 10px; font-size: 36px; font-weight: 600; color: #5c6b7d; }
+  .st1c-ecard-meta i { font-size: 38px; }
 </style>
 
 <div class="st1c">
@@ -164,9 +176,9 @@
             <div class="st1c-card-meta">
               <div class="st1c-card-loc"><i class="ph-fill ph-map-pin"></i>Frost Amphitheater</div>
               <div class="st1c-going">
-                <span style="background: #f3c6a5;">👩</span>
-                <span style="background: #b8d4f0;">🧔</span>
-                <span style="background: #f0d9b8;">👨</span>
+                <span><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
+                <span><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
+                <span><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
                 <span class="st1c-more">+3</span>
               </div>
             </div>
@@ -181,8 +193,8 @@
             <div class="st1c-card-meta">
               <div class="st1c-card-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
               <div class="st1c-going">
-                <span style="background: #b8d4f0;">🧑</span>
-                <span style="background: #f3c6a5;">👩‍🦰</span>
+                <span><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
+                <span><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
                 <span class="st1c-more">+3</span>
               </div>
             </div>
@@ -195,26 +207,31 @@
         <span class="st1c-row-action">See all<i class="ph ph-caret-right"></i></span>
       </div>
       <div class="st1c-cards">
-        <div class="st1c-card">
-          <img class="st1c-card-ambient" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=400&q=40" alt="" />
-          <img class="st1c-card-photo" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
-          <div class="st1c-card-details">
-            <div class="st1c-card-when">Fri &middot; 7 PM</div>
-            <h3 class="st1c-card-title">Night Market 🏮</h3>
-            <div class="st1c-card-meta">
-              <div class="st1c-card-loc"><i class="ph-fill ph-map-pin"></i>Old Town Square</div>
-            </div>
+        <div class="st1c-ecard">
+          <img class="st1c-ecard-img" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
+          <span class="st1c-esave"><i class="ph ph-bookmark-simple"></i></span>
+          <div class="st1c-ecard-details">
+            <div class="st1c-ecard-date">Fri, Jul 17 &middot; 7 PM</div>
+            <h3 class="st1c-ecard-title">Night Market</h3>
+            <div class="st1c-ecard-meta"><i class="ph-fill ph-map-pin"></i>Old Town Square</div>
           </div>
         </div>
-        <div class="st1c-card">
-          <img class="st1c-card-ambient" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=40" alt="" />
-          <img class="st1c-card-photo" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=75" alt="" />
-          <div class="st1c-card-details">
-            <div class="st1c-card-when">Sat &middot; 8 PM</div>
-            <h3 class="st1c-card-title">Jazz Night 🎷</h3>
-            <div class="st1c-card-meta">
-              <div class="st1c-card-loc"><i class="ph-fill ph-map-pin"></i>Blue Note Bar</div>
-            </div>
+        <div class="st1c-ecard">
+          <img class="st1c-ecard-img" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=75" alt="" />
+          <span class="st1c-esave"><i class="ph ph-bookmark-simple"></i></span>
+          <div class="st1c-ecard-details">
+            <div class="st1c-ecard-date">Sat, Jul 18 &middot; 8 PM</div>
+            <h3 class="st1c-ecard-title">Jazz Night</h3>
+            <div class="st1c-ecard-meta"><i class="ph-fill ph-map-pin"></i>Blue Note Bar</div>
+          </div>
+        </div>
+        <div class="st1c-ecard">
+          <img class="st1c-ecard-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=75" alt="" />
+          <span class="st1c-esave"><i class="ph ph-bookmark-simple"></i></span>
+          <div class="st1c-ecard-details">
+            <div class="st1c-ecard-date">Sun, Jul 19 &middot; 6 PM</div>
+            <h3 class="st1c-ecard-title">Supper Club</h3>
+            <div class="st1c-ecard-meta"><i class="ph-fill ph-map-pin"></i>The Terrace</div>
           </div>
         </div>
       </div>
