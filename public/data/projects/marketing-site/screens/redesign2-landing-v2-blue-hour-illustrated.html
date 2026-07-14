@@ -262,6 +262,23 @@
     font-size: 12px; font-weight: 700; color: #e8880a; text-transform: uppercase;
     letter-spacing: 0.05rem;
   }
+  .rlbhi-msg { display: flex; gap: 8px; align-items: flex-end; }
+  .rlbhi-msg-avatar {
+    width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; color: #fff;
+    font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .rlbhi-bubble {
+    background: #fff; border-radius: 16px 16px 16px 4px; padding: 8px 12px;
+    font-size: 13px; line-height: 1.45; max-width: 210px;
+    box-shadow: 0 1px 3px rgba(16, 23, 36, 0.06);
+  }
+  .rlbhi-msg-me { flex-direction: row-reverse; }
+  .rlbhi-msg-me .rlbhi-bubble { background: #101724; color: #e8edf5; border-radius: 16px 16px 4px 16px; }
+  .rlbhi-url {
+    display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px;
+    border-radius: 12px; background: #e2e4ea; font-size: 12px; font-weight: 600; color: #5c6b7d;
+  }
+  .rlbhi-url i { font-size: 13px; }
 
   .rlbhi-how { background: var(--bh-paper); padding: var(--bh-pad-y) 0; }
   .rlbhi-how-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: center; }
@@ -276,6 +293,7 @@
     font-weight: 700; font-size: 14px; color: var(--bh-ember);
     padding-top: 4px; min-width: 30px;
   }
+  .rlbhi-step-num i { font-size: 24px; }
   .rlbhi-step-title {
     font-weight: 800; font-size: 18px; letter-spacing: -0.01em;
     margin: 0 0 6px; color: var(--bh-ink);
@@ -408,14 +426,14 @@
     <div class="rlbhi-wrap">
       <div class="rlbhi-section-head">
         <h2 class="rlbhi-h2">Everything a plan needs.</h2>
-        <p class="rlbhi-section-sub">Find it, plan it, get everyone there. One app.</p>
+        <p class="rlbhi-section-sub">Find it, plan it, talk it out, get everyone there. On your phone, or on the web from any computer.</p>
       </div>
 
       <article class="rlbhi-feature rlbhi-flip">
         <div class="rlbhi-feature-copy">
-          <p class="rlbhi-feature-eyebrow">Discover</p>
+          <p class="rlbhi-feature-eyebrow">Local events</p>
           <h3 class="rlbhi-feature-title">What's actually happening near you.</h3>
-          <p class="rlbhi-feature-desc">Open mics, block parties, the trivia night two blocks over. The local stuff that never makes it to the big event sites.</p>
+          <p class="rlbhi-feature-desc">Open mics, block parties, the trivia night two blocks over. Full details right in the app, and any event becomes a plan in two taps.</p>
         </div>
         <div class="rlbhi-feature-visual">
           <div class="rlbhi-phone">
@@ -471,9 +489,9 @@
 
       <article class="rlbhi-feature">
         <div class="rlbhi-feature-copy">
-          <p class="rlbhi-feature-eyebrow">Plan</p>
-          <h3 class="rlbhi-feature-title">Every detail in one place.</h3>
-          <p class="rlbhi-feature-desc">Time, place, who's in, what to bring. The plan is the source of truth, not 12 scattered messages.</p>
+          <p class="rlbhi-feature-eyebrow">Custom plans</p>
+          <h3 class="rlbhi-feature-title">Any idea becomes a plan.</h3>
+          <p class="rlbhi-feature-desc">Start from an event, a place, or scratch. Set the time and the spot, add the details, and invite your people. The plan is the source of truth, not 12 scattered messages.</p>
         </div>
         <div class="rlbhi-feature-visual">
           <div class="rlbhi-phone">
@@ -513,9 +531,9 @@
 
       <article class="rlbhi-feature rlbhi-flip">
         <div class="rlbhi-feature-copy">
-          <p class="rlbhi-feature-eyebrow">Go</p>
-          <h3 class="rlbhi-feature-title">Your week at a glance.</h3>
-          <p class="rlbhi-feature-desc">Everything you're in and everything you're invited to, with reminders that keep the plan alive until you're out the door.</p>
+          <p class="rlbhi-feature-eyebrow">Chat</p>
+          <h3 class="rlbhi-feature-title">Group chat, minus the chaos.</h3>
+          <p class="rlbhi-feature-desc">Every group gets its own space, with channels for each plan, photos, and trip talk. Nothing important gets buried under 80 memes.</p>
         </div>
         <div class="rlbhi-feature-visual">
           <div class="rlbhi-phone">
@@ -524,33 +542,63 @@
                 <span>9:41</span>
                 <span style="display:flex; gap:5px;"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></span>
               </div>
-              <div class="rlbhi-app-title">Plans</div>
-              <div class="rlbhi-seg"><span class="rlbhi-seg-on">Upcoming</span><span>Invited</span></div>
+              <div class="rlbhi-back-row"><i class="ph ph-arrow-left"></i> Trail Crew</div>
+              <div class="rlbhi-chips">
+                <span class="rlbhi-chip"># general</span>
+                <span class="rlbhi-chip rlbhi-chip-anim"># sunrise-hike</span>
+                <span class="rlbhi-chip"># photos</span>
+              </div>
+              <div class="rlbhi-msg rlbhi-rise rlbhi-d1">
+                <span class="rlbhi-msg-avatar" style="background:#0d9a8a;">S</span>
+                <div class="rlbhi-bubble">Who's driving Saturday?</div>
+              </div>
+              <div class="rlbhi-msg rlbhi-msg-me rlbhi-rise rlbhi-d2">
+                <span class="rlbhi-msg-avatar" style="background:#e07020;">B</span>
+                <div class="rlbhi-bubble">I can take 3. Leaving at 5:15, sharp.</div>
+              </div>
+              <div class="rlbhi-msg rlbhi-rise rlbhi-d3">
+                <span class="rlbhi-msg-avatar" style="background:#7c3aed;">C</span>
+                <div class="rlbhi-bubble">In. I'll bring the coffee.</div>
+              </div>
+              <div class="rlbhi-toast"><i class="ph-fill ph-check-circle"></i> Sam is going to Sunrise hike</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rlbhi-feature">
+        <div class="rlbhi-feature-copy">
+          <p class="rlbhi-feature-eyebrow">Invite</p>
+          <h3 class="rlbhi-feature-title">Send a link. That's it.</h3>
+          <p class="rlbhi-feature-desc">Friends see the plan and RSVP right from the browser, no app needed. If they get the app later, they're already in.</p>
+        </div>
+        <div class="rlbhi-feature-visual">
+          <div class="rlbhi-phone">
+            <div class="rlbhi-screen">
+              <div class="rlbhi-status">
+                <span>9:41</span>
+                <span style="display:flex; gap:5px;"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></span>
+              </div>
+              <div class="rlbhi-url"><i class="ph ph-lock-simple"></i> mixedroutes.com/p/sunrise-hike</div>
               <div class="rlbhi-card rlbhi-rise rlbhi-d1">
                 <div class="rlbhi-date-block"><b>18</b><span>SAT</span></div>
                 <div>
                   <div class="rlbhi-card-title">Sunrise hike</div>
                   <div class="rlbhi-card-meta">6:00 AM · Craggy Gardens</div>
                 </div>
-                <span class="rlbhi-going-pill">4 going</span>
               </div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d2">
-                <div class="rlbhi-date-block"><b>16</b><span>THU</span></div>
-                <div>
-                  <div class="rlbhi-card-title">Trivia night</div>
-                  <div class="rlbhi-card-meta">7:00 PM · The Copper Fox</div>
+              <div style="display:flex; align-items:center; justify-content:space-between; padding:4px 4px 0;">
+                <div class="rlbhi-avatars">
+                  <span class="rlbhi-avatar" style="background:#e07020;">B</span>
+                  <span class="rlbhi-avatar" style="background:#0d9a8a;">S</span>
+                  <span class="rlbhi-avatar" style="background:#7c3aed;">C</span>
+                  <span class="rlbhi-avatar" style="background:#1a6fb5;">+1</span>
                 </div>
-                <span class="rlbhi-going-pill">5 going</span>
+                <span style="font-size:12px; font-weight:700; color:#5c6b7d;">4 going</span>
               </div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d3">
-                <div class="rlbhi-date-block"><b>21</b><span>TUE</span></div>
-                <div>
-                  <div class="rlbhi-card-title">Backyard fire</div>
-                  <div class="rlbhi-card-meta">8:30 PM · Sam's place</div>
-                </div>
-                <span class="rlbhi-going-pill">6 going</span>
-              </div>
-              <div class="rlbhi-toast"><i class="ph-fill ph-check-circle"></i> Sam is going to Sunrise hike</div>
+              <div class="rlbhi-cta">Join plan</div>
+              <div style="text-align:center; font-size:12px; color:#5c6b7d;">No account or app needed.</div>
+              <div class="rlbhi-toast"><i class="ph-fill ph-check-circle"></i> You're in. See you Saturday.</div>
             </div>
           </div>
         </div>
@@ -566,31 +614,31 @@
       <div class="rlbhi-how-steps">
         <h2 class="rlbhi-h2 rlbhi-how-h2">From idea to out the door.</h2>
         <div class="rlbhi-step">
-          <span class="rlbhi-step-num">01</span>
+          <span class="rlbhi-step-num"><i class="ph ph-hand-tap"></i></span>
           <div>
-            <h3 class="rlbhi-step-title">Propose</h3>
-            <p class="rlbhi-step-desc">Drop the idea with a time and place. Or two options if the group needs a say.</p>
+            <h3 class="rlbhi-step-title">One-tap RSVP</h3>
+            <p class="rlbhi-step-desc">Everyone answers &ldquo;going&rdquo; in one tap. No thread, no chasing people down.</p>
           </div>
         </div>
         <div class="rlbhi-step">
-          <span class="rlbhi-step-num">02</span>
+          <span class="rlbhi-step-num"><i class="ph ph-bell-ringing"></i></span>
           <div>
-            <h3 class="rlbhi-step-title">Vote</h3>
-            <p class="rlbhi-step-desc">Everyone answers once. No polls, no fifty unread messages.</p>
+            <h3 class="rlbhi-step-title">Reminders that work</h3>
+            <p class="rlbhi-step-desc">Nudges keep the plan alive until you're actually out the door.</p>
           </div>
         </div>
         <div class="rlbhi-step">
-          <span class="rlbhi-step-num">03</span>
+          <span class="rlbhi-step-num"><i class="ph ph-calendar-check"></i></span>
           <div>
-            <h3 class="rlbhi-step-title">Lock it in</h3>
-            <p class="rlbhi-step-desc">The plan gets a real time, a real place, and a real guest list. Reminders included.</p>
+            <h3 class="rlbhi-step-title">Your week at a glance</h3>
+            <p class="rlbhi-step-desc">Everything you're in and everything you're invited to, in one list.</p>
           </div>
         </div>
         <div class="rlbhi-step">
-          <span class="rlbhi-step-num">04</span>
+          <span class="rlbhi-step-num"><i class="ph ph-lock-simple"></i></span>
           <div>
-            <h3 class="rlbhi-step-title">Show up</h3>
-            <p class="rlbhi-step-desc">That's the whole point.</p>
+            <h3 class="rlbhi-step-title">You decide who sees it</h3>
+            <p class="rlbhi-step-desc">Every plan can be private, friends-only, or open to anyone nearby.</p>
           </div>
         </div>
       </div>
