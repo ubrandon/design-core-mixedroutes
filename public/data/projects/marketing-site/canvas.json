@@ -7,11 +7,11 @@
       "width": 1280
     },
     {
-      "file": "redesign2-landing-v2-blue-hour.html",
-      "x": 2660,
+      "file": "redesign2-landing-v2-blue-hour-illustrated.html",
+      "x": 3264,
       "y": 0,
       "width": 1280,
-      "name": "Landing v2 · Blue Hour"
+      "name": "Landing v2 · Blue Hour · Illustrated"
     },
     {
       "file": "brand-board-variation-field-notes.html",
@@ -99,15 +99,15 @@
     },
     {
       "file": "brand-board-variation-blue-hour-illustrated.html",
-      "x": 4224,
-      "y": 0,
+      "x": 5984,
+      "y": -32,
       "width": 860,
       "name": "Identity E3 · Blue Hour · Illustrated"
     },
     {
       "file": "interests-line-art-accent.html",
-      "x": 5120,
-      "y": 0,
+      "x": 6880,
+      "y": -32,
       "width": 300,
       "name": "Illustration guide · Line art + orange accent"
     }
