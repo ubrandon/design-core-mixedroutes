@@ -33,7 +33,7 @@
   .rlab-btn-big { padding: 17px 38px; font-size: 17px; }
 
   .rlab-head { position: relative; background: var(--bh-ink); overflow: hidden; }
-  .rlab-head-art { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.45; }
+  .rlab-head-art { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.85; }
   .rlab-nav {
     position: relative; z-index: 2; display: flex; align-items: center;
     justify-content: space-between; width: 100%; max-width: 1160px;
@@ -47,18 +47,28 @@
   .rlab-head-sub { margin: 20px 0 0; max-width: 560px; font-size: 20px; line-height: 1.55; color: rgba(255, 255, 255, 0.78); }
 
   .rlab-story { padding: var(--bh-pad-y) 0; }
+  .rlab-team { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
+  .rlab-team-chip {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #fff; border: 1px solid var(--bh-line); border-radius: 999px;
+    padding: 8px 22px 8px 8px;
+  }
+  .rlab-team-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; display: block; }
+  .rlab-team-name { display: block; font-weight: 700; font-size: 15px; line-height: 1.25; }
+  .rlab-team-role { display: block; font-size: 13px; color: var(--bh-ink-soft); }
   .rlab-story-big {
     font-weight: 800; letter-spacing: -0.025em; line-height: 1.2;
     font-size: 38px; color: var(--bh-ink); max-width: 820px; margin: 0;
   }
   .rlab-story-body { max-width: 640px; margin: 30px 0 0; font-size: 18px; line-height: 1.75; color: var(--bh-ink-soft); }
 
-  .rlab-values { background: #fff; padding: var(--bh-pad-y) 0; }
+  .rlab-values { background: var(--bh-ink); padding: var(--bh-pad-y) 0; }
+  .rlab-values .rlab-h2 { color: #fff; }
   .rlab-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 56px; }
-  .rlab-value { padding-top: 24px; border-top: 2px solid var(--bh-ink); }
-  .rlab-value i { font-size: 30px; color: var(--bh-ember); }
-  .rlab-value-title { font-weight: 800; font-size: 20px; letter-spacing: -0.01em; margin: 14px 0 8px; }
-  .rlab-value-desc { margin: 0; font-size: 16px; line-height: 1.65; color: var(--bh-ink-soft); }
+  .rlab-value { padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.18); }
+  .rlab-value-illo { display: block; width: 76px; height: 76px; }
+  .rlab-value-title { font-weight: 800; font-size: 20px; letter-spacing: -0.01em; margin: 18px 0 8px; color: #fff; }
+  .rlab-value-desc { margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255, 255, 255, 0.72); }
 
   .rlab-photo { position: relative; height: 480px; overflow: hidden; }
   .rlab-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
@@ -83,11 +93,11 @@
 <div class="rlab">
 
   <section class="rlab-head">
-    <svg class="rlab-head-art" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#9fc3d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg class="rlab-head-art" viewBox="0 0 1440 360" preserveAspectRatio="none" fill="none" stroke="#9fc3d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M60 90 h18 M69 81 v18" opacity="0.6" />
       <path d="M1360 250 h16 M1368 242 v16" opacity="0.6" />
-      <circle cx="180" cy="290" r="3" opacity="0.6" /><circle cx="260" cy="60" r="3" opacity="0.6" />
-      <circle cx="1180" cy="80" r="3" opacity="0.6" /><circle cx="1290" cy="300" r="3" opacity="0.6" />
+      <circle cx="180" cy="290" r="4" opacity="0.75" /><circle cx="260" cy="60" r="4" opacity="0.75" />
+      <circle cx="1180" cy="80" r="4" opacity="0.75" /><circle cx="1290" cy="300" r="4" opacity="0.75" />
       <path d="M90 190 l50 22" stroke-dasharray="10 12" opacity="0.5" />
       <path d="M1300 150 l54 -18" stroke-dasharray="10 12" opacity="0.5" />
       <path d="M1220 190 c 16 -12 32 -12 48 0 c 16 12 32 12 48 0" opacity="0.4" />
@@ -115,6 +125,20 @@
       <p class="rlab-story-big">The best nights of your life won&apos;t happen on your phone. So we built an app that gets you off it.</p>
       <p class="rlab-story-body">Every app you open is designed to keep you there. Feeds, followers, streaks, and an algorithm that always has one more thing for you. Meanwhile, &ldquo;we should hang out&rdquo; dies in a group chat for the fourth week in a row.</p>
       <p class="rlab-story-body">MixedRoutes exists for exactly one thing: turning a vague idea into a time, a place, and people who show up. Find something worth doing, get your people to a yes, lock in the details, and put your phone away. That&apos;s the whole product. The app did its job when you stop looking at it.</p>
+      <div class="rlab-team">
+        <div class="rlab-team-chip">
+          <img class="rlab-team-avatar" src="../img/brandon.jpg" alt="Brandon" />
+          <span><span class="rlab-team-name">Brandon</span><span class="rlab-team-role">Founder, product</span></span>
+        </div>
+        <div class="rlab-team-chip">
+          <img class="rlab-team-avatar" src="../img/eric.jpg" alt="Eric" />
+          <span><span class="rlab-team-name">Eric</span><span class="rlab-team-role">Founder, engineer</span></span>
+        </div>
+        <div class="rlab-team-chip">
+          <img class="rlab-team-avatar" src="../img/chris.jpg" alt="Chris" />
+          <span><span class="rlab-team-name">Chris</span><span class="rlab-team-role">Partner, engineer</span></span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -123,17 +147,34 @@
       <h2 class="rlab-h2">What we stand on.</h2>
       <div class="rlab-values-grid">
         <div class="rlab-value">
-          <i class="ph ph-prohibit"></i>
+          <svg class="rlab-value-illo" viewBox="0 0 96 96" fill="none" stroke="#9fc3d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="28" y="10" width="40" height="76" rx="9" />
+            <path d="M38 26 h20 M38 38 h14 M38 50 h20 M38 62 h11" opacity="0.7" />
+            <path d="M18 84 L78 12" stroke="#e8880a" stroke-width="4" />
+            <path d="M12 30 h10 M17 25 v10" opacity="0.6" />
+            <circle cx="84" cy="66" r="2.5" opacity="0.6" />
+          </svg>
           <h3 class="rlab-value-title">No feed, no followers</h3>
           <p class="rlab-value-desc">There is nothing to scroll and nobody to perform for. Plans, people, and places. That&apos;s it.</p>
         </div>
         <div class="rlab-value">
-          <i class="ph ph-hand-heart"></i>
+          <svg class="rlab-value-illo" viewBox="0 0 96 96" fill="none" stroke="#9fc3d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M48 80 C31 65 19 53 19 39 c0-10 8-18 18-18 c4.5 0 8.5 2 11 6 c2.5-4 6.5-6 11-6 c10 0 18 8 18 18 c0 14-12 26-29 41 z" />
+            <path d="M40 42 l6 6 l11 -12" stroke="#e8880a" stroke-width="4" />
+            <path d="M78 18 h10 M83 13 v10" opacity="0.6" />
+            <circle cx="12" cy="70" r="2.5" opacity="0.6" />
+          </svg>
           <h3 class="rlab-value-title">Free, with no catch</h3>
           <p class="rlab-value-desc">No ads and no data selling. We don&apos;t make money from your attention, so we don&apos;t need to trap it.</p>
         </div>
         <div class="rlab-value">
-          <i class="ph ph-campfire"></i>
+          <svg class="rlab-value-illo" viewBox="0 0 96 96" fill="none" stroke="#9fc3d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M48 14 c-11 14-18 23-18 34 a18 18 0 0 0 36 0 c0-11-7-20-18-34 z" />
+            <path d="M48 40 c-5 6.5-8 11-8 16 a8 8 0 0 0 16 0 c0-5-3-9.5-8-16 z" stroke="#e8880a" />
+            <path d="M26 78 l44 10 M70 78 l-44 10" />
+            <path d="M80 30 h10 M85 25 v10" opacity="0.6" />
+            <circle cx="14" cy="42" r="2.5" opacity="0.6" />
+          </svg>
           <h3 class="rlab-value-title">Made for real life</h3>
           <p class="rlab-value-desc">Trails, backyards, bar tables, and back rows. Success is measured in plans that actually happened.</p>
         </div>
