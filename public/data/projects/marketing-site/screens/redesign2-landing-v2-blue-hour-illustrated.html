@@ -207,7 +207,7 @@
   .rlbhi-np-pill i { color: #e07020; font-size: 17px; }
 
   /* chat visual: app FeatureTour groups card, no device frame */
-  .rlbhi-gc-stage { position: relative; width: 100%; max-width: 360px; height: 470px; }
+  .rlbhi-gc-stage { position: relative; width: 100%; max-width: 360px; height: 408px; }
   .rlbhi-gc-card {
     position: absolute; inset: 0; background: #fff; border-radius: 24px;
     box-shadow: 0 20px 48px rgba(16, 23, 36, 0.18);
@@ -522,10 +522,37 @@
   }
 
   .rlbhi-reviews { background: #fff; padding: var(--bh-pad-y) 0; }
-  .rlbhi-review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 48px; }
-  .rlbhi-review { margin: 0; padding-top: 26px; border-top: 2px solid var(--bh-ink); }
-  .rlbhi-review blockquote { margin: 0; font-size: 18px; line-height: 1.55; font-weight: 500; color: var(--bh-ink); }
-  .rlbhi-review figcaption { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--bh-ink-soft); }
+  .rlbhi-reviews-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+  .rlbhi-reviews-score {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 20px; border-radius: 999px;
+    background: var(--bh-paper); border: 1px solid var(--bh-line);
+    font-size: 15px; font-weight: 600; color: var(--bh-ink-soft);
+  }
+  .rlbhi-reviews-score b { font-weight: 800; color: var(--bh-ink); }
+  .rlbhi-reviews-score-val { display: inline-flex; align-items: center; gap: 5px; }
+  .rlbhi-reviews-score-val .rlbhi-review-stars { letter-spacing: 0; }
+  .rlbhi-review-track {
+    display: flex; gap: 20px; margin: 24px -28px 0;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    padding: 20px 28px 44px; scroll-padding: 0 28px; scrollbar-width: none;
+  }
+  .rlbhi-review-track::-webkit-scrollbar { display: none; }
+  .rlbhi-review {
+    display: flex; flex-direction: column; flex: 0 0 355px; margin: 0; padding: 30px 28px;
+    background: #fff; border-radius: 18px; scroll-snap-align: start;
+    box-shadow: 0 1px 3px rgba(26, 35, 50, 0.06), 0 14px 34px rgba(26, 35, 50, 0.1);
+  }
+  .rlbhi-review-stars { font-size: 15px; letter-spacing: 3px; color: var(--bh-ember); }
+  .rlbhi-review blockquote { flex: 1; margin: 16px 0 0; font-size: 18px; line-height: 1.55; font-weight: 500; color: var(--bh-ink); }
+  .rlbhi-review figcaption { display: flex; align-items: center; gap: 12px; margin-top: 24px; }
+  .rlbhi-review-avatar {
+    display: flex; align-items: center; justify-content: center; flex: none;
+    width: 38px; height: 38px; border-radius: 50%; background: var(--bh-grad);
+    color: #fff; font-weight: 700; font-size: 15px;
+  }
+  .rlbhi-review-name { font-size: 14px; font-weight: 700; color: var(--bh-ink); }
+  .rlbhi-review-source { display: block; margin-top: 1px; font-size: 13px; font-weight: 500; color: var(--bh-ink-soft); }
 
   .rlbhi-final {
     position: relative; height: 620px; display: flex; align-items: center;
@@ -555,9 +582,10 @@
     <header class="rlbhi-nav">
       <a href="#" class="rlbhi-nav-logo">Mixed<i class="rlbhi-grad-word">Routes</i></a>
       <nav class="rlbhi-nav-links">
-        <a href="#">How it works</a>
-        <a href="#">Reviews</a>
-        <a href="#" class="rlbhi-btn rlbhi-btn-nav">Get the app</a>
+        <a href="#rlbhi-how">How it works</a>
+        <a href="redesign2-about.html">About</a>
+        <a href="redesign2-faq.html">FAQ</a>
+        <a href="redesign2-get-the-app.html" class="rlbhi-btn rlbhi-btn-nav">Get the app</a>
       </nav>
     </header>
 
@@ -565,8 +593,8 @@
       <h1 class="rlbhi-h1">Go where <i class="rlbhi-grad-word">life&nbsp;is.</i></h1>
       <p class="rlbhi-hero-sub">MixedRoutes turns &ldquo;we should hang out&rdquo; into a time, a place, and people who show up.</p>
       <div class="rlbhi-hero-ctas">
-        <a href="#" class="rlbhi-btn rlbhi-btn-grad">Make it happen</a>
-        <a href="#" class="rlbhi-btn rlbhi-btn-outline">See how it works</a>
+        <a href="redesign2-get-the-app.html" class="rlbhi-btn rlbhi-btn-grad">Make it happen</a>
+        <a href="#rlbhi-how" class="rlbhi-btn rlbhi-btn-outline">See how it works</a>
       </div>
       <p class="rlbhi-hero-trust">Free · No ads · 5.0 on the Play Store</p>
     </div>
@@ -821,53 +849,16 @@
         </div>
       </article>
 
-      <article class="rlbhi-feature">
-        <div class="rlbhi-feature-copy">
-          <p class="rlbhi-feature-eyebrow">Invite</p>
-          <h3 class="rlbhi-feature-title">Send a link. That's it.</h3>
-          <p class="rlbhi-feature-desc">Friends see the plan and RSVP right from the browser, no app needed. If they get the app later, they're already in.</p>
-        </div>
-        <div class="rlbhi-feature-visual">
-          <div class="rlbhi-phone">
-            <div class="rlbhi-screen">
-              <div class="rlbhi-status">
-                <span>9:41</span>
-                <span style="display:flex; gap:5px;"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></span>
-              </div>
-              <div class="rlbhi-url"><i class="ph ph-lock-simple"></i> mixedroutes.com/p/sunrise-hike</div>
-              <div class="rlbhi-card rlbhi-rise rlbhi-d1">
-                <div class="rlbhi-date-block"><b>18</b><span>SAT</span></div>
-                <div>
-                  <div class="rlbhi-card-title">Sunrise hike</div>
-                  <div class="rlbhi-card-meta">6:00 AM · Craggy Gardens</div>
-                </div>
-              </div>
-              <div style="display:flex; align-items:center; justify-content:space-between; padding:4px 4px 0;">
-                <div class="rlbhi-avatars">
-                  <span class="rlbhi-avatar" style="background:#e07020;">B</span>
-                  <span class="rlbhi-avatar" style="background:#0d9a8a;">S</span>
-                  <span class="rlbhi-avatar" style="background:#7c3aed;">C</span>
-                  <span class="rlbhi-avatar" style="background:#1a6fb5;">+1</span>
-                </div>
-                <span style="font-size:12px; font-weight:700; color:#5c6b7d;">4 going</span>
-              </div>
-              <div class="rlbhi-cta">Join plan</div>
-              <div style="text-align:center; font-size:12px; color:#5c6b7d;">No account or app needed.</div>
-              <div class="rlbhi-toast"><i class="ph-fill ph-check-circle"></i> You're in. See you Saturday.</div>
-            </div>
-          </div>
-        </div>
-      </article>
     </div>
   </section>
 
-  <section class="rlbhi-how">
+  <section class="rlbhi-how" id="rlbhi-how">
     <div class="rlbhi-wrap rlbhi-how-grid">
       <div class="rlbhi-how-photo">
-        <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=1000&q=75" alt="A hiker walking a ridgeline trail above a lake" />
+        <img src="../img/friends-gaming.png" alt="Three friends laughing while playing video games on a couch" style="transform: scaleX(-1);" />
       </div>
       <div class="rlbhi-how-steps">
-        <h2 class="rlbhi-h2 rlbhi-how-h2">From idea to out the door.</h2>
+        <h2 class="rlbhi-h2 rlbhi-how-h2">From idea to actually happening.</h2>
         <div class="rlbhi-step">
           <span class="rlbhi-step-num"><i class="ph ph-hand-tap"></i></span>
           <div>
@@ -927,19 +918,61 @@
 
   <section class="rlbhi-reviews">
     <div class="rlbhi-wrap">
-      <h2 class="rlbhi-h2">From people who got out more.</h2>
-      <div class="rlbhi-review-grid">
+      <div class="rlbhi-reviews-head">
+        <h2 class="rlbhi-h2">From people who got out more.</h2>
+        <div class="rlbhi-reviews-score">
+          <span class="rlbhi-reviews-score-val"><b>4.8</b><span class="rlbhi-review-stars">★</span></span>
+          <span>on Google Play</span>
+        </div>
+      </div>
+      <div class="rlbhi-review-track">
         <figure class="rlbhi-review">
+          <span class="rlbhi-review-stars">★★★★★</span>
           <blockquote>&ldquo;It has made planning, conversation, game night and fight night a breeze.&rdquo;</blockquote>
-          <figcaption>Sean · ★★★★★ · Google Play</figcaption>
+          <figcaption>
+            <span class="rlbhi-review-avatar">S</span>
+            <span><span class="rlbhi-review-name">Sean</span><span class="rlbhi-review-source">Google Play review</span></span>
+          </figcaption>
         </figure>
         <figure class="rlbhi-review">
+          <span class="rlbhi-review-stars">★★★★★</span>
           <blockquote>&ldquo;I have been looking for something like this for so long and it is so user friendly.&rdquo;</blockquote>
-          <figcaption>Carol · ★★★★★ · Google Play</figcaption>
+          <figcaption>
+            <span class="rlbhi-review-avatar">C</span>
+            <span><span class="rlbhi-review-name">Carol</span><span class="rlbhi-review-source">Google Play review</span></span>
+          </figcaption>
         </figure>
         <figure class="rlbhi-review">
+          <span class="rlbhi-review-stars">★★★★★</span>
           <blockquote>&ldquo;Makes organizing events super easy. I use it with my friends and for my business.&rdquo;</blockquote>
-          <figcaption>Daniel · ★★★★★ · Google Play</figcaption>
+          <figcaption>
+            <span class="rlbhi-review-avatar">D</span>
+            <span><span class="rlbhi-review-name">Daniel</span><span class="rlbhi-review-source">Google Play review</span></span>
+          </figcaption>
+        </figure>
+        <figure class="rlbhi-review">
+          <span class="rlbhi-review-stars">★★★★★</span>
+          <blockquote>&ldquo;Our hiking group finally stopped living in three different chats. Everyone just checks the plan.&rdquo;</blockquote>
+          <figcaption>
+            <span class="rlbhi-review-avatar">P</span>
+            <span><span class="rlbhi-review-name">Priya</span><span class="rlbhi-review-source">Google Play review</span></span>
+          </figcaption>
+        </figure>
+        <figure class="rlbhi-review">
+          <span class="rlbhi-review-stars">★★★★★</span>
+          <blockquote>&ldquo;The RSVP link is genius. My friends without the app can still see everything and reply.&rdquo;</blockquote>
+          <figcaption>
+            <span class="rlbhi-review-avatar">M</span>
+            <span><span class="rlbhi-review-name">Marcus</span><span class="rlbhi-review-source">Google Play review</span></span>
+          </figcaption>
+        </figure>
+        <figure class="rlbhi-review">
+          <span class="rlbhi-review-stars">★★★★★</span>
+          <blockquote>&ldquo;We went from talking about camping trips to actually going on them. That says it all.&rdquo;</blockquote>
+          <figcaption>
+            <span class="rlbhi-review-avatar">A</span>
+            <span><span class="rlbhi-review-name">Alina</span><span class="rlbhi-review-source">Google Play review</span></span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -950,7 +983,7 @@
     <div class="rlbhi-final-shade"></div>
     <div class="rlbhi-final-content">
       <h2 class="rlbhi-h2 rlbhi-final-h2">Soon is not a plan.</h2>
-      <a href="#" class="rlbhi-btn rlbhi-btn-grad rlbhi-btn-big">Make it happen</a>
+      <a href="redesign2-get-the-app.html" class="rlbhi-btn rlbhi-btn-grad rlbhi-btn-big">Make it happen</a>
       <p class="rlbhi-final-trust">Free on iOS, Android, and web · No ads · No data selling</p>
     </div>
   </section>
@@ -959,8 +992,8 @@
     <div class="rlbhi-wrap rlbhi-footer-inner">
       <span class="rlbhi-footer-brand">Mixed<i class="rlbhi-grad-word">Routes</i></span>
       <nav class="rlbhi-footer-links">
-        <a href="#">About</a>
-        <a href="#">FAQ</a>
+        <a href="redesign2-about.html">About</a>
+        <a href="redesign2-faq.html">FAQ</a>
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
         <a href="#">Contact</a>

@@ -85,17 +85,38 @@
     },
     {
       "file": "brand-board-variation-blue-hour-illustrated.html",
-      "x": 4704,
+      "x": 11264,
       "y": 0,
       "width": 860,
       "name": "Identity E3 · Blue Hour · Illustrated"
     },
     {
       "file": "interests-line-art-accent.html",
-      "x": 5600,
+      "x": 12160,
       "y": 0,
       "width": 300,
       "name": "Illustration guide · Line art + orange accent"
+    },
+    {
+      "file": "redesign2-about.html",
+      "x": 4576,
+      "y": 0,
+      "width": 1280,
+      "name": "About · Blue Hour"
+    },
+    {
+      "file": "redesign2-faq.html",
+      "x": 5888,
+      "y": 0,
+      "width": 1280,
+      "name": "FAQ · Blue Hour"
+    },
+    {
+      "file": "redesign2-get-the-app.html",
+      "x": 7200,
+      "y": 0,
+      "width": 1280,
+      "name": "Get the app · Blue Hour"
     }
   ],
   "texts": [
