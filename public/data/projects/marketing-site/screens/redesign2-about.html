@@ -70,16 +70,10 @@
   .rlab-value-title { font-weight: 800; font-size: 20px; letter-spacing: -0.01em; margin: 18px 0 8px; color: #fff; }
   .rlab-value-desc { margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255, 255, 255, 0.72); }
 
-  .rlab-photo { position: relative; height: 480px; overflow: hidden; }
-  .rlab-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
-  .rlab-photo-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16, 23, 36, 0.1) 40%, rgba(16, 23, 36, 0.72) 100%); }
-  .rlab-photo-quote {
-    position: absolute; left: 0; right: 0; bottom: 0; padding: 0 28px 56px;
-    max-width: 1160px; margin: 0 auto; color: #fff;
-    font-weight: 800; font-size: 32px; letter-spacing: -0.02em; line-height: 1.2;
-  }
-
   .rlab-cta-band { position: relative; background: var(--bh-ink); padding: var(--bh-pad-y) 0; text-align: center; overflow: hidden; }
+  .rlab-cta-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .rlab-cta-shade { position: absolute; inset: 0; background: rgba(16, 23, 36, 0.62); }
+  .rlab-cta-band .rlab-wrap { position: relative; z-index: 1; }
   .rlab-cta-band .rlab-h2 { color: #fff; font-size: 52px; }
   .rlab-cta-band .rlab-btn { margin-top: 34px; }
   .rlab-cta-trust { margin: 18px 0 0; font-size: 15px; color: rgba(255, 255, 255, 0.75); }
@@ -182,13 +176,9 @@
     </div>
   </section>
 
-  <section class="rlab-photo">
-    <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=2200&q=75" alt="Friends around a lakeside campfire at night" />
-    <div class="rlab-photo-shade"></div>
-    <p class="rlab-photo-quote">Soon is not a plan.</p>
-  </section>
-
   <section class="rlab-cta-band">
+    <img class="rlab-cta-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=2200&q=75" alt="Friends sharing dinner at a long patio table" />
+    <div class="rlab-cta-shade"></div>
     <div class="rlab-wrap">
       <h2 class="rlab-h2">Go where <i class="rlab-grad-word">life is.</i></h2>
       <a href="redesign2-get-the-app.html" class="rlab-btn rlab-btn-grad rlab-btn-big">Get the app</a>
