@@ -68,6 +68,15 @@
     border-radius: 999px; background: #fff;
   }
 
+  .rlfq-cta-band { position: relative; background: var(--bh-ink); padding: var(--bh-pad-y) 0; text-align: center; overflow: hidden; }
+  .rlfq-cta-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .rlfq-cta-shade { position: absolute; inset: 0; background: rgba(16, 23, 36, 0.62); }
+  .rlfq-cta-band .rlfq-wrap { position: relative; z-index: 1; }
+  .rlfq-cta-band .rlfq-h2 { color: #fff; font-size: 52px; }
+  .rlfq-cta-band .rlfq-btn { margin-top: 34px; }
+  .rlfq .rlfq-btn-big { padding: 17px 38px; font-size: 17px; }
+  .rlfq-cta-trust { margin: 18px 0 0; font-size: 15px; color: rgba(255, 255, 255, 0.75); }
+
   .rlfq-footer { background: var(--bh-ink); padding: 36px 0; }
   .rlfq-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
   .rlfq-footer-brand { font-weight: 800; font-size: 16px; color: #fff; }
@@ -148,6 +157,16 @@
       <h2 class="rlfq-h2">Still have a question?</h2>
       <p class="rlfq-contact-sub">We&apos;re a small team and we read everything. Ask us anything.</p>
       <div class="rlfq-contact-link">support@mixedroutes.com</div>
+    </div>
+  </section>
+
+  <section class="rlfq-cta-band">
+    <img class="rlfq-cta-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=2200&q=75" alt="Friends sharing dinner at a long patio table" />
+    <div class="rlfq-cta-shade"></div>
+    <div class="rlfq-wrap">
+      <h2 class="rlfq-h2">Go where <i class="rlfq-grad-word">life is.</i></h2>
+      <a href="redesign2-get-the-app.html" class="rlfq-btn rlfq-btn-grad rlfq-btn-big">Get the app</a>
+      <p class="rlfq-cta-trust">Free on iOS, Android, and web · No ads · No data selling</p>
     </div>
   </section>
 
