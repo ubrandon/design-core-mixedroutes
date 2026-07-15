@@ -53,20 +53,14 @@
   .rlga-head-trust { margin: 26px 0 0; font-size: 15px; color: rgba(255, 255, 255, 0.75); }
 
   .rlga-web { padding: var(--bh-pad-y) 0; text-align: center; }
+  .rlga-web-art { width: 250px; max-width: 60vw; margin: 0 auto 26px; }
+  .rlga-web-art svg { display: block; width: 100%; height: auto; }
   .rlga-web-sub { max-width: 560px; margin: 18px auto 0; font-size: 18px; line-height: 1.65; color: var(--bh-ink-soft); }
+  .rlga .rlga-btn-grad { margin-top: 32px; gap: 10px; background: var(--bh-grad); color: #fff; }
   .rlga-web-link {
-    display: inline-block; margin-top: 28px; font-family: ui-monospace, monospace;
-    font-size: 15px; font-weight: 600; color: var(--bh-ember);
-    padding: 13px 26px; border: 1.5px solid var(--bh-ember);
-    border-radius: 999px; background: #fff;
+    display: block; margin-top: 18px; font-family: ui-monospace, monospace;
+    font-size: 14px; font-weight: 600; color: var(--bh-ink-soft);
   }
-
-  .rlga-points { background: #fff; padding: var(--bh-pad-y) 0; }
-  .rlga-points-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 56px; }
-  .rlga-point { padding-top: 24px; border-top: 2px solid var(--bh-ink); }
-  .rlga-point i { font-size: 30px; color: var(--bh-ember); }
-  .rlga-point-title { font-weight: 800; font-size: 20px; letter-spacing: -0.01em; margin: 14px 0 8px; }
-  .rlga-point-desc { margin: 0; font-size: 16px; line-height: 1.65; color: var(--bh-ink-soft); }
 
   .rlga-final { position: relative; height: 480px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
   .rlga-final img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
@@ -125,32 +119,25 @@
 
   <section class="rlga-web">
     <div class="rlga-wrap">
-      <h2 class="rlga-h2">No download? No problem.</h2>
-      <p class="rlga-web-sub">MixedRoutes runs in any browser, and friends you invite can see the plan and RSVP from a link without installing anything.</p>
-      <div class="rlga-web-link">app.mixedroutes.com</div>
-    </div>
-  </section>
-
-  <section class="rlga-points">
-    <div class="rlga-wrap">
-      <h2 class="rlga-h2">What you&apos;re signing up for.</h2>
-      <div class="rlga-points-grid">
-        <div class="rlga-point">
-          <i class="ph ph-hand-heart"></i>
-          <h3 class="rlga-point-title">Free forever</h3>
-          <p class="rlga-point-desc">No ads, no premium tier, no data selling. The whole app, for everyone.</p>
-        </div>
-        <div class="rlga-point">
-          <i class="ph ph-devices"></i>
-          <h3 class="rlga-point-title">Everywhere you are</h3>
-          <p class="rlga-point-desc">iOS, Android, and web, always in sync. Plan on your laptop, get nudged on your phone.</p>
-        </div>
-        <div class="rlga-point">
-          <i class="ph ph-prohibit"></i>
-          <h3 class="rlga-point-title">Nothing to scroll</h3>
-          <p class="rlga-point-desc">No feed, no followers, no algorithm. The app did its job when you put your phone away.</p>
-        </div>
+      <div class="rlga-web-art" aria-hidden="true">
+        <svg viewBox="0 0 560 330" fill="none" stroke="#4a7fa3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="152" y="52" width="256" height="172" rx="16" />
+          <path d="M148 224 L102 264 H458 L412 224 Z" />
+          <path d="M250 232 c 5 12 55 12 60 0" opacity="0.6" />
+          <circle cx="204" cy="184" r="8" />
+          <path d="M204 184 C 246 136 288 196 324 122" stroke-dasharray="14 16" opacity="0.65" />
+          <path d="M332 78 c -16 0 -27 11 -27 25 c 0 18 27 39 27 39 c 0 0 27 -21 27 -39 c 0 -14 -11 -25 -27 -25 Z" stroke="#e8880a" />
+          <circle cx="332" cy="104" r="7" stroke="#e8880a" />
+          <path d="M62 80 h22 M73 69 v22" opacity="0.8" stroke="#e8880a" />
+          <circle cx="492" cy="68" r="5" opacity="0.75" />
+          <circle cx="56" cy="200" r="5" opacity="0.75" />
+          <path d="M446 162 c 18 -13 36 -13 54 0 c 18 13 36 13 54 0" opacity="0.45" />
+        </svg>
       </div>
+      <h2 class="rlga-h2">Prefer a browser? Same app, full size.</h2>
+      <p class="rlga-web-sub">Everything from the app runs on the web too, and friends you invite can see the plan and RSVP from a link without installing anything.</p>
+      <a href="#" class="rlga-btn rlga-btn-grad"><i class="ph ph-sign-in"></i>Log in on the web</a>
+      <div class="rlga-web-link">app.mixedroutes.com</div>
     </div>
   </section>
 
