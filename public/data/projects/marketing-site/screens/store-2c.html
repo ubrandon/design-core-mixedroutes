@@ -7,11 +7,11 @@
   .st2c * { box-sizing: border-box; }
   .st2c-texture { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .st2c-texture svg { display: block; width: 100%; height: 100%; }
-  .st2c-title { position: absolute; top: 84px; left: 100px; z-index: 1; margin: 0; font-size: 72px; font-weight: 500; letter-spacing: 0.01em; color: #1a2332; }
-  .st2c-chips { position: absolute; top: 216px; left: 100px; right: 80px; display: flex; flex-wrap: wrap; gap: 26px; z-index: 2; }
-  .st2c-chip { display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 42px; border-radius: 60px; background: #ffffff; border: 2px solid rgba(26, 35, 50, 0.08); color: #1a2332; font-size: 40px; font-weight: 700; box-shadow: 0 14px 30px rgba(26, 35, 50, 0.1); }
-  .st2c-chip.is-lit { background: #e4eefe; }
-  .st2c-chip .st2c-emoji { font-size: 44px; }
+  .st2c-list { position: absolute; top: 140px; left: 100px; right: 80px; z-index: 1; display: flex; flex-direction: column; gap: 56px; }
+  .st2c-item { display: flex; align-items: center; gap: 44px; }
+  .st2c-item-icon { flex: none; width: 108px; height: 108px; border-radius: 50%; background: #ffffff; border: 2px solid rgba(26, 35, 50, 0.08); box-shadow: 0 14px 30px rgba(26, 35, 50, 0.1); display: flex; align-items: center; justify-content: center; }
+  .st2c-item-icon i { font-size: 56px; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .st2c-item span:last-child { font-size: 54px; font-weight: 600; line-height: 1.3; color: #1a2332; letter-spacing: -0.01em; }
 
   .st2c-darktag { position: absolute; top: 740px; left: 470px; z-index: 2; display: inline-flex; align-items: center; gap: 18px; height: 92px; padding: 0 42px; border-radius: 100px; background: #1a2332; color: #f5f2ec; font-size: 38px; font-weight: 700; transform: rotate(6deg); box-shadow: 0 18px 44px rgba(26, 35, 50, 0.25); }
   .st2c-darktag i { font-size: 42px; color: #7dd3fc; }
@@ -178,17 +178,19 @@
     </svg>
   </div>
 
-  <h2 class="st2c-title">Explore all your interests...</h2>
-  <div class="st2c-chips">
-    <span class="st2c-chip"><span class="st2c-emoji">🥾</span>Hiking</span>
-    <span class="st2c-chip"><span class="st2c-emoji">🎮</span>Gaming</span>
-    <span class="st2c-chip"><span class="st2c-emoji">☕</span>Cafes</span>
-    <span class="st2c-chip is-lit"><span class="st2c-emoji">🎸</span>Live Music</span>
-    <span class="st2c-chip"><span class="st2c-emoji">🎨</span>Art</span>
-    <span class="st2c-chip"><span class="st2c-emoji">🍺</span>Bars</span>
-    <span class="st2c-chip"><span class="st2c-emoji">🚴</span>Cycling</span>
-    <span class="st2c-chip"><span class="st2c-emoji">🥐</span>Food</span>
-    <span class="st2c-chip">+100</span>
+  <div class="st2c-list">
+    <div class="st2c-item">
+      <span class="st2c-item-icon"><i class="ph-fill ph-calendar-check"></i></span>
+      <span>One app for all your plans and groups</span>
+    </div>
+    <div class="st2c-item">
+      <span class="st2c-item-icon"><i class="ph-fill ph-compass"></i></span>
+      <span>Discover things to do near you</span>
+    </div>
+    <div class="st2c-item">
+      <span class="st2c-item-icon"><i class="ph-fill ph-heart"></i></span>
+      <span>Free, no ads. Indie, built by friends</span>
+    </div>
   </div>
 
   <span class="st2c-darktag"><i class="ph-fill ph-moon"></i>Dark mode</span>

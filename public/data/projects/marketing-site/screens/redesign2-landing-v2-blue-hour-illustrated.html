@@ -171,6 +171,165 @@
     from { transform: translateX(-50%) translateY(0) rotate(-2deg); }
     to { transform: translateX(-50%) translateY(-7px) rotate(-2deg); }
   }
+
+  /* custom-plans visual: form floating on pastel gradient, RSVP tags popping outside the card */
+  .rlbhi-np-stage { position: relative; width: 100%; max-width: 340px; }
+  .rlbhi-np-form {
+    background: #fff; border-radius: 26px; padding: 20px 18px;
+    display: flex; flex-direction: column; gap: 12px;
+    box-shadow: 0 24px 54px rgba(16, 23, 36, 0.16);
+  }
+  .rlbhi-np-head { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; padding: 0 4px; }
+  .rlbhi-np-tag {
+    position: absolute; z-index: 5; display: flex; align-items: center; gap: 7px;
+    background: #fff; border-radius: 999px; padding: 6px 13px 6px 7px;
+    box-shadow: 0 12px 30px rgba(16, 23, 36, 0.16);
+    font-size: 13px; font-weight: 700; color: #1a2332; white-space: nowrap;
+    opacity: 0; animation: rlbhi-np-tagpop 7s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  }
+  .rlbhi-np-tag-avatar {
+    width: 24px; height: 24px; border-radius: 50%; color: #fff; font-size: 11px;
+    font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .rlbhi-np-tag i { color: #12b886; font-size: 16px; }
+  @keyframes rlbhi-np-tagpop {
+    0%, 7% { opacity: 0; transform: scale(0) rotate(var(--np-rot, 0deg)); }
+    14%, 86% { opacity: 1; transform: scale(1) rotate(var(--np-rot, 0deg)); }
+    93%, 100% { opacity: 0; transform: scale(0) rotate(var(--np-rot, 0deg)); }
+  }
+  .rlbhi-np-pill {
+    position: absolute; bottom: -52px; left: 50%; z-index: 5;
+    display: flex; align-items: center; gap: 7px; background: #fff; border-radius: 999px;
+    padding: 9px 16px; box-shadow: 0 12px 30px rgba(16, 23, 36, 0.16);
+    font-size: 13px; font-weight: 700; white-space: nowrap; color: #1a2332;
+    animation: rlbhi-ev-pillfloat 5s ease-in-out infinite alternate;
+  }
+  .rlbhi-np-pill i { color: #e07020; font-size: 17px; }
+
+  /* chat visual: app FeatureTour groups card, no device frame */
+  .rlbhi-gc-stage { position: relative; width: 100%; max-width: 360px; height: 470px; }
+  .rlbhi-gc-card {
+    position: absolute; inset: 0; background: #fff; border-radius: 24px;
+    box-shadow: 0 20px 48px rgba(16, 23, 36, 0.18);
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .rlbhi-gc-header { display: flex; align-items: center; gap: 11px; padding: 13px 16px 10px; }
+  .rlbhi-gc-thumb {
+    width: 42px; height: 42px; border-radius: 13px; background: #d7f5f0;
+    display: flex; align-items: center; justify-content: center; font-size: 23px; flex-shrink: 0;
+  }
+  .rlbhi-gc-headtext { flex: 1; min-width: 0; }
+  .rlbhi-gc-name { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+  .rlbhi-gc-sub { font-size: 12px; color: #98a1ad; }
+  .rlbhi-gc-avatars .rlbhi-avatar { width: 28px; height: 28px; font-size: 11px; border-color: #fff; }
+  .rlbhi-gc-msgs {
+    flex: 1; padding: 10px 14px 0; display: flex; flex-direction: column; gap: 10px;
+    overflow: hidden; border-top: 1px solid #eef0f2;
+  }
+  .rlbhi-gc-msg { display: flex; gap: 9px; align-items: flex-start; animation: rlbhi-gc-msgin 7s ease infinite; }
+  .rlbhi-gc-msg .rlbhi-avatar { width: 28px; height: 28px; font-size: 11px; border: none; margin-left: 0; flex-shrink: 0; }
+  .rlbhi-gc-msg2 { animation-name: rlbhi-gc-msgin2; }
+  @keyframes rlbhi-gc-msgin {
+    0%, 6% { opacity: 0; transform: translateY(12px); }
+    13%, 94% { opacity: 1; transform: translateY(0); }
+    99%, 100% { opacity: 0; transform: translateY(12px); }
+  }
+  @keyframes rlbhi-gc-msgin2 {
+    0%, 15% { opacity: 0; transform: translateY(12px); }
+    22%, 94% { opacity: 1; transform: translateY(0); }
+    99%, 100% { opacity: 0; transform: translateY(12px); }
+  }
+  .rlbhi-gc-msgname { font-size: 11px; font-weight: 700; color: #98a1ad; margin-bottom: 3px; }
+  .rlbhi-gc-bubble {
+    position: relative; display: inline-block; background: #f2f2f7;
+    border-radius: 4px 16px 16px 16px; padding: 8px 12px;
+    font-size: 14px; font-weight: 500; line-height: 1.3;
+  }
+  .rlbhi-gc-reaction {
+    position: absolute; bottom: -11px; right: 6px; background: #fff;
+    border: 1px solid #eceef1; border-radius: 999px; padding: 1px 7px;
+    font-size: 11px; font-weight: 700; box-shadow: 0 3px 8px rgba(16, 23, 36, 0.1);
+    animation: rlbhi-gc-reactpop 7s ease infinite;
+  }
+  @keyframes rlbhi-gc-reactpop {
+    0%, 40% { opacity: 0; transform: scale(0); }
+    46% { opacity: 1; transform: scale(1.25); }
+    50%, 94% { opacity: 1; transform: scale(1); }
+    99%, 100% { opacity: 0; transform: scale(0); }
+  }
+  /* typing indicator and channel widget share one grid cell so the swap leaves no gap */
+  .rlbhi-gc-slot { display: grid; }
+  .rlbhi-gc-slot > * { grid-area: 1 / 1; }
+  .rlbhi-gc-typing { display: flex; gap: 9px; align-items: center; animation: rlbhi-gc-typewin 7s ease infinite; }
+  .rlbhi-gc-typing .rlbhi-avatar { width: 28px; height: 28px; font-size: 11px; border: none; margin-left: 0; flex-shrink: 0; }
+  @keyframes rlbhi-gc-typewin {
+    0%, 27% { opacity: 0; transform: translateY(8px); }
+    31%, 41% { opacity: 1; transform: translateY(0); }
+    45%, 100% { opacity: 0; transform: translateY(8px); }
+  }
+  .rlbhi-gc-typebubble { display: flex; gap: 4px; background: #f2f2f7; border-radius: 16px; padding: 11px 14px; }
+  .rlbhi-gc-dot { width: 6px; height: 6px; border-radius: 50%; background: #98a1ad; animation: rlbhi-gc-dot 1.1s ease-in-out infinite; }
+  .rlbhi-gc-dot2 { animation-delay: 0.15s; }
+  .rlbhi-gc-dot3 { animation-delay: 0.3s; }
+  @keyframes rlbhi-gc-dot {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-4px); opacity: 1; }
+  }
+  .rlbhi-gc-widget { display: flex; gap: 9px; align-items: flex-start; animation: rlbhi-gc-widgetin 7s ease infinite; }
+  .rlbhi-gc-widget-thumb {
+    width: 28px; height: 28px; border-radius: 50%; background: #e4eefe;
+    display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0;
+  }
+  @keyframes rlbhi-gc-widgetin {
+    0%, 45% { opacity: 0; transform: translateY(12px); }
+    52%, 94% { opacity: 1; transform: translateY(0); }
+    99%, 100% { opacity: 0; transform: translateY(12px); }
+  }
+  .rlbhi-gc-widgetcard { flex: 1; min-width: 0; background: #f2f2f7; border-radius: 16px; overflow: hidden; }
+  .rlbhi-gc-widgethead {
+    display: flex; align-items: center; gap: 7px; padding: 6px 12px;
+    background: rgba(16, 23, 36, 0.04); border-bottom: 1px solid rgba(16, 23, 36, 0.07);
+    font-size: 13px; font-weight: 700;
+  }
+  .rlbhi-gc-badge {
+    min-width: 17px; height: 17px; padding: 0 4px; border-radius: 999px;
+    background: #12b886; color: #fff; font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .rlbhi-gc-widgetpreview { padding: 7px 12px; font-size: 13px; line-height: 1.3; }
+  .rlbhi-gc-widgetpreview b { font-weight: 700; color: #0d9a8a; }
+  .rlbhi-gc-widgetactions { display: flex; gap: 7px; padding: 0 12px 9px; }
+  .rlbhi-gc-widgetchip {
+    display: flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(16, 23, 36, 0.15); background: rgba(255, 255, 255, 0.6);
+    font-size: 11px; font-weight: 700; color: #5c6b7d;
+  }
+  .rlbhi-gc-channels { display: flex; gap: 6px; padding: 8px 14px 0; overflow: hidden; border-top: 1px solid #eef0f2; }
+  .rlbhi-gc-channel {
+    position: relative; flex-shrink: 0; padding: 6px 12px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; color: #5c6b7d; background: #f2f2f7; white-space: nowrap;
+  }
+  .rlbhi-gc-channel-on { color: #e8edf5; background: #101724; }
+  .rlbhi-gc-channelbadge {
+    position: absolute; top: -5px; right: -4px; min-width: 17px; height: 17px; padding: 0 4px;
+    border-radius: 999px; background: #12b886; color: #fff; font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    animation: rlbhi-gc-badgepulse 1.8s ease-in-out infinite;
+  }
+  @keyframes rlbhi-gc-badgepulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.14); }
+  }
+  .rlbhi-gc-composer { display: flex; align-items: center; gap: 9px; padding: 8px 14px 12px; }
+  .rlbhi-gc-input {
+    flex: 1; height: 38px; border-radius: 999px; background: #f2f2f7;
+    display: flex; align-items: center; padding: 0 15px; font-size: 13px; color: #98a1ad;
+  }
+  .rlbhi-gc-send {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--bh-grad);
+    display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0;
+  }
+  .rlbhi-gc-send i { font-size: 17px; }
   /* animated phone mockups, light-mode app */
 
   .rlbhi-phone {
@@ -551,14 +710,10 @@
           <h3 class="rlbhi-feature-title">Any idea becomes a plan.</h3>
           <p class="rlbhi-feature-desc">Start from an event, a place, or scratch. Set the time and the spot, add the details, and invite your people. The plan is the source of truth, not 12 scattered messages.</p>
         </div>
-        <div class="rlbhi-feature-visual">
-          <div class="rlbhi-phone">
-            <div class="rlbhi-screen">
-              <div class="rlbhi-status">
-                <span>9:41</span>
-                <span style="display:flex; gap:5px;"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></span>
-              </div>
-              <div class="rlbhi-back-row"><i class="ph ph-arrow-left"></i> New plan</div>
+        <div class="rlbhi-feature-visual" style="background: linear-gradient(160deg, #e4eefe, #d7f5f0); padding: 64px 48px 96px; align-items: center;">
+          <div class="rlbhi-np-stage">
+            <div class="rlbhi-np-form">
+              <div class="rlbhi-np-head">New plan</div>
               <div class="rlbhi-field">
                 <span class="rlbhi-field-label">Plan name</span>
                 <span class="rlbhi-field-value">Sunrise hike<span class="rlbhi-caret"></span></span>
@@ -581,8 +736,14 @@
                 <span class="rlbhi-app-link">Invite</span>
               </div>
               <div class="rlbhi-cta">Make it happen</div>
-              <div style="text-align:center; font-size:12px; color:#5c6b7d;">Friends can RSVP from a link, no app needed.</div>
             </div>
+            <div class="rlbhi-np-tag" style="--np-rot:1deg; top:-16px; right:-32px; animation-delay:1.2s;">
+              <span class="rlbhi-np-tag-avatar" style="background:#0d9a8a;">S</span><span>Sam is in</span><i class="ph-fill ph-check-circle"></i>
+            </div>
+            <div class="rlbhi-np-tag" style="--np-rot:-1deg; top:32px; right:-32px; animation-delay:2s;">
+              <span class="rlbhi-np-tag-avatar" style="background:#7c3aed;">C</span><span>Cass is in</span><i class="ph-fill ph-check-circle"></i>
+            </div>
+            <div class="rlbhi-np-pill"><i class="ph ph-paper-plane-tilt"></i> Invites open right on the web</div>
           </div>
         </div>
       </article>
@@ -593,32 +754,68 @@
           <h3 class="rlbhi-feature-title">Group chat, minus the chaos.</h3>
           <p class="rlbhi-feature-desc">Every group gets its own space, with channels for each plan, photos, and trip talk. Nothing important gets buried under 80 memes.</p>
         </div>
-        <div class="rlbhi-feature-visual">
-          <div class="rlbhi-phone">
-            <div class="rlbhi-screen">
-              <div class="rlbhi-status">
-                <span>9:41</span>
-                <span style="display:flex; gap:5px;"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></span>
+        <div class="rlbhi-feature-visual" style="background: linear-gradient(160deg, #f3e8ff, #e4eefe); padding: 44px 36px;">
+          <div class="rlbhi-gc-stage">
+            <div class="rlbhi-gc-card">
+              <div class="rlbhi-gc-header">
+                <div class="rlbhi-gc-thumb">🍻</div>
+                <div class="rlbhi-gc-headtext">
+                  <div class="rlbhi-gc-name">The Usual Crew</div>
+                  <div class="rlbhi-gc-sub">8 members</div>
+                </div>
+                <div class="rlbhi-avatars rlbhi-gc-avatars">
+                  <span class="rlbhi-avatar" style="background:#0d9a8a;">S</span>
+                  <span class="rlbhi-avatar" style="background:#e07020;">B</span>
+                  <span class="rlbhi-avatar" style="background:#7c3aed;">C</span>
+                </div>
               </div>
-              <div class="rlbhi-back-row"><i class="ph ph-arrow-left"></i> Trail Crew</div>
-              <div class="rlbhi-chips">
-                <span class="rlbhi-chip"># general</span>
-                <span class="rlbhi-chip rlbhi-chip-anim"># sunrise-hike</span>
-                <span class="rlbhi-chip"># photos</span>
+              <div class="rlbhi-gc-msgs">
+                <div class="rlbhi-gc-msg">
+                  <span class="rlbhi-avatar" style="background:#0d9a8a;">S</span>
+                  <div>
+                    <div class="rlbhi-gc-msgname">Sam</div>
+                    <div class="rlbhi-gc-bubble">Who's driving Saturday? <span class="rlbhi-gc-reaction">🔥 3</span></div>
+                  </div>
+                </div>
+                <div class="rlbhi-gc-msg rlbhi-gc-msg2">
+                  <span class="rlbhi-avatar" style="background:#e07020;">B</span>
+                  <div>
+                    <div class="rlbhi-gc-msgname">Brandon</div>
+                    <div class="rlbhi-gc-bubble">I can take 3. Leaving at 5:15, sharp. 🙌</div>
+                  </div>
+                </div>
+                <div class="rlbhi-gc-slot">
+                  <div class="rlbhi-gc-typing">
+                    <span class="rlbhi-avatar" style="background:#7c3aed;">C</span>
+                    <div class="rlbhi-gc-typebubble">
+                      <span class="rlbhi-gc-dot"></span>
+                      <span class="rlbhi-gc-dot rlbhi-gc-dot2"></span>
+                      <span class="rlbhi-gc-dot rlbhi-gc-dot3"></span>
+                    </div>
+                  </div>
+                  <div class="rlbhi-gc-widget">
+                    <span class="rlbhi-gc-widget-thumb">📅</span>
+                    <div class="rlbhi-gc-widgetcard">
+                      <div class="rlbhi-gc-widgethead">Planning channel <span class="rlbhi-gc-badge">2</span></div>
+                      <div class="rlbhi-gc-widgetpreview"><b>Cass</b> Booking the campsite now 🏕️</div>
+                      <div class="rlbhi-gc-widgetactions">
+                        <span class="rlbhi-gc-widgetchip"><i class="ph ph-checks"></i> Mark read</span>
+                        <span class="rlbhi-gc-widgetchip"><i class="ph ph-arrow-bend-up-left"></i> Reply</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="rlbhi-msg rlbhi-rise rlbhi-d1">
-                <span class="rlbhi-msg-avatar" style="background:#0d9a8a;">S</span>
-                <div class="rlbhi-bubble">Who's driving Saturday?</div>
+              <div class="rlbhi-gc-channels">
+                <span class="rlbhi-gc-channel rlbhi-gc-channel-on">💬 Main</span>
+                <span class="rlbhi-gc-channel">📅 Planning <span class="rlbhi-gc-channelbadge">2</span></span>
+                <span class="rlbhi-gc-channel">🥾 Hikes</span>
+                <span class="rlbhi-gc-channel">🍜 Food</span>
               </div>
-              <div class="rlbhi-msg rlbhi-msg-me rlbhi-rise rlbhi-d2">
-                <span class="rlbhi-msg-avatar" style="background:#e07020;">B</span>
-                <div class="rlbhi-bubble">I can take 3. Leaving at 5:15, sharp.</div>
+              <div class="rlbhi-gc-composer">
+                <div class="rlbhi-gc-input">Message the crew</div>
+                <div class="rlbhi-gc-send"><i class="ph-fill ph-paper-plane-tilt"></i></div>
               </div>
-              <div class="rlbhi-msg rlbhi-rise rlbhi-d3">
-                <span class="rlbhi-msg-avatar" style="background:#7c3aed;">C</span>
-                <div class="rlbhi-bubble">In. I'll bring the coffee.</div>
-              </div>
-              <div class="rlbhi-toast"><i class="ph-fill ph-check-circle"></i> Sam is going to Sunrise hike</div>
             </div>
           </div>
         </div>
