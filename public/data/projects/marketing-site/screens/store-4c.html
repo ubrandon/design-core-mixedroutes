@@ -13,43 +13,52 @@
   .st4c-phone { position: absolute; top: 650px; left: 162px; z-index: 2; width: 960px; height: 1960px; border-radius: 130px; background: #1a1a1c; border: 5px solid #55555a; padding: 20px; box-shadow: 0 60px 140px rgba(26, 35, 50, 0.3); }
   .st4c-screen { position: relative; width: 100%; height: 100%; border-radius: 112px; background: #f2f2f7; overflow: hidden; padding: 50px 46px 0; }
   .st4c-island { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: 260px; height: 72px; border-radius: 60px; background: #000; z-index: 5; }
-  .st4c-header { display: flex; align-items: center; justify-content: space-between; margin-top: 150px; }
-  .st4c-header h2 { margin: 0; font-size: 52px; font-weight: 700; color: #1a2332; }
-  .st4c-header-right { display: flex; align-items: center; gap: 38px; }
-  .st4c-header-right i { font-size: 48px; color: #1a2332; }
-  .st4c-tabs { display: flex; gap: 16px; margin-top: 48px; width: 1400px; }
-  .st4c-chip { display: inline-flex; align-items: center; gap: 14px; height: 72px; padding: 0 28px; border-radius: 100px; background: #e4eefe; border: 3px solid rgba(0, 0, 0, 0.16); color: #1a2332; font-size: 28px; font-weight: 600; white-space: nowrap; }
-  .st4c-chip i { font-size: 36px; }
-  .st4c-chip.is-on { background: #101724; color: #e8edf5; font-weight: 700; }
-  .st4c-spacer { height: 860px; }
-  .st4c-card { position: relative; display: flex; gap: 16px; padding: 16px; border-radius: 64px; background: #1d232b; color: #ffffff; overflow: hidden; isolation: isolate; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.1); margin-bottom: 32px; }
-  .st4c-card::after { content: ""; position: absolute; inset: 0; border-radius: 64px; border: 2px solid rgba(255, 255, 255, 0.2); pointer-events: none; }
+  .st4c-header { display: flex; align-items: center; justify-content: space-between; margin-top: 100px; }
+  .st4c-wordmark { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 800; color: #101724; letter-spacing: -0.01em; }
+  .st4c-mark { width: 64px; height: 64px; display: block; }
+  .st4c-header-actions { display: flex; align-items: center; gap: 40px; }
+  .st4c-icon-btn { display: flex; align-items: center; justify-content: center; font-size: 48px; color: #101724; -webkit-text-stroke: 2px #101724; }
+  .st4c-greet { margin: 52px 0 0; font-size: 68px; font-weight: 800; letter-spacing: -0.01em; color: #101724; line-height: 1.1; }
+  .st4c-greet i { font-style: normal; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .st4c-greet-tail { margin: 14px 0 0; font-size: 32px; font-weight: 500; color: #5c6b7d; }
+  .st4c-row-header { display: flex; align-items: baseline; justify-content: space-between; margin: 56px 0 26px; }
+  .st4c-row-title { margin: 0; font-size: 38px; font-weight: 700; color: #101724; }
+  .st4c-row-link { font-size: 26px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #5c6b7d; }
+  .st4c-chats { display: flex; gap: 34px; }
+  .st4c-chat { flex: none; width: 196px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .st4c-chat-av { position: relative; width: 150px; height: 150px; }
+  .st4c-av-img { display: block; width: 100%; height: 100%; border-radius: 50%; background-size: cover; background-position: center; }
+  .st4c-chat.is-group .st4c-av-img { border-radius: 40px; }
+  .st4c-badge { position: absolute; top: -8px; right: -8px; min-width: 48px; height: 48px; padding: 0 12px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .st4c-chat-name { margin: 0; font-size: 27px; font-weight: 700; color: #101724; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .st4c-chat-preview { margin: 0; font-size: 23px; font-weight: 500; color: #5c6b7d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .st4c-carousel { display: flex; gap: 26px; }
+  .st4c-plan { position: relative; flex: none; width: 430px; display: flex; flex-direction: column; padding: 16px; border-radius: 52px; background: #1d232b; color: #ffffff; overflow: hidden; isolation: isolate; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.1); }
+  .st4c-plan::after { content: ""; position: absolute; inset: 0; border-radius: 52px; border: 2px solid rgba(255, 255, 255, 0.2); pointer-events: none; }
   .st4c-glow { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); z-index: -1; }
-  .st4c-thumb { width: 224px; height: 224px; border-radius: 48px; background-size: cover; background-position: center; border: 2px solid rgba(255, 255, 255, 0.2); flex: none; }
-  .st4c-card-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 0 12px; }
-  .st4c-when { margin: 0; font-size: 28px; font-weight: 700; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); line-height: 1; }
-  .st4c-card-title { margin: 0; font-size: 44px; font-weight: 700; line-height: 1.2; color: #ffffff; }
-  .st4c-meta { display: flex; align-items: center; justify-content: space-between; min-height: 48px; }
-  .st4c-loc { display: flex; align-items: center; gap: 10px; font-size: 28px; font-weight: 500; color: #ffffff; min-width: 0; }
-  .st4c-loc i { font-size: 32px; }
+  .st4c-plan-media { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 38px; background-size: cover; background-position: center; border: 2px solid rgba(255, 255, 255, 0.2); }
+  .st4c-plan-body { display: flex; flex-direction: column; gap: 10px; padding: 20px 14px 10px; }
+  .st4c-plan-date { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); line-height: 1; }
+  .st4c-plan-title { margin: 0; font-size: 36px; font-weight: 700; line-height: 1.2; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st4c-plan-meta { display: flex; align-items: center; justify-content: space-between; min-height: 48px; }
+  .st4c-plan-loc { display: flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 500; color: #ffffff; min-width: 0; }
+  .st4c-plan-loc i { font-size: 30px; }
   .st4c-avs { display: flex; align-items: center; flex: none; }
-  .st4c-avs span { width: 52px; height: 52px; border-radius: 50%; margin-left: -12px; display: flex; align-items: center; justify-content: center; font-size: 32px; }
-  .st4c-avs .st4c-more { background: #7d8ca1; color: #fff; font-size: 22px; font-weight: 700; }
+  .st4c-avs span { width: 48px; height: 48px; border-radius: 50%; margin-left: -12px; display: flex; align-items: center; justify-content: center; }
+  .st4c-avs .st4c-more { background: #7d8ca1; color: #fff; font-size: 21px; font-weight: 700; }
+  .st4c-event { flex: none; width: 392px; border-radius: 40px; background: #ffffff; overflow: hidden; box-shadow: 0 12px 32px rgba(26, 35, 50, 0.08); }
+  .st4c-event-media { width: 100%; height: 236px; object-fit: cover; display: block; }
+  .st4c-event-body { padding: 26px 30px 32px; }
+  .st4c-event-date { margin: 0 0 8px; font-size: 24px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(16, 23, 36, 0.7); }
+  .st4c-event-title { margin: 0 0 10px; font-size: 31px; font-weight: 700; color: #101724; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st4c-event-loc { display: flex; align-items: center; gap: 10px; font-size: 25px; font-weight: 500; color: rgba(16, 23, 36, 0.8); }
+  .st4c-event-loc i { font-size: 28px; color: #101724; }
   .st4c-fab { position: absolute; right: 46px; bottom: 200px; z-index: 6; display: inline-flex; align-items: center; gap: 16px; height: 112px; padding: 0 44px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 34px; font-weight: 700; box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2); }
   .st4c-fab i { font-size: 44px; }
-  .st4c-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: space-around; padding: 0 60px; background: #ffffff; box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12); }
+  .st4c-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: space-around; padding: 0 60px; background: #ffffff; box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12); z-index: 4; }
   .st4c-nav i { font-size: 56px; color: #3e4558; }
   .st4c-nav i.is-on { color: #101724; }
-  .st4c-nav-you { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; background: linear-gradient(140deg, #c9b08a, #8a6f4e); }
-  .st4c-hero { position: absolute; left: 40px; right: 40px; top: 1210px; z-index: 8; }
-  .st4c-hero .st4c-card { margin: 0; padding: 24px; box-shadow: 0 50px 120px rgba(26, 35, 50, 0.4); }
-  .st4c-hero .st4c-thumb { width: 300px; height: 300px; }
-  .st4c-hero .st4c-when { font-size: 32px; }
-  .st4c-hero .st4c-card-title { font-size: 56px; }
-  .st4c-hero .st4c-loc { font-size: 32px; }
-  .st4c-hero .st4c-avs span { width: 62px; height: 62px; font-size: 40px; }
-  .st4c-pill { position: absolute; top: -46px; right: 44px; z-index: 9; display: inline-flex; align-items: center; gap: 14px; height: 96px; padding: 0 44px; border-radius: 999px; background: #2fd7a8; color: #06251b; font-size: 38px; font-weight: 800; box-shadow: 0 20px 50px rgba(6, 60, 30, 0.35); }
-  .st4c-pill i { font-size: 42px; }
+  .st4c-nav-you { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; }
 </style>
 
 <div class="st4c">
@@ -121,48 +130,132 @@
       <div class="st4c-island"></div>
 
       <div class="st4c-header">
-        <h2>Plans</h2>
-        <div class="st4c-header-right">
-          <i class="ph ph-user-plus"></i>
-          <i class="ph ph-bell"></i>
-          <i class="ph ph-gear-six"></i>
+        <span class="st4c-wordmark"><img class="st4c-mark" src="../img/gradient-icon.svg" alt="" />MixedRoutes</span>
+        <span class="st4c-header-actions">
+          <span class="st4c-icon-btn"><i class="ph ph-user-plus"></i></span>
+          <span class="st4c-icon-btn"><i class="ph ph-bell"></i></span>
+          <span class="st4c-icon-btn"><i class="ph ph-gear-six"></i></span>
+        </span>
+      </div>
+
+      <h2 class="st4c-greet"><i>Big weekend</i>, Alex</h2>
+      <p class="st4c-greet-tail">Music Festival is coming up 🎸</p>
+
+      <div class="st4c-row-header">
+        <h3 class="st4c-row-title">Recent chats</h3>
+        <span class="st4c-row-link">All chats &rsaquo;</span>
+      </div>
+      <div class="st4c-chats">
+        <div class="st4c-chat is-group">
+          <div class="st4c-chat-av">
+            <span class="st4c-av-img" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=300&q=70');"></span>
+            <span class="st4c-badge">2</span>
+          </div>
+          <p class="st4c-chat-name">Hiking Thursdays</p>
+          <p class="st4c-chat-preview">Trail is open!</p>
+        </div>
+        <div class="st4c-chat">
+          <div class="st4c-chat-av">
+            <span class="st4c-av-img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=300&h=300&q=70');"></span>
+          </div>
+          <p class="st4c-chat-name">Sam</p>
+          <p class="st4c-chat-preview">See you there 🙌</p>
+        </div>
+        <div class="st4c-chat is-group">
+          <div class="st4c-chat-av">
+            <span class="st4c-av-img" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=300&q=70');"></span>
+          </div>
+          <p class="st4c-chat-name">Game Night 🎮</p>
+          <p class="st4c-chat-preview">Anyone else in?</p>
+        </div>
+        <div class="st4c-chat">
+          <div class="st4c-chat-av">
+            <span class="st4c-av-img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=300&h=300&q=70');"></span>
+          </div>
+          <p class="st4c-chat-name">Ryan</p>
+          <p class="st4c-chat-preview">Sent a photo</p>
         </div>
       </div>
 
-      <div class="st4c-tabs">
-        <span class="st4c-chip is-on"><i class="ph-fill ph-calendar-blank"></i>Upcoming</span>
-        <span class="st4c-chip"><i class="ph ph-bookmark-simple"></i>Ideas</span>
-        <span class="st4c-chip"><i class="ph ph-envelope-simple"></i>Invites (3)</span>
-        <span class="st4c-chip"><i class="ph ph-clock"></i>Past</span>
+      <div class="st4c-row-header">
+        <h3 class="st4c-row-title">Your plans</h3>
+        <span class="st4c-row-link">All plans &rsaquo;</span>
       </div>
-
-      <div class="st4c-spacer"></div>
-
-      <div class="st4c-card">
-        <div class="st4c-glow" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=200&q=50');"></div>
-        <div class="st4c-thumb" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=75');"></div>
-        <div class="st4c-card-copy">
-          <p class="st4c-when">Saturday, 9 AM</p>
-          <h3 class="st4c-card-title">Hiking Trip 🥾</h3>
-          <div class="st4c-meta">
-            <div class="st4c-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
-            <div class="st4c-avs">
-              <span style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
-              <span style="background: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover;"></span>
-              <span class="st4c-more">+3</span>
+      <div class="st4c-carousel">
+        <div class="st4c-plan">
+          <div class="st4c-glow" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st4c-plan-media" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st4c-plan-body">
+            <p class="st4c-plan-date">Today, 2 PM</p>
+            <p class="st4c-plan-title">Music Festival 🎸</p>
+            <div class="st4c-plan-meta">
+              <div class="st4c-plan-loc"><i class="ph-fill ph-map-pin"></i>Downtown</div>
+              <div class="st4c-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st4c-more">+3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="st4c-plan">
+          <div class="st4c-glow" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st4c-plan-media" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st4c-plan-body">
+            <p class="st4c-plan-date">Saturday, 9 AM</p>
+            <p class="st4c-plan-title">Hiking Trip 🥾</p>
+            <div class="st4c-plan-meta">
+              <div class="st4c-plan-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
+              <div class="st4c-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st4c-more">+3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="st4c-plan">
+          <div class="st4c-glow" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st4c-plan-media" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st4c-plan-body">
+            <p class="st4c-plan-date">Friday, 7 PM</p>
+            <p class="st4c-plan-title">Game Night 🎮</p>
+            <div class="st4c-plan-meta">
+              <div class="st4c-plan-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+              <div class="st4c-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st4c-more">+2</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="st4c-card">
-        <div class="st4c-glow" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=200&q=50');"></div>
-        <div class="st4c-thumb" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=75');"></div>
-        <div class="st4c-card-copy">
-          <p class="st4c-when">Friday, 7 PM</p>
-          <h3 class="st4c-card-title">Game Night 🎮</h3>
-          <div class="st4c-meta">
-            <div class="st4c-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+      <div class="st4c-row-header">
+        <h3 class="st4c-row-title">🎉 Events nearby</h3>
+        <span class="st4c-row-link">All events &rsaquo;</span>
+      </div>
+      <div class="st4c-carousel">
+        <div class="st4c-event">
+          <img class="st4c-event-media" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st4c-event-body">
+            <p class="st4c-event-date">Tonight &bull; 8 PM</p>
+            <p class="st4c-event-title">Night Market Eats</p>
+            <div class="st4c-event-loc"><i class="ph-fill ph-map-pin"></i>Pack Square Park</div>
+          </div>
+        </div>
+        <div class="st4c-event">
+          <img class="st4c-event-media" src="https://images.unsplash.com/photo-1545989253-02cc26577f88?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st4c-event-body">
+            <p class="st4c-event-date">Sat &bull; 11 AM</p>
+            <p class="st4c-event-title">Gallery Crawl</p>
+            <div class="st4c-event-loc"><i class="ph-fill ph-map-pin"></i>River Arts District</div>
+          </div>
+        </div>
+        <div class="st4c-event">
+          <img class="st4c-event-media" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st4c-event-body">
+            <p class="st4c-event-date">Sun &bull; 3 PM</p>
+            <p class="st4c-event-title">Rooftop Jazz</p>
+            <div class="st4c-event-loc"><i class="ph-fill ph-map-pin"></i>South Slope</div>
           </div>
         </div>
       </div>
@@ -170,32 +263,13 @@
       <span class="st4c-fab"><i class="ph-fill ph-calendar-blank"></i>New plan</span>
 
       <div class="st4c-nav">
-        <i class="ph ph-house"></i>
+        <i class="ph-fill ph-house is-on"></i>
         <i class="ph ph-compass"></i>
         <span class="st4c-nav-you" style="background: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover;"></span>
-        <i class="ph-fill ph-calendar-blank is-on"></i>
+        <i class="ph ph-calendar-blank"></i>
         <i class="ph ph-chat"></i>
       </div>
     </div>
   </div>
 
-  <div class="st4c-hero">
-    <span class="st4c-pill"><i class="ph-fill ph-check-circle"></i>Going</span>
-    <div class="st4c-card">
-      <div class="st4c-glow" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=200&q=50');"></div>
-      <div class="st4c-thumb" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=75');"></div>
-      <div class="st4c-card-copy">
-        <p class="st4c-when">Today, 2 PM</p>
-        <h3 class="st4c-card-title">Music Festival 🎸</h3>
-        <div class="st4c-meta">
-          <div class="st4c-loc"><i class="ph-fill ph-map-pin"></i>Festival Location</div>
-          <div class="st4c-avs">
-            <span style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
-            <span style="background: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover;"></span>
-            <span class="st4c-more">+3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

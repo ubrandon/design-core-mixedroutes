@@ -13,11 +13,11 @@
   .st0c-phone { position: absolute; top: 650px; left: 162px; z-index: 2; width: 960px; height: 1960px; border-radius: 130px; background: #1a1a1c; border: 5px solid #55555a; padding: 20px; box-shadow: 0 60px 140px rgba(26, 35, 50, 0.3); }
   .st0c-screen { position: relative; width: 100%; height: 100%; border-radius: 112px; background: #f2f2f7; overflow: hidden; padding: 50px 46px 0; }
   .st0c-island { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); width: 260px; height: 72px; border-radius: 60px; background: #000; z-index: 5; }
-  .st0c-header { display: flex; align-items: center; justify-content: space-between; margin-top: 150px; }
+  .st0c-header { display: flex; align-items: center; justify-content: space-between; margin-top: 100px; }
   .st0c-wordmark { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 800; color: #101724; letter-spacing: -0.01em; }
-  .st0c-mark { width: 64px; height: 64px; border-radius: 20px; background: linear-gradient(145deg, #14b8a6, #3b82f6); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 38px; }
-  .st0c-header-actions { display: flex; gap: 18px; }
-  .st0c-icon-btn { width: 72px; height: 72px; border-radius: 50%; background: rgba(118, 118, 128, 0.12); display: flex; align-items: center; justify-content: center; font-size: 38px; color: #101724; }
+  .st0c-mark { width: 64px; height: 64px; display: block; }
+  .st0c-header-actions { display: flex; align-items: center; gap: 40px; }
+  .st0c-icon-btn { display: flex; align-items: center; justify-content: center; font-size: 48px; color: #101724; -webkit-text-stroke: 2px #101724; }
   .st0c-greet { margin: 52px 0 0; font-size: 68px; font-weight: 800; letter-spacing: -0.01em; color: #101724; line-height: 1.1; }
   .st0c-greet i { font-style: normal; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .st0c-greet-tail { margin: 14px 0 0; font-size: 32px; font-weight: 500; color: #5c6b7d; }
@@ -114,7 +114,7 @@
       <div class="st0c-island"></div>
 
       <div class="st0c-header">
-        <span class="st0c-wordmark"><span class="st0c-mark"><i class="ph-fill ph-compass"></i></span>MixedRoutes</span>
+        <span class="st0c-wordmark"><img class="st0c-mark" src="../img/gradient-icon.svg" alt="" />MixedRoutes</span>
         <span class="st0c-header-actions">
           <span class="st0c-icon-btn"><i class="ph ph-user-plus"></i></span>
           <span class="st0c-icon-btn"><i class="ph ph-bell"></i></span>
