@@ -13,60 +13,69 @@
   .st2c-item-icon i { font-size: 56px; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .st2c-item span:last-child { font-size: 54px; font-weight: 600; line-height: 1.3; color: #1a2332; letter-spacing: -0.01em; }
 
-  .st2c-darktag { position: absolute; top: 740px; left: 470px; z-index: 2; display: inline-flex; align-items: center; gap: 18px; height: 92px; padding: 0 42px; border-radius: 100px; background: #1a2332; color: #f5f2ec; font-size: 38px; font-weight: 700; transform: rotate(6deg); box-shadow: 0 18px 44px rgba(26, 35, 50, 0.25); }
+  .st2c-darktag { position: absolute; top: 740px; left: 50%; z-index: 4; display: inline-flex; align-items: center; gap: 18px; height: 92px; padding: 0 42px; border-radius: 100px; background: #1a2332; color: #f5f2ec; font-size: 38px; font-weight: 700; transform: translateX(-50%) rotate(6deg); box-shadow: 0 18px 44px rgba(26, 35, 50, 0.25); }
   .st2c-darktag i { font-size: 42px; color: #7dd3fc; }
 
-  /* Main phone: plan detail (dark mode) -- upright, cropped only at the bottom, layered beneath the home phone */
+  /* Main phone: home feed in dark mode -- upright, cropped only at the bottom, layered beneath the home phone */
   .st2c-phone { position: absolute; top: 860px; left: 95px; transform: rotate(6deg); transform-origin: 50% 50%; width: 1020px; height: 2172px; z-index: 3; border-radius: 150px; background: #1a1a1c; border: 5px solid #55555a; padding: 22px; box-shadow: 0 70px 150px rgba(26, 35, 50, 0.3); }
-  .st2c-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #0f1318; overflow: hidden; color: #f6f8fc; }
-  .st2c-island { position: absolute; top: 54px; left: 50%; transform: translateX(-50%); width: 290px; height: 82px; border-radius: 60px; background: #000; z-index: 6; display: flex; align-items: center; justify-content: flex-end; padding-right: 26px; }
+  .st2c-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #1a212c; overflow: hidden; color: #f6f8fc; padding: 50px 54px 0; }
+  .st2c-island { position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 282px; height: 80px; border-radius: 60px; background: #000; z-index: 6; display: flex; align-items: center; justify-content: flex-end; padding-right: 24px; }
   .st2c-island span { width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2a3a55 0%, #0a0d14 60%); }
 
-  .st2c-hero { position: relative; height: 950px; }
-  .st2c-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .st2c-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 420px; background: linear-gradient(180deg, rgba(15, 19, 24, 0) 0%, rgba(15, 19, 24, 0.55) 45%, #0f1318 100%); }
-  .st2c-toolbar { position: absolute; top: 170px; left: 48px; right: 48px; z-index: 5; display: flex; align-items: center; justify-content: space-between; }
-  .st2c-toolbar-right { display: flex; gap: 26px; }
-  .st2c-icon-btn { width: 96px; height: 96px; border-radius: 50%; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: center; }
-  .st2c-icon-btn i { font-size: 48px; color: #fff; }
+  .st2c-header { display: flex; align-items: center; justify-content: space-between; margin-top: 118px; }
+  .st2c-wordmark { display: flex; align-items: center; gap: 20px; font-size: 47px; font-weight: 800; color: #f6f8fc; letter-spacing: -0.01em; }
+  .st2c-mark { width: 75px; height: 75px; display: block; }
+  .st2c-header-actions { display: flex; align-items: center; gap: 46px; }
+  .st2c-icon-btn { display: flex; align-items: center; justify-content: center; font-size: 56px; color: #f6f8fc; -webkit-text-stroke: 2px #f6f8fc; }
+  .st2c-bell { position: relative; }
+  .st2c-bell b { position: absolute; top: -15px; right: -19px; min-width: 45px; height: 45px; padding: 0 11px; border-radius: 26px; background: #ed576b; color: #fff; font-size: 28px; font-weight: 700; -webkit-text-stroke: 0; display: flex; align-items: center; justify-content: center; }
 
-  .st2c-hero-inner { position: absolute; left: 48px; right: 48px; bottom: 130px; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 36px; }
-  .st2c-day-pill { display: inline-flex; align-items: center; height: 82px; padding: 0 44px; border-radius: 100px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(24px); border: 2px solid rgba(255, 255, 255, 0.2); color: #fff; font-size: 34px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-  .st2c-hero-title { margin: 0; text-align: center; font-size: 108px; font-weight: 700; color: #ffffff; text-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); }
-  .st2c-hero-btns { display: flex; gap: 24px; width: 100%; max-width: 880px; margin-top: 10px; }
-  .st2c-btn { flex: 1; height: 122px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: 20px; font-size: 42px; font-weight: 700; color: #ffffff; }
-  .st2c-btn i { font-size: 48px; }
-  .st2c-btn.is-chat { background: rgba(31, 37, 47, 0.75); backdrop-filter: blur(12px); border: 2px solid rgba(255, 255, 255, 0.14); }
-  .st2c-btn.is-rsvp { background: linear-gradient(145deg, #14b8a6, #3b82f6); box-shadow: 0 14px 40px rgba(6, 182, 212, 0.35); }
+  .st2c-greet { margin: 60px 0 0; font-size: 80px; font-weight: 800; letter-spacing: -0.01em; color: #f6f8fc; line-height: 1.1; }
+  .st2c-greet i { font-style: normal; background: linear-gradient(90deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .st2c-greet-tail { margin: 17px 0 0; font-size: 38px; font-weight: 500; color: #bac6d0; }
 
-  .st2c-sheet { position: relative; z-index: 4; margin: -20px 48px 0; display: flex; flex-direction: column; gap: 52px; }
-  .st2c-guests { display: flex; align-items: center; gap: 28px; }
-  .st2c-avatars { display: flex; }
-  .st2c-av { position: relative; width: 104px; height: 104px; border-radius: 50%; border: 6px solid #0f1318; margin-left: -26px; display: flex; align-items: center; justify-content: center; font-size: 60px; }
-  .st2c-av:first-child { margin-left: 0; }
-  .st2c-av img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .st2c-av .st2c-check { position: absolute; bottom: -6px; left: -6px; font-size: 42px; color: #2fd7a8; background: #0f1318; border-radius: 50%; line-height: 1; }
-  .st2c-guests-text { flex: 1; }
-  .st2c-guests-text b { display: block; font-size: 42px; font-weight: 700; color: #f6f8fc; }
-  .st2c-guests-text span { display: inline-flex; align-items: center; gap: 12px; margin-top: 8px; font-size: 36px; font-weight: 500; color: #bac6d0; }
-  .st2c-guests-text span i { font-size: 36px; }
-  .st2c-guests > i { font-size: 44px; color: #bac6d0; }
+  .st2c-row-header { display: flex; align-items: baseline; justify-content: space-between; margin: 66px 0 31px; }
+  .st2c-row-title { margin: 0; font-size: 45px; font-weight: 700; color: #f6f8fc; }
+  .st2c-row-link { font-size: 31px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #9da9b8; }
 
-  .st2c-date-row { display: flex; align-items: center; gap: 24px; font-size: 42px; }
-  .st2c-date-row i { font-size: 48px; color: #22d3ee; }
-  .st2c-date-row b { font-weight: 700; color: #f6f8fc; }
-  .st2c-date-row span { font-weight: 500; color: #bac6d0; }
+  .st2c-chats { display: flex; gap: 40px; }
+  .st2c-chat { flex: none; width: 230px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .st2c-chat-av { position: relative; width: 176px; height: 176px; }
+  .st2c-av-img { display: block; width: 100%; height: 100%; border-radius: 50%; background-size: cover; background-position: center; }
+  .st2c-chat.is-group .st2c-av-img { border-radius: 47px; }
+  .st2c-badge { position: absolute; top: -9px; right: -9px; min-width: 56px; height: 56px; padding: 0 14px; border-radius: 999px; background: #22c55e; color: #fff; font-size: 31px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .st2c-chat-name { margin: 0; font-size: 32px; font-weight: 700; color: #f6f8fc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .st2c-chat-preview { margin: 0; font-size: 27px; font-weight: 500; color: #bac6d0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 
-  .st2c-desc { margin: 0; font-size: 42px; line-height: 1.5; font-weight: 500; color: #f6f8fc; }
+  .st2c-carousel { display: flex; gap: 31px; }
+  .st2c-plan { position: relative; flex: none; width: 505px; display: flex; flex-direction: column; padding: 19px; border-radius: 61px; background: #1d232b; color: #ffffff; overflow: hidden; isolation: isolate; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 20px 50px rgba(0, 0, 0, 0.3); }
+  .st2c-plan::after { content: ""; position: absolute; inset: 0; border-radius: 61px; border: 3px solid rgba(255, 255, 255, 0.2); pointer-events: none; }
+  .st2c-glow { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); z-index: -1; }
+  .st2c-plan-media { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 45px; background-size: cover; background-position: center; border: 3px solid rgba(255, 255, 255, 0.2); }
+  .st2c-plan-body { display: flex; flex-direction: column; gap: 12px; padding: 23px 17px 12px; }
+  .st2c-plan-date { margin: 0; font-size: 28px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); line-height: 1; }
+  .st2c-plan-title { margin: 0; font-size: 42px; font-weight: 700; line-height: 1.2; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st2c-plan-meta { display: flex; align-items: center; justify-content: space-between; min-height: 56px; }
+  .st2c-plan-loc { display: flex; align-items: center; gap: 11px; font-size: 31px; font-weight: 500; color: #ffffff; min-width: 0; }
+  .st2c-plan-loc i { font-size: 36px; }
+  .st2c-avs { display: flex; align-items: center; flex: none; }
+  .st2c-avs span { width: 56px; height: 56px; border-radius: 50%; margin-left: -14px; display: flex; align-items: center; justify-content: center; }
+  .st2c-avs .st2c-more { background: #7d8ca1; color: #fff; font-size: 24px; font-weight: 700; }
 
-  .st2c-meta-item { display: flex; align-items: flex-start; gap: 26px; }
-  .st2c-meta-item > i { font-size: 50px; color: #bac6d0; margin-top: 4px; }
-  .st2c-meta-item b { display: block; font-size: 40px; font-weight: 700; color: #f6f8fc; }
-  .st2c-meta-item span { display: block; margin-top: 6px; font-size: 38px; font-weight: 500; color: #bac6d0; }
+  .st2c-event { flex: none; width: 460px; border-radius: 47px; background: #181d25; border: 2px solid rgba(255, 255, 255, 0.12); overflow: hidden; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3); }
+  .st2c-event-media { width: 100%; height: 277px; object-fit: cover; display: block; }
+  .st2c-event-body { padding: 31px 36px 38px; }
+  .st2c-event-date { margin: 0 0 9px; font-size: 28px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #9da9b8; }
+  .st2c-event-title { margin: 0 0 12px; font-size: 37px; font-weight: 700; color: #f6f8fc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st2c-event-loc { display: flex; align-items: center; gap: 11px; font-size: 29px; font-weight: 500; color: #bac6d0; }
+  .st2c-event-loc i { font-size: 33px; color: #f6f8fc; }
 
-  .st2c-link { display: flex; align-items: center; gap: 24px; height: 116px; padding: 0 40px; border-radius: 40px; background: #181d25; border: 2px solid rgba(255, 255, 255, 0.12); }
-  .st2c-link i { font-size: 44px; color: #bac6d0; flex: none; }
-  .st2c-link span { font-size: 38px; font-weight: 600; color: #60a5fa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st2c-fab { position: absolute; right: 54px; bottom: 235px; z-index: 6; display: inline-flex; align-items: center; gap: 19px; height: 132px; padding: 0 52px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 40px; font-weight: 700; box-shadow: 0 14px 44px rgba(0, 0, 0, 0.45); }
+  .st2c-fab i { font-size: 52px; }
+  .st2c-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 188px; display: flex; align-items: center; justify-content: space-around; padding: 0 70px; background: #1a212c; border-top: 2px solid rgba(255, 255, 255, 0.12); z-index: 4; }
+  .st2c-nav i { font-size: 66px; color: #8591a2; }
+  .st2c-nav i.is-on { color: #f6f8fc; }
+  .st2c-nav-you { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
   /* Continuation of the panel-1 home phone: same geometry, shifted left by exactly 1284px, layered above */
   .st2cc-phone { position: absolute; top: 1000px; left: -1204px; width: 1080px; height: 2300px; z-index: 4; transform: rotate(-12deg); transform-origin: top left; border-radius: 150px; background: #1a1a1c; border: 5px solid #55555a; padding: 22px; box-shadow: -60px 80px 160px rgba(26, 35, 50, 0.3); }
@@ -95,7 +104,7 @@
   .st2cc-chat-av { position: relative; width: 188px; height: 188px; }
   .st2cc-av-img { display: block; width: 100%; height: 100%; border-radius: 50%; background-size: cover; background-position: center; }
   .st2cc-chat.is-group .st2cc-av-img { border-radius: 50px; }
-  .st2cc-badge { position: absolute; top: -10px; right: -10px; min-width: 60px; height: 60px; padding: 0 15px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 33px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .st2cc-badge { position: absolute; top: -10px; right: -10px; min-width: 60px; height: 60px; padding: 0 15px; border-radius: 999px; background: #22c55e; color: #fff; font-size: 33px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
   .st2cc-chat-name { margin: 0; font-size: 34px; font-weight: 700; color: #101724; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
   .st2cc-chat-preview { margin: 0; font-size: 29px; font-weight: 500; color: #5c6b7d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 
@@ -214,61 +223,146 @@
   <div class="st2c-phone">
     <div class="st2c-screen">
       <div class="st2c-island"><span></span></div>
-      <div class="st2c-hero">
-        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=75" alt="" />
-        <div class="st2c-toolbar">
-          <div class="st2c-icon-btn"><i class="ph ph-arrow-left"></i></div>
-          <div class="st2c-toolbar-right">
-            <div class="st2c-icon-btn"><i class="ph ph-share-network"></i></div>
-            <div class="st2c-icon-btn"><i class="ph ph-dots-three-vertical"></i></div>
+
+      <div class="st2c-header">
+        <span class="st2c-wordmark"><img class="st2c-mark" src="../img/gradient-icon.svg" alt="" />MixedRoutes</span>
+        <span class="st2c-header-actions">
+          <span class="st2c-icon-btn"><i class="ph ph-user-plus"></i></span>
+          <span class="st2c-icon-btn st2c-bell"><i class="ph ph-bell"></i><b>5</b></span>
+          <span class="st2c-icon-btn"><i class="ph ph-gear-six"></i></span>
+        </span>
+      </div>
+
+      <h2 class="st2c-greet"><i>Big plans</i>, Alex</h2>
+      <p class="st2c-greet-tail">Movie Night at 7 PM 🍿</p>
+
+      <div class="st2c-row-header">
+        <h3 class="st2c-row-title">Recent chats</h3>
+        <span class="st2c-row-link">All chats &rsaquo;</span>
+      </div>
+      <div class="st2c-chats">
+        <div class="st2c-chat is-group">
+          <div class="st2c-chat-av">
+            <span class="st2c-av-img" style="background-image: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=300&q=70');"></span>
+            <span class="st2c-badge">4</span>
+          </div>
+          <p class="st2c-chat-name">Sunday Runners</p>
+          <p class="st2c-chat-preview">6 AM or bust</p>
+        </div>
+        <div class="st2c-chat">
+          <div class="st2c-chat-av">
+            <span class="st2c-av-img" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=300&h=300&q=70');"></span>
+          </div>
+          <p class="st2c-chat-name">Priya</p>
+          <p class="st2c-chat-preview">Saving you a seat</p>
+        </div>
+        <div class="st2c-chat is-group">
+          <div class="st2c-chat-av">
+            <span class="st2c-av-img" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=70');"></span>
+          </div>
+          <p class="st2c-chat-name">Coffee &amp; Vinyl ☕</p>
+          <p class="st2c-chat-preview">New spot on 9th</p>
+        </div>
+        <div class="st2c-chat">
+          <div class="st2c-chat-av">
+            <span class="st2c-av-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=300&h=300&q=70');"></span>
+          </div>
+          <p class="st2c-chat-name">Diego</p>
+          <p class="st2c-chat-preview">I&rsquo;m in for Friday</p>
+        </div>
+      </div>
+
+      <div class="st2c-row-header">
+        <h3 class="st2c-row-title">Your plans</h3>
+        <span class="st2c-row-link">All plans &rsaquo;</span>
+      </div>
+      <div class="st2c-carousel">
+        <div class="st2c-plan">
+          <div class="st2c-glow" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st2c-plan-media" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st2c-plan-body">
+            <p class="st2c-plan-date">Tonight, 7 PM</p>
+            <p class="st2c-plan-title">Movie Night 🍿</p>
+            <div class="st2c-plan-meta">
+              <div class="st2c-plan-loc"><i class="ph-fill ph-map-pin"></i>Rooftop Cinema</div>
+              <div class="st2c-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st2c-more">+5</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="st2c-hero-inner">
-          <span class="st2c-day-pill">Thu, Jul 16 &ndash; Sun, Jul 19</span>
-          <h1 class="st2c-hero-title">Friend Trip!</h1>
-          <div class="st2c-hero-btns">
-            <span class="st2c-btn is-chat"><i class="ph-fill ph-chat-circle"></i>Chat</span>
-            <span class="st2c-btn is-rsvp">RSVP</span>
+        <div class="st2c-plan">
+          <div class="st2c-glow" style="background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st2c-plan-media" style="background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st2c-plan-body">
+            <p class="st2c-plan-date">Saturday, 11 AM</p>
+            <p class="st2c-plan-title">Surf Day 🏄</p>
+            <div class="st2c-plan-meta">
+              <div class="st2c-plan-loc"><i class="ph-fill ph-map-pin"></i>Sunset Beach</div>
+              <div class="st2c-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st2c-more">+2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="st2c-plan">
+          <div class="st2c-glow" style="background-image: url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st2c-plan-media" style="background-image: url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st2c-plan-body">
+            <p class="st2c-plan-date">Sunday, 7 PM</p>
+            <p class="st2c-plan-title">Backyard Fire 🔥</p>
+            <div class="st2c-plan-meta">
+              <div class="st2c-plan-loc"><i class="ph-fill ph-map-pin"></i>Maya&rsquo;s Place</div>
+              <div class="st2c-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st2c-more">+4</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="st2c-sheet">
-        <div class="st2c-guests">
-          <div class="st2c-avatars">
-            <div class="st2c-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /><i class="st2c-check ph-fill ph-check-circle"></i></div>
-            <div class="st2c-av"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /><i class="st2c-check ph-fill ph-check-circle"></i></div>
-            <div class="st2c-av"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /></div>
-            <div class="st2c-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /></div>
+      <div class="st2c-row-header">
+        <h3 class="st2c-row-title">🎉 Events nearby</h3>
+        <span class="st2c-row-link">All events &rsaquo;</span>
+      </div>
+      <div class="st2c-carousel">
+        <div class="st2c-event">
+          <img class="st2c-event-media" src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st2c-event-body">
+            <p class="st2c-event-date">Tonight &bull; 6 PM</p>
+            <p class="st2c-event-title">Food Truck Rally</p>
+            <div class="st2c-event-loc"><i class="ph-fill ph-map-pin"></i>Depot Street</div>
           </div>
-          <div class="st2c-guests-text">
-            <b>4 guests</b>
-            <span><i class="ph ph-lock"></i>Private plan</span>
+        </div>
+        <div class="st2c-event">
+          <img class="st2c-event-media" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st2c-event-body">
+            <p class="st2c-event-date">Wed &bull; 7 PM</p>
+            <p class="st2c-event-title">Trivia Night</p>
+            <div class="st2c-event-loc"><i class="ph-fill ph-map-pin"></i>The Wedge</div>
           </div>
-          <i class="ph ph-caret-right"></i>
         </div>
+        <div class="st2c-event">
+          <img class="st2c-event-media" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st2c-event-body">
+            <p class="st2c-event-date">Fri &bull; 9 PM</p>
+            <p class="st2c-event-title">Bluegrass Session</p>
+            <div class="st2c-event-loc"><i class="ph-fill ph-map-pin"></i>Grey Eagle</div>
+          </div>
+        </div>
+      </div>
 
-        <div class="st2c-date-row">
-          <i class="ph-fill ph-calendar-blank"></i>
-          <b>Thu, Jul 16 &ndash; Sun, Jul 19</b>
-          <span>&middot; 3 days</span>
-        </div>
+      <span class="st2c-fab"><i class="ph-fill ph-calendar-blank"></i>New plan</span>
 
-        <p class="st2c-desc">3 days on the Big Island. Snorkeling, volcanoes, probably matching shirts. You in?</p>
-
-        <div class="st2c-meta-item">
-          <i class="ph ph-t-shirt"></i>
-          <div><b>What to wear</b><span>Hawaiian shirt</span></div>
-        </div>
-        <div class="st2c-meta-item">
-          <i class="ph ph-shopping-bag"></i>
-          <div><b>What to bring</b><span>Sunscreen, GoPro</span></div>
-        </div>
-
-        <div class="st2c-link">
-          <i class="ph ph-link"></i>
-          <span>airbnb.com/rooms/23...</span>
-        </div>
+      <div class="st2c-nav">
+        <i class="ph-fill ph-house is-on"></i>
+        <i class="ph ph-compass"></i>
+        <span class="st2c-nav-you" style="background: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover;"></span>
+        <i class="ph ph-calendar-blank"></i>
+        <i class="ph ph-chat"></i>
       </div>
     </div>
   </div>
