@@ -31,28 +31,24 @@
   .st5c-chip.is-on { background: #101724; border-color: rgba(0, 0, 0, 0.16); color: #e8edf5; font-weight: 700; }
   .st5c-h2 { margin: 24px 0 0; font-size: 44px; font-weight: 800; color: #101724; }
 
-  /* Expanded Details facet, styled to match the app: blue facet card, white inner widgets */
-  .st5c-card { position: relative; margin-top: 24px; padding: 32px; border-radius: 48px; background: #e4eefe; border: 3px solid rgba(0, 0, 0, 0.16); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05), 0 12px 24px rgba(0, 0, 0, 0.08); }
-  .st5c-card-head { display: flex; align-items: center; gap: 28px; margin-bottom: 32px; }
-  .st5c-card-icon { width: 80px; height: 80px; border-radius: 16px; background: #d4e4fd; display: flex; align-items: center; justify-content: center; }
-  .st5c-card-icon i { font-size: 48px; color: #1a2332; }
-  .st5c-card-head h3 { flex: 1; margin: 0; font-size: 44px; font-weight: 700; color: #1a2332; }
-  .st5c-card-head > i { font-size: 48px; color: #5c6b7d; }
-  .st5c-block { position: relative; border-radius: 48px; background: rgba(118, 118, 128, 0.12); padding: 18px 32px; margin-bottom: 32px; }
-  .st5c-block-label { margin: 0 0 6px; font-size: 28px; line-height: 1.2; font-weight: 400; color: #5c6b7d; }
-  .st5c-block-text { margin: 0; font-size: 32px; line-height: 1.35; font-weight: 400; color: #1a2332; }
-  .st5c-detail { padding: 32px; margin-bottom: 32px; border-radius: 48px; background: #ffffff; }
-  .st5c-detail-head { display: flex; align-items: center; gap: 20px; }
-  .st5c-detail-head > i:first-child { font-size: 48px; color: #1a2332; flex: none; }
-  .st5c-detail-head b { flex: 1; min-width: 0; font-size: 44px; line-height: 1.2; font-weight: 400; color: #1a2332; }
-  .st5c-detail-head .st5c-detail-x { font-size: 40px; color: #5c6b7d; flex: none; }
-  .st5c-detail p { margin: 24px 0 0; font-size: 32px; line-height: 1.35; color: #5c6b7d; }
-
-  .st5c-actions { display: flex; align-items: center; gap: 14px; }
-  .st5c-actions > i { font-size: 48px; color: #848994; }
-  .st5c-action { display: inline-flex; align-items: center; gap: 14px; padding: 14px 32px; border-radius: 16px; background: #d4e4fd; color: #1a2332; font-size: 32px; font-weight: 400; }
-  .st5c-action i { font-size: 40px; }
-  .st5c-share { display: flex; align-items: center; justify-content: center; width: 100%; height: 112px; margin-top: 48px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 38px; font-weight: 700; }
+  /* Details reimagined as playful popups floating over the phone */
+  .st5c-pop { position: absolute; z-index: 3; display: flex; align-items: center; gap: 36px; width: 880px; padding: 40px 48px 40px 40px; border-radius: 56px; background: #ffffff; border: 3px solid rgba(0, 0, 0, 0.1); box-shadow: 0 30px 60px rgba(26, 35, 50, 0.16), 0 70px 140px rgba(26, 35, 50, 0.16); }
+  .st5c-pop-icon { flex: none; width: 136px; height: 136px; border-radius: 40px; display: flex; align-items: center; justify-content: center; font-size: 68px; }
+  .st5c-pop-label { display: block; font-size: 27px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8a93a3; }
+  .st5c-pop-value { display: block; margin-top: 8px; font-size: 42px; font-weight: 800; color: #1a2332; white-space: nowrap; }
+  .st5c-pop-where { top: 1652px; left: 84px; transform: rotate(-2.5deg); }
+  .st5c-pop-where .st5c-pop-body { flex: 1; min-width: 0; }
+  .st5c-pop-where .st5c-pop-go { background: #e4eefe; color: #1a6fb5; }
+  .st5c-pop-map { flex: none; width: 148px; height: 148px; border-radius: 40px; overflow: hidden; }
+  .st5c-pop-map svg { display: block; width: 100%; height: 100%; }
+  .st5c-pop-wear { top: 1805px; left: 322px; transform: rotate(2deg); }
+  .st5c-pop-wear .st5c-pop-icon { background: #e4eefe; }
+  .st5c-pop-link { top: 2010px; left: 140px; transform: rotate(-1.5deg); }
+  .st5c-pop-link .st5c-pop-body { flex: 1; min-width: 0; }
+  .st5c-pop-link img { flex: none; width: 148px; height: 148px; border-radius: 40px; object-fit: cover; }
+  .st5c-pop-url { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 30px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 6px; color: #e8880a; }
+  .st5c-pop-go { flex: none; width: 104px; height: 104px; border-radius: 50%; background: #fdeeda; display: flex; align-items: center; justify-content: center; color: #e8880a; font-size: 54px; }
+  .st5c-share { position: absolute; left: 46px; right: 46px; bottom: 64px; display: flex; align-items: center; justify-content: center; height: 112px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 38px; font-weight: 700; }
 </style>
 
 <div class="st5c">
@@ -146,45 +142,45 @@
 
       <h3 class="st5c-h2">What, when &amp; where?</h3>
 
-      <div class="st5c-card">
-        <div class="st5c-card-head">
-          <div class="st5c-card-icon"><i class="ph-fill ph-list-checks"></i></div>
-          <h3>Add some details</h3>
-          <i class="ph ph-trash"></i>
-        </div>
-
-        <div class="st5c-block">
-          <p class="st5c-block-label">Description</p>
-          <p class="st5c-block-text">Five sunny days on the Big Island!</p>
-        </div>
-
-        <div class="st5c-detail">
-          <div class="st5c-detail-head">
-            <i class="ph ph-currency-circle-dollar"></i>
-            <b>Cost</b>
-            <i class="ph ph-x st5c-detail-x"></i>
-          </div>
-          <p>About $340 each, house included.</p>
-        </div>
-
-        <div class="st5c-detail">
-          <div class="st5c-detail-head">
-            <i class="ph ph-t-shirt"></i>
-            <b>What to wear</b>
-            <i class="ph ph-x st5c-detail-x"></i>
-          </div>
-          <p>Swimsuits, sandals, aloha shirts.</p>
-        </div>
-
-        <div class="st5c-actions">
-          <i class="ph ph-plus"></i>
-          <span class="st5c-action"><i class="ph ph-link"></i>Link</span>
-          <span class="st5c-action"><i class="ph ph-shopping-bag"></i>Items</span>
-          <span class="st5c-action"><i class="ph ph-info"></i>Custom</span>
-        </div>
-      </div>
-
       <span class="st5c-share">Create &amp; share</span>
     </div>
   </div>
+
+  <div class="st5c-pop st5c-pop-where">
+    <div class="st5c-pop-map">
+      <svg viewBox="0 0 148 148" fill="none">
+        <rect width="148" height="148" fill="#eaf2e3" />
+        <path d="M0 108 C 34 96 44 122 78 148 H 0 Z" fill="#cfe6f7" />
+        <path d="M-10 62 C 30 54 62 74 158 44" stroke="#ffffff" stroke-width="10" />
+        <path d="M52 -10 C 60 40 44 92 70 158" stroke="#ffffff" stroke-width="8" />
+        <path d="M-10 104 C 42 108 96 88 158 100" stroke="#fbd98e" stroke-width="9" />
+        <path d="M96 44 a 22 22 0 1 1 0.1 0 Z M96 88 L 82 56 h 28 Z" fill="#e8564a" />
+        <circle cx="96" cy="42" r="9" fill="#ffffff" />
+      </svg>
+    </div>
+    <div class="st5c-pop-body">
+      <span class="st5c-pop-label">Where</span>
+      <span class="st5c-pop-value">Kailua-Kona, Hawaii</span>
+    </div>
+    <span class="st5c-pop-go"><i class="ph-fill ph-navigation-arrow"></i></span>
+  </div>
+
+  <div class="st5c-pop st5c-pop-wear">
+    <div class="st5c-pop-icon">🩴</div>
+    <div class="st5c-pop-body">
+      <span class="st5c-pop-label">What to wear</span>
+      <span class="st5c-pop-value">Swimsuits + aloha shirts</span>
+    </div>
+  </div>
+
+  <div class="st5c-pop st5c-pop-link">
+    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=400&q=75" alt="" />
+    <div class="st5c-pop-body">
+      <span class="st5c-pop-label">Link</span>
+      <span class="st5c-pop-value">Big Island beach house</span>
+      <span class="st5c-pop-url">View rental</span>
+    </div>
+    <span class="st5c-pop-go"><i class="ph ph-arrow-up-right"></i></span>
+  </div>
+
 </div>

@@ -34,6 +34,17 @@
 
   .st4c-sheet { position: relative; z-index: 4; margin: -58px 0 0; padding: 54px 46px 0; border-radius: 56px 56px 0 0; background: #f2f2f7; display: flex; flex-direction: column; gap: 40px; }
   .st4c-guests { display: flex; align-items: center; gap: 26px; }
+
+  /* Floating RSVP avatars over the phone: round photo + status badge, no card */
+  .st4c-float { position: absolute; z-index: 3; }
+  .st4c-float img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 24px 48px rgba(26, 35, 50, 0.22), 0 60px 120px rgba(26, 35, 50, 0.2); }
+  .st4c-badge { position: absolute; right: 0; bottom: 0; width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(26, 35, 50, 0.25); }
+  .st4c-badge svg { width: 42px; height: 42px; }
+  .st4c-float.is-going .st4c-badge { background: #22c55e; }
+  .st4c-float.is-maybe .st4c-badge { background: #9aa3af; font-size: 46px; font-weight: 700; color: #ffffff; }
+  .st4c-float-maya { top: 2350px; left: 660px; width: 220px; height: 220px; }
+  .st4c-float-chris { top: 2410px; left: 862px; width: 190px; height: 190px; z-index: 4; }
+  .st4c-float-riley { top: 2340px; left: 960px; width: 235px; height: 235px; }
   .st4c-avatars { display: flex; }
   .st4c-av { position: relative; width: 98px; height: 98px; border-radius: 50%; border: 6px solid #f2f2f7; margin-left: -24px; display: flex; align-items: center; justify-content: center; }
   .st4c-av:first-child { margin-left: 0; }
@@ -236,6 +247,21 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="st4c-float st4c-float-maya is-going">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=520&h=520&q=70" alt="" />
+    <i class="ph-fill ph-check"></i>
+  </div>
+
+  <div class="st4c-float st4c-float-chris is-maybe">
+    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=520&h=520&q=70" alt="" />
+    <i class="ph-fill ph-question"></i>
+  </div>
+
+  <div class="st4c-float st4c-float-riley is-going">
+    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=520&h=520&q=70" alt="" />
+    <i class="ph-fill ph-check"></i>
   </div>
 
 </div>
