@@ -35,28 +35,24 @@
   .st4c-sheet { position: relative; z-index: 4; margin: -58px 0 0; padding: 54px 46px 0; border-radius: 56px 56px 0 0; background: #f2f2f7; display: flex; flex-direction: column; gap: 40px; }
   .st4c-guests { display: flex; align-items: center; gap: 26px; }
 
-  /* Floating RSVP avatars over the phone: round photo + status badge, no card */
-  .st4c-float { position: absolute; z-index: 3; }
-  .st4c-float img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 24px 48px rgba(26, 35, 50, 0.22), 0 60px 120px rgba(26, 35, 50, 0.2); }
-  .st4c-badge { position: absolute; right: 0; bottom: 0; width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(26, 35, 50, 0.25); }
-  .st4c-badge svg { width: 42px; height: 42px; }
-  .st4c-float.is-going .st4c-badge { background: #22c55e; }
-  .st4c-float.is-maybe .st4c-badge { background: #9aa3af; font-size: 46px; font-weight: 700; color: #ffffff; }
-  .st4c-float-maya { top: 2350px; left: 660px; width: 220px; height: 220px; }
-  .st4c-float-chris { top: 2410px; left: 862px; width: 190px; height: 190px; z-index: 4; }
-  .st4c-float-riley { top: 2340px; left: 960px; width: 235px; height: 235px; }
-  .st4c-avatars { display: flex; }
-  .st4c-av { position: relative; width: 98px; height: 98px; border-radius: 50%; border: 6px solid #f2f2f7; margin-left: -24px; display: flex; align-items: center; justify-content: center; }
+  /* Guest faces break out of the phone on the left and cast shadows back onto the screen */
+  .st4c-avatars { position: absolute; left: 96px; top: 1400px; z-index: 5; display: flex; align-items: center; }
+  .st4c-av { position: relative; border-radius: 50%; border: 9px solid #ffffff; margin-left: -38px; flex: none; box-shadow: 16px 34px 54px rgba(16, 23, 36, 0.4), 4px 10px 20px rgba(16, 23, 36, 0.22); }
   .st4c-av:first-child { margin-left: 0; }
-  .st4c-av img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .st4c-av .st4c-check { position: absolute; bottom: -6px; left: -6px; font-size: 39px; color: #2fd7a8; background: #f2f2f7; border-radius: 50%; line-height: 1; }
-  .st4c-guests-text { flex: 1; }
+  .st4c-av:nth-child(1) { width: 186px; height: 186px; z-index: 4; }
+  .st4c-av:nth-child(2) { width: 168px; height: 168px; z-index: 3; }
+  .st4c-av:nth-child(3) { width: 152px; height: 152px; z-index: 2; }
+  .st4c-av:nth-child(4) { width: 138px; height: 138px; z-index: 1; }
+  .st4c-av img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+  .st4c-av .st4c-check { position: absolute; bottom: -2px; right: -2px; font-size: 52px; color: #22c55e; background: #ffffff; border-radius: 50%; line-height: 1; box-shadow: 0 6px 14px rgba(26, 35, 50, 0.2); }
+  .st4c-avatars-gap { flex: none; width: 356px; }
+  .st4c-guests-text { flex: 1; text-align: right; }
   .st4c-guests-text b { display: block; font-size: 39px; font-weight: 700; color: #101724; }
   .st4c-guests-text span { display: inline-flex; align-items: center; gap: 11px; margin-top: 8px; font-size: 34px; font-weight: 500; color: #5c6b7d; }
   .st4c-guests-text span i { font-size: 34px; }
   .st4c-guests > i { font-size: 42px; color: #8794a4; }
 
-  .st4c-date-row { display: flex; align-items: center; gap: 22px; font-size: 39px; }
+  .st4c-date-row { display: flex; align-items: center; gap: 22px; margin-top: 30px; font-size: 39px; }
   .st4c-date-row i { font-size: 45px; color: #101724; }
   .st4c-date-row b { font-weight: 700; color: #101724; }
   .st4c-date-row span { font-weight: 500; color: #5c6b7d; }
@@ -87,7 +83,7 @@
   .st4c-map-dir i { font-size: 42px; color: #101724; transform: rotate(90deg); }
   .st4c-map-canvas { position: relative; margin-top: 26px; height: 260px; border-radius: 26px; overflow: hidden; background: #e8ebe6; }
   .st4c-map-canvas > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .st4c-map-marker { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -92%); font-size: 68px; color: #2fd7a8; filter: drop-shadow(0 6px 10px rgba(16, 23, 36, 0.3)); }
+  .st4c-map-marker { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -92%); font-size: 68px; color: #14b8a6; filter: drop-shadow(0 6px 10px rgba(16, 23, 36, 0.3)); }
   .st4c-map-pinbtn { position: absolute; right: 20px; bottom: 20px; width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(26, 35, 50, 0.12); }
   .st4c-map-pinbtn i { font-size: 38px; color: #101724; }
 </style>
@@ -153,6 +149,13 @@
     </svg>
   </div>
 
+  <div class="st4c-avatars">
+    <div class="st4c-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=360&h=360&q=75" alt="" /><i class="st4c-check ph-fill ph-check-circle"></i></div>
+    <div class="st4c-av"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=360&h=360&q=75" alt="" /><i class="st4c-check ph-fill ph-check-circle"></i></div>
+    <div class="st4c-av"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=360&h=360&q=75" alt="" /></div>
+    <div class="st4c-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=360&h=360&q=75" alt="" /></div>
+  </div>
+
   <h1 class="st4c-headline">One plan,<br /><i>everyone in</i></h1>
   <p class="st4c-sub">Dates, details, and who&rsquo;s coming</p>
 
@@ -180,15 +183,10 @@
 
       <div class="st4c-sheet">
         <div class="st4c-guests">
-          <div class="st4c-avatars">
-            <div class="st4c-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /><i class="st4c-check ph-fill ph-check-circle"></i></div>
-            <div class="st4c-av"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /><i class="st4c-check ph-fill ph-check-circle"></i></div>
-            <div class="st4c-av"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /></div>
-            <div class="st4c-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=240&h=240&q=70" alt="" /></div>
-          </div>
+          <div class="st4c-avatars-gap"></div>
           <div class="st4c-guests-text">
             <b>4 guests</b>
-            <span><i class="ph ph-lock"></i>Private plan</span>
+            <span><i class="ph-fill ph-lock"></i>Private plan</span>
           </div>
           <i class="ph ph-caret-right"></i>
         </div>
@@ -202,7 +200,7 @@
         <p class="st4c-desc">3 days on the Big Island. Snorkeling, volcanoes, probably matching shirts. You in?</p>
 
         <div class="st4c-meta-item">
-          <i class="ph ph-shopping-bag"></i>
+          <i class="ph-fill ph-shopping-bag"></i>
           <div><b>What to bring</b><span>Sunscreen, GoPro</span></div>
         </div>
 
@@ -247,21 +245,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="st4c-float st4c-float-maya is-going">
-    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=520&h=520&q=70" alt="" />
-    <i class="ph-fill ph-check"></i>
-  </div>
-
-  <div class="st4c-float st4c-float-chris is-maybe">
-    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=520&h=520&q=70" alt="" />
-    <i class="ph-fill ph-question"></i>
-  </div>
-
-  <div class="st4c-float st4c-float-riley is-going">
-    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=520&h=520&q=70" alt="" />
-    <i class="ph-fill ph-check"></i>
   </div>
 
 </div>
