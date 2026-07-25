@@ -11,112 +11,105 @@
       "x": 3264,
       "y": 0,
       "width": 1280,
-      "name": "Landing v2 · Blue Hour · Illustrated"
+      "name": "Landing v2 \u00b7 Blue Hour \u00b7 Illustrated"
     },
     {
       "file": "brand-board-variation-field-notes.html",
       "x": 1280,
       "y": 20032,
       "width": 860,
-      "name": "Identity B · Field Notes"
+      "name": "Identity B \u00b7 Field Notes"
     },
     {
       "file": "brand-board-variation-golden-hour.html",
       "x": 2176,
       "y": 20032,
       "width": 860,
-      "name": "Identity D · Golden Hour"
-    },
-    {
-      "file": "store-0c.html",
-      "x": 7232,
-      "y": 8608,
-      "width": 1284,
-      "name": "Store 0C · Home · Blue Hour"
+      "name": "Identity D \u00b7 Golden Hour"
     },
     {
       "file": "store-1c.html",
       "x": 3296,
       "y": 8608,
       "width": 1284,
-      "name": "Store 1C · Blue Hour"
+      "name": "Store 1C \u00b7 Blue Hour"
     },
     {
       "file": "store-2c.html",
       "x": 4608,
       "y": 8608,
       "width": 1284,
-      "name": "Store 2C · Interests · Blue Hour"
+      "name": "Store 2C \u00b7 Interests \u00b7 Blue Hour"
     },
     {
       "file": "store-3c.html",
-      "x": 8544,
+      "x": 7264,
       "y": 8608,
       "width": 1284,
-      "name": "Store 3C · Every event · Blue Hour"
+      "name": "Store 3C \u00b7 Every event \u00b7 Blue Hour"
     },
     {
       "file": "store-4c.html",
       "x": 5920,
       "y": 8608,
       "width": 1284,
-      "name": "Store 4C · Organized · Blue Hour"
+      "name": "Store 4C \u00b7 Everything with everyone \u00b7 Blue Hour"
     },
     {
       "file": "store-5c.html",
-      "x": 9856,
+      "x": 8576,
       "y": 8608,
       "width": 1284,
-      "name": "Store 5C · Idea to plan · Blue Hour"
+      "name": "Store 5C \u00b7 Idea to plan \u00b7 Blue Hour"
     },
     {
       "file": "store-6c.html",
-      "x": 11168,
+      "x": 9888,
       "y": 8608,
       "width": 1284,
-      "name": "Store 6C · Chats · Blue Hour"
+      "name": "Store 6C \u00b7 Chats \u00b7 Blue Hour"
     },
     {
       "file": "interests-line-art.html",
       "x": 3136,
       "y": 20064,
       "width": 300,
-      "name": "Illustration guide · Line art"
+      "name": "Illustration guide \u00b7 Line art"
     },
     {
       "file": "brand-board-variation-blue-hour-illustrated.html",
       "x": 8768,
       "y": 0,
       "width": 860,
-      "name": "Identity E3 · Blue Hour · Illustrated"
+      "name": "Identity E3 \u00b7 Blue Hour \u00b7 Illustrated"
     },
     {
       "file": "interests-line-art-accent.html",
       "x": 9664,
       "y": 0,
       "width": 300,
-      "name": "Illustration guide · Line art + orange accent"
+      "name": "Illustration guide \u00b7 Line art + orange accent"
     },
     {
       "file": "redesign2-about.html",
       "x": 4576,
       "y": 0,
       "width": 1280,
-      "name": "About · Blue Hour"
+      "name": "About \u00b7 Blue Hour"
     },
     {
       "file": "redesign2-faq.html",
       "x": 5888,
       "y": 0,
       "width": 1280,
-      "name": "FAQ · Blue Hour"
+      "name": "FAQ \u00b7 Blue Hour"
     },
     {
       "file": "redesign2-get-the-app.html",
       "x": 7200,
       "y": 0,
       "width": 1280,
-      "name": "Get the app · Blue Hour"
+      "name": "Get the app \u00b7 Blue Hour"
     }
   ],
   "texts": [
