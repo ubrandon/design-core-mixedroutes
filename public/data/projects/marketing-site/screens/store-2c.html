@@ -70,48 +70,64 @@
 
   /* Continuation of the panel-1 home phone: same geometry, shifted left by exactly 1284px, layered above */
   .st2cc-phone { position: absolute; top: 1000px; left: -1204px; width: 1080px; height: 2300px; z-index: 4; transform: rotate(-12deg); transform-origin: top left; border-radius: 150px; background: #1a1a1c; border: 5px solid #55555a; padding: 22px; box-shadow: -60px 80px 160px rgba(26, 35, 50, 0.3); }
-  .st2cc-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #f2f2f7; overflow: hidden; padding: 54px 42px 0; }
-  .st2cc-island { position: absolute; top: 54px; left: 50%; transform: translateX(-50%); width: 300px; height: 84px; border-radius: 60px; background: #000; z-index: 5; }
-  .st2cc-header { display: flex; align-items: center; justify-content: space-between; margin-top: 100px; padding: 0 14px; }
-  .st2cc-brand { display: flex; align-items: center; gap: 18px; }
-  .st2cc-brand img { width: 88px; height: 88px; }
-  .st2cc-brand span { font-size: 58px; font-weight: 700; color: #1a2332; letter-spacing: -0.01em; }
-  .st2cc-header-right { display: flex; align-items: center; gap: 40px; }
-  .st2cc-header-right i { font-size: 48px; color: #1a2332; -webkit-text-stroke: 2px #1a2332; }
+  .st2cc-screen { position: relative; width: 100%; height: 100%; border-radius: 128px; background: #f2f2f7; overflow: hidden; padding: 54px 58px 0; }
+  .st2cc-island { position: absolute; top: 54px; left: 50%; transform: translateX(-50%); width: 300px; height: 84px; border-radius: 60px; background: #000; z-index: 5; display: flex; align-items: center; justify-content: flex-end; padding-right: 26px; }
+  .st2cc-island span { width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2a3a55 0%, #0a0d14 60%); }
+
+  .st2cc-header { display: flex; align-items: center; justify-content: space-between; margin-top: 125px; }
+  .st2cc-wordmark { display: flex; align-items: center; gap: 22px; font-size: 50px; font-weight: 800; color: #101724; letter-spacing: -0.01em; }
+  .st2cc-mark { width: 80px; height: 80px; display: block; }
+  .st2cc-header-actions { display: flex; align-items: center; gap: 50px; }
+  .st2cc-icon-btn { display: flex; align-items: center; justify-content: center; font-size: 60px; color: #101724; -webkit-text-stroke: 2px #101724; }
   .st2cc-bell { position: relative; }
-  .st2cc-bell b { position: absolute; top: -14px; right: -18px; min-width: 44px; height: 44px; padding: 0 10px; border-radius: 26px; background: #d0293e; color: #fff; font-size: 28px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-  .st2cc-greet { margin: 90px 14px 0; }
-  .st2cc-greet h1 { margin: 0; font-size: 94px; font-weight: 700; line-height: 1.15; color: #1a2332; letter-spacing: -0.01em; }
-  .st2cc-greet h1 b { font-weight: 700; background: linear-gradient(90deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .st2cc-greet h3 { margin: 20px 0 0; font-size: 47px; font-weight: 600; color: #5c6b7d; }
-  .st2cc-row-head { display: flex; align-items: center; justify-content: space-between; margin: 56px 14px 28px; }
-  .st2cc-row-head h2 { margin: 0; font-size: 57px; font-weight: 700; color: #1a2332; }
-  .st2cc-row-action { display: flex; align-items: center; gap: 10px; font-size: 36px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #5c6b7d; }
-  .st2cc-row-action i { font-size: 36px; }
-  .st2cc-cards { display: flex; gap: 42px; padding: 0 14px; }
-  .st2cc-card { position: relative; flex: none; width: 745px; border-radius: 83px; background: #1d232b; padding: 21px; overflow: hidden; isolation: isolate; color: #fff; box-shadow: 0 10px 21px rgba(0,0,0,0.06), 0 21px 52px rgba(0,0,0,0.1); }
-  .st2cc-card-ambient { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); z-index: -1; }
-  .st2cc-card-photo { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 62px; border: 3px solid rgba(255, 255, 255, 0.2); }
-  .st2cc-card-details { padding: 30px 22px 26px; display: flex; flex-direction: column; gap: 16px; }
-  .st2cc-card-when { font-size: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: rgba(255, 255, 255, 0.7); }
-  .st2cc-card-title { margin: 0; font-size: 57px; font-weight: 700; line-height: 1.2; color: #fff; }
-  .st2cc-card-meta { display: flex; align-items: center; justify-content: space-between; min-height: 62px; margin-top: 6px; }
-  .st2cc-card-loc { display: flex; align-items: center; gap: 12px; font-size: 36px; font-weight: 500; color: rgba(255, 255, 255, 0.85); }
-  .st2cc-card-loc i { font-size: 38px; }
-  .st2cc-going { display: flex; align-items: center; }
-  .st2cc-going span { width: 66px; height: 66px; border-radius: 50%; border: 5px solid #1d232b; margin-left: -22px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
-  .st2cc-going span:first-child { margin-left: 0; }
-  .st2cc-going span img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .st2cc-going .st2cc-more { background: #343c4a; color: #fff; font-size: 27px; font-weight: 700; }
-  .st2cc-ecard { position: relative; flex: none; width: 510px; border-radius: 83px; background: #ffffff; overflow: hidden; color: #1a2332; box-shadow: 0 10px 21px rgba(26,35,50,0.06), 0 21px 52px rgba(26,35,50,0.1); }
-  .st2cc-ecard-img { display: block; width: 100%; aspect-ratio: 2.15 / 1; object-fit: cover; }
-  .st2cc-esave { position: absolute; top: 28px; right: 28px; width: 94px; height: 94px; border-radius: 50%; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; }
-  .st2cc-esave i { font-size: 50px; color: #fff; }
-  .st2cc-ecard-details { display: flex; flex-direction: column; gap: 12px; padding: 42px; }
-  .st2cc-ecard-date { font-size: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: #1a2332; opacity: 0.7; }
-  .st2cc-ecard-title { margin: 0; font-size: 47px; font-weight: 700; line-height: 1.2; color: #1a2332; }
-  .st2cc-ecard-meta { display: flex; align-items: center; gap: 12px; margin-top: 10px; font-size: 36px; font-weight: 600; color: #5c6b7d; }
-  .st2cc-ecard-meta i { font-size: 38px; }
+  .st2cc-bell b { position: absolute; top: -16px; right: -20px; min-width: 48px; height: 48px; padding: 0 12px; border-radius: 26px; background: #d0293e; color: #fff; font-size: 30px; font-weight: 700; -webkit-text-stroke: 0; display: flex; align-items: center; justify-content: center; }
+
+  .st2cc-greet { margin: 65px 0 0; font-size: 85px; font-weight: 800; letter-spacing: -0.01em; color: #101724; line-height: 1.1; }
+  .st2cc-greet i { font-style: normal; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .st2cc-greet-tail { margin: 18px 0 0; font-size: 40px; font-weight: 500; color: #5c6b7d; }
+
+  .st2cc-row-header { display: flex; align-items: baseline; justify-content: space-between; margin: 70px 0 33px; }
+  .st2cc-row-title { margin: 0; font-size: 48px; font-weight: 700; color: #101724; }
+  .st2cc-row-link { font-size: 33px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #5c6b7d; }
+
+  .st2cc-chats { display: flex; gap: 43px; }
+  .st2cc-chat { flex: none; width: 245px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+  .st2cc-chat-av { position: relative; width: 188px; height: 188px; }
+  .st2cc-av-img { display: block; width: 100%; height: 100%; border-radius: 50%; background-size: cover; background-position: center; }
+  .st2cc-chat.is-group .st2cc-av-img { border-radius: 50px; }
+  .st2cc-badge { position: absolute; top: -10px; right: -10px; min-width: 60px; height: 60px; padding: 0 15px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 33px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .st2cc-chat-name { margin: 0; font-size: 34px; font-weight: 700; color: #101724; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .st2cc-chat-preview { margin: 0; font-size: 29px; font-weight: 500; color: #5c6b7d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+
+  .st2cc-carousel { display: flex; gap: 33px; }
+  .st2cc-plan { position: relative; flex: none; width: 538px; display: flex; flex-direction: column; padding: 20px; border-radius: 65px; background: #1d232b; color: #ffffff; overflow: hidden; isolation: isolate; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06), 0 20px 50px rgba(0, 0, 0, 0.1); }
+  .st2cc-plan::after { content: ""; position: absolute; inset: 0; border-radius: 65px; border: 3px solid rgba(255, 255, 255, 0.2); pointer-events: none; }
+  .st2cc-glow { position: absolute; inset: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); z-index: -1; }
+  .st2cc-plan-media { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 48px; background-size: cover; background-position: center; border: 3px solid rgba(255, 255, 255, 0.2); }
+  .st2cc-plan-body { display: flex; flex-direction: column; gap: 13px; padding: 25px 18px 13px; }
+  .st2cc-plan-date { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); line-height: 1; }
+  .st2cc-plan-title { margin: 0; font-size: 45px; font-weight: 700; line-height: 1.2; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st2cc-plan-meta { display: flex; align-items: center; justify-content: space-between; min-height: 60px; }
+  .st2cc-plan-loc { display: flex; align-items: center; gap: 12px; font-size: 33px; font-weight: 500; color: #ffffff; min-width: 0; }
+  .st2cc-plan-loc i { font-size: 38px; }
+  .st2cc-avs { display: flex; align-items: center; flex: none; }
+  .st2cc-avs span { width: 60px; height: 60px; border-radius: 50%; margin-left: -15px; display: flex; align-items: center; justify-content: center; }
+  .st2cc-avs .st2cc-more { background: #7d8ca1; color: #fff; font-size: 26px; font-weight: 700; }
+
+  .st2cc-event { flex: none; width: 490px; border-radius: 50px; background: #ffffff; overflow: hidden; box-shadow: 0 14px 40px rgba(26, 35, 50, 0.08); }
+  .st2cc-event-media { width: 100%; height: 295px; object-fit: cover; display: block; }
+  .st2cc-event-body { padding: 33px 38px 40px; }
+  .st2cc-event-date { margin: 0 0 10px; font-size: 30px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(16, 23, 36, 0.7); }
+  .st2cc-event-title { margin: 0 0 13px; font-size: 39px; font-weight: 700; color: #101724; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .st2cc-event-loc { display: flex; align-items: center; gap: 12px; font-size: 31px; font-weight: 500; color: rgba(16, 23, 36, 0.8); }
+  .st2cc-event-loc i { font-size: 35px; color: #101724; }
+
+  .st2cc-fab { position: absolute; right: 58px; bottom: 250px; z-index: 6; display: inline-flex; align-items: center; gap: 20px; height: 140px; padding: 0 55px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 43px; font-weight: 700; box-shadow: 0 14px 44px rgba(0, 0, 0, 0.2); }
+  .st2cc-fab i { font-size: 55px; }
+  .st2cc-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 200px; display: flex; align-items: center; justify-content: space-around; padding: 0 75px; background: #ffffff; box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.12); z-index: 4; }
+  .st2cc-nav i { font-size: 70px; color: #3e4558; }
+  .st2cc-nav i.is-on { color: #101724; }
+  .st2cc-nav-you { width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 </style>
 
 <div class="st2c">
@@ -260,83 +276,146 @@
   <div class="st2cc-phone">
     <div class="st2cc-screen">
       <div class="st2cc-island"><span></span></div>
+
       <div class="st2cc-header">
-        <div class="st2cc-brand">
-          <img src="../img/gradient-icon.svg" alt="" />
-          <span>MixedRoutes</span>
+        <span class="st2cc-wordmark"><img class="st2cc-mark" src="../img/gradient-icon.svg" alt="" />MixedRoutes</span>
+        <span class="st2cc-header-actions">
+          <span class="st2cc-icon-btn"><i class="ph ph-user-plus"></i></span>
+          <span class="st2cc-icon-btn st2cc-bell"><i class="ph ph-bell"></i><b>3</b></span>
+          <span class="st2cc-icon-btn"><i class="ph ph-gear-six"></i></span>
+        </span>
+      </div>
+
+      <h2 class="st2cc-greet"><i>Plans tonight</i>, Alex</h2>
+      <p class="st2cc-greet-tail">Music Festival starts at 7 PM 🎸</p>
+
+      <div class="st2cc-row-header">
+        <h3 class="st2cc-row-title">Recent chats</h3>
+        <span class="st2cc-row-link">All chats &rsaquo;</span>
+      </div>
+      <div class="st2cc-chats">
+        <div class="st2cc-chat is-group">
+          <div class="st2cc-chat-av">
+            <span class="st2cc-av-img" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=300&q=70');"></span>
+            <span class="st2cc-badge">3</span>
+          </div>
+          <p class="st2cc-chat-name">Festival Crew 🎸</p>
+          <p class="st2cc-chat-preview">Meet at the gate</p>
         </div>
-        <div class="st2cc-header-right">
-          <i class="ph ph-user-plus"></i>
-          <span class="st2cc-bell"><i class="ph ph-bell"></i><b>3</b></span>
-          <i class="ph ph-gear-six"></i>
+        <div class="st2cc-chat">
+          <div class="st2cc-chat-av">
+            <span class="st2cc-av-img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=300&h=300&q=70');"></span>
+          </div>
+          <p class="st2cc-chat-name">Sam</p>
+          <p class="st2cc-chat-preview">See you there 🙌</p>
+        </div>
+        <div class="st2cc-chat is-group">
+          <div class="st2cc-chat-av">
+            <span class="st2cc-av-img" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=300&q=70');"></span>
+          </div>
+          <p class="st2cc-chat-name">Hiking Thursdays</p>
+          <p class="st2cc-chat-preview">Trail is open!</p>
+        </div>
+        <div class="st2cc-chat">
+          <div class="st2cc-chat-av">
+            <span class="st2cc-av-img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=300&h=300&q=70');"></span>
+          </div>
+          <p class="st2cc-chat-name">Ryan</p>
+          <p class="st2cc-chat-preview">Sent a photo</p>
         </div>
       </div>
-      <div class="st2cc-greet">
-        <h1><b>Plans tonight</b>, Alex</h1>
-        <h3>Music Festival &middot; 7 PM</h3>
+
+      <div class="st2cc-row-header">
+        <h3 class="st2cc-row-title">Your plans</h3>
+        <span class="st2cc-row-link">All plans &rsaquo;</span>
       </div>
-      <div class="st2cc-row-head">
-        <h2>Your plans</h2>
-        <span class="st2cc-row-action">All plans<i class="ph ph-caret-right"></i></span>
-      </div>
-      <div class="st2cc-cards">
-        <div class="st2cc-card">
-          <img class="st2cc-card-ambient" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&q=40" alt="" />
-          <img class="st2cc-card-photo" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=75" alt="" />
-          <div class="st2cc-card-details">
-            <div class="st2cc-card-when">Today &middot; 7 PM</div>
-            <h3 class="st2cc-card-title">Music Festival 🎸</h3>
-            <div class="st2cc-card-meta">
-              <div class="st2cc-card-loc"><i class="ph-fill ph-map-pin"></i>Frost Amphitheater</div>
-              <div class="st2cc-going">
-                <span><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
-                <span><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
-                <span><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
+      <div class="st2cc-carousel">
+        <div class="st2cc-plan">
+          <div class="st2cc-glow" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st2cc-plan-media" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st2cc-plan-body">
+            <p class="st2cc-plan-date">Today, 7 PM</p>
+            <p class="st2cc-plan-title">Music Festival 🎸</p>
+            <div class="st2cc-plan-meta">
+              <div class="st2cc-plan-loc"><i class="ph-fill ph-map-pin"></i>Frost Amphitheater</div>
+              <div class="st2cc-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
                 <span class="st2cc-more">+3</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="st2cc-card">
-          <img class="st2cc-card-ambient" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=40" alt="" />
-          <img class="st2cc-card-photo" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=75" alt="" />
-          <div class="st2cc-card-details">
-            <div class="st2cc-card-when">Sat &middot; 9 AM</div>
-            <h3 class="st2cc-card-title">Hiking Trip 🥾</h3>
-            <div class="st2cc-card-meta">
-              <div class="st2cc-card-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
-              <div class="st2cc-going">
-                <span><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
-                <span><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=70" alt="" /></span>
+        <div class="st2cc-plan">
+          <div class="st2cc-glow" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st2cc-plan-media" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st2cc-plan-body">
+            <p class="st2cc-plan-date">Saturday, 9 AM</p>
+            <p class="st2cc-plan-title">Hiking Trip 🥾</p>
+            <div class="st2cc-plan-meta">
+              <div class="st2cc-plan-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</div>
+              <div class="st2cc-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
                 <span class="st2cc-more">+3</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="st2cc-row-head">
-        <h2>Happening nearby</h2>
-        <span class="st2cc-row-action">See all<i class="ph ph-caret-right"></i></span>
-      </div>
-      <div class="st2cc-cards">
-        <div class="st2cc-ecard">
-          <img class="st2cc-ecard-img" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=75" alt="" />
-          <span class="st2cc-esave"><i class="ph ph-bookmark-simple"></i></span>
-          <div class="st2cc-ecard-details">
-            <div class="st2cc-ecard-date">Fri, Jul 17 &middot; 7 PM</div>
-            <h3 class="st2cc-ecard-title">Night Market</h3>
-            <div class="st2cc-ecard-meta"><i class="ph-fill ph-map-pin"></i>Old Town Square</div>
+        <div class="st2cc-plan">
+          <div class="st2cc-glow" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=200&q=50');"></div>
+          <div class="st2cc-plan-media" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=75');"></div>
+          <div class="st2cc-plan-body">
+            <p class="st2cc-plan-date">Friday, 7 PM</p>
+            <p class="st2cc-plan-title">Game Night 🎮</p>
+            <div class="st2cc-plan-meta">
+              <div class="st2cc-plan-loc"><i class="ph-fill ph-map-pin"></i>Alex&rsquo;s Place</div>
+              <div class="st2cc-avs">
+                <span style="background: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover; margin-left: 0;"></span>
+                <span class="st2cc-more">+2</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="st2cc-ecard">
-          <img class="st2cc-ecard-img" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=75" alt="" />
-          <span class="st2cc-esave"><i class="ph ph-bookmark-simple"></i></span>
-          <div class="st2cc-ecard-details">
-            <div class="st2cc-ecard-date">Sat, Jul 18 &middot; 8 PM</div>
-            <h3 class="st2cc-ecard-title">Jazz Night</h3>
-            <div class="st2cc-ecard-meta"><i class="ph-fill ph-map-pin"></i>Blue Note Bar</div>
+      </div>
+
+      <div class="st2cc-row-header">
+        <h3 class="st2cc-row-title">🎉 Events nearby</h3>
+        <span class="st2cc-row-link">All events &rsaquo;</span>
+      </div>
+      <div class="st2cc-carousel">
+        <div class="st2cc-event">
+          <img class="st2cc-event-media" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st2cc-event-body">
+            <p class="st2cc-event-date">Fri &bull; 7 PM</p>
+            <p class="st2cc-event-title">Night Market</p>
+            <div class="st2cc-event-loc"><i class="ph-fill ph-map-pin"></i>Old Town Square</div>
           </div>
         </div>
+        <div class="st2cc-event">
+          <img class="st2cc-event-media" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st2cc-event-body">
+            <p class="st2cc-event-date">Sat &bull; 8 PM</p>
+            <p class="st2cc-event-title">Jazz Night</p>
+            <div class="st2cc-event-loc"><i class="ph-fill ph-map-pin"></i>Blue Note Bar</div>
+          </div>
+        </div>
+        <div class="st2cc-event">
+          <img class="st2cc-event-media" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=75" alt="" />
+          <div class="st2cc-event-body">
+            <p class="st2cc-event-date">Sun &bull; 6 PM</p>
+            <p class="st2cc-event-title">Supper Club</p>
+            <div class="st2cc-event-loc"><i class="ph-fill ph-map-pin"></i>The Terrace</div>
+          </div>
+        </div>
+      </div>
+
+      <span class="st2cc-fab"><i class="ph-fill ph-calendar-blank"></i>New plan</span>
+
+      <div class="st2cc-nav">
+        <i class="ph-fill ph-house is-on"></i>
+        <i class="ph ph-compass"></i>
+        <span class="st2cc-nav-you" style="background: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=70') center/cover;"></span>
+        <i class="ph ph-calendar-blank"></i>
+        <i class="ph ph-chat"></i>
       </div>
     </div>
   </div>
