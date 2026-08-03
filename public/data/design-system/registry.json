@@ -4,7 +4,7 @@
     "columns": 3,
     "columnWidth": 520,
     "maxColumnWidth": 680,
-    "gap": 20,
+    "gap": 40,
     "pairGap": 96
   },
   "groups": [
@@ -25,6 +25,7 @@
     {
       "group": "dark-mode",
       "name": "Palette",
+      "section": "Foundations",
       "layout": "row",
       "span": "all",
       "components": [
@@ -65,6 +66,7 @@
     {
       "group": "dark-mode",
       "name": "Buttons",
+      "section": "Actions & controls",
       "components": [
         {
           "id": "mr-buttons",
@@ -131,6 +133,7 @@
     {
       "group": "dark-mode",
       "name": "Plan cards",
+      "section": "Content & cards",
       "components": [
         {
           "id": "mr-plan-hero",
@@ -230,6 +233,7 @@
     {
       "group": "dark-mode",
       "name": "Filter chips",
+      "section": "Tags & status",
       "layout": "row",
       "components": [
         {
@@ -266,6 +270,7 @@
     {
       "group": "dark-mode",
       "name": "Toasts",
+      "section": "Feedback & states",
       "components": [
         {
           "id": "mr-toasts",
@@ -322,6 +327,7 @@
     {
       "group": "dark-mode",
       "name": "Icons",
+      "section": "Assets",
       "components": [
         {
           "id": "mr-icons",
@@ -333,6 +339,7 @@
     {
       "group": "light-mode",
       "name": "Palette",
+      "section": "Foundations",
       "layout": "row",
       "span": "all",
       "components": [
@@ -373,6 +380,7 @@
     {
       "group": "light-mode",
       "name": "Buttons",
+      "section": "Actions & controls",
       "components": [
         {
           "id": "mr-buttons-light",
@@ -439,6 +447,7 @@
     {
       "group": "light-mode",
       "name": "Plan cards",
+      "section": "Content & cards",
       "components": [
         {
           "id": "mr-plan-hero-light",
@@ -538,6 +547,7 @@
     {
       "group": "light-mode",
       "name": "Filter chips",
+      "section": "Tags & status",
       "layout": "row",
       "components": [
         {
@@ -574,6 +584,7 @@
     {
       "group": "light-mode",
       "name": "Toasts",
+      "section": "Feedback & states",
       "components": [
         {
           "id": "mr-toasts-light",
@@ -630,6 +641,7 @@
     {
       "group": "light-mode",
       "name": "Icons",
+      "section": "Assets",
       "components": [
         {
           "id": "mr-icons-light",

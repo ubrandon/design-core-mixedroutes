@@ -34,7 +34,7 @@
 }
 
 /* Canvas theme tokens only. Layout and chrome are owned by Design Core. */
-.ds-canvas-stage .ds-group[data-ds-theme="dark"] .ds-section {
+.ds-canvas-stage .ds-group[data-ds-theme="dark"] {
   --bg-0: #010b14;
   --bg-1: #00131f;
   --surface: rgba(255, 255, 255, 0.06);
