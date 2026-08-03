@@ -2858,14 +2858,14 @@
 
 /* ===== NAVIGATION ===== */
 
-/* Home feed top nav — gradient logo left, white Phosphor bell + avatar, rounded top */
+/* Home feed top nav — gradient logo left with people, notification, and settings actions. */
 .mr-scope .mr-top-nav-home {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 56px;
   padding: 10px 16px 12px;
-  background: rgba(6, 8, 14, 0.98);
+  background: var(--bg-0);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -2886,7 +2886,7 @@
 }
 
 .mr-scope .mr-top-nav-home-wordmark {
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.96);
@@ -3375,16 +3375,14 @@
   display: block;
 }
 
-/* Phosphor icons — brand gradient (icon font glyph) */
+/* Empty illustrations use the same mist-blue line color as the app artwork. */
 .mr-scope .mr-empty-state-icon > .ph {
   font-size: 88px;
   line-height: 1;
   display: block;
-  background: linear-gradient(135deg, #5ba5ff 0%, #20e0cf 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  color: #6ea6cf;
+  -webkit-text-fill-color: #6ea6cf;
 }
 
 .mr-scope .mr-empty-state-title {
@@ -4346,6 +4344,13 @@
   --link-hover: #2563eb;
   --mr-section-action: #e8880a;
   --mr-section-action-hover: #c67203;
+  --mr-surface-2: #e7ebef;
+  --mr-surface-3: #f1f4f7;
+  --mr-surface-4: #ffffff;
+  --mr-selected-bg: rgba(6, 182, 212, 0.1);
+  --mr-border-light: rgba(32, 36, 42, 0.16);
+  --mr-success: #0ca678;
+  --mr-danger: #d0293e;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.08), 0 10px 28px rgba(0, 0, 0, 0.12);
   --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.1);
   --mr-input-surface: rgba(118, 118, 128, 0.12);
@@ -4469,6 +4474,24 @@
   border-color: transparent;
   color: #1a2332;
   box-shadow: none;
+}
+
+.mr-scope.mr-scope--light .btn-tint-primary {
+  background: rgba(6, 182, 212, 0.28);
+  border-color: #0891b2;
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .btn-success {
+  background: rgba(12, 166, 120, 0.22);
+  border-color: #099268;
+  color: #099268;
+}
+
+.mr-scope.mr-scope--light .btn-danger {
+  background: rgba(208, 41, 62, 0.22);
+  border-color: #b31d30;
+  color: #b31d30;
 }
 
 .mr-scope.mr-scope--light .btn-white,
@@ -5267,9 +5290,9 @@
 
 /* Empty states */
 .mr-scope.mr-scope--light .mr-empty-state-icon > .ph {
-  background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  background: none;
+  color: #38678c;
+  -webkit-text-fill-color: #38678c;
 }
 
 .mr-scope.mr-scope--light .mr-empty-state-title {
@@ -5629,4 +5652,294 @@
 
 .mr-scope.mr-scope--light .mr-banner-dismiss {
   color: rgba(15, 23, 42, 0.35);
+}
+
+/* Photo-backed activity cards stay immersive in both app themes. */
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur {
+  position: relative;
+  background: #1d232b;
+  box-shadow: var(--shadow);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur::before,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur::after,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur::before,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur::after {
+  display: block;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-title,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-title {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .plan-card-mini-time,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-when-where-item,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-time,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-social {
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur {
+  background: rgba(8, 10, 18, 0.7);
+  box-shadow: var(--shadow);
+}
+
+.mr-scope .mr-plan-row,
+.mr-scope .plan-card-mini,
+.mr-scope .event-card.event-card--mini {
+  border-radius: 32px;
+}
+
+/* Desktop side navigation and the refreshed account popover. */
+.mr-scope .mr-desktop-nav-demo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px minmax(220px, 1fr);
+  width: min(100%, 560px);
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid var(--mr-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-0);
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope .mr-desktop-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 36px 11px 16px;
+  background: var(--mr-surface-4);
+  border-right: 1px solid var(--mr-border-light);
+}
+
+.mr-scope .mr-desktop-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 56px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.mr-scope .mr-desktop-nav-item > i {
+  width: 24px;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+}
+
+.mr-scope .mr-desktop-nav-item.is-selected,
+.mr-scope .mr-desktop-nav-item.is-open {
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.mr-scope .mr-desktop-nav-spacer {
+  flex: 1;
+}
+
+.mr-scope .mr-desktop-nav-avatar {
+  width: 34px;
+  height: 34px;
+  margin-left: -5px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mr-scope .mr-desktop-canvas-demo {
+  padding: 32px 24px;
+  background: var(--bg-0);
+}
+
+.mr-scope .mr-desktop-canvas-demo h4 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.mr-scope .mr-desktop-canvas-demo p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.mr-scope .mr-account-popover {
+  position: absolute;
+  left: 11px;
+  bottom: 72px;
+  z-index: 2;
+  width: 178px;
+  padding: 7px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-0) 94%, var(--mr-surface-3));
+  box-shadow: var(--shadow);
+}
+
+.mr-scope .mr-account-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  text-align: left;
+}
+
+.mr-scope .mr-account-menu-item > i {
+  width: 20px;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+}
+
+.mr-scope .mr-account-menu-item.is-destructive {
+  color: var(--mr-danger);
+}
+
+.mr-scope .mr-account-menu-divider {
+  height: 1px;
+  margin: 7px 11px;
+  background: var(--mr-border-light);
+}
+
+@media (max-width: 620px) {
+  .mr-scope .mr-desktop-nav-demo {
+    grid-template-columns: 180px minmax(160px, 1fr);
+  }
+}
+
+/* Authoritative app tokens for dark component previews. */
+.ds-canvas-stage .ds-group[data-ds-theme="dark"] .ds-section,
+.mr-scope:not(.mr-scope--light) {
+  --bg-0: #0f1318;
+  --bg-1: #181d25;
+  --surface: #1f252f;
+  --border: #343c4a;
+  --text: #f6f8fc;
+  --muted: #bac6d0;
+  --muted-2: #8591a2;
+  --neon-blue: #3b82f6;
+  --neon-blue-rgb: 59, 130, 246;
+  --neon-teal: #22d3ee;
+  --neon-teal-rgb: 34, 211, 238;
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
+  --mr-section-action: #fbbf24;
+  --mr-section-action-hover: #fcd34d;
+  --mr-surface-2: #181d25;
+  --mr-surface-3: #1f252f;
+  --mr-surface-4: #272d38;
+  --mr-selected-bg: rgba(34, 211, 238, 0.18);
+  --mr-border-light: rgba(255, 255, 255, 0.12);
+  --mr-success: #2fd7a8;
+  --mr-danger: #ed576b;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.42), 0 10px 28px rgba(0, 0, 0, 0.52);
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.42);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --mr-input-surface: rgba(118, 118, 128, 0.24);
+  --mr-input-surface-focus: rgba(118, 118, 128, 0.32);
+  --mr-input-radius: 24px;
+}
+
+.mr-scope:not(.mr-scope--light) {
+  font-family: "Geist", sans-serif;
+}
+
+/* App button sizing and state variants. */
+.mr-scope .btn {
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.mr-scope .btn-sm {
+  height: 36px;
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 0.8125rem;
+}
+
+.mr-scope .btn-lg {
+  height: 48px;
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 1.125rem;
+}
+
+.mr-scope .btn-primary {
+  background: linear-gradient(145deg, #14b8a6, #3b82f6);
+  border-color: transparent;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.mr-scope .btn-secondary {
+  background: #3d4552;
+  border-color: transparent;
+  color: var(--text);
+  box-shadow: none;
+}
+
+.mr-scope .btn-tint-primary {
+  background: rgba(34, 211, 238, 0.2);
+  border: 1.5px solid #22d3ee;
+  color: #67e8f9;
+}
+
+.mr-scope .btn-success {
+  background: rgba(47, 215, 168, 0.15);
+  border: 1.5px solid #2fd7a8;
+  color: #44dbb1;
+}
+
+.mr-scope .btn-danger {
+  background: rgba(237, 87, 107, 0.15);
+  border: 1.5px solid #ed576b;
+  color: #ef687a;
+}
+
+.mr-scope.mr-scope--light .btn-secondary {
+  background: #e1e3e6;
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .btn-tint-primary {
+  background: rgba(6, 182, 212, 0.28);
+  border-color: #0891b2;
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .btn-success {
+  background: rgba(12, 166, 120, 0.22);
+  border-color: #099268;
+  color: #099268;
+}
+
+.mr-scope.mr-scope--light .btn-danger {
+  background: rgba(208, 41, 62, 0.22);
+  border-color: #b31d30;
+  color: #b31d30;
 }

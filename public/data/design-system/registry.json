@@ -59,7 +59,7 @@
         {
           "id": "mr-type",
           "file": "mixedroutes/typography.html",
-          "label": "DM Sans & styles"
+          "label": "Geist & styles"
         }
       ]
     },
@@ -82,7 +82,7 @@
         {
           "id": "mr-navigation",
           "file": "mixedroutes/navigation.html",
-          "label": "Top nav & bottom tab bar"
+          "label": "Mobile nav, desktop side nav & account menu"
         }
       ]
     },
@@ -396,7 +396,7 @@
         {
           "id": "mr-navigation-light",
           "file": "mixedroutes/navigation-light.html",
-          "label": "Top nav & bottom tab bar"
+          "label": "Mobile nav, desktop side nav & account menu"
         }
       ]
     },

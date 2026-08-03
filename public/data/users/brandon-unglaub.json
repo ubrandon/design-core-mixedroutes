@@ -12,7 +12,7 @@
   "recents": [
     {
       "id": "mixedroutes-phase-v2",
-      "ts": 1785733143047
+      "ts": 1785774805656
     },
     {
       "id": "home-page",
@@ -64,6 +64,6 @@
     "sort": "",
     "status": ""
   },
-  "navCollapsed": true,
-  "updatedAt": 1785733143047
+  "navCollapsed": false,
+  "updatedAt": 1785775116635
 }
