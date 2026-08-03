@@ -1,13 +1,32 @@
 {
+  "layout": {
+    "mode": "masonry",
+    "columns": 3,
+    "columnWidth": 520,
+    "maxColumnWidth": 680,
+    "gap": 20,
+    "pairGap": 96
+  },
   "groups": [
-    { "id": "dark-mode", "name": "Dark mode" },
-    { "id": "light-mode", "name": "Light mode" }
+    {
+      "id": "dark-mode",
+      "name": "Dark mode",
+      "theme": "dark",
+      "pair": "color-modes"
+    },
+    {
+      "id": "light-mode",
+      "name": "Light mode",
+      "theme": "light",
+      "pair": "color-modes"
+    }
   ],
   "categories": [
     {
       "group": "dark-mode",
       "name": "Palette",
       "layout": "row",
+      "span": "all",
       "components": [
         {
           "id": "mr-colors-dark",
@@ -23,23 +42,23 @@
     },
     {
       "group": "dark-mode",
-      "name": "Typography",
-      "components": [
-        {
-          "id": "mr-type",
-          "file": "mixedroutes/typography.html",
-          "label": "DM Sans & styles"
-        }
-      ]
-    },
-    {
-      "group": "dark-mode",
       "name": "Shape",
       "components": [
         {
           "id": "mr-shape",
           "file": "mixedroutes/shape.html",
           "label": "Radius & shadows"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Typography",
+      "components": [
+        {
+          "id": "mr-type",
+          "file": "mixedroutes/typography.html",
+          "label": "DM Sans & styles"
         }
       ]
     },
@@ -122,6 +141,18 @@
     },
     {
       "group": "dark-mode",
+      "name": "Content types",
+      "layout": "row",
+      "components": [
+        {
+          "id": "mr-tags-content-types",
+          "file": "mixedroutes/tags-content-types.html",
+          "label": "Plan, activity, event, place"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
       "name": "Event cards",
       "layout": "row",
       "components": [
@@ -193,18 +224,6 @@
           "id": "mr-avatar-stack",
           "file": "mixedroutes/avatar-stack.html",
           "label": "Avatar stacks"
-        }
-      ]
-    },
-    {
-      "group": "dark-mode",
-      "name": "Content types",
-      "layout": "row",
-      "components": [
-        {
-          "id": "mr-tags-content-types",
-          "file": "mixedroutes/tags-content-types.html",
-          "label": "Plan, activity, event, place"
         }
       ]
     },
@@ -315,6 +334,7 @@
       "group": "light-mode",
       "name": "Palette",
       "layout": "row",
+      "span": "all",
       "components": [
         {
           "id": "mr-colors-light",
@@ -323,19 +343,8 @@
         },
         {
           "id": "mr-colors-brand-light",
-          "file": "mixedroutes/colors-brand-feedback.html",
+          "file": "mixedroutes/colors-brand-feedback-light.html",
           "label": "Brand & feedback"
-        }
-      ]
-    },
-    {
-      "group": "light-mode",
-      "name": "Typography",
-      "components": [
-        {
-          "id": "mr-type-light",
-          "file": "mixedroutes/typography-light.html",
-          "label": "Geist & styles"
         }
       ]
     },
@@ -347,6 +356,17 @@
           "id": "mr-shape-light",
           "file": "mixedroutes/shape-light.html",
           "label": "Radius & shadows"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Typography",
+      "components": [
+        {
+          "id": "mr-type-light",
+          "file": "mixedroutes/typography-light.html",
+          "label": "Geist & styles"
         }
       ]
     },
@@ -429,6 +449,18 @@
     },
     {
       "group": "light-mode",
+      "name": "Content types",
+      "layout": "row",
+      "components": [
+        {
+          "id": "mr-tags-content-types-light",
+          "file": "mixedroutes/tags-content-types-light.html",
+          "label": "Plan, activity, event, place"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
       "name": "Event cards",
       "layout": "row",
       "components": [
@@ -500,18 +532,6 @@
           "id": "mr-avatar-stack-light",
           "file": "mixedroutes/avatar-stack-light.html",
           "label": "Avatar stacks"
-        }
-      ]
-    },
-    {
-      "group": "light-mode",
-      "name": "Content types",
-      "layout": "row",
-      "components": [
-        {
-          "id": "mr-tags-content-types-light",
-          "file": "mixedroutes/tags-content-types-light.html",
-          "label": "Plan, activity, event, place"
         }
       ]
     },

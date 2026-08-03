@@ -33,21 +33,8 @@
   --mr-input-radius: var(--radius-xl);
 }
 
-/* Design Core canvas: dark section cards so MixedRoutes previews read correctly */
-.ds-canvas-stage .ds-section {
-  padding: 20px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(
-    180deg,
-    rgba(12, 22, 38, 0.98),
-    rgba(6, 12, 22, 0.99)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  min-width: 280px;
-  width: max-content;
-  flex-shrink: 0;
-  overflow: visible;
+/* Canvas theme tokens only. Layout and chrome are owned by Design Core. */
+.ds-canvas-stage .ds-group[data-ds-theme="dark"] .ds-section {
   --bg-0: #010b14;
   --bg-1: #00131f;
   --surface: rgba(255, 255, 255, 0.06);
@@ -55,85 +42,20 @@
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.68);
   --muted-2: rgba(255, 255, 255, 0.52);
-  color: var(--text);
 }
 
-/* Section titles live inside dark .ds-section cards */
-.ds-canvas-stage .ds-section-header {
-  color: rgba(255, 255, 255, 0.92);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
+/* Palette is a full-width foundation anchor; split its two previews evenly. */
+.ds-canvas-stage
+  .ds-section:has(.mr-scope--color-palette)
+  .ds-component-grid--fixed {
+  align-items: stretch;
 }
 
-/* Group titles (Foundations, Navigation, …) sit on the light canvas — keep dark text */
-.ds-canvas-stage .ds-group-header {
-  color: rgba(0, 0, 0, 0.55);
-  border-bottom-color: rgba(0, 0, 0, 0.12);
-}
-
-.ds-canvas-stage .ds-component-label {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-/* Colors group: wide horizontal band — three previews in a row, grids flow sideways */
-.ds-canvas-stage .ds-group--colors .ds-group-row {
-  flex-wrap: nowrap;
-}
-
-.ds-canvas-stage .ds-group--colors .ds-section {
-  min-width: 1980px;
-  width: max-content;
-  padding: 12px 16px 14px;
-}
-
-.ds-canvas-stage .ds-group--colors .ds-section-header {
-  margin-bottom: 8px;
-  padding-bottom: 6px;
-}
-
-.ds-canvas-stage .ds-group--colors .ds-component-grid--fixed {
-  align-items: flex-start;
-  gap: 12px 20px;
-}
-
-.ds-canvas-stage .ds-group--colors .ds-component-item {
+.ds-canvas-stage
+  .ds-section:has(.mr-scope--color-palette)
+  .ds-component-item {
   flex: 1 1 0;
-  min-width: 620px;
-  max-width: 720px;
-  gap: 4px;
-}
-
-.ds-canvas-stage .ds-group--colors .ds-component-preview {
-  padding: 0;
-  margin: 0;
-}
-
-/* Palette sections now live inside the Dark mode / Light mode groups; key the wide layout off the fragment class instead of the old colors group id */
-.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) {
-  min-width: 1360px;
-  width: max-content;
-  padding: 12px 16px 14px;
-}
-
-.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-section-header {
-  margin-bottom: 8px;
-  padding-bottom: 6px;
-}
-
-.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-component-grid--fixed {
-  align-items: flex-start;
-  gap: 12px 20px;
-}
-
-.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-component-item {
-  flex: 1 1 0;
-  min-width: 620px;
-  max-width: 720px;
-  gap: 4px;
-}
-
-.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-component-preview {
-  padding: 0;
-  margin: 0;
+  min-width: 0;
 }
 
 /* --- MixedRoutes component scope (landing /design-system parity) --- */
@@ -4570,12 +4492,18 @@
   box-shadow: var(--shadow);
 }
 
-/* Mini plan cards: photo-blur keeps its treatment, soft black shadow replaces the glow */
+/* Mini plan cards use light shells; photos stay contained in their media slots. */
 .mr-scope.mr-scope--light .plan-card-mini {
+  background: #ffffff;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
-    0 4px 10px rgba(0, 0, 0, 0.08),
-    0 10px 28px rgba(0, 0, 0, 0.12);
+    inset 0 0 0 1px #e1e3e6,
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur::before,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur::after {
+  display: none;
 }
 
 /* Matte gradient mini shells become light cards */
@@ -4619,15 +4547,15 @@
   border: 1px solid #e1e3e6;
 }
 
-/* Avatars-more counter: dark pill on light surfaces, re-whitened over photos below */
+/* Avatars-more counter: dark type on a quiet light pill. */
 .mr-scope.mr-scope--light .plan-card-mini-avatar-more {
   background: rgba(15, 23, 42, 0.1);
   color: #1a2332;
 }
 
 .mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-avatar-more {
-  background: rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(15, 23, 42, 0.1);
+  color: #1a2332;
 }
 
 /* Long plan rows: default shell becomes a white card, dark text */
@@ -4750,18 +4678,21 @@
   border: 1px solid #e1e3e6;
 }
 
-/* Mini card time stays white over its photo backdrop */
+/* Compact photo cards use the same light-theme type as other cards. */
 .mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-time {
-  color: rgba(255, 255, 255, 0.78);
+  color: #5c6b7d;
+  text-shadow: none;
 }
 
 .mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-title {
-  color: rgba(255, 255, 255, 0.98);
+  color: #1a2332;
+  text-shadow: none;
 }
 
 .mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-location,
 .mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-social {
-  color: rgba(255, 255, 255, 0.9);
+  color: #5c6b7d;
+  text-shadow: none;
 }
 
 /* Badges and pills */
