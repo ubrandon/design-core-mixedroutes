@@ -286,12 +286,13 @@
   word-break: break-word;
 }
 
-/* Light mode color previews — panel reads on dark DS canvas */
+/* The light theme group already provides the preview surface. Keep component
+ * fragments flat so their contents sit directly beneath the tool headings. */
 .mr-scope.mr-scope--light {
-  padding: 16px;
-  border-radius: var(--radius-lg);
-  background: #f1f4f7;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
   color: #1a2332;
 }
 
@@ -305,10 +306,6 @@
 
 .mr-scope.mr-scope--light.mr-scope--color-palette .mr-color-grid {
   gap: 6px 8px;
-}
-
-.mr-scope.mr-scope--light.mr-scope--color-palette {
-  padding: 8px 10px 10px;
 }
 
 .mr-scope.mr-scope--light .mr-color-card {
@@ -4321,12 +4318,12 @@
   color: rgba(15, 23, 42, 0.45);
 }
 
-/* Light scope root: flat light panel + rebound brand variables */
+/* Light scope root: rebound brand variables without adding a preview shell. */
 .mr-scope.mr-scope--light {
-  background: #f1f4f7;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: 0;
   color: #1a2332;
   font-family: "Geist", sans-serif;
   --bg-0: #ffffff;
