@@ -1,6 +1,7 @@
 /* MixedRoutes — brand + component previews (scoped with .mr-scope in fragment HTML) */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..1000;1,9..40,400..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css");
 @import url("https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css");
 
@@ -102,6 +103,35 @@
 }
 
 .ds-canvas-stage .ds-group--colors .ds-component-preview {
+  padding: 0;
+  margin: 0;
+}
+
+/* Palette sections now live inside the Dark mode / Light mode groups; key the wide layout off the fragment class instead of the old colors group id */
+.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) {
+  min-width: 1360px;
+  width: max-content;
+  padding: 12px 16px 14px;
+}
+
+.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-section-header {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+}
+
+.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-component-grid--fixed {
+  align-items: flex-start;
+  gap: 12px 20px;
+}
+
+.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-component-item {
+  flex: 1 1 0;
+  min-width: 620px;
+  max-width: 720px;
+  gap: 4px;
+}
+
+.ds-canvas-stage .ds-section:has(.mr-scope--color-palette) .ds-component-preview {
   padding: 0;
   margin: 0;
 }
@@ -338,13 +368,13 @@
 .mr-scope.mr-scope--light {
   padding: 16px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, #e2e8f0, #cbd5e1);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  color: rgba(15, 23, 42, 0.92);
+  background: #f1f4f7;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #1a2332;
 }
 
 .mr-scope.mr-scope--light .mr-subsection-title {
-  color: rgba(15, 23, 42, 0.55);
+  color: #5c6b7d;
 }
 
 .mr-scope.mr-scope--light .mr-color-grid {
@@ -361,7 +391,7 @@
 
 .mr-scope.mr-scope--light .mr-color-card {
   background: #ffffff;
-  border-color: rgba(15, 23, 42, 0.1);
+  border-color: #e1e3e6;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
@@ -4352,4 +4382,1320 @@
 }
 .mr-scope .mr-pp-group-card.is-selected .mr-pp-group-detail i {
   font-size: 14px;
+}
+
+/* ===== LIGHT MODE VARIANT LAYER (design refresh) ===== */
+/* Everything below only applies inside .mr-scope--light; the dark baseline above is untouched. */
+
+/* Variant caption above each dark/light copy in the fragments */
+.mr-scope .mr-variant-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.mr-scope.mr-scope--light .mr-variant-label {
+  color: rgba(15, 23, 42, 0.45);
+}
+
+/* Light scope root: flat light panel + rebound brand variables */
+.mr-scope.mr-scope--light {
+  background: #f1f4f7;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #1a2332;
+  font-family: "Geist", sans-serif;
+  --bg-0: #ffffff;
+  --bg-1: #f3f4f5;
+  --surface: #ffffff;
+  --border: #e1e3e6;
+  --text: #1a2332;
+  --muted: #5c6b7d;
+  --muted-2: #858b94;
+  --neon-blue: #2563eb;
+  --neon-blue-rgb: 37, 99, 235;
+  --neon-teal: #06b6d4;
+  --neon-teal-rgb: 6, 182, 212;
+  --link: #1d4ed8;
+  --link-hover: #2563eb;
+  --mr-section-action: #e8880a;
+  --mr-section-action-hover: #c67203;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08), 0 10px 28px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.1);
+  --mr-input-surface: rgba(118, 118, 128, 0.12);
+  --mr-input-surface-focus: rgba(118, 118, 128, 0.2);
+}
+
+/* Links: blue with matching underline tint */
+.mr-scope.mr-scope--light a {
+  color: var(--link);
+  text-decoration-color: rgba(29, 78, 216, 0.4);
+}
+
+.mr-scope.mr-scope--light a:hover {
+  color: var(--link-hover);
+  text-decoration-color: rgba(29, 78, 216, 0.75);
+}
+
+/* Gradient text switches to the refreshed teal-blue ramp */
+.mr-scope.mr-scope--light .gradient-text,
+.mr-scope.mr-scope--light .mr-text-gradient {
+  background-image: linear-gradient(90deg, #14b8a6, #3b82f6);
+}
+
+.mr-scope.mr-scope--light .mr-section-note {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-section-note code {
+  color: #1a2332;
+}
+
+/* Typography demos */
+.mr-scope.mr-scope--light .mr-font-demo {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-font-sample {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-weight-item {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-weight-label {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-weight-list {
+  border-top-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light.mr-scope--typography .mr-weight-item {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f0f1f2;
+}
+
+.mr-scope.mr-scope--light .mr-weight-item span:last-child {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-heading-row {
+  border-bottom-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-heading-row h1,
+.mr-scope.mr-scope--light .mr-heading-row h2,
+.mr-scope.mr-scope--light .mr-heading-row h3 {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-heading-row code {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-text-styles {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-text-style-item {
+  border-bottom-color: #f0f1f2;
+}
+
+.mr-scope.mr-scope--light .mr-text-style-title {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-text-style-head code {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-text-style-sample {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-text-style-sample.accent-text {
+  color: var(--link);
+}
+
+/* Buttons */
+.mr-scope.mr-scope--light .btn-primary {
+  background: linear-gradient(145deg, #14b8a6, #3b82f6);
+  border-color: transparent;
+  color: #ffffff;
+  text-shadow: none;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.35);
+}
+
+.mr-scope.mr-scope--light .btn-primary:hover {
+  box-shadow: 0 3px 12px rgba(6, 182, 212, 0.45);
+  filter: brightness(1.03);
+}
+
+.mr-scope.mr-scope--light .btn-secondary {
+  background: #e1e3e6;
+  border-color: transparent;
+  color: #1a2332;
+  box-shadow: none;
+}
+
+.mr-scope.mr-scope--light .btn-white,
+.mr-scope.mr-scope--light .btn-cta-white {
+  background: #ffffff;
+  border-color: #e1e3e6;
+  color: #1a2332;
+  box-shadow: var(--shadow-soft);
+}
+
+/* App store badge intentionally stays dark in light mode */
+
+.mr-scope.mr-scope--light .mr-button-item code {
+  color: #858b94;
+}
+
+/* Photo hero plan cards: photo + scrim + white text stay; only shell chrome flips */
+.mr-scope.mr-scope--light .plan-card {
+  border-color: rgba(15, 23, 42, 0.1);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+/* Mini plan cards: photo-blur keeps its treatment, soft black shadow replaces the glow */
+.mr-scope.mr-scope--light .plan-card-mini {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Matte gradient mini shells become light cards */
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-cafe:not(.plan-card-mini--photo-blur),
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-food:not(.plan-card-mini--photo-blur),
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-trivia:not(.plan-card-mini--photo-blur),
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-hiking:not(.plan-card-mini--photo-blur) {
+  background: linear-gradient(105deg, #e4eefe, #ffffff), #ffffff;
+  box-shadow:
+    inset 0 0 0 1px #e1e3e6,
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* All inner text on matte mini shells flips dark */
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-cafe:not(.plan-card-mini--photo-blur) .plan-card-mini-title,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-food:not(.plan-card-mini--photo-blur) .plan-card-mini-title,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-trivia:not(.plan-card-mini--photo-blur) .plan-card-mini-title,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-hiking:not(.plan-card-mini--photo-blur) .plan-card-mini-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-cafe:not(.plan-card-mini--photo-blur) .plan-card-mini-time,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-food:not(.plan-card-mini--photo-blur) .plan-card-mini-time,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-trivia:not(.plan-card-mini--photo-blur) .plan-card-mini-time,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-hiking:not(.plan-card-mini--photo-blur) .plan-card-mini-time,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-cafe:not(.plan-card-mini--photo-blur) .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-food:not(.plan-card-mini--photo-blur) .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-trivia:not(.plan-card-mini--photo-blur) .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-hiking:not(.plan-card-mini--photo-blur) .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-cafe:not(.plan-card-mini--photo-blur) .plan-card-mini-social,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-food:not(.plan-card-mini--photo-blur) .plan-card-mini-social,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-trivia:not(.plan-card-mini--photo-blur) .plan-card-mini-social,
+.mr-scope.mr-scope--light .plan-card-mini.plan-card-hiking:not(.plan-card-mini--photo-blur) .plan-card-mini-social {
+  color: #5c6b7d;
+}
+
+/* Emoji media slot on light cards */
+.mr-scope.mr-scope--light .plan-card-mini-media.plan-card-mini-media--emoji {
+  background: #f1f4f7;
+  border: 1px solid #e1e3e6;
+}
+
+/* Avatars-more counter: dark pill on light surfaces, re-whitened over photos below */
+.mr-scope.mr-scope--light .plan-card-mini-avatar-more {
+  background: rgba(15, 23, 42, 0.1);
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-avatar-more {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Long plan rows: default shell becomes a white card, dark text */
+.mr-scope.mr-scope--light .mr-plan-row {
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px #e1e3e6,
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Light app rows are clean white cards: the blur and gradient shells flatten, only the photo thumb keeps the photo */
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur,
+.mr-scope.mr-scope--light .mr-plan-row--photo-gradient {
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px #e1e3e6,
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur::before,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur::after {
+  display: none;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-gradient .mr-plan-row-title,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-title,
+.mr-scope.mr-scope--light .mr-plan-row--photo-gradient .mr-plan-row-desc,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-desc,
+.mr-scope.mr-scope--light .mr-plan-row--photo-gradient .mr-plan-row-when-where-item,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-when-where-item,
+.mr-scope.mr-scope--light .mr-plan-row--photo-gradient .mr-plan-row-eyebrow,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-eyebrow,
+.mr-scope.mr-scope--light .mr-plan-row--photo-gradient .plan-card-mini-time,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .plan-card-mini-time {
+  text-shadow: none;
+}
+
+/* Matte shells with no photo become light cards */
+.mr-scope.mr-scope--light .mr-plan-row--surface {
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px #e1e3e6,
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--sunset,
+.mr-scope.mr-scope--light .mr-plan-row--earth,
+.mr-scope.mr-scope--light .mr-plan-row--neutral {
+  background: linear-gradient(105deg, #e4eefe, #ffffff), #ffffff;
+  box-shadow:
+    inset 0 0 0 1px #e1e3e6,
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Sponsored row: light teal tint, dark text */
+.mr-scope.mr-scope--light .mr-plan-row-sponsored {
+  background: rgba(6, 182, 212, 0.1);
+  box-shadow:
+    inset 0 0 0 1px rgba(6, 182, 212, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-sponsored .plan-card-mini-time {
+  text-shadow: none;
+  color: #0891b2;
+}
+
+/* Plan row inner text: dark by default in light scope */
+.mr-scope.mr-scope--light .mr-plan-row-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-desc {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-eyebrow {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-time,
+.mr-scope.mr-scope--light .mr-plan-row-eyebrow .mr-plan-row-time,
+.mr-scope.mr-scope--light .plan-card-mini-time {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-time--accent,
+.mr-scope.mr-scope--light .mr-plan-row-when-where-item .mr-plan-row-time--accent {
+  color: #0891b2;
+  text-shadow: none;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-when-where-item {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-hosted span {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-hosted img {
+  border-color: #ffffff;
+}
+
+.mr-scope.mr-scope--light .mr-meta-row {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-media {
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row-media.mr-plan-row-media--emoji {
+  background: #f1f4f7;
+  border: 1px solid #e1e3e6;
+}
+
+/* Mini card time stays white over its photo backdrop */
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-time {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-title {
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-social {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Badges and pills */
+.mr-scope.mr-scope--light .mr-plan-row-badge {
+  background: #f1f4f7;
+  border-color: #e1e3e6;
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-badge-gold {
+  background: #fff3e6;
+  border-color: rgba(204, 119, 0, 0.35);
+  color: #cc7700;
+}
+
+.mr-scope.mr-scope--light .mr-badge-blue {
+  background: #e6f4ff;
+  border-color: rgba(0, 102, 204, 0.3);
+  color: #0066cc;
+}
+
+.mr-scope.mr-scope--light .mr-badge-music {
+  background: rgba(208, 41, 62, 0.12);
+  border-color: rgba(208, 41, 62, 0.3);
+  color: #b31d30;
+}
+
+/* Badges layered on row thumbs keep the dark scrim so they read over photos */
+.mr-scope.mr-scope--light .mr-plan-row-media > .mr-plan-row-badge {
+  background: rgba(6, 8, 16, 0.82);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Sponsored badge stays a dark scrim pill over imagery */
+
+/* Type pills: light tint of the same hue, dark hue-matched text */
+.mr-scope.mr-scope--light .mr-type-pill {
+  background: rgba(var(--type-rgb), 0.14);
+  border-color: rgba(var(--type-rgb), 0.35);
+  color: #1d4ed8;
+}
+
+.mr-scope.mr-scope--light .mr-type-pill.mr-type-plan {
+  color: #1d4ed8;
+}
+
+.mr-scope.mr-scope--light .mr-type-pill.mr-type-activity {
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .mr-type-pill.mr-type-event {
+  color: #b45309;
+}
+
+.mr-scope.mr-scope--light .mr-type-pill.mr-type-place {
+  color: #c2410c;
+}
+
+/* Filter chips */
+.mr-scope.mr-scope--light .mr-chip {
+  background: #ffffff;
+  border: 1.5px solid rgba(32, 36, 42, 0.16);
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-chip.mr-chip-active {
+  background: #e4eefe;
+  border-color: #b9cef2;
+  color: #234e8a;
+}
+
+/* Tags: tinted fills with dark hue-matched text */
+.mr-scope.mr-scope--light .mr-tag {
+  background: #f1f4f7;
+  border-color: #e1e3e6;
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-sunset {
+  background: rgba(224, 112, 32, 0.14);
+  border-color: rgba(224, 112, 32, 0.35);
+  color: #c2410c;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-teal {
+  background: rgba(6, 182, 212, 0.14);
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-green {
+  background: rgba(12, 166, 120, 0.14);
+  border-color: rgba(12, 166, 120, 0.35);
+  color: #0ca678;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-mint {
+  background: rgba(18, 184, 134, 0.14);
+  border-color: rgba(18, 184, 134, 0.35);
+  color: #099268;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-dark {
+  background: rgba(26, 35, 50, 0.92);
+  border-color: transparent;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-gray {
+  background: #f1f4f7;
+  border-color: #e1e3e6;
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-gold {
+  background: #fff3e6;
+  border-color: rgba(204, 119, 0, 0.3);
+  color: #cc7700;
+}
+
+.mr-scope.mr-scope--light .mr-tag.mr-tag-tone-navy {
+  background: #e4eefe;
+  border-color: #b9cef2;
+  color: #234e8a;
+}
+
+/* Hero tags and event pills */
+.mr-scope.mr-scope--light .hero-tag {
+  background: #ffffff;
+  border: 1.5px solid rgba(32, 36, 42, 0.16);
+}
+
+.mr-scope.mr-scope--light .hero-tag-label {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .event-card-pill {
+  background: #ffffff;
+  border: 1.5px solid rgba(32, 36, 42, 0.16);
+  color: #1a2332;
+}
+
+/* Places list cards */
+.mr-scope.mr-scope--light .mr-places-list-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card-count {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card-meta {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card--new {
+  background: transparent;
+  border: 1.5px dashed rgba(32, 36, 42, 0.2);
+  box-shadow: none;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card--new .mr-places-list-card-icon {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-row {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-row--selected {
+  background: rgba(6, 182, 212, 0.14);
+  border: 1.5px solid #06b6d4;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-row-icon {
+  background: #f1f4f7;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-row-meta {
+  color: #858b94;
+}
+
+/* Activity feed rows */
+.mr-scope.mr-scope--light .mr-activity-row {
+  border-bottom-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-activity-avatar {
+  border-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-activity-status {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-activity-status.mr-status-live {
+  color: #0ca678;
+}
+
+.mr-scope.mr-scope--light .mr-activity-status.mr-status-recurring {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-activity-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-activity-meta {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-activity-note {
+  color: #5c6b7d;
+}
+
+/* Event cards */
+.mr-scope.mr-scope--light .event-card-media {
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.mr-scope.mr-scope--light .event-card-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .event-card-description {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .event-card-location {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .event-card.event-card--mini {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .event-card.event-card--mini .event-card-media {
+  border-bottom: 1px solid #f0f1f2;
+}
+
+.mr-scope.mr-scope--light .event-card.event-card--mini .event-card-pill {
+  background: #f1f4f7;
+  border: 1px solid #e1e3e6;
+  color: #5c6b7d;
+}
+
+/* Bookmark circles over photos keep their dark scrim on purpose */
+
+/* Recent activity strip */
+.mr-scope.mr-scope--light .mr-recent-avatar {
+  border-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-recent-group-badge {
+  background: rgba(15, 23, 42, 0.55);
+  color: rgba(255, 255, 255, 0.95);
+  border-color: #ffffff;
+}
+
+.mr-scope.mr-scope--light .mr-recent-count {
+  border-color: #ffffff;
+}
+
+.mr-scope.mr-scope--light .mr-recent-name {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-recent-detail {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-recent-status {
+  color: #0891b2;
+}
+
+/* Interests, groups, friends */
+.mr-scope.mr-scope--light .mr-interest-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-interest-icon {
+  background: #f1f4f7;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-interest-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-interest-detail {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-group-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-group-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-group-detail {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-group-status {
+  color: #858b94;
+}
+
+/* Group cards backed by a blurred photo keep their scrim and white text */
+.mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-title {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-detail {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-status {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mr-scope.mr-scope--light .mr-group-avatar {
+  border-color: #ffffff;
+}
+
+.mr-scope.mr-scope--light .mr-friend-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-friend-card img {
+  border-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-friend-name {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-friend-detail {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-friend-status {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-friend-status.mr-status-active {
+  color: #0ca678;
+}
+
+.mr-scope.mr-scope--light .mr-friend-status.mr-status-idle {
+  color: #858b94;
+}
+
+/* Icons grid */
+.mr-scope.mr-scope--light .mr-icon-item {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-icon-item span {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-icon-box {
+  color: #1a2332;
+}
+
+/* Radius and shadow foundations */
+.mr-scope.mr-scope--light .mr-radius-box {
+  background: #ffffff;
+  border: 1px solid rgba(32, 36, 42, 0.2);
+}
+
+.mr-scope.mr-scope--light .mr-radius-info code,
+.mr-scope.mr-scope--light .mr-shadow-info code {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-shadow-box {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+/* Forms */
+.mr-scope.mr-scope--light .mr-form-demo {
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-form-demo .form-group label {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-form-demo .form-group input,
+.mr-scope.mr-scope--light .mr-form-demo .form-group textarea,
+.mr-scope.mr-scope--light .mr-form-demo .form-group select {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-form-demo .form-group input::placeholder,
+.mr-scope.mr-scope--light .mr-form-demo .form-group textarea::placeholder {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-form-demo .form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(26,35,50,0.55)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+.mr-scope.mr-scope--light .mr-form-demo .form-group select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(26,35,50,0.7)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+.mr-scope.mr-scope--light .mr-form-demo .form-group select option {
+  background: #ffffff;
+  color: #1a2332;
+}
+
+/* Navigation: home top nav */
+.mr-scope.mr-scope--light .mr-top-nav-home {
+  background: #ffffff;
+  border-bottom: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-top-nav-home-wordmark {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-nav-icon-btn {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-top-nav-avatar {
+  border-color: #e1e3e6;
+}
+
+/* Navigation: bars */
+.mr-scope.mr-scope--light .mr-nav-bar {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-nav-bar--inner {
+  background: #ffffff;
+  border-bottom: 1px solid #f0f1f2;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.mr-scope.mr-scope--light .mr-nav-bar-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-bar-back:hover,
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-bar-action:hover,
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-icon-btn:hover,
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-bar-avatar-btn:hover {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-bar-back:active,
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-bar-action:active,
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-icon-btn:active,
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-nav-bar-avatar-btn:active {
+  background: rgba(15, 23, 42, 0.1);
+}
+
+.mr-scope.mr-scope--light .mr-nav-bar--inner .mr-top-nav-avatar {
+  border-color: #e1e3e6;
+  box-shadow: none;
+}
+
+/* Navigation: bottom tab bar */
+.mr-scope.mr-scope--light .mr-tab-bar {
+  background: #ffffff;
+  border-top: 1px solid #f0f1f2;
+  box-shadow: 0 -6px 20px rgba(26, 35, 50, 0.08);
+}
+
+.mr-scope.mr-scope--light .mr-tab-item {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-tab-item.mr-tab-active {
+  color: #06b6d4;
+}
+
+.mr-scope.mr-scope--light .mr-tab-item.mr-tab-create {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-tab-avatar {
+  border-color: #e1e3e6;
+}
+
+/* Search bar */
+.mr-scope.mr-scope--light .mr-search-bar svg,
+.mr-scope.mr-scope--light .mr-search-bar .ph,
+.mr-scope.mr-scope--light .mr-search-bar .ph-fill {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-search-bar:focus-within svg,
+.mr-scope.mr-scope--light .mr-search-bar:focus-within .ph,
+.mr-scope.mr-scope--light .mr-search-bar:focus-within .ph-fill {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-search-bar input {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-search-bar input::placeholder {
+  color: #858b94;
+}
+
+/* Toggles: cyan on, light gray track */
+.mr-scope.mr-scope--light .mr-toggle,
+.mr-scope.mr-scope--light .ds-toggle {
+  background: rgba(120, 120, 128, 0.16);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.mr-scope.mr-scope--light .mr-toggle::after,
+.mr-scope.mr-scope--light .ds-toggle::after {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mr-scope.mr-scope--light .mr-toggle.mr-toggle-on,
+.mr-scope.mr-scope--light .ds-toggle.is-on {
+  background: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.6);
+}
+
+.mr-scope.mr-scope--light .mr-toggle:focus-visible,
+.mr-scope.mr-scope--light .ds-toggle:focus-visible {
+  outline-color: #06b6d4;
+}
+
+.mr-scope.mr-scope--light .mr-toggle-row {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-toggle-label-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-toggle-label-desc {
+  color: #858b94;
+}
+
+/* Empty states */
+.mr-scope.mr-scope--light .mr-empty-state-icon > .ph {
+  background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.mr-scope.mr-scope--light .mr-empty-state-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-empty-state-desc {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-empty-banner {
+  background: #ffffff;
+  border: 1.5px dashed rgba(32, 36, 42, 0.2);
+}
+
+.mr-scope.mr-scope--light .mr-empty-banner-icon {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+}
+
+.mr-scope.mr-scope--light .mr-empty-banner-desc {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-empty-banner-caret {
+  color: #a3a8b0;
+}
+
+/* Toasts */
+.mr-scope.mr-scope--light .mr-toast {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  color: #1a2332;
+  box-shadow: var(--shadow);
+}
+
+.mr-scope.mr-scope--light .mr-toast-icon.mr-toast-success {
+  background: rgba(12, 166, 120, 0.14);
+  border: 1px solid rgba(12, 166, 120, 0.3);
+  color: #0ca678;
+}
+
+.mr-scope.mr-scope--light .mr-toast-icon.mr-toast-error {
+  background: rgba(208, 41, 62, 0.12);
+  border: 1px solid rgba(208, 41, 62, 0.3);
+  color: #b31d30;
+}
+
+.mr-scope.mr-scope--light .mr-toast-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-toast-desc {
+  color: #5c6b7d;
+}
+
+/* Profile card */
+.mr-scope.mr-scope--light .mr-profile-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-profile-avatar {
+  border-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-profile-name {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-profile-handle {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-profile-bio {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-profile-stat-value {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-profile-stat-label {
+  color: #858b94;
+}
+
+/* Location card: photo header stays, info panel flips */
+.mr-scope.mr-scope--light .mr-location-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-location-name {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-location-address {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-location-distance {
+  color: #0891b2;
+}
+
+/* Modals and sheets: backdrop scrim stays dark, sheet surface flips */
+.mr-scope.mr-scope--light .mr-bottom-sheet {
+  box-shadow:
+    0 -12px 48px rgba(0, 0, 0, 0.22),
+    0 -1px 0 rgba(6, 182, 212, 0.15);
+}
+
+.mr-scope.mr-scope--light .mr-bottom-sheet--stylized {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  border-bottom: none;
+}
+
+.mr-scope.mr-scope--light .mr-bottom-sheet-glow {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    rgba(37, 99, 235, 0.1),
+    rgba(6, 182, 212, 0.04) 42%,
+    transparent 68%
+  );
+}
+
+.mr-scope.mr-scope--light .mr-bottom-sheet-handle {
+  background: #d3d8de;
+}
+
+.mr-scope.mr-scope--light .mr-bottom-sheet-desc {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-bottom-sheet-cancel {
+  color: #5c6b7d;
+  border-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-dialog {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.mr-scope.mr-scope--light .mr-dialog--ios {
+  background: rgba(250, 250, 250, 0.97);
+  border: 0.5px solid rgba(15, 23, 42, 0.1);
+}
+
+.mr-scope.mr-scope--light .mr-dialog-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-dialog-body {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-ios-alert-footer {
+  border-top-color: rgba(15, 23, 42, 0.12);
+}
+
+.mr-scope.mr-scope--light
+  .mr-ios-alert-footer:not(.mr-ios-alert-footer--single)
+  .mr-ios-alert-btn
+  + .mr-ios-alert-btn {
+  border-left-color: rgba(15, 23, 42, 0.12);
+}
+
+.mr-scope.mr-scope--light .mr-ios-alert-btn--destructive {
+  color: #d0293e;
+}
+
+.mr-scope.mr-scope--light .mr-dialog-icon.mr-dialog-warning {
+  background: rgba(217, 119, 6, 0.14);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  color: #d97706;
+}
+
+.mr-scope.mr-scope--light .mr-dialog-icon.mr-dialog-success {
+  background: rgba(12, 166, 120, 0.14);
+  border: 1px solid rgba(12, 166, 120, 0.3);
+  color: #0ca678;
+}
+
+/* Stepper: cyan active states */
+.mr-scope.mr-scope--light .mr-step-circle {
+  background: #ffffff;
+  border: 1px solid rgba(32, 36, 42, 0.16);
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-step.mr-step-active .mr-step-circle {
+  background: rgba(6, 182, 212, 0.14);
+  border-color: #06b6d4;
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .mr-step.mr-step-complete .mr-step-circle {
+  background: #06b6d4;
+  border-color: #06b6d4;
+  color: #ffffff;
+}
+
+.mr-scope.mr-scope--light .mr-step-label {
+  color: #858b94;
+}
+
+.mr-scope.mr-scope--light .mr-step.mr-step-active .mr-step-label {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-step.mr-step-complete .mr-step-label {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-step-line {
+  background: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-step-line.mr-step-line-active {
+  background: linear-gradient(90deg, #06b6d4, rgba(6, 182, 212, 0.3));
+}
+
+.mr-scope.mr-scope--light .mr-step-line.mr-step-line-complete {
+  background: #06b6d4;
+}
+
+/* Skeletons: gray bars on the light panel */
+.mr-scope.mr-scope--light .mr-skeleton {
+  background: linear-gradient(90deg, #e7ebef 25%, #f3f6f8 50%, #e7ebef 75%);
+  background-size: 200% 100%;
+}
+
+.mr-scope.mr-scope--light .mr-skeleton-card {
+  border-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-skeleton-row {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-skeleton-plan-card {
+  background: #ffffff;
+  border-color: #e1e3e6;
+}
+
+.mr-scope.mr-scope--light .mr-skeleton-plan-card-footer {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+/* Divider */
+.mr-scope.mr-scope--light .mr-divider {
+  background: #e1e3e6;
+}
+
+/* People picker chip */
+.mr-scope.mr-scope--light .mr-pp-chip {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-pp-chip .mr-pp-chip-remove {
+  background: rgba(15, 23, 42, 0.1);
+  color: #1a2332;
+}
+
+/* Checkbox */
+.mr-scope.mr-scope--light .mr-checkbox {
+  color: rgba(15, 23, 42, 0.3);
+}
+
+.mr-scope.mr-scope--light .mr-checkbox.is-checked {
+  color: #06b6d4;
+}
+
+/* Person rows */
+.mr-scope.mr-scope--light .mr-pp-row.is-selected {
+  background: rgba(6, 182, 212, 0.12);
+}
+
+.mr-scope.mr-scope--light .mr-pp-row .mr-pp-row-avatar.is-initials {
+  background: #dfe3e8;
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-pp-row .mr-pp-row-name {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-pp-row .mr-pp-row-handle {
+  color: #858b94;
+}
+
+/* People picker group cards */
+.mr-scope.mr-scope--light .mr-pp-group-card {
+  background: #ffffff;
+  border: 1px solid #e1e3e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-pp-group-card .mr-pp-group-thumb {
+  background: #f1f4f7;
+}
+
+.mr-scope.mr-scope--light .mr-pp-group-card .mr-pp-group-thumb i {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-pp-group-card .mr-pp-group-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-pp-group-card .mr-pp-group-detail {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-pp-group-card.is-selected {
+  border: 2px solid #06b6d4;
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.mr-scope.mr-scope--light .mr-pp-group-card.is-selected .mr-pp-group-detail {
+  color: #0891b2;
+}
+
+/* Welcome banner (classes live in the fragment style block; these win on specificity) */
+.mr-scope.mr-scope--light .mr-banner-card {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.16), rgba(37, 99, 235, 0.06)), #ffffff;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope.mr-scope--light .mr-banner-stub {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.14), rgba(37, 99, 235, 0.05)), #ffffff;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  border-top: none;
+}
+
+.mr-scope.mr-scope--light .mr-banner-icon {
+  background: rgba(6, 182, 212, 0.16);
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .mr-banner-title {
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .mr-banner-desc {
+  color: #5c6b7d;
+}
+
+.mr-scope.mr-scope--light .mr-banner-cta {
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .mr-banner-dismiss {
+  color: rgba(15, 23, 42, 0.35);
 }

@@ -1,0 +1,18 @@
+{
+  "screens": [
+    {
+      "file": "home.html",
+      "x": 0,
+      "y": 0,
+      "width": 390
+    }
+  ],
+  "texts": [
+    {
+      "text": "Current",
+      "x": 0,
+      "y": -96,
+      "size": 48
+    }
+  ]
+}

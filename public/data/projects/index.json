@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "home-page",
-      "name": "Home Page Redesign",
+      "name": "Home Page V1",
       "description": "",
       "createdAt": "2026-04-03T21:48:42.021Z",
       "createdBy": "Brandon"
@@ -61,6 +61,13 @@
       "description": "",
       "createdBy": "Brandon Unglaub",
       "createdAt": "2026-07-01T22:08:41.216Z"
+    },
+    {
+      "id": "mixedroutes-phase-v2",
+      "name": "MixedRoutes Phase V2",
+      "description": "Light mode screens matching the app design refresh",
+      "createdBy": "Brandon Unglaub",
+      "createdAt": "2026-08-03T00:00:00Z"
     }
   ]
 }
