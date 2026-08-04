@@ -10,14 +10,14 @@
 
   .stfg3-headline { position: absolute; top: 84px; left: 68px; z-index: 2; margin: 0; font-size: 84px; font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; color: #1a2332; }
   .stfg3-headline i { font-style: normal; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .stfg3-sub { position: absolute; top: 292px; left: 70px; z-index: 2; margin: 0; font-size: 27px; font-weight: 400; line-height: 1.4; color: #5c6b7d; white-space: nowrap; }
+  .stfg3-sub { position: absolute; top: 296px; left: 70px; z-index: 2; margin: 0; max-width: 400px; font-size: 34px; font-weight: 400; line-height: 1.35; color: #5c6b7d; }
 
-  .stfg3-stack { position: absolute; top: 40px; right: 40px; z-index: 3; width: 452px; display: flex; flex-direction: column; gap: 14px; }
+  .stfg3-stack { position: absolute; top: 0; bottom: 0; right: 40px; z-index: 3; width: 452px; display: flex; flex-direction: column; justify-content: center; }
   /* App ActivityCard layout translated to light mode: inset photo left, details right */
   .stfg3-card { position: relative; display: flex; align-items: stretch; gap: 14px; width: 452px; padding: 8px; border-radius: 24px; background: #ffffff; box-shadow: 0 28px 44px rgba(26, 35, 50, 0.24), 0 10px 18px rgba(26, 35, 50, 0.12); }
   .stfg3-card:nth-child(1) { transform: rotate(-1.1deg); z-index: 3; }
-  .stfg3-card:nth-child(2) { transform: rotate(0.7deg); z-index: 2; }
-  .stfg3-card:nth-child(3) { transform: rotate(-0.4deg); z-index: 1; }
+  .stfg3-card:nth-child(2) { transform: rotate(0.7deg); z-index: 2; margin-top: -14px; margin-left: 8px; }
+  .stfg3-card:nth-child(3) { transform: rotate(-0.4deg); z-index: 1; margin-top: -14px; }
 
   .stfg3-img { flex: none; width: 116px; height: 116px; border-radius: 16px; background-size: cover; background-position: center; }
 
@@ -81,7 +81,7 @@
 
   <div class="stfg3-stack">
     <article class="stfg3-card">
-      <span class="stfg3-img" style="background-image: url('../img/live-music.jpg');"></span>
+      <span class="stfg3-img" style="background-image: url('../img/festival-crowd.jpg');"></span>
       <span class="stfg3-going" aria-label="Going"><i class="ph ph-check"></i></span>
       <div class="stfg3-body">
         <span class="stfg3-when is-live">Today &middot; 2 PM</span>
@@ -98,7 +98,7 @@
     </article>
 
     <article class="stfg3-card">
-      <span class="stfg3-img" style="background-image: url('../img/trivia-night.jpg');"></span>
+      <span class="stfg3-img" style="background-image: url('../img/bar-trivia.jpg');"></span>
       <div class="stfg3-body">
         <span class="stfg3-when">Sat &middot; 7 PM</span>
         <h2 class="stfg3-title">Trivia Night &#127922;</h2>
@@ -114,12 +114,12 @@
     </article>
 
     <article class="stfg3-card">
-      <span class="stfg3-img" style="background-image: url('../img/sunrise-hike.jpg');"></span>
+      <span class="stfg3-img" style="background-image: url('../img/hike-mountain.jpg');"></span>
       <div class="stfg3-body">
-        <span class="stfg3-when">Sun &middot; 6 AM</span>
-        <h2 class="stfg3-title">Sunrise Hike &#129406;</h2>
+        <span class="stfg3-when">Sun &middot; 9 AM</span>
+        <h2 class="stfg3-title">Mountain Hike &#129406;</h2>
         <div class="stfg3-foot">
-          <span class="stfg3-loc"><i class="ph-fill ph-map-pin"></i>Mountain Trail</span>
+          <span class="stfg3-loc"><i class="ph-fill ph-map-pin"></i>Eagle Peak Trail</span>
           <div class="stfg3-avs" aria-label="5 people going">
             <span class="stfg3-av" style="background-image: url('../img/stock-av-5.jpg');"></span>
             <span class="stfg3-av" style="background-image: url('../img/stock-av-6.jpg');"></span>
