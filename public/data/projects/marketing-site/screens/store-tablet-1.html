@@ -1,0 +1,192 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  .stt1 { position: relative; width: 1600px; height: 1400px; overflow: hidden; background: #f5f2ec; font-family: "Geist", -apple-system, sans-serif; box-sizing: border-box; }
+  .stt1 * { box-sizing: border-box; }
+  .stt1-texture { position: absolute; inset: 0; pointer-events: none; }
+  .stt1-texture svg { display: block; width: 100%; height: 100%; }
+  .stt1-headline { position: absolute; top: 92px; left: 0; right: 0; z-index: 2; margin: 0; text-align: center; font-size: 124px; font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; color: #1a2332; }
+  .stt1-headline i { font-style: normal; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .stt1-sub { position: absolute; top: 356px; left: 0; right: 0; z-index: 2; margin: 0; text-align: center; font-size: 43px; font-weight: 400; color: #5c6b7d; }
+
+  .stt1-tablet { position: absolute; left: 88px; top: 492px; z-index: 3; width: 1424px; height: 842px; padding: 22px; border-radius: 82px; background: linear-gradient(145deg, #44464b, #151619 38%, #050506 72%, #36383d); border: 4px solid #686b72; box-shadow: 0 62px 110px rgba(26, 35, 50, 0.28), 0 18px 36px rgba(26, 35, 50, 0.2); }
+  .stt1-tablet::before { content: ""; position: absolute; top: 50%; right: 6px; width: 7px; height: 82px; border-radius: 5px; background: #777a82; transform: translateY(-50%); opacity: 0.65; }
+  .stt1-camera { position: absolute; top: 50%; left: 8px; z-index: 5; width: 13px; height: 13px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #264f7a 0 18%, #101724 28% 58%, #000 70%); transform: translateY(-50%); box-shadow: 0 0 0 2px rgba(255,255,255,0.08); }
+  .stt1-screen { position: relative; display: flex; width: 100%; height: 100%; overflow: hidden; border-radius: 60px; background: #f2f3f6; color: #101724; }
+
+  .stt1-sidebar { position: relative; flex: 0 0 252px; display: flex; flex-direction: column; padding: 48px 27px 34px; background: #ffffff; border-right: 2px solid #e6e9ed; }
+  .stt1-brand { display: flex; align-items: center; gap: 14px; margin: 0 10px 48px; font-size: 25px; font-weight: 800; color: #101724; letter-spacing: -0.02em; }
+  .stt1-brand img { width: 45px; height: 45px; }
+  .stt1-nav { display: flex; flex-direction: column; gap: 9px; }
+  .stt1-nav-item { display: flex; align-items: center; gap: 16px; min-height: 58px; padding: 0 18px; border-radius: 18px; color: #718093; font-size: 18px; font-weight: 650; }
+  .stt1-nav-item i { width: 26px; font-size: 25px; text-align: center; }
+  .stt1-nav-item.is-on { background: #101724; color: #ffffff; box-shadow: 0 10px 22px rgba(16, 23, 36, 0.18); }
+  .stt1-sidebar-bottom { display: flex; align-items: center; gap: 12px; margin-top: auto; padding: 15px 12px 0; border-top: 2px solid #eff1f4; }
+  .stt1-me { width: 42px; height: 42px; flex: none; border-radius: 50%; background: url('../img/brandon.jpg') center/cover; }
+  .stt1-me-copy { min-width: 0; }
+  .stt1-me-copy b { display: block; font-size: 15px; color: #101724; }
+  .stt1-me-copy span { display: block; margin-top: 2px; font-size: 12px; color: #8490a0; }
+
+  .stt1-main { flex: 1; min-width: 0; padding: 38px 42px 36px; overflow: hidden; }
+  .stt1-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; }
+  .stt1-greeting { margin: 0; font-size: 38px; font-weight: 800; letter-spacing: -0.03em; color: #101724; }
+  .stt1-greeting i { font-style: normal; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .stt1-top-actions { display: flex; align-items: center; gap: 12px; }
+  .stt1-search { display: flex; align-items: center; gap: 11px; width: 238px; height: 46px; padding: 0 17px; border-radius: 18px; background: #ffffff; border: 1px solid #e0e4e9; color: #96a0ae; font-size: 15px; }
+  .stt1-search i { font-size: 20px; }
+  .stt1-round { position: relative; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 16px; background: #ffffff; border: 1px solid #e0e4e9; color: #425064; font-size: 21px; }
+  .stt1-round b { position: absolute; top: -6px; right: -6px; display: grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: #ef476f; color: #fff; font-size: 11px; }
+
+  .stt1-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(310px, 0.72fr); gap: 28px; }
+  .stt1-section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  .stt1-section-head h3 { margin: 0; font-size: 23px; font-weight: 800; letter-spacing: -0.02em; color: #101724; }
+  .stt1-section-head span { font-size: 13px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: #db8a51; }
+
+  .stt1-feature { position: relative; height: 306px; overflow: hidden; border-radius: 30px; background: #101724; box-shadow: 0 18px 40px rgba(16, 23, 36, 0.16); }
+  .stt1-feature-photo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 16, 28, 0.88) 0%, rgba(10, 16, 28, 0.42) 55%, rgba(10, 16, 28, 0.08) 100%), url('../img/live-music.jpg') center/cover; }
+  .stt1-feature-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 32px; color: #ffffff; }
+  .stt1-date-chip { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 12px; font-weight: 800; letter-spacing: 0.07em; }
+  .stt1-feature h4 { margin: 12px 0 6px; font-size: 34px; font-weight: 750; line-height: 1.05; letter-spacing: -0.025em; }
+  .stt1-loc { display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,0.78); font-size: 15px; font-weight: 550; }
+  .stt1-loc i { font-size: 17px; }
+  .stt1-going { position: absolute; right: 28px; bottom: 28px; display: flex; align-items: center; }
+  .stt1-going img, .stt1-going span { width: 39px; height: 39px; margin-left: -10px; border: 3px solid #ffffff; border-radius: 50%; object-fit: cover; }
+  .stt1-going img:first-child { margin-left: 0; }
+  .stt1-going span { display: grid; place-items: center; background: #e9edf2; color: #526174; font-size: 12px; font-weight: 800; }
+
+  .stt1-mini-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  .stt1-mini { display: grid; grid-template-columns: 112px minmax(0, 1fr); min-height: 126px; overflow: hidden; border-radius: 24px; background: #ffffff; box-shadow: 0 8px 22px rgba(26, 35, 50, 0.07); }
+  .stt1-mini-photo { min-height: 126px; background-position: center; background-size: cover; }
+  .stt1-mini-body { min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 17px 18px; }
+  .stt1-mini-date { font-size: 11px; font-weight: 800; letter-spacing: 0.065em; text-transform: uppercase; color: #db8a51; }
+  .stt1-mini h4 { overflow: hidden; margin: 6px 0 8px; color: #101724; font-size: 18px; font-weight: 750; line-height: 1.15; white-space: nowrap; text-overflow: ellipsis; }
+  .stt1-mini p { display: flex; align-items: center; gap: 6px; overflow: hidden; margin: 0; color: #718093; font-size: 12px; white-space: nowrap; text-overflow: ellipsis; }
+
+  .stt1-calendar { overflow: hidden; padding: 25px 25px 23px; border-radius: 28px; background: #ffffff; box-shadow: 0 10px 28px rgba(26, 35, 50, 0.08); }
+  .stt1-cal-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 19px; }
+  .stt1-cal-top b { font-size: 18px; color: #101724; }
+  .stt1-cal-arrows { display: flex; gap: 7px; color: #7c8898; }
+  .stt1-cal-arrows i { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: #f2f4f7; }
+  .stt1-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+  .stt1-week span { display: grid; place-items: center; height: 31px; border-radius: 10px; color: #8490a0; font-size: 11px; font-weight: 650; }
+  .stt1-week .stt1-day { color: #3d4a5d; font-size: 13px; }
+  .stt1-week .is-today { background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; box-shadow: 0 6px 13px rgba(59, 130, 246, 0.24); }
+  .stt1-week .has-plan { position: relative; color: #101724; font-weight: 800; }
+  .stt1-week .has-plan::after { content: ""; position: absolute; bottom: 3px; width: 4px; height: 4px; border-radius: 50%; background: #db8a51; }
+
+  .stt1-friends { margin-top: 19px; padding: 22px 23px; border-radius: 28px; background: #101724; color: #ffffff; box-shadow: 0 14px 28px rgba(16, 23, 36, 0.16); }
+  .stt1-friends-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .stt1-friends-head b { font-size: 18px; }
+  .stt1-friends-head span { color: #75d8e0; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .stt1-friend { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .stt1-friend:first-of-type { border-top: 0; }
+  .stt1-friend img { width: 39px; height: 39px; flex: none; border-radius: 50%; object-fit: cover; }
+  .stt1-friend-copy { min-width: 0; flex: 1; }
+  .stt1-friend-copy b { display: block; font-size: 13px; }
+  .stt1-friend-copy span { display: block; overflow: hidden; margin-top: 2px; color: rgba(255,255,255,0.58); font-size: 11px; white-space: nowrap; text-overflow: ellipsis; }
+  .stt1-status { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,0.13); }
+</style>
+
+<div class="stt1">
+  <div class="stt1-texture" aria-hidden="true">
+    <svg viewBox="0 0 1600 1400" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="#1a2332" stroke-width="4" opacity="0.055">
+        <g transform="translate(56 58) scale(.58) rotate(-8)"><path d="M55 340 140 190l85 150Z"/><path d="m114 340 26-78 26 78M140 190v-32m0 0 30 9-30 9M232 340l88-140 88 140M40 340h400"/></g>
+        <g transform="translate(1300 12) scale(.5) rotate(10)"><path d="M140 160h190v66a95 95 0 0 1-190 0Z"/><path d="M330 176h26a36 36 0 0 1 0 72h-30M130 342a105 22 0 0 0 210 0"/></g>
+        <g transform="translate(1300 1110) scale(.58) rotate(-8)"><circle cx="160" cy="286" r="66"/><circle cx="412" cy="286" r="66"/><path d="m160 286 86-114 132-4 34 118M160 286h126l-40-114m40 114 92-118M246 172l-10-26m-22-4h44M378 168l12-30q20-12 34 2"/></g>
+        <g transform="translate(-45 1110) scale(.65) rotate(5)"><path d="M262 312q-70-36-166-12V158q96-24 166 12Zm0 0q70-36 166-12V158q-96-24-166 12Zm0-142v142"/></g>
+        <path d="M780 458v28m-14-14h28M1420 430v24m-12-12h24"/><circle cx="90" cy="430" r="4"/><circle cx="1535" cy="860" r="4"/>
+      </g>
+      <g stroke="#f2945c" stroke-width="4" opacity="0.13">
+        <g transform="translate(56 58) scale(.58) rotate(-8)"><path d="M242 332q-12-30 16-54 30 42 14 52-16 16-30 2Z"/></g>
+        <g transform="translate(1300 12) scale(.5) rotate(10)"><path d="M190 128q-8-14 0-38m45 40q-8-14 0-38m45 36q-8-14 0-38"/></g>
+        <path d="M122 385v26m-13-13h26M1480 1080v28m-14-14h28"/>
+      </g>
+    </svg>
+  </div>
+
+  <h1 class="stt1-headline">Life looks good<br />on the <i>big screen.</i></h1>
+  <p class="stt1-sub">Plans, people, and places&mdash;beautifully together.</p>
+
+  <div class="stt1-tablet">
+    <span class="stt1-camera"></span>
+    <div class="stt1-screen">
+      <aside class="stt1-sidebar">
+        <div class="stt1-brand"><img src="../img/gradient-icon.svg" alt="" />MixedRoutes</div>
+        <nav class="stt1-nav">
+          <span class="stt1-nav-item is-on"><i class="ph-fill ph-house"></i>Home</span>
+          <span class="stt1-nav-item"><i class="ph ph-compass"></i>Discover</span>
+          <span class="stt1-nav-item"><i class="ph ph-calendar-blank"></i>Plans</span>
+          <span class="stt1-nav-item"><i class="ph ph-chat-circle-dots"></i>Chats</span>
+          <span class="stt1-nav-item"><i class="ph ph-users-three"></i>Groups</span>
+        </nav>
+        <div class="stt1-sidebar-bottom">
+          <span class="stt1-me"></span>
+          <span class="stt1-me-copy"><b>Alex Morgan</b><span>View profile</span></span>
+        </div>
+      </aside>
+
+      <main class="stt1-main">
+        <header class="stt1-topbar">
+          <h2 class="stt1-greeting">Good afternoon, <i>Alex</i></h2>
+          <div class="stt1-top-actions">
+            <span class="stt1-search"><i class="ph ph-magnifying-glass"></i>Search anything</span>
+            <span class="stt1-round"><i class="ph ph-user-plus"></i></span>
+            <span class="stt1-round"><i class="ph ph-bell"></i><b>3</b></span>
+          </div>
+        </header>
+
+        <div class="stt1-grid">
+          <section>
+            <div class="stt1-section-head"><h3>Coming up</h3><span>View all</span></div>
+            <article class="stt1-feature">
+              <div class="stt1-feature-photo"></div>
+              <div class="stt1-feature-copy">
+                <span class="stt1-date-chip">TONIGHT &middot; 7 PM</span>
+                <h4>Music Festival &#127928;</h4>
+                <span class="stt1-loc"><i class="ph-fill ph-map-pin"></i>Frost Amphitheater</span>
+              </div>
+              <div class="stt1-going">
+                <img src="../img/stock-av-1.jpg" alt="" />
+                <img src="../img/stock-av-2.jpg" alt="" />
+                <img src="../img/stock-av-3.jpg" alt="" />
+                <span>+4</span>
+              </div>
+            </article>
+
+            <div class="stt1-mini-row">
+              <article class="stt1-mini">
+                <div class="stt1-mini-photo" style="background-image:url('../img/sunrise-hike.jpg');"></div>
+                <div class="stt1-mini-body"><span class="stt1-mini-date">Saturday &middot; 9 AM</span><h4>Sunrise Hike &#129406;</h4><p><i class="ph-fill ph-map-pin"></i>Mountain Trail</p></div>
+              </article>
+              <article class="stt1-mini">
+                <div class="stt1-mini-photo" style="background-image:url('../img/trivia-night.jpg');"></div>
+                <div class="stt1-mini-body"><span class="stt1-mini-date">Sunday &middot; 6 PM</span><h4>Trivia Night &#129504;</h4><p><i class="ph-fill ph-map-pin"></i>The Lantern</p></div>
+              </article>
+            </div>
+          </section>
+
+          <aside>
+            <div class="stt1-section-head"><h3>Your week</h3><span>August</span></div>
+            <div class="stt1-calendar">
+              <div class="stt1-cal-top"><b>August 2026</b><span class="stt1-cal-arrows"><i class="ph ph-caret-left"></i><i class="ph ph-caret-right"></i></span></div>
+              <div class="stt1-week">
+                <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                <span class="stt1-day">3</span><span class="stt1-day">4</span><span class="stt1-day">5</span><span class="stt1-day">6</span><span class="stt1-day is-today">7</span><span class="stt1-day has-plan">8</span><span class="stt1-day has-plan">9</span>
+              </div>
+            </div>
+
+            <div class="stt1-friends">
+              <div class="stt1-friends-head"><b>Friends nearby</b><span>See all</span></div>
+              <div class="stt1-friend"><img src="../img/stock-av-4.jpg" alt="" /><span class="stt1-friend-copy"><b>Maya Chen</b><span>Free after 6 PM</span></span><span class="stt1-status"></span></div>
+              <div class="stt1-friend"><img src="../img/stock-av-5.jpg" alt="" /><span class="stt1-friend-copy"><b>Dev Patel</b><span>Downtown &middot; Coffee?</span></span><span class="stt1-status"></span></div>
+              <div class="stt1-friend"><img src="../img/stock-av-6.jpg" alt="" /><span class="stt1-friend-copy"><b>Sam Rivera</b><span>At the park</span></span><span class="stt1-status"></span></div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

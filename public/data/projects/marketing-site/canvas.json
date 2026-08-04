@@ -70,6 +70,13 @@
       "name": "Store 6C · Chats · Blue Hour"
     },
     {
+      "file": "store-tablet-1.html",
+      "x": 11249,
+      "y": 8608,
+      "width": 1600,
+      "name": "Store · Tablet · Blue Hour · 1600×1400"
+    },
+    {
       "file": "interests-line-art.html",
       "x": 5152,
       "y": 20440,
@@ -119,11 +126,18 @@
       "name": "Store · App icon · 512"
     },
     {
-      "file": "store-feature-graphic-v2.html",
-      "x": 3852,
+      "file": "store-app-icon-gradient.html",
+      "x": 3296,
+      "y": 12142,
+      "width": 512,
+      "name": "Store · App icon · 512 · Gradient"
+    },
+    {
+      "file": "store-feature-graphic-v3.html",
+      "x": 3902,
       "y": 11550,
       "width": 1024,
-      "name": "Store · Feature graphic v2 · 1024×500"
+      "name": "Store · Feature graphic v3 · 1024×500"
     }
   ],
   "texts": [
