@@ -50,7 +50,7 @@
     },
     {
       "file": "store-4c.html",
-      "x": 5920,
+      "x": 5925,
       "y": 8608,
       "width": 1284,
       "name": "Store 4C · Everything with everyone · Blue Hour"
@@ -110,6 +110,20 @@
       "y": 0,
       "width": 1280,
       "name": "Get the app · Blue Hour"
+    },
+    {
+      "file": "store-app-icon.html",
+      "x": 3296,
+      "y": 11550,
+      "width": 512,
+      "name": "Store · App icon · 512"
+    },
+    {
+      "file": "store-feature-graphic.html",
+      "x": 3872,
+      "y": 11550,
+      "width": 1024,
+      "name": "Store · Feature graphic · 1024×500"
     }
   ],
   "texts": [
