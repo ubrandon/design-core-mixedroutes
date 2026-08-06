@@ -23,6 +23,24 @@
       "x": 1586,
       "y": -121,
       "width": 390
+    },
+    {
+      "file": "home-v2-copy.html",
+      "x": 0,
+      "y": 3908,
+      "width": 390
+    },
+    {
+      "file": "home-v2-list.html",
+      "x": 430,
+      "y": 3908,
+      "width": 390
+    },
+    {
+      "file": "home-v2-copy-2.html",
+      "x": 2189,
+      "y": -121,
+      "width": 390
     }
   ],
   "texts": [
@@ -61,6 +79,12 @@
       "x": 1586,
       "y": -206,
       "size": 48
+    },
+    {
+      "text": "Archive",
+      "x": 0,
+      "y": 3727,
+      "size": 72
     }
   ]
 }
