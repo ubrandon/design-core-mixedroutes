@@ -194,35 +194,59 @@
         {
           "id": "mr-places-list",
           "file": "mixedroutes/places-list-cards.html",
-          "label": "Places list cards"
+          "label": "Saved place lists"
         }
       ]
     },
     {
       "group": "dark-mode",
-      "name": "People",
-      "layout": "row",
+      "name": "People lists",
+      "section": "People & social",
       "components": [
         {
           "id": "mr-people-rows",
           "file": "mixedroutes/people-rows.html",
           "label": "Person list rows"
-        },
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Recent activity",
+      "components": [
         {
           "id": "mr-recent",
           "file": "mixedroutes/recent-activity.html",
           "label": "Recent activity"
-        },
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Interests & groups",
+      "components": [
         {
           "id": "mr-social",
           "file": "mixedroutes/social-cards.html",
-          "label": "Interests & groups"
-        },
+          "label": "Interests, groups & friends"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Profiles",
+      "components": [
         {
           "id": "mr-profile",
           "file": "mixedroutes/profile-cards.html",
-          "label": "Profile cards"
-        },
+          "label": "Profile summaries"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Avatars",
+      "components": [
         {
           "id": "mr-avatar-stack",
           "file": "mixedroutes/avatar-stack.html",
@@ -326,8 +350,19 @@
     },
     {
       "group": "dark-mode",
-      "name": "Icons",
+      "name": "Illustrations",
       "section": "Assets",
+      "components": [
+        {
+          "id": "mr-illustrations",
+          "file": "mixedroutes/illustrations.html",
+          "label": "Line-art scenes & usage"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Icons",
       "components": [
         {
           "id": "mr-icons",
@@ -508,35 +543,59 @@
         {
           "id": "mr-places-list-light",
           "file": "mixedroutes/places-list-cards-light.html",
-          "label": "Places list cards"
+          "label": "Saved place lists"
         }
       ]
     },
     {
       "group": "light-mode",
-      "name": "People",
-      "layout": "row",
+      "name": "People lists",
+      "section": "People & social",
       "components": [
         {
           "id": "mr-people-rows-light",
           "file": "mixedroutes/people-rows-light.html",
           "label": "Person list rows"
-        },
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Recent activity",
+      "components": [
         {
           "id": "mr-recent-light",
           "file": "mixedroutes/recent-activity-light.html",
           "label": "Recent activity"
-        },
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Interests & groups",
+      "components": [
         {
           "id": "mr-social-light",
           "file": "mixedroutes/social-cards-light.html",
-          "label": "Interests & groups"
-        },
+          "label": "Interests, groups & friends"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Profiles",
+      "components": [
         {
           "id": "mr-profile-light",
           "file": "mixedroutes/profile-cards-light.html",
-          "label": "Profile cards"
-        },
+          "label": "Profile summaries"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Avatars",
+      "components": [
         {
           "id": "mr-avatar-stack-light",
           "file": "mixedroutes/avatar-stack-light.html",
@@ -640,8 +699,19 @@
     },
     {
       "group": "light-mode",
-      "name": "Icons",
+      "name": "Illustrations",
       "section": "Assets",
+      "components": [
+        {
+          "id": "mr-illustrations-light",
+          "file": "mixedroutes/illustrations.html",
+          "label": "Line-art scenes & usage"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Icons",
       "components": [
         {
           "id": "mr-icons-light",

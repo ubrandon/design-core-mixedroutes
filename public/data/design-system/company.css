@@ -23,6 +23,8 @@
   /* Section action: warm yellow used by uppercase "EDIT / NEW GROUP / NEW LIST / VIEW ALL" links */
   --mr-section-action: #f5c451;
   --mr-section-action-hover: #ffd97a;
+  --illustrationLine: #6ea6cf;
+  --illustrationAccent: #e08a5e;
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
   --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.35);
   --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,6 +44,13 @@
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.68);
   --muted-2: rgba(255, 255, 255, 0.52);
+  --illustrationLine: #6ea6cf;
+  --illustrationAccent: #e08a5e;
+}
+
+.ds-canvas-stage .ds-group[data-ds-theme="light"] {
+  --illustrationLine: #38678c;
+  --illustrationAccent: #e08a5e;
 }
 
 /* Palette is a full-width foundation anchor; split its two previews evenly. */
@@ -1704,29 +1713,44 @@
   display: block;
 }
 
-/* Places list card — 2-up grid of saved-place lists (emoji + title + count + privacy) */
+/* Saved-place lists — full-width, chromeless list items */
 .mr-scope .mr-places-list-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   width: 100%;
 }
 
 .mr-scope .mr-places-list-card {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 16px 16px 18px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 72px;
+  padding: 12px 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: transparent;
   text-align: left;
   cursor: pointer;
   min-width: 0;
 }
 
+.mr-scope .mr-places-list-card:last-child {
+  border-bottom: 0;
+}
+
 .mr-scope .mr-places-list-card-icon {
-  font-size: 28px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 24px;
   line-height: 1;
   user-select: none;
 }
@@ -1764,8 +1788,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px dashed rgba(255, 255, 255, 0.14);
+  background: transparent;
+  border: 0;
 }
 
 .mr-scope .mr-places-list-card--new .mr-places-list-card-icon {
@@ -1777,25 +1801,27 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 68px;
+  padding: 10px 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: transparent;
   width: 100%;
   text-align: left;
   cursor: pointer;
 }
 
 .mr-scope .mr-places-list-row--selected {
-  background: rgba(109, 213, 237, 0.1);
-  border: 1.5px solid rgba(109, 213, 237, 0.5);
+  background: rgba(109, 213, 237, 0.08);
+  border-bottom-color: rgba(109, 213, 237, 0.24);
 }
 
 .mr-scope .mr-places-list-row-icon {
   width: 44px;
   height: 44px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
@@ -2151,7 +2177,7 @@
 /* Recent activity */
 .mr-scope .mr-recent-activity {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   overflow-x: auto;
   padding: 6px 0;
   max-width: 520px;
@@ -2171,7 +2197,12 @@
   gap: 5px;
   text-align: center;
   flex: 0 0 auto;
-  width: 82px;
+  width: 116px;
+  min-height: 0;
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .mr-scope .mr-recent-avatar {
@@ -2270,10 +2301,10 @@
 
 .mr-scope .mr-interest-card {
   width: 148px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2326,39 +2357,25 @@
 
 .mr-scope .mr-group-card {
   width: 150px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
+  overflow: visible;
 }
 
 .mr-scope .mr-group-card[style*="--mr-group-bg"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: var(--mr-group-bg);
-  background-size: cover;
-  background-position: center;
-  filter: blur(28px) saturate(1.2);
-  transform: scale(1.4);
-  opacity: 0.55;
+  content: none;
 }
 
 .mr-scope .mr-group-card[style*="--mr-group-bg"]::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(8, 10, 18, 0.35), rgba(8, 10, 18, 0.7));
+  content: none;
 }
 
 .mr-scope .mr-group-avatar {
@@ -2409,10 +2426,10 @@
 
 .mr-scope .mr-friend-card {
   width: 130px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3546,10 +3563,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 28px 24px;
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   max-width: 340px;
 }
 
@@ -4194,22 +4211,33 @@
   color: var(--neon-teal);
 }
 
-/* Person list-item — full-width row with avatar, name/handle, trailing control */
+/* Person list-item — wide, chromeless row with avatar, name/handle, trailing control */
+.ds-canvas-stage .ds-component-item:has(.mr-pp-row) {
+  min-width: 300px;
+}
+
 .mr-scope .mr-pp-row {
   display: grid;
   grid-template-columns: 44px 1fr auto;
   align-items: center;
   gap: 13px;
   width: 100%;
-  padding: 11px 20px;
+  min-height: 68px;
+  padding: 10px 8px;
+  margin-bottom: 0;
   border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   background: transparent;
   text-align: left;
   cursor: pointer;
 }
+.mr-scope .mr-pp-row:last-child {
+  border-bottom: 0;
+}
 .mr-scope .mr-pp-row.is-selected {
-  background: rgba(32, 224, 207, 0.09);
+  background: rgba(32, 224, 207, 0.07);
+  border-bottom-color: rgba(32, 224, 207, 0.2);
 }
 .mr-scope .mr-pp-row .mr-pp-row-avatar {
   width: 44px;
@@ -4489,6 +4517,103 @@
   background: rgba(208, 41, 62, 0.22);
   border-color: #b31d30;
   color: #b31d30;
+}
+
+/* App line-art illustrations: fixed 4:3 scene, one line color, one accent. */
+.mr-scope .mr-illustration-intro {
+  max-width: 68ch;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.mr-scope .mr-illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(142px, 1fr));
+  gap: 14px;
+}
+
+.mr-scope .mr-illustration-sample {
+  min-width: 0;
+  margin: 0;
+  padding: 12px 12px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.mr-scope .mr-illustration-sample svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  stroke: var(--illustrationLine);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mr-scope .mr-illustration-sample .mr-illustration-accent {
+  stroke: var(--illustrationAccent);
+}
+
+.mr-scope .mr-illustration-sample figcaption {
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mr-scope .mr-illustration-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.mr-scope .mr-illustration-recipe span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.mr-scope .mr-illustration-recipe strong {
+  color: var(--text);
+}
+
+.mr-scope .mr-illustration-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--illustrationLine);
+}
+
+.mr-scope .mr-illustration-swatch--accent {
+  background: var(--illustrationAccent);
+}
+
+.ds-canvas-stage
+  .ds-group[data-ds-theme="light"]
+  .mr-illustration-board {
+  --surface: #ffffff;
+  --border: #e1e3e6;
+  --text: #1a2332;
+  --muted: #5c6b7d;
+  --muted-2: #858b94;
+}
+
+.ds-canvas-stage
+  .ds-group[data-ds-theme="light"]
+  .mr-illustration-sample {
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
 .mr-scope.mr-scope--light .btn-white,
@@ -4856,11 +4981,20 @@
   color: #1a2332;
 }
 
-/* Places list cards */
+/* Saved-place list items */
 .mr-scope.mr-scope--light .mr-places-list-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #e1e3e6;
+  box-shadow: none;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card:last-child {
+  border-bottom: 0;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card-icon {
+  background: #f1f4f7;
 }
 
 .mr-scope.mr-scope--light .mr-places-list-card-title {
@@ -4877,7 +5011,7 @@
 
 .mr-scope.mr-scope--light .mr-places-list-card--new {
   background: transparent;
-  border: 1.5px dashed rgba(32, 36, 42, 0.2);
+  border: 0;
   box-shadow: none;
 }
 
@@ -4886,13 +5020,14 @@
 }
 
 .mr-scope.mr-scope--light .mr-places-list-row {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #e1e3e6;
 }
 
 .mr-scope.mr-scope--light .mr-places-list-row--selected {
-  background: rgba(6, 182, 212, 0.14);
-  border: 1.5px solid #06b6d4;
+  background: rgba(6, 182, 212, 0.08);
+  border-bottom-color: rgba(6, 182, 212, 0.24);
 }
 
 .mr-scope.mr-scope--light .mr-places-list-row-icon {
@@ -4973,6 +5108,12 @@
 /* Bookmark circles over photos keep their dark scrim on purpose */
 
 /* Recent activity strip */
+.mr-scope.mr-scope--light .mr-recent-item {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
 .mr-scope.mr-scope--light .mr-recent-avatar {
   border-color: #e1e3e6;
 }
@@ -5001,9 +5142,9 @@
 
 /* Interests, groups, friends */
 .mr-scope.mr-scope--light .mr-interest-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-interest-icon {
@@ -5020,9 +5161,9 @@
 }
 
 .mr-scope.mr-scope--light .mr-group-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-group-title {
@@ -5037,17 +5178,17 @@
   color: #858b94;
 }
 
-/* Group cards backed by a blurred photo keep their scrim and white text */
+/* Group tiles stay chromeless; imagery belongs to the avatar only. */
 .mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-title {
-  color: rgba(255, 255, 255, 0.96);
+  color: #1a2332;
 }
 
 .mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-detail {
-  color: rgba(255, 255, 255, 0.6);
+  color: #5c6b7d;
 }
 
 .mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-status {
-  color: rgba(255, 255, 255, 0.5);
+  color: #858b94;
 }
 
 .mr-scope.mr-scope--light .mr-group-avatar {
@@ -5055,9 +5196,9 @@
 }
 
 .mr-scope.mr-scope--light .mr-friend-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-friend-card img {
@@ -5346,11 +5487,11 @@
   color: #5c6b7d;
 }
 
-/* Profile card */
+/* Profile summary */
 .mr-scope.mr-scope--light .mr-profile-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-profile-avatar {
@@ -5568,8 +5709,15 @@
 }
 
 /* Person rows */
+.mr-scope.mr-scope--light .mr-pp-row {
+  background: transparent;
+  border-color: #e1e3e6;
+  box-shadow: none;
+}
+
 .mr-scope.mr-scope--light .mr-pp-row.is-selected {
-  background: rgba(6, 182, 212, 0.12);
+  background: rgba(6, 182, 212, 0.08);
+  border-bottom-color: rgba(6, 182, 212, 0.2);
 }
 
 .mr-scope.mr-scope--light .mr-pp-row .mr-pp-row-avatar.is-initials {

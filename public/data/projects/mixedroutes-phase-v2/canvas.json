@@ -3,16 +3,40 @@
     {
       "file": "home.html",
       "x": 0,
-      "y": 2,
+      "y": -121,
+      "width": 390
+    },
+    {
+      "file": "discover.html",
+      "x": 430,
+      "y": -121,
       "width": 390
     }
   ],
   "texts": [
     {
-      "text": "Current",
+      "text": "Current designs",
       "x": 0,
-      "y": -96,
+      "y": -320,
+      "size": 72
+    },
+    {
+      "text": "Home",
+      "x": 0,
+      "y": -206,
       "size": 48
+    },
+    {
+      "text": "Discover",
+      "x": 430,
+      "y": -206,
+      "size": 48
+    },
+    {
+      "text": "Home",
+      "x": 1156,
+      "y": -320,
+      "size": 72
     }
   ]
 }
