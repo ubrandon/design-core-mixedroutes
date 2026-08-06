@@ -11,6 +11,18 @@
       "x": 430,
       "y": -121,
       "width": 390
+    },
+    {
+      "file": "home-v2.html",
+      "x": 1156,
+      "y": -121,
+      "width": 390
+    },
+    {
+      "file": "discover-v2.html",
+      "x": 1586,
+      "y": -121,
+      "width": 390
     }
   ],
   "texts": [
@@ -33,10 +45,22 @@
       "size": 48
     },
     {
-      "text": "Home",
+      "text": "V2 proposal",
       "x": 1156,
       "y": -320,
       "size": 72
+    },
+    {
+      "text": "Home",
+      "x": 1156,
+      "y": -206,
+      "size": 48
+    },
+    {
+      "text": "Discover",
+      "x": 1586,
+      "y": -206,
+      "size": 48
     }
   ]
 }
