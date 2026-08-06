@@ -7,14 +7,14 @@
 
   .mrv2-disc2, .mrv2-disc2 * { box-sizing: border-box; font-family: "Geist", sans-serif; margin: 0; }
   .mrv2-disc2 { background: #ffffff; color: #101724; position: relative; overflow-x: clip; }
-  .mrv2-disc2 .page-content { padding: 0 16px 82px; display: flex; flex-direction: column; gap: 16px; }
+  .mrv2-disc2 .page-content { padding: 4px 16px 82px; display: flex; flex-direction: column; gap: 16px; }
 
-  /* Segment tabs */
-  .mrv2-disc2 .segment { position: relative; display: flex; width: calc(100% + 32px); height: 64px; margin: 0 -16px; }
-  .mrv2-disc2 .segment-tab { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; color: #5c6b7d; font-size: 14px; font-weight: 600; }
-  .mrv2-disc2 .segment-tab i { height: 28px; display: flex; align-items: center; font-size: 26px; line-height: 1; }
-  .mrv2-disc2 .segment-tab.selected { color: #1a2332; font-weight: 700; }
-  .mrv2-disc2 .segment-tab.selected::after { content: ""; position: absolute; right: 13px; bottom: 0; left: 13px; height: 2px; border-radius: 999px; background: #1a2332; }
+  /* Toolbar */
+  .mrv2-disc2 .toolbar { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: #ffffff; }
+  .mrv2-disc2 .toolbar .page-title { font-size: 24px; font-weight: 700; color: #1a2332; }
+  .mrv2-disc2 .toolbar .actions { display: flex; align-items: center; gap: 18px; }
+  .mrv2-disc2 .toolbar .actions .tbtn { position: relative; color: #1a2332; font-size: 24px; line-height: 1; }
+  .mrv2-disc2 .toolbar .badge-dot { position: absolute; top: -8px; right: -8px; min-width: 22px; height: 22px; border-radius: 999px; background: #0ca678; color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; border: 2px solid #ffffff; padding: 0 4px; }
 
   /* AI composer */
   .mrv2-disc2 .composer { border-radius: 28px; padding: 1.5px; background: linear-gradient(135deg, #14b8a6, #3b82f6); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.16); }
@@ -24,6 +24,10 @@
   .mrv2-disc2 .composer .label span { background-image: linear-gradient(90deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
   .mrv2-disc2 .composer .prompt { font-size: 20px; font-weight: 600; color: #8b98a8; line-height: 1.35; }
   .mrv2-disc2 .composer .prompt .caret-blink { display: inline-block; width: 2px; height: 1.1em; background: #3b82f6; vertical-align: text-bottom; margin-right: 2px; }
+  .mrv2-disc2 .composer .hints { display: flex; gap: 7px; overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; -ms-overflow-style: none; }
+  .mrv2-disc2 .composer .hints::-webkit-scrollbar { display: none; }
+  .mrv2-disc2 .composer .hint-chip { height: 32px; padding: 0 12px; border-radius: 999px; background: #ffffff; border: 1.5px solid rgba(59, 130, 246, 0.25); color: #3b4551; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; }
+  .mrv2-disc2 .composer .hint-chip i { font-size: 13px; color: #3b82f6; }
   .mrv2-disc2 .composer .ctl { display: flex; align-items: center; gap: 8px; }
   .mrv2-disc2 .composer .ctl-chip { height: 34px; padding: 0 12px; border-radius: 999px; border: 1.5px solid rgba(32, 36, 42, 0.14); background: #ffffff; display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: #1a2332; white-space: nowrap; }
   .mrv2-disc2 .composer .ctl-chip i { font-size: 14px; color: #5c6b7d; }
@@ -32,6 +36,8 @@
   .mrv2-disc2 .try-row::-webkit-scrollbar { display: none; }
   .mrv2-disc2 .try-chip { height: 36px; padding: 0 14px; border-radius: 999px; background: #f1f4f7; color: #3b4551; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; flex-shrink: 0; }
   .mrv2-disc2 .try-chip i { font-size: 14px; color: #3b82f6; }
+  .mrv2-disc2 .try-chip.selected { background: #1a2332; color: #ffffff; font-weight: 700; }
+  .mrv2-disc2 .try-chip.plain i { color: #5c6b7d; }
 
   /* Section header */
   .mrv2-disc2 section { display: flex; flex-direction: column; gap: 11px; }
@@ -96,19 +102,24 @@
 </style>
 
 <div class="mrv2-disc2 ds-no-scrollbar" style="background: #ffffff;">
+  <div class="toolbar">
+    <span class="page-title">Discover</span>
+    <div class="actions">
+      <span class="tbtn"><i class="ph ph-user-plus"></i></span>
+      <span class="tbtn"><i class="ph ph-bell"></i><span class="badge-dot">2</span></span>
+      <span class="tbtn"><i class="ph ph-gear-six"></i></span>
+    </div>
+  </div>
   <main class="page-content">
-    <header>
-      <div class="segment">
-        <span class="segment-tab selected"><i class="ph-fill ph-sparkle"></i><span>For you</span></span>
-        <span class="segment-tab"><i class="ph ph-ticket"></i><span>Events</span></span>
-        <span class="segment-tab"><i class="ph ph-map-pin"></i><span>Places</span></span>
-      </div>
-    </header>
-
     <div class="composer">
       <div class="inner">
         <div class="label"><i class="ph-fill ph-sparkle"></i><span>Ask for ideas</span></div>
         <div class="prompt"><span class="caret-blink"></span>What do you feel like doing?</div>
+        <div class="hints">
+          <span class="hint-chip"><i class="ph ph-sparkle"></i>Free family stuff this weekend</span>
+          <span class="hint-chip"><i class="ph ph-sparkle"></i>Date night, nothing loud</span>
+          <span class="hint-chip"><i class="ph ph-sparkle"></i>Ideas for Weekend Crew</span>
+        </div>
         <div class="ctl">
           <span class="ctl-chip"><i class="ph ph-map-pin"></i>Asheville</span>
           <span class="ctl-chip"><i class="ph ph-calendar-blank"></i>Anytime</span>
@@ -118,9 +129,10 @@
     </div>
 
     <div class="try-row">
-      <span class="try-chip"><i class="ph ph-sparkle"></i>Free family stuff this weekend</span>
-      <span class="try-chip"><i class="ph ph-sparkle"></i>Date night, nothing loud</span>
-      <span class="try-chip"><i class="ph ph-sparkle"></i>Ideas for Weekend Crew on Friday</span>
+      <span class="try-chip selected">For you</span>
+      <span class="try-chip plain"><i class="ph ph-ticket"></i>Events</span>
+      <span class="try-chip plain"><i class="ph ph-map-pin"></i>Places</span>
+      <span class="try-chip plain"><i class="ph ph-calendar-blank"></i>Plans</span>
     </div>
 
     <section>
