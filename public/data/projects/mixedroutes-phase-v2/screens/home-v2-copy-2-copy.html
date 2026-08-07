@@ -24,8 +24,8 @@
   .mrv2-home2 .greet h1 .grad { background-image: linear-gradient(90deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
   .mrv2-home2 .greet h1 .name { color: #5c6b7d; }
   .mrv2-home2 .now { display: inline-flex; align-items: center; gap: 7px; font-size: 16px; font-weight: 600; color: #5c6b7d; line-height: 1.4; }
-  .mrv2-home2 .now .pulse { width: 8px; height: 8px; border-radius: 50%; background: #0ca678; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(12, 166, 120, 0.15); }
-  .mrv2-home2 .now strong { color: #1a2332; font-weight: 700; }
+  .mrv2-home2.home2c2c .now a { color: #2563eb; font-weight: 700; text-decoration: none; }
+  .mrv2-home2.home2c2c .greet h1 .grad { background-image: linear-gradient(90deg, #0f766e, #1d4ed8); }
 
   /* Current app banner stack — full cards share one grid cell and step down in depth */
   .mrv2-home2 .home-banner-stack { --stack-offset: 12px; position: relative; display: grid; align-items: end; padding: 8px 2px 28px; overflow: visible; }
@@ -39,6 +39,16 @@
   .mrv2-home2 .home-banner-copy span { color: #5c6b7d; font-size: 14px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .mrv2-home2 .home-banner-cta { grid-column: 2; grid-row: 2; justify-self: start; padding: 0; border: 0; background: none; color: #2563eb; font-size: 15px; font-weight: 700; line-height: 1; }
   .mrv2-home2 .home-banner-dismiss { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; color: #858b94; font-size: 20px; }
+
+  /* Stack polish: bigger peek, per-card accent tints, lighter back shadows, dismiss animation */
+  .mrv2-home2.home2c2c .home-banner-stack { --stack-offset: 14px; }
+  .mrv2-home2.home2c2c .home-banner-card { border: 1px solid rgba(16, 23, 36, 0.08); border-radius: 20px; box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05), 0 14px 32px rgba(16, 24, 40, 0.1); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
+  .mrv2-home2.home2c2c .home-banner-icon { width: 44px; height: 44px; border-radius: 12px; font-size: 22px; background: color-mix(in srgb, var(--accent, #14b8a6) 14%, #ffffff); color: color-mix(in srgb, var(--accent, #14b8a6) 72%, #101724); }
+  .mrv2-home2.home2c2c .home-banner-card:not(.is-top) { background: color-mix(in srgb, var(--accent, #14b8a6) 10%, #ffffff); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+  .mrv2-home2.home2c2c .home-banner-dismiss, .mrv2-home2.home2c2c .home-banner-cta { transition: opacity 0.25s ease; }
+  .mrv2-home2.home2c2c .home-banner-card:not(.is-top) .home-banner-dismiss, .mrv2-home2.home2c2c .home-banner-card:not(.is-top) .home-banner-cta { opacity: 0; pointer-events: none; }
+  .mrv2-home2.home2c2c .home-banner-card.is-leaving { opacity: 0; transform: translateY(-16px) scale(1.02); pointer-events: none; }
+  .mrv2-home2.home2c2c .home-banner-stack.is-empty { display: none; }
 
   /* Section header */
   .mrv2-home2 section { display: flex; flex-direction: column; gap: 11px; }
@@ -175,7 +185,7 @@
   .mrv2-home2 .tab-bar .tab .you { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; }
 </style>
 
-<div class="mrv2-home2" style="background: #ffffff;">
+<div class="mrv2-home2 home2c2c" style="background: #ffffff;">
   <div class="toolbar">
     <div class="brand">
       <img src="../../../design-system/mixedroutes-assets/icon-foreground.svg" alt="" />
@@ -190,28 +200,32 @@
 
   <div class="content">
     <div class="greet">
-      <h1><span class="grad">Evening</span><span class="name">, Brandon</span></h1>
-      <div class="now"><span class="pulse"></span><span>Happening now: <strong>Trivia at The Well</strong></span></div>
+      <h1><span class="grad">Evening, Brandon</span></h1>
+      <div class="now"><span>Happening now: <a href="#">Trivia at The Well</a></span></div>
     </div>
 
     <div class="home-banner-stack" aria-label="3 updates">
-      <div class="home-banner-card is-third" style="--card-index: 2" aria-hidden="true">
-        <div class="home-banner-icon">📣</div>
+      <div class="home-banner-card is-third" style="--card-index: 2; --accent: #f97316;" aria-hidden="true">
+        <button class="home-banner-dismiss" aria-label="Dismiss"><i class="ph ph-x"></i></button>
+        <div class="home-banner-icon"><i class="ph-fill ph-megaphone"></i></div>
         <div class="home-banner-copy">
           <strong>This weekend in Asheville</strong>
           <span>Fresh events and places picked for you.</span>
         </div>
+        <button class="home-banner-cta">See what's on</button>
       </div>
-      <div class="home-banner-card is-second" style="--card-index: 1" aria-hidden="true">
-        <div class="home-banner-icon">👥</div>
+      <div class="home-banner-card is-second" style="--card-index: 1; --accent: #3b82f6;" aria-hidden="true">
+        <button class="home-banner-dismiss" aria-label="Dismiss"><i class="ph ph-x"></i></button>
+        <div class="home-banner-icon"><i class="ph-fill ph-users"></i></div>
         <div class="home-banner-copy">
           <strong>Invite your friends</strong>
           <span>Send a link and make planning better together.</span>
         </div>
+        <button class="home-banner-cta">Share invite</button>
       </div>
-      <div class="home-banner-card is-top" style="--card-index: 0">
+      <div class="home-banner-card is-top" style="--card-index: 0; --accent: #14b8a6;">
         <button class="home-banner-dismiss" aria-label="Dismiss"><i class="ph ph-x"></i></button>
-        <div class="home-banner-icon">🔔</div>
+        <div class="home-banner-icon"><i class="ph-fill ph-bell-ringing"></i></div>
         <div class="home-banner-copy">
           <strong>Notifications are off</strong>
           <span>Turn them on so you never miss a plan update.</span>
@@ -515,3 +529,45 @@
     </span>
   </div>
 </div>
+
+<script>
+(function () {
+  var root = document.querySelector('.home2c2c');
+  if (!root) return;
+  var stack = root.querySelector('.home-banner-stack');
+  if (!stack) return;
+
+  function cards() {
+    return Array.prototype.slice.call(stack.querySelectorAll('.home-banner-card:not(.is-leaving)'));
+  }
+
+  // Reassign depth classes and indexes so the next card rises to the front
+  function layout() {
+    var list = cards().sort(function (a, b) {
+      return parseInt(getComputedStyle(a).getPropertyValue('--card-index'), 10) - parseInt(getComputedStyle(b).getPropertyValue('--card-index'), 10);
+    });
+    list.forEach(function (card, i) {
+      card.style.setProperty('--card-index', i);
+      card.classList.toggle('is-top', i === 0);
+      card.classList.toggle('is-second', i === 1);
+      card.classList.toggle('is-third', i === 2);
+      if (i === 0) card.removeAttribute('aria-hidden');
+      else card.setAttribute('aria-hidden', 'true');
+    });
+    if (list.length) stack.setAttribute('aria-label', list.length + (list.length === 1 ? ' update' : ' updates'));
+    else stack.classList.add('is-empty');
+  }
+
+  stack.addEventListener('click', function (e) {
+    var btn = e.target.closest('.home-banner-dismiss, .home-banner-cta');
+    if (!btn) return;
+    var card = btn.closest('.home-banner-card');
+    if (!card || !card.classList.contains('is-top')) return;
+    card.classList.add('is-leaving');
+    setTimeout(function () {
+      card.remove();
+      layout();
+    }, 320);
+  });
+})();
+</script>
