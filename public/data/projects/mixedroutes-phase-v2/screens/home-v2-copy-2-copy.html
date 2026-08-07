@@ -27,6 +27,19 @@
   .mrv2-home2 .now .pulse { width: 8px; height: 8px; border-radius: 50%; background: #0ca678; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(12, 166, 120, 0.15); }
   .mrv2-home2 .now strong { color: #1a2332; font-weight: 700; }
 
+  /* Current app banner stack — full cards share one grid cell and step down in depth */
+  .mrv2-home2 .home-banner-stack { --stack-offset: 12px; position: relative; display: grid; align-items: end; padding: 8px 2px 28px; overflow: visible; }
+  .mrv2-home2 .home-banner-card { grid-area: 1 / 1; width: 100%; min-height: 124px; position: relative; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-items: start; column-gap: 16px; row-gap: 8px; padding: 16px 48px 16px 16px; border-radius: 18px; background: #ffffff; border: 1px solid rgba(37, 99, 235, 0.32); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6); transform: translateY(calc(var(--card-index) * var(--stack-offset))) scale(calc(1 - var(--card-index) * 0.04)); transform-origin: top center; overflow: hidden; }
+  .mrv2-home2 .home-banner-card.is-top { z-index: 3; }
+  .mrv2-home2 .home-banner-card.is-second { z-index: 2; }
+  .mrv2-home2 .home-banner-card.is-third { z-index: 1; }
+  .mrv2-home2 .home-banner-icon { grid-column: 1; grid-row: 1 / span 2; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; flex-shrink: 0; background: rgba(20, 184, 166, 0.18); color: #1a2332; font-size: 27px; line-height: 1; }
+  .mrv2-home2 .home-banner-copy { grid-column: 2; grid-row: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; text-align: left; }
+  .mrv2-home2 .home-banner-copy strong { color: #1a2332; font-size: 16px; font-weight: 700; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-home2 .home-banner-copy span { color: #5c6b7d; font-size: 14px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .mrv2-home2 .home-banner-cta { grid-column: 2; grid-row: 2; justify-self: start; padding: 0; border: 0; background: none; color: #2563eb; font-size: 15px; font-weight: 700; line-height: 1; }
+  .mrv2-home2 .home-banner-dismiss { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; color: #858b94; font-size: 20px; }
+
   /* Section header */
   .mrv2-home2 section { display: flex; flex-direction: column; gap: 11px; }
   .mrv2-home2 .sec-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
@@ -59,6 +72,9 @@
   .mrv2-home2 .ask-card .when { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: #5c6b7d; }
   .mrv2-home2 .ask-card .when i { font-size: 16px; }
   .mrv2-home2 .ask-card .btns { display: flex; gap: 8px; }
+  .mrv2-home2 .heading-with-count { display: inline-flex; align-items: center; gap: 8px; }
+  .mrv2-home2 .invite-count { min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; background: #0ca678; color: #ffffff; display: inline-grid; place-items: center; font-size: 13px; font-weight: 700; line-height: 1; }
+  .mrv2-home2 .pending-section .sec-head .action { font-size: 13px; }
   .mrv2-home2 .btn-grad { flex: 1; height: 44px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
   .mrv2-home2 .btn-quiet { flex: 1; height: 44px; border: 1.5px solid rgba(32, 36, 42, 0.16); border-radius: 999px; background: #ffffff; color: #1a2332; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; }
 
@@ -169,25 +185,31 @@
       <div class="now"><span class="pulse"></span><span>Happening now: <strong>Trivia at The Well</strong></span></div>
     </div>
 
-    <section>
-      <div class="sec-head">
-        <h2>Needs your answer</h2>
-      </div>
-      <div class="ask-card">
-        <div class="who">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
-          <div class="w-txt">
-            <span>Sam invited you</span>
-            <strong>Hike at Craggy Gardens 🥾</strong>
-          </div>
-        </div>
-        <div class="when"><i class="ph ph-calendar-blank"></i><span>Saturday · 9:00 AM</span><i class="ph ph-map-pin"></i><span>Blue Ridge Pkwy</span></div>
-        <div class="btns">
-          <button class="btn-grad"><i class="ph ph-check"></i>Going</button>
-          <button class="btn-quiet">Can't make it</button>
+    <div class="home-banner-stack" aria-label="3 updates">
+      <div class="home-banner-card is-third" style="--card-index: 2" aria-hidden="true">
+        <div class="home-banner-icon">📣</div>
+        <div class="home-banner-copy">
+          <strong>This weekend in Asheville</strong>
+          <span>Fresh events and places picked for you.</span>
         </div>
       </div>
-    </section>
+      <div class="home-banner-card is-second" style="--card-index: 1" aria-hidden="true">
+        <div class="home-banner-icon">👥</div>
+        <div class="home-banner-copy">
+          <strong>Invite your friends</strong>
+          <span>Send a link and make planning better together.</span>
+        </div>
+      </div>
+      <div class="home-banner-card is-top" style="--card-index: 0">
+        <button class="home-banner-dismiss" aria-label="Dismiss"><i class="ph ph-x"></i></button>
+        <div class="home-banner-icon">🔔</div>
+        <div class="home-banner-copy">
+          <strong>Notifications are off</strong>
+          <span>Turn them on so you never miss a plan update.</span>
+        </div>
+        <button class="home-banner-cta">Turn on</button>
+      </div>
+    </div>
 
     <section class="plans-list-section mr-scope mr-scope--light">
       <div class="sec-head">
@@ -278,6 +300,27 @@
         </div>
       </div>
       <button class="view-all-plans">View all plans <i class="ph ph-arrow-right"></i></button>
+    </section>
+
+    <section class="pending-section">
+      <div class="sec-head">
+        <h2 class="heading-with-count">Pending invites <span class="invite-count">2</span></h2>
+        <span class="action">View all <i class="ph ph-caret-right"></i></span>
+      </div>
+      <div class="ask-card">
+        <div class="who">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+          <div class="w-txt">
+            <span>Sam invited you</span>
+            <strong>Hike at Craggy Gardens 🥾</strong>
+          </div>
+        </div>
+        <div class="when"><i class="ph ph-calendar-blank"></i><span>Saturday · 9:00 AM</span><i class="ph ph-map-pin"></i><span>Blue Ridge Pkwy</span></div>
+        <div class="btns">
+          <button class="btn-grad"><i class="ph ph-check"></i>Going</button>
+          <button class="btn-quiet">Can't make it</button>
+        </div>
+      </div>
     </section>
 
     <section>
