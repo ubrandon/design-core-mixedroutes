@@ -57,7 +57,16 @@
   .mrv2-home2 .plans-list-section { gap: 12px; }
   .mrv2-home2 .plans-list-section .mr-plan-rows { max-width: none; gap: 10px; }
   .mrv2-home2 .plans-list-section .mr-plan-row { width: 100%; }
-  .mrv2-home2 .plans-list-section .mr-plan-row-title { font-size: 20px; }
+  .mrv2-home2 .plans-list-section .mr-plan-row .mr-plan-row-title { font-size: 17px; text-shadow: none; }
+  .mrv2-home2 .plans-list-section .mr-plan-row .plan-card-mini-time, .mrv2-home2 .plans-list-section .mr-plan-row .mr-plan-row-when-where-item, .mrv2-home2 .plans-list-section .mr-plan-row .mr-plan-row-when-where-item span { color: #ffffff; opacity: 1; text-shadow: none; }
+  .mrv2-home2 .plans-list-section .mr-plan-row-meta { flex-wrap: nowrap; }
+  .mrv2-home2 .plans-list-section .mr-plan-row-when-where-item { flex: 1; min-width: 0; }
+  .mrv2-home2 .plans-list-section .mr-plan-row-when-where-item span { display: block; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-home2 .plans-list-section .mr-plan-row { grid-template-columns: 124px 1fr; gap: 14px; padding: 0 16px 0 0; border-radius: 20px; }
+  .mrv2-home2 .plans-list-section .mr-plan-row-media { width: 100%; height: 100%; min-height: 112px; border-radius: 0; border: 0; align-self: stretch; background-position: center; -webkit-mask-image: linear-gradient(to right, #000 45%, transparent 100%); mask-image: linear-gradient(to right, #000 45%, transparent 100%); }
+  .mrv2-home2 .plans-list-section .mr-plan-row-content { padding: 15px 0 17px; gap: 5px; }
+  .mrv2-home2 .plans-list-section .mr-plan-row-content > .mr-plan-row-meta { margin-top: 9px; }
+  .mrv2-home2 .plans-list-section .row-emoji { position: absolute; top: 9px; left: 9px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); display: grid; place-items: center; font-size: 16px; line-height: 1; }
   .mrv2-home2 .plans-list-section .plan-card-mini-avatar { border-color: rgba(255, 255, 255, 0.72); }
   .mrv2-home2 .view-all-plans { width: 100%; height: 48px; border: 0; border-radius: 16px; background: #f1f4f7; color: #1a2332; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 15px; font-weight: 700; }
   .mrv2-home2 .view-all-plans i { font-size: 17px; }
@@ -79,15 +88,15 @@
   .mrv2-home2 .btn-quiet { flex: 1; height: 44px; border: 1.5px solid rgba(32, 36, 42, 0.16); border-radius: 999px; background: #ffffff; color: #1a2332; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; }
 
   /* Plan card (ActivityCard vertical) */
-  .mrv2-home2 .plan-card { width: 280px; flex-shrink: 0; position: relative; border-radius: 32px; padding: 8px; background: #1d232b; overflow: hidden; color: #ffffff; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); isolation: isolate; transform: translateZ(0); }
+  .mrv2-home2 .plan-card { width: 280px; flex-shrink: 0; position: relative; border-radius: 32px; background: #1d232b; overflow: hidden; color: #ffffff; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); isolation: isolate; transform: translateZ(0); }
   .mrv2-home2 .plan-card .ambient { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); }
   .mrv2-home2 .plan-card .hairline { position: absolute; inset: 0; z-index: 3; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 32px; pointer-events: none; }
-  .mrv2-home2 .plan-card .photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 16 / 9; border-radius: 24px; background-size: cover; background-position: center; }
-  .mrv2-home2 .plan-card .details { position: relative; z-index: 1; padding: 7px 11px 11px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
-  .mrv2-home2 .plan-card .date { font-size: 14px; font-weight: 700; text-transform: uppercase; opacity: 0.7; line-height: 1; }
+  .mrv2-home2 .plan-card .photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 3 / 2; background-size: cover; background-position: center; -webkit-mask-image: linear-gradient(to bottom, #000 52%, transparent 98%); mask-image: linear-gradient(to bottom, #000 52%, transparent 98%); }
+  .mrv2-home2 .plan-card .details { position: relative; z-index: 1; margin-top: -30px; padding: 0 16px 14px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+  .mrv2-home2 .plan-card .date { font-size: 14px; font-weight: 700; text-transform: uppercase; opacity: 0.95; line-height: 1; }
   .mrv2-home2 .plan-card .title-row { display: flex; align-items: baseline; gap: 7px; }
-  .mrv2-home2 .plan-card .title { font-size: 22px; font-weight: 700; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .mrv2-home2 .plan-card .emoji { font-size: 22px; line-height: 1; }
+  .mrv2-home2 .plan-card .title { font-size: 19px; font-weight: 700; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .mrv2-home2 .plan-card .emoji { position: absolute; z-index: 2; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); display: grid; place-items: center; font-size: 19px; line-height: 1; }
   .mrv2-home2 .plan-card .meta { margin-top: auto; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .mrv2-home2 .plan-card .loc { display: flex; align-items: center; gap: 4px; font-size: 14px; min-width: 0; }
   .mrv2-home2 .plan-card .loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -100,7 +109,7 @@
   .mrv2-home2 .plan-card .group span { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; }
 
   /* Joinable plan: friend attribution + join pill */
-  .mrv2-home2 .plan-card .join-head { position: relative; z-index: 1; display: flex; align-items: center; gap: 7px; padding: 4px 4px 0; }
+  .mrv2-home2 .plan-card .join-head { position: absolute; z-index: 2; top: 12px; left: 12px; max-width: calc(100% - 24px); display: flex; align-items: center; gap: 7px; padding: 4px 13px 4px 5px; border-radius: 999px; background: rgba(0, 0, 0, 0.42); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
   .mrv2-home2 .plan-card .join-head img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .mrv2-home2 .plan-card .join-head span { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .mrv2-home2 .plan-card .join-head span strong { font-weight: 700; }
@@ -224,10 +233,10 @@
             class="mr-plan-row-media"
             style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=280&h=280&q=80');"
             aria-hidden="true"
-          ></div>
+          ><span class="row-emoji">🍽️</span></div>
           <div class="mr-plan-row-content">
             <div class="plan-card-mini-time">FRI · 7:00 PM</div>
-            <div class="mr-plan-row-title">Dinner at Bavette's 🍽️</div>
+            <div class="mr-plan-row-title">Dinner at Bavette's</div>
             <div class="mr-plan-row-meta">
               <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
                 <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
@@ -252,10 +261,10 @@
             class="mr-plan-row-media"
             style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=280&h=280&q=80');"
             aria-hidden="true"
-          ></div>
+          ><span class="row-emoji">🥾</span></div>
           <div class="mr-plan-row-content">
             <div class="plan-card-mini-time">SAT · 8:00 AM</div>
-            <div class="mr-plan-row-title">Sunrise trail hike 🥾</div>
+            <div class="mr-plan-row-title">Sunrise trail hike</div>
             <div class="mr-plan-row-meta">
               <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
                 <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
@@ -279,10 +288,10 @@
             class="mr-plan-row-media"
             style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=280&h=280&q=80');"
             aria-hidden="true"
-          ></div>
+          ><span class="row-emoji">🎬</span></div>
           <div class="mr-plan-row-content">
             <div class="plan-card-mini-time">SUN · 6:30 PM</div>
-            <div class="mr-plan-row-title">Outdoor movie night 🎬</div>
+            <div class="mr-plan-row-title">Outdoor movie night</div>
             <div class="mr-plan-row-meta">
               <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
                 <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
@@ -335,16 +344,15 @@
             <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
             <span><strong>Alex</strong> is going</span>
           </div>
-          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=560&h=315&q=80');"></div>
+          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=560&h=420&q=80');"></div>
+          <span class="emoji">🪕</span>
           <div class="details">
             <div class="date">Sat · 5pm</div>
             <div class="title-row">
               <div class="title">Shindig on the Green</div>
-              <span class="emoji">🪕</span>
             </div>
             <div class="meta">
               <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Pack Square Park</span></div>
-              <button class="join-pill">Join</button>
             </div>
           </div>
         </div>
@@ -355,16 +363,15 @@
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
             <span><strong>Priya</strong> + 3 are going</span>
           </div>
-          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=560&h=315&q=80');"></div>
+          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=560&h=420&q=80');"></div>
+          <span class="emoji">🥐</span>
           <div class="details">
             <div class="date">Sun · 11am</div>
             <div class="title-row">
               <div class="title">Farmers market brunch</div>
-              <span class="emoji">🥐</span>
             </div>
             <div class="meta">
               <div class="loc"><i class="ph-fill ph-map-pin"></i><span>North Asheville</span></div>
-              <button class="join-pill">Join</button>
             </div>
           </div>
         </div>

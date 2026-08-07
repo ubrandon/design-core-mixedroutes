@@ -63,22 +63,21 @@
   .mrv2-disc4 .stack img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; margin-left: -6px; border: 1.5px solid #ffffff; }
   .mrv2-disc4 .stack img:first-child { margin-left: 0; }
 
-  /* Public plan cards: white, borderless, people-first */
-  .mrv2-disc4 .plan-card { width: 260px; flex-shrink: 0; position: relative; border-radius: 32px; padding: 8px; background: #ffffff; color: #101724; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); isolation: isolate; transform: translateZ(0); }
-  .mrv2-disc4 .plan-card .ambient { display: none; }
-  .mrv2-disc4 .plan-card .hairline { display: none; }
-  .mrv2-disc4 .plan-card .photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 16 / 9; border-radius: 24px; background-size: cover; background-position: center; }
-  .mrv2-disc4 .plan-card .facepile { position: relative; z-index: 2; display: flex; margin: -15px 0 0 14px; }
+  /* Public plan cards: design-system photo color, original flat-card layout */
+  .mrv2-disc4 .plan-card { width: 260px; flex-shrink: 0; position: relative; border-radius: 32px; overflow: hidden; background: #1d232b; color: #ffffff; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); isolation: isolate; transform: translateZ(0); }
+  .mrv2-disc4 .plan-card .ambient { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(2.25); opacity: 0.84; transform: scale(1.55); }
+  .mrv2-disc4 .plan-card .hairline { position: absolute; inset: 0; z-index: 3; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 32px; pointer-events: none; }
+  .mrv2-disc4 .plan-card .photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 3 / 2; background-size: cover; background-position: center; -webkit-mask-image: linear-gradient(to bottom, #000 52%, transparent 98%); mask-image: linear-gradient(to bottom, #000 52%, transparent 98%); }
+  .mrv2-disc4 .plan-card .facepile { position: relative; z-index: 2; display: flex; margin: -52px 0 0 16px; }
   .mrv2-disc4 .plan-card .facepile img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #ffffff; margin-left: -8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
   .mrv2-disc4 .plan-card .facepile img:first-child { margin-left: 0; }
-  .mrv2-disc4 .plan-card .details { position: relative; z-index: 1; padding: 5px 11px 9px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-  .mrv2-disc4 .plan-card .date { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #5c6b7d; line-height: 1; }
+  .mrv2-disc4 .plan-card .details { position: relative; z-index: 1; padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .mrv2-disc4 .plan-card .date { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: rgba(255, 255, 255, 0.76); line-height: 1; }
   .mrv2-disc4 .plan-card .title { font-size: 20px; font-weight: 700; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .mrv2-disc4 .plan-card .host { font-size: 13px; font-weight: 600; color: #5c6b7d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .mrv2-disc4 .plan-card .meta { margin-top: auto; padding-top: 4px; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .mrv2-disc4 .plan-card .going { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; min-width: 0; }
   .mrv2-disc4 .plan-card .going span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .mrv2-disc4 .join-pill { height: 32px; padding: 0 16px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .mrv2-disc4 .join-pill { height: 32px; padding: 0 16px; border: 0; border-radius: 999px; background: #ffffff; color: #101724; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
   /* Tail affordance */
   .mrv2-disc4 .tail { width: 96px; margin: 0 24px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }
@@ -121,14 +120,14 @@
 
     <section>
       <div class="sec-head">
-        <div class="h-wrap"><h2>Public plans</h2></div>
+        <div class="h-wrap"><h2>Plans near you</h2></div>
         <span class="action">More <i class="ph-fill ph-caret-right"></i></span>
       </div>
       <div class="rail">
         <div class="plan-card">
           <div class="ambient" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&h=300&q=60');"></div>
           <div class="hairline"></div>
-          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=560&h=315&q=80');"></div>
+          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=560&h=420&q=80');"></div>
           <div class="facepile">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
             <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
@@ -137,17 +136,15 @@
           <div class="details">
             <div class="date">Sun · 4pm · 2 mi away</div>
             <div class="title">Pickup soccer at the park</div>
-            <div class="host">Hosted by Maya</div>
             <div class="meta">
               <div class="going"><span>Jordan + 4 going</span></div>
-              <button class="join-pill">Join</button>
             </div>
           </div>
         </div>
         <div class="plan-card">
           <div class="ambient" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&h=300&q=60');"></div>
           <div class="hairline"></div>
-          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=560&h=315&q=80');"></div>
+          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=560&h=420&q=80');"></div>
           <div class="facepile">
             <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
             <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
@@ -155,10 +152,8 @@
           <div class="details">
             <div class="date">Sat · 10am · 1 mi away</div>
             <div class="title">Coffee walk downtown</div>
-            <div class="host">Hosted by Devon</div>
             <div class="meta">
               <div class="going"><span>Priya + 2 going</span></div>
-              <button class="join-pill">Join</button>
             </div>
           </div>
         </div>

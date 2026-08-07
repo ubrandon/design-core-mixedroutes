@@ -3,13 +3,13 @@
     {
       "file": "home.html",
       "x": 0,
-      "y": -121,
+      "y": 994,
       "width": 390
     },
     {
       "file": "discover.html",
       "x": 430,
-      "y": -121,
+      "y": 994,
       "width": 390
     },
     {
@@ -26,8 +26,14 @@
     },
     {
       "file": "discover-v2-flat.html",
-      "x": 1156,
-      "y": -121,
+      "x": 1726,
+      "y": 3908,
+      "width": 390
+    },
+    {
+      "file": "discover-v2-flat-color.html",
+      "x": 0,
+      "y": -2190,
       "width": 390
     },
     {
@@ -44,20 +50,20 @@
     },
     {
       "file": "home-v2-copy-2-copy.html",
-      "x": 2305,
-      "y": -121,
+      "x": 549,
+      "y": -2190,
       "width": 390
     },
     {
       "file": "home-v2-feed.html",
-      "x": 2725,
-      "y": -121,
+      "x": 1580,
+      "y": -2190,
       "width": 390
     },
     {
       "file": "home-v2-feed-invites-banner.html",
-      "x": 3144,
-      "y": -121,
+      "x": 1999,
+      "y": -2190,
       "width": 390
     }
   ],
@@ -65,37 +71,37 @@
     {
       "text": "Current designs",
       "x": 0,
-      "y": -320,
+      "y": 795,
       "size": 72
     },
     {
       "text": "Home",
       "x": 0,
-      "y": -206,
+      "y": 909,
       "size": 48
     },
     {
       "text": "Discover",
       "x": 430,
-      "y": -206,
+      "y": 909,
       "size": 48
     },
     {
-      "text": "V2 proposal",
-      "x": 1156,
-      "y": -320,
+      "text": "MixedRoutes 2.0",
+      "x": 0,
+      "y": -2389,
       "size": 72
     },
     {
       "text": "Home",
-      "x": 2305,
-      "y": -206,
+      "x": 549,
+      "y": -2275,
       "size": 48
     },
     {
       "text": "Discover",
-      "x": 1156,
-      "y": -206,
+      "x": 0,
+      "y": -2275,
       "size": 48
     },
     {
