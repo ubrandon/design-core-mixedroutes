@@ -3,55 +3,73 @@
     {
       "file": "home.html",
       "x": 0,
-      "y": 994,
+      "y": 3876,
       "width": 390
     },
     {
       "file": "discover.html",
       "x": 430,
-      "y": 994,
+      "y": 3876,
       "width": 390
     },
     {
       "file": "home-v2.html",
-      "x": 845,
-      "y": 3908,
+      "x": 1881,
+      "y": 3858,
       "width": 390
     },
     {
       "file": "discover-v2-clean.html",
-      "x": 1284,
-      "y": 3908,
+      "x": 2320,
+      "y": 3858,
       "width": 390
     },
     {
       "file": "discover-v2-flat.html",
-      "x": 1726,
-      "y": 3908,
+      "x": 2739,
+      "y": 3873,
       "width": 390
     },
     {
       "file": "discover-v2-real-cards.html",
       "x": 0,
-      "y": -2190,
+      "y": -635,
       "width": 390
     },
     {
       "file": "home-v2-copy.html",
-      "x": 0,
-      "y": 3908,
+      "x": 1036,
+      "y": 3858,
       "width": 390
     },
     {
       "file": "home-v2-list.html",
-      "x": 430,
-      "y": 3908,
+      "x": 1466,
+      "y": 3858,
       "width": 390
     },
     {
-      "file": "home-v2-invites-banner.html",
-      "x": 690,
-      "y": -2190,
+      "file": "home-v2-friend-cards.html",
+      "x": 491,
+      "y": -635,
+      "width": 390
+    },
+    {
+      "file": "status-nav-identity.html",
+      "x": 1371,
+      "y": -635,
+      "width": 390
+    },
+    {
+      "file": "status-under-greeting.html",
+      "x": 1371,
+      "y": -424,
+      "width": 390
+    },
+    {
+      "file": "status-greeting-chips.html",
+      "x": 1371,
+      "y": -187,
       "width": 390
     }
   ],
@@ -59,43 +77,49 @@
     {
       "text": "Current designs",
       "x": 0,
-      "y": 795,
+      "y": 3677,
       "size": 72
     },
     {
       "text": "Home",
       "x": 0,
-      "y": 909,
+      "y": 3791,
       "size": 48
     },
     {
       "text": "Discover",
       "x": 430,
-      "y": 909,
+      "y": 3791,
       "size": 48
     },
     {
       "text": "MixedRoutes 2.0",
       "x": 0,
-      "y": -2389,
+      "y": -834,
       "size": 72
     },
     {
       "text": "Home",
-      "x": 690,
-      "y": -2275,
+      "x": 491,
+      "y": -720,
+      "size": 48
+    },
+    {
+      "text": "Status explorations",
+      "x": 1371,
+      "y": -720,
       "size": 48
     },
     {
       "text": "Discover",
       "x": 0,
-      "y": -2275,
+      "y": -720,
       "size": 48
     },
     {
       "text": "Archive",
-      "x": 0,
-      "y": 3727,
+      "x": 1036,
+      "y": 3677,
       "size": 72
     }
   ]
