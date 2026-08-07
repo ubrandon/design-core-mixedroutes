@@ -21,11 +21,10 @@
   /* Greeting */
   .mrv2-home2 .greet { display: flex; flex-direction: column; gap: 7px; padding-top: 8px; }
   .mrv2-home2 .greet h1 { font-size: 36px; font-weight: 800; line-height: 1.15; }
-  .mrv2-home2 .greet h1 .grad { background-image: linear-gradient(90deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+  .mrv2-home2 .greet h1 .grad { color: #1a2332; }
   .mrv2-home2 .greet h1 .name { color: #5c6b7d; }
   .mrv2-home2 .now { display: inline-flex; align-items: center; gap: 7px; font-size: 16px; font-weight: 600; color: #5c6b7d; line-height: 1.4; }
-  .mrv2-home2.home2c2c .now a { color: #2563eb; font-weight: 700; text-decoration: none; }
-  .mrv2-home2.home2c2c .greet h1 .grad { background-image: linear-gradient(90deg, #0f766e, #1d4ed8); }
+  .mrv2-home2.home2invb .now a { color: #2563eb; font-weight: 700; text-decoration: none; }
 
   /* Current app banner stack — full cards share one grid cell and step down in depth */
   .mrv2-home2 .home-banner-stack { --stack-offset: 12px; position: relative; display: grid; align-items: end; padding: 8px 2px 28px; overflow: visible; }
@@ -41,14 +40,14 @@
   .mrv2-home2 .home-banner-dismiss { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; color: #858b94; font-size: 20px; }
 
   /* Stack polish: bigger peek, per-card accent tints, lighter back shadows, dismiss animation */
-  .mrv2-home2.home2c2c .home-banner-stack { --stack-offset: 14px; }
-  .mrv2-home2.home2c2c .home-banner-card { border: 1px solid rgba(16, 23, 36, 0.08); border-radius: 20px; box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05), 0 14px 32px rgba(16, 24, 40, 0.1); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
-  .mrv2-home2.home2c2c .home-banner-icon { width: 44px; height: 44px; border-radius: 12px; font-size: 22px; background: color-mix(in srgb, var(--accent, #14b8a6) 14%, #ffffff); color: color-mix(in srgb, var(--accent, #14b8a6) 72%, #101724); }
-  .mrv2-home2.home2c2c .home-banner-card:not(.is-top) { background: color-mix(in srgb, var(--accent, #14b8a6) 10%, #ffffff); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
-  .mrv2-home2.home2c2c .home-banner-dismiss, .mrv2-home2.home2c2c .home-banner-cta { transition: opacity 0.25s ease; }
-  .mrv2-home2.home2c2c .home-banner-card:not(.is-top) .home-banner-dismiss, .mrv2-home2.home2c2c .home-banner-card:not(.is-top) .home-banner-cta { opacity: 0; pointer-events: none; }
-  .mrv2-home2.home2c2c .home-banner-card.is-leaving { opacity: 0; transform: translateY(-16px) scale(1.02); pointer-events: none; }
-  .mrv2-home2.home2c2c .home-banner-stack.is-empty { display: none; }
+  .mrv2-home2.home2invb .home-banner-stack { --stack-offset: 14px; }
+  .mrv2-home2.home2invb .home-banner-card { border: 1px solid rgba(16, 23, 36, 0.08); border-radius: 20px; box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05), 0 14px 32px rgba(16, 24, 40, 0.1); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
+  .mrv2-home2.home2invb .home-banner-icon { width: 44px; height: 44px; border-radius: 12px; font-size: 22px; background: color-mix(in srgb, var(--accent, #14b8a6) 14%, #ffffff); color: color-mix(in srgb, var(--accent, #14b8a6) 72%, #101724); }
+  .mrv2-home2.home2invb .home-banner-card:not(.is-top) { background: #ffffff; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+  .mrv2-home2.home2invb .home-banner-dismiss, .mrv2-home2.home2invb .home-banner-cta { transition: opacity 0.25s ease; }
+  .mrv2-home2.home2invb .home-banner-card:not(.is-top) .home-banner-dismiss, .mrv2-home2.home2invb .home-banner-card:not(.is-top) .home-banner-cta { opacity: 0; pointer-events: none; }
+  .mrv2-home2.home2invb .home-banner-card.is-leaving { opacity: 0; transform: translateY(-16px) scale(1.02); pointer-events: none; }
+  .mrv2-home2.home2invb .home-banner-stack.is-empty { display: none; }
 
   /* Section header */
   .mrv2-home2 section { display: flex; flex-direction: column; gap: 11px; }
@@ -78,57 +77,40 @@
   .mrv2-home2 .plans-list-section .mr-plan-row-content > .mr-plan-row-meta { margin-top: 9px; }
   .mrv2-home2 .plans-list-section .row-emoji { position: absolute; top: 9px; left: 9px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); display: grid; place-items: center; font-size: 16px; line-height: 1; }
   .mrv2-home2 .plans-list-section .plan-card-mini-avatar { border-color: rgba(255, 255, 255, 0.72); }
+  .mrv2-home2.home2invb .plan-group-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #5c6b7d; margin-top: 2px; }
+  .mrv2-home2.home2invb .mr-plan-rows .plan-group-label:not(:first-child) { margin-top: 8px; }
   .mrv2-home2 .view-all-plans { width: 100%; height: 48px; border: 0; border-radius: 16px; background: #f1f4f7; color: #1a2332; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 15px; font-weight: 700; }
   .mrv2-home2 .view-all-plans i { font-size: 17px; }
 
-  /* Needs your answer */
-  .mrv2-home2 .ask-card { background: #ffffff; border-radius: 24px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-  .mrv2-home2 .ask-card .who { display: flex; align-items: center; gap: 11px; }
-  .mrv2-home2 .ask-card .who img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-  .mrv2-home2 .ask-card .who .w-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  .mrv2-home2 .ask-card .who .w-txt span { font-size: 14px; color: #5c6b7d; }
-  .mrv2-home2 .ask-card .who .w-txt strong { font-size: 17px; font-weight: 700; color: #101724; }
-  .mrv2-home2 .ask-card .when { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: #5c6b7d; }
-  .mrv2-home2 .ask-card .when i { font-size: 16px; }
-  .mrv2-home2 .ask-card .btns { display: flex; gap: 8px; }
-  .mrv2-home2 .heading-with-count { display: inline-flex; align-items: center; gap: 8px; }
-  .mrv2-home2 .invite-count { min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; background: #0ca678; color: #ffffff; display: inline-grid; place-items: center; font-size: 13px; font-weight: 700; line-height: 1; }
-  .mrv2-home2 .pending-section .sec-head .action { font-size: 13px; }
-  .mrv2-home2 .btn-grad { flex: 1; height: 44px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
-  .mrv2-home2 .btn-quiet { flex: 1; height: 44px; border: 1.5px solid rgba(32, 36, 42, 0.16); border-radius: 999px; background: #ffffff; color: #1a2332; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; }
-
-  /* Plan card (ActivityCard vertical) */
-  .mrv2-home2 .plan-card { width: 280px; flex-shrink: 0; position: relative; border-radius: 32px; background: #1d232b; overflow: hidden; color: #ffffff; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); isolation: isolate; transform: translateZ(0); }
-  .mrv2-home2 .plan-card .ambient { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; filter: blur(40px) saturate(3.5); opacity: 0.85; transform: scale(1.6); }
-  .mrv2-home2 .plan-card .hairline { position: absolute; inset: 0; z-index: 3; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 32px; pointer-events: none; }
-  .mrv2-home2 .plan-card .photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 3 / 2; background-size: cover; background-position: center; -webkit-mask-image: linear-gradient(to bottom, #000 52%, transparent 98%); mask-image: linear-gradient(to bottom, #000 52%, transparent 98%); }
-  .mrv2-home2 .plan-card .details { position: relative; z-index: 1; margin-top: -30px; padding: 0 16px 14px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
-  .mrv2-home2 .plan-card .date { font-size: 14px; font-weight: 700; text-transform: uppercase; opacity: 0.95; line-height: 1; }
-  .mrv2-home2 .plan-card .title-row { display: flex; align-items: baseline; gap: 7px; }
-  .mrv2-home2 .plan-card .title { font-size: 19px; font-weight: 700; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .mrv2-home2 .plan-card .emoji { position: absolute; z-index: 2; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); display: grid; place-items: center; font-size: 19px; line-height: 1; }
-  .mrv2-home2 .plan-card .meta { margin-top: auto; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .mrv2-home2 .plan-card .loc { display: flex; align-items: center; gap: 4px; font-size: 14px; min-width: 0; }
-  .mrv2-home2 .plan-card .loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .mrv2-home2 .plan-card .loc i { font-size: 16px; flex-shrink: 0; }
-  .mrv2-home2 .stack { display: flex; align-items: center; flex-shrink: 0; }
-  .mrv2-home2 .stack img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-left: -6px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12); }
-  .mrv2-home2 .stack img:first-child { margin-left: 0; }
-  .mrv2-home2 .plan-card .group { display: flex; align-items: center; gap: 6px; min-width: 0; flex-shrink: 0; }
-  .mrv2-home2 .plan-card .group img { width: 24px; height: 24px; border-radius: 6px; object-fit: cover; }
-  .mrv2-home2 .plan-card .group span { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; }
-
-  /* Joinable plan: friend attribution + join pill */
-  .mrv2-home2 .plan-card .join-head { position: absolute; z-index: 2; top: 12px; left: 12px; max-width: calc(100% - 24px); display: flex; align-items: center; gap: 7px; padding: 4px 13px 4px 5px; border-radius: 999px; background: rgba(0, 0, 0, 0.42); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-  .mrv2-home2 .plan-card .join-head img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-  .mrv2-home2 .plan-card .join-head span { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .mrv2-home2 .plan-card .join-head span strong { font-weight: 700; }
-  .mrv2-home2 .join-pill { height: 32px; padding: 0 16px; border: 0; border-radius: 999px; background: #ffffff; color: #101724; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-
-  /* Tail affordance */
-  .mrv2-home2 .tail { width: 96px; margin: 0 24px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }
-  .mrv2-home2 .tail .circ { width: 72px; height: 72px; border-radius: 50%; background: #f1f4f7; display: grid; place-items: center; font-size: 28px; color: #1a2332; }
-  .mrv2-home2 .tail span { font-size: 14px; color: #5c6b7d; }
+  /* Pending invites — compact banner under Your plans, expands inline */
+  .mrv2-home2.home2invb .invite-banner { border-radius: 18px; background: #ffffff; border: 1px solid rgba(16, 23, 36, 0.08); box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05), 0 10px 24px rgba(16, 24, 40, 0.08); overflow: hidden; transition: opacity 0.3s ease, transform 0.3s ease; }
+  .mrv2-home2.home2invb .invite-banner.is-gone { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+  .mrv2-home2.home2invb .invite-banner-head { width: 100%; display: flex; align-items: center; gap: 11px; padding: 11px 14px; border: 0; background: none; text-align: left; }
+  .mrv2-home2.home2invb .invite-banner-head .stack { display: flex; align-items: center; flex-shrink: 0; }
+  .mrv2-home2.home2invb .invite-banner-head .stack img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #ffffff; margin-left: -8px; }
+  .mrv2-home2.home2invb .invite-banner-head .stack img:first-child { margin-left: 0; }
+  .mrv2-home2.home2invb .invite-banner-head .b-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+  .mrv2-home2.home2invb .invite-banner-head .b-txt strong { font-size: 15px; font-weight: 700; color: #101724; line-height: 1.3; }
+  .mrv2-home2.home2invb .invite-banner-head .b-txt span { font-size: 13px; color: #5c6b7d; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-home2.home2invb .invite-banner-head .invite-count { flex-shrink: 0; }
+  .mrv2-home2.home2invb .invite-banner-head .caret { flex-shrink: 0; color: #5c6b7d; font-size: 17px; line-height: 1; transition: transform 0.25s ease; }
+  .mrv2-home2.home2invb .invite-banner.is-open .invite-banner-head .caret { transform: rotate(180deg); }
+  .mrv2-home2.home2invb .invite-banner-body { display: none; }
+  .mrv2-home2.home2invb .invite-banner.is-open .invite-banner-body { display: block; }
+  .mrv2-home2.home2invb .invite-row { display: flex; align-items: center; gap: 11px; padding: 11px 14px; border-top: 1px solid #f1f4f7; transition: opacity 0.28s ease, transform 0.28s ease; }
+  .mrv2-home2.home2invb .invite-row.is-leaving { opacity: 0; transform: translateX(12px); pointer-events: none; }
+  .mrv2-home2.home2invb .invite-row .av { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .mrv2-home2.home2invb .invite-row .r-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .mrv2-home2.home2invb .invite-row .r-txt strong { font-size: 15px; font-weight: 700; color: #101724; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-home2.home2invb .invite-row .r-txt span { font-size: 13px; color: #5c6b7d; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-home2.home2invb .invite-row .r-btns { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .mrv2-home2.home2invb .invite-go { height: 34px; padding: 0 14px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 5px; }
+  .mrv2-home2.home2invb .invite-no { height: 34px; padding: 0 12px; border: 1.5px solid rgba(32, 36, 42, 0.16); border-radius: 999px; background: #ffffff; color: #1a2332; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; }
+  .mrv2-home2.home2invb .invite-banner-head .stack-check { display: none; width: 30px; height: 30px; place-items: center; color: #0ca678; font-size: 28px; line-height: 1; flex-shrink: 0; }
+  .mrv2-home2.home2invb .invite-banner.is-done .stack img { display: none; }
+  .mrv2-home2.home2invb .invite-banner.is-done .stack-check { display: grid; }
+  .mrv2-home2.home2invb .invite-banner.is-done .invite-banner-head .caret { display: none; }
+  .mrv2-home2.home2invb .invite-banner.is-done .invite-banner-head .b-txt strong { color: #0ca678; }
 
   /* Group nudge */
   .mrv2-home2 .nudge { background: #ffffff; border-radius: 24px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09), 0 16px 40px rgba(0, 0, 0, 0.14); padding: 16px; display: flex; align-items: center; gap: 12px; }
@@ -137,6 +119,8 @@
   .mrv2-home2 .nudge .n-txt strong { font-size: 16px; font-weight: 700; color: #101724; line-height: 1.3; }
   .mrv2-home2 .nudge .n-txt span { font-size: 14px; color: #5c6b7d; line-height: 1.4; }
   .mrv2-home2 .nudge .btn-grad { flex: none; height: 38px; padding: 0 16px; font-size: 14px; }
+  .mrv2-home2 .btn-grad { flex: 1; height: 44px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+  .mrv2-home2 .invite-count { min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; background: #0ca678; color: #ffffff; display: inline-grid; place-items: center; font-size: 13px; font-weight: 700; line-height: 1; }
 
   /* Friend place activity rows */
   .mrv2-home2 .feed { display: flex; flex-direction: column; gap: 5px; }
@@ -148,6 +132,13 @@
   .mrv2-home2 .feed-row .f-txt .sub { display: flex; align-items: center; gap: 5px; font-size: 13px; color: #5c6b7d; }
   .mrv2-home2 .feed-row .f-txt .stars { color: #f5a524; font-size: 13px; letter-spacing: 1px; }
   .mrv2-home2 .feed-row .thumb { width: 56px; height: 56px; border-radius: 16px; object-fit: cover; background: #f1f4f7; flex-shrink: 0; }
+  .mrv2-home2 .join-pill { height: 32px; padding: 0 16px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .mrv2-home2 .view-pill { height: 32px; padding: 0 16px; border: 1.5px solid rgba(32, 36, 42, 0.16); border-radius: 999px; background: #ffffff; color: #1a2332; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  /* Tail affordance */
+  .mrv2-home2 .tail { width: 96px; margin: 0 24px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }
+  .mrv2-home2 .tail .circ { width: 72px; height: 72px; border-radius: 50%; background: #f1f4f7; display: grid; place-items: center; font-size: 28px; color: #1a2332; }
+  .mrv2-home2 .tail span { font-size: 14px; color: #5c6b7d; }
 
   /* Chat + person cards */
   .mrv2-home2 .mini-card { width: 108px; flex-shrink: 0; border-radius: 16px; padding: 7px 5px; display: flex; flex-direction: column; align-items: center; gap: 11px; text-align: center; color: #101724; }
@@ -185,7 +176,7 @@
   .mrv2-home2 .tab-bar .tab .you { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; }
 </style>
 
-<div class="mrv2-home2 home2c2c" style="background: #ffffff;">
+<div class="mrv2-home2 home2invb" style="background: #ffffff;">
   <div class="toolbar">
     <div class="brand">
       <img src="../../../design-system/mixedroutes-assets/icon-foreground.svg" alt="" />
@@ -238,7 +229,48 @@
       <div class="sec-head">
         <h2>Your plans</h2>
       </div>
+
+      <div class="invite-banner">
+        <button class="invite-banner-head" aria-expanded="false">
+          <span class="stack">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
+          </span>
+          <span class="stack-check"><i class="ph-fill ph-check-circle"></i></span>
+          <span class="b-txt">
+            <strong class="banner-title">2 invites waiting on you</strong>
+            <span class="banner-sub">Hike at Craggy Gardens · Pizza night</span>
+          </span>
+          <span class="invite-count">2</span>
+          <i class="ph ph-caret-down caret"></i>
+        </button>
+        <div class="invite-banner-body">
+          <div class="invite-row" data-title="Hike at Craggy Gardens">
+            <img class="av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
+            <div class="r-txt">
+              <strong>Hike at Craggy Gardens 🥾</strong>
+              <span>Sam · Saturday 9:00 AM</span>
+            </div>
+            <div class="r-btns">
+              <button class="invite-go"><i class="ph-fill ph-check"></i>Going</button>
+              <button class="invite-no">Can't</button>
+            </div>
+          </div>
+          <div class="invite-row" data-title="Pizza night">
+            <img class="av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
+            <div class="r-txt">
+              <strong>Pizza night 🍕</strong>
+              <span>Maya · Friday 6:30 PM</span>
+            </div>
+            <div class="r-btns">
+              <button class="invite-go"><i class="ph-fill ph-check"></i>Going</button>
+              <button class="invite-no">Can't</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="mr-plan-rows">
+        <div class="plan-group-label">Tomorrow</div>
         <div
           class="mr-plan-row mr-plan-row--photo-blur"
           style="--mr-plan-row-bg: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&h=300&q=60');"
@@ -267,6 +299,7 @@
           </div>
         </div>
 
+        <div class="plan-group-label">This weekend</div>
         <div
           class="mr-plan-row mr-plan-row--photo-blur"
           style="--mr-plan-row-bg: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&h=300&q=60');"
@@ -322,78 +355,8 @@
           </div>
         </div>
       </div>
+
       <button class="view-all-plans">View all plans <i class="ph ph-arrow-right"></i></button>
-    </section>
-
-    <section class="pending-section">
-      <div class="sec-head">
-        <h2 class="heading-with-count">Pending invites <span class="invite-count">2</span></h2>
-        <span class="action">View all <i class="ph ph-caret-right"></i></span>
-      </div>
-      <div class="ask-card">
-        <div class="who">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
-          <div class="w-txt">
-            <span>Sam invited you</span>
-            <strong>Hike at Craggy Gardens 🥾</strong>
-          </div>
-        </div>
-        <div class="when"><i class="ph ph-calendar-blank"></i><span>Saturday · 9:00 AM</span><i class="ph ph-map-pin"></i><span>Blue Ridge Pkwy</span></div>
-        <div class="btns">
-          <button class="btn-grad"><i class="ph ph-check"></i>Going</button>
-          <button class="btn-quiet">Can't make it</button>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head">
-        <h2>Friends are going</h2>
-      </div>
-      <div class="rail rail-cards">
-        <div class="plan-card">
-          <div class="ambient" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&h=300&q=60');"></div>
-          <div class="hairline"></div>
-          <div class="join-head">
-            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
-            <span><strong>Alex</strong> is going</span>
-          </div>
-          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=560&h=420&q=80');"></div>
-          <span class="emoji">🪕</span>
-          <div class="details">
-            <div class="date">Sat · 5pm</div>
-            <div class="title-row">
-              <div class="title">Shindig on the Green</div>
-            </div>
-            <div class="meta">
-              <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Pack Square Park</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="plan-card">
-          <div class="ambient" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&h=300&q=60');"></div>
-          <div class="hairline"></div>
-          <div class="join-head">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&h=96&q=80" alt="" />
-            <span><strong>Priya</strong> + 3 are going</span>
-          </div>
-          <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=560&h=420&q=80');"></div>
-          <span class="emoji">🥐</span>
-          <div class="details">
-            <div class="date">Sun · 11am</div>
-            <div class="title-row">
-              <div class="title">Farmers market brunch</div>
-            </div>
-            <div class="meta">
-              <div class="loc"><i class="ph-fill ph-map-pin"></i><span>North Asheville</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="tail">
-          <span class="circ"><i class="ph ph-caret-right"></i></span>
-          <span>View more</span>
-        </div>
-      </div>
     </section>
 
     <div class="nudge">
@@ -411,12 +374,28 @@
       </div>
       <div class="feed">
         <div class="feed-row">
+          <img class="av" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+          <div class="f-txt">
+            <p><strong>Alex</strong> is going to <strong>Shindig on the Green</strong> 🪕</p>
+            <div class="sub">Sat · 5pm · Pack Square Park</div>
+          </div>
+          <button class="join-pill">Join</button>
+        </div>
+        <div class="feed-row">
+          <img class="av" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+          <div class="f-txt">
+            <p><strong>Priya</strong> + 3 are going to <strong>Farmers market brunch</strong> 🥐</p>
+            <div class="sub">Sun · 11am · North Asheville</div>
+          </div>
+          <button class="join-pill">Join</button>
+        </div>
+        <div class="feed-row">
           <img class="av" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
           <div class="f-txt">
             <p><strong>Jordan</strong> saved <strong>Little Jumbo</strong> to Date Spots</p>
             <div class="sub">2h ago</div>
           </div>
-          <img class="thumb" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+          <button class="view-pill">View</button>
         </div>
         <div class="feed-row">
           <img class="av" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
@@ -424,7 +403,7 @@
             <p><strong>Riley</strong> reviewed <strong>Ultra Coffeebar</strong></p>
             <div class="sub"><span class="stars">★★★★★</span><span>· 5h ago</span></div>
           </div>
-          <img class="thumb" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+          <button class="view-pill">View</button>
         </div>
         <div class="feed-row">
           <img class="av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
@@ -432,7 +411,7 @@
             <p><strong>Devon</strong> saved <strong>Salt &amp; Straw</strong> to Sweet Tooth</p>
             <div class="sub">Yesterday</div>
           </div>
-          <img class="thumb" src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+          <button class="view-pill">View</button>
         </div>
       </div>
     </section>
@@ -532,42 +511,91 @@
 
 <script>
 (function () {
-  var root = document.querySelector('.home2c2c');
+  var root = document.querySelector('.home2invb');
   if (!root) return;
+
   var stack = root.querySelector('.home-banner-stack');
-  if (!stack) return;
-
-  function cards() {
-    return Array.prototype.slice.call(stack.querySelectorAll('.home-banner-card:not(.is-leaving)'));
+  if (stack) {
+    function cards() {
+      return Array.prototype.slice.call(stack.querySelectorAll('.home-banner-card:not(.is-leaving)'));
+    }
+    // Reassign depth classes and indexes so the next card rises to the front
+    function layout() {
+      var list = cards().sort(function (a, b) {
+        return parseInt(getComputedStyle(a).getPropertyValue('--card-index'), 10) - parseInt(getComputedStyle(b).getPropertyValue('--card-index'), 10);
+      });
+      list.forEach(function (card, i) {
+        card.style.setProperty('--card-index', i);
+        card.classList.toggle('is-top', i === 0);
+        card.classList.toggle('is-second', i === 1);
+        card.classList.toggle('is-third', i === 2);
+        if (i === 0) card.removeAttribute('aria-hidden');
+        else card.setAttribute('aria-hidden', 'true');
+      });
+      if (list.length) stack.setAttribute('aria-label', list.length + (list.length === 1 ? ' update' : ' updates'));
+      else stack.classList.add('is-empty');
+    }
+    stack.addEventListener('click', function (e) {
+      var btn = e.target.closest('.home-banner-dismiss, .home-banner-cta');
+      if (!btn) return;
+      var card = btn.closest('.home-banner-card');
+      if (!card || !card.classList.contains('is-top')) return;
+      card.classList.add('is-leaving');
+      setTimeout(function () {
+        card.remove();
+        layout();
+      }, 320);
+    });
   }
 
-  // Reassign depth classes and indexes so the next card rises to the front
-  function layout() {
-    var list = cards().sort(function (a, b) {
-      return parseInt(getComputedStyle(a).getPropertyValue('--card-index'), 10) - parseInt(getComputedStyle(b).getPropertyValue('--card-index'), 10);
-    });
-    list.forEach(function (card, i) {
-      card.style.setProperty('--card-index', i);
-      card.classList.toggle('is-top', i === 0);
-      card.classList.toggle('is-second', i === 1);
-      card.classList.toggle('is-third', i === 2);
-      if (i === 0) card.removeAttribute('aria-hidden');
-      else card.setAttribute('aria-hidden', 'true');
-    });
-    if (list.length) stack.setAttribute('aria-label', list.length + (list.length === 1 ? ' update' : ' updates'));
-    else stack.classList.add('is-empty');
+  // Invite banner: tap to expand, respond to invites inline, banner leaves when done
+  var banner = root.querySelector('.invite-banner');
+  if (!banner) return;
+  var head = banner.querySelector('.invite-banner-head');
+  var title = banner.querySelector('.banner-title');
+  var sub = banner.querySelector('.banner-sub');
+  var count = banner.querySelector('.invite-count');
+  var avStack = banner.querySelector('.invite-banner-head .stack');
+
+  function rows() {
+    return Array.prototype.slice.call(banner.querySelectorAll('.invite-row:not(.is-leaving)'));
   }
 
-  stack.addEventListener('click', function (e) {
-    var btn = e.target.closest('.home-banner-dismiss, .home-banner-cta');
+  function refresh() {
+    var list = rows();
+    var n = list.length;
+    if (n === 0) {
+      title.textContent = 'All caught up';
+      sub.textContent = 'No invites waiting';
+      count.style.display = 'none';
+      banner.classList.remove('is-open');
+      banner.classList.add('is-done');
+      setTimeout(function () { banner.classList.add('is-gone'); }, 1400);
+      setTimeout(function () { banner.remove(); }, 1800);
+      return;
+    }
+    count.textContent = n;
+    title.textContent = n === 1 ? '1 invite waiting on you' : n + ' invites waiting on you';
+    sub.textContent = list.map(function (r) { return r.getAttribute('data-title'); }).join(' · ');
+    var avs = avStack.querySelectorAll('img');
+    for (var i = 0; i < avs.length; i++) avs[i].style.display = i < n ? '' : 'none';
+  }
+
+  head.addEventListener('click', function () {
+    var open = banner.classList.toggle('is-open');
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  banner.addEventListener('click', function (e) {
+    var btn = e.target.closest('.invite-go, .invite-no');
     if (!btn) return;
-    var card = btn.closest('.home-banner-card');
-    if (!card || !card.classList.contains('is-top')) return;
-    card.classList.add('is-leaving');
+    var row = btn.closest('.invite-row');
+    if (!row) return;
+    row.classList.add('is-leaving');
     setTimeout(function () {
-      card.remove();
-      layout();
-    }, 320);
+      row.remove();
+      refresh();
+    }, 300);
   });
 })();
 </script>
