@@ -56,20 +56,26 @@
     },
     {
       "file": "status-nav-identity.html",
-      "x": 1371,
+      "x": 986,
       "y": -635,
       "width": 390
     },
     {
       "file": "status-under-greeting.html",
-      "x": 1371,
+      "x": 986,
       "y": -424,
       "width": 390
     },
     {
       "file": "status-greeting-chips.html",
-      "x": 1371,
-      "y": -187,
+      "x": 986,
+      "y": -172,
+      "width": 390
+    },
+    {
+      "file": "status-nav-avatar.html",
+      "x": 986,
+      "y": 106,
       "width": 390
     }
   ],
@@ -106,7 +112,7 @@
     },
     {
       "text": "Status explorations",
-      "x": 1371,
+      "x": 986,
       "y": -720,
       "size": 48
     },
@@ -121,6 +127,12 @@
       "x": 1036,
       "y": 3677,
       "size": 72
+    },
+    {
+      "text": "Card variations",
+      "x": 1574,
+      "y": -720,
+      "size": 48
     }
   ]
 }
