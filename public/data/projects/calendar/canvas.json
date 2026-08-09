@@ -14,7 +14,13 @@
     },
     {
       "file": "plans-invites-page.html",
-      "x": 960,
+      "x": -25,
+      "y": 1524,
+      "width": 390
+    },
+    {
+      "file": "plans-upcoming-invite-carousel.html",
+      "x": 1698,
       "y": 0,
       "width": 390
     }
@@ -34,7 +40,13 @@
     },
     {
       "text": "Invites page",
-      "x": 960,
+      "x": -25,
+      "y": 1428,
+      "size": 48
+    },
+    {
+      "text": "Invite carousel",
+      "x": 1698,
       "y": -96,
       "size": 48
     }

@@ -8,19 +8,19 @@
   "recents": [
     {
       "id": "mixedroutes-phase-v2",
-      "ts": 1786238761231
+      "ts": 1786310164626
     },
     {
       "id": "calendar",
-      "ts": 1786238759966
+      "ts": 1786310159164
+    },
+    {
+      "id": "marketing-site",
+      "ts": 1786250597151
     },
     {
       "id": "plans",
       "ts": 1786238643502
-    },
-    {
-      "id": "marketing-site",
-      "ts": 1786238634257
     }
   ],
   "theme": "light",
@@ -28,6 +28,6 @@
     "sort": "",
     "status": ""
   },
-  "navCollapsed": false,
-  "updatedAt": 1786238761236
+  "navCollapsed": true,
+  "updatedAt": 1786310164626
 }

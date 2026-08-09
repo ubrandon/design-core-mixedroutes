@@ -5,59 +5,72 @@
 <style>
   .ivpg-scope, .ivpg-scope * { scrollbar-width: none; -ms-overflow-style: none; box-sizing: border-box; }
   .ivpg-scope::-webkit-scrollbar, .ivpg-scope *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .ivpg-scope { background: #ffffff; color: #101724; font-family: "Geist", sans-serif; }
 
-  .ivpg-scope .ivpg-wrap { background: var(--bg-0); min-height: 844px; position: relative; padding-bottom: 24px; }
+  .ivpg-scope .ivpg-wrap { min-height: 844px; position: relative; padding-bottom: 24px; background: #ffffff; }
 
-  .ivpg-scope .ivpg-top { display: flex; align-items: center; gap: 12px; padding: 18px 16px 6px; }
-  .ivpg-scope .ivpg-back { width: 36px; height: 36px; border-radius: 50%; border: 0; cursor: pointer; flex-shrink: 0;
-    background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.85); font-size: 18px; display: flex; align-items: center; justify-content: center; }
-  .ivpg-scope .ivpg-top-title { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
-  .ivpg-scope .ivpg-top-sub { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 1px; }
+  .ivpg-scope .ivpg-top { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; padding: 18px 16px 10px; }
+  .ivpg-scope .ivpg-back { width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 50%; background: #f1f4f7; color: #1a2332; font-size: 19px; cursor: pointer; }
+  .ivpg-scope .ivpg-top-copy { min-width: 0; text-align: center; }
+  .ivpg-scope .ivpg-top-title { color: #1a2332; font-size: 24px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+  .ivpg-scope .ivpg-top-sub { margin-top: 4px; color: #637083; font-size: 12px; line-height: 1.25; }
+  .ivpg-scope .ivpg-top-end { width: 40px; }
 
-  .ivpg-scope .ivpg-list { padding: 14px 16px 0; }
+  .ivpg-scope .ivpg-list { padding: 12px 16px 0; }
 
   .ivpg-scope .ivpg-item { margin-bottom: 22px; }
-  .ivpg-scope .ivpg-item.is-handled .mr-plan-row { opacity: 0.42; filter: saturate(0.6); }
+  .ivpg-scope .ivpg-item.is-handled .plan-row { opacity: 0.42; filter: saturate(0.6); }
 
   .ivpg-scope .ivpg-from { display: flex; align-items: center; gap: 8px; padding: 0 2px 8px; }
   .ivpg-scope .ivpg-from img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
-  .ivpg-scope .ivpg-from span { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-  .ivpg-scope .ivpg-from b { color: rgba(255,255,255,0.85); font-weight: 700; }
+  .ivpg-scope .ivpg-from span { color: #637083; font-size: 12px; }
+  .ivpg-scope .ivpg-from b { color: #1a2332; font-weight: 700; }
 
-  .ivpg-scope .ivpg-item .mr-plan-rows { max-width: none; margin-bottom: 0; }
-  .ivpg-scope .ivpg-item .mr-plan-row-meta { flex-wrap: nowrap; }
-  .ivpg-scope .ivpg-item .mr-plan-row-when-where-item span { white-space: nowrap; }
+  .ivpg-scope .plan-row { min-height: 122px; position: relative; overflow: hidden; display: grid; grid-template-columns: 128px 1fr; border-radius: 20px; color: #ffffff; background: #1d232b; isolation: isolate; box-shadow: 0 5px 16px rgba(16, 23, 36, 0.12); }
+  .ivpg-scope .plan-row .ambient { position: absolute; inset: 0; z-index: 0; background: center / cover no-repeat; filter: blur(70px) saturate(4) brightness(1.35); transform: scale(1.35); opacity: 1; }
+  .ivpg-scope .plan-row .shade { position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(8, 10, 18, 0), rgba(8, 10, 18, 0.18)); }
+  .ivpg-scope .plan-row .plan-media { min-height: 122px; position: relative; z-index: 1; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right, #000 48%, transparent 100%); mask-image: linear-gradient(to right, #000 48%, transparent 100%); }
+  .ivpg-scope .plan-row .emoji-badge { position: absolute; top: 9px; left: 9px; width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.68); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18); font-size: 16px; }
+  .ivpg-scope .plan-row .plan-copy { min-width: 0; position: relative; z-index: 1; padding: 16px 15px 15px 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .ivpg-scope .plan-row .plan-time { color: rgba(255, 255, 255, 0.8); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .ivpg-scope .plan-row .plan-title { overflow: hidden; color: #ffffff; font-size: 17px; font-weight: 800; line-height: 1.25; white-space: nowrap; text-overflow: ellipsis; }
+  .ivpg-scope .plan-row .plan-meta { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 7px; color: rgba(255, 255, 255, 0.9); font-size: 12px; }
+  .ivpg-scope .plan-row .loc { min-width: 0; display: flex; align-items: center; gap: 4px; }
+  .ivpg-scope .plan-row .loc i { flex-shrink: 0; font-size: 14px; }
+  .ivpg-scope .plan-row .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .ivpg-scope .plan-row .plan-avatars { display: flex; align-items: center; flex-shrink: 0; }
+  .ivpg-scope .plan-row .plan-avatars img { width: 25px; height: 25px; object-fit: cover; border: 2px solid #ffffff; border-radius: 50%; }
 
   .ivpg-scope .ivpg-actions { display: flex; gap: 8px; margin-top: 10px; }
-  .ivpg-scope .ivpg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 16px; border-radius: 12px; font-size: 0.88rem; font-weight: 800; cursor: pointer; border: 1px solid transparent; }
+  .ivpg-scope .ivpg-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 16px; border-radius: 14px; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; border: 1px solid transparent; }
   .ivpg-scope .ivpg-btn i { font-size: 15px; }
-  .ivpg-scope .ivpg-btn-decline { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); }
-  .ivpg-scope .ivpg-btn-accept { background: linear-gradient(135deg, #24b8aa, #4c87cf); color: #fff; flex: 1; }
+  .ivpg-scope .ivpg-btn-decline { min-width: 104px; background: #ffffff; border-color: #d6dce2; color: #3c4858; }
+  .ivpg-scope .ivpg-btn-accept { flex: 1; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; box-shadow: 0 5px 14px rgba(37, 99, 235, 0.18); }
 
-  .ivpg-scope .ivpg-status { display: none; align-items: center; gap: 8px; margin-top: 10px; font-size: 0.86rem; font-weight: 800; }
+  .ivpg-scope .ivpg-status { display: none; align-items: center; gap: 8px; margin-top: 10px; padding: 10px 12px; border-radius: 13px; background: #f5f7f9; font-size: 13px; font-weight: 800; }
   .ivpg-scope .ivpg-status.is-shown { display: flex; }
-  .ivpg-scope .ivpg-status.accept { color: var(--neon-teal); }
-  .ivpg-scope .ivpg-status.decline { color: rgba(255,255,255,0.55); }
+  .ivpg-scope .ivpg-status.accept { color: #087f6a; }
+  .ivpg-scope .ivpg-status.decline { color: #637083; }
   .ivpg-scope .ivpg-status i { font-size: 16px; }
   .ivpg-scope .ivpg-status-text { flex: 1; }
-  .ivpg-scope .ivpg-undo { border: 0; background: transparent; cursor: pointer; padding: 4px 6px; font-size: 0.84rem; font-weight: 800; color: var(--neon-blue); }
+  .ivpg-scope .ivpg-undo { border: 0; background: transparent; cursor: pointer; padding: 4px 6px; font-family: inherit; font-size: 12px; font-weight: 800; color: #2563eb; }
 
-  .ivpg-scope .ivpg-done { display: none; margin: 6px 16px 0; padding: 22px 16px; border-radius: 16px; text-align: center;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+  .ivpg-scope .ivpg-done { display: none; margin: 6px 16px 0; padding: 24px 16px; border: 1px solid rgba(16, 23, 36, 0.08); border-radius: 20px; background: #f8fafb; text-align: center; }
   .ivpg-scope .ivpg-done.is-shown { display: block; }
   .ivpg-scope .ivpg-done-emoji { font-size: 26px; }
-  .ivpg-scope .ivpg-done-title { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-top: 6px; }
-  .ivpg-scope .ivpg-done-sub { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 2px; }
+  .ivpg-scope .ivpg-done-title { margin-top: 6px; color: #1a2332; font-size: 15px; font-weight: 800; }
+  .ivpg-scope .ivpg-done-sub { margin-top: 2px; color: #637083; font-size: 12px; }
 </style>
 
-<div class="ivpg-scope mr-scope">
+<div class="ivpg-scope mr-scope mr-scope--light">
   <div class="ivpg-wrap">
     <div class="ivpg-top">
       <button type="button" class="ivpg-back" aria-label="Back"><i class="ph ph-caret-left"></i></button>
-      <div>
+      <div class="ivpg-top-copy">
         <div class="ivpg-top-title">Invites</div>
         <div class="ivpg-top-sub"><span class="ivpg-pending-count">3</span> waiting on your reply</div>
       </div>
+      <div class="ivpg-top-end" aria-hidden="true"></div>
     </div>
 
     <div class="ivpg-list">
@@ -66,29 +79,22 @@
           <img src="https://i.pravatar.cc/44?img=32" alt="" loading="lazy" />
           <span><b>Renee</b> invited you &bull; 2h ago</span>
         </div>
-        <div class="mr-plan-rows">
-          <div class="mr-plan-row mr-plan-row--photo-blur" style="--mr-plan-row-bg: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=320&h=320&q=80);">
-            <div class="mr-plan-row-media" style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=280&h=280&q=80);" aria-hidden="true"></div>
-            <div class="mr-plan-row-content">
-              <div class="plan-card-mini-time">SAT, JUN 6TH &bull; 7:30 PM</div>
-              <div class="mr-plan-row-title">Rooftop Dinner Party</div>
-              <div class="mr-plan-row-meta">
-                <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
-                  <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
-                  <span>The Highline Rooftop</span>
-                </div>
-                <div class="mr-plan-row-avatar-stack" aria-hidden="true">
-                  <div class="plan-card-mini-avatar-stack">
-                    <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=32" alt="" loading="lazy" />
-                  </div>
-                </div>
-              </div>
+        <div class="plan-row">
+          <div class="ambient" style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=320&h=320&q=80);"></div>
+          <div class="shade"></div>
+          <div class="plan-media" style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=280&h=280&q=80);" aria-hidden="true"><span class="emoji-badge">🍽️</span></div>
+          <div class="plan-copy">
+            <div class="plan-time">Sat, Jun 6th &bull; 7:30 PM</div>
+            <div class="plan-title">Rooftop Dinner Party</div>
+            <div class="plan-meta">
+              <span class="loc"><i class="ph-fill ph-map-pin" aria-hidden="true"></i><span>The Highline Rooftop</span></span>
+              <span class="plan-avatars" aria-hidden="true"><img src="https://i.pravatar.cc/48?img=32" alt="" loading="lazy" /></span>
             </div>
           </div>
         </div>
         <div class="ivpg-actions">
           <button type="button" class="ivpg-btn ivpg-btn-decline" data-act="decline"><i class="ph ph-x"></i> Decline</button>
-          <button type="button" class="ivpg-btn ivpg-btn-accept" data-act="accept"><i class="ph-fill ph-check"></i> I'm going</button>
+          <button type="button" class="ivpg-btn ivpg-btn-accept" data-act="accept"><i class="ph ph-check"></i> I'm going</button>
         </div>
         <div class="ivpg-status">
           <i></i>
@@ -102,29 +108,22 @@
           <img src="https://i.pravatar.cc/44?img=15" alt="" loading="lazy" />
           <span><b>Sam</b> invited you &bull; Yesterday</span>
         </div>
-        <div class="mr-plan-rows">
-          <div class="mr-plan-row mr-plan-row--photo-blur" style="--mr-plan-row-bg: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=320&h=320&q=80);">
-            <div class="mr-plan-row-media" style="background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=280&h=280&q=80);" aria-hidden="true"></div>
-            <div class="mr-plan-row-content">
-              <div class="plan-card-mini-time">SUN, JUN 7TH &bull; 10 AM</div>
-              <div class="mr-plan-row-title">Morning Trail Run</div>
-              <div class="mr-plan-row-meta">
-                <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
-                  <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
-                  <span>Riverside Park Loop</span>
-                </div>
-                <div class="mr-plan-row-avatar-stack" aria-hidden="true">
-                  <div class="plan-card-mini-avatar-stack">
-                    <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=15" alt="" loading="lazy" />
-                  </div>
-                </div>
-              </div>
+        <div class="plan-row">
+          <div class="ambient" style="background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=320&h=320&q=80);"></div>
+          <div class="shade"></div>
+          <div class="plan-media" style="background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=280&h=280&q=80);" aria-hidden="true"><span class="emoji-badge">🏃</span></div>
+          <div class="plan-copy">
+            <div class="plan-time">Sun, Jun 7th &bull; 10 AM</div>
+            <div class="plan-title">Morning Trail Run</div>
+            <div class="plan-meta">
+              <span class="loc"><i class="ph-fill ph-map-pin" aria-hidden="true"></i><span>Riverside Park Loop</span></span>
+              <span class="plan-avatars" aria-hidden="true"><img src="https://i.pravatar.cc/48?img=15" alt="" loading="lazy" /></span>
             </div>
           </div>
         </div>
         <div class="ivpg-actions">
           <button type="button" class="ivpg-btn ivpg-btn-decline" data-act="decline"><i class="ph ph-x"></i> Decline</button>
-          <button type="button" class="ivpg-btn ivpg-btn-accept" data-act="accept"><i class="ph-fill ph-check"></i> I'm going</button>
+          <button type="button" class="ivpg-btn ivpg-btn-accept" data-act="accept"><i class="ph ph-check"></i> I'm going</button>
         </div>
         <div class="ivpg-status">
           <i></i>
@@ -138,29 +137,22 @@
           <img src="https://i.pravatar.cc/44?img=47" alt="" loading="lazy" />
           <span><b>Maya</b> invited you &bull; 3d ago</span>
         </div>
-        <div class="mr-plan-rows">
-          <div class="mr-plan-row mr-plan-row--photo-blur" style="--mr-plan-row-bg: url(https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=320&h=320&q=80);">
-            <div class="mr-plan-row-media" style="background-image: url(https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=280&h=280&q=80);" aria-hidden="true"></div>
-            <div class="mr-plan-row-content">
-              <div class="plan-card-mini-time">FRI, JUN 12TH &bull; 8 PM</div>
-              <div class="mr-plan-row-title">Game Night</div>
-              <div class="mr-plan-row-meta">
-                <div class="mr-plan-row-when-where-item mr-plan-row-when-where-item--solo">
-                  <i class="ph-fill ph-map-pin" aria-hidden="true"></i>
-                  <span>Renee's Place &middot; Westgate</span>
-                </div>
-                <div class="mr-plan-row-avatar-stack" aria-hidden="true">
-                  <div class="plan-card-mini-avatar-stack">
-                    <img class="plan-card-mini-avatar" src="https://i.pravatar.cc/48?img=47" alt="" loading="lazy" />
-                  </div>
-                </div>
-              </div>
+        <div class="plan-row">
+          <div class="ambient" style="background-image: url(https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=320&h=320&q=80);"></div>
+          <div class="shade"></div>
+          <div class="plan-media" style="background-image: url(https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=280&h=280&q=80);" aria-hidden="true"><span class="emoji-badge">🎮</span></div>
+          <div class="plan-copy">
+            <div class="plan-time">Fri, Jun 12th &bull; 8 PM</div>
+            <div class="plan-title">Game Night</div>
+            <div class="plan-meta">
+              <span class="loc"><i class="ph-fill ph-map-pin" aria-hidden="true"></i><span>Renee's Place &middot; Westgate</span></span>
+              <span class="plan-avatars" aria-hidden="true"><img src="https://i.pravatar.cc/48?img=47" alt="" loading="lazy" /></span>
             </div>
           </div>
         </div>
         <div class="ivpg-actions">
           <button type="button" class="ivpg-btn ivpg-btn-decline" data-act="decline"><i class="ph ph-x"></i> Decline</button>
-          <button type="button" class="ivpg-btn ivpg-btn-accept" data-act="accept"><i class="ph-fill ph-check"></i> I'm going</button>
+          <button type="button" class="ivpg-btn ivpg-btn-accept" data-act="accept"><i class="ph ph-check"></i> I'm going</button>
         </div>
         <div class="ivpg-status">
           <i></i>
