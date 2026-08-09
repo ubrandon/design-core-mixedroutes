@@ -4,7 +4,7 @@
     "columns": 3,
     "columnWidth": 520,
     "maxColumnWidth": 680,
-    "gap": 20,
+    "gap": 40,
     "pairGap": 96
   },
   "groups": [
@@ -25,6 +25,7 @@
     {
       "group": "dark-mode",
       "name": "Palette",
+      "section": "Foundations",
       "layout": "row",
       "span": "all",
       "components": [
@@ -58,13 +59,14 @@
         {
           "id": "mr-type",
           "file": "mixedroutes/typography.html",
-          "label": "DM Sans & styles"
+          "label": "Geist & styles"
         }
       ]
     },
     {
       "group": "dark-mode",
       "name": "Buttons",
+      "section": "Actions & controls",
       "components": [
         {
           "id": "mr-buttons",
@@ -80,7 +82,7 @@
         {
           "id": "mr-navigation",
           "file": "mixedroutes/navigation.html",
-          "label": "Top nav & bottom tab bar"
+          "label": "Mobile nav, desktop side nav & account menu"
         }
       ]
     },
@@ -131,6 +133,7 @@
     {
       "group": "dark-mode",
       "name": "Plan cards",
+      "section": "Content & cards",
       "components": [
         {
           "id": "mr-plan-hero",
@@ -191,35 +194,59 @@
         {
           "id": "mr-places-list",
           "file": "mixedroutes/places-list-cards.html",
-          "label": "Places list cards"
+          "label": "Saved place lists"
         }
       ]
     },
     {
       "group": "dark-mode",
-      "name": "People",
-      "layout": "row",
+      "name": "People lists",
+      "section": "People & social",
       "components": [
         {
           "id": "mr-people-rows",
           "file": "mixedroutes/people-rows.html",
           "label": "Person list rows"
-        },
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Recent activity",
+      "components": [
         {
           "id": "mr-recent",
           "file": "mixedroutes/recent-activity.html",
           "label": "Recent activity"
-        },
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Interests & groups",
+      "components": [
         {
           "id": "mr-social",
           "file": "mixedroutes/social-cards.html",
-          "label": "Interests & groups"
-        },
+          "label": "Interests, groups & friends"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Profiles",
+      "components": [
         {
           "id": "mr-profile",
           "file": "mixedroutes/profile-cards.html",
-          "label": "Profile cards"
-        },
+          "label": "Profile summaries"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
+      "name": "Avatars",
+      "components": [
         {
           "id": "mr-avatar-stack",
           "file": "mixedroutes/avatar-stack.html",
@@ -230,6 +257,7 @@
     {
       "group": "dark-mode",
       "name": "Filter chips",
+      "section": "Tags & status",
       "layout": "row",
       "components": [
         {
@@ -266,6 +294,7 @@
     {
       "group": "dark-mode",
       "name": "Toasts",
+      "section": "Feedback & states",
       "components": [
         {
           "id": "mr-toasts",
@@ -321,6 +350,18 @@
     },
     {
       "group": "dark-mode",
+      "name": "Illustrations",
+      "section": "Assets",
+      "components": [
+        {
+          "id": "mr-illustrations",
+          "file": "mixedroutes/illustrations.html",
+          "label": "Line-art scenes & usage"
+        }
+      ]
+    },
+    {
+      "group": "dark-mode",
       "name": "Icons",
       "components": [
         {
@@ -333,6 +374,7 @@
     {
       "group": "light-mode",
       "name": "Palette",
+      "section": "Foundations",
       "layout": "row",
       "span": "all",
       "components": [
@@ -373,6 +415,7 @@
     {
       "group": "light-mode",
       "name": "Buttons",
+      "section": "Actions & controls",
       "components": [
         {
           "id": "mr-buttons-light",
@@ -388,7 +431,7 @@
         {
           "id": "mr-navigation-light",
           "file": "mixedroutes/navigation-light.html",
-          "label": "Top nav & bottom tab bar"
+          "label": "Mobile nav, desktop side nav & account menu"
         }
       ]
     },
@@ -439,6 +482,7 @@
     {
       "group": "light-mode",
       "name": "Plan cards",
+      "section": "Content & cards",
       "components": [
         {
           "id": "mr-plan-hero-light",
@@ -499,35 +543,59 @@
         {
           "id": "mr-places-list-light",
           "file": "mixedroutes/places-list-cards-light.html",
-          "label": "Places list cards"
+          "label": "Saved place lists"
         }
       ]
     },
     {
       "group": "light-mode",
-      "name": "People",
-      "layout": "row",
+      "name": "People lists",
+      "section": "People & social",
       "components": [
         {
           "id": "mr-people-rows-light",
           "file": "mixedroutes/people-rows-light.html",
           "label": "Person list rows"
-        },
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Recent activity",
+      "components": [
         {
           "id": "mr-recent-light",
           "file": "mixedroutes/recent-activity-light.html",
           "label": "Recent activity"
-        },
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Interests & groups",
+      "components": [
         {
           "id": "mr-social-light",
           "file": "mixedroutes/social-cards-light.html",
-          "label": "Interests & groups"
-        },
+          "label": "Interests, groups & friends"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Profiles",
+      "components": [
         {
           "id": "mr-profile-light",
           "file": "mixedroutes/profile-cards-light.html",
-          "label": "Profile cards"
-        },
+          "label": "Profile summaries"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Avatars",
+      "components": [
         {
           "id": "mr-avatar-stack-light",
           "file": "mixedroutes/avatar-stack-light.html",
@@ -538,6 +606,7 @@
     {
       "group": "light-mode",
       "name": "Filter chips",
+      "section": "Tags & status",
       "layout": "row",
       "components": [
         {
@@ -574,6 +643,7 @@
     {
       "group": "light-mode",
       "name": "Toasts",
+      "section": "Feedback & states",
       "components": [
         {
           "id": "mr-toasts-light",
@@ -624,6 +694,18 @@
           "id": "mr-skeletons-light",
           "file": "mixedroutes/skeletons-light.html",
           "label": "Loading placeholders"
+        }
+      ]
+    },
+    {
+      "group": "light-mode",
+      "name": "Illustrations",
+      "section": "Assets",
+      "components": [
+        {
+          "id": "mr-illustrations-light",
+          "file": "mixedroutes/illustrations.html",
+          "label": "Line-art scenes & usage"
         }
       ]
     },

@@ -23,6 +23,8 @@
   /* Section action: warm yellow used by uppercase "EDIT / NEW GROUP / NEW LIST / VIEW ALL" links */
   --mr-section-action: #f5c451;
   --mr-section-action-hover: #ffd97a;
+  --illustrationLine: #6ea6cf;
+  --illustrationAccent: #e08a5e;
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
   --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.35);
   --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -34,7 +36,7 @@
 }
 
 /* Canvas theme tokens only. Layout and chrome are owned by Design Core. */
-.ds-canvas-stage .ds-group[data-ds-theme="dark"] .ds-section {
+.ds-canvas-stage .ds-group[data-ds-theme="dark"] {
   --bg-0: #010b14;
   --bg-1: #00131f;
   --surface: rgba(255, 255, 255, 0.06);
@@ -42,6 +44,13 @@
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.68);
   --muted-2: rgba(255, 255, 255, 0.52);
+  --illustrationLine: #6ea6cf;
+  --illustrationAccent: #e08a5e;
+}
+
+.ds-canvas-stage .ds-group[data-ds-theme="light"] {
+  --illustrationLine: #38678c;
+  --illustrationAccent: #e08a5e;
 }
 
 /* Palette is a full-width foundation anchor; split its two previews evenly. */
@@ -286,12 +295,13 @@
   word-break: break-word;
 }
 
-/* Light mode color previews — panel reads on dark DS canvas */
+/* The light theme group already provides the preview surface. Keep component
+ * fragments flat so their contents sit directly beneath the tool headings. */
 .mr-scope.mr-scope--light {
-  padding: 16px;
-  border-radius: var(--radius-lg);
-  background: #f1f4f7;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
   color: #1a2332;
 }
 
@@ -305,10 +315,6 @@
 
 .mr-scope.mr-scope--light.mr-scope--color-palette .mr-color-grid {
   gap: 6px 8px;
-}
-
-.mr-scope.mr-scope--light.mr-scope--color-palette {
-  padding: 8px 10px 10px;
 }
 
 .mr-scope.mr-scope--light .mr-color-card {
@@ -1707,29 +1713,44 @@
   display: block;
 }
 
-/* Places list card — 2-up grid of saved-place lists (emoji + title + count + privacy) */
+/* Saved-place lists — full-width, chromeless list items */
 .mr-scope .mr-places-list-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   width: 100%;
 }
 
 .mr-scope .mr-places-list-card {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 16px 16px 18px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 72px;
+  padding: 12px 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: transparent;
   text-align: left;
   cursor: pointer;
   min-width: 0;
 }
 
+.mr-scope .mr-places-list-card:last-child {
+  border-bottom: 0;
+}
+
 .mr-scope .mr-places-list-card-icon {
-  font-size: 28px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 24px;
   line-height: 1;
   user-select: none;
 }
@@ -1767,8 +1788,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px dashed rgba(255, 255, 255, 0.14);
+  background: transparent;
+  border: 0;
 }
 
 .mr-scope .mr-places-list-card--new .mr-places-list-card-icon {
@@ -1780,25 +1801,27 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 68px;
+  padding: 10px 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: transparent;
   width: 100%;
   text-align: left;
   cursor: pointer;
 }
 
 .mr-scope .mr-places-list-row--selected {
-  background: rgba(109, 213, 237, 0.1);
-  border: 1.5px solid rgba(109, 213, 237, 0.5);
+  background: rgba(109, 213, 237, 0.08);
+  border-bottom-color: rgba(109, 213, 237, 0.24);
 }
 
 .mr-scope .mr-places-list-row-icon {
   width: 44px;
   height: 44px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
@@ -2154,7 +2177,7 @@
 /* Recent activity */
 .mr-scope .mr-recent-activity {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   overflow-x: auto;
   padding: 6px 0;
   max-width: 520px;
@@ -2174,7 +2197,12 @@
   gap: 5px;
   text-align: center;
   flex: 0 0 auto;
-  width: 82px;
+  width: 116px;
+  min-height: 0;
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .mr-scope .mr-recent-avatar {
@@ -2273,10 +2301,10 @@
 
 .mr-scope .mr-interest-card {
   width: 148px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2329,39 +2357,25 @@
 
 .mr-scope .mr-group-card {
   width: 150px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
+  overflow: visible;
 }
 
 .mr-scope .mr-group-card[style*="--mr-group-bg"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: var(--mr-group-bg);
-  background-size: cover;
-  background-position: center;
-  filter: blur(28px) saturate(1.2);
-  transform: scale(1.4);
-  opacity: 0.55;
+  content: none;
 }
 
 .mr-scope .mr-group-card[style*="--mr-group-bg"]::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(8, 10, 18, 0.35), rgba(8, 10, 18, 0.7));
+  content: none;
 }
 
 .mr-scope .mr-group-avatar {
@@ -2412,10 +2426,10 @@
 
 .mr-scope .mr-friend-card {
   width: 130px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2858,14 +2872,14 @@
 
 /* ===== NAVIGATION ===== */
 
-/* Home feed top nav — gradient logo left, white Phosphor bell + avatar, rounded top */
+/* Home feed top nav — gradient logo left with people, notification, and settings actions. */
 .mr-scope .mr-top-nav-home {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 56px;
   padding: 10px 16px 12px;
-  background: rgba(6, 8, 14, 0.98);
+  background: var(--bg-0);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -2886,7 +2900,7 @@
 }
 
 .mr-scope .mr-top-nav-home-wordmark {
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.96);
@@ -3375,16 +3389,14 @@
   display: block;
 }
 
-/* Phosphor icons — brand gradient (icon font glyph) */
+/* Empty illustrations use the same mist-blue line color as the app artwork. */
 .mr-scope .mr-empty-state-icon > .ph {
   font-size: 88px;
   line-height: 1;
   display: block;
-  background: linear-gradient(135deg, #5ba5ff 0%, #20e0cf 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  color: #6ea6cf;
+  -webkit-text-fill-color: #6ea6cf;
 }
 
 .mr-scope .mr-empty-state-title {
@@ -3551,10 +3563,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 28px 24px;
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   max-width: 340px;
 }
 
@@ -4199,22 +4211,33 @@
   color: var(--neon-teal);
 }
 
-/* Person list-item — full-width row with avatar, name/handle, trailing control */
+/* Person list-item — wide, chromeless row with avatar, name/handle, trailing control */
+.ds-canvas-stage .ds-component-item:has(.mr-pp-row) {
+  min-width: 300px;
+}
+
 .mr-scope .mr-pp-row {
   display: grid;
   grid-template-columns: 44px 1fr auto;
   align-items: center;
   gap: 13px;
   width: 100%;
-  padding: 11px 20px;
+  min-height: 68px;
+  padding: 10px 8px;
+  margin-bottom: 0;
   border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   background: transparent;
   text-align: left;
   cursor: pointer;
 }
+.mr-scope .mr-pp-row:last-child {
+  border-bottom: 0;
+}
 .mr-scope .mr-pp-row.is-selected {
-  background: rgba(32, 224, 207, 0.09);
+  background: rgba(32, 224, 207, 0.07);
+  border-bottom-color: rgba(32, 224, 207, 0.2);
 }
 .mr-scope .mr-pp-row .mr-pp-row-avatar {
   width: 44px;
@@ -4323,12 +4346,12 @@
   color: rgba(15, 23, 42, 0.45);
 }
 
-/* Light scope root: flat light panel + rebound brand variables */
+/* Light scope root: rebound brand variables without adding a preview shell. */
 .mr-scope.mr-scope--light {
-  background: #f1f4f7;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: 0;
   color: #1a2332;
   font-family: "Geist", sans-serif;
   --bg-0: #ffffff;
@@ -4346,6 +4369,13 @@
   --link-hover: #2563eb;
   --mr-section-action: #e8880a;
   --mr-section-action-hover: #c67203;
+  --mr-surface-2: #e7ebef;
+  --mr-surface-3: #f1f4f7;
+  --mr-surface-4: #ffffff;
+  --mr-selected-bg: rgba(6, 182, 212, 0.1);
+  --mr-border-light: rgba(32, 36, 42, 0.16);
+  --mr-success: #0ca678;
+  --mr-danger: #d0293e;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.08), 0 10px 28px rgba(0, 0, 0, 0.12);
   --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.1);
   --mr-input-surface: rgba(118, 118, 128, 0.12);
@@ -4469,6 +4499,121 @@
   border-color: transparent;
   color: #1a2332;
   box-shadow: none;
+}
+
+.mr-scope.mr-scope--light .btn-tint-primary {
+  background: rgba(6, 182, 212, 0.28);
+  border-color: #0891b2;
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .btn-success {
+  background: rgba(12, 166, 120, 0.22);
+  border-color: #099268;
+  color: #099268;
+}
+
+.mr-scope.mr-scope--light .btn-danger {
+  background: rgba(208, 41, 62, 0.22);
+  border-color: #b31d30;
+  color: #b31d30;
+}
+
+/* App line-art illustrations: fixed 4:3 scene, one line color, one accent. */
+.mr-scope .mr-illustration-intro {
+  max-width: 68ch;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.mr-scope .mr-illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(142px, 1fr));
+  gap: 14px;
+}
+
+.mr-scope .mr-illustration-sample {
+  min-width: 0;
+  margin: 0;
+  padding: 12px 12px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.mr-scope .mr-illustration-sample svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  stroke: var(--illustrationLine);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mr-scope .mr-illustration-sample .mr-illustration-accent {
+  stroke: var(--illustrationAccent);
+}
+
+.mr-scope .mr-illustration-sample figcaption {
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mr-scope .mr-illustration-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.mr-scope .mr-illustration-recipe span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.mr-scope .mr-illustration-recipe strong {
+  color: var(--text);
+}
+
+.mr-scope .mr-illustration-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--illustrationLine);
+}
+
+.mr-scope .mr-illustration-swatch--accent {
+  background: var(--illustrationAccent);
+}
+
+.ds-canvas-stage
+  .ds-group[data-ds-theme="light"]
+  .mr-illustration-board {
+  --surface: #ffffff;
+  --border: #e1e3e6;
+  --text: #1a2332;
+  --muted: #5c6b7d;
+  --muted-2: #858b94;
+}
+
+.ds-canvas-stage
+  .ds-group[data-ds-theme="light"]
+  .mr-illustration-sample {
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
 .mr-scope.mr-scope--light .btn-white,
@@ -4836,11 +4981,20 @@
   color: #1a2332;
 }
 
-/* Places list cards */
+/* Saved-place list items */
 .mr-scope.mr-scope--light .mr-places-list-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #e1e3e6;
+  box-shadow: none;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card:last-child {
+  border-bottom: 0;
+}
+
+.mr-scope.mr-scope--light .mr-places-list-card-icon {
+  background: #f1f4f7;
 }
 
 .mr-scope.mr-scope--light .mr-places-list-card-title {
@@ -4857,7 +5011,7 @@
 
 .mr-scope.mr-scope--light .mr-places-list-card--new {
   background: transparent;
-  border: 1.5px dashed rgba(32, 36, 42, 0.2);
+  border: 0;
   box-shadow: none;
 }
 
@@ -4866,13 +5020,14 @@
 }
 
 .mr-scope.mr-scope--light .mr-places-list-row {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #e1e3e6;
 }
 
 .mr-scope.mr-scope--light .mr-places-list-row--selected {
-  background: rgba(6, 182, 212, 0.14);
-  border: 1.5px solid #06b6d4;
+  background: rgba(6, 182, 212, 0.08);
+  border-bottom-color: rgba(6, 182, 212, 0.24);
 }
 
 .mr-scope.mr-scope--light .mr-places-list-row-icon {
@@ -4953,6 +5108,12 @@
 /* Bookmark circles over photos keep their dark scrim on purpose */
 
 /* Recent activity strip */
+.mr-scope.mr-scope--light .mr-recent-item {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
 .mr-scope.mr-scope--light .mr-recent-avatar {
   border-color: #e1e3e6;
 }
@@ -4981,9 +5142,9 @@
 
 /* Interests, groups, friends */
 .mr-scope.mr-scope--light .mr-interest-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-interest-icon {
@@ -5000,9 +5161,9 @@
 }
 
 .mr-scope.mr-scope--light .mr-group-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-group-title {
@@ -5017,17 +5178,17 @@
   color: #858b94;
 }
 
-/* Group cards backed by a blurred photo keep their scrim and white text */
+/* Group tiles stay chromeless; imagery belongs to the avatar only. */
 .mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-title {
-  color: rgba(255, 255, 255, 0.96);
+  color: #1a2332;
 }
 
 .mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-detail {
-  color: rgba(255, 255, 255, 0.6);
+  color: #5c6b7d;
 }
 
 .mr-scope.mr-scope--light .mr-group-card[style*="--mr-group-bg"] .mr-group-status {
-  color: rgba(255, 255, 255, 0.5);
+  color: #858b94;
 }
 
 .mr-scope.mr-scope--light .mr-group-avatar {
@@ -5035,9 +5196,9 @@
 }
 
 .mr-scope.mr-scope--light .mr-friend-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-friend-card img {
@@ -5267,9 +5428,9 @@
 
 /* Empty states */
 .mr-scope.mr-scope--light .mr-empty-state-icon > .ph {
-  background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  background: none;
+  color: #38678c;
+  -webkit-text-fill-color: #38678c;
 }
 
 .mr-scope.mr-scope--light .mr-empty-state-title {
@@ -5326,11 +5487,11 @@
   color: #5c6b7d;
 }
 
-/* Profile card */
+/* Profile summary */
 .mr-scope.mr-scope--light .mr-profile-card {
-  background: #ffffff;
-  border: 1px solid #e1e3e6;
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .mr-scope.mr-scope--light .mr-profile-avatar {
@@ -5548,8 +5709,15 @@
 }
 
 /* Person rows */
+.mr-scope.mr-scope--light .mr-pp-row {
+  background: transparent;
+  border-color: #e1e3e6;
+  box-shadow: none;
+}
+
 .mr-scope.mr-scope--light .mr-pp-row.is-selected {
-  background: rgba(6, 182, 212, 0.12);
+  background: rgba(6, 182, 212, 0.08);
+  border-bottom-color: rgba(6, 182, 212, 0.2);
 }
 
 .mr-scope.mr-scope--light .mr-pp-row .mr-pp-row-avatar.is-initials {
@@ -5629,4 +5797,294 @@
 
 .mr-scope.mr-scope--light .mr-banner-dismiss {
   color: rgba(15, 23, 42, 0.35);
+}
+
+/* Photo-backed activity cards stay immersive in both app themes. */
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur {
+  position: relative;
+  background: #1d232b;
+  box-shadow: var(--shadow);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur::before,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur::after,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur::before,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur::after {
+  display: block;
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-title,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-title {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .plan-card-mini-time,
+.mr-scope.mr-scope--light .mr-plan-row--photo-blur .mr-plan-row-when-where-item,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-time,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-location,
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur .plan-card-mini-social {
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mr-scope.mr-scope--light .plan-card-mini--photo-blur {
+  background: rgba(8, 10, 18, 0.7);
+  box-shadow: var(--shadow);
+}
+
+.mr-scope .mr-plan-row,
+.mr-scope .plan-card-mini,
+.mr-scope .event-card.event-card--mini {
+  border-radius: 32px;
+}
+
+/* Desktop side navigation and the refreshed account popover. */
+.mr-scope .mr-desktop-nav-demo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px minmax(220px, 1fr);
+  width: min(100%, 560px);
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid var(--mr-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-0);
+  box-shadow: var(--shadow-soft);
+}
+
+.mr-scope .mr-desktop-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 36px 11px 16px;
+  background: var(--mr-surface-4);
+  border-right: 1px solid var(--mr-border-light);
+}
+
+.mr-scope .mr-desktop-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 56px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.mr-scope .mr-desktop-nav-item > i {
+  width: 24px;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+}
+
+.mr-scope .mr-desktop-nav-item.is-selected,
+.mr-scope .mr-desktop-nav-item.is-open {
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.mr-scope .mr-desktop-nav-spacer {
+  flex: 1;
+}
+
+.mr-scope .mr-desktop-nav-avatar {
+  width: 34px;
+  height: 34px;
+  margin-left: -5px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mr-scope .mr-desktop-canvas-demo {
+  padding: 32px 24px;
+  background: var(--bg-0);
+}
+
+.mr-scope .mr-desktop-canvas-demo h4 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.mr-scope .mr-desktop-canvas-demo p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.mr-scope .mr-account-popover {
+  position: absolute;
+  left: 11px;
+  bottom: 72px;
+  z-index: 2;
+  width: 178px;
+  padding: 7px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-0) 94%, var(--mr-surface-3));
+  box-shadow: var(--shadow);
+}
+
+.mr-scope .mr-account-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  text-align: left;
+}
+
+.mr-scope .mr-account-menu-item > i {
+  width: 20px;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+}
+
+.mr-scope .mr-account-menu-item.is-destructive {
+  color: var(--mr-danger);
+}
+
+.mr-scope .mr-account-menu-divider {
+  height: 1px;
+  margin: 7px 11px;
+  background: var(--mr-border-light);
+}
+
+@media (max-width: 620px) {
+  .mr-scope .mr-desktop-nav-demo {
+    grid-template-columns: 180px minmax(160px, 1fr);
+  }
+}
+
+/* Authoritative app tokens for dark component previews. */
+.ds-canvas-stage .ds-group[data-ds-theme="dark"] .ds-section,
+.mr-scope:not(.mr-scope--light) {
+  --bg-0: #0f1318;
+  --bg-1: #181d25;
+  --surface: #1f252f;
+  --border: #343c4a;
+  --text: #f6f8fc;
+  --muted: #bac6d0;
+  --muted-2: #8591a2;
+  --neon-blue: #3b82f6;
+  --neon-blue-rgb: 59, 130, 246;
+  --neon-teal: #22d3ee;
+  --neon-teal-rgb: 34, 211, 238;
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
+  --mr-section-action: #fbbf24;
+  --mr-section-action-hover: #fcd34d;
+  --mr-surface-2: #181d25;
+  --mr-surface-3: #1f252f;
+  --mr-surface-4: #272d38;
+  --mr-selected-bg: rgba(34, 211, 238, 0.18);
+  --mr-border-light: rgba(255, 255, 255, 0.12);
+  --mr-success: #2fd7a8;
+  --mr-danger: #ed576b;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.42), 0 10px 28px rgba(0, 0, 0, 0.52);
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.42);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --mr-input-surface: rgba(118, 118, 128, 0.24);
+  --mr-input-surface-focus: rgba(118, 118, 128, 0.32);
+  --mr-input-radius: 24px;
+}
+
+.mr-scope:not(.mr-scope--light) {
+  font-family: "Geist", sans-serif;
+}
+
+/* App button sizing and state variants. */
+.mr-scope .btn {
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.mr-scope .btn-sm {
+  height: 36px;
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 0.8125rem;
+}
+
+.mr-scope .btn-lg {
+  height: 48px;
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 1.125rem;
+}
+
+.mr-scope .btn-primary {
+  background: linear-gradient(145deg, #14b8a6, #3b82f6);
+  border-color: transparent;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.mr-scope .btn-secondary {
+  background: #3d4552;
+  border-color: transparent;
+  color: var(--text);
+  box-shadow: none;
+}
+
+.mr-scope .btn-tint-primary {
+  background: rgba(34, 211, 238, 0.2);
+  border: 1.5px solid #22d3ee;
+  color: #67e8f9;
+}
+
+.mr-scope .btn-success {
+  background: rgba(47, 215, 168, 0.15);
+  border: 1.5px solid #2fd7a8;
+  color: #44dbb1;
+}
+
+.mr-scope .btn-danger {
+  background: rgba(237, 87, 107, 0.15);
+  border: 1.5px solid #ed576b;
+  color: #ef687a;
+}
+
+.mr-scope.mr-scope--light .btn-secondary {
+  background: #e1e3e6;
+  color: #1a2332;
+}
+
+.mr-scope.mr-scope--light .btn-tint-primary {
+  background: rgba(6, 182, 212, 0.28);
+  border-color: #0891b2;
+  color: #0891b2;
+}
+
+.mr-scope.mr-scope--light .btn-success {
+  background: rgba(12, 166, 120, 0.22);
+  border-color: #099268;
+  color: #099268;
+}
+
+.mr-scope.mr-scope--light .btn-danger {
+  background: rgba(208, 41, 62, 0.22);
+  border-color: #b31d30;
+  color: #b31d30;
 }

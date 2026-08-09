@@ -33,10 +33,10 @@
   .mrv2-home .sec-head .action i { font-size: 16px; }
 
   /* Full-bleed carousels */
-  .mrv2-home .rail { display: flex; align-items: stretch; overflow-x: auto; margin: 0 -16px; padding: 5px 16px 24px; scrollbar-width: none; -ms-overflow-style: none; }
+  .mrv2-home .rail { display: flex; align-items: stretch; overflow-x: auto; margin: -19px -16px -32px; padding: 24px 16px 56px; scrollbar-width: none; -ms-overflow-style: none; }
   .mrv2-home .rail::-webkit-scrollbar { display: none; }
   .mrv2-home .rail-cards { gap: 16px; }
-  .mrv2-home .rail-people { gap: 7px; padding-bottom: 8px; }
+  .mrv2-home .rail-people { gap: 7px; padding-bottom: 8px; margin-bottom: 0; }
 
   /* Chat + person cards */
   .mrv2-home .mini-card { width: 108px; flex-shrink: 0; border-radius: 16px; padding: 7px 5px; display: flex; flex-direction: column; align-items: center; gap: 11px; text-align: center; color: #101724; }
@@ -47,7 +47,7 @@
   .mrv2-home .mini-card .txt { display: flex; flex-direction: column; gap: 5px; min-width: 0; width: 100%; }
   .mrv2-home .mini-card .txt strong { font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .mrv2-home .mini-card .txt span { font-size: 14px; color: #5c6b7d; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .mrv2-home .add-btn { height: 36px; padding: 0 14px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; border: 0; box-shadow: 0 2px 8px rgba(6, 182, 212, 0.35); }
+  .mrv2-home .add-btn { height: 32px; padding: 0 12px; border-radius: 999px; background: #e1e3e6; color: #101724; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 0; box-shadow: none; }
 
   /* Tail affordance */
   .mrv2-home .tail { width: 96px; margin: 0 24px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }
@@ -106,7 +106,7 @@
   .mrv2-home .banner > i { margin-left: auto; color: #a3a8b0; font-size: 18px; flex-shrink: 0; }
 
   /* FAB */
-  .mrv2-home .fab { position: absolute; right: 16px; bottom: 99px; z-index: 10; height: 56px; min-width: 56px; padding: 0 16px; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; display: inline-flex; align-items: center; white-space: nowrap; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14), 0 16px 44px rgba(0, 0, 0, 0.2); }
+  .mrv2-home .fab { position: absolute; right: 16px; bottom: 99px; z-index: 10; height: 56px; min-width: 56px; padding: 0 16px; border: 0; outline: none; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #fff; display: inline-flex; align-items: center; white-space: nowrap; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14), 0 16px 44px rgba(0, 0, 0, 0.2); }
   .mrv2-home .fab i { font-size: 24px; }
   .mrv2-home .fab span { font-size: 18px; font-weight: 700; margin-left: 5px; }
 
@@ -338,22 +338,22 @@
         <div class="mini-card">
           <img class="av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
           <div class="txt"><strong>Devon</strong><span>3 mutual</span></div>
-          <button class="add-btn">Add friend</button>
+          <button class="add-btn">Add</button>
         </div>
         <div class="mini-card">
           <img class="av" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
           <div class="txt"><strong>Maya</strong><span>From your contacts</span></div>
-          <button class="add-btn">Add friend</button>
+          <button class="add-btn">Add</button>
         </div>
         <div class="mini-card">
           <img class="av" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
           <div class="txt"><strong>Jordan</strong><span>2 mutual</span></div>
-          <button class="add-btn">Add friend</button>
+          <button class="add-btn">Add</button>
         </div>
         <div class="mini-card">
           <img class="av" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
           <div class="txt"><strong>Alex</strong><span>From your contacts</span></div>
-          <button class="add-btn">Add friend</button>
+          <button class="add-btn">Add</button>
         </div>
       </div>
     </section>
