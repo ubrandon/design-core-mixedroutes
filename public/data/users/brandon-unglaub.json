@@ -1,17 +1,26 @@
 {
   "name": "Brandon Unglaub",
   "favorites": [
+    "calendar",
     "mixedroutes-phase-v2",
     "marketing-site"
   ],
   "recents": [
     {
       "id": "mixedroutes-phase-v2",
-      "ts": 1785983464323
+      "ts": 1786238668010
+    },
+    {
+      "id": "calendar",
+      "ts": 1786238655566
+    },
+    {
+      "id": "plans",
+      "ts": 1786238643502
     },
     {
       "id": "marketing-site",
-      "ts": 1785805153512
+      "ts": 1786238634257
     }
   ],
   "theme": "light",
@@ -19,6 +28,6 @@
     "sort": "",
     "status": ""
   },
-  "navCollapsed": true,
-  "updatedAt": 1786139239935
+  "navCollapsed": false,
+  "updatedAt": 1786238727307
 }
