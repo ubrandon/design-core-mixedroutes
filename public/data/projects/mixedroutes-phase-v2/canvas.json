@@ -77,6 +77,30 @@
       "x": 986,
       "y": 106,
       "width": 390
+    },
+    {
+      "file": "nav-current-major-pages.html",
+      "x": 3197,
+      "y": -635,
+      "width": 500
+    },
+    {
+      "file": "card-variations-audit.html",
+      "x": 1607,
+      "y": -635,
+      "width": 1280
+    },
+    {
+      "file": "nav-updated-contextual-actions.html",
+      "x": 3743,
+      "y": -635,
+      "width": 500
+    },
+    {
+      "file": "nav-option-plus-left.html",
+      "x": 4299,
+      "y": -635,
+      "width": 500
     }
   ],
   "texts": [
@@ -111,7 +135,7 @@
       "size": 48
     },
     {
-      "text": "Status explorations",
+      "text": "Status ideas",
       "x": 986,
       "y": -720,
       "size": 48
@@ -129,8 +153,26 @@
       "size": 72
     },
     {
+      "text": "Current nav",
+      "x": 3197,
+      "y": -720,
+      "size": 48
+    },
+    {
       "text": "Card variations",
-      "x": 1574,
+      "x": 1607,
+      "y": -720,
+      "size": 48
+    },
+    {
+      "text": "Updated nav",
+      "x": 3743,
+      "y": -720,
+      "size": 48
+    },
+    {
+      "text": "Plus on left, centered title",
+      "x": 4299,
       "y": -720,
       "size": 48
     }
