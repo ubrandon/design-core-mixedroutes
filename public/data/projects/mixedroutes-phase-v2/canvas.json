@@ -80,7 +80,7 @@
     },
     {
       "file": "nav-current-major-pages.html",
-      "x": 3197,
+      "x": 3692,
       "y": -635,
       "width": 500
     },
@@ -88,17 +88,17 @@
       "file": "card-variations-audit.html",
       "x": 1607,
       "y": -635,
-      "width": 1280
+      "width": 1440
     },
     {
       "file": "nav-updated-contextual-actions.html",
-      "x": 3743,
+      "x": 4238,
       "y": -635,
       "width": 500
     },
     {
       "file": "nav-option-plus-left.html",
-      "x": 4299,
+      "x": 4794,
       "y": -635,
       "width": 500
     }
@@ -154,7 +154,7 @@
     },
     {
       "text": "Current nav",
-      "x": 3197,
+      "x": 3692,
       "y": -720,
       "size": 48
     },
@@ -166,13 +166,13 @@
     },
     {
       "text": "Updated nav",
-      "x": 3743,
+      "x": 4238,
       "y": -720,
       "size": 48
     },
     {
       "text": "Plus on left, centered title",
-      "x": 4299,
+      "x": 4794,
       "y": -720,
       "size": 48
     }

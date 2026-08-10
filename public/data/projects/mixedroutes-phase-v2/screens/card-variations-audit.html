@@ -8,77 +8,86 @@
   .card-audit, .card-audit * { box-sizing: border-box; }
   .card-audit { min-height: 100vh; padding: 34px; background: #eef2f5; color: #101724; font-family: "Geist", sans-serif; }
   .card-audit button { font: inherit; }
-  .audit-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 36px; margin-bottom: 28px; }
+  .audit-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 36px; margin-bottom: 30px; }
   .audit-kicker { margin-bottom: 8px; color: #637083; font-size: 12px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
   .audit-top h1 { margin: 0 0 9px; font-size: 34px; line-height: 1.05; letter-spacing: -.035em; }
   .audit-top p { max-width: 690px; margin: 0; color: #637083; font-size: 15px; line-height: 1.5; }
   .audit-summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; max-width: 330px; }
   .audit-pill { height: 31px; padding: 0 11px; border-radius: 999px; background: #fff; border: 1px solid rgba(16,23,36,.09); color: #4f5c6e; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
   .audit-pill i { color: #0ca678; font-size: 15px; }
-  .audit-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 18px; }
-  .audit-family { min-width: 0; border-radius: 26px; padding: 18px; background: rgba(255,255,255,.68); border: 1px solid rgba(16,23,36,.07); }
-  .family-head { padding: 2px 2px 18px; border-bottom: 1px solid #dfe5ea; margin-bottom: 16px; }
+  .audit-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; gap: 26px; }
+  .audit-family { min-width: 0; }
+  .family-head { padding: 2px 2px 15px; border-bottom: 1px solid #dfe5ea; margin-bottom: 16px; }
   .family-title { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
   .family-icon { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; background: var(--family-tint); color: var(--family-color); font-size: 18px; }
   .family-title h2 { margin: 0; font-size: 21px; line-height: 1.1; letter-spacing: -.02em; }
   .family-head p { margin: 0 0 0 44px; color: #7a8594; font-size: 12px; line-height: 1.4; }
-  .family-stack { display: flex; flex-direction: column; gap: 16px; }
+  .family-stack { display: flex; flex-direction: column; gap: 18px; }
   .spec { min-width: 0; }
-  .spec-head { min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 2px 7px; }
+  .spec-head { display: flex; align-items: center; margin: 0 2px 7px; }
   .spec-name { color: #465365; font-size: 12px; font-weight: 800; letter-spacing: .02em; }
-  .state-tags { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
-  .state-tag { height: 21px; padding: 0 7px; border-radius: 999px; display: inline-flex; align-items: center; background: #e8edf1; color: #647184; font-size: 10px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; }
-  .state-tag.new { background: #daf6ed; color: #08785d; }
-  .state-tag.optional { background: #e8effe; color: #285cb6; }
 
-  /* Discover cards */
-  .discovery-card { overflow: hidden; border-radius: 20px; background: #fff; border: 1px solid rgba(16,23,36,.08); box-shadow: 0 2px 6px rgba(16,24,40,.04), 0 10px 24px rgba(16,24,40,.07); }
-  .disc-photo { position: relative; height: 154px; background: #d9e1e7 center / cover no-repeat; }
+  /* Events + places: flat tiles at carousel scale, no container */
+  .tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; align-items: start; }
+  .tile-grid .spec-head { margin-bottom: 6px; }
+  .discovery-card { background: transparent; }
+  .discovery-card .disc-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 1.85 / 1; height: auto; }
+  .disc-photo { position: relative; background: #d9e1e7 center / cover no-repeat; }
   .disc-photo.art { display: grid; place-items: center; background: linear-gradient(135deg, #ccfbf1, #dbeafe); overflow: hidden; }
   .disc-photo.art::before, .disc-photo.art::after { content: ""; position: absolute; border-radius: 50%; }
-  .disc-photo.art::before { width: 150px; height: 150px; left: -52px; top: -70px; background: rgba(255,255,255,.36); }
-  .disc-photo.art::after { width: 104px; height: 104px; right: -28px; bottom: -44px; border: 2px solid rgba(255,255,255,.62); }
-  .art-icon { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; position: relative; z-index: 1; background: rgba(255,255,255,.7); color: #0f766e; font-size: 29px; box-shadow: 0 3px 12px rgba(16,24,40,.09); }
-  .ai-chip { position: absolute; right: 11px; top: 11px; z-index: 1; height: 26px; padding: 0 9px; border-radius: 999px; background: rgba(255,255,255,.82); display: inline-flex; align-items: center; gap: 4px; color: #2563eb; font-size: 11px; font-weight: 700; }
-  .save { position: absolute; right: 11px; top: 11px; width: 35px; height: 35px; border-radius: 50%; display: grid; place-items: center; background: rgba(16,23,36,.62); color: #fff; font-size: 18px; }
+  .disc-photo.art::before { width: 110px; height: 110px; left: -38px; top: -52px; background: rgba(255,255,255,.36); }
+  .disc-photo.art::after { width: 76px; height: 76px; right: -20px; bottom: -32px; border: 2px solid rgba(255,255,255,.62); }
+  .art-icon { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; position: relative; z-index: 1; background: rgba(255,255,255,.7); color: #0f766e; font-size: 22px; box-shadow: 0 3px 12px rgba(16,24,40,.09); }
+  .ai-chip { position: absolute; right: 8px; top: 8px; z-index: 1; height: 23px; padding: 0 8px; border-radius: 999px; background: rgba(255,255,255,.82); display: inline-flex; align-items: center; gap: 4px; color: #2563eb; font-size: 10px; font-weight: 700; }
+  .save { position: absolute; right: 8px; top: 8px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: rgba(16,23,36,.62); color: #fff; font-size: 15px; }
   .save.saved { background: #fff; color: #2563eb; box-shadow: 0 2px 8px rgba(16,23,36,.18); }
-  .ticket-chip, .time-chip, .list-chip { position: absolute; left: 11px; bottom: 11px; min-height: 27px; padding: 0 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; background: rgba(16,23,36,.7); backdrop-filter: blur(6px); color: #fff; font-size: 11px; font-weight: 800; }
-  .disc-body { padding: 13px 14px 15px; display: flex; flex-direction: column; gap: 4px; }
-  .disc-date { color: #5c6b7d; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-  .disc-title { color: #101724; font-size: 17px; font-weight: 800; line-height: 1.25; }
-  .disc-sub { color: #5c6b7d; font-size: 13px; line-height: 1.35; }
-  .disc-meta { min-width: 0; display: flex; align-items: center; gap: 5px; color: #667285; font-size: 12px; font-weight: 600; }
+  .ticket-chip, .time-chip, .list-chip { position: absolute; left: 8px; bottom: 8px; min-height: 24px; padding: 0 8px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; background: rgba(16,23,36,.7); backdrop-filter: blur(6px); color: #fff; font-size: 10px; font-weight: 800; }
+  .tile-grid .list-chip { left: 8px; top: 8px; bottom: auto; background: rgba(255,255,255,.88); color: #101724; }
+  .tile-grid .list-chip i { color: #2563eb; }
+  .disc-body { padding: 9px 3px 2px; display: flex; flex-direction: column; gap: 3px; }
+  .tile-grid .disc-date { font-size: 9px; }
+  .tile-grid .disc-title { font-size: 13px; font-weight: 700; }
+  .tile-grid .disc-sub { font-size: 11px; }
+  .tile-grid .disc-meta { font-size: 10px; }
+  .tile-grid .avatars img { width: 18px; height: 18px; }
+  .tile-grid .friend-note { font-size: 10px; }
+  .disc-date { color: #5c6b7d; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+  .disc-title { color: #101724; font-weight: 800; line-height: 1.25; }
+  .disc-sub { color: #5c6b7d; line-height: 1.35; }
+  .disc-meta { min-width: 0; display: flex; align-items: center; gap: 5px; color: #667285; font-weight: 600; }
   .disc-meta i { flex-shrink: 0; }
   .disc-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: .5; }
   .avatars { display: flex; align-items: center; }
   .avatars img { width: 25px; height: 25px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; }
   .avatars img:first-child { margin-left: 0; }
-  .friend-note { display: flex; align-items: center; gap: 7px; margin-top: 3px; color: #5c6b7d; font-size: 12px; }
+  .friend-note { display: flex; align-items: center; gap: 7px; margin-top: 3px; color: #5c6b7d; }
+  .skeleton-card { padding: 0; }
+  .sk-media { aspect-ratio: 1.85 / 1; margin-bottom: 10px; border-radius: 16px; }
+  .sk-line { height: 10px; margin-top: 7px; }
+
+  /* Plans: always carded */
   .public-plan { position: relative; overflow: hidden; border-radius: 25px; background: #1e2832; color: #fff; isolation: isolate; box-shadow: 0 8px 22px rgba(16,23,36,.17); }
   .public-plan .ambient, .plan-row .ambient { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; filter: blur(38px) saturate(2.2); transform: scale(1.45); opacity: .8; }
   .public-plan .shade, .plan-row .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to bottom, transparent 20%, rgba(12,18,25,.78) 86%); }
-  .public-plan .disc-photo { height: 168px; -webkit-mask-image: linear-gradient(to bottom,#000 54%,transparent 100%); mask-image: linear-gradient(to bottom,#000 54%,transparent 100%); }
+  .public-plan .disc-photo { height: 158px; -webkit-mask-image: linear-gradient(to bottom,#000 54%,transparent 100%); mask-image: linear-gradient(to bottom,#000 54%,transparent 100%); }
   .public-plan .avatars { margin: -46px 0 0 15px; position: relative; z-index: 1; }
-  .public-plan .plan-copy { padding: 12px 16px 16px; }
-  .public-plan .plan-copy .disc-date { color: rgba(255,255,255,.72); }
-  .public-plan .plan-copy .disc-title { color: #fff; font-size: 20px; }
-  .public-plan .disc-meta { color: rgba(255,255,255,.82); margin-top: 7px; justify-content: space-between; }
-  .skeleton-card { padding: 14px; border-radius: 20px; background: #fff; border: 1px solid rgba(16,23,36,.08); }
-  .sk-media { height: 120px; margin-bottom: 13px; border-radius: 15px; }
-  .sk-line { height: 11px; margin-top: 8px; }
-
-  /* Plans and utility */
-  .plan-row { min-height: 122px; position: relative; overflow: hidden; display: grid; grid-template-columns: 128px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: 0 5px 16px rgba(16,23,36,.12); }
-  .plan-row .plan-media { min-height: 122px; position: relative; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right,#000 48%,transparent 100%); mask-image: linear-gradient(to right,#000 48%,transparent 100%); }
+  .public-plan .plan-copy { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .public-plan .plan-copy .disc-date { color: rgba(255,255,255,.72); font-size: 11px; }
+  .public-plan .plan-copy .disc-title { color: #fff; font-size: 19px; }
+  .public-plan .disc-meta { color: rgba(255,255,255,.82); margin-top: 7px; justify-content: space-between; font-size: 12px; }
+  .plan-row { min-height: 118px; position: relative; overflow: hidden; display: grid; grid-template-columns: 116px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: 0 5px 16px rgba(16,23,36,.12); }
+  .plan-row .plan-media { min-height: 118px; position: relative; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right,#000 48%,transparent 100%); mask-image: linear-gradient(to right,#000 48%,transparent 100%); }
   .emoji-badge { position: absolute; top: 9px; left: 9px; width: 31px; height: 31px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.68); box-shadow: 0 1px 5px rgba(0,0,0,.18); font-size: 16px; }
-  .plan-row-copy { min-width: 0; padding: 16px 15px 15px 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .plan-row-copy { min-width: 0; padding: 15px 14px 14px 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
   .plan-row-time { color: rgba(255,255,255,.8); font-size: 11px; font-weight: 800; letter-spacing: .04em; }
-  .plan-row-title { overflow: hidden; color: #fff; font-size: 17px; font-weight: 800; line-height: 1.25; white-space: nowrap; text-overflow: ellipsis; }
-  .plan-row-meta { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 7px; color: rgba(255,255,255,.9); font-size: 12px; }
+  .plan-row-title { overflow: hidden; color: #fff; font-size: 16px; font-weight: 800; line-height: 1.25; white-space: nowrap; text-overflow: ellipsis; }
+  .plan-row-meta { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px; color: rgba(255,255,255,.9); font-size: 11px; }
   .plan-row-meta .loc { min-width: 0; display: flex; align-items: center; gap: 4px; }
   .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-  .plan-row.no-photo { grid-template-columns: 76px 1fr; background: linear-gradient(135deg,#32425c,#223247); }
-  .plan-row.no-photo .plan-media { min-height: 122px; display: grid; place-items: center; -webkit-mask-image: none; mask-image: none; background: transparent; font-size: 31px; }
+  .plan-row.no-photo { grid-template-columns: 68px 1fr; background: linear-gradient(135deg,#32425c,#223247); }
+  .plan-row.no-photo .plan-media { min-height: 118px; display: grid; place-items: center; -webkit-mask-image: none; mask-image: none; background: transparent; font-size: 29px; }
+
+  /* Utility + prompts: carded banners */
   .utility-card { border-radius: 19px; background: #fff; border: 1px solid rgba(16,23,36,.08); box-shadow: 0 2px 6px rgba(16,24,40,.04), 0 10px 24px rgba(16,24,40,.07); overflow: hidden; }
   .invite-head { width: 100%; padding: 12px 13px; border: 0; background: transparent; display: flex; align-items: center; gap: 10px; text-align: left; color: #101724; }
   .invite-head .copy { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
@@ -118,29 +127,27 @@
   .nudge .copy { flex: 1; min-width: 0; }
   .nudge strong { display: block; font-size: 13px; }
   .nudge span { display: block; margin-top: 2px; color: #637083; font-size: 11px; }
+  .teaser { padding: 13px; display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg,#effcf9,#eef4ff); }
+  .teaser-icon { width: 39px; height: 39px; border-radius: 12px; display: grid; place-items: center; background: #fff; color: #2563eb; font-size: 18px; box-shadow: 0 2px 8px rgba(16,24,40,.08); }
+  .teaser .copy { flex: 1; min-width: 0; }
+  .teaser strong { display: block; font-size: 13px; }
+  .teaser span { display: block; overflow: hidden; margin-top: 2px; color: #637083; font-size: 11px; white-space: nowrap; text-overflow: ellipsis; }
 
-  /* Social and activity */
+  /* Social: friend moments carded, rails and saves flat */
   .activity-card { overflow: hidden; border-radius: 20px; background: #fff; border: 1px solid rgba(16,23,36,.08); box-shadow: 0 2px 6px rgba(16,24,40,.04), 0 10px 24px rgba(16,24,40,.07); }
-  .activity-media { position: relative; height: 144px; background: #d9e1e7 center / cover no-repeat; }
+  .activity-media { position: relative; height: 132px; background: #d9e1e7 center / cover no-repeat; }
   .activity-body { min-width: 0; padding: 12px 13px 14px; display: flex; flex-direction: column; gap: 6px; }
   .activity-who { min-width: 0; display: flex; align-items: center; gap: 7px; color: #637083; font-size: 12px; }
   .activity-who img { width: 25px; height: 25px; border-radius: 50%; object-fit: cover; }
   .activity-who span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .activity-who strong { color: #101724; }
-  .activity-title { font-size: 17px; font-weight: 800; line-height: 1.25; }
+  .activity-title { font-size: 16px; font-weight: 800; line-height: 1.25; }
   .activity-foot { display: flex; align-items: center; justify-content: space-between; gap: 9px; }
   .activity-meta { min-width: 0; display: flex; align-items: center; gap: 4px; color: #637083; font-size: 12px; }
   .activity-meta span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-  .activity-side { min-height: 126px; display: grid; grid-template-columns: 1fr 116px; }
-  .activity-side .activity-media { height: 100%; min-height: 126px; }
+  .activity-side { min-height: 120px; display: grid; grid-template-columns: 1fr 104px; }
+  .activity-side .activity-media { height: 100%; min-height: 120px; }
   .activity-side .activity-body { justify-content: center; }
-  .place-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .place-pair .activity-media { height: 93px; }
-  .place-pair .activity-body { padding: 10px 11px 11px; gap: 5px; }
-  .place-pair .activity-title { font-size: 14px; }
-  .place-pair .activity-who { font-size: 10px; gap: 5px; }
-  .place-pair .activity-who img { width: 19px; height: 19px; }
-  .place-pair .list-chip { left: 8px; top: 8px; bottom: auto; min-height: 23px; padding: 0 7px; background: rgba(255,255,255,.88); color: #101724; font-size: 9px; }
   .review { padding: 13px; display: grid; grid-template-columns: 39px 1fr 54px; gap: 10px; align-items: start; }
   .review .person { width: 39px; height: 39px; border-radius: 50%; object-fit: cover; }
   .review p { margin: 0; color: #637083; font-size: 12px; line-height: 1.35; }
@@ -149,41 +156,31 @@
   .stars small { margin-left: 4px; color: #7a8594; letter-spacing: 0; }
   .quote { color: #101724; font-size: 12px; line-height: 1.35; }
   .review .thumb { width: 54px; height: 54px; border-radius: 13px; object-fit: cover; }
-  .mini-rail { padding: 13px 8px; display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; }
+  .mini-rail, .people-rail { padding: 4px 0 2px; display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
   .mini-card { min-width: 0; padding: 2px; display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; }
   .avatar-wrap { position: relative; width: 58px; height: 58px; }
   .avatar-wrap img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; }
   .avatar-wrap img.group { border-radius: 14px; }
-  .unread { position: absolute; right: -3px; bottom: -3px; min-width: 22px; height: 22px; padding: 0 5px; border: 2px solid #fff; border-radius: 999px; display: grid; place-items: center; background: #0ca678; color: #fff; font-size: 10px; font-weight: 800; }
+  .unread { position: absolute; right: -3px; bottom: -3px; min-width: 22px; height: 22px; padding: 0 5px; border: 2px solid #eef2f5; border-radius: 999px; display: grid; place-items: center; background: #0ca678; color: #fff; font-size: 10px; font-weight: 800; }
   .mini-card strong { max-width: 100%; overflow: hidden; font-size: 12px; white-space: nowrap; text-overflow: ellipsis; }
   .mini-card small { height: 30px; overflow: hidden; color: #637083; font-size: 10px; line-height: 1.35; }
-  .people-rail { padding: 13px 8px; display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; }
   .add-btn { height: 28px; padding: 0 12px; border: 0; border-radius: 999px; background: #101724; color: #fff; font-size: 10px; font-weight: 800; }
   .add-btn.added { border: 1px solid #d6dce2; background: #fff; color: #657184; }
-  .teaser { padding: 13px; display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg,#effcf9,#eef4ff); }
-  .teaser-icon { width: 39px; height: 39px; border-radius: 12px; display: grid; place-items: center; background: #fff; color: #2563eb; font-size: 18px; box-shadow: 0 2px 8px rgba(16,24,40,.08); }
-  .teaser .copy { flex: 1; min-width: 0; }
-  .teaser strong { display: block; font-size: 13px; }
-  .teaser span { display: block; overflow: hidden; margin-top: 2px; color: #637083; font-size: 11px; white-space: nowrap; text-overflow: ellipsis; }
   .empty-card { padding: 26px 20px; text-align: center; }
   .empty-icon { width: 47px; height: 47px; margin: 0 auto 10px; border-radius: 50%; display: grid; place-items: center; background: #e8f8f4; color: #0c8d73; font-size: 21px; }
   .empty-card strong { display: block; font-size: 14px; }
   .empty-card p { margin: 4px auto 0; max-width: 230px; color: #637083; font-size: 11px; line-height: 1.45; }
-  .audit-note { margin-top: 25px; padding: 15px 18px; border-radius: 18px; display: flex; align-items: flex-start; gap: 12px; background: #101724; color: #fff; }
-  .audit-note i { margin-top: 1px; color: #62e0cd; font-size: 20px; }
-  .audit-note strong { display: block; margin-bottom: 3px; font-size: 13px; }
-  .audit-note span { color: rgba(255,255,255,.68); font-size: 12px; line-height: 1.45; }
 </style>
 
 <div class="card-audit ds-no-scrollbar">
   <header class="audit-top">
     <div>
       <div class="audit-kicker">MixedRoutes 2.0 · component audit</div>
-      <h1>Cards across Home + Discover</h1>
-      <p>A visual inventory of the cards in the new screens, expanded to cover content types, optional fields, and the states each pattern needs to support.</p>
+      <h1>Components across Home + Discover</h1>
+      <p>Every component in the new screens, grouped by how it renders: flat tiles, plan cards, utility prompts, and social activity.</p>
     </div>
     <div class="audit-summary">
-      <span class="audit-pill"><i class="ph-fill ph-check-circle"></i>3 families</span>
+      <span class="audit-pill"><i class="ph-fill ph-check-circle"></i>4 groups</span>
       <span class="audit-pill"><i class="ph-fill ph-stack"></i>24 examples</span>
       <span class="audit-pill"><i class="ph-fill ph-sparkle"></i>New patterns called out</span>
     </div>
@@ -192,12 +189,60 @@
   <main class="audit-columns">
     <section class="audit-family" style="--family-tint:#e2f8f3;--family-color:#087f6a;">
       <header class="family-head">
-        <div class="family-title"><span class="family-icon"><i class="ph-fill ph-compass"></i></span><h2>Discover</h2></div>
-        <p>Plans, events, places, recommendations</p>
+        <div class="family-title"><span class="family-icon"><i class="ph-fill ph-compass"></i></span><h2>Events + places</h2></div>
+        <p>Flat tiles at carousel scale: rounded image + text, no container</p>
+      </header>
+      <div class="tile-grid">
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Event</span></div>
+          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=720&q=80');"><span class="save"><i class="ph ph-bookmark-simple"></i></span></div><div class="disc-body"><div class="disc-date">Fri, Aug 7 · 8:00 PM</div><div class="disc-title">Asheville Comedy Festival</div><div class="disc-meta"><i class="ph-fill ph-map-pin"></i><span>Diana Wortham Theatre</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Ticketed event</span></div>
+          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=720&q=80');"><span class="save saved"><i class="ph-fill ph-bookmark-simple"></i></span><span class="ticket-chip"><i class="ph-fill ph-ticket"></i>Tickets</span></div><div class="disc-body"><div class="disc-date">Wed, Oct 28 · 8:00 PM</div><div class="disc-title">Beck</div><div class="disc-meta"><i class="ph-fill ph-map-pin"></i><span>Thomas Wolfe Auditorium</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Place</span></div>
+          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=720&q=80');"><span class="save"><i class="ph ph-bookmark-simple"></i></span></div><div class="disc-body"><div class="disc-title">Well Played Board Game Café</div><div class="disc-sub">Great for groups</div><div class="disc-meta"><i class="ph-fill ph-star" style="color:#f5a524;"></i><span>4.7</span><span class="dot"></span><i class="ph-fill ph-map-pin"></i><span>Wall St</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Friend-backed place</span></div>
+          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=720&q=80');"><span class="save"><i class="ph ph-bookmark-simple"></i></span></div><div class="disc-body"><div class="disc-title">Cindy's Rooftop</div><div class="disc-sub">Rooftop bar</div><div class="friend-note"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 3 saved it</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Saved place</span></div>
+          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=720&q=80');"><span class="list-chip"><i class="ph-fill ph-bookmark-simple"></i>Date Spots</span></div><div class="disc-body"><div class="disc-title">Little Jumbo</div><div class="friend-note"><span class="avatars"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=70&q=80" alt="" /></span><span><strong>Jordan</strong> · 2h</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">AI idea</span></div>
+          <div class="discovery-card"><div class="disc-photo art"><span class="art-icon"><i class="ph-fill ph-lightbulb"></i></span><span class="ai-chip"><i class="ph-fill ph-sparkle"></i>For your crew</span></div><div class="disc-body"><div class="disc-date">Any evening</div><div class="disc-title">Trivia at The Well</div><div class="disc-meta"><i class="ph-fill ph-map-pin"></i><span>South Slope</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Event fallback</span></div>
+          <div class="discovery-card"><div class="disc-photo art" style="background:linear-gradient(135deg,#ede9fe,#fce7f3);"><span class="art-icon" style="color:#7c3aed;"><i class="ph-fill ph-music-notes"></i></span></div><div class="disc-body"><div class="disc-date">Date to be announced</div><div class="disc-title">Community listening party with a title that wraps</div><div class="disc-meta"><i class="ph-fill ph-video-camera"></i><span>Online</span></div></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Loading</span></div>
+          <div class="skeleton-card"><div class="sk-media ds-skeleton"></div><div class="sk-line ds-skeleton" style="width:38%;"></div><div class="sk-line ds-skeleton" style="height:14px;width:74%;"></div><div class="sk-line ds-skeleton" style="width:56%;"></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="audit-family" style="--family-tint:#e8effe;--family-color:#2563eb;">
+      <header class="family-head">
+        <div class="family-title"><span class="family-icon"><i class="ph-fill ph-calendar-blank"></i></span><h2>Plans</h2></div>
+        <p>Always carded: public plans as big cards, your plans as rows</p>
       </header>
       <div class="family-stack">
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Public plan</span><span class="state-tags"><span class="state-tag new">new</span><span class="state-tag">people</span></span></div>
+          <div class="spec-head"><span class="spec-name">Public plan</span></div>
           <div class="public-plan">
             <div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div>
             <div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=720&q=80');"></div>
@@ -207,86 +252,56 @@
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Event</span><span class="state-tags"><span class="state-tag">photo</span><span class="state-tag optional">unsaved</span></span></div>
-          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=720&q=80');"><span class="save"><i class="ph ph-bookmark-simple"></i></span></div><div class="disc-body"><div class="disc-date">Fri, Aug 7 · 8:00 PM</div><div class="disc-title">Asheville Comedy Festival</div><div class="disc-meta"><i class="ph-fill ph-map-pin"></i><span>Diana Wortham Theatre</span></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Ticketed event</span><span class="state-tags"><span class="state-tag">paid</span><span class="state-tag optional">saved</span></span></div>
-          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=720&q=80');"><span class="save saved"><i class="ph-fill ph-bookmark-simple"></i></span><span class="ticket-chip"><i class="ph-fill ph-ticket"></i>Tickets</span></div><div class="disc-body"><div class="disc-date">Wed, Oct 28 · 8:00 PM</div><div class="disc-title">Beck</div><div class="disc-meta"><i class="ph-fill ph-map-pin"></i><span>Thomas Wolfe Auditorium</span></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Place</span><span class="state-tags"><span class="state-tag">rating</span><span class="state-tag">category</span></span></div>
-          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=720&q=80');"><span class="save"><i class="ph ph-bookmark-simple"></i></span></div><div class="disc-body"><div class="disc-title">Well Played Board Game Café</div><div class="disc-sub">Great for groups</div><div class="disc-meta"><i class="ph-fill ph-star" style="color:#f5a524;"></i><span>4.7</span><span class="dot"></span><i class="ph-fill ph-map-pin"></i><span>Wall St</span></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Friend-backed place</span><span class="state-tags"><span class="state-tag new">social proof</span></span></div>
-          <div class="discovery-card"><div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=720&q=80');"><span class="save"><i class="ph ph-bookmark-simple"></i></span></div><div class="disc-body"><div class="disc-title">Cindy's Rooftop</div><div class="disc-sub">Rooftop bar</div><div class="friend-note"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 3 saved it</span></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">AI idea</span><span class="state-tags"><span class="state-tag">no photo</span><span class="state-tag new">generated</span></span></div>
-          <div class="discovery-card"><div class="disc-photo art"><span class="art-icon"><i class="ph-fill ph-lightbulb"></i></span><span class="ai-chip"><i class="ph-fill ph-sparkle"></i>For your crew</span></div><div class="disc-body"><div class="disc-date">Any evening</div><div class="disc-title">Trivia at The Well</div><div class="disc-meta"><i class="ph-fill ph-map-pin"></i><span>South Slope</span></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Event fallback</span><span class="state-tags"><span class="state-tag">TBD date</span><span class="state-tag">online</span></span></div>
-          <div class="discovery-card"><div class="disc-photo art" style="background:linear-gradient(135deg,#ede9fe,#fce7f3);"><span class="art-icon" style="color:#7c3aed;"><i class="ph-fill ph-music-notes"></i></span></div><div class="disc-body"><div class="disc-date">Date to be announced</div><div class="disc-title">Community listening party with a title that wraps</div><div class="disc-meta"><i class="ph-fill ph-video-camera"></i><span>Online</span></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Loading</span><span class="state-tags"><span class="state-tag">skeleton</span></span></div>
-          <div class="skeleton-card"><div class="sk-media ds-skeleton"></div><div class="sk-line ds-skeleton" style="width:38%;"></div><div class="sk-line ds-skeleton" style="height:16px;width:74%;"></div><div class="sk-line ds-skeleton" style="width:56%;"></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="audit-family" style="--family-tint:#e8effe;--family-color:#2563eb;">
-      <header class="family-head">
-        <div class="family-title"><span class="family-icon"><i class="ph-fill ph-calendar-blank"></i></span><h2>Plans + utility</h2></div>
-        <p>Upcoming plans, invites, prompts, banners</p>
-      </header>
-      <div class="family-stack">
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Upcoming plan row</span><span class="state-tags"><span class="state-tag new">new</span><span class="state-tag">3 going</span></span></div>
+          <div class="spec-head"><span class="spec-name">Upcoming plan row</span></div>
           <div class="plan-row"><div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div><div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"><span class="emoji-badge">🍽️</span></div><div class="plan-row-copy"><div class="plan-row-time">FRI · 7:00 PM</div><div class="plan-row-title">Dinner at Bavette's</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Downtown Asheville</span></span><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span></div></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Plan row fallback</span><span class="state-tags"><span class="state-tag">no photo</span><span class="state-tag optional">no people</span></span></div>
+          <div class="spec-head"><span class="spec-name">Plan row fallback</span></div>
           <div class="plan-row no-photo"><div class="plan-media">🎯</div><div class="plan-row-copy"><div class="plan-row-time">THU · TIME TBD</div><div class="plan-row-title">Trivia night with the product team</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Location TBD</span></span></div></div></div>
         </article>
+      </div>
+    </section>
 
+    <section class="audit-family" style="--family-tint:#fdeee0;--family-color:#c2680a;">
+      <header class="family-head">
+        <div class="family-title"><span class="family-icon"><i class="ph-fill ph-bell-ringing"></i></span><h2>Utility + prompts</h2></div>
+        <p>Carded banners: invites, updates, and nudges that ask for a response</p>
+      </header>
+      <div class="family-stack">
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Pending invites</span><span class="state-tags"><span class="state-tag">collapsed</span><span class="state-tag">2</span></span></div>
+          <div class="spec-head"><span class="spec-name">Pending invites</span></div>
           <div class="utility-card"><button class="invite-head"><span class="avatars"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /></span><span class="copy"><strong>2 invites waiting on you</strong><small>Hike at Craggy Gardens · Pizza night</small></span><span class="count">2</span><i class="ph ph-caret-down"></i></button></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Pending invites</span><span class="state-tags"><span class="state-tag new">expanded</span><span class="state-tag">actions</span></span></div>
+          <div class="spec-head"><span class="spec-name">Pending invites</span></div>
           <div class="utility-card"><button class="invite-head"><span class="avatars"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /></span><span class="copy"><strong>1 invite waiting on you</strong><small>Respond without leaving Home</small></span><span class="count">1</span><i class="ph ph-caret-up"></i></button><div class="invite-row"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="" /><span class="copy"><strong>Hike at Craggy Gardens 🥾</strong><span>Sam · Saturday 9:00 AM</span></span><span class="row-actions"><button class="yes"><i class="ph ph-check"></i> Going</button><button class="no">Can't</button></span></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Home update</span><span class="state-tags"><span class="state-tag new">stack</span><span class="state-tag">dismissible</span></span></div>
-          <div class="banner-stack"><div class="utility-card banner"><span class="banner-icon"><i class="ph-fill ph-bell-ringing"></i></span><span><strong>Notifications are off</strong><p>Turn them on so you never miss a plan update.</p><a href="#">Turn on</a></span><button class="dismiss"><i class="ph ph-x"></i></button></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Needs your answer</span><span class="state-tags"><span class="state-tag">RSVP</span><span class="state-tag">2 actions</span></span></div>
+          <div class="spec-head"><span class="spec-name">Needs your answer</span></div>
           <div class="utility-card answer-card"><div class="answer-who"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=90&q=80" alt="" /><span>Sam invited you<strong>Morning hike 🥾</strong></span></div><div class="answer-when"><i class="ph ph-calendar-blank"></i><span>Sat · 9:00 AM</span><i class="ph ph-map-pin"></i><span>Blue Ridge Pkwy</span></div><div class="answer-actions"><button class="yes"><i class="ph ph-check"></i>Going</button><button class="no">Can't make it</button></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Invite resolved</span><span class="state-tags"><span class="state-tag">success</span><span class="state-tag optional">zero count</span></span></div>
+          <div class="spec-head"><span class="spec-name">Invite resolved</span></div>
           <div class="utility-card"><button class="invite-head"><i class="ph-fill ph-check-circle" style="color:#0ca678;font-size:27px;"></i><span class="copy"><strong style="color:#087f6a;">You're all caught up</strong><small>No invites waiting</small></span></button></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Group nudge</span><span class="state-tags"><span class="state-tag">quiet group</span><span class="state-tag">CTA</span></span></div>
+          <div class="spec-head"><span class="spec-name">Home update</span></div>
+          <div class="banner-stack"><div class="utility-card banner"><span class="banner-icon"><i class="ph-fill ph-bell-ringing"></i></span><span><strong>Notifications are off</strong><p>Turn them on so you never miss a plan update.</p><a href="#">Turn on</a></span><button class="dismiss"><i class="ph ph-x"></i></button></div></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Group nudge</span></div>
           <div class="utility-card nudge"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=100&q=80" alt="" /><span class="copy"><strong>Weekend Crew is quiet</strong><span>Nothing planned this month.</span></span><button class="yes"><i class="ph-fill ph-sparkle"></i>Ideas</button></div>
+        </article>
+
+        <article class="spec">
+          <div class="spec-head"><span class="spec-name">Weekend teaser</span></div>
+          <div class="utility-card teaser"><span class="teaser-icon"><i class="ph-fill ph-sparkle"></i></span><span class="copy"><strong>This weekend near Asheville</strong><span>Comedy, brunch, live music and more…</span></span><i class="ph ph-caret-right" style="color:#657184;"></i></div>
         </article>
       </div>
     </section>
@@ -294,51 +309,40 @@
     <section class="audit-family" style="--family-tint:#f1eafe;--family-color:#7c3aed;">
       <header class="family-head">
         <div class="family-title"><span class="family-icon"><i class="ph-fill ph-users-three"></i></span><h2>Social + activity</h2></div>
-        <p>Friend signals, chats, saves, reviews</p>
+        <p>Friend moments get cards; chat and people rails sit flat on the page</p>
       </header>
       <div class="family-stack">
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Friend is going</span><span class="state-tags"><span class="state-tag new">new</span><span class="state-tag">full image</span></span></div>
+          <div class="spec-head"><span class="spec-name">Friend is going</span></div>
           <div class="activity-card"><div class="activity-media" style="background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=720&q=80');"><span class="time-chip">SAT · 5:00 PM</span></div><div class="activity-body"><div class="activity-who"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=80&q=80" alt="" /><span><strong>Alex</strong> is going</span></div><div class="activity-title">Shindig on the Green 🪕</div><div class="activity-foot"><span class="activity-meta"><i class="ph-fill ph-map-pin"></i><span>Pack Square Park</span></span><button class="join">Join</button></div></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Friends are going</span><span class="state-tags"><span class="state-tag new">compact</span><span class="state-tag">time only</span></span></div>
+          <div class="spec-head"><span class="spec-name">Friends are going</span></div>
           <div class="activity-card activity-side"><div class="activity-body"><div class="activity-who"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="" /><span><strong>Priya</strong> + 3</span></div><div class="activity-title">Farmers market brunch 🥐</div><div class="activity-foot"><span class="activity-meta"><i class="ph-fill ph-clock"></i><span>Sun · 11 AM</span></span><button class="join">Join</button></div></div><div class="activity-media" style="background-image:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=360&q=80');"></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Saved places</span><span class="state-tags"><span class="state-tag new">2-up</span><span class="state-tag">list context</span></span></div>
-          <div class="place-pair"><div class="activity-card"><div class="activity-media" style="background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=360&q=80');"><span class="list-chip"><i class="ph-fill ph-bookmark-simple"></i>Date Spots</span></div><div class="activity-body"><div class="activity-title">Little Jumbo</div><div class="activity-who"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=70&q=80" alt="" /><span><strong>Jordan</strong> · 2h</span></div></div></div><div class="activity-card"><div class="activity-media" style="background-image:url('https://images.unsplash.com/photo-1560008581-09826d1de69e?auto=format&fit=crop&w=360&q=80');"><span class="list-chip"><i class="ph-fill ph-bookmark-simple"></i>Sweet Tooth</span></div><div class="activity-body"><div class="activity-title">Salt &amp; Straw</div><div class="activity-who"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=70&q=80" alt="" /><span><strong>Devon</strong> · 1d</span></div></div></div></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">Review activity</span><span class="state-tags"><span class="state-tag new">new</span><span class="state-tag">rating + quote</span></span></div>
+          <div class="spec-head"><span class="spec-name">Review activity</span></div>
           <div class="activity-card review"><img class="person" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="" /><div><p><strong>Riley</strong> reviewed <strong>Ultra Coffeebar</strong></p><div class="stars">★★★★★<small>5h ago</small></div><div class="quote">“Best cortado in town, grab the window seats.”</div></div><img class="thumb" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=120&q=80" alt="" /></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Recent chats</span><span class="state-tags"><span class="state-tag">group/person</span><span class="state-tag">read/unread</span></span></div>
-          <div class="utility-card mini-rail"><div class="mini-card"><span class="avatar-wrap"><img class="group" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=120&q=80" alt="" /><span class="unread">3</span></span><strong>Weekend Crew</strong><small>Sara: who's in?</small></div><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="" /><span class="unread">1</span></span><strong>Sara</strong><small>See you at 7!</small></div><div class="mini-card"><span class="avatar-wrap"><img class="group" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Hiking Club</strong><small>Trail is open 🎉</small></div></div>
+          <div class="spec-head"><span class="spec-name">Recent chats</span></div>
+          <div class="mini-rail"><div class="mini-card"><span class="avatar-wrap"><img class="group" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=120&q=80" alt="" /><span class="unread">3</span></span><strong>Weekend Crew</strong><small>Sara: who's in?</small></div><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="" /><span class="unread">1</span></span><strong>Sara</strong><small>See you at 7!</small></div><div class="mini-card"><span class="avatar-wrap"><img class="group" src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Hiking Club</strong><small>Trail is open 🎉</small></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Suggested people</span><span class="state-tags"><span class="state-tag">mutual/contact</span><span class="state-tag">added</span></span></div>
-          <div class="utility-card people-rail"><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Devon</strong><small>3 mutual</small><button class="add-btn">Add</button></div><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Maya</strong><small>From contacts</small><button class="add-btn added"><i class="ph ph-check"></i> Added</button></div><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Jordan</strong><small>2 mutual</small><button class="add-btn">Add</button></div></div>
+          <div class="spec-head"><span class="spec-name">Suggested people</span></div>
+          <div class="people-rail"><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Devon</strong><small>3 mutual</small><button class="add-btn">Add</button></div><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Maya</strong><small>From contacts</small><button class="add-btn added"><i class="ph ph-check"></i> Added</button></div><div class="mini-card"><span class="avatar-wrap"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="" /></span><strong>Jordan</strong><small>2 mutual</small><button class="add-btn">Add</button></div></div>
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Weekend teaser</span><span class="state-tags"><span class="state-tag">recommendation</span><span class="state-tag">summary</span></span></div>
-          <div class="utility-card teaser"><span class="teaser-icon"><i class="ph-fill ph-sparkle"></i></span><span class="copy"><strong>This weekend near Asheville</strong><span>Comedy, brunch, live music and more…</span></span><i class="ph ph-caret-right" style="color:#657184;"></i></div>
-        </article>
-
-        <article class="spec">
-          <div class="spec-head"><span class="spec-name">No friend activity</span><span class="state-tags"><span class="state-tag">empty</span><span class="state-tag optional">private</span></span></div>
+          <div class="spec-head"><span class="spec-name">No friend activity</span></div>
           <div class="utility-card empty-card"><span class="empty-icon"><i class="ph-fill ph-users"></i></span><strong>Nothing new from friends</strong><p>New saves, reviews, and public plans will show up here.</p></div>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="audit-note"><i class="ph-fill ph-info"></i><span><strong>Audit takeaway</strong><span>The system resolves into a small set of reusable shells: media + metadata, plan rows, utility banners, and social activity. Optional data should collapse cleanly—never leave an empty row—and every action-driven card needs a resolved state.</span></span></footer>
 </div>
