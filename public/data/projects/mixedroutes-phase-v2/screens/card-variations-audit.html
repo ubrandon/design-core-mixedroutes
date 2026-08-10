@@ -86,9 +86,11 @@
   .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .plan-row-meta .who { display: flex; align-items: center; gap: 6px; }
   .plan-row-meta .who .avatars img { width: 18px; height: 18px; border-width: 1.5px; }
-  .plan-row.no-photo { grid-template-columns: 68px 1fr; background: linear-gradient(135deg,#32425c,#223247); }
-  .plan-row.no-photo .plan-media { min-height: 118px; display: grid; place-items: center; -webkit-mask-image: none; mask-image: none; background: transparent; }
-  .plan-row.no-photo .big-emoji { font-size: 32px; line-height: 1; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+  .plan-row.no-photo { display: flex; background: #fff; color: #101724; box-shadow: inset 0 0 0 1px rgba(16,23,36,.09), 0 5px 16px rgba(16,23,36,.08); }
+  .plan-row.no-photo .plan-row-copy { padding: 15px 18px 14px; justify-content: center; }
+  .plan-row.no-photo .plan-row-time { color: #5c6b7d; }
+  .plan-row.no-photo .plan-row-title { color: #101724; }
+  .plan-row.no-photo .plan-row-meta { color: #667285; }
 
   /* Utility + prompts: carded banners */
   .utility-card { border-radius: 19px; background: #fff; border: 1px solid rgba(16,23,36,.08); box-shadow: 0 2px 6px rgba(16,24,40,.04), 0 10px 24px rgba(16,24,40,.07); overflow: hidden; }
@@ -260,8 +262,8 @@
         </article>
 
         <article class="spec">
-          <div class="spec-head"><span class="spec-name">Plan row fallback</span></div>
-          <div class="plan-row no-photo"><div class="plan-media"><span class="big-emoji">🎯</span></div><div class="plan-row-copy"><div class="plan-row-time">THU · TIME TBD</div><div class="plan-row-title">Trivia night with the product team</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Location TBD</span></span></div></div></div>
+          <div class="spec-head"><span class="spec-name">Plan row, no image</span></div>
+          <div class="plan-row no-photo"><div class="plan-row-copy"><div class="plan-row-time">ANYTIME</div><div class="plan-row-title">Trivia night with the product team</div></div></div>
         </article>
       </div>
     </section>
