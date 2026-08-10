@@ -77,15 +77,18 @@
   .public-plan .disc-meta { color: rgba(255,255,255,.82); margin-top: 7px; justify-content: space-between; font-size: 12px; }
   .plan-row { min-height: 118px; position: relative; overflow: hidden; display: grid; grid-template-columns: 116px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: 0 5px 16px rgba(16,23,36,.12); }
   .plan-row .plan-media { min-height: 118px; position: relative; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right,#000 48%,transparent 100%); mask-image: linear-gradient(to right,#000 48%,transparent 100%); }
-  .emoji-badge { position: absolute; top: 9px; left: 9px; width: 31px; height: 31px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.68); box-shadow: 0 1px 5px rgba(0,0,0,.18); font-size: 16px; }
-  .plan-row-copy { min-width: 0; padding: 15px 14px 14px 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .emoji-badge { position: absolute; top: 9px; left: 9px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,.28); font-size: 16px; line-height: 1; }
+  .plan-row-copy { min-width: 0; padding: 15px 14px 14px 0; display: flex; flex-direction: column; gap: 4px; }
   .plan-row-time { color: rgba(255,255,255,.8); font-size: 11px; font-weight: 800; letter-spacing: .04em; }
   .plan-row-title { overflow: hidden; color: #fff; font-size: 16px; font-weight: 800; line-height: 1.25; white-space: nowrap; text-overflow: ellipsis; }
-  .plan-row-meta { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px; color: rgba(255,255,255,.9); font-size: 11px; }
+  .plan-row-meta { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: auto; color: rgba(255,255,255,.9); font-size: 11px; }
   .plan-row-meta .loc { min-width: 0; display: flex; align-items: center; gap: 4px; }
   .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .plan-row-meta .who { display: flex; align-items: center; gap: 6px; }
+  .plan-row-meta .who .avatars img { width: 18px; height: 18px; border-width: 1.5px; }
   .plan-row.no-photo { grid-template-columns: 68px 1fr; background: linear-gradient(135deg,#32425c,#223247); }
-  .plan-row.no-photo .plan-media { min-height: 118px; display: grid; place-items: center; -webkit-mask-image: none; mask-image: none; background: transparent; font-size: 29px; }
+  .plan-row.no-photo .plan-media { min-height: 118px; display: grid; place-items: center; -webkit-mask-image: none; mask-image: none; background: transparent; }
+  .plan-row.no-photo .big-emoji { font-size: 32px; line-height: 1; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
 
   /* Utility + prompts: carded banners */
   .utility-card { border-radius: 19px; background: #fff; border: 1px solid rgba(16,23,36,.08); box-shadow: 0 2px 6px rgba(16,24,40,.04), 0 10px 24px rgba(16,24,40,.07); overflow: hidden; }
@@ -253,12 +256,12 @@
 
         <article class="spec">
           <div class="spec-head"><span class="spec-name">Upcoming plan row</span></div>
-          <div class="plan-row"><div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div><div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"><span class="emoji-badge">🍽️</span></div><div class="plan-row-copy"><div class="plan-row-time">FRI · 7:00 PM</div><div class="plan-row-title">Dinner at Bavette's</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Downtown Asheville</span></span><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span></div></div></div>
+          <div class="plan-row"><div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div><div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"><span class="emoji-badge">🍷</span></div><div class="plan-row-copy"><div class="plan-row-time">FRI · 7:00 PM</div><div class="plan-row-title">Dinner at Bavette's</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Downtown Asheville</span></span><span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 2 going</span></span></div></div></div>
         </article>
 
         <article class="spec">
           <div class="spec-head"><span class="spec-name">Plan row fallback</span></div>
-          <div class="plan-row no-photo"><div class="plan-media">🎯</div><div class="plan-row-copy"><div class="plan-row-time">THU · TIME TBD</div><div class="plan-row-title">Trivia night with the product team</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Location TBD</span></span></div></div></div>
+          <div class="plan-row no-photo"><div class="plan-media"><span class="big-emoji">🎯</span></div><div class="plan-row-copy"><div class="plan-row-time">THU · TIME TBD</div><div class="plan-row-title">Trivia night with the product team</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Location TBD</span></span></div></div></div>
         </article>
       </div>
     </section>
