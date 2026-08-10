@@ -66,18 +66,22 @@
   .sk-line { height: 10px; margin-top: 7px; }
 
   /* Plans: always carded */
-  .public-plan { position: relative; overflow: hidden; border-radius: 25px; background: #1e2832; color: #fff; isolation: isolate; box-shadow: 0 8px 22px rgba(16,23,36,.17); }
-  .public-plan .ambient, .plan-row .ambient { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; filter: blur(38px) saturate(2.2); transform: scale(1.45); opacity: .8; }
-  .public-plan .shade, .plan-row .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to bottom, transparent 20%, rgba(12,18,25,.78) 86%); }
+  .public-plan { position: relative; overflow: hidden; border-radius: 25px; background: #1e2832; color: #fff; isolation: isolate; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 4px 28px rgba(0,0,0,.32); }
+  .public-plan .ambient, .plan-row .ambient { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; filter: blur(70px) saturate(4) brightness(1.35); transform: scale(1.35); opacity: 1; }
+  .public-plan .shade, .plan-row .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,10,18,0), rgba(8,10,18,.18)); }
+  .public-plan .disc-title, .plan-row-title { text-shadow: 0 0 18px rgba(0,0,0,.38); }
+  .public-plan .disc-date, .public-plan .disc-meta, .plan-row-time, .plan-row-meta { text-shadow: 0 0 16px rgba(0,0,0,.32); }
   .public-plan .disc-photo { height: 158px; -webkit-mask-image: linear-gradient(to bottom,#000 54%,transparent 100%); mask-image: linear-gradient(to bottom,#000 54%,transparent 100%); }
-  .public-plan .avatars { margin: -46px 0 0 15px; position: relative; z-index: 1; }
+  .public-plan .who { display: flex; align-items: center; gap: 6px; }
+  .public-plan .who .avatars img { width: 18px; height: 18px; border-width: 1.5px; }
   .public-plan .plan-copy { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
   .public-plan .plan-copy .disc-date { color: rgba(255,255,255,.72); font-size: 11px; }
   .public-plan .plan-copy .disc-title { color: #fff; font-size: 19px; }
-  .public-plan .disc-meta { color: rgba(255,255,255,.82); margin-top: 7px; justify-content: space-between; font-size: 12px; }
-  .plan-row { min-height: 118px; position: relative; overflow: hidden; display: grid; grid-template-columns: 116px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: 0 5px 16px rgba(16,23,36,.12); }
+  .public-plan .disc-meta { color: rgba(255,255,255,.82); margin-top: 1px; font-size: 12px; }
+  .public-plan .disc-meta .loc { display: flex; align-items: center; gap: 4px; }
+  .public-plan .disc-meta:last-child { margin-top: 5px; }
+  .plan-row { min-height: 118px; position: relative; overflow: hidden; display: grid; grid-template-columns: 116px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 4px 28px rgba(0,0,0,.32); }
   .plan-row .plan-media { min-height: 118px; position: relative; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right,#000 48%,transparent 100%); mask-image: linear-gradient(to right,#000 48%,transparent 100%); }
-  .emoji-badge { position: absolute; top: 9px; left: 9px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,.28); font-size: 16px; line-height: 1; }
   .plan-row-copy { min-width: 0; padding: 15px 14px 14px 0; display: flex; flex-direction: column; gap: 4px; }
   .plan-row-time { color: rgba(255,255,255,.8); font-size: 11px; font-weight: 800; letter-spacing: .04em; }
   .plan-row-title { overflow: hidden; color: #fff; font-size: 16px; font-weight: 800; line-height: 1.25; white-space: nowrap; text-overflow: ellipsis; }
@@ -86,11 +90,11 @@
   .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .plan-row-meta .who { display: flex; align-items: center; gap: 6px; }
   .plan-row-meta .who .avatars img { width: 18px; height: 18px; border-width: 1.5px; }
-  .plan-row.no-photo { display: flex; background: #fff; color: #101724; box-shadow: inset 0 0 0 1px rgba(16,23,36,.09), 0 5px 16px rgba(16,23,36,.08); }
+  .plan-row.no-photo { display: flex; background: #fff; color: #101724; box-shadow: inset 0 0 0 1px rgba(16,23,36,.09), 0 4px 20px rgba(16,23,36,.08); }
   .plan-row.no-photo .plan-row-copy { padding: 15px 18px 14px; justify-content: center; }
-  .plan-row.no-photo .plan-row-time { color: #5c6b7d; }
-  .plan-row.no-photo .plan-row-title { color: #101724; }
-  .plan-row.no-photo .plan-row-meta { color: #667285; }
+  .plan-row.no-photo .plan-row-time { color: #5c6b7d; text-shadow: none; }
+  .plan-row.no-photo .plan-row-title { color: #101724; text-shadow: none; }
+  .plan-row.no-photo .plan-row-meta { color: #667285; text-shadow: none; }
 
   /* Utility + prompts: carded banners */
   .utility-card { border-radius: 19px; background: #fff; border: 1px solid rgba(16,23,36,.08); box-shadow: 0 2px 6px rgba(16,24,40,.04), 0 10px 24px rgba(16,24,40,.07); overflow: hidden; }
@@ -178,24 +182,10 @@
 </style>
 
 <div class="card-audit ds-no-scrollbar">
-  <header class="audit-top">
-    <div>
-      <div class="audit-kicker">MixedRoutes 2.0 · component audit</div>
-      <h1>Components across Home + Discover</h1>
-      <p>Every component in the new screens, grouped by how it renders: flat tiles, plan cards, utility prompts, and social activity.</p>
-    </div>
-    <div class="audit-summary">
-      <span class="audit-pill"><i class="ph-fill ph-check-circle"></i>4 groups</span>
-      <span class="audit-pill"><i class="ph-fill ph-stack"></i>24 examples</span>
-      <span class="audit-pill"><i class="ph-fill ph-sparkle"></i>New patterns called out</span>
-    </div>
-  </header>
-
   <main class="audit-columns">
     <section class="audit-family" style="--family-tint:#e2f8f3;--family-color:#087f6a;">
       <header class="family-head">
         <div class="family-title"><span class="family-icon"><i class="ph-fill ph-compass"></i></span><h2>Events + places</h2></div>
-        <p>Flat tiles at carousel scale: rounded image + text, no container</p>
       </header>
       <div class="tile-grid">
         <article class="spec">
@@ -243,7 +233,6 @@
     <section class="audit-family" style="--family-tint:#e8effe;--family-color:#2563eb;">
       <header class="family-head">
         <div class="family-title"><span class="family-icon"><i class="ph-fill ph-calendar-blank"></i></span><h2>Plans</h2></div>
-        <p>Always carded: public plans as big cards, your plans as rows</p>
       </header>
       <div class="family-stack">
         <article class="spec">
@@ -251,14 +240,13 @@
           <div class="public-plan">
             <div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div>
             <div class="disc-photo" style="background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=720&q=80');"></div>
-            <div class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=80&q=80" alt="" /></div>
-            <div class="plan-copy"><div class="disc-date">Sun · 4pm · 2 mi away</div><div class="disc-title">Pickup soccer at the park</div><div class="disc-meta"><span>Jordan + 4 going</span><i class="ph-fill ph-arrow-right"></i></div></div>
+            <div class="plan-copy"><div class="disc-date">Sun · 4pm · 2 mi away</div><div class="disc-title">Pickup soccer at the park</div><div class="disc-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Murphy-Oakley Park</span></span></div><div class="disc-meta"><span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=80&q=80" alt="" /></span><span>Jordan + 4 going</span></span></div></div>
           </div>
         </article>
 
         <article class="spec">
           <div class="spec-head"><span class="spec-name">Upcoming plan row</span></div>
-          <div class="plan-row"><div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div><div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"><span class="emoji-badge">🍷</span></div><div class="plan-row-copy"><div class="plan-row-time">FRI · 7:00 PM</div><div class="plan-row-title">Dinner at Bavette's</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Downtown Asheville</span></span><span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 2 going</span></span></div></div></div>
+          <div class="plan-row"><div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div><div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80');"></div><div class="plan-row-copy"><div class="plan-row-time">FRI · 7:00 PM</div><div class="plan-row-title">Dinner at Bavette's</div><div class="plan-row-meta"><span class="loc"><i class="ph-fill ph-map-pin"></i><span>Downtown Asheville</span></span><span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 2 going</span></span></div></div></div>
         </article>
 
         <article class="spec">
@@ -271,7 +259,6 @@
     <section class="audit-family" style="--family-tint:#fdeee0;--family-color:#c2680a;">
       <header class="family-head">
         <div class="family-title"><span class="family-icon"><i class="ph-fill ph-bell-ringing"></i></span><h2>Utility + prompts</h2></div>
-        <p>Carded banners: invites, updates, and nudges that ask for a response</p>
       </header>
       <div class="family-stack">
         <article class="spec">
@@ -314,7 +301,6 @@
     <section class="audit-family" style="--family-tint:#f1eafe;--family-color:#7c3aed;">
       <header class="family-head">
         <div class="family-title"><span class="family-icon"><i class="ph-fill ph-users-three"></i></span><h2>Social + activity</h2></div>
-        <p>Friend moments get cards; chat and people rails sit flat on the page</p>
       </header>
       <div class="family-stack">
         <article class="spec">
