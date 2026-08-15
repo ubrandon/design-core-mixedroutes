@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&display=swap");
+
+  .mrv2-askres, .mrv2-askres * { box-sizing: border-box; font-family: "Geist", sans-serif; margin: 0; }
+  .mrv2-askres { background: #ffffff; color: #101724; position: relative; overflow-x: clip; }
+  .mrv2-askres .page-content { padding: 4px 16px 40px; display: flex; flex-direction: column; gap: 16px; }
+
+  .mrv2-askres .toolbar { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: #ffffff; }
+  .mrv2-askres .toolbar .page-title { font-size: 24px; font-weight: 700; color: #1a2332; }
+  .mrv2-askres .toolbar .actions { display: flex; align-items: center; gap: 18px; }
+  .mrv2-askres .toolbar .actions .tbtn { color: #1a2332; font-size: 24px; line-height: 1; }
+
+  .mrv2-askres .ask-bar { display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 6px 0 16px; border-radius: 999px; border: 1px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, rgba(20, 184, 166, 0.4), rgba(59, 130, 246, 0.4)) border-box; box-shadow: 0 1px 4px rgba(16, 23, 36, 0.05); }
+  .mrv2-askres .ask-bar > i { font-size: 18px; flex-shrink: 0; background-image: linear-gradient(135deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mrv2-askres .ask-bar .query { flex: 1; font-size: 16px; font-weight: 600; color: #101724; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-askres .ask-bar .clear { width: 40px; height: 40px; flex-shrink: 0; border: 0; border-radius: 50%; background: #f1f4f7; color: #3b4551; font-size: 17px; display: grid; place-items: center; }
+
+  /* AI answer header */
+  .mrv2-askres .answer { display: flex; flex-direction: column; gap: 4px; }
+  .mrv2-askres .answer .h-wrap { display: flex; align-items: center; gap: 8px; }
+  .mrv2-askres .answer h2 { font-size: 22px; font-weight: 700; line-height: 1.2; color: #1a2332; }
+  .mrv2-askres .answer .ai-mark { font-size: 18px; line-height: 1; display: inline-flex; }
+  .mrv2-askres .answer .ai-mark i { background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mrv2-askres .answer p { font-size: 15px; color: #5c6b7d; line-height: 1.45; }
+
+  .mrv2-askres .refine { display: flex; gap: 8px; overflow-x: auto; margin: -4px -16px 0; padding: 0 16px 2px; scrollbar-width: none; -ms-overflow-style: none; }
+  .mrv2-askres .refine::-webkit-scrollbar { display: none; }
+  .mrv2-askres .refine .chip { height: 36px; padding: 0 14px; border-radius: 999px; background: #f1f4f7; color: #3b4551; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; flex-shrink: 0; }
+  .mrv2-askres .refine .chip.selected { background: #1a2332; color: #ffffff; font-weight: 700; }
+  .mrv2-askres .refine .chip i { font-size: 14px; }
+
+  /* Full-width result cards */
+  .mrv2-askres .results { display: flex; flex-direction: column; gap: 18px; }
+  .mrv2-askres .r-card { display: flex; flex-direction: column; }
+  .mrv2-askres .r-card .img { position: relative; width: 100%; aspect-ratio: 2.1 / 1; border-radius: 20px; overflow: hidden; background-size: cover; background-position: center; }
+  .mrv2-askres .r-card .spark-chip { position: absolute; top: 11px; left: 11px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-size: 12px; font-weight: 700; color: #101724; display: inline-flex; align-items: center; gap: 5px; }
+  .mrv2-askres .r-card .spark-chip i { font-size: 13px; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mrv2-askres .r-card .save { position: absolute; top: 11px; right: 11px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: grid; place-items: center; color: #fff; font-size: 20px; }
+  .mrv2-askres .r-card .body { padding: 10px 4px 0; display: flex; flex-direction: column; gap: 3px; }
+  .mrv2-askres .r-card .date { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #5c6b7d; margin-bottom: 3px; }
+  .mrv2-askres .r-card .title { font-size: 18px; font-weight: 700; line-height: 1.25; }
+  .mrv2-askres .r-card .why { font-size: 14px; color: #5c6b7d; line-height: 1.4; }
+  .mrv2-askres .r-card .meta { padding-top: 3px; display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 600; color: #5c6b7d; }
+  .mrv2-askres .r-card .meta i { font-size: 14px; flex-shrink: 0; }
+  .mrv2-askres .r-card .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: 0.5; flex-shrink: 0; }
+
+  .mrv2-askres .ghost-btn { width: 100%; height: 48px; border: 0; border-radius: 16px; background: #f1f4f7; color: #1a2332; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 15px; font-weight: 700; }
+
+  /* Fallback annotation */
+  .mrv2-askres .fallback { margin-top: 8px; border-radius: 16px; border: 1.5px dashed rgba(32, 36, 42, 0.18); background: #fafbfc; padding: 14px 16px; display: flex; gap: 11px; align-items: flex-start; }
+  .mrv2-askres .fallback i { font-size: 20px; color: #5c6b7d; flex-shrink: 0; margin-top: 1px; }
+  .mrv2-askres .fallback .f-txt { display: flex; flex-direction: column; gap: 3px; }
+  .mrv2-askres .fallback strong { font-size: 14px; font-weight: 700; color: #101724; }
+  .mrv2-askres .fallback span { font-size: 13px; color: #5c6b7d; line-height: 1.45; }
+</style>
+
+<div class="mrv2-askres" style="background: #ffffff;">
+  <div class="toolbar">
+    <span class="page-title">Discover</span>
+    <div class="actions">
+      <span class="tbtn"><i class="ph-fill ph-user-plus"></i></span>
+      <span class="tbtn"><i class="ph-fill ph-bell"></i></span>
+      <span class="tbtn"><i class="ph-fill ph-gear-six"></i></span>
+    </div>
+  </div>
+  <main class="page-content">
+    <div class="ask-bar">
+      <i class="ph-fill ph-sparkle"></i>
+      <span class="query">something chill with live music tonight</span>
+      <button class="clear"><i class="ph ph-x"></i></button>
+    </div>
+
+    <div class="answer">
+      <div class="h-wrap"><h2>Chill live music, tonight</h2><span class="ai-mark"><i class="ph-fill ph-sparkle"></i></span></div>
+      <p>3 laid-back picks near downtown Asheville, all easy to talk over.</p>
+    </div>
+
+    <div class="refine">
+      <span class="chip selected"><i class="ph-fill ph-moon"></i>Tonight</span>
+      <span class="chip">Free only</span>
+      <span class="chip">Outdoors</span>
+      <span class="chip">Good for groups</span>
+    </div>
+
+    <div class="results">
+      <div class="r-card">
+        <div class="img" style="background-image: url('https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?auto=format&fit=crop&w=560&h=270&q=80');">
+          <span class="spark-chip"><i class="ph-fill ph-sparkle"></i>Top pick</span>
+          <span class="save"><i class="ph ph-bookmark-simple"></i></span>
+        </div>
+        <div class="body">
+          <div class="date">Tonight · 8:30 PM</div>
+          <div class="title">Jazz night at Little Jumbo</div>
+          <div class="why">Small room, table seating, sets end by 11.</div>
+          <div class="meta"><i class="ph-fill ph-map-pin"></i><span>Lexington Ave</span><span class="dot"></span><span>No cover</span></div>
+        </div>
+      </div>
+
+      <div class="r-card">
+        <div class="img" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=560&h=270&q=80');">
+          <span class="save"><i class="ph ph-bookmark-simple"></i></span>
+        </div>
+        <div class="body">
+          <div class="date">Tonight · 6:00 PM</div>
+          <div class="title">Pickin' in the Park</div>
+          <div class="why">Open-air bluegrass, bring a blanket.</div>
+          <div class="meta"><i class="ph-fill ph-map-pin"></i><span>Pritchard Park</span><span class="dot"></span><span>Free</span></div>
+        </div>
+      </div>
+
+      <div class="r-card">
+        <div class="img" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=560&h=270&q=80');">
+          <span class="save"><i class="ph ph-bookmark-simple"></i></span>
+        </div>
+        <div class="body">
+          <div class="date">Tonight · 9:00 PM</div>
+          <div class="title">Vinyl listening bar at The Getaway</div>
+          <div class="why">DJ spins mellow records, couches in the back.</div>
+          <div class="meta"><i class="ph-fill ph-map-pin"></i><span>South Slope</span><span class="dot"></span><span>21+</span></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="ghost-btn">Search events for "live music" instead <i class="ph ph-arrow-right"></i></button>
+
+    <div class="fallback">
+      <i class="ph ph-info"></i>
+      <div class="f-txt">
+        <strong>Fallback behavior</strong>
+        <span>If the ask can't be understood, it runs as a plain keyword search on the closest tab. No dead ends.</span>
+      </div>
+    </div>
+  </main>
+</div>

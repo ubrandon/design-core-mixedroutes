@@ -101,6 +101,60 @@
       "x": 4510,
       "y": 3876,
       "width": 500
+    },
+    {
+      "file": "home-v2-empty.html",
+      "x": 3200,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "guidance-intro-modal.html",
+      "x": 3630,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "guidance-coach-marks.html",
+      "x": 4060,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "ask-bar-results.html",
+      "x": 4510,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "weekend-digest.html",
+      "x": 4940,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "group-ideas.html",
+      "x": 5370,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "write-review.html",
+      "x": 5885,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "check-in-flow.html",
+      "x": 6315,
+      "y": 219,
+      "width": 390
+    },
+    {
+      "file": "prompt-governance.html",
+      "x": 6745,
+      "y": 219,
+      "width": 880
     }
   ],
   "texts": [
@@ -174,6 +228,36 @@
       "text": "Plus on left, centered title",
       "x": 4510,
       "y": 3791,
+      "size": 48
+    },
+    {
+      "text": "Cold start + first visit",
+      "x": 3200,
+      "y": 134,
+      "size": 48
+    },
+    {
+      "text": "Invite RSVP states",
+      "x": 4490,
+      "y": 134,
+      "size": 48
+    },
+    {
+      "text": "AI layer",
+      "x": 4920,
+      "y": 134,
+      "size": 48
+    },
+    {
+      "text": "Later phases",
+      "x": 5885,
+      "y": 134,
+      "size": 48
+    },
+    {
+      "text": "Prompt governance",
+      "x": 6745,
+      "y": 134,
       "size": 48
     }
   ]

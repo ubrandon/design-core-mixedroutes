@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&display=swap");
+
+  .mrv2-gideas, .mrv2-gideas * { box-sizing: border-box; font-family: "Geist", sans-serif; margin: 0; }
+  .mrv2-gideas { background: #ffffff; color: #101724; position: relative; overflow-x: clip; }
+  .mrv2-gideas .page-content { padding: 4px 16px 32px; display: flex; flex-direction: column; gap: 16px; }
+
+  .mrv2-gideas .toolbar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 16px; }
+  .mrv2-gideas .toolbar .back { width: 36px; height: 36px; margin-left: -6px; display: grid; place-items: center; border: 0; background: none; color: #1a2332; font-size: 24px; }
+  .mrv2-gideas .toolbar .page-title { font-size: 20px; font-weight: 700; color: #1a2332; }
+
+  .mrv2-gideas .g-head { display: flex; align-items: center; gap: 13px; }
+  .mrv2-gideas .g-head img { width: 56px; height: 56px; border-radius: 16px; object-fit: cover; flex-shrink: 0; }
+  .mrv2-gideas .g-head .g-txt { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .mrv2-gideas .g-head .h-wrap { display: flex; align-items: center; gap: 7px; }
+  .mrv2-gideas .g-head h1 { font-size: 24px; font-weight: 800; line-height: 1.2; }
+  .mrv2-gideas .g-head .ai-mark { font-size: 17px; line-height: 1; display: inline-flex; }
+  .mrv2-gideas .g-head .ai-mark i { background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mrv2-gideas .g-head p { font-size: 14px; color: #5c6b7d; line-height: 1.4; }
+
+  .mrv2-gideas .why-chips { display: flex; gap: 8px; overflow-x: auto; margin: -2px -16px 0; padding: 0 16px 2px; scrollbar-width: none; -ms-overflow-style: none; }
+  .mrv2-gideas .why-chips::-webkit-scrollbar { display: none; }
+  .mrv2-gideas .why-chips .chip { height: 34px; padding: 0 13px; border-radius: 999px; background: #f1f4f7; color: #3b4551; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; flex-shrink: 0; }
+
+  .mrv2-gideas .idea { border-radius: 20px; background: #ffffff; border: 1px solid rgba(16, 23, 36, 0.08); box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05), 0 10px 24px rgba(16, 24, 40, 0.08); overflow: hidden; }
+  .mrv2-gideas .idea .media { position: relative; height: 132px; background-size: cover; background-position: center; }
+  .mrv2-gideas .idea .art { position: relative; height: 132px; background: linear-gradient(135deg, var(--a1, #ccfbf1), var(--a2, #dbeafe)); display: grid; place-items: center; }
+  .mrv2-gideas .idea .art::before { content: ""; position: absolute; width: 92px; height: 92px; border-radius: 50%; background: rgba(255, 255, 255, 0.35); top: -34px; left: -26px; }
+  .mrv2-gideas .idea .art::after { content: ""; position: absolute; width: 72px; height: 72px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.6); bottom: -26px; right: -18px; }
+  .mrv2-gideas .idea .art .disc { position: relative; z-index: 1; width: 54px; height: 54px; border-radius: 50%; background: rgba(255, 255, 255, 0.6); display: grid; place-items: center; font-size: 27px; color: var(--ac, #0f766e); box-shadow: 0 2px 8px rgba(16, 24, 40, 0.08); }
+  .mrv2-gideas .spark-chip { position: absolute; top: 10px; left: 10px; z-index: 1; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-size: 12px; font-weight: 700; color: #101724; display: inline-flex; align-items: center; gap: 5px; }
+  .mrv2-gideas .spark-chip i { font-size: 13px; background: linear-gradient(145deg, #14b8a6, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mrv2-gideas .idea .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; }
+  .mrv2-gideas .idea .title { font-size: 18px; font-weight: 700; line-height: 1.25; }
+  .mrv2-gideas .idea .why { font-size: 14px; color: #5c6b7d; line-height: 1.45; }
+  .mrv2-gideas .idea .foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+  .mrv2-gideas .idea .meta { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: #5c6b7d; min-width: 0; }
+  .mrv2-gideas .idea .meta span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mrv2-gideas .idea .btns { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .mrv2-gideas .plan-pill { height: 34px; padding: 0 14px; border: 0; border-radius: 999px; background: linear-gradient(145deg, #14b8a6, #3b82f6); color: #ffffff; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
+  .mrv2-gideas .skip-pill { height: 34px; padding: 0 12px; border: 1.5px solid rgba(32, 36, 42, 0.16); border-radius: 999px; background: #ffffff; color: #1a2332; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; }
+
+  .mrv2-gideas .shuffle { width: 100%; height: 48px; border: 0; border-radius: 16px; background: #f1f4f7; color: #1a2332; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 15px; font-weight: 700; }
+  .mrv2-gideas .fine { text-align: center; font-size: 13px; color: #8b98a8; line-height: 1.5; padding: 0 12px; }
+</style>
+
+<div class="mrv2-gideas" style="background: #ffffff;">
+  <div class="toolbar">
+    <button class="back"><i class="ph ph-arrow-left"></i></button>
+    <span class="page-title">Group ideas</span>
+  </div>
+  <main class="page-content">
+    <div class="g-head">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=144&h=144&q=80" alt="" />
+      <div class="g-txt">
+        <div class="h-wrap"><h1>For Weekend Crew</h1><span class="ai-mark"><i class="ph-fill ph-sparkle"></i></span></div>
+        <p>Nothing planned this month. Here's something to change that.</p>
+      </div>
+    </div>
+
+    <div class="why-chips">
+      <span class="chip">Based on: 🎯 Trivia</span>
+      <span class="chip">🎸 Live music</span>
+      <span class="chip">🥾 Hiking</span>
+      <span class="chip">5 members</span>
+    </div>
+
+    <div class="idea">
+      <div class="art" style="--a1: #fef3c7; --a2: #ffedd5; --ac: #d97706;">
+        <span class="spark-chip"><i class="ph-fill ph-sparkle"></i>Good fit</span>
+        <span class="disc"><i class="ph-fill ph-lightbulb"></i></span>
+      </div>
+      <div class="body">
+        <div class="title">Trivia night at The Well</div>
+        <div class="why">4 of 5 in the crew like trivia, and Thursday teams get half-price pitchers.</div>
+        <div class="foot">
+          <span class="meta"><i class="ph-fill ph-map-pin"></i><span>South Slope</span></span>
+          <div class="btns">
+            <button class="skip-pill">Not for us</button>
+            <button class="plan-pill"><i class="ph-fill ph-calendar-plus"></i>Make it a plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="idea">
+      <div class="media" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=760&h=300&q=80');">
+        <span class="spark-chip"><i class="ph-fill ph-sparkle"></i>Saturday morning</span>
+      </div>
+      <div class="body">
+        <div class="title">Craggy Gardens sunrise hike</div>
+        <div class="why">You haven't hiked together since June. Clear skies forecast for Saturday.</div>
+        <div class="foot">
+          <span class="meta"><i class="ph-fill ph-map-pin"></i><span>Blue Ridge Pkwy</span></span>
+          <div class="btns">
+            <button class="skip-pill">Not for us</button>
+            <button class="plan-pill"><i class="ph-fill ph-calendar-plus"></i>Make it a plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="idea">
+      <div class="media" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=760&h=300&q=80');">
+        <span class="spark-chip"><i class="ph-fill ph-sparkle"></i>Free</span>
+      </div>
+      <div class="body">
+        <div class="title">Pickin' in the Park</div>
+        <div class="why">Outdoor bluegrass on Thursday, easy to swing after work.</div>
+        <div class="foot">
+          <span class="meta"><i class="ph-fill ph-map-pin"></i><span>Pritchard Park</span></span>
+          <div class="btns">
+            <button class="skip-pill">Not for us</button>
+            <button class="plan-pill"><i class="ph-fill ph-calendar-plus"></i>Make it a plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="shuffle"><i class="ph ph-arrows-clockwise"></i>Show different ideas</button>
+    <p class="fine">Ideas skip places the crew has already been. "Make it a plan" opens the new plan sheet with everything filled in.</p>
+  </main>
+</div>
