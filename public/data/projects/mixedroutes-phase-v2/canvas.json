@@ -33,7 +33,7 @@
     {
       "file": "discover-v2-real-cards.html",
       "x": 0,
-      "y": -635,
+      "y": 219,
       "width": 390
     },
     {
@@ -51,55 +51,55 @@
     {
       "file": "home-v2-friend-cards.html",
       "x": 491,
-      "y": -635,
+      "y": 219,
       "width": 390
     },
     {
       "file": "status-nav-identity.html",
       "x": 986,
-      "y": -635,
+      "y": 219,
       "width": 390
     },
     {
       "file": "status-under-greeting.html",
       "x": 986,
-      "y": -424,
+      "y": 430,
       "width": 390
     },
     {
       "file": "status-greeting-chips.html",
       "x": 986,
-      "y": -172,
+      "y": 682,
       "width": 390
     },
     {
       "file": "status-nav-avatar.html",
       "x": 986,
-      "y": 106,
+      "y": 960,
       "width": 390
     },
     {
       "file": "nav-current-major-pages.html",
-      "x": 3692,
-      "y": -635,
+      "x": 3408,
+      "y": 3876,
       "width": 500
     },
     {
       "file": "card-variations-audit.html",
       "x": 1607,
-      "y": -635,
+      "y": 219,
       "width": 1440
     },
     {
       "file": "nav-updated-contextual-actions.html",
-      "x": 4238,
-      "y": -635,
+      "x": 3954,
+      "y": 3876,
       "width": 500
     },
     {
       "file": "nav-option-plus-left.html",
-      "x": 4794,
-      "y": -635,
+      "x": 4510,
+      "y": 3876,
       "width": 500
     }
   ],
@@ -125,25 +125,25 @@
     {
       "text": "MixedRoutes 2.0",
       "x": 0,
-      "y": -834,
+      "y": 20,
       "size": 72
     },
     {
       "text": "Home",
       "x": 491,
-      "y": -720,
+      "y": 134,
       "size": 48
     },
     {
       "text": "Status ideas",
       "x": 986,
-      "y": -720,
+      "y": 134,
       "size": 48
     },
     {
       "text": "Discover",
       "x": 0,
-      "y": -720,
+      "y": 134,
       "size": 48
     },
     {
@@ -154,26 +154,26 @@
     },
     {
       "text": "Current nav",
-      "x": 3692,
-      "y": -720,
+      "x": 3408,
+      "y": 3791,
       "size": 48
     },
     {
       "text": "Card variations",
       "x": 1607,
-      "y": -720,
+      "y": 134,
       "size": 48
     },
     {
       "text": "Updated nav",
-      "x": 4238,
-      "y": -720,
+      "x": 3954,
+      "y": 3791,
       "size": 48
     },
     {
       "text": "Plus on left, centered title",
-      "x": 4794,
-      "y": -720,
+      "x": 4510,
+      "y": 3791,
       "size": 48
     }
   ]
