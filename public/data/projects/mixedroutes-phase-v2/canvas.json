@@ -2,262 +2,262 @@
   "screens": [
     {
       "file": "home.html",
-      "x": 0,
-      "y": 3876,
+      "x": -16,
+      "y": 3683,
       "width": 390
     },
     {
       "file": "discover.html",
-      "x": 430,
-      "y": 3876,
+      "x": 414,
+      "y": 3683,
       "width": 390
     },
     {
       "file": "home-v2.html",
-      "x": 1881,
-      "y": 3858,
+      "x": 1865,
+      "y": 3665,
       "width": 390
     },
     {
       "file": "discover-v2-clean.html",
-      "x": 2320,
-      "y": 3858,
+      "x": 2304,
+      "y": 3665,
       "width": 390
     },
     {
       "file": "discover-v2-flat.html",
-      "x": 2739,
-      "y": 3873,
+      "x": 2723,
+      "y": 3680,
       "width": 390
     },
     {
       "file": "discover-v2-real-cards.html",
-      "x": 0,
-      "y": 219,
+      "x": -16,
+      "y": -1297,
       "width": 390
     },
     {
       "file": "home-v2-copy.html",
-      "x": 1036,
-      "y": 3858,
+      "x": 1020,
+      "y": 3665,
       "width": 390
     },
     {
       "file": "home-v2-list.html",
-      "x": 1466,
-      "y": 3858,
+      "x": 1450,
+      "y": 3665,
       "width": 390
     },
     {
       "file": "home-v2-friend-cards.html",
-      "x": 491,
-      "y": 219,
+      "x": 475,
+      "y": -1297,
       "width": 390
     },
     {
       "file": "status-nav-identity.html",
-      "x": 986,
-      "y": 219,
+      "x": 970,
+      "y": -1297,
       "width": 390
     },
     {
       "file": "status-under-greeting.html",
-      "x": 986,
-      "y": 430,
+      "x": 970,
+      "y": -1086,
       "width": 390
     },
     {
       "file": "status-greeting-chips.html",
-      "x": 986,
-      "y": 682,
+      "x": 970,
+      "y": -834,
       "width": 390
     },
     {
       "file": "status-nav-avatar.html",
-      "x": 986,
-      "y": 960,
+      "x": 970,
+      "y": -556,
       "width": 390
     },
     {
       "file": "nav-current-major-pages.html",
-      "x": 3408,
-      "y": 3876,
+      "x": 3392,
+      "y": 3683,
       "width": 500
     },
     {
       "file": "card-variations-audit.html",
-      "x": 1607,
-      "y": 219,
+      "x": 1591,
+      "y": -1297,
       "width": 1440
     },
     {
       "file": "nav-updated-contextual-actions.html",
-      "x": 3954,
-      "y": 3876,
+      "x": 3938,
+      "y": 3683,
       "width": 500
     },
     {
       "file": "nav-option-plus-left.html",
-      "x": 4510,
-      "y": 3876,
+      "x": 4494,
+      "y": 3683,
       "width": 500
     },
     {
       "file": "home-v2-empty.html",
-      "x": 3200,
-      "y": 219,
+      "x": 3283,
+      "y": -1297,
       "width": 390
     },
     {
       "file": "guidance-intro-modal.html",
-      "x": 3630,
-      "y": 219,
+      "x": 3713,
+      "y": -1297,
       "width": 390
     },
     {
       "file": "guidance-coach-marks.html",
-      "x": 4060,
-      "y": 219,
+      "x": 4143,
+      "y": -1297,
       "width": 390
     },
     {
-      "file": "ask-bar-results.html",
-      "x": 4510,
-      "y": 219,
+      "file": "discover-for-you.html",
+      "x": 4898,
+      "y": -1297,
       "width": 390
     },
     {
-      "file": "weekend-digest.html",
-      "x": 4940,
-      "y": 219,
+      "file": "discover-events.html",
+      "x": 5328,
+      "y": -1297,
       "width": 390
     },
     {
-      "file": "group-ideas.html",
-      "x": 5370,
-      "y": 219,
+      "file": "discover-places.html",
+      "x": 5758,
+      "y": -1297,
       "width": 390
     },
     {
       "file": "write-review.html",
-      "x": 5885,
-      "y": 219,
+      "x": 1591,
+      "y": 694,
       "width": 390
     },
     {
       "file": "check-in-flow.html",
-      "x": 6315,
-      "y": 219,
+      "x": 2021,
+      "y": 694,
       "width": 390
     },
     {
       "file": "prompt-governance.html",
-      "x": 6745,
-      "y": 219,
+      "x": 2451,
+      "y": 694,
       "width": 880
+    },
+    {
+      "file": "discover-events-filters.html",
+      "x": 6203,
+      "y": -1297,
+      "width": 390
     }
   ],
   "texts": [
     {
       "text": "Current designs",
-      "x": 0,
-      "y": 3677,
+      "x": -16,
+      "y": 3484,
       "size": 72
     },
     {
       "text": "Home",
-      "x": 0,
-      "y": 3791,
+      "x": -16,
+      "y": 3598,
       "size": 48
     },
     {
       "text": "Discover",
-      "x": 430,
-      "y": 3791,
+      "x": 414,
+      "y": 3598,
       "size": 48
     },
     {
       "text": "MixedRoutes 2.0",
-      "x": 0,
-      "y": 20,
+      "x": -16,
+      "y": -1496,
       "size": 72
     },
     {
       "text": "Home",
-      "x": 491,
-      "y": 134,
+      "x": 475,
+      "y": -1382,
       "size": 48
     },
     {
       "text": "Status ideas",
-      "x": 986,
-      "y": 134,
+      "x": 970,
+      "y": -1382,
       "size": 48
     },
     {
       "text": "Discover",
-      "x": 0,
-      "y": 134,
+      "x": -16,
+      "y": -1382,
       "size": 48
     },
     {
       "text": "Archive",
-      "x": 1036,
-      "y": 3677,
+      "x": 1020,
+      "y": 3484,
       "size": 72
     },
     {
       "text": "Current nav",
-      "x": 3408,
-      "y": 3791,
+      "x": 3392,
+      "y": 3598,
       "size": 48
     },
     {
       "text": "Card variations",
-      "x": 1607,
-      "y": 134,
+      "x": 1591,
+      "y": -1382,
       "size": 48
     },
     {
       "text": "Updated nav",
-      "x": 3954,
-      "y": 3791,
+      "x": 3938,
+      "y": 3598,
       "size": 48
     },
     {
       "text": "Plus on left, centered title",
-      "x": 4510,
-      "y": 3791,
+      "x": 4494,
+      "y": 3598,
       "size": 48
     },
     {
       "text": "Cold start + first visit",
-      "x": 3200,
-      "y": 134,
-      "size": 48
-    },
-    {
-      "text": "Invite RSVP states",
-      "x": 4490,
-      "y": 134,
+      "x": 3283,
+      "y": -1382,
       "size": 48
     },
     {
       "text": "AI layer",
-      "x": 4920,
-      "y": 134,
+      "x": 4263,
+      "y": -1382,
       "size": 48
     },
     {
       "text": "Later phases",
-      "x": 5885,
-      "y": 134,
+      "x": 1591,
+      "y": 609,
       "size": 48
     },
     {
       "text": "Prompt governance",
-      "x": 6745,
-      "y": 134,
+      "x": 2451,
+      "y": 609,
       "size": 48
     }
   ]
