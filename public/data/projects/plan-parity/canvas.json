@@ -107,7 +107,7 @@
     },
     {
       "file": "plan-view-empty.html",
-      "x": 3277,
+      "x": 3821,
       "y": 2103,
       "width": 390,
       "name": "plan-view-empty"
@@ -120,39 +120,18 @@
       "name": "2step-1-name-open"
     },
     {
-      "file": "ts-1-details-empty.html",
-      "x": 2011,
-      "y": 2103,
-      "width": 390,
-      "name": "2step-1-details-empty"
-    },
-    {
       "file": "ts-1-details-filled.html",
-      "x": 2433,
+      "x": 2977,
       "y": 2103,
       "width": 390,
       "name": "2step-1-details-filled"
     },
     {
       "file": "ts-2-invite.html",
-      "x": 2855,
+      "x": 3399,
       "y": 2103,
       "width": 390,
       "name": "2step-2-invite"
-    },
-    {
-      "file": "ts-1-details-suggest.html",
-      "x": 3987,
-      "y": 2117,
-      "width": 390,
-      "name": "2step-1-details-suggestions"
-    },
-    {
-      "file": "ts-1-details-quick.html",
-      "x": 4409,
-      "y": 2117,
-      "width": 390,
-      "name": "2step-1-details-quick"
     },
     {
       "file": "qk-1-empty.html",

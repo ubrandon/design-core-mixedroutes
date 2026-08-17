@@ -32,10 +32,10 @@
     <div class="qs" data-sec="when">
       <div class="qs-empty qtiles">
         <div class="qt qt-more" data-open="when"><span class="qt-ic"><i class="ph ph-calendar-blank"></i></span><span class="qt-tx"><b>Custom</b><span>Pick date</span></span></div>
-        <div class="qt" data-b="Now" data-s="Today, 2:15 PM"><span class="qt-ic"><i class="ph-fill ph-lightning"></i></span><span class="qt-tx"><b>Now</b><span>2:15 PM</span></span></div>
-        <div class="qt" data-b="Tonight" data-s="7:00 PM"><span class="qt-ic"><i class="ph-fill ph-moon-stars"></i></span><span class="qt-tx"><b>Tonight</b><span>7:00 PM</span></span></div>
-        <div class="qt" data-b="Tomorrow" data-s="Tue, Aug 18th · 7:00 AM"><span class="qt-ic"><i class="ph-fill ph-sun"></i></span><span class="qt-tx"><b>Tomorrow</b><span>7:00 AM</span></span></div>
-        <div class="qt" data-b="This weekend" data-s="Sat, Aug 22nd · 8:00 AM"><span class="qt-ic"><i class="ph-fill ph-calendar-check"></i></span><span class="qt-tx"><b>This weekend</b><span>Sat 8 AM</span></span></div>
+        <div class="qt" data-b="Now" data-s="Today, 2:15 PM"><span class="qt-ic"><i class="ph ph-lightning"></i></span><span class="qt-tx"><b>Now</b><span>2:15 PM</span></span></div>
+        <div class="qt" data-b="Tonight" data-s="7:00 PM"><span class="qt-ic"><i class="ph ph-moon-stars"></i></span><span class="qt-tx"><b>Tonight</b><span>7:00 PM</span></span></div>
+        <div class="qt" data-b="Tomorrow" data-s="Tue, Aug 18th · 7:00 AM"><span class="qt-ic"><i class="ph ph-sun"></i></span><span class="qt-tx"><b>Tomorrow</b><span>7:00 AM</span></span></div>
+        <div class="qt" data-b="This weekend" data-s="Sat, Aug 22nd · 8:00 AM"><span class="qt-ic"><i class="ph ph-calendar-check"></i></span><span class="qt-tx"><b>This weekend</b><span>Sat 8 AM</span></span></div>
       </div>
 
       <div class="qs-picker facet hide">
@@ -111,16 +111,16 @@
   </div>
 
   <!-- PLACE MODAL -->
-  <div class="pmodal hide">
+  <div class="pmodal">
     <div class="status"><span>9:41</span><span class="r"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-full"></i></span></div>
     <div class="pm-tb">
       <h2>Where will it be?</h2>
       <span class="icon-btn pm-close"><i class="ph ph-x"></i></span>
     </div>
     <div class="pm-body">
-      <div class="searchbar pm-search"><i class="ph ph-magnifying-glass"></i><span class="q ph-text">Search places</span><span class="caret hide"></span></div>
+      <div class="searchbar pm-search"><i class="ph ph-magnifying-glass"></i><span class="q">Pantoll</span><span class="caret"></span></div>
 
-      <div class="pm-sugg">
+      <div class="pm-sugg hide">
         <div class="pm-sec">Suggested for you</div>
         <div class="pm-list">
           <div class="pm-row" data-b="Marina Green" data-s="Marina Blvd, San Francisco, CA">
@@ -173,7 +173,7 @@
         </div>
       </div>
 
-      <div class="pm-results hide">
+      <div class="pm-results">
         <div class="pm-list">
           <div class="pm-row" data-b="Pantoll Trailhead" data-s="3801 Panoramic Hwy, Mill Valley, CA">
             <span class="pm-ic green"><i class="ph-fill ph-tree"></i></span>
@@ -194,7 +194,7 @@
         </div>
       </div>
     </div>
-    <div class="pm-foot"><div class="home-bar"></div></div>
+    <div class="pm-foot hide"><div class="home-bar"></div></div>
     <div class="pm-kb">
       <div class="kb-row"><span>Q</span><span>W</span><span>E</span><span>R</span><span>T</span><span>Y</span><span>U</span><span>I</span><span>O</span><span>P</span></div>
       <div class="kb-row"><span>A</span><span>S</span><span>D</span><span>F</span><span>G</span><span>H</span><span>J</span><span>K</span><span>L</span></div>
@@ -213,7 +213,7 @@
   .pp-qk4 .qtiles { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 4px 16px 8px; }
   .pp-qk4 .qtiles::-webkit-scrollbar { display: none; }
   .pp-qk4 .qt { flex-shrink: 0; min-width: 76px; border-radius: 16px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.1); padding: 10px 10px 8px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0; }
-  .pp-qk4 .qt .qt-ic { width: 30px; height: 30px; border-radius: 10px; background: #e4eefe; color: #234e8a; display: grid; place-items: center; font-size: 17px; flex-shrink: 0; margin-bottom: 6px; }
+  .pp-qk4 .qt .qt-ic { width: 30px; height: 30px; border-radius: 10px; background: rgba(16,23,36,0.06); color: #5c6b7d; display: grid; place-items: center; font-size: 17px; flex-shrink: 0; margin-bottom: 6px; }
   .pp-qk4 .qt .qt-tx { display: flex; flex-direction: column; align-items: center; line-height: 1.15; }
   .pp-qk4 .qt b { font-size: 13px; font-weight: 700; white-space: nowrap; }
   .pp-qk4 .qt span:not(.qt-ic) { font-size: 11px; color: #5c6b7d; white-space: nowrap; margin-top: 1px; }
@@ -333,16 +333,10 @@
     if (p.getAttribute('data-k') !== 'custom') p.classList.add('hide');
   }
   pills.querySelectorAll('.chip').forEach(function (p) { p.addEventListener('click', function () { addElse(p); }); });
+  rows.querySelectorAll('.drow').forEach(function (row) {
+    var chip = pills.querySelector('[data-k=' + row.getAttribute('data-k') + ']');
+    row.querySelector('.trail').addEventListener('click', function () { row.remove(); if (chip) chip.classList.remove('hide'); });
+  });
 
-  // ---- Initial state for this canvas card
-  if (state === 'when-picker') openWhenPicker();
-  if (state === 'place-modal') openModal(false);
-  if (state === 'place-search') openModal(true);
-  if (state === 'filled') {
-    fillWhen('Sat, Aug 22nd', '6 AM - 9 AM');
-    fillWhere('Pantoll Trailhead', '3801 Panoramic Hwy, Mill Valley, CA');
-    addElse(pills.querySelector('[data-k=desc]'));
-    addElse(pills.querySelector('[data-k=bring]'));
-  }
 })();
 </script>
