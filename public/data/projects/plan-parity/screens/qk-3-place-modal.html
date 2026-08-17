@@ -51,8 +51,7 @@
           <div class="day" data-d="Thu, Aug 20th"><span>Thu</span><b>20</b></div>
           <div class="day" data-d="Fri, Aug 21st"><span>Fri</span><b>21</b></div>
           <div class="day" data-d="Sat, Aug 22nd"><span>Sat</span><b>22</b></div>
-          <div class="day" data-d="Sun, Aug 23rd"><span>Sun</span><b>23</b></div>
-          <div class="day day-more"><i class="ph ph-calendar-dots"></i><b>More</b></div>
+          <div class="day day-more"><i class="ph ph-calendar-dots"></i><b>Other</b></div>
         </div>
         <div class="wh-times">
           <div class="wh-time"><div><span class="lbl">Starts</span><span class="val" data-t>5:30 PM</span></div><i class="ph ph-caret-down"></i></div>
@@ -61,7 +60,7 @@
         <div class="tchips">
           <span class="chip tchip">7:00 AM</span><span class="chip tchip">9:00 AM</span><span class="chip tchip">12:00 PM</span><span class="chip tchip sel">5:30 PM</span><span class="chip tchip">7:00 PM</span>
         </div>
-        <span class="btn-grad pk-done" style="margin-top:14px;height:44px;font-size:15px;">Set time</span>
+        <span class="btn-muted pk-done" style="margin-top:14px;height:44px;font-size:15px;width:100%;">Set time</span>
       </div>
 
       <div class="qs-filled drow filled hide">
@@ -207,6 +206,8 @@
 
 <style>
   .pp-qk3 .hide { display: none !important; }
+  .pp-qk3 .ts-toolbar { justify-content: flex-start; gap: 2px; }
+  .pp-qk3 .ts-toolbar .ttl { flex: 1; text-align: left; font-size: 20px; }
   .pp-qk3 .qt, .pp-qk3 .chip, .pp-qk3 .day, .pp-qk3 .tchip, .pp-qk3 .trail, .pp-qk3 .action, .pp-qk3 .pk-done, .pp-qk3 [data-open-modal], .pp-qk3 .pm-row, .pp-qk3 .pm-close, .pp-qk3 .pm-search { cursor: pointer; }
 
   /* Quick time tiles */
@@ -223,9 +224,9 @@
 
   /* Date & time picker */
   .pp-qk3 .qs-picker { margin-bottom: 8px; animation: qk-in 0.18s ease-out; }
-  .pp-qk3 .days { display: flex; gap: 6px; margin-top: 14px; overflow-x: auto; scrollbar-width: none; }
+  .pp-qk3 .days { display: flex; gap: 6px; margin-top: 14px; }
   .pp-qk3 .days::-webkit-scrollbar { display: none; }
-  .pp-qk3 .day { flex: 1; min-width: 40px; height: 56px; border-radius: 12px; background: #f1f4f7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+  .pp-qk3 .day { flex: 1; min-width: 0; height: 56px; border-radius: 12px; background: #f1f4f7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
   .pp-qk3 .day span { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5c6b7d; }
   .pp-qk3 .day b { font-size: 16px; font-weight: 700; }
   .pp-qk3 .day.sel { background: #234e8a; color: #fff; }

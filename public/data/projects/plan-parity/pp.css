@@ -489,9 +489,9 @@
 .pp .hero.hero-emoji .grad { background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.42) 70%, rgba(0,0,0,0.5) 100%); }
 .pp .setup { margin-top: 20px; }
 .pp .setup .setup-hd { display: flex; flex-direction: column; gap: 3px; }
-.pp .setup .setup-hd b { font-size: 17px; font-weight: 700; }
+.pp .setup .setup-hd b { font-size: 14px; font-weight: 600; color: #5c6b7d; }
 .pp .setup .setup-hd span { font-size: 14px; color: #5c6b7d; }
-.pp .setup .next-row { margin-top: 12px; }
+.pp .setup .next-row { margin-top: 8px; }
 
 /* 2-step variation B: smarter suggestions for when/where and an add-a-detail list */
 .pp .wcard .wh-sugg { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }

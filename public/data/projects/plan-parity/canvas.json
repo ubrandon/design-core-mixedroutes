@@ -107,7 +107,7 @@
     },
     {
       "file": "plan-view-empty.html",
-      "x": 3821,
+      "x": 4744,
       "y": 2103,
       "width": 390,
       "name": "plan-view-empty"
@@ -120,53 +120,53 @@
       "name": "2step-1-name-open"
     },
     {
-      "file": "ts-1-details-filled.html",
-      "x": 2977,
-      "y": 2103,
-      "width": 390,
-      "name": "2step-1-details-filled"
-    },
-    {
       "file": "ts-2-invite.html",
-      "x": 3399,
+      "x": 4322,
       "y": 2103,
       "width": 390,
       "name": "2step-2-invite"
     },
     {
       "file": "qk-1-empty.html",
-      "x": 4831,
-      "y": 2117,
+      "x": 2018,
+      "y": 2103,
       "width": 390,
       "name": "quick-1-empty"
     },
     {
       "file": "qk-2-when-picker.html",
-      "x": 5253,
-      "y": 2117,
+      "x": 2440,
+      "y": 2103,
       "width": 390,
       "name": "quick-2-when-picker"
     },
     {
       "file": "qk-3-place-modal.html",
-      "x": 5675,
-      "y": 2117,
+      "x": 2862,
+      "y": 2103,
       "width": 390,
       "name": "quick-3-place-modal"
     },
     {
       "file": "qk-4-place-search.html",
-      "x": 6097,
-      "y": 2117,
+      "x": 3284,
+      "y": 2103,
       "width": 390,
       "name": "quick-4-place-search"
     },
     {
       "file": "qk-5-filled.html",
-      "x": 6519,
-      "y": 2117,
+      "x": 3706,
+      "y": 2103,
       "width": 390,
       "name": "quick-5-filled"
+    },
+    {
+      "file": "ts-2-invite-suggest.html",
+      "x": 5201,
+      "y": 2103,
+      "width": 390,
+      "name": "2step-2-invite-suggestions"
     }
   ],
   "texts": [
