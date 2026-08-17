@@ -68,6 +68,13 @@
       "description": "Light mode screens matching the app design refresh",
       "createdBy": "Brandon Unglaub",
       "createdAt": "2026-08-03T00:00:00Z"
+    },
+    {
+      "id": "plan-parity",
+      "name": "Plan Parity",
+      "description": "Current app screens (create plan, plan view) as a base for the planning-app parity features",
+      "createdBy": "Brandon Unglaub",
+      "createdAt": "2026-08-17T00:00:00.000Z"
     }
   ]
 }

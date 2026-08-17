@@ -1,0 +1,60 @@
+{
+  "screens": [
+    {
+      "file": "create-plan.html",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "name": "create-plan-current"
+    },
+    {
+      "file": "create-plan-date.html",
+      "x": 431,
+      "y": 0,
+      "width": 390,
+      "name": "create-plan-date-facet"
+    },
+    {
+      "file": "create-plan-location.html",
+      "x": 876,
+      "y": 0,
+      "width": 390,
+      "name": "create-plan-location-facet"
+    },
+    {
+      "file": "plan-view.html",
+      "x": 1407,
+      "y": 0,
+      "width": 390,
+      "name": "plan-view-current"
+    },
+    {
+      "file": "plan-view-rsvp.html",
+      "x": 1837,
+      "y": 0,
+      "width": 390,
+      "name": "plan-view-rsvp-modal"
+    },
+    {
+      "file": "plan-view-attendees.html",
+      "x": 2273,
+      "y": 0,
+      "width": 390,
+      "name": "plan-view-attendees-modal"
+    }
+  ],
+  "texts": [
+    {
+      "text": "Current designs",
+      "x": 0,
+      "y": -163,
+      "size": 72
+    },
+    {
+      "text": "Current designs",
+      "x": -107,
+      "y": 1851,
+      "size": 72
+    }
+  ]
+}
