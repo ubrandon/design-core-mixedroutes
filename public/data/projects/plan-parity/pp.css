@@ -564,3 +564,59 @@
 .pp .qs-picker .wh-opts { margin-top: 10px; }
 .pp .qs-picker .wh-opt { min-height: 44px; }
 .pp .drow.filled .dtxt span .rep-ic { font-size: 14px; vertical-align: -2px; margin-right: 4px; color: #0891b2; }
+
+/* ===== Three-step flow (name -> details -> invite) ===== */
+.pp.s3 { min-height: 844px; display: flex; flex-direction: column; }
+.pp.s3 .content { flex: 1; }
+.pp.s3 .hide { display: none !important; }
+.pp.s3 .ts-toolbar { justify-content: flex-start; gap: 2px; }
+.pp.s3 .ts-toolbar .ttl { flex: 1; text-align: left; font-size: 20px; }
+.pp.s3 .steps { display: flex; gap: 5px; padding: 0 16px 14px; }
+.pp.s3 .steps span { flex: 1; height: 4px; border-radius: 999px; background: #e6e9ed; }
+.pp.s3 .steps span.on { background: linear-gradient(90deg, #14b8a6, #3b82f6); }
+.pp.s3 .steps span.done { background: #234e8a; }
+.pp.s3 .step-cap { font-size: 13px; font-weight: 600; color: #858b94; padding: 0 16px 6px; margin-top: -8px; }
+.pp.s3 .banner-slot { height: 96px; }
+.pp.s3 .banner-slot .bs-btn { height: 40px; font-size: 15px; padding: 0 16px 0 12px; }
+.pp.s3 .tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; }
+.pp.s3 .tags .chip { height: 34px; padding: 0 12px 0 11px; font-size: 14px; gap: 6px; }
+.pp.s3 .tags .chip em { font-style: normal; font-size: 16px; line-height: 1; }
+.pp.s3 .tags .chip i { font-size: 15px; color: #858b94; }
+.pp.s3 .tags .chip.sel i { color: #234e8a; }
+.pp.s3 .tags .chip.add { border-style: dashed; color: #5c6b7d; }
+.pp.s3 .under-drop .tags { opacity: 1; }
+.pp.s3 .recap { display: flex; align-items: center; gap: 12px; padding: 8px 12px 8px 8px; border-radius: 18px; background: #f1f4f7; }
+.pp.s3 .recap .thumb { width: 44px; height: 44px; border-radius: 12px; background-size: cover; background-position: center; flex-shrink: 0; }
+.pp.s3 .recap .rtxt { flex: 1; min-width: 0; }
+.pp.s3 .recap .rtxt b { display: block; font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pp.s3 .recap .rtxt span { font-size: 13px; color: #5c6b7d; }
+.pp.s3 .recap > i { font-size: 20px; color: #858b94; }
+.pp.s3 .when-pills { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; margin: 10px -16px 0; padding: 2px 16px 4px; }
+.pp.s3 .when-pills::-webkit-scrollbar { display: none; }
+.pp.s3 .when-pills .chip { height: 38px; padding: 0 14px 0 12px; font-size: 15px; font-weight: 600; }
+.pp.s3 .when-pills .chip i { font-size: 18px; color: #5c6b7d; }
+.pp.s3 .when-pills .chip.sel i { color: #234e8a; }
+.pp.s3 .drow > i.trail.plus { color: #1a2332; }
+.pp.s3 .priv { display: flex; gap: 8px; }
+.pp.s3 .pv { flex: 1; min-width: 0; border-radius: 16px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.1); padding: 12px 8px 10px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; cursor: pointer; }
+.pp.s3 .pv .pv-ic { width: 32px; height: 32px; border-radius: 10px; background: rgba(16,23,36,0.06); color: #5c6b7d; display: grid; place-items: center; font-size: 18px; }
+.pp.s3 .pv b { font-size: 13px; font-weight: 700; }
+.pp.s3 .pv.sel { background: #e4eefe; color: #234e8a; box-shadow: inset 0 0 0 2px #3b82f6; }
+.pp.s3 .pv.sel .pv-ic { background: #fff; color: #234e8a; }
+.pp.s3 .priv-desc { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #5c6b7d; margin-top: 10px; }
+.pp.s3 .priv-desc i { font-size: 15px; color: #0891b2; }
+.pp.s3 .priv-desc b { color: #1a2332; font-weight: 600; }
+.pp.s3 .qs-rows .drow + .drow { margin-top: 10px; }
+.pp.s3 .add-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.pp.s3 .qs-rows:empty + .add-pills { margin-top: 0; }
+.pp.s3 .chip, .pp.s3 .drow, .pp.s3 .trail, .pp.s3 .bs-btn, .pp.s3 .bh-btn, .pp.s3 .act, .pp.s3 .repeat, .pp.s3 .prow { cursor: pointer; }
+.pp.s3 .why { display: inline-flex; align-items: center; gap: 5px; }
+.pp.s3 .why i { font-size: 14px; color: #0891b2; }
+.pp.s3 .mr-checkbox { font-size: 26px; color: #b9c0ca; }
+.pp.s3 .mr-checkbox.is-checked { color: #0891b2; }
+.pp.s3 .selected-strip:empty { display: none; }
+.pp.s3 .inv-note { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5c6b7d; padding: 10px 12px; border-radius: 14px; background: #f1f4f7; margin-top: 12px; }
+.pp.s3 .inv-note i { font-size: 16px; color: #234e8a; }
+.pp.s3 .inv-note b { color: #1a2332; font-weight: 600; }
+@keyframes s3-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.pp.s3 .anim { animation: s3-in 0.18s ease-out; }

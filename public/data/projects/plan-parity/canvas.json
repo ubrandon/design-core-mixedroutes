@@ -45,63 +45,63 @@
     {
       "file": "create-plan-date-copy.html",
       "x": 446,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "create-plan-date-facet Copy"
     },
     {
       "file": "plan-view-copy.html",
       "x": 17,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "plan-view-current Copy"
     },
     {
       "file": "nf-when-open.html",
       "x": 1009,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "when-card-v2-open"
     },
     {
       "file": "nf-when-repeat-sheet.html",
       "x": 1439,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "when-card-v2-repeat-sheet"
     },
     {
       "file": "nf-when-repeating.html",
       "x": 2370,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "when-card-v2-repeating"
     },
     {
       "file": "create-flow-2-details-recurring.html",
       "x": 2800,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "new-2-details-recurring"
     },
     {
       "file": "plan-view-recurring.html",
       "x": 3230,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "plan-view-recurring"
     },
     {
       "file": "plans-list-recurring.html",
       "x": 3850,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "plans-list-recurring"
     },
     {
       "file": "nf-when-calendar-sheet.html",
       "x": 1862,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "when-card-v2-calendar-sheet"
     },
@@ -171,9 +171,44 @@
     {
       "file": "plans-list-tiles-color.html",
       "x": 4269,
-      "y": 4219,
+      "y": 5559,
       "width": 390,
       "name": "plans-list-tiles-color"
+    },
+    {
+      "file": "s3-1-name-open.html",
+      "x": 1589,
+      "y": 3390,
+      "width": 390,
+      "name": "3step-1-name-open"
+    },
+    {
+      "file": "s3-1-name-filled.html",
+      "x": 2018,
+      "y": 3390,
+      "width": 390,
+      "name": "3step-1-name-filled"
+    },
+    {
+      "file": "s3-2-details.html",
+      "x": 2440,
+      "y": 3390,
+      "width": 390,
+      "name": "3step-2-details"
+    },
+    {
+      "file": "s3-2-details-filled.html",
+      "x": 2862,
+      "y": 3390,
+      "width": 390,
+      "name": "3step-2-details-filled"
+    },
+    {
+      "file": "s3-3-invite.html",
+      "x": 3284,
+      "y": 3390,
+      "width": 390,
+      "name": "3step-3-invite"
     }
   ],
   "texts": [
@@ -198,20 +233,26 @@
     {
       "text": "Current date",
       "x": 0,
-      "y": 4079,
+      "y": 5419,
       "size": 72
     },
     {
       "text": "Recurring plans",
       "x": 1009,
-      "y": 4079,
+      "y": 5419,
       "size": 72
     },
     {
       "text": "List variations / recurring",
       "x": 3850,
-      "y": 4093,
+      "y": 5433,
       "size": 48
+    },
+    {
+      "text": "3-step plan creation",
+      "x": 1589,
+      "y": 3250,
+      "size": 72
     }
   ]
 }
