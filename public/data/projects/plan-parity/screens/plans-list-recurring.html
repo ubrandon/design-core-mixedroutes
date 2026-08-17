@@ -18,25 +18,25 @@
   .pl-scope .cal-section { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; padding: 12px 16px 12px; }
   .pl-scope .cal-list { padding: 0 16px; }
   .pl-scope .cal-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
-  .pl-scope .plan-row { background: #fff; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 12px 30px rgba(0,0,0,0.1); padding: 8px; display: flex; align-items: stretch; gap: 12px; }
-  .pl-scope .plan-row .photo { width: 80px; min-height: 88px; border-radius: 14px; background-size: cover; background-position: center; flex-shrink: 0; }
-  .pl-scope .plan-row .details { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 4px 8px 4px 0; }
-  .pl-scope .plan-row .date { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #5c6b7d; letter-spacing: 0.4px; line-height: 1; display: flex; align-items: center; gap: 8px; }
-  .pl-scope .plan-row .date .rep { display: inline-flex; align-items: center; gap: 3px; color: #0891b2; text-transform: none; letter-spacing: 0; font-size: 12px; }
-  .pl-scope .plan-row .date .rep i { font-size: 13px; }
-  .pl-scope .plan-row .title-row { display: flex; align-items: baseline; gap: 7px; min-width: 0; }
-  .pl-scope .plan-row .title { font-size: 18px; font-weight: 700; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .pl-scope .plan-row .emoji { font-size: 18px; line-height: 1; flex-shrink: 0; }
-  .pl-scope .plan-row .meta { margin-top: auto; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .pl-scope .plan-row .loc { display: flex; align-items: center; gap: 4px; font-size: 14px; color: #5c6b7d; min-width: 0; flex: 1; }
-  .pl-scope .plan-row .loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .pl-scope .plan-row .loc i { font-size: 16px; flex-shrink: 0; }
-  .pl-scope .stack { display: flex; align-items: center; flex-shrink: 0; }
-  .pl-scope .stack img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-left: -6px; border: 2px solid #fff; }
-  .pl-scope .stack img:first-child { margin-left: 0; }
-  .pl-scope .plan-row .group { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-  .pl-scope .plan-row .group img { width: 24px; height: 24px; border-radius: 6px; object-fit: cover; }
-  .pl-scope .plan-row .group span { font-size: 14px; font-weight: 600; color: #5c6b7d; white-space: nowrap; }
+  .pl-scope .plan-row { min-height: 118px; position: relative; overflow: hidden; display: grid; grid-template-columns: 116px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 4px 28px rgba(0,0,0,.32); }
+  .pl-scope .plan-row .ambient { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; filter: blur(70px) saturate(4) brightness(1.35); transform: scale(1.35); }
+  .pl-scope .plan-row .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,10,18,0), rgba(8,10,18,.18)); }
+  .pl-scope .plan-row .plan-media { min-height: 118px; position: relative; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right,#000 48%,transparent 100%); mask-image: linear-gradient(to right,#000 48%,transparent 100%); }
+  .pl-scope .plan-row-copy { min-width: 0; padding: 15px 14px 14px 0; display: flex; flex-direction: column; gap: 4px; }
+  .pl-scope .plan-row-time { color: rgba(255,255,255,.8); font-size: 11px; font-weight: 800; letter-spacing: .04em; text-shadow: 0 0 16px rgba(0,0,0,.32); display: flex; align-items: center; gap: 6px; }
+  .pl-scope .plan-row-time .rep { display: inline-flex; align-items: center; gap: 3px; color: #fff; }
+  .pl-scope .plan-row-time .rep i { font-size: 12px; }
+  .pl-scope .plan-row-title { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #fff; font-size: 16px; font-weight: 800; line-height: 1.25; text-shadow: 0 0 18px rgba(0,0,0,.38); }
+  .pl-scope .plan-row-meta { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: auto; color: rgba(255,255,255,.9); font-size: 11px; text-shadow: 0 0 16px rgba(0,0,0,.32); }
+  .pl-scope .plan-row-meta .loc { min-width: 0; display: flex; align-items: center; gap: 4px; }
+  .pl-scope .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .pl-scope .plan-row-meta .who { display: flex; align-items: center; gap: 6px; }
+  .pl-scope .plan-row.no-photo { --int: #8b5cf6; background: linear-gradient(135deg, color-mix(in srgb, var(--int) 38%, #46546f), color-mix(in srgb, var(--int) 20%, #2e3a51)); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), 0 4px 24px rgba(0,0,0,.22); }
+  .pl-scope .plan-row.int-tile .plan-media { display: grid; place-items: center; background: radial-gradient(90% 90% at 45% 50%, rgba(255,255,255,.22), rgba(255,255,255,0) 72%); -webkit-mask-image: none; mask-image: none; }
+  .pl-scope .plan-row.int-tile .big-emoji { font-size: 62px; line-height: 1; filter: drop-shadow(0 4px 10px rgba(0,0,0,.28)); }
+  .pl-scope .avatars { display: flex; align-items: center; }
+  .pl-scope .avatars img { width: 18px; height: 18px; object-fit: cover; border-radius: 50%; border: 1.5px solid #fff; margin-left: -8px; }
+  .pl-scope .avatars img:first-child { margin-left: 0; }
   .pl-scope .series-note { margin: 4px 16px 14px; display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 14px; background: #f1f4f7; color: #5c6b7d; font-size: 13px; }
   .pl-scope .series-note i { font-size: 18px; color: #0891b2; }
   .pl-scope .series-note .lnk { margin-left: auto; color: #0891b2; font-weight: 600; white-space: nowrap; }
@@ -73,24 +73,26 @@
     <div class="cal-list">
      <div class="cal-rows">
       <div class="plan-row">
-        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=264&h=264&q=80');"></div>
-        <div class="details">
-          <div class="date">Tue · 7pm <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
-          <div class="title-row"><div class="title">Tuesday pizza night</div><span class="emoji">🍕</span></div>
-          <div class="meta">
-            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Tony's, Mission</span></div>
-            <div class="stack"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /></div>
+        <div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div>
+        <div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="plan-row-copy">
+          <div class="plan-row-time">TUE · 7:00 PM<span class="rep"><i class="ph ph-repeat"></i>WEEKLY</span></div>
+          <div class="plan-row-title">Tuesday pizza night</div>
+          <div class="plan-row-meta">
+            <span class="loc"><i class="ph-fill ph-map-pin"></i><span>Tony's, Mission</span></span>
+            <span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 2 going</span></span>
           </div>
         </div>
       </div>
       <div class="plan-row">
-        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=264&h=264&q=80');"></div>
-        <div class="details">
-          <div class="date">Sat · 6am <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
-          <div class="title-row"><div class="title">Sunrise hike at Mt. Tam</div><span class="emoji">🥾</span></div>
-          <div class="meta">
-            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Pantoll Trailhead</span></div>
-            <div class="group"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><span>Hiking Club</span></div>
+        <div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div>
+        <div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="plan-row-copy">
+          <div class="plan-row-time">SAT · 6:00 AM<span class="rep"><i class="ph ph-repeat"></i>WEEKLY</span></div>
+          <div class="plan-row-title">Sunrise hike at Mt. Tam</div>
+          <div class="plan-row-meta">
+            <span class="loc"><i class="ph-fill ph-map-pin"></i><span>Pantoll Trailhead</span></span>
+            <span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Hiking Club · 4 going</span></span>
           </div>
         </div>
       </div>
@@ -101,41 +103,44 @@
     <div class="cal-list">
      <div class="cal-rows">
       <div class="plan-row">
-        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=264&h=264&q=80');"></div>
-        <div class="details">
-          <div class="date">Tue Aug 25 · 7pm <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
-          <div class="title-row"><div class="title">Tuesday pizza night</div><span class="emoji">🍕</span></div>
-          <div class="meta">
-            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Tony's, Mission</span></div>
-            <div class="stack"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /></div>
+        <div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div>
+        <div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="plan-row-copy">
+          <div class="plan-row-time">TUE AUG 25 · 7:00 PM<span class="rep"><i class="ph ph-repeat"></i>WEEKLY</span></div>
+          <div class="plan-row-title">Tuesday pizza night</div>
+          <div class="plan-row-meta">
+            <span class="loc"><i class="ph-fill ph-map-pin"></i><span>Tony's, Mission</span></span>
+            <span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Maya + 2 going</span></span>
           </div>
         </div>
       </div>
-      <div class="plan-row">
-        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=264&h=264&q=80');"></div>
-        <div class="details">
-          <div class="date">Thu Aug 27 · 7pm</div>
-          <div class="title-row"><div class="title">Live music night</div><span class="emoji">🎶</span></div>
-          <div class="meta">
-            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Savannah Theatre</span></div>
-            <div class="stack"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=96&h=96&q=80" alt="" /></div>
+      <div class="plan-row no-photo int-tile" style="--int:#f59e0b;">
+        <div class="plan-media"><span class="big-emoji">🎶</span></div>
+        <div class="plan-row-copy">
+          <div class="plan-row-time">THU AUG 27 · 7:00 PM</div>
+          <div class="plan-row-title">Live music night</div>
+          <div class="plan-row-meta">
+            <span class="loc"><i class="ph-fill ph-map-pin"></i><span>Savannah Theatre</span></span>
+            <span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Priya + 1 going</span></span>
           </div>
         </div>
       </div>
+        </div>
+      </div>
       <div class="plan-row">
-        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=264&h=264&q=80');"></div>
-        <div class="details">
-          <div class="date">Sat Aug 29 · 6am <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
-          <div class="title-row"><div class="title">Sunrise hike at Mt. Tam</div><span class="emoji">🥾</span></div>
-          <div class="meta">
-            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Pantoll Trailhead</span></div>
-            <div class="group"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><span>Hiking Club</span></div>
+        <div class="ambient" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=70');"></div><div class="shade"></div>
+        <div class="plan-media" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="plan-row-copy">
+          <div class="plan-row-time">SAT AUG 29 · 6:00 AM<span class="rep"><i class="ph ph-repeat"></i>WEEKLY</span></div>
+          <div class="plan-row-title">Sunrise hike at Mt. Tam</div>
+          <div class="plan-row-meta">
+            <span class="loc"><i class="ph-fill ph-map-pin"></i><span>Pantoll Trailhead</span></span>
+            <span class="who"><span class="avatars"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=70&q=80" alt="" /><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=70&q=80" alt="" /></span><span>Hiking Club · 4 going</span></span>
           </div>
         </div>
       </div>
      </div>
     </div>
-    <div class="series-note"><i class="ph ph-repeat"></i><span>Only the next 2 dates of each series are shown</span><span class="lnk">Show more</span></div>
 
     <div class="cal-page-fill"></div>
 

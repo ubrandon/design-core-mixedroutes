@@ -43,41 +43,6 @@
       "name": "plan-view-attendees-modal"
     },
     {
-      "file": "create-flow-1-what-filled.html",
-      "x": 1589,
-      "y": 2108,
-      "width": 390,
-      "name": "new-1-what-filled"
-    },
-    {
-      "file": "create-flow-2-details.html",
-      "x": 2010,
-      "y": 2108,
-      "width": 390,
-      "name": "new-2-details-empty"
-    },
-    {
-      "file": "create-flow-2-details-filled.html",
-      "x": 2432,
-      "y": 2108,
-      "width": 390,
-      "name": "new-2-details-filled"
-    },
-    {
-      "file": "create-flow-3-invite.html",
-      "x": 2854,
-      "y": 2108,
-      "width": 390,
-      "name": "new-3-invite"
-    },
-    {
-      "file": "create-flow-4-done.html",
-      "x": 3282,
-      "y": 2103,
-      "width": 390,
-      "name": "new-4-created"
-    },
-    {
       "file": "create-plan-date-copy.html",
       "x": 446,
       "y": 4219,
@@ -107,45 +72,80 @@
     },
     {
       "file": "nf-when-repeating.html",
-      "x": 1869,
+      "x": 2370,
       "y": 4219,
       "width": 390,
       "name": "when-card-v2-repeating"
     },
     {
       "file": "create-flow-2-details-recurring.html",
-      "x": 2299,
+      "x": 2800,
       "y": 4219,
       "width": 390,
       "name": "new-2-details-recurring"
     },
     {
       "file": "plan-view-recurring.html",
-      "x": 2729,
+      "x": 3230,
       "y": 4219,
       "width": 390,
       "name": "plan-view-recurring"
     },
     {
       "file": "plans-list-recurring.html",
-      "x": 3159,
+      "x": 3660,
       "y": 4219,
       "width": 390,
       "name": "plans-list-recurring"
     },
     {
-      "file": "nf-when-compact.html",
-      "x": 4387,
-      "y": 4198,
-      "width": 390,
-      "name": "when-card-v2-compact"
-    },
-    {
       "file": "nf-when-calendar-sheet.html",
-      "x": 4817,
-      "y": 4198,
+      "x": 1862,
+      "y": 4219,
       "width": 390,
       "name": "when-card-v2-calendar-sheet"
+    },
+    {
+      "file": "plan-view-empty.html",
+      "x": 3277,
+      "y": 2103,
+      "width": 390,
+      "name": "plan-view-empty"
+    },
+    {
+      "file": "ts-1-name-open.html",
+      "x": 1589,
+      "y": 2103,
+      "width": 390,
+      "name": "2step-1-name-open"
+    },
+    {
+      "file": "ts-1-details-empty.html",
+      "x": 2011,
+      "y": 2103,
+      "width": 390,
+      "name": "2step-1-details-empty"
+    },
+    {
+      "file": "ts-1-details-filled.html",
+      "x": 2433,
+      "y": 2103,
+      "width": 390,
+      "name": "2step-1-details-filled"
+    },
+    {
+      "file": "ts-2-invite.html",
+      "x": 2855,
+      "y": 2103,
+      "width": 390,
+      "name": "2step-2-invite"
+    },
+    {
+      "file": "ts-1-details-suggest.html",
+      "x": 3987,
+      "y": 2117,
+      "width": 390,
+      "name": "2step-1-details-suggestions"
     }
   ],
   "texts": [
@@ -180,10 +180,10 @@
       "size": 72
     },
     {
-      "text": "Compact option: calendar in a sheet",
-      "x": 4387,
-      "y": 4139,
-      "size": 32
+      "text": "Variation B: when facet with smart suggestions, places from past plans, add-a-detail list",
+      "x": 3987,
+      "y": 2059,
+      "size": 20
     }
   ]
 }
