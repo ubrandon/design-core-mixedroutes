@@ -146,6 +146,48 @@
       "y": 2117,
       "width": 390,
       "name": "2step-1-details-suggestions"
+    },
+    {
+      "file": "ts-1-details-quick.html",
+      "x": 4409,
+      "y": 2117,
+      "width": 390,
+      "name": "2step-1-details-quick"
+    },
+    {
+      "file": "qk-1-empty.html",
+      "x": 4831,
+      "y": 2117,
+      "width": 390,
+      "name": "quick-1-empty"
+    },
+    {
+      "file": "qk-2-when-picker.html",
+      "x": 5253,
+      "y": 2117,
+      "width": 390,
+      "name": "quick-2-when-picker"
+    },
+    {
+      "file": "qk-3-place-modal.html",
+      "x": 5675,
+      "y": 2117,
+      "width": 390,
+      "name": "quick-3-place-modal"
+    },
+    {
+      "file": "qk-4-place-search.html",
+      "x": 6097,
+      "y": 2117,
+      "width": 390,
+      "name": "quick-4-place-search"
+    },
+    {
+      "file": "qk-5-filled.html",
+      "x": 6519,
+      "y": 2117,
+      "width": 390,
+      "name": "quick-5-filled"
     }
   ],
   "texts": [
@@ -178,12 +220,6 @@
       "x": 1009,
       "y": 4079,
       "size": 72
-    },
-    {
-      "text": "Variation B: when facet with smart suggestions, places from past plans, add-a-detail list",
-      "x": 3987,
-      "y": 2059,
-      "size": 20
     }
   ]
 }
