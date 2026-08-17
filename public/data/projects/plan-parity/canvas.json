@@ -2,87 +2,150 @@
   "screens": [
     {
       "file": "create-plan.html",
-      "x": 0,
-      "y": 0,
+      "x": 23,
+      "y": 2103,
       "width": 390,
       "name": "create-plan-current"
     },
     {
       "file": "create-plan-date.html",
-      "x": 431,
-      "y": 0,
+      "x": 446,
+      "y": 2103,
       "width": 390,
       "name": "create-plan-date-facet"
     },
     {
       "file": "create-plan-location.html",
-      "x": 876,
-      "y": 0,
+      "x": 866,
+      "y": 2103,
       "width": 390,
       "name": "create-plan-location-facet"
     },
     {
       "file": "plan-view.html",
-      "x": 1407,
-      "y": 0,
+      "x": 0,
+      "y": 36,
       "width": 390,
       "name": "plan-view-current"
     },
     {
       "file": "plan-view-rsvp.html",
-      "x": 1837,
-      "y": 0,
+      "x": 430,
+      "y": 36,
       "width": 390,
       "name": "plan-view-rsvp-modal"
     },
     {
       "file": "plan-view-attendees.html",
-      "x": 2273,
-      "y": 0,
+      "x": 866,
+      "y": 36,
       "width": 390,
       "name": "plan-view-attendees-modal"
     },
     {
-      "file": "create-flow-1-what.html",
-      "x": 0,
-      "y": 2079,
-      "width": 390,
-      "name": "new-1-what-empty"
-    },
-    {
       "file": "create-flow-1-what-filled.html",
-      "x": 440,
-      "y": 2079,
+      "x": 1589,
+      "y": 2108,
       "width": 390,
       "name": "new-1-what-filled"
     },
     {
       "file": "create-flow-2-details.html",
-      "x": 880,
-      "y": 2079,
+      "x": 2010,
+      "y": 2108,
       "width": 390,
       "name": "new-2-details-empty"
     },
     {
       "file": "create-flow-2-details-filled.html",
-      "x": 1320,
-      "y": 2079,
+      "x": 2432,
+      "y": 2108,
       "width": 390,
       "name": "new-2-details-filled"
     },
     {
       "file": "create-flow-3-invite.html",
-      "x": 1760,
-      "y": 2079,
+      "x": 2854,
+      "y": 2108,
       "width": 390,
       "name": "new-3-invite"
     },
     {
       "file": "create-flow-4-done.html",
-      "x": 2200,
-      "y": 2079,
+      "x": 3282,
+      "y": 2103,
       "width": 390,
       "name": "new-4-created"
+    },
+    {
+      "file": "create-plan-date-copy.html",
+      "x": 446,
+      "y": 4219,
+      "width": 390,
+      "name": "create-plan-date-facet Copy"
+    },
+    {
+      "file": "plan-view-copy.html",
+      "x": 17,
+      "y": 4219,
+      "width": 390,
+      "name": "plan-view-current Copy"
+    },
+    {
+      "file": "nf-when-open.html",
+      "x": 1009,
+      "y": 4219,
+      "width": 390,
+      "name": "when-card-v2-open"
+    },
+    {
+      "file": "nf-when-repeat-sheet.html",
+      "x": 1439,
+      "y": 4219,
+      "width": 390,
+      "name": "when-card-v2-repeat-sheet"
+    },
+    {
+      "file": "nf-when-repeating.html",
+      "x": 1869,
+      "y": 4219,
+      "width": 390,
+      "name": "when-card-v2-repeating"
+    },
+    {
+      "file": "create-flow-2-details-recurring.html",
+      "x": 2299,
+      "y": 4219,
+      "width": 390,
+      "name": "new-2-details-recurring"
+    },
+    {
+      "file": "plan-view-recurring.html",
+      "x": 2729,
+      "y": 4219,
+      "width": 390,
+      "name": "plan-view-recurring"
+    },
+    {
+      "file": "plans-list-recurring.html",
+      "x": 3159,
+      "y": 4219,
+      "width": 390,
+      "name": "plans-list-recurring"
+    },
+    {
+      "file": "nf-when-compact.html",
+      "x": 4387,
+      "y": 4198,
+      "width": 390,
+      "name": "when-card-v2-compact"
+    },
+    {
+      "file": "nf-when-calendar-sheet.html",
+      "x": 4817,
+      "y": 4198,
+      "width": 390,
+      "name": "when-card-v2-calendar-sheet"
     }
   ],
   "texts": [
@@ -93,10 +156,34 @@
       "size": 72
     },
     {
-      "text": "Plan creation",
+      "text": "Current plan creation",
       "x": 0,
-      "y": 1916,
+      "y": 1953,
       "size": 72
+    },
+    {
+      "text": "New plan creation",
+      "x": 1589,
+      "y": 1953,
+      "size": 72
+    },
+    {
+      "text": "Current date",
+      "x": 0,
+      "y": 4079,
+      "size": 72
+    },
+    {
+      "text": "Recurring plans",
+      "x": 1009,
+      "y": 4079,
+      "size": 72
+    },
+    {
+      "text": "Compact option: calendar in a sheet",
+      "x": 4387,
+      "y": 4139,
+      "size": 32
     }
   ]
 }

@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="../../../../styles/shared.css" />
+<link rel="stylesheet" href="../../../../styles/ds.css" />
+<link rel="stylesheet" href="../../../../data/design-system/company.css" />
+
+<style>
+  .pl-scope, .pl-scope * { box-sizing: border-box; scrollbar-width: none; }
+  .pl-scope *::-webkit-scrollbar { display: none; }
+  .pl-scope { font-family: "Geist", sans-serif; color: #101724; }
+  .pl-scope .cal-wrap { min-height: 844px; position: relative; display: flex; flex-direction: column; background: #ffffff; }
+  .pl-scope .cal-top { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+  .pl-scope .cal-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+  .pl-scope .cal-top-actions { display: flex; align-items: center; gap: 18px; }
+  .pl-scope .cal-top-action { position: relative; width: 24px; height: 24px; display: inline-grid; place-items: center; font-size: 24px; line-height: 1; }
+  .pl-scope .cal-top-badge { position: absolute; top: -9px; right: -10px; min-width: 22px; height: 22px; padding: 0 4px; display: grid; place-items: center; border: 2px solid #fff; border-radius: 999px; background: #0ca678; color: #fff; font-size: 12px; font-weight: 700; }
+  .pl-scope .cal-filters { display: flex; gap: 8px; overflow-x: auto; padding: 4px 16px 12px; }
+  .pl-scope .cal-filters .mr-chip { flex: 0 0 auto; white-space: nowrap; }
+  .pl-scope .cal-filters .mr-chip i { font-size: 15px; }
+  .pl-scope .cal-section { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; padding: 12px 16px 12px; }
+  .pl-scope .cal-list { padding: 0 16px; }
+  .pl-scope .cal-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
+  .pl-scope .plan-row { background: #fff; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 12px 30px rgba(0,0,0,0.1); padding: 8px; display: flex; align-items: stretch; gap: 12px; }
+  .pl-scope .plan-row .photo { width: 80px; min-height: 88px; border-radius: 14px; background-size: cover; background-position: center; flex-shrink: 0; }
+  .pl-scope .plan-row .details { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 4px 8px 4px 0; }
+  .pl-scope .plan-row .date { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #5c6b7d; letter-spacing: 0.4px; line-height: 1; display: flex; align-items: center; gap: 8px; }
+  .pl-scope .plan-row .date .rep { display: inline-flex; align-items: center; gap: 3px; color: #0891b2; text-transform: none; letter-spacing: 0; font-size: 12px; }
+  .pl-scope .plan-row .date .rep i { font-size: 13px; }
+  .pl-scope .plan-row .title-row { display: flex; align-items: baseline; gap: 7px; min-width: 0; }
+  .pl-scope .plan-row .title { font-size: 18px; font-weight: 700; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pl-scope .plan-row .emoji { font-size: 18px; line-height: 1; flex-shrink: 0; }
+  .pl-scope .plan-row .meta { margin-top: auto; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .pl-scope .plan-row .loc { display: flex; align-items: center; gap: 4px; font-size: 14px; color: #5c6b7d; min-width: 0; flex: 1; }
+  .pl-scope .plan-row .loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pl-scope .plan-row .loc i { font-size: 16px; flex-shrink: 0; }
+  .pl-scope .stack { display: flex; align-items: center; flex-shrink: 0; }
+  .pl-scope .stack img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-left: -6px; border: 2px solid #fff; }
+  .pl-scope .stack img:first-child { margin-left: 0; }
+  .pl-scope .plan-row .group { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .pl-scope .plan-row .group img { width: 24px; height: 24px; border-radius: 6px; object-fit: cover; }
+  .pl-scope .plan-row .group span { font-size: 14px; font-weight: 600; color: #5c6b7d; white-space: nowrap; }
+  .pl-scope .series-note { margin: 4px 16px 14px; display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 14px; background: #f1f4f7; color: #5c6b7d; font-size: 13px; }
+  .pl-scope .series-note i { font-size: 18px; color: #0891b2; }
+  .pl-scope .series-note .lnk { margin-left: auto; color: #0891b2; font-weight: 600; white-space: nowrap; }
+  .pl-scope .cal-page-fill { flex: 1 1 auto; min-height: 28px; }
+  .pl-scope .cal-tabwrap { position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, #fff 34%); }
+  .pl-scope .app-tab-bar { height: 67px; display: flex; align-items: flex-start; padding-top: 9px; background: #fff; box-shadow: 0 -8px 24px rgba(0,0,0,0.12); }
+  .pl-scope .app-tab { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #3b4551; }
+  .pl-scope .app-tab i { font-size: 24px; line-height: 1; }
+  .pl-scope .app-tab--discover i { font-size: 26px; }
+  .pl-scope .app-tab.is-selected { color: #1a2332; }
+  .pl-scope .app-tab-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; }
+</style>
+
+<div class="pl-scope mr-scope mr-scope--light">
+  <div class="cal-wrap">
+    <div class="cal-top">
+      <div class="cal-title">Plans</div>
+      <div class="cal-top-actions" aria-label="Plans actions">
+        <span class="cal-top-action" aria-label="Find people"><i class="ph ph-user-plus" aria-hidden="true"></i></span>
+        <span class="cal-top-action" aria-label="Notifications, 2 unread"><i class="ph ph-bell" aria-hidden="true"></i><span class="cal-top-badge">2</span></span>
+        <span class="cal-top-action" aria-label="Settings"><i class="ph ph-gear-six" aria-hidden="true"></i></span>
+      </div>
+    </div>
+
+    <div class="cal-filters">
+      <button type="button" class="mr-chip mr-chip-active"><i class="ph-fill ph-calendar-blank"></i> Upcoming</button>
+      <button type="button" class="mr-chip"><i class="ph ph-repeat"></i> Repeating</button>
+      <button type="button" class="mr-chip"><i class="ph ph-bookmark-simple"></i> Ideas</button>
+      <button type="button" class="mr-chip"><i class="ph ph-envelope-simple"></i> Invites (0)</button>
+      <button type="button" class="mr-chip"><i class="ph ph-clock"></i> Past</button>
+    </div>
+
+    <div class="cal-section">This week</div>
+    <div class="cal-list">
+     <div class="cal-rows">
+      <div class="plan-row">
+        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=264&h=264&q=80');"></div>
+        <div class="details">
+          <div class="date">Tue · 7pm <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
+          <div class="title-row"><div class="title">Tuesday pizza night</div><span class="emoji">🍕</span></div>
+          <div class="meta">
+            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Tony's, Mission</span></div>
+            <div class="stack"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-row">
+        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=264&h=264&q=80');"></div>
+        <div class="details">
+          <div class="date">Sat · 6am <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
+          <div class="title-row"><div class="title">Sunrise hike at Mt. Tam</div><span class="emoji">🥾</span></div>
+          <div class="meta">
+            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Pantoll Trailhead</span></div>
+            <div class="group"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><span>Hiking Club</span></div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="cal-section">Next week</div>
+    <div class="cal-list">
+     <div class="cal-rows">
+      <div class="plan-row">
+        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=264&h=264&q=80');"></div>
+        <div class="details">
+          <div class="date">Tue Aug 25 · 7pm <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
+          <div class="title-row"><div class="title">Tuesday pizza night</div><span class="emoji">🍕</span></div>
+          <div class="meta">
+            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Tony's, Mission</span></div>
+            <div class="stack"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=96&h=96&q=80" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-row">
+        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=264&h=264&q=80');"></div>
+        <div class="details">
+          <div class="date">Thu Aug 27 · 7pm</div>
+          <div class="title-row"><div class="title">Live music night</div><span class="emoji">🎶</span></div>
+          <div class="meta">
+            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Savannah Theatre</span></div>
+            <div class="stack"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=96&h=96&q=80" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-row">
+        <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=264&h=264&q=80');"></div>
+        <div class="details">
+          <div class="date">Sat Aug 29 · 6am <span class="rep"><i class="ph ph-repeat"></i>Weekly</span></div>
+          <div class="title-row"><div class="title">Sunrise hike at Mt. Tam</div><span class="emoji">🥾</span></div>
+          <div class="meta">
+            <div class="loc"><i class="ph-fill ph-map-pin"></i><span>Pantoll Trailhead</span></div>
+            <div class="group"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=96&h=96&q=80" alt="" /><span>Hiking Club</span></div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div class="series-note"><i class="ph ph-repeat"></i><span>Only the next 2 dates of each series are shown</span><span class="lnk">Show more</span></div>
+
+    <div class="cal-page-fill"></div>
+
+    <div class="cal-tabwrap">
+      <nav class="app-tab-bar" aria-label="Primary navigation">
+        <button type="button" class="app-tab" aria-label="Home"><i class="ph ph-house" aria-hidden="true"></i></button>
+        <button type="button" class="app-tab app-tab--discover" aria-label="Discover"><i class="ph ph-compass" aria-hidden="true"></i></button>
+        <button type="button" class="app-tab" aria-label="You"><img class="app-tab-avatar" src="https://i.pravatar.cc/72?img=11" alt="" width="36" height="36" loading="lazy" /></button>
+        <button type="button" class="app-tab is-selected" aria-label="Plans" aria-current="page"><i class="ph-fill ph-calendar-blank" aria-hidden="true"></i></button>
+        <button type="button" class="app-tab" aria-label="Chat"><i class="ph ph-chat-teardrop-text" aria-hidden="true"></i></button>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -335,3 +335,113 @@
 .pp .next-row .nx { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px; border-radius: 16px; background: #f1f4f7; font-size: 12px; font-weight: 600; color: #1a2332; text-align: center; }
 .pp .next-row .nx i { font-size: 22px; color: #234e8a; }
 .pp .btn-ghost { display: block; text-align: center; font-size: 16px; font-weight: 600; color: #5c6b7d; padding: 14px 0 4px; }
+
+/* When card v2: simpler date/time card used in the new create flow */
+.pp .wcard { padding: 14px 14px 12px; border-radius: 20px; }
+.pp .wcard .head { align-items: center; }
+.pp .wcard .ibox { border-radius: 12px; background: #e4eefe; color: #234e8a; margin-right: 14px; font-size: 22px; }
+.pp .wcard .title { font-size: 18px; font-weight: 700; }
+.pp .wcard .sub { font-size: 14px; color: #5c6b7d; margin-top: 1px; }
+.pp .wcard .action { margin-top: 0; font-size: 22px; color: #858b94; }
+.pp .wcard .quick-when { margin: 14px -14px 0; padding: 2px 14px 0; }
+.pp .wcard .cal { margin-top: 12px; padding: 10px; }
+.pp .wcard .cal .d { height: 36px; }
+.pp .wcard .cal .d span { width: 32px; height: 32px; font-size: 14px; }
+.pp .wcard .cal .d.rep span { box-shadow: inset 0 0 0 1.5px #0891b2; color: #0891b2; font-weight: 700; }
+.pp .wcard .cal .d.rep.muted span { box-shadow: inset 0 0 0 1.5px #b9cef2; color: #b0b7c1; font-weight: 500; }
+.pp .wh-times { display: flex; gap: 8px; margin-top: 12px; }
+.pp .wh-time { flex: 1; min-height: 56px; border-radius: 14px; background: #f1f4f7; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pp .wh-time .lbl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #5c6b7d; display: block; }
+.pp .wh-time .val { font-size: 17px; font-weight: 700; color: #1a2332; display: block; margin-top: 2px; }
+.pp .wh-time .val.ph-text { color: #858b94; font-weight: 500; }
+.pp .wh-time > i { font-size: 18px; color: #858b94; }
+.pp .wcard .pill-row { margin: 10px -14px 0; padding: 2px 14px; }
+.pp .wcard .pill { height: 32px; padding: 0 12px; font-size: 13px; }
+.pp .wh-opts { margin-top: 12px; border-top: 1px solid #eef0f3; padding-top: 4px; }
+.pp .wh-opt { display: flex; align-items: center; gap: 12px; min-height: 48px; font-size: 16px; color: #1a2332; }
+.pp .wh-opt > i { font-size: 22px; color: #5c6b7d; width: 24px; text-align: center; }
+.pp .wh-opt .lbl { flex: 1; }
+.pp .wh-opt .val { display: inline-flex; align-items: center; gap: 4px; font-size: 15px; color: #5c6b7d; }
+.pp .wh-opt .val.set { color: #0891b2; font-weight: 600; }
+.pp .wh-opt .val i { font-size: 18px; }
+.pp .wh-opt .toggle { width: 44px; height: 26px; }
+.pp .wh-opt .toggle::after { width: 22px; height: 22px; }
+.pp .wh-opt .toggle.on::after { left: 20px; }
+.pp .wh-note { display: flex; gap: 8px; align-items: flex-start; margin-top: 8px; padding: 10px 12px; border-radius: 12px; background: #e4eefe; color: #234e8a; font-size: 13px; line-height: 1.35; }
+.pp .wh-note i { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+/* Repeat picker sheet */
+.pp .sheet .sh-sec { padding: 12px 16px 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #5c6b7d; }
+.pp .radio-row .lbl b { display: block; font-size: 16px; font-weight: 600; }
+.pp .radio-row .lbl span { font-size: 13px; color: #5c6b7d; }
+.pp .radio-row > i.lead { color: #5c6b7d; }
+.pp .sheet .sh-foot { padding: 12px 16px 0; }
+.pp .sheet .end-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; font-size: 16px; }
+.pp .sheet .end-row .val { display: inline-flex; align-items: center; gap: 4px; color: #5c6b7d; }
+.pp .sheet .end-row .val i { font-size: 18px; }
+.pp .seg { display: flex; gap: 6px; padding: 0 16px 6px; }
+.pp .seg span { flex: 1; height: 36px; border-radius: 999px; background: #f1f4f7; display: grid; place-items: center; font-size: 14px; font-weight: 600; color: #5c6b7d; }
+.pp .seg span.on { background: #e4eefe; color: #234e8a; }
+
+/* Plan page: recurring bits */
+.pp .rep-row { display: flex; align-items: center; gap: 7px; font-size: 14px; color: #5c6b7d; margin-top: -2px; }
+.pp .rep-row i { font-size: 18px; color: #0891b2; }
+.pp .rep-row b { color: #1a2332; font-weight: 600; }
+.pp .rep-row .lnk { margin-left: auto; color: #0891b2; font-weight: 600; }
+.pp .next-dates { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 4px -16px 0; padding: 4px 16px; }
+.pp .next-dates::-webkit-scrollbar { display: none; }
+.pp .nd { flex-shrink: 0; width: 64px; border-radius: 14px; background: #f1f4f7; padding: 8px 0; text-align: center; }
+.pp .nd .m { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #5c6b7d; }
+.pp .nd .n { font-size: 20px; font-weight: 800; color: #1a2332; line-height: 1.1; }
+.pp .nd .w { font-size: 11px; color: #5c6b7d; }
+.pp .nd.on { background: #101724; }
+.pp .nd.on .m, .pp .nd.on .w { color: rgba(255,255,255,0.7); }
+.pp .nd.on .n { color: #fff; }
+.pp .nd .going { display: inline-block; margin-top: 3px; width: 6px; height: 6px; border-radius: 50%; background: #0ca678; }
+.pp .date-badge i { font-size: 13px; vertical-align: -2px; margin-right: 4px; }
+.pp .rsvp-scope { display: flex; gap: 6px; padding: 4px 16px 8px; }
+.pp .rsvp-scope span { flex: 1; height: 40px; border-radius: 999px; background: #f1f4f7; display: grid; place-items: center; font-size: 14px; font-weight: 600; color: #5c6b7d; }
+.pp .rsvp-scope span.on { background: #e4eefe; color: #234e8a; }
+
+/* Series page: selected date panel */
+.pp .occ-panel { margin-top: 8px; border-radius: 16px; background: #f1f4f7; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.pp .occ-panel .oh { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pp .occ-panel .oh b { font-size: 16px; font-weight: 700; }
+.pp .occ-panel .oh span { font-size: 14px; color: #5c6b7d; }
+.pp .occ-panel .oh .you { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: #0ca678; }
+.pp .occ-panel .oh .you i { font-size: 16px; }
+.pp .occ-panel .or { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #5c6b7d; }
+.pp .occ-panel .or .stack img { width: 28px; height: 28px; margin-left: -8px; }
+.pp .occ-panel .or .stack img:first-child { margin-left: 0; }
+.pp .occ-panel .or .chg { margin-left: auto; height: 32px; padding: 0 12px; border-radius: 999px; background: #fff; font-size: 13px; font-weight: 700; color: #1a2332; display: inline-flex; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.pp .series-line { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: #e4eefe; color: #234e8a; font-size: 13px; line-height: 1.3; }
+.pp .series-line i { font-size: 18px; flex-shrink: 0; }
+
+/* When card: Starts / Ends rows with date + time fields */
+.pp .wh-rows { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.pp .wh-row { display: flex; align-items: center; gap: 8px; }
+.pp .wh-lbl { width: 52px; flex-shrink: 0; font-size: 13px; font-weight: 700; color: #5c6b7d; }
+.pp .wh-field { height: 44px; border-radius: 12px; background: #f1f4f7; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #1a2332; white-space: nowrap; }
+.pp .wh-field.date { flex: 1; }
+.pp .wh-field.time { flex-shrink: 0; min-width: 92px; justify-content: center; }
+.pp .wh-field i { font-size: 18px; color: #5c6b7d; }
+.pp .wcard .wh-quick { margin-top: 12px; }
+.pp .wcard .wh-quick .pill { height: 30px; padding: 0 11px; font-size: 13px; }
+
+/* When card v3: labelled quick-select groups around the Starts/Ends fields */
+.pp .wh-group { margin-top: 14px; }
+.pp .wh-group + .wh-rows { margin-top: 10px; }
+.pp .wh-rows + .wh-group { margin-top: 12px; }
+.pp .wh-glbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #858b94; margin-bottom: 6px; }
+.pp .wcard .wh-group .wh-quick { margin-top: 0; }
+
+/* Series link block on a duplicated plan */
+.pp .series-card { margin-top: 8px; border-radius: 16px; background: #f1f4f7; padding: 12px 14px; }
+.pp .series-card .sh { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.pp .series-card .sh i { font-size: 18px; color: #0891b2; }
+.pp .series-card .sh b { font-weight: 700; }
+.pp .series-card .sh span { color: #5c6b7d; }
+.pp .series-card .sh .lnk { margin-left: auto; color: #0891b2; font-weight: 600; white-space: nowrap; }
+.pp .series-card .next-dates { margin: 10px -14px 0; padding: 2px 14px; }
+.pp .nd.past { opacity: 0.55; }
+.pp .nd .chk { display: block; margin: 3px auto 0; font-size: 12px; color: #0ca678; }
