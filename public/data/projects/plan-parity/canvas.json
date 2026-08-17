@@ -41,6 +41,48 @@
       "y": 0,
       "width": 390,
       "name": "plan-view-attendees-modal"
+    },
+    {
+      "file": "create-flow-1-what.html",
+      "x": 0,
+      "y": 2079,
+      "width": 390,
+      "name": "new-1-what-empty"
+    },
+    {
+      "file": "create-flow-1-what-filled.html",
+      "x": 440,
+      "y": 2079,
+      "width": 390,
+      "name": "new-1-what-filled"
+    },
+    {
+      "file": "create-flow-2-details.html",
+      "x": 880,
+      "y": 2079,
+      "width": 390,
+      "name": "new-2-details-empty"
+    },
+    {
+      "file": "create-flow-2-details-filled.html",
+      "x": 1320,
+      "y": 2079,
+      "width": 390,
+      "name": "new-2-details-filled"
+    },
+    {
+      "file": "create-flow-3-invite.html",
+      "x": 1760,
+      "y": 2079,
+      "width": 390,
+      "name": "new-3-invite"
+    },
+    {
+      "file": "create-flow-4-done.html",
+      "x": 2200,
+      "y": 2079,
+      "width": 390,
+      "name": "new-4-created"
     }
   ],
   "texts": [
@@ -51,9 +93,9 @@
       "size": 72
     },
     {
-      "text": "Current designs",
-      "x": -107,
-      "y": 1851,
+      "text": "Plan creation",
+      "x": 0,
+      "y": 1916,
       "size": 72
     }
   ]

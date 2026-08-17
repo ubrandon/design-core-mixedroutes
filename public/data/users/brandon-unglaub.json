@@ -4,7 +4,11 @@
   "recents": [
     {
       "id": "plan-parity",
-      "ts": 1786943843061
+      "ts": 1786944843507
+    },
+    {
+      "id": "plans",
+      "ts": 1786944824873
     }
   ],
   "theme": "light",
@@ -13,5 +17,5 @@
     "status": ""
   },
   "navCollapsed": true,
-  "updatedAt": 1786943843061
+  "updatedAt": 1786944843507
 }
