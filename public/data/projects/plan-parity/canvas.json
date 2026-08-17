@@ -93,7 +93,7 @@
     },
     {
       "file": "plans-list-recurring.html",
-      "x": 3660,
+      "x": 3850,
       "y": 4219,
       "width": 390,
       "name": "plans-list-recurring"
@@ -167,6 +167,13 @@
       "y": 2103,
       "width": 390,
       "name": "2step-2-invite-suggestions"
+    },
+    {
+      "file": "plans-list-tiles-color.html",
+      "x": 4269,
+      "y": 4219,
+      "width": 390,
+      "name": "plans-list-tiles-color"
     }
   ],
   "texts": [
@@ -199,6 +206,12 @@
       "x": 1009,
       "y": 4079,
       "size": 72
+    },
+    {
+      "text": "List variations / recurring",
+      "x": 3850,
+      "y": 4093,
+      "size": 48
     }
   ]
 }

@@ -541,3 +541,26 @@
 .pp .add-pills { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; }
 .pp .add-pills .chip { gap: 6px; padding: 0 12px 0 10px; }
 .pp .add-pills .chip i { font-size: 17px; color: #5c6b7d; }
+
+/* Date & time picker card (shared by quick and recurring creation screens) */
+.pp .qs-picker { margin-bottom: 8px; }
+.pp .days { display: flex; gap: 6px; margin-top: 14px; }
+.pp .day { flex: 1; min-width: 0; height: 56px; border-radius: 12px; background: #f1f4f7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.pp .day span { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5c6b7d; }
+.pp .day b { font-size: 16px; font-weight: 700; }
+.pp .day.sel { background: #234e8a; color: #fff; }
+.pp .day.sel span { color: rgba(255,255,255,0.8); }
+.pp .day.rep { box-shadow: inset 0 0 0 1.5px #0891b2; background: #fff; }
+.pp .day.rep b, .pp .day.rep span { color: #0891b2; }
+.pp .day.day-more { background: #fff; box-shadow: inset 0 0 0 1.5px rgba(32,36,42,0.14); }
+.pp .day.day-more i { font-size: 16px; color: #5c6b7d; }
+.pp .day.day-more b { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5c6b7d; }
+.pp .day.day-more.sel { background: #234e8a; box-shadow: none; }
+.pp .day.day-more.sel i, .pp .day.day-more.sel b { color: #fff; }
+.pp .tchips { display: flex; gap: 6px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; }
+.pp .tchips::-webkit-scrollbar { display: none; }
+.pp .tchips .chip { height: 30px; padding: 0 11px; font-size: 13px; }
+.pp .pk-done { display: flex; align-items: center; justify-content: center; }
+.pp .qs-picker .wh-opts { margin-top: 10px; }
+.pp .qs-picker .wh-opt { min-height: 44px; }
+.pp .drow.filled .dtxt span .rep-ic { font-size: 14px; vertical-align: -2px; margin-right: 4px; color: #0891b2; }

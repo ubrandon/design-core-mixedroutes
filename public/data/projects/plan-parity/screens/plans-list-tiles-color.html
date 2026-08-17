@@ -3,69 +3,72 @@
 <link rel="stylesheet" href="../../../../data/design-system/company.css" />
 
 <style>
-  .pl-scope, .pl-scope * { box-sizing: border-box; scrollbar-width: none; }
-  .pl-scope *::-webkit-scrollbar { display: none; }
-  .pl-scope { font-family: "Geist", sans-serif; color: #101724; }
-  .pl-scope .cal-wrap { min-height: 844px; position: relative; display: flex; flex-direction: column; background: #ffffff; }
-  .pl-scope .cal-top { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
-  .pl-scope .cal-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
-  .pl-scope .cal-top-actions { display: flex; align-items: center; gap: 18px; }
-  .pl-scope .cal-top-action { position: relative; width: 24px; height: 24px; display: inline-grid; place-items: center; font-size: 24px; line-height: 1; }
-  .pl-scope .cal-top-badge { position: absolute; top: -9px; right: -10px; min-width: 22px; height: 22px; padding: 0 4px; display: grid; place-items: center; border: 2px solid #fff; border-radius: 999px; background: #0ca678; color: #fff; font-size: 12px; font-weight: 700; }
-  .pl-scope .cal-filters { display: flex; gap: 8px; overflow-x: auto; padding: 4px 16px 12px; }
-  .pl-scope .cal-filters .mr-chip { flex: 0 0 auto; white-space: nowrap; }
-  .pl-scope .cal-filters .mr-chip i { font-size: 15px; }
-  .pl-scope .cal-section { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; padding: 12px 16px 12px; }
-  .pl-scope .cal-list { padding: 0 16px; }
-  .pl-scope .cal-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
-  .pl-scope .plan-row { min-height: 118px; position: relative; overflow: hidden; display: grid; grid-template-columns: 116px 1fr; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 4px 28px rgba(0,0,0,.32); }
-  .pl-scope .plan-row .ambient { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; filter: blur(70px) saturate(4) brightness(1.35); transform: scale(1.35); }
-  .pl-scope .plan-row .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,10,18,0), rgba(8,10,18,.18)); }
-  .pl-scope .plan-row .plan-media { min-height: 118px; position: relative; background: center / cover no-repeat; -webkit-mask-image: linear-gradient(to right,#000 48%,transparent 100%); mask-image: linear-gradient(to right,#000 48%,transparent 100%); }
-  .pl-scope .plan-row-copy { min-width: 0; padding: 15px 14px 14px 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
-  .pl-scope .plan-row-time { color: rgba(255,255,255,.85); font-size: 12px; font-weight: 700; letter-spacing: 0; text-shadow: 0 0 16px rgba(0,0,0,.32); display: flex; align-items: center; gap: 6px; }
-  .pl-scope .plan-row-time .rep { display: inline-flex; align-items: center; color: rgba(255,255,255,.85); }
-  .pl-scope .plan-row-time .rep i { font-size: 13px; }
-  .pl-scope .plan-row.no-photo .plan-row-time .rep { color: #5c6b7d; }
-  .pl-scope .plan-row-title { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #fff; font-size: 16px; font-weight: 800; line-height: 1.25; text-shadow: 0 0 18px rgba(0,0,0,.38); }
-  .pl-scope .plan-row-meta { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 2px; color: rgba(255,255,255,.9); font-size: 11px; text-shadow: 0 0 16px rgba(0,0,0,.32); }
-  .pl-scope .plan-row-meta .loc { min-width: 0; display: flex; align-items: center; gap: 4px; }
-  .pl-scope .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-  .pl-scope .plan-row-meta .who { display: flex; align-items: center; gap: 6px; }
-  .pl-scope .plan-row.no-photo { --int: #8b5cf6; background: #fff; color: #101724; box-shadow: inset 0 0 0 1px rgba(16,23,36,.1), 0 4px 20px rgba(0,0,0,.08); }
-  .pl-scope .plan-row.no-photo .plan-media { display: grid; place-items: center; background: none; -webkit-mask-image: none; mask-image: none; }
-  .pl-scope .plan-row.no-photo .emoji-tile { width: 76px; height: 76px; display: grid; place-items: center; border-radius: 18px; background: color-mix(in srgb, var(--int) 14%, #fff); font-size: 40px; line-height: 1; }
-  .pl-scope .plan-row.no-photo .plan-row-time { color: #5c6b7d; text-shadow: none; }
-  .pl-scope .plan-row.no-photo .plan-row-title { color: #101724; text-shadow: none; }
-  .pl-scope .plan-row.no-photo .plan-row-meta { color: #3b4551; text-shadow: none; }
-  .pl-scope .plan-row.no-photo .avatars img { border-color: #fff; box-shadow: 0 0 0 1px rgba(16,23,36,.08); }
-  .pl-scope .rsvp { position: absolute; top: 12px; right: 12px; z-index: 2; display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px 0 6px; border-radius: 999px; background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; box-shadow: inset 0 0 0 1px rgba(255,255,255,.28); }
-  .pl-scope .rsvp i { font-size: 14px; }
-  .pl-scope .rsvp.going i { color: #4ade80; }
-  .pl-scope .rsvp.maybe i { color: rgba(255,255,255,.7); }
-  .pl-scope .rsvp.invited i { color: #38bdf8; }
-  .pl-scope .plan-row.no-photo .rsvp { background: #f1f4f7; color: #101724; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
-  .pl-scope .plan-row.no-photo .rsvp.going i { color: #16a34a; }
-  .pl-scope .plan-row.no-photo .rsvp.maybe i { color: #8a97a8; }
-  .pl-scope .plan-row.no-photo .rsvp.invited i { color: #2563eb; }
-  .pl-scope .plan-row-copy { padding-right: 76px; }
-  .pl-scope .avatars { display: flex; align-items: center; }
-  .pl-scope .avatars img { width: 18px; height: 18px; object-fit: cover; border-radius: 50%; border: 1.5px solid #fff; margin-left: -8px; }
-  .pl-scope .avatars img:first-child { margin-left: 0; }
-  .pl-scope .series-note { margin: 4px 16px 14px; display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 14px; background: #f1f4f7; color: #5c6b7d; font-size: 13px; }
-  .pl-scope .series-note i { font-size: 18px; color: #0891b2; }
-  .pl-scope .series-note .lnk { margin-left: auto; color: #0891b2; font-weight: 600; white-space: nowrap; }
-  .pl-scope .cal-page-fill { flex: 1 1 auto; min-height: 28px; }
-  .pl-scope .cal-tabwrap { position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, #fff 34%); }
-  .pl-scope .app-tab-bar { height: 67px; display: flex; align-items: flex-start; padding-top: 9px; background: #fff; box-shadow: 0 -8px 24px rgba(0,0,0,0.12); }
-  .pl-scope .app-tab { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #3b4551; }
-  .pl-scope .app-tab i { font-size: 24px; line-height: 1; }
-  .pl-scope .app-tab--discover i { font-size: 26px; }
-  .pl-scope .app-tab.is-selected { color: #1a2332; }
-  .pl-scope .app-tab-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; }
+  .pl3-scope, .pl3-scope * { box-sizing: border-box; scrollbar-width: none; }
+  .pl3-scope *::-webkit-scrollbar { display: none; }
+  .pl3-scope { font-family: "Geist", sans-serif; color: #101724; }
+  .pl3-scope .cal-wrap { min-height: 844px; position: relative; display: flex; flex-direction: column; background: #ffffff; }
+  .pl3-scope .cal-top { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+  .pl3-scope .cal-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+  .pl3-scope .cal-top-actions { display: flex; align-items: center; gap: 18px; }
+  .pl3-scope .cal-top-action { position: relative; width: 24px; height: 24px; display: inline-grid; place-items: center; font-size: 24px; line-height: 1; }
+  .pl3-scope .cal-top-badge { position: absolute; top: -9px; right: -10px; min-width: 22px; height: 22px; padding: 0 4px; display: grid; place-items: center; border: 2px solid #fff; border-radius: 999px; background: #0ca678; color: #fff; font-size: 12px; font-weight: 700; }
+  .pl3-scope .cal-filters { display: flex; gap: 8px; overflow-x: auto; padding: 4px 16px 12px; }
+  .pl3-scope .cal-filters .mr-chip { flex: 0 0 auto; white-space: nowrap; }
+  .pl3-scope .cal-filters .mr-chip i { font-size: 15px; }
+  .pl3-scope .cal-section { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; padding: 12px 16px 12px; }
+  .pl3-scope .cal-list { padding: 0 16px; }
+  .pl3-scope .cal-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
+  .pl3-scope .plan-row { position: relative; overflow: hidden; display: grid; grid-template-columns: 76px 1fr; gap: 14px; padding: 14px; border-radius: 20px; color: #fff; background: #1e2832; isolation: isolate; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 4px 28px rgba(0,0,0,.32); }
+  .pl3-scope .plan-row .ambient { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; filter: blur(70px) saturate(4) brightness(1.35); transform: scale(1.35); }
+  .pl3-scope .plan-row .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,10,18,0), rgba(8,10,18,.18)); }
+  .pl3-scope .plan-row .plan-media { width: 76px; height: 76px; border-radius: 18px; background: center / cover no-repeat; }
+  .pl3-scope .plan-row-copy { min-width: 0; padding: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .pl3-scope .plan-row-time { color: rgba(255,255,255,.85); font-size: 12px; font-weight: 700; letter-spacing: 0; text-shadow: 0 0 16px rgba(0,0,0,.32); display: flex; align-items: center; gap: 6px; }
+  .pl3-scope .plan-row-time .rep { display: inline-flex; align-items: center; color: rgba(255,255,255,.85); }
+  .pl3-scope .plan-row-time .rep i { font-size: 13px; }
+  
+  .pl3-scope .plan-row-title { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #fff; font-size: 16px; font-weight: 800; line-height: 1.25; text-shadow: 0 0 18px rgba(0,0,0,.38); }
+  .pl3-scope .plan-row-meta { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 2px; color: rgba(255,255,255,.9); font-size: 11px; text-shadow: 0 0 16px rgba(0,0,0,.32); }
+  .pl3-scope .plan-row-meta .loc { min-width: 0; display: flex; align-items: center; gap: 4px; }
+  .pl3-scope .plan-row-meta .loc span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .pl3-scope .plan-row-meta .who { display: flex; align-items: center; gap: 6px; }
+  .pl3-scope .plan-row.no-photo { --int: #8b5cf6; background: #fff; color: #101724; box-shadow: inset 0 0 0 1px rgba(16,23,36,.1), 0 4px 20px rgba(0,0,0,.08); }
+  .pl3-scope .plan-row.no-photo .plan-media { display: grid; place-items: center; background: color-mix(in srgb, var(--int) 14%, #fff); box-shadow: none; }
+  .pl3-scope .plan-row.no-photo .emoji-tile { font-size: 40px; line-height: 1; }
+  .pl3-scope .plan-row.no-photo .plan-row-time { color: #5c6b7d; text-shadow: none; }
+  .pl3-scope .plan-row.no-photo .plan-row-time .rep { color: #5c6b7d; }
+  .pl3-scope .plan-row.no-photo .plan-row-title { color: #101724; text-shadow: none; }
+  .pl3-scope .plan-row.no-photo .plan-row-meta { color: #3b4551; text-shadow: none; }
+  .pl3-scope .plan-row.no-photo .avatars img { box-shadow: 0 0 0 1px rgba(16,23,36,.08); }
+  .pl3-scope .plan-row.no-photo .rsvp { background: #f1f4f7; color: #101724; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .pl3-scope .plan-row.no-photo .rsvp.going i { color: #16a34a; }
+  .pl3-scope .plan-row.no-photo .rsvp.maybe i { color: #8a97a8; }
+  .pl3-scope .plan-row.no-photo .rsvp.invited i { color: #2563eb; }
+  
+  .pl3-scope .rsvp { position: absolute; top: 14px; right: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px 0 6px; border-radius: 999px; background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: #fff; font-size: 11px; font-weight: 700; box-shadow: inset 0 0 0 1px rgba(255,255,255,.28); }
+  .pl3-scope .rsvp i { font-size: 14px; }
+  .pl3-scope .rsvp.going i { color: #4ade80; }
+  .pl3-scope .rsvp.maybe i { color: rgba(255,255,255,.7); }
+  .pl3-scope .rsvp.invited i { color: #38bdf8; }
+  
+  .pl3-scope .plan-row-copy { padding-right: 76px; }
+  .pl3-scope .avatars { display: flex; align-items: center; }
+  .pl3-scope .avatars img { width: 18px; height: 18px; object-fit: cover; border-radius: 50%; border: 1.5px solid #fff; margin-left: -8px; }
+  .pl3-scope .avatars img:first-child { margin-left: 0; }
+  .pl3-scope .series-note { margin: 4px 16px 14px; display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 14px; background: #f1f4f7; color: #5c6b7d; font-size: 13px; }
+  .pl3-scope .series-note i { font-size: 18px; color: #0891b2; }
+  .pl3-scope .series-note .lnk { margin-left: auto; color: #0891b2; font-weight: 600; white-space: nowrap; }
+  .pl3-scope .cal-page-fill { flex: 1 1 auto; min-height: 28px; }
+  .pl3-scope .cal-tabwrap { position: sticky; bottom: 0; z-index: 5; padding-top: 8px; background: linear-gradient(180deg, transparent, #fff 34%); }
+  .pl3-scope .app-tab-bar { height: 67px; display: flex; align-items: flex-start; padding-top: 9px; background: #fff; box-shadow: 0 -8px 24px rgba(0,0,0,0.12); }
+  .pl3-scope .app-tab { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #3b4551; }
+  .pl3-scope .app-tab i { font-size: 24px; line-height: 1; }
+  .pl3-scope .app-tab--discover i { font-size: 26px; }
+  .pl3-scope .app-tab.is-selected { color: #1a2332; }
+  .pl3-scope .app-tab-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; }
 </style>
 
-<div class="pl-scope mr-scope mr-scope--light">
+<div class="pl3-scope mr-scope mr-scope--light">
   <div class="cal-wrap">
     <div class="cal-top">
       <div class="cal-title">Plans</div>
