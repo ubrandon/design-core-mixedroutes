@@ -176,37 +176,30 @@
       "name": "plans-list-tiles-color"
     },
     {
-      "file": "s3-1-name-open.html",
-      "x": 1589,
-      "y": 3390,
-      "width": 390,
-      "name": "3step-1-name-open"
-    },
-    {
       "file": "s3-1-name-filled.html",
-      "x": 2018,
-      "y": 3390,
+      "x": 3003,
+      "y": 10168,
       "width": 390,
       "name": "3step-1-name-filled"
     },
     {
       "file": "s3-2-details.html",
-      "x": 2440,
-      "y": 3390,
+      "x": 3425,
+      "y": 10168,
       "width": 390,
       "name": "3step-2-details"
     },
     {
       "file": "s3-2-details-filled.html",
-      "x": 2862,
-      "y": 3390,
+      "x": 3847,
+      "y": 10168,
       "width": 390,
       "name": "3step-2-details-filled"
     },
     {
       "file": "s3-3-invite.html",
-      "x": 3284,
-      "y": 3390,
+      "x": 4269,
+      "y": 10168,
       "width": 390,
       "name": "3step-3-invite"
     },
@@ -226,29 +219,29 @@
     },
     {
       "file": "s3-C-details-empty.html",
-      "x": 2894,
-      "y": 4813,
+      "x": 1948,
+      "y": 10182,
       "width": 390,
       "name": "C-details-empty"
     },
     {
       "file": "s3-C-details-suggested.html",
-      "x": 3316,
-      "y": 4813,
+      "x": 2370,
+      "y": 10182,
       "width": 390,
       "name": "C-details-suggest-pressed"
     },
     {
       "file": "s3-1-name-gotos.html",
-      "x": 1589,
-      "y": 4813,
+      "x": 2009,
+      "y": 3652,
       "width": 390,
       "name": "3step-1-name-gotos-dropdown"
     },
     {
       "file": "s3-3-invite-privacy.html",
-      "x": 3816,
-      "y": 4813,
+      "x": 2853,
+      "y": 3652,
       "width": 390,
       "name": "3step-3-invite-privacy-row"
     },
@@ -267,11 +260,18 @@
       "name": "3step-1-name-filled-plain"
     },
     {
-      "file": "s3-1-all-in-one.html",
-      "x": 2018,
-      "y": 4822,
+      "file": "s3-1-all-in-one-empty.html",
+      "x": 1589,
+      "y": 3652,
       "width": 390,
-      "name": "2step-1-name-tags-details"
+      "name": "2step-1-empty"
+    },
+    {
+      "file": "s3-1-all-in-one-stacked.html",
+      "x": 2431,
+      "y": 3652,
+      "width": 390,
+      "name": "2step-1-stacked-buttons"
     }
   ],
   "texts": [
@@ -313,8 +313,8 @@
     },
     {
       "text": "3-step plan creation",
-      "x": 1589,
-      "y": 3250,
+      "x": 3003,
+      "y": 10049,
       "size": 72
     },
     {
