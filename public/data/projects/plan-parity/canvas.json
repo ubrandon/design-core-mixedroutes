@@ -240,7 +240,7 @@
     },
     {
       "file": "s3-3-invite-privacy.html",
-      "x": 2853,
+      "x": 3868,
       "y": 3652,
       "width": 390,
       "name": "3step-3-invite-privacy-row"
@@ -272,6 +272,13 @@
       "y": 3652,
       "width": 390,
       "name": "2step-1-stacked-buttons"
+    },
+    {
+      "file": "s3-1-all-in-one-when-sheet.html",
+      "x": 2853,
+      "y": 3652,
+      "width": 390,
+      "name": "2step-1-when-sheet"
     }
   ],
   "texts": [
@@ -328,6 +335,24 @@
       "x": 0,
       "y": 7145,
       "size": 72
+    },
+    {
+      "text": "New plan creation",
+      "x": 1589,
+      "y": 3467,
+      "size": 72
+    },
+    {
+      "text": "Invite others",
+      "x": 3877,
+      "y": 3574,
+      "size": 36
+    },
+    {
+      "text": "Details",
+      "x": 1589,
+      "y": 3574,
+      "size": 36
     }
   ]
 }
