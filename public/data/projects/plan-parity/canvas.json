@@ -45,63 +45,63 @@
     {
       "file": "create-plan-date-copy.html",
       "x": 446,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "create-plan-date-facet Copy"
     },
     {
       "file": "plan-view-copy.html",
       "x": 17,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "plan-view-current Copy"
     },
     {
       "file": "nf-when-open.html",
       "x": 1009,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "when-card-v2-open"
     },
     {
       "file": "nf-when-repeat-sheet.html",
       "x": 1439,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "when-card-v2-repeat-sheet"
     },
     {
       "file": "nf-when-repeating.html",
       "x": 2370,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "when-card-v2-repeating"
     },
     {
       "file": "create-flow-2-details-recurring.html",
       "x": 2800,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "new-2-details-recurring"
     },
     {
       "file": "plan-view-recurring.html",
       "x": 3230,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "plan-view-recurring"
     },
     {
       "file": "plans-list-recurring.html",
       "x": 3850,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "plans-list-recurring"
     },
     {
       "file": "nf-when-calendar-sheet.html",
       "x": 1862,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "when-card-v2-calendar-sheet"
     },
@@ -171,7 +171,7 @@
     {
       "file": "plans-list-tiles-color.html",
       "x": 4269,
-      "y": 5559,
+      "y": 7298,
       "width": 390,
       "name": "plans-list-tiles-color"
     },
@@ -209,6 +209,69 @@
       "y": 3390,
       "width": 390,
       "name": "3step-3-invite"
+    },
+    {
+      "file": "s3-1-name-simple.html",
+      "x": 0,
+      "y": 10182,
+      "width": 390,
+      "name": "3step-1-simple-ask"
+    },
+    {
+      "file": "s3-1-name-simple-drop.html",
+      "x": 422,
+      "y": 10182,
+      "width": 390,
+      "name": "3step-1-simple-ask-history"
+    },
+    {
+      "file": "s3-C-details-empty.html",
+      "x": 2894,
+      "y": 4813,
+      "width": 390,
+      "name": "C-details-empty"
+    },
+    {
+      "file": "s3-C-details-suggested.html",
+      "x": 3316,
+      "y": 4813,
+      "width": 390,
+      "name": "C-details-suggest-pressed"
+    },
+    {
+      "file": "s3-1-name-gotos.html",
+      "x": 1589,
+      "y": 4813,
+      "width": 390,
+      "name": "3step-1-name-gotos-dropdown"
+    },
+    {
+      "file": "s3-3-invite-privacy.html",
+      "x": 3816,
+      "y": 4813,
+      "width": 390,
+      "name": "3step-3-invite-privacy-row"
+    },
+    {
+      "file": "s3-1-name-empty.html",
+      "x": 1009,
+      "y": 10182,
+      "width": 390,
+      "name": "3step-1-name-empty"
+    },
+    {
+      "file": "s3-1-name-filled-plain.html",
+      "x": 1439,
+      "y": 10182,
+      "width": 390,
+      "name": "3step-1-name-filled-plain"
+    },
+    {
+      "file": "s3-1-all-in-one.html",
+      "x": 2018,
+      "y": 4822,
+      "width": 390,
+      "name": "2step-1-name-tags-details"
     }
   ],
   "texts": [
@@ -231,27 +294,39 @@
       "size": 72
     },
     {
-      "text": "Current date",
+      "text": "Recurring",
       "x": 0,
-      "y": 5419,
-      "size": 72
+      "y": 6905,
+      "size": 144
     },
     {
-      "text": "Recurring plans",
+      "text": "New concepts",
       "x": 1009,
-      "y": 5419,
+      "y": 7158,
       "size": 72
     },
     {
       "text": "List variations / recurring",
       "x": 3850,
-      "y": 5433,
+      "y": 7172,
       "size": 48
     },
     {
       "text": "3-step plan creation",
       "x": 1589,
       "y": 3250,
+      "size": 72
+    },
+    {
+      "text": "Archive",
+      "x": 0,
+      "y": 9905,
+      "size": 144
+    },
+    {
+      "text": "Current designs",
+      "x": 0,
+      "y": 7145,
       "size": 72
     }
   ]

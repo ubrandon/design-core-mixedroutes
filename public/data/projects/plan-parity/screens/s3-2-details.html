@@ -72,14 +72,6 @@
       </div>
     </div>
 
-    <!-- PRIVACY -->
-    <div class="nf-label" style="margin-top:20px;">Who can see it</div>
-    <div class="priv">
-      <div class="pv sel" data-p="private" data-d="Only people you invite can see and join."><span class="pv-ic"><i class="ph ph-lock"></i></span><b>Private</b></div>
-      <div class="pv" data-p="group" data-d="Everyone in <b>Sunday Runners</b> can see and join."><span class="pv-ic"><i class="ph ph-users-three"></i></span><b>Group</b></div>
-      <div class="pv" data-p="public" data-d="Anyone with the link can see it and ask to join."><span class="pv-ic"><i class="ph ph-globe-hemisphere-west"></i></span><b>Public</b></div>
-    </div>
-    <div class="priv-desc"><i class="ph ph-info"></i><span>Only people you invite can see and join.</span></div>
   </div>
 
   <div class="footer" style="padding-top:20px;">
@@ -123,20 +115,11 @@
   }
   addPills.querySelectorAll('.chip').forEach(function (p) { p.addEventListener('click', function () { addElse(p); }); });
 
-  // Privacy: three tiles, description updates
-  var desc = root.querySelector('.priv-desc span');
-  root.querySelectorAll('.pv').forEach(function (t) {
-    t.addEventListener('click', function () {
-      root.querySelectorAll('.pv').forEach(function (x) { x.classList.remove('sel'); }); t.classList.add('sel');
-      desc.innerHTML = t.getAttribute('data-d');
-    });
-  });
 
   if (filledStart) {
     setWhen(pills[4]);
     lE.classList.add('hide'); lF.classList.remove('hide');
     addElse(addPills.querySelector('[data-k=desc]')); addElse(addPills.querySelector('[data-k=bring]'));
-    root.querySelector('.pv[data-p=group]').click();
     root.querySelectorAll('.anim').forEach(function (a) { a.classList.remove('anim'); });
   }
 })();
